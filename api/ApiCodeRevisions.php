@@ -25,6 +25,8 @@
  */
 
 class ApiCodeRevisions extends ApiQueryBase {
+	private $props;
+
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'cr' );
 	}

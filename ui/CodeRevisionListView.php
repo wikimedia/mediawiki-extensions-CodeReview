@@ -133,7 +133,7 @@ class CodeRevisionListView extends CodeView {
 				Xml::buildForm( $changeFields, 'codereview-batch-submit' ) );
 
 		$changeInterface .= $pager->getHiddenFields();
-		$changeInterface .= Xml::hidden( 'wpBatchChangeEditToken', $wgUser->editToken() );
+		$changeInterface .= Html::hidden( 'wpBatchChangeEditToken', $wgUser->editToken() );
 
 		return $changeInterface;
 	}
