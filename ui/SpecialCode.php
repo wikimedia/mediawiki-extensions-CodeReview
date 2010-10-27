@@ -17,7 +17,8 @@ class SpecialCode extends SpecialPage {
 		$this->setHeaders();
 		$wgOut->addStyle( "$wgExtensionAssetsPath/CodeReview/codereview.css?$wgCodeReviewStyleVersion" );
 
-		if( $view = self::getViewFrom( $subpage ) ) {
+		$view = self::getViewFrom( $subpage );
+		if( $view ) {
 			$view->execute();
 		} else {
 			$wgOut->addWikiText( wfMsg( 'nosuchactiontext' ) );

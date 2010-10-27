@@ -61,7 +61,7 @@ class ApiCodeRevisions extends ApiQueryBase {
 
 		$count = 0;
 		$lastTimestamp = 0;
-		while ( $row = $revisions->fetchObject() ) {
+		foreach ( $revisions as $row ) {
 			if ( $count == $limit ) {
 				$this->setContinueEnumParameter( 'start',
 					wfTimestamp( TS_ISO_8601, $lastTimestamp ) );

@@ -449,7 +449,8 @@ class CodeRevision {
 
 		// Make list of users to send emails to
 		$users = $this->getCommentingUsers();
-		if ( $user = $this->getWikiUser() ) {
+		$user = $this->getWikiUser();
+		if ( $user ) {
 			$users[$user->getId()] = $user;
 		}
 		// If we've got a spam list, send e-mails to it too
