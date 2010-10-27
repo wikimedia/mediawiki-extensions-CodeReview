@@ -1331,6 +1331,11 @@ $messages['br'] = array(
 	'code-status-desc-verified' => 'Amprouet eo bet an adweladenn ha mont a ra en-dro evel ma oa gortozet.',
 	'code-status-deferred' => 'ampellet',
 	'code-status-old' => 'kozh',
+	'code-signoff-flag-inspected' => 'Ensellet',
+	'code-signoff-flag-tested' => 'Amprouet',
+	'code-signoff-field-user' => 'Implijer',
+	'code-signoff-field-flag' => 'Banniel',
+	'code-signoff-field-date' => 'Deiziad',
 	'code-pathsearch-legend' => "Klask adweladennoù en dastumlec'h dre an hent",
 	'code-pathsearch-path' => 'Hent moned :',
 	'code-pathsearch-filter' => 'Sil arloet :',
@@ -3945,6 +3950,14 @@ $messages['gl'] = array(
 	'code-status-desc-deferred' => 'Esta revisión non necesita comprobación.',
 	'code-status-old' => 'vello',
 	'code-status-desc-old' => 'Revisión vella con erros potenciais que non paga a pena o esforzo de revisala.',
+	'code-signoffs' => 'Aprobacións',
+	'code-signoff-legend' => 'Engadir unha aprobación',
+	'code-signoff-submit' => 'Aprobar',
+	'code-signoff-flag-inspected' => 'Inspeccionado',
+	'code-signoff-flag-tested' => 'Probado',
+	'code-signoff-field-user' => 'Usuario',
+	'code-signoff-field-flag' => 'Indicador',
+	'code-signoff-field-date' => 'Data',
 	'code-pathsearch-legend' => 'Procurar as revisións nesta resposta por ruta',
 	'code-pathsearch-path' => 'Ruta:',
 	'code-pathsearch-filter' => 'Filtro aplicado:',
@@ -3982,14 +3995,24 @@ Enderezo URL: $3
 Resumo:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2]: a proba automática detectou unha regresión',
-	'codereview-email-body3' => 'A proba automática detectou unha regresión debido a variacións na versión $1.
+	'codereview-email-subj3' => '[$1] [$2]: cambiou o estado da revisión',
+	'codereview-email-body3' => 'O usuario "$1" cambiou o estado de $2.
 
-Enderezo URL: $2
+Estado vello: $3
+Estado novo: $4',
+	'codereview-email-subj4' => '[$1] [$2]: engadido un novo comentario e cambiado o estado da revisión',
+	'codereview-email-body4' => 'O usuario "$1" cambiou o estado de $2.
 
-Resumo:
+Estado vello: $3
+Estado novo: $4
 
-$3',
+O usuario "$1" tamén deixou un comentario en $2.
+
+Enderezo URL: $5
+
+Comentario:
+
+$6',
 	'code-stats' => 'estatísticas',
 	'code-stats-header' => 'Estatísticas do repositorio "$1"',
 	'code-stats-main' => 'A día $6 ás $5, o repositorio ten $2 {{PLURAL:$2|revisión|revisións}} feitas por [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autores}}]].',
@@ -4013,6 +4036,7 @@ $3',
 	'right-codereview-remove-tag' => 'Eliminar as etiquetas das revisións',
 	'right-codereview-post-comment' => 'Engadir comentarios ás revisións',
 	'right-codereview-set-status' => 'Cambiar o estado das revisións',
+	'right-codereview-signoff' => 'Aprobar revisións',
 	'right-codereview-link-user' => 'Ligar autores a usuarios do wiki',
 	'specialpages-group-developer' => 'Ferramentas dos desenvolvedores',
 );
@@ -5048,6 +5072,14 @@ $messages['ia'] = array(
 	'code-status-desc-deferred' => 'Le version non require revision.',
 	'code-status-old' => 'vetule',
 	'code-status-desc-old' => 'Ancian version con potential errores, ma il non vale le pena revider los.',
+	'code-signoffs' => 'Approbationes',
+	'code-signoff-legend' => 'Adder approbation',
+	'code-signoff-submit' => 'Approbar',
+	'code-signoff-flag-inspected' => 'Inspectate',
+	'code-signoff-flag-tested' => 'Testate',
+	'code-signoff-field-user' => 'Usator',
+	'code-signoff-field-flag' => 'Indicator',
+	'code-signoff-field-date' => 'Data',
 	'code-pathsearch-legend' => 'Cercar versiones in iste deposito per cammino',
 	'code-pathsearch-path' => 'Cammino:',
 	'code-pathsearch-filter' => 'Filtro applicate:',
@@ -5126,6 +5158,7 @@ $6',
 	'right-codereview-remove-tag' => 'Remover etiquettas de versiones',
 	'right-codereview-post-comment' => 'Adder commentos a versiones',
 	'right-codereview-set-status' => 'Cambiar le stato de versiones',
+	'right-codereview-signoff' => 'Approbar versiones',
 	'right-codereview-link-user' => 'Ligar autores a usatores del wiki',
 	'specialpages-group-developer' => 'Instrumentos pro disveloppatores',
 );
@@ -7708,6 +7741,14 @@ $messages['no'] = array(
 	'code-status-desc-deferred' => 'Revisjon krever ikke gjennomgang.',
 	'code-status-old' => 'gammel',
 	'code-status-desc-old' => 'Gammel revisjon med potensielle feil, men som ikker er verdt innsatsen med å gjenngå dem.',
+	'code-signoffs' => 'Underskrifter',
+	'code-signoff-legend' => 'Legg til underskrift',
+	'code-signoff-submit' => 'Skriv under',
+	'code-signoff-flag-inspected' => 'Inspisert',
+	'code-signoff-flag-tested' => 'Testet',
+	'code-signoff-field-user' => 'Bruker',
+	'code-signoff-field-flag' => 'Flagg',
+	'code-signoff-field-date' => 'Dato',
 	'code-pathsearch-legend' => 'Søk revisjoner i denne repo etter sti',
 	'code-pathsearch-path' => 'Sti:',
 	'code-pathsearch-filter' => 'Benyttet filter:',
@@ -7745,14 +7786,24 @@ Full nettadresse: $3
 Sammendrag:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2]: Automatisk testing oppdaget regresjon',
-	'codereview-email-body3' => 'Automatisk testing har oppdaget regresjon grunnet endringer i $1.
+	'codereview-email-subj3' => '[$1] [$2]: Revisjonsstatus endret',
+	'codereview-email-body3' => 'Bruker «$1» endret statusen til $2.
 
-Full nettadresse: $2
+Gammel status: $3
+Ny status: $4',
+	'codereview-email-subj4' => '[$1] [$2]: Ny kommentar lagt til og revisjonsstatus endret',
+	'codereview-email-body4' => 'Bruker «$1» endret statusen til $2.
 
-Sammendrag av bidrag:
+Gammel status: $3
+Ny status: $4
 
-$3',
+Bruker «$1» postet også en kommentar på $2
+
+Fullstendig URL-adresse: $5
+
+Kommentar:
+
+$6',
 	'code-stats' => 'statistikk',
 	'code-stats-header' => 'Statistikk for repositoriet $1',
 	'code-stats-main' => 'Som på $1 har depoet $2 {{PLURAL:$2|revisjon|revisjoner}} av [[Special:Code/$3/author|$4 {{PLURAL:$4|forfatter|forfattere}}]]',
@@ -7776,6 +7827,7 @@ $3',
 	'right-codereview-remove-tag' => 'Fjern tagger fra versjon',
 	'right-codereview-post-comment' => 'Legge til kommentarer til revisjoner',
 	'right-codereview-set-status' => 'Endre versjonens status',
+	'right-codereview-signoff' => 'Skriv under på revisjoner',
 	'right-codereview-link-user' => 'Lenke forfattere til wikibrukere',
 	'specialpages-group-developer' => 'Utviklerverktøy',
 );
