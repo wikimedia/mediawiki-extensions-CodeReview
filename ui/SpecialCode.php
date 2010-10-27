@@ -179,8 +179,20 @@ abstract class CodeView {
 		$message = trim( $value );
 		$lines = explode( "\n", $message, 2 );
 		$first = $lines[0];
+
 		$html = $this->formatMessage( $first );
-		return $wgLang->truncateHtml( $html, 80 );
+		$truncated = $wgLang->truncateHtml( $html, 80 );
+
+		if ( count( $lines ) > 1  ) { // If multiline, we might want to add an ellipse
+			$ellipse = wfMsgExt( 'ellipsis', array() );
+
+			$len = strlen( $truncated );
+			if ( substr( $truncated, $len ) !== $ellipse ) { // Don't add if the end is already an ellipse
+				$truncated .= $ellipse;
+			}
+		}
+
+	    return $truncated;
 	}
 	/*
 	 * Formatted HTML array for properties display
@@ -195,8 +207,9 @@ abstract class CodeView {
 	}
 
 	function getRepo() {
-		if ( $this->mRepo )
+		if ( $this->mRepo ) {
 			return $this->mRepo;
+		}
 		return false;
 	}
 }
