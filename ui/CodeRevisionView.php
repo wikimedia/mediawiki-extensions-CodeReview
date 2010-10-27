@@ -39,7 +39,10 @@ class CodeRevisionView extends CodeView {
 			return;
 		}
 		if ( !$this->mRev ) {
-			$wgOut->addWikiMsg( 'code-rev-not-found', $this->mRevId );
+			if ( $this->mRevId !== 0 ) {
+				$wgOut->addWikiMsg( 'code-rev-not-found', $this->mRevId );
+			}
+
 			$view = new CodeRevisionListView( $this->mRepo->getName() );
 			$view->execute();
 			return;
