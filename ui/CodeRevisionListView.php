@@ -156,7 +156,7 @@ class CodeRevisionListView extends CodeView {
 		if ( strlen( $this->mAppliedFilter ) ) {
 			$wgOut->addHTML(
 				'<td>' .
-				Xml::label( wfMsg( 'code-pathsearch-filter' ), 'revFilter' ) . '<strong>' .
+				Xml::label( wfMsg( 'code-pathsearch-filter' ), 'revFilter' ) . '&#160;<strong>' .
 				Xml::span( $this->mAppliedFilter, '' ) . '</strong>&#160;' .
 				Xml::submitButton( wfMsg( 'code-revfilter-clear' ) ) .
 				'</td>' .
