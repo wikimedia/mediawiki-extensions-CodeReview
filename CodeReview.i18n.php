@@ -4344,6 +4344,7 @@ $messages['hak'] = array(
 );
 
 /** Hebrew (עברית)
+ * @author Amire80
  * @author Rotemliss
  * @author YaronSh
  */
@@ -4473,14 +4474,12 @@ $4',
 תקציר השינוי:
 
 $4',
-	'codereview-email-subj3' => '[$1] [גרסה $2]: הבדיקה האוטומטית גילתה באג חדש',
-	'codereview-email-body3' => 'הבדיקה האוטומטית גילתה באג חדש שנוצר עקב השינויים בגרסה $1.
+	'codereview-email-subj3' => '[$1] [$2]: מצב הגרסה השתנה',
+	'codereview-email-body3' => 'המשתמש "$1" שינה את המצב של $2.
 
-הכתובת המלאה: $2
-
-תקציר השינוי:
-
-$3',
+סטטוס קודם: $3
+סטטוס חדש: $4',
+	'codereview-email-subj4' => '[$1] [$2]: נוספה הערה חדשה ומצב הגרסה השתנה',
 	'code-stats' => 'סטטיסטיקה',
 	'code-stats-header' => 'סטטיסטיקה עבור המאגר $1',
 	'code-stats-main' => 'נכון ל־$1, למאגר יש {{PLURAL:$2|גרסה אחת|$2 גרסאות}} מאת [[Special:Code/$3/author|{{PLURAL:$4|יוצר אחד|$4 יוצרים}}]].',
@@ -6445,7 +6444,23 @@ Resumé vun der Ännerung:
 
 $4',
 	'codereview-email-subj3' => '[$1] [$2]: Statut vun der Versioun huet geännert',
+	'codereview-email-body3' => 'De Benotzer „$1“ huet de Statut vu(n) $2 geännert.
+
+Ale Statut: $3
+Neie Statut: $4',
 	'codereview-email-subj4' => '[$1] [$2]: Nei  Bemierkung derbäigesat, an de Statut vun der Versioun geännert',
+	'codereview-email-body4' => 'De Benotzer "$1" huet de Statut vun $2 gännert.
+
+Ale Statut: $3
+Neie Statut: $4
+
+De Benotzer "$1" huet och eng Bemierkung iwwer $2 derbäigesat.
+
+Komplett URL: $5
+
+Bemierkung:
+
+$6',
 	'code-stats' => 'Statistiken',
 	'code-stats-status-breakdown' => 'Zuel vun de Versioune pro Statut',
 	'code-stats-fixme-breakdown' => 'Opdeelung vun de FixMe pro Auteur',
@@ -8706,6 +8721,10 @@ $messages['pt-br'] = array(
 	'code-status-desc-deferred' => 'A revisão não necessita ser verificada.',
 	'code-status-old' => 'antigo',
 	'code-status-desc-old' => 'A revisão antiga que pode conter defeitos, mas cuja verificação não se justifica.',
+	'code-signoffs' => 'Aprovações',
+	'code-signoff-legend' => 'Adicionar aprovação',
+	'code-signoff-submit' => 'Aprovar',
+	'code-signoff-flag-inspected' => 'Inspecionado',
 	'code-signoff-flag-tested' => 'Testado',
 	'code-signoff-field-user' => 'Usuário',
 	'code-signoff-field-flag' => 'Bandeira',
@@ -8788,6 +8807,7 @@ $6',
 	'right-codereview-remove-tag' => 'Remover etiquetas de revisões',
 	'right-codereview-post-comment' => 'Adicionar comentários a revisões',
 	'right-codereview-set-status' => 'Alterar estado de revisões',
+	'right-codereview-signoff' => 'Aprovação de revisões',
 	'right-codereview-link-user' => 'Associar autores a utilizadores de wiki',
 	'specialpages-group-developer' => 'Ferramentas de desenvolvimento',
 );
