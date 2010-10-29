@@ -6402,6 +6402,7 @@ $messages['lb'] = array(
 	'code-status-deferred' => 'zréckgestallt',
 	'code-status-desc-deferred' => "D'Versioun muss net nogekuckt ginn.",
 	'code-status-old' => 'al',
+	'code-signoffs' => 'Zoustëmmungen',
 	'code-signoff-flag-inspected' => 'Inspizéiert',
 	'code-signoff-flag-tested' => 'Getest',
 	'code-signoff-field-user' => 'Benotzer',
