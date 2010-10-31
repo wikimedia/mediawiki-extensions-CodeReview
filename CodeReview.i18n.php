@@ -647,12 +647,13 @@ $3',
 
 /** Aramaic (ܐܪܡܝܐ)
  * @author Basharh
+ * @author Michaelovic
  */
 $messages['arc'] = array(
 	'code-old-status' => 'ܐܝܟܢܝܘܬܐ ܥܬܝܩܬܐ',
 	'code-new-status' => 'ܐܝܟܢܝܘܬܐ ܚܕܬܐ',
 	'code-authors' => 'ܣܝܘܡ̈ܐ',
-	'code-author-name' => 'ܐܥܠ ܫܡܐ ܕܡܬܚܫܚܢܐ:',
+	'code-author-name' => 'ܐܥܠ ܫܡܐ ܕܡܦܠܚܢܐ:',
 	'code-field-id' => 'ܬܢܝܬܐ',
 	'code-field-author' => 'ܣܝܘܡܐ',
 	'code-field-status' => 'ܐܝܟܢܝܘܬܐ',
@@ -1781,6 +1782,9 @@ $messages['cs'] = array(
 	'code-status-desc-deferred' => 'Revize nepotřebuje kontrolu.',
 	'code-status-old' => 'stará',
 	'code-status-desc-old' => 'Stará revize, která může obsahovat chyby, ale nestojí za práci s kontrolováním.',
+	'code-signoffs' => 'Schválení',
+	'code-signoff-legend' => 'Přidat schválení',
+	'code-signoff-submit' => 'Schválit',
 	'code-signoff-flag-inspected' => 'Zkontrolováno',
 	'code-signoff-flag-tested' => 'Otestováno',
 	'code-signoff-field-user' => 'Uživatel',
@@ -1864,6 +1868,7 @@ $6',
 	'right-codereview-remove-tag' => 'Odebírání značek z revizí',
 	'right-codereview-post-comment' => 'Přidávání komentářů k revizím',
 	'right-codereview-set-status' => 'Přepínání stavu revizí',
+	'right-codereview-signoff' => 'Schvalování revizí',
 	'right-codereview-link-user' => 'Správa vazeb autorů s wikiuživateli',
 	'specialpages-group-developer' => 'Vývojářské nástroje',
 );
@@ -3664,7 +3669,7 @@ Commentaire :
 $6',
 	'code-stats' => 'statistiques',
 	'code-stats-header' => 'Statistiques du dépôt $1',
-	'code-stats-main' => 'À la date du $1, le dépôt a $2 {{PLURAL:$2|révision|révisions}} faites par [[Special:Code/$3/author|$4 {{PLURIEL:$4|auteur|auteurs}}]].',
+	'code-stats-main' => 'À la date du $1, le dépôt a $2 {{PLURAL:$2|révision|révisions}} faites par [[Special:Code/$3/author|$4 {{PLURAL:$4|auteur|auteurs}}]].',
 	'code-stats-status-breakdown' => 'Nombre de révisions par état',
 	'code-stats-fixme-breakdown' => 'Examen des révisions à corriger par auteur',
 	'code-stats-count' => 'Nombre de révisions',
@@ -4516,6 +4521,7 @@ $messages['hif-latn'] = array(
 );
 
 /** Croatian (Hrvatski)
+ * @author CERminator
  * @author Dalibor Bosits
  * @author Ex13
  * @author SpeedyGonsales
@@ -4601,6 +4607,8 @@ $messages['hr'] = array(
 	'code-status-verified' => 'ovjereno',
 	'code-status-deferred' => 'odgođeno',
 	'code-status-old' => 'staro',
+	'code-signoff-field-user' => 'Suradnik',
+	'code-signoff-field-date' => 'Datum',
 	'code-pathsearch-legend' => 'Traži izmjene u ovom repozitoriju preko putanje',
 	'code-pathsearch-path' => 'Putanja:',
 	'code-pathsearch-filter' => 'Primijenjen filtar:',
@@ -4904,7 +4912,7 @@ $messages['hu'] = array(
 	'code-status-resolved' => 'javítva',
 	'code-status-desc-resolved' => 'A változattal gondok voltak, de a problémák javítva lettek egy későbbi változatban.',
 	'code-status-ok' => 'rendben',
-	'code-status-desc-ok' => 'Az ellenőrzést végző személy biztos benne, hogy a változat teljesen rendben van.',
+	'code-status-desc-ok' => 'Az ellenőrzést végző biztos benne, hogy a változat teljesen rendben van.',
 	'code-status-verified' => 'ellenőrizve',
 	'code-status-desc-verified' => 'A változat tesztelve lett, és rendeltetésszerűen működik.',
 	'code-status-deferred' => 'halasztva',
@@ -7868,7 +7876,7 @@ $messages['oc'] = array(
 	'code-old-status' => 'Estatut ancian',
 	'code-new-status' => 'Estatut novèl',
 	'code-prop-changes' => 'Estatut e jornal de balisatge',
-	'codereview-desc' => '[[Special:Code|Espleches per tornar veire lo còde]] amb [[Special:RepoAdmin|supòrt de Subversion]]',
+	'codereview-desc' => '[[Special:Code|Aisinas per tornar veire lo còde]] amb [[Special:RepoAdmin|supòrt de Subversion]]',
 	'code-no-repo' => 'Pas de depaus configurat !',
 	'code-load-diff' => 'Cargament del dif…',
 	'code-notes' => 'comentaris recents',
@@ -7985,7 +7993,7 @@ $3',
 	'right-codereview-post-comment' => 'Apondre un comentari a las revisions',
 	'right-codereview-set-status' => "Cambiar l'estatut de las revisions",
 	'right-codereview-link-user' => 'Liga los autors als utilizaires wiki',
-	'specialpages-group-developer' => 'Espleches del desvolopaire',
+	'specialpages-group-developer' => 'Aisinas del desvolopaire',
 );
 
 /** Ossetic (Иронау)

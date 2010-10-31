@@ -54,6 +54,11 @@ $specialPageAliases['eo'] = array(
 	'Code' => array( 'Kodo' ),
 );
 
+/** Spanish (Español) */
+$specialPageAliases['es'] = array(
+	'Code' => array( 'Código', 'RevisarCódigo' ),
+);
+
 /** Basque (Euskara) */
 $specialPageAliases['eu'] = array(
 	'Code' => array( 'Kodea' ),
@@ -63,6 +68,11 @@ $specialPageAliases['eu'] = array(
 $specialPageAliases['fa'] = array(
 	'Code' => array( 'کد' ),
 	'RepoAdmin' => array( 'مدیر_مخزن' ),
+);
+
+/** Finnish (Suomi) */
+$specialPageAliases['fi'] = array(
+	'Code' => array( 'Koodin_katselmointi' ),
 );
 
 /** Galician (Galego) */
