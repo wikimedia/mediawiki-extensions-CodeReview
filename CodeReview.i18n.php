@@ -3851,6 +3851,14 @@ $3',
 	'specialpages-group-developer' => 'Outils u dèvelopor',
 );
 
+/** Friulian (Furlan)
+ * @author Klenje
+ */
+$messages['fur'] = array(
+	'code-stats' => 'statistichis',
+	'repoadmin-edit-button' => 'Va ben',
+);
+
 /** Irish (Gaeilge)
  * @author Alison
  */
@@ -9046,6 +9054,11 @@ $messages['roa-tara'] = array(
 	'code-status-verified' => 'verificate',
 	'code-status-deferred' => 'differite',
 	'code-status-old' => 'vecchie',
+	'code-signoff-flag-inspected' => 'Ispezionate',
+	'code-signoff-flag-tested' => 'Testate',
+	'code-signoff-field-user' => 'Utende',
+	'code-signoff-field-flag' => 'Bandiere',
+	'code-signoff-field-date' => 'Date',
 	'code-pathsearch-path' => 'Percorse:',
 	'code-pathsearch-filter' => 'Filtre applicate:',
 	'code-revfilter-cr_status' => 'State = $1',
@@ -9073,6 +9086,7 @@ Commende:
 
 $4',
 	'codereview-email-subj2' => '[$1] [$2]: Revisiune supplemendare',
+	'codereview-email-subj3' => "[$1] [$2]: State d'a revisione cangiate",
 	'code-stats' => 'statisteche',
 	'code-stats-status-breakdown' => 'Numere de revisione pè state',
 	'code-stats-count' => 'Numere de le revisiune',
