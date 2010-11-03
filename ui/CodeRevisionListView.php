@@ -11,7 +11,7 @@ class CodeRevisionListView extends CodeView {
 		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
 			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path
 		}
-		$this->mAuthor = null;
+		$this->mAuthor = $wgRequest->getText( 'author' );
 		$this->mAppliedFilter = null;
 	}
 
@@ -233,7 +233,7 @@ class SvnRevTablePager extends SvnTablePager {
 	function getQueryInfo() {
 		// Path-based query...
 		if ( $this->getDefaultSort() === 'cp_rev_id' ) {
-			return array(
+			$query = array(
 				'tables' => array( 'code_paths', 'code_rev', 'code_comment' ),
 				'fields' => $this->getSelectFields(),
 				'conds' => array(
@@ -250,7 +250,7 @@ class SvnRevTablePager extends SvnTablePager {
 			);
 		// No path; entire repo...
 		} else {
-			return array(
+			$query = array(
 				'tables' => array( 'code_rev', 'code_comment' ),
 				'fields' => $this->getSelectFields(),
 				'conds' => array( 'cr_repo_id' => $this->mRepo->getId() ),
@@ -260,6 +260,10 @@ class SvnRevTablePager extends SvnTablePager {
 				)
 			);
 		}
+		if( $this->mView->mAuthor ) {
+			$query['conds']['cr_author'] = $this->mView->mAuthor;
+		}
+		return $query;
 	}
 
 	function getSelectFields() {
