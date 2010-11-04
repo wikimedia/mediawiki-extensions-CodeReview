@@ -92,7 +92,8 @@ class WordCloud {
 	 * Default text callback for word display
 	 */
 	public function defaultTextCallback( $word, $sizeRange ) {
-		return "<span class=\"mw-wordcloud-size-$sizeRange\"> &nbsp; {$word} &nbsp; </span>";
+		return Html::element( 'span', array(
+			'class' => 'mw-wordcloud-size-' . $sizeRange ), $word );
 	}
 
 	/**
