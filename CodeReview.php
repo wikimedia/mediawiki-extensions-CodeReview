@@ -73,7 +73,7 @@ $wgAutoloadClasses['CodeStatusChangeListView'] = $dir . 'ui/CodeStatusChangeList
 $wgAutoloadClasses['SpecialCode'] = $dir . 'ui/SpecialCode.php';
 $wgAutoloadClasses['CodeView'] = $dir . 'ui/SpecialCode.php';
 $wgAutoloadClasses['SpecialRepoAdmin'] = $dir . 'ui/SpecialRepoAdmin.php';
-
+$wgAutoloadClasses['WordCloud'] = $dir . 'ui/WordCloud.php';
 
 $wgSpecialPages['Code'] = 'SpecialCode';
 $wgSpecialPageGroups['Code'] = 'developer';

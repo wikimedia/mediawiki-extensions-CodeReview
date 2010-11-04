@@ -153,7 +153,7 @@ class CodeRepository {
 		);
 		$tags = array();
 		foreach( $res as $row ) {
-			$tags[] = $row->ct_tag;
+			$tags[$row->ct_tag] = $row->revs;
 		}
 		$wgMemc->set( $key, $tags, 3600 * 3 );
 		return $tags;
