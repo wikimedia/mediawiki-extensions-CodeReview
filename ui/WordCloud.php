@@ -34,6 +34,15 @@ class WordCloud {
 	 */
 	private $callback;
 
+	/**
+	 * Mapping of percentage limits to their CSS classes
+	 */
+	private $classPercentages = array(
+		1 => 99, 2 => 70, 3 => 60,
+		4 => 50, 5 => 40, 6 => 30,
+		7 => 20, 8 => 10, 9 => 5
+	);
+
 	/*
 	 * Constructor
 	 *
@@ -119,27 +128,11 @@ class WordCloud {
 	 * @return Int
 	 */
 	private function getClassFromPercent( $percent ) {
-		if ( $percent >= 99 ) {
-			$class = 1;
-		} elseif( $percent >= 70 ) {
-			$class = 2;
-		} elseif( $percent >= 60 ) {
-			$class = 3;
-		} elseif( $percent >= 50 ) {
-			$class = 4;
-		} elseif( $percent >= 40 ) {
-			$class = 5;
-		} elseif( $percent >= 30 ) {
-			$class = 6;
-		} elseif( $percent >= 20 ) {
-			$class = 7;
-		} elseif( $percent >= 10 ) {
-			$class = 8;
-		} elseif( $percent >= 5 ) {
-			$class = 9;
-		} else {
-			$class = 0;
+		foreach( $this->classPercentages as $class => $limit ) {
+			if( $percent >= $limit ) {
+				return $class;
+			}
 		}
-		return $class;
+		return 0;
 	}
 }
