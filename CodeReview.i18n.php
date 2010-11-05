@@ -31,6 +31,7 @@ $messages['en'] = array(
 	'code-authors' => 'authors',
 	'code-status' => 'states',
 	'code-tags' => 'tags',
+	'code-tags-no-tags' => 'No tags exist in this repository.',
 	'code-authors-text' => 'Below is a list of repo authors in order of commit name. Local wiki accounts are shown in parentheses. Data may be cached.',
 	'code-author-haslink' => 'This author is linked to the wiki user $1',
 	'code-author-orphan' => 'This author has no link with a wiki account',

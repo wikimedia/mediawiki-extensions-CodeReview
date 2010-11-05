@@ -12,8 +12,13 @@ class CodeTagListView extends CodeView {
 		$name = $this->mRepo->getName();
 		$list = $this->mRepo->getTagList();
 
-		$tc = new WordCloud( $list, array( $this, 'linkCallback' ) );
-		$wgOut->addHTML( $tc->showCloud() );
+		if( 0 === count( $list ) ) {
+			$wgOut->addWikiText( wfMsg( 'code-tags-no-tags' ) );
+		} else {
+			# Show a cloud made of tags
+			$tc = new WordCloud( $list, array( $this, 'linkCallback' ) );
+			$wgOut->addHTML( $tc->showCloud() );
+		}
 	}
 
 	public function linkCallback( $tag, $weight ) {

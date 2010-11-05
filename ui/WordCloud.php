@@ -85,6 +85,9 @@ class WordCloud {
 	 * @return String
 	 */
 	public function showCloud() {
+		if( 0 === count( $this->wordsArray ) ) {
+			return;
+		}
 		$this->shuffleCloud();
 		$max = max( $this->wordsArray );
 		if( is_array( $this->wordsArray ) ) {
