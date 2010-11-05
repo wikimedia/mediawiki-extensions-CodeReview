@@ -332,7 +332,7 @@ class SvnRevTablePager extends SvnTablePager {
 				$special->setFragment( '#code-comments' );
 				return $this->mView->mSkin->link( $special, htmlspecialchars( $value ) );
 			} else {
-				return intval( $value );
+				return '-';
 			}
 		case 'cr_path':
 			return Xml::openElement( 'div', array( 'title' => (string)$value ) ) .
