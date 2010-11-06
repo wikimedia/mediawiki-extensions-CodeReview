@@ -113,7 +113,7 @@ class SvnImport extends Maintenance {
 				$codeRev->save();
 
 				$this->output( sprintf( "%d %s %s (%0.1f revs/sec)\n",
-					$codeRev->mId,
+					$codeRev->getId(),
 					wfTimestamp( TS_DB, $codeRev->mTimestamp ),
 					$codeRev->mAuthor,
 					$revSpeed ) );

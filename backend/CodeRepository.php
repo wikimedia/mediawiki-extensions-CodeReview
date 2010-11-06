@@ -1,11 +1,42 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
 
+/**
+ * Core class for interacting with a repository of code. 
+ */
 class CodeRepository {
-	static $userLinks = array();
-	static $authorLinks = array();
 
-	public $mId, $mName, $mPath, $mViewVc, $mBugzilla;
+	/**
+	 * Local cache of Wiki user -> SVN user mappings
+	 * @var Array
+	 */
+	private static $userLinks = array();
+
+	/**
+	 * Sort of the same, but looking it up for the other direction
+	 * @var Array
+	 */
+	private static $authorLinks = array();
+
+	/**
+	 * Various data about the repo
+	 */
+	private $id, $name, $path, $viewVc, $bugzilla;
+
+	/**
+	 * Constructor, can't use it. Call one of the static newFrom* methods
+	 * @param $id Int Database id for the repo
+	 * @param $name String User-defined name for the repository
+	 * @param $path String Path to SVN
+	 * @param $viewVc String Base path to ViewVC URLs
+	 * @param $bugzilla String Base path to Bugzilla
+	 */
+	public function  __construct( $id, $name, $path, $viewvc, $bugzilla ) {
+		$this->id = $id;
+		$this->name = $name;
+		$this->path = $path;
+		$this->viewVc = $viewvc;
+		$this->bugzilla = $bugzilla;
+	}
 
 	public static function newFromName( $name ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -48,13 +79,13 @@ class CodeRepository {
 	}
 
 	static function newFromRow( $row ) {
-		$repo = new CodeRepository();
-		$repo->mId = intval( $row->repo_id );
-		$repo->mName = $row->repo_name;
-		$repo->mPath = $row->repo_path;
-		$repo->mViewVc = $row->repo_viewvc;
-		$repo->mBugzilla = $row->repo_bugzilla;
-		return $repo;
+		return new CodeRepository(
+			intval( $row->repo_id ),
+			$row->repo_name,
+			$row->repo_path,
+			$row->repo_viewvc,
+			$row->repo_bugzilla
+		);
 	}
 
 	static function getRepoList() {
@@ -68,28 +99,28 @@ class CodeRepository {
 	}
 
 	public function getId() {
-		return intval( $this->mId );
+		return intval( $this->id );
 	}
 
 	public function getName() {
-		return $this->mName;
+		return $this->name;
 	}
 
 	public function getPath() {
-		return $this->mPath;
+		return $this->path;
 	}
 
 	public function getViewVcBase() {
-		return $this->mViewVc;
+		return $this->viewVc;
 	}
 
 	/**
 	 * Return a bug URL or false.
 	 */
 	public function getBugPath( $bugId ) {
-		if ( $this->mBugzilla ) {
+		if ( $this->bugzilla ) {
 			return str_replace( '$1',
-				urlencode( $bugId ), $this->mBugzilla );
+				urlencode( $bugId ), $this->bugzilla );
 		}
 		return false;
 	}
@@ -229,7 +260,7 @@ class CodeRepository {
 		}
 
 		# Try memcached...
-		$key = wfMemcKey( 'svn', md5( $this->mPath ), 'diff', $rev1, $rev2 );
+		$key = wfMemcKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
 		if ( $useCache === 'skipcache' ) {
 			$data = null;
 		} else {
@@ -241,7 +272,7 @@ class CodeRepository {
 			$dbr = wfGetDB( DB_SLAVE );
 			$row = $dbr->selectRow( 'code_rev',
 				array( 'cr_diff', 'cr_flags' ),
-				array( 'cr_repo_id' => $this->mId, 'cr_id' => $rev, 'cr_diff IS NOT NULL' ),
+				array( 'cr_repo_id' => $this->id, 'cr_id' => $rev, 'cr_diff IS NOT NULL' ),
 				__METHOD__
 			);
 			if ( $row ) {
@@ -259,7 +290,7 @@ class CodeRepository {
 
 		# Generate the diff as needed...
 		if ( !$data && $useCache !== 'cached' ) {
-			$svn = SubversionAdaptor::newFromRepo( $this->mPath );
+			$svn = SubversionAdaptor::newFromRepo( $this->path );
 			$data = $svn->getDiff( '', $rev1, $rev2 );
 			// Store to cache
 			$wgMemc->set( $key, $data, 3600 * 24 * 3 );
@@ -269,7 +300,7 @@ class CodeRepository {
 			$dbw = wfGetDB( DB_MASTER );
 			$dbw->update( 'code_rev',
 				array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
-				array( 'cr_repo_id' => $this->mId, 'cr_id' => $rev ),
+				array( 'cr_repo_id' => $this->id, 'cr_id' => $rev ),
 				__METHOD__
 			);
 		}
@@ -288,10 +319,10 @@ class CodeRepository {
 		$rev1 = $codeRev->getId() - 1;
 		$rev2 = $codeRev->getId();
 
-		$svn = SubversionAdaptor::newFromRepo( $this->mPath );
+		$svn = SubversionAdaptor::newFromRepo( $this->path );
 		$data = $svn->getDiff( '', $rev1, $rev2 );
 		// Store to cache
-		$key = wfMemcKey( 'svn', md5( $this->mPath ), 'diff', $rev1, $rev2 );
+		$key = wfMemcKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
 		$wgMemc->set( $key, $data, 3600 * 24 * 3 );
 		// Permanent DB storage
 		$storedData = $data;
@@ -299,7 +330,7 @@ class CodeRepository {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->update( 'code_rev',
 			array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
-			array( 'cr_repo_id' => $this->mId, 'cr_id' => $codeRev->getId() ),
+			array( 'cr_repo_id' => $this->id, 'cr_id' => $codeRev->getId() ),
 			__METHOD__
 		);
 		wfProfileOut( __METHOD__ );

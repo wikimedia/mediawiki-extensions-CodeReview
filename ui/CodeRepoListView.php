@@ -1,9 +1,10 @@
 <?php
 
-// Special:Code
+/**
+ * Class for showing the list of repositories, if none was specified
+ */
 class CodeRepoListView {
-
-	function execute() {
+	public function execute() {
 		global $wgOut;
 		$repos = CodeRepository::getRepoList();
 		if ( !count( $repos ) ) {

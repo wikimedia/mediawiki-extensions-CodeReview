@@ -348,7 +348,7 @@ class SvnRevTablePager extends SvnTablePager {
 	function formatRow( $row ) {
 		global $wgWikiSVN;
 		$css = "mw-codereview-status-{$row->cr_status}";
-		if ( $this->mRepo->mName == $wgWikiSVN ) {
+		if ( $this->mRepo->getName() == $wgWikiSVN ) {
 			$css .= " mw-codereview-" . ( $row-> { $this->getDefaultSort() } <= $this->mCurSVN ? 'live' : 'notlive' );
 		}
 		$s = "<tr class=\"$css\">\n";

@@ -1,5 +1,4 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
 
 class CodePropChange {
 	function __construct( $rev ) {

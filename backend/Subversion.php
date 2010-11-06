@@ -1,5 +1,5 @@
 <?php
-if ( !defined( 'MEDIAWIKI' ) ) die();
+
 
 abstract class SubversionAdaptor {
 	protected $mRepo;
