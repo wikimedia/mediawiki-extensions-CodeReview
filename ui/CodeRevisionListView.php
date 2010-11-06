@@ -307,14 +307,14 @@ class SvnRevTablePager extends SvnTablePager {
 			return Xml::check( "wpRevisionSelected[]", false, array( 'value' => $row->$sort ) );
 		case 'cp_rev_id':
 		case 'cr_id':
-			return $this->mView->mSkin->link(
+			return $this->mView->skin->link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value ),
 				htmlspecialchars( $value ),
 				array(),
 				array( 'path' => $this->mView->mPath )
 			);
 		case 'cr_status':
-			return $this->mView->mSkin->link(
+			return $this->mView->skin->link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/status/' . $value ),
 				htmlspecialchars( $this->mView->statusDesc( $value ) ),
 				array(),
@@ -330,13 +330,13 @@ class SvnRevTablePager extends SvnTablePager {
 			if ( $value ) {
 				$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() } );
 				$special->setFragment( '#code-comments' );
-				return $this->mView->mSkin->link( $special, htmlspecialchars( $value ) );
+				return $this->mView->skin->link( $special, htmlspecialchars( $value ) );
 			} else {
 				return '-';
 			}
 		case 'cr_path':
 			return Xml::openElement( 'div', array( 'title' => (string)$value ) ) .
-					$this->mView->mSkin->link(
+					$this->mView->skin->link(
 					SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/path' ),
 					$wgLang->truncate( (string)$value, 50 ),
 					array( 'title' => (string)$value ),

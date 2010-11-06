@@ -22,7 +22,7 @@ class SpecialCode extends SpecialPage {
 			$view->execute();
 		} else {
 			$wgOut->addWikiText( wfMsg( 'nosuchactiontext' ) );
-			$wgOut->returnToMain( null, SpecialPage::getTitleFor( 'Code' ) );
+			$wgOut->returnToMain( null, $this->getTitle() );
 			return;
 		}
 
@@ -137,7 +137,7 @@ abstract class CodeView {
 
 	function __construct() {
 		global $wgUser;
-		$this->mSkin = $wgUser->getSkin();
+		$this->skin = $wgUser->getSkin();
 	}
 
 	function validPost( $permission ) {
@@ -162,7 +162,7 @@ abstract class CodeView {
 	function authorLink( $author, $extraParams = array() ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/author/$author" );
-		return $this->mSkin->link( $special, htmlspecialchars( $author ), array(), $extraParams );
+		return $this->skin->link( $special, htmlspecialchars( $author ), array(), $extraParams );
 	}
 
 	function statusDesc( $status ) {

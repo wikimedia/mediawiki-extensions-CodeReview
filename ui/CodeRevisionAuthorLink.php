@@ -74,7 +74,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 				return;
 			}
 			$this->mRepo->linkUser( $this->mAuthor, $user );
-			$userlink = $this->mSkin->userLink( $user->getId(), $user->getName() );
+			$userlink = $this->skin->userLink( $user->getId(), $user->getName() );
 			$wgOut->addHTML(
 				'<div class="successbox">' .
 				wfMsgHtml( 'code-author-success', $this->authorLink( $this->mAuthor ), $userlink ) .

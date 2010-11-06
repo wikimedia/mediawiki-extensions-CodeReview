@@ -4,7 +4,7 @@ abstract class CodeCommentLinker {
 
 	function __construct( $repo ) {
 		global $wgUser;
-		$this->mSkin = $wgUser->getSkin();
+		$this->skin = $wgUser->getSkin();
 		$this->mRepo = $repo;
 	}
 
@@ -54,11 +54,11 @@ abstract class CodeCommentLinker {
 
 class CodeCommentLinkerHtml extends CodeCommentLinker {
 	function makeExternalLink( $url, $text ) {
-		return $this->mSkin->makeExternalLink( $url, $text );
+		return $this->skin->makeExternalLink( $url, $text );
 	}
 
 	function makeInternalLink( $title, $text ) {
-		return $this->mSkin->link( $title, $text );
+		return $this->skin->link( $title, $text );
 	}
 }
 

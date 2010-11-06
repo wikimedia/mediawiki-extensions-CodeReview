@@ -31,7 +31,7 @@ class CodeRepoStatsView extends CodeView {
 			foreach ( CodeRevision::getPossibleStates() as $state ) {
 				$count = isset( $stats->states[$state] ) ? $stats->states[$state] : 0;
 				$count = htmlspecialchars( $wgLang->formatNum( $count ) );
-				$link = $this->mSkin->link(
+				$link = $this->skin->link(
 					SpecialPage::getTitleFor( 'Code', $repoName . '/status/' . $state ),
 					htmlspecialchars( $this->statusDesc( $state ) )
 				);
@@ -48,7 +48,7 @@ class CodeRepoStatsView extends CodeView {
 				. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
 			foreach ( $stats->fixmes as $user => $count ) {
 				$count = htmlspecialchars( $wgLang->formatNum( $count ) );
-				$link = $this->mSkin->link(
+				$link = $this->skin->link(
 					SpecialPage::getTitleFor( 'Code', $repoName . '/author/' . $user ),
 					htmlspecialchars( $user )
 				);

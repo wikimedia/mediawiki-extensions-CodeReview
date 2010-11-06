@@ -17,8 +17,8 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 			return wfMsg( 'code-author-orphan' );
 
 		return wfMsgHtml( 'code-author-haslink',
-			$this->mSkin->userLink( $this->mUser->getId(), $this->mUser->getName() ) .
-			$this->mSkin->userToolLinks( $this->mUser->getId(), $this->mUser->getName() ) );
+			$this->skin->userLink( $this->mUser->getId(), $this->mUser->getName() ) .
+			$this->skin->userToolLinks( $this->mUser->getId(), $this->mUser->getName() ) );
 	}
 
 	function execute() {
@@ -29,7 +29,7 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 		if ( $wgUser->isAllowed( 'codereview-link-user' ) ) {
 			$repo = $this->mRepo->getName();
 			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor/link" );
-			$linkInfo .= ' (' . $this->mSkin->link( $page,
+			$linkInfo .= ' (' . $this->skin->link( $page,
 				wfMsg( 'code-author-' . ( $this->mUser ? 'un':'' ) . 'link' ) ) . ')' ;
 		}
 
