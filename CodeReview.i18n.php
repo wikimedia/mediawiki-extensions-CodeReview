@@ -1381,14 +1381,11 @@ URL klok : $3
 Diverrañ eus ar c\'hemmoù :
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2] : merzet ez eus bet ur giladenn gant an amprouadenn emgefre',
-	'codereview-email-body3' => "Merzet ez eus bet ur giladenn gant an amprouadenn emgefre en abeg d'ar c'hemmoù degaset er stumm $1.
+	'codereview-email-subj3' => '[$1] [$2] : cheñchet en deus stad ar stumm',
+	'codereview-email-body3' => 'An implijer "$1" en deus kemmet stad $2.
 
-URL klok : $2
-
-Diverrañ evit ar c'has :
-
-$3",
+Stad kozh : $2
+Stad nevez : $3',
 	'code-stats' => 'stadegoù',
 	'code-stats-header' => 'Stadegoù evit ar sanailh $1',
 	'code-stats-main' => "D'an deiziad $1, an dastummlec'h en doa $2 {{PLURAL:$2|adweladenn|adweladenn}} gant [[Special:Code/$3/author|$4 {{PLURAL:$4|oberour|oberour}}]].",
@@ -2019,6 +2016,7 @@ $messages['de'] = array(
 	'code-field-user' => 'Kommentator',
 	'code-field-message' => 'Kommentar',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Status-Beschreibung',
 	'code-field-timestamp' => 'Datum',
 	'code-field-comments' => 'Notizen',
 	'code-field-path' => 'Pfad',
@@ -3926,6 +3924,7 @@ $messages['gl'] = array(
 	'code-field-user' => 'Comentarista',
 	'code-field-message' => 'Resumo de tarefas',
 	'code-field-status' => 'Estado',
+	'code-field-status-description' => 'Descrición do estado',
 	'code-field-timestamp' => 'Data',
 	'code-field-comments' => 'Notas',
 	'code-field-path' => 'Ruta',
@@ -4212,6 +4211,7 @@ $messages['gsw'] = array(
 	'code-field-user' => 'Kommentator',
 	'code-field-message' => 'Kommentar',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Status-Bschryybig',
 	'code-field-timestamp' => 'Datum',
 	'code-field-comments' => 'Notize',
 	'code-field-path' => 'Pfad',
@@ -5052,6 +5052,7 @@ $messages['ia'] = array(
 	'code-field-user' => 'Commentator',
 	'code-field-message' => 'Summario de publication',
 	'code-field-status' => 'Stato',
+	'code-field-status-description' => 'Description del stato',
 	'code-field-timestamp' => 'Data',
 	'code-field-comments' => 'Notas',
 	'code-field-path' => 'Cammino',
@@ -6771,6 +6772,7 @@ $messages['mk'] = array(
 	'code-field-user' => 'Коментатор',
 	'code-field-message' => 'Опис на измените',
 	'code-field-status' => 'Статус',
+	'code-field-status-description' => 'Опис на статусот',
 	'code-field-timestamp' => 'Датум',
 	'code-field-comments' => 'Белешки',
 	'code-field-path' => 'Пат',
@@ -6934,6 +6936,7 @@ $messages['ml'] = array(
 	'code-authors' => 'രചയിതാക്കൾ',
 	'code-status' => 'അവസ്ഥകൾ',
 	'code-tags' => 'റ്റാഗുകൾ',
+	'code-tags-no-tags' => 'ഈ റെപ്പോസിറ്ററിയിൽ റ്റാഗുകളൊന്നും നിലവിലില്ല.',
 	'code-authors-text' => 'താഴെ ഉൾപ്പെടുത്തിയ പേരിന്റെ ക്രമത്തിൽ റെപ്പോ രചയിതാക്കളുടെ പട്ടിക കൊടുത്തിരിക്കുന്നു. പ്രാദേശിക വിക്കി അംഗത്വങ്ങൾ കോഷ്ഠകങ്ങൾക്കുള്ളിൽ കാണാം. വിവരങ്ങൾ പ്രാദേശികമായി ശേഖരിച്ച് വെച്ചിരിക്കുന്നതാവാം.',
 	'code-author-haslink' => '$1 എന്ന വിക്കി ഉപയോക്താവുമായി ഈ രചയിതാവിനെ കണ്ണി ചേർത്തിരിക്കുന്നു',
 	'code-author-orphan' => 'വിക്കി അംഗത്വവുമായി ഈ രചിയിതാവിന് കണ്ണികളൊന്നുമില്ല',
@@ -6954,6 +6957,7 @@ $messages['ml'] = array(
 	'code-field-user' => 'അഭിപ്രായപ്പെട്ടയാൾ',
 	'code-field-message' => 'കൈക്കൊണ്ട പ്രവൃത്തിയുടെ ചുരുക്കം',
 	'code-field-status' => 'സ്ഥിതി',
+	'code-field-status-description' => 'തൽസ്ഥിതിയുടെ വിവരണം',
 	'code-field-timestamp' => 'തീയതി',
 	'code-field-comments' => 'കുറിപ്പുകൾ',
 	'code-field-path' => 'പഥം',
@@ -7724,6 +7728,7 @@ $messages['no'] = array(
 	'code-authors' => 'forfattere',
 	'code-status' => 'tilstander',
 	'code-tags' => 'tagger',
+	'code-tags-no-tags' => 'Ingen merkelapper finnes i dette repositoriet.',
 	'code-authors-text' => 'Nedenfor er en liste over repo-forfattere sortert etter bidragsnavn. Lokale wikikontoer vises i parantes. Data kan være hurtiglagret.',
 	'code-author-haslink' => 'Denne forfatteren er lenket til wikibruker $1',
 	'code-author-orphan' => 'Denne forfatteren har ingen lenke til en wiki-konto',
@@ -7744,6 +7749,7 @@ $messages['no'] = array(
 	'code-field-user' => 'Kommentator',
 	'code-field-message' => 'Endringssammendrag',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Statusbeskrivelse',
 	'code-field-timestamp' => 'Dato',
 	'code-field-comments' => 'Notater',
 	'code-field-path' => 'Sti',
@@ -9923,6 +9929,7 @@ $messages['sl'] = array(
 	'code-authors' => 'avtorji',
 	'code-status' => 'stanja',
 	'code-tags' => 'oznake',
+	'code-tags-no-tags' => 'V tej shrambi ne obstaja nobena oznaka.',
 	'code-authors-text' => 'Spodaj je seznam avtorjev shrambe razporejenih po prispevajočem imenu. Lokalni wikiračuni so prikazani v oklepajih. Podatki so lahko predpomnjeni.',
 	'code-author-haslink' => 'Ta avtor je povezan z wikiuporabnikom $1',
 	'code-author-orphan' => 'Ta avtor nima povezave z wikiračunom',
@@ -9943,6 +9950,7 @@ $messages['sl'] = array(
 	'code-field-user' => 'Komentator',
 	'code-field-message' => 'Prispevan povzetek',
 	'code-field-status' => 'Stanje',
+	'code-field-status-description' => 'Opis stanja',
 	'code-field-timestamp' => 'Datum',
 	'code-field-comments' => 'Beležke',
 	'code-field-path' => 'Pot',
@@ -11803,6 +11811,7 @@ $messages['vi'] = array(
 	'code-field-user' => 'Người bình luận',
 	'code-field-message' => 'Đăng tóm lược',
 	'code-field-status' => 'Trạng thái',
+	'code-field-status-description' => 'Miêu tả trạng thái',
 	'code-field-timestamp' => 'Lúc giờ',
 	'code-field-comments' => 'Ghi chú',
 	'code-field-path' => 'Đường dẫn',
