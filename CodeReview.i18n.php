@@ -943,6 +943,7 @@ $messages['be-tarask'] = array(
 	'code-authors' => 'аўтары',
 	'code-status' => 'станы',
 	'code-tags' => 'тэгі',
+	'code-tags-no-tags' => 'Няма тэгаў у гэтым сховішчы.',
 	'code-authors-text' => 'Ніжэй пададзены сьпіс аўтараў сховішча ўпарадкаваны па імёнах. Рахункі лякальнай вікі паказаныя ў дужках. Гэтыя зьвесткі могуць быць кэшавая.',
 	'code-author-haslink' => 'Гэты аўтар асацыяваны з удзельнікам $1',
 	'code-author-orphan' => 'Гэты аўтар ня мае спасылкі на рахунак удзельніка вікі',
@@ -963,6 +964,7 @@ $messages['be-tarask'] = array(
 	'code-field-user' => 'Аўтар камэнтара',
 	'code-field-message' => 'Кароткае апісаньне зьменаў',
 	'code-field-status' => 'Статус',
+	'code-field-status-description' => 'Апісаньне статусу',
 	'code-field-timestamp' => 'Дата',
 	'code-field-comments' => 'Камэнтары',
 	'code-field-path' => 'Шлях',
@@ -1439,6 +1441,7 @@ $messages['bs'] = array(
 	'code-authors' => 'autori',
 	'code-status' => 'statusi',
 	'code-tags' => 'oznake',
+	'code-tags-no-tags' => 'Ne postoje oznake u ovom repozitorijumu.',
 	'code-authors-text' => 'Ispod je spisak autora repozitorijuma poredanih po imenima. Lokalni wiki računi su prikazani pod navodnicima. Podaci mogu biti keširani.',
 	'code-author-haslink' => 'Ovaj autor je povezan wiki korisničkim računom $1',
 	'code-author-orphan' => 'Ovaj autor nije povezan sa wiki računom',
@@ -1459,6 +1462,7 @@ $messages['bs'] = array(
 	'code-field-user' => 'Komentator',
 	'code-field-message' => 'Pošalji sažetak',
 	'code-field-status' => 'Stanje',
+	'code-field-status-description' => 'Opis stanja',
 	'code-field-timestamp' => 'Datum',
 	'code-field-comments' => 'Bilješke',
 	'code-field-path' => 'Putanja',
@@ -2869,6 +2873,8 @@ $messages['es'] = array(
 	'code-status-desc-deferred' => 'La revisión no requiere revisión.',
 	'code-status-old' => 'antiguo',
 	'code-status-desc-old' => 'Revisión antigua que puede contener defectos, pero cuya verificación no se justifica.',
+	'code-signoff-field-user' => 'Usuario',
+	'code-signoff-field-date' => 'Fecha',
 	'code-pathsearch-legend' => 'Buscar revisiones en este repositorio por ruta',
 	'code-pathsearch-path' => 'Ruta:',
 	'code-pathsearch-filter' => 'Filtro aplicado:',
@@ -2906,7 +2912,7 @@ URL completa : $3
 Resumen de las confirmaciones:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2] : la prueba automática ha detectado una regresión',
+	'codereview-email-subj3' => '[$1] [$2] : El estado de revisión ha cambiado',
 	'codereview-email-body3' => 'La prueba automática ha mostrado una regresión debido a los cambios realizados en $1.
 
 URL completa: $2
@@ -2914,6 +2920,7 @@ URL completa: $2
 Resumen de confirmación:
 
 $3',
+	'codereview-email-subj4' => '[$1] [$2]: Nuevo comentario añadido, y cambiado el estado de la revisión',
 	'code-stats' => 'estadísticas',
 	'code-stats-header' => 'Estadísticas del repositorio $1',
 	'code-stats-main' => ' A la fecha de $1, el repositorio tiene $2 {{PLURAL:$2|revisión|revisiones}} hechas por [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autores}}]].',
@@ -3560,6 +3567,7 @@ $messages['fr'] = array(
 	'code-field-user' => 'Commentateur',
 	'code-field-message' => 'Résumé de publication',
 	'code-field-status' => 'État',
+	'code-field-status-description' => 'Description de l’état',
 	'code-field-timestamp' => 'Date',
 	'code-field-comments' => 'Notes',
 	'code-field-path' => 'Chemin',
@@ -4713,7 +4721,7 @@ $messages['hsb'] = array(
 	'code-authors' => 'awtorojo',
 	'code-status' => 'statusy',
 	'code-tags' => 'taflički',
-	'code-authors-text' => 'To je lisćina awtorow repozitorija sortěrowanych po mjenach. Lokalne wikikonta pokazuja so w spinkach.',
+	'code-authors-text' => 'To je lisćina awtorow repozitorija sortěrowanych po mjenach. Lokalne wikikonta pokazuja so w spinkach. Daty móžeja z pufrowaka być.',
 	'code-author-haslink' => 'Tutón awtor ma wotkaz na wikijoweho wužiwarja $1',
 	'code-author-orphan' => 'Tutón awtor nima wotkaz k wikijowemu kontu',
 	'code-author-dolink' => 'Tutoho awtora z wikijowym wužiwarjom zwjazać:',
@@ -4732,6 +4740,7 @@ $messages['hsb'] = array(
 	'code-field-user' => 'Komentator',
 	'code-field-message' => 'Zjeće nahrać',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Statusowe wopisanje',
 	'code-field-timestamp' => 'Datum',
 	'code-field-comments' => 'Přispomnjenki',
 	'code-field-path' => 'Šćežka',
@@ -4770,6 +4779,11 @@ $messages['hsb'] = array(
 	'code-status-verified' => 'přepruwowany',
 	'code-status-deferred' => 'zadźerženy',
 	'code-status-old' => 'stary',
+	'code-signoff-flag-inspected' => 'Inspicěrowany',
+	'code-signoff-flag-tested' => 'Testowany',
+	'code-signoff-field-user' => 'Wužiwar',
+	'code-signoff-field-flag' => 'Chorhojčka',
+	'code-signoff-field-date' => 'Datum',
 	'code-pathsearch-legend' => 'W tutym repozitoriju po šćežce pytać',
 	'code-pathsearch-path' => 'Šćežka:',
 	'code-pathsearch-filter' => 'Nałoženy filter:',
@@ -4800,21 +4814,21 @@ $4',
 	'codereview-email-subj2' => '[$1] [$2]: Naslědne změny',
 	'codereview-email-body2' => 'Wužiwar "$1" je naslědne změny k $2 činił.
 
-Dopołny URL: $3
+Dospołny URL za naslědnu wersiju: $5
+
+Dospołny URL: $3
 
 Zjeće přenjesenja:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2]: Awtomatiski test je regresiju wotkrył',
-	'codereview-email-body3' => 'Awtomatiski test je změnow w $1 dla regresiju wotkrył.
+	'codereview-email-subj3' => '[$1] [$2]: Wersijowy status je so změnił',
+	'codereview-email-body3' => 'Wužiwar "$1" je status wot $2 změnił.
 
-Dospołny URL: $2
 
-Zjeće:
-
-$3',
+Stary status: $3
+Nowy status: $4',
 	'code-stats' => 'Statistika',
-	'code-stats-header' => 'Statistika repozitorija za $1',
+	'code-stats-header' => 'Statistika repozitorija $1',
 	'code-stats-main' => 'Wot $1 repozitorij ma $2 {{PLURAL:$2|wersiju|wersiji|wersije|wersijow}} wot [[Special:Code/$3/author|$4 {{PLURAL:$4|awtora|awtorow|awtorow|awtorow}}]].',
 	'code-stats-status-breakdown' => 'Ličba wersijow na status',
 	'code-stats-fixme-breakdown' => 'Zwobraznjenje korekturow na awtora',
@@ -5555,6 +5569,7 @@ $4',
  * @author Fryed-peach
  * @author Hosiryuhosi
  * @author Iwai.masaharu
+ * @author Kanon und wikipedia
  * @author Naohiro19
  * @author Whym
  * @author 青子守歌
@@ -5602,6 +5617,7 @@ $messages['ja'] = array(
 	'code-field-user' => 'コメンター',
 	'code-field-message' => 'コミット要約',
 	'code-field-status' => '状態',
+	'code-field-status-description' => 'ステータスの概要',
 	'code-field-timestamp' => '日付',
 	'code-field-comments' => 'コメント',
 	'code-field-path' => 'パス',
@@ -8529,6 +8545,7 @@ $messages['pt'] = array(
 	'code-field-user' => 'Comentador',
 	'code-field-message' => 'Resumo da efectivação',
 	'code-field-status' => 'Estado',
+	'code-field-status-description' => 'Descrição do estado',
 	'code-field-timestamp' => 'Data',
 	'code-field-comments' => 'Notas',
 	'code-field-path' => 'Caminho',
@@ -8670,6 +8687,7 @@ $6',
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
  * @author Giro720
+ * @author Helder.wiki
  * @author Heldergeovane
  */
 $messages['pt-br'] = array(
@@ -8715,6 +8733,7 @@ $messages['pt-br'] = array(
 	'code-field-user' => 'Comentário de',
 	'code-field-message' => 'Resumo de tarefas',
 	'code-field-status' => 'Estado',
+	'code-field-status-description' => 'Descrição do estado',
 	'code-field-timestamp' => 'Data',
 	'code-field-comments' => 'Notas',
 	'code-field-path' => 'Caminho',
