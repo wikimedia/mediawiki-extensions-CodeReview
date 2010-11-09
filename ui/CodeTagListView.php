@@ -13,7 +13,7 @@ class CodeTagListView extends CodeView {
 		$list = $this->mRepo->getTagList();
 
 		if( 0 === count( $list ) ) {
-			$wgOut->addWikiText( wfMsg( 'code-tags-no-tags' ) );
+			$wgOut->addWikiMsg( 'code-tags-no-tags' );
 		} else {
 			# Show a cloud made of tags
 			$tc = new WordCloud( $list, array( $this, 'linkCallback' ) );
