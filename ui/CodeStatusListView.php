@@ -17,14 +17,14 @@ class CodeStatusListView extends CodeView {
 		foreach ( $states as $state ) {
 			$link = $this->skin->link(
 				SpecialPage::getTitleFor( 'Code', $name . "/status/$state" ),
-				wfMsg( "code-status-".$state )
+				wfMsgHtml( "code-status-".$state )
 			);
 			$table_rows .= "<tr><td class=\"mw-codereview-status-$state\">$link</td>"
-				. "<td>" . wfMsg( "code-status-desc-" . $state ) . "</td></tr>\n" ;
+				. "<td>" . wfMsgHtml( "code-status-desc-" . $state ) . "</td></tr>\n" ;
 		}
 		$wgOut->addHTML( '<table class="TablePager">'
-			. '<tr><th>' . wfMsg( 'code-field-status' ) . '</th>'
-			. '<th>' . wfMsg( 'code-field-status-description' ) . '</th></tr>'
+			. '<tr><th>' . wfMsgHtml( 'code-field-status' ) . '</th>'
+			. '<th>' . wfMsgHtml( 'code-field-status-description' ) . '</th></tr>'
 			. $table_rows
 			. '</table>'   
 		);
