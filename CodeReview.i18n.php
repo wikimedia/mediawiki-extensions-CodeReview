@@ -803,13 +803,13 @@ $messages['ba'] = array(
 	'code-field-user' => 'Комментатор',
 	'code-field-message' => 'Үҙгәртеүҙәр',
 	'code-field-status' => 'Статус',
-	'code-field-timestamp' => 'Дата',
+	'code-field-timestamp' => 'Көнө',
 	'code-field-comments' => 'Комментарийҙар',
 	'code-field-path' => 'Юл',
 	'code-field-text' => 'Комментарий',
 	'code-field-select' => 'Һайларға',
 	'code-rev-author' => 'Автор:',
-	'code-rev-date' => 'Дата:',
+	'code-rev-date' => 'Көнө:',
 	'code-rev-message' => 'Иҫкәрмә:',
 	'code-rev-repo' => 'Һаҡлағыс:',
 	'code-rev-rev' => 'Ревизия:',
@@ -1281,6 +1281,7 @@ $messages['br'] = array(
 	'code-authors' => 'aozerien',
 	'code-status' => 'statudoù',
 	'code-tags' => 'balizennoù',
+	'code-tags-no-tags' => "N'eus tikedenn ebet er sanailh-mañ",
 	'code-authors-text' => "A-is ez emañ roll an aozerien zo er fiziad en urzh an embannadurioù diwezhañ. Merket eo kontoù ar wiki lec'hel etre krommelloù. Ar roadennoù a c'hell bezañ krubuilhet.",
 	'code-author-haslink' => 'An oberour-mañ a zo liammet gant ar gont wiki $1',
 	'code-author-orphan' => "An oberour-mañ n'en deus liamm ebet gant ur gont wiki",
@@ -1301,6 +1302,7 @@ $messages['br'] = array(
 	'code-field-user' => 'Saver an evezhiadenn',
 	'code-field-message' => 'Tamm diverrañ an embannadenn',
 	'code-field-status' => 'Statud',
+	'code-field-status-description' => 'Deskrivadur ar statud',
 	'code-field-timestamp' => 'Deiziad',
 	'code-field-comments' => 'Notennoù',
 	'code-field-path' => 'Hent',
@@ -1333,14 +1335,24 @@ $messages['br'] = array(
 	'code-rev-total' => "Niver hollek a zisoc'hoù : $1",
 	'code-rev-not-found' => "N'eus ket eus an adweladenn '''$1''' !",
 	'code-status-new' => 'nevez',
+	'code-status-desc-new' => "Un oberiaden zo o c'hortoz evit an adweladenn-mañ (stad dre ziouer)",
 	'code-status-fixme' => 'da zresañ',
+	'code-status-desc-fixme' => 'Merket eo bet an adweladenn-mañ evel faziek pe dreinek gant un adlenner. Ret eo he reizhañ.',
 	'code-status-reverted' => 'distaolet',
+	'code-status-desc-reverted' => "Distaolet eo bet an adweladenn dre un adweladenn nevesoc'h.",
 	'code-status-resolved' => 'diskoulmet',
+	'code-status-desc-resolved' => "Ur gudenn a oa en adweladenn zo bet reizhet en un adweladenn nevesoc'h.",
 	'code-status-ok' => 'mat eo',
+	'code-status-desc-ok' => 'Adlennet-pizh eo bet an adweladenn hag asur eo an adlenner ez eo mat e pep keñver.',
 	'code-status-verified' => 'Gwiriet',
 	'code-status-desc-verified' => 'Amprouet eo bet an adweladenn ha mont a ra en-dro evel ma oa gortozet.',
 	'code-status-deferred' => 'ampellet',
+	'code-status-desc-deferred' => "N'eo ket dav adlenn an adweladenn.",
 	'code-status-old' => 'kozh',
+	'code-status-desc-old' => 'Adweladenn gozh dreinek evit doare met na dalvez ket ar boan bezañ adlennet.',
+	'code-signoffs' => 'Aprouadennoù',
+	'code-signoff-legend' => 'Ouzhpennañ un aprouadenn',
+	'code-signoff-submit' => 'Aprouiñ',
 	'code-signoff-flag-inspected' => 'Ensellet',
 	'code-signoff-flag-tested' => 'Amprouet',
 	'code-signoff-field-user' => 'Implijer',
@@ -1384,10 +1396,23 @@ Diverrañ eus ar c\'hemmoù :
 
 $4',
 	'codereview-email-subj3' => '[$1] [$2] : cheñchet en deus stad ar stumm',
-	'codereview-email-body3' => 'An implijer "$1" en deus kemmet stad $2.
+	'codereview-email-body3' => 'Kemmet eo bet statud $2 gant an implijer "$1".
 
-Stad kozh : $2
-Stad nevez : $3',
+Statud kozh : $3
+Stad nevez : $4',
+	'codereview-email-subj4' => '[$1] [$2]: Evezhiadenn nevez ouzhpennet, ha cheñchet statud ar sutmm',
+	'codereview-email-body4' => 'Kemmet eo bet statud $2 gant an implijer "$1".
+
+Statud kozh : $3
+Statud nevez : $4
+
+Postet ez eus bet un evezhiadenn war $2 gant an implijer "$1" ivez.
+
+URL klok : $5
+
+Evezhiadenn :
+
+$6',
 	'code-stats' => 'stadegoù',
 	'code-stats-header' => 'Stadegoù evit ar sanailh $1',
 	'code-stats-main' => "D'an deiziad $1, an dastummlec'h en doa $2 {{PLURAL:$2|adweladenn|adweladenn}} gant [[Special:Code/$3/author|$4 {{PLURAL:$4|oberour|oberour}}]].",
@@ -1411,6 +1436,7 @@ Stad nevez : $3',
 	'right-codereview-remove-tag' => "Tennañ balizennoù d'an adweladennoù",
 	'right-codereview-post-comment' => "Ouzhpennañ evezhiadennoù d'an adweladennoù",
 	'right-codereview-set-status' => 'Kemmañ statud an adweladennoù',
+	'right-codereview-signoff' => 'Aprouiñ adweladennoù',
 	'right-codereview-link-user' => "Liammañ an oberourien d'an implijerien wiki",
 	'specialpages-group-developer' => 'Ostilhoù diorren',
 );
@@ -7043,7 +7069,7 @@ $messages['ml'] = array(
 	'code-batch-tags' => 'റ്റാഗുകൾ മാറ്റുക:',
 	'codereview-batch-title' => 'തിരഞ്ഞെടുത്ത എല്ലാ നാൾപ്പതിപ്പുകളിലും മാറ്റം‌‌വരുത്തുക',
 	'codereview-batch-submit' => 'സമർപ്പിക്കുക',
-	'code-releasenotes' => 'പുറത്തിറക്കൽ കുറിപ്പുകൾ',
+	'code-releasenotes' => 'പ്രകാശന കുറിപ്പുകൾ',
 	'code-release-legend' => 'പുറത്തിറക്കൽ കുറിപ്പുകൾ സൃഷ്ടിക്കുക',
 	'code-release-startrev' => 'ആദ്യ നാൾപ്പതിപ്പ്:',
 	'code-release-endrev' => 'അവസാന നാൾപ്പതിപ്പ്:',
