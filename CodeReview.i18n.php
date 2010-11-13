@@ -4749,6 +4749,7 @@ $messages['hsb'] = array(
 	'code-authors' => 'awtorojo',
 	'code-status' => 'statusy',
 	'code-tags' => 'taflički',
+	'code-tags-no-tags' => 'W tutym repozitoriju žane taflički njejsu.',
 	'code-authors-text' => 'To je lisćina awtorow repozitorija sortěrowanych po mjenach. Lokalne wikikonta pokazuja so w spinkach. Daty móžeja z pufrowaka być.',
 	'code-author-haslink' => 'Tutón awtor ma wotkaz na wikijoweho wužiwarja $1',
 	'code-author-orphan' => 'Tutón awtor nima wotkaz k wikijowemu kontu',
@@ -4762,6 +4763,7 @@ $messages['hsb'] = array(
 	'code-author-unlinksuccess' => 'Awtor $1 bu wotwjazany',
 	'code-author-badtoken' => 'Posedźenski zmylk při pospyće, akciju wuwjesć.',
 	'code-author-total' => 'Cyłkowna ličba awtorow: $1',
+	'code-author-lastcommit' => 'Posledni přenošowanski datum',
 	'code-browsing-path' => "Přepytuja so wersije w '''$1'''",
 	'code-field-id' => 'Rewizija',
 	'code-field-author' => 'Awtor',
@@ -4799,14 +4801,26 @@ $messages['hsb'] = array(
 	'code-rev-diff-too-large' => 'Rozdźěl je přewulki za zwobraznjenje.',
 	'code-rev-purge-link' => 'Pufrowak wuprózdnić',
 	'code-rev-total' => 'Cyłkowna ličba wuslědkow: $1',
+	'code-rev-not-found' => "Wersija '''$1''' njeeksistuje!",
 	'code-status-new' => 'nowy',
+	'code-status-desc-new' => 'Wersija akciju wočakuje (standardny status)',
 	'code-status-fixme' => 'porjedźić',
+	'code-status-desc-fixme' => 'Posudźowar markěrowaše wersiju jako poškodźeny abo jako zawinowar programoweho zmylka. Wona měła so porjedźić.',
 	'code-status-reverted' => 'anulowany',
+	'code-status-desc-reverted' => 'Wersija bu přez pozdźišu wersiju cofnjena.',
 	'code-status-resolved' => 'sčinjeny',
+	'code-status-desc-resolved' => 'Wersija měješe problem, kotryž je so hižo přez pozdźišu wersiju wobdźěłał.',
 	'code-status-ok' => 'w porjadku',
+	'code-status-desc-ok' => 'Wersija je so dospołnje přepruwował a posudźowar je sej wěsty, zo wona je w kóždym nastupanju w porjadku.',
 	'code-status-verified' => 'přepruwowany',
+	'code-status-desc-verified' => 'Wersija je so testowała a funguje kaž požadana.',
 	'code-status-deferred' => 'zadźerženy',
+	'code-status-desc-deferred' => 'Wersija sej žanu přepruwowanje njewužaduje.',
 	'code-status-old' => 'stary',
+	'code-status-desc-old' => 'Stara wersija z potencielnymi programowymi zmylkami, kotrež njejsu prócy hódne je přepruwować.',
+	'code-signoffs' => 'Dopušćenja',
+	'code-signoff-legend' => 'Dopušćenje přidać',
+	'code-signoff-submit' => 'Dopušćić',
 	'code-signoff-flag-inspected' => 'Inspicěrowany',
 	'code-signoff-flag-tested' => 'Testowany',
 	'code-signoff-field-user' => 'Wužiwar',
@@ -4855,6 +4869,19 @@ $4',
 
 Stary status: $3
 Nowy status: $4',
+	'codereview-email-subj4' => '[$1] [$2]: Nowy komentar přidaty, a status wersije je so změnił',
+	'codereview-email-body4' => 'Wužiwar "$1" je status za $2 změnił.
+
+Stary status: $3
+Nowy status: $4
+
+Wužiwar "$1" je tež dnja $2 komentar pósłał.
+
+Dospołny URL: $5
+
+Komentar:
+
+$6',
 	'code-stats' => 'Statistika',
 	'code-stats-header' => 'Statistika repozitorija $1',
 	'code-stats-main' => 'Wot $1 repozitorij ma $2 {{PLURAL:$2|wersiju|wersiji|wersije|wersijow}} wot [[Special:Code/$3/author|$4 {{PLURAL:$4|awtora|awtorow|awtorow|awtorow}}]].',
@@ -4871,12 +4898,14 @@ Nowy status: $4',
 	'repoadmin-edit-view' => 'Šćežka k ViewVC:',
 	'repoadmin-edit-button' => 'W porjadku',
 	'repoadmin-edit-sucess' => 'Repozitorij "[[Special:Code/$1|$1]]" bu wuspěšnje změnjeny.',
+	'repoadmin-nav' => 'Administracija repozitorija',
 	'right-repoadmin' => 'Kodowe repozitorije zrjadować',
 	'right-codereview-use' => 'Special:Code wužiwać',
 	'right-codereview-add-tag' => 'Nowe taflički rewizijam přidać',
 	'right-codereview-remove-tag' => 'Taflički z rewizijow wotstronić',
 	'right-codereview-post-comment' => 'Komentary wo rewizijach přidać',
 	'right-codereview-set-status' => 'Status rewizijow změnić',
+	'right-codereview-signoff' => 'Wersije dopušćić',
 	'right-codereview-link-user' => 'Awtorow z wikijowymi wužiwarjemi zwjazać',
 	'specialpages-group-developer' => 'Nastroje wuwiwarjow',
 );
@@ -9609,6 +9638,9 @@ $messages['sah'] = array(
 	'code-status-desc-deferred' => 'Ревизия көрүллэр наадата суох.',
 	'code-status-old' => 'урукку',
 	'code-status-desc-old' => 'Урукку ревизия, сыыһалардаах буолуон сөп эрээри, көннөрө сатаан таах кыаххын бараама.',
+	'code-signoff-field-user' => 'Кыттааччы',
+	'code-signoff-field-flag' => 'Бэлиэ',
+	'code-signoff-field-date' => 'Күнэ-дьыла',
 	'code-pathsearch-legend' => 'Биирдиилээн барыллары чопчу аадырыһынан көрдөөһүн',
 	'code-pathsearch-path' => 'Суола:',
 	'code-pathsearch-filter' => 'Туттуллубут сиидэлэр:',
@@ -9646,6 +9678,24 @@ $4',
 Уларыйыы туһунан:
 
 $4',
+	'codereview-email-subj3' => '[$1] [$2]: Барыл туругун уларытыы',
+	'codereview-email-body3' => '«$1» кыттааччы $2 туругун уларыппыт.
+
+Урукку туруга: $3
+Билиҥҥи туруга: $4',
+	'codereview-email-subj4' => '[$1] [$2]: Ырытыыга саҥа этии эбиллибит, барыл туруга уларыйбыт',
+	'codereview-email-body4' => '«$1» кыттааччы $2 туругун уларыппыт.
+
+Урукку туруга: $3
+Билиҥҥи туруга: $4
+
+«$1» кыттааччы эбии манна $2 этии хаалларбыт.
+
+толору URL-а: $5
+
+Этии:
+
+$6',
 	'code-stats' => 'Статистиката:',
 	'code-stats-header' => '«$1» репозиторий статистиката',
 	'code-stats-main' => 'Бу кэмҥэ $1 репозиторийга {{PLURAL:$2|биир ревизия баар|$2 ревизия баар}} [[Special:Code/$3/author|$4 {{PLURAL:$4|ааптар|ахсааннаах ааптар}}]].',
