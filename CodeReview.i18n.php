@@ -4426,6 +4426,7 @@ $messages['he'] = array(
 	'code-authors' => 'כותבים',
 	'code-status' => 'מצבים',
 	'code-tags' => 'תגיות',
+	'code-tags-no-tags' => 'לא קיימים תגים במאגר זה.',
 	'code-authors-text' => 'להלן רשימת הכותבים במאגר לפי סדר שמות המסירות. חשבונות באתר הוויקי המקומי מופיעים בסוגריים. יתכן שהמידע שמור במטמון.',
 	'code-author-haslink' => 'כותב זה מקושר למשתמש הוויקי $1',
 	'code-author-orphan' => 'כותב זה אינו מקושר למשתמש בוויקי',
@@ -4446,6 +4447,7 @@ $messages['he'] = array(
 	'code-field-user' => 'מגיב',
 	'code-field-message' => 'תקציר השינוי',
 	'code-field-status' => 'מצב',
+	'code-field-status-description' => 'תיאור המצב',
 	'code-field-timestamp' => 'תאריך',
 	'code-field-comments' => 'הערות',
 	'code-field-path' => 'נתיב',
@@ -4493,6 +4495,14 @@ $messages['he'] = array(
 	'code-status-desc-deferred' => 'אין צורך לסקור את הגרסה.',
 	'code-status-old' => 'ישנה',
 	'code-status-desc-old' => 'גרסה ישנה עם אפשרות להופעת תקלות שאינן שוות את המאמץ בסקירתן.',
+	'code-signoffs' => 'חתימות',
+	'code-signoff-legend' => 'הוספת חתימה',
+	'code-signoff-submit' => 'חתימה',
+	'code-signoff-flag-inspected' => 'נבחן',
+	'code-signoff-flag-tested' => 'נבדק',
+	'code-signoff-field-user' => 'משתמש',
+	'code-signoff-field-flag' => 'דגלון',
+	'code-signoff-field-date' => 'תאריך',
 	'code-pathsearch-legend' => 'חיפוש גרסאות במאגר זה לפי נתיב',
 	'code-pathsearch-path' => 'נתיב:',
 	'code-pathsearch-filter' => 'מסנן הוחל:',
@@ -4536,10 +4546,23 @@ $4',
 מצב קודם: $3
 מצב חדש: $4',
 	'codereview-email-subj4' => '[$1] [$2]: נוספה הערה חדשה ומצב הגרסה השתנה',
+	'codereview-email-body4' => 'המשתמש "$1" החליף את המצב של $2.
+
+המצב הישן: $3
+המצב החדש: $4
+
+המשתמש "$1" הגיב גם כן על $2.
+
+הכתובת המלאה: $5
+
+הערה:
+
+$6',
 	'code-stats' => 'סטטיסטיקה',
 	'code-stats-header' => 'סטטיסטיקה עבור המאגר $1',
 	'code-stats-main' => 'נכון ל־$1, למאגר יש {{PLURAL:$2|גרסה אחת|$2 גרסאות}} מאת [[Special:Code/$3/author|{{PLURAL:$4|יוצר אחד|$4 יוצרים}}]].',
 	'code-stats-status-breakdown' => 'מספר הגרסאות למצב',
+	'code-stats-fixme-breakdown' => 'מיון של פריטים לתיקון לפי מחבר',
 	'code-stats-count' => 'מספר הגרסאות',
 	'repoadmin' => 'ניהול מאגרים',
 	'repoadmin-new-legend' => 'יצירת מאגר חדש',
@@ -4558,6 +4581,7 @@ $4',
 	'right-codereview-remove-tag' => 'הסרת תגיות מגרסאות',
 	'right-codereview-post-comment' => 'הוסף הערות לגרסאות',
 	'right-codereview-set-status' => 'שינוי מצב הגרסאות',
+	'right-codereview-signoff' => 'חתימה על גרסאות',
 	'right-codereview-link-user' => 'קישור הכותבים למשתמשי ויקי',
 	'specialpages-group-developer' => 'כלי פיתוח',
 );
