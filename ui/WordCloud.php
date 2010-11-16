@@ -84,7 +84,7 @@ class WordCloud {
 	 *
 	 * @return String
 	 */
-	public function showCloud() {
+	public function getCloudHtml() {
 		if( 0 === count( $this->wordsArray ) ) {
 			return;
 		}

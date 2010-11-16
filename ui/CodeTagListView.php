@@ -17,7 +17,7 @@ class CodeTagListView extends CodeView {
 		} else {
 			# Show a cloud made of tags
 			$tc = new WordCloud( $list, array( $this, 'linkCallback' ) );
-			$wgOut->addHTML( $tc->showCloud() );
+			$wgOut->addHTML( $tc->getCloudHtml() );
 		}
 	}
 

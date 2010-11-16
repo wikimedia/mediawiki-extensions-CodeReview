@@ -29,7 +29,8 @@ class SpecialCode extends SpecialPage {
 		}
 
 		// Add subtitle for easy navigation
-		if ( $view instanceof CodeView && ( $repo = $view->getRepo() ) ) {
+		$repo = $view->getRepo();
+		if ( $view instanceof CodeView && $repo ) {
 			$wgOut->setSubtitle(
 				wfMsgExt( 'codereview-subtitle', 'parse', CodeRepoListView::getNavItem( $repo ) )
 			);
