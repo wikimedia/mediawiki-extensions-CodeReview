@@ -47,8 +47,10 @@ class CodeRevisionListView extends CodeView {
 		$limitForm = $pager->getLimitForm();
 
 		$wgOut->addHTML(
-			'<table><tr><td>' .
+			'<table><tr>' .
 			$navBar .
+			'</tr>' .
+			'<tr><td>' .
 			$limitForm .
 			'</td><td style="padding-left: 2em;">' .
 			'&#160;<strong>' . wfMsgHtml( 'code-rev-total', $revCount ) . '</strong>' .
@@ -380,3 +382,4 @@ class SvnRevTablePager extends SvnTablePager {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() );
 	}
 }
+
