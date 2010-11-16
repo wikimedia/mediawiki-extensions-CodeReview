@@ -30,7 +30,8 @@ class CodeRevisionListView extends CodeView {
 			return;
 		}
 
-		$this->showForm();
+		$pathForm = $this->showForm();
+	    $wgOut->addHTML( $pathForm );
 
 		// Get the total count across all pages
 		$dbr = wfGetDB( DB_SLAVE );
@@ -61,10 +62,12 @@ class CodeRevisionListView extends CodeView {
 			( $this->batchForm ? $this->buildBatchInterface( $pager ) : "" ) .
 			Xml::closeElement( 'form' )
 		);
+
+	    $wgOut->addHTML( $pathForm );
 	}
 
 	function doBatchChange() {
-		global $wgRequest;
+		global $wgRequest, $wgUser, $wgOut;
 
 		$revisions = $wgRequest->getArray( 'wpRevisionSelected' );
 		$removeTags = $wgRequest->getVal( 'wpRemoveTag' );
@@ -79,7 +82,6 @@ class CodeRevisionListView extends CodeView {
 			$revObjects[] = CodeRevision::newFromRow( $this->mRepo, $row );
 		}
 
-		global $wgUser;
 		if ( $wgUser->isAllowed( 'codereview-add-tag' ) &&
 				$addTags || $removeTags ) {
 			$addTags = array_map( 'trim', explode( ",", $addTags ) );
@@ -106,7 +108,6 @@ class CodeRevisionListView extends CodeView {
 			}
 		}
 
-		global $wgOut;
 		$wgOut->redirect( $this->getPager()->getTitle()->getFullURL( $fields ) );
 	}
 
@@ -142,34 +143,37 @@ class CodeRevisionListView extends CodeView {
 		return $changeInterface;
 	}
 
-	function showForm( $path = '' ) {
-		global $wgOut, $wgScript;
+	/**
+	 * @return string
+	 */
+	function showForm() {
+		global $wgScript;
 		if ( $this->mAuthor ) {
 			$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/author/' . $this->mAuthor );
 		} else {
 			$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/path' );
 		}
-		$wgOut->addHTML(
-			Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
+
+		$ret = Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 			"<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
 				'<table width="100%"><tr><td>' .
 				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55, $this->mPath ) .
 				'&#160;' . Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
-				'</td>'
-		);
+				'</td>';
+
 		if ( strlen( $this->mAppliedFilter ) ) {
-			$wgOut->addHTML(
-				'<td>' .
+			$ret .= '<td>' .
 				Xml::label( wfMsg( 'code-pathsearch-filter' ), 'revFilter' ) . '&#160;<strong>' .
 				Xml::span( $this->mAppliedFilter, '' ) . '</strong>&#160;' .
 				Xml::submitButton( wfMsg( 'code-revfilter-clear' ) ) .
 				'</td>' .
-				Html::hidden( 'title', SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ) )
-			);
+				Html::hidden( 'title', SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ) );
 		} else {
-			$wgOut->addHTML( Html::hidden( 'title', $special->getPrefixedDBKey() ) );
+			$ret .= Html::hidden( 'title', $special->getPrefixedDBKey() ) ;
 		}
-		$wgOut->addHTML( "</tr></table></fieldset>" . Xml::closeElement( 'form' ) );
+		$ret .= "</tr></table></fieldset>" ;
+
+	    return $ret;
 	}
 
 	function getPager() {
