@@ -42,9 +42,11 @@ class CodeRevisionListView extends CodeView {
 		$this->batchForm = $wgUser->isAllowed( 'codereview-set-status' ) ||
 			$wgUser->isAllowed( 'codereview-add-tag' );
 
+		$navBar = $pager->getNavigationBar();
+
 		$wgOut->addHTML(
 			'<table><tr><td>' .
-			$pager->getNavigationBar() .
+			$navBar .
 			$pager->getLimitForm() .
 			'</td><td style="padding-left: 2em;">' .
 			'&#160;<strong>' . wfMsgHtml( 'code-rev-total', $revCount ) . '</strong>' .
@@ -53,7 +55,7 @@ class CodeRevisionListView extends CodeView {
 				array( 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'post' )
 			) .
 			$pager->getBody() .
-			$pager->getNavigationBar() .
+			$navBar .
 			( $this->batchForm ? $this->buildBatchInterface( $pager ) : "" ) .
 			Xml::closeElement( 'form' )
 		);
