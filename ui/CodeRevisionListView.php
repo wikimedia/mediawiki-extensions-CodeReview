@@ -47,14 +47,10 @@ class CodeRevisionListView extends CodeView {
 		$limitForm = $pager->getLimitForm();
 
 		$wgOut->addHTML(
-			'<table><tr>' .
 			$navBar .
-			'</tr>' .
-			'<tr><td>' .
-			$limitForm .
-			'</td><td style="padding-left: 2em;">' .
-			'&#160;<strong>' . wfMsgHtml( 'code-rev-total', $revCount ) . '</strong>' .
-			'</td></tr></table>' .
+			'<table><tr><td>' . $limitForm . '</td>' .
+			'<td>&#160;<strong>' . wfMsgHtml( 'code-rev-total', $revCount ) . '</strong></td>' .
+			'</tr></table>' .
 			Xml::openElement( 'form',
 				array( 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'post' )
 			) .
