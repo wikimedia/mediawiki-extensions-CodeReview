@@ -23,7 +23,7 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
-class ApiCodeComments extends ApiQueryBase {
+class ApiQueryCodeComments extends ApiQueryBase {
 	private $props;
 
 	public function __construct( $query, $moduleName ) {

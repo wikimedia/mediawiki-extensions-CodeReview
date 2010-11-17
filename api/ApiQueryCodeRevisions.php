@@ -24,7 +24,7 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
-class ApiCodeRevisions extends ApiQueryBase {
+class ApiQueryCodeRevisions extends ApiQueryBase {
 	private $props;
 
 	public function __construct( $query, $moduleName ) {
