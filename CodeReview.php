@@ -39,8 +39,8 @@ $dir = dirname( __FILE__ ) . '/';
 
 $wgAutoloadClasses['ApiCodeUpdate'] = $dir . 'api/ApiCodeUpdate.php';
 $wgAutoloadClasses['ApiCodeDiff'] = $dir . 'api/ApiCodeDiff.php';
-$wgAutoloadClasses['ApiCodeComments'] = $dir . 'api/ApiCodeComments.php';
-$wgAutoloadClasses['ApiCodeRevisions'] = $dir . 'api/ApiCodeRevisions.php';
+$wgAutoloadClasses['ApiQueryCodeComments'] = $dir . 'api/ApiQueryCodeComments.php';
+$wgAutoloadClasses['ApiQueryCodeRevisions'] = $dir . 'api/ApiQueryCodeRevisions.php';
 
 $wgAutoloadClasses['SubversionAdaptor'] = $dir . 'backend/Subversion.php';
 $wgAutoloadClasses['CodeDiffHighlighter'] = $dir . 'backend/DiffHighlighter.php';
@@ -82,8 +82,8 @@ $wgSpecialPageGroups['RepoAdmin'] = 'developer';
 
 $wgAPIModules['codeupdate'] = 'ApiCodeUpdate';
 $wgAPIModules['codediff'] = 'ApiCodeDiff';
-$wgAPIListModules['codecomments'] = 'ApiCodeComments';
-$wgAPIListModules['coderevisions'] = 'ApiCodeRevisions';
+$wgAPIListModules['codecomments'] = 'ApiQueryCodeComments';
+$wgAPIListModules['coderevisions'] = 'ApiQueryCodeRevisions';
 
 $wgExtensionMessagesFiles['CodeReview'] = $dir . 'CodeReview.i18n.php';
 $wgExtensionAliasesFiles['CodeReview'] = $dir . 'CodeReview.alias.php';
