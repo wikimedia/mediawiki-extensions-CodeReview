@@ -114,6 +114,10 @@ class CodeRepository {
 		return $this->viewVc;
 	}
 
+	public function getBugzillaBase() {
+		return $this->bugzilla;
+	}
+
 	/**
 	 * Return a bug URL or false.
 	 */
