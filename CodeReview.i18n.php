@@ -2356,7 +2356,7 @@ $messages['dsb'] = array(
 	'code-authors' => 'awtory',
 	'code-status' => 'statusy',
 	'code-tags' => 'toflicki',
-	'code-authors-text' => 'To jo lisćina awtorow repozitoriuma sortěrowanych pó mjenjach. Lokalne wikikonta pokazuju se w spinkach.',
+	'code-authors-text' => 'To jo lisćina awtorow repozitoriuma sortěrowanych pó mjenjach. Lokalne wikikonta pokazuju se w spinkach. Daty mógu z pufrowaka byś.',
 	'code-author-haslink' => 'Awtor jo z wikijowym wužywarjom $1 zwězany',
 	'code-author-orphan' => 'Toś ten awtor njama wótkaz k wikijowemu kontoju',
 	'code-author-dolink' => 'Toś togo awtora z wikijowym wužywarjom zwězaś:',
@@ -2413,6 +2413,11 @@ $messages['dsb'] = array(
 	'code-status-verified' => 'pśekontrolěrowany',
 	'code-status-deferred' => 'wótstarcony',
 	'code-status-old' => 'stary',
+	'code-signoff-flag-inspected' => 'Inspicěrowany',
+	'code-signoff-flag-tested' => 'Testowany',
+	'code-signoff-field-user' => 'Wužywaŕ',
+	'code-signoff-field-flag' => 'Chórgojck',
+	'code-signoff-field-date' => 'Datum',
 	'code-pathsearch-legend' => 'Wersije w toś tom repozitoriumje pó sćažce pytaś',
 	'code-pathsearch-path' => 'Sćažka:',
 	'code-pathsearch-filter' => 'Nałožony filter:',
@@ -2443,19 +2448,19 @@ $4',
 	'codereview-email-subj2' => '[$1] [$2]: Naslědne změny',
 	'codereview-email-body2' => 'Wužywaŕ "$1" su naslědne změny k $2 cynił.
 
+Dopołny URL za naslědnu wersiju: $5
+
 Dopołny URL: $3
 
 Zespominanje pśenjasenja:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2]: Awtomatiski test jo regresiju nadejšeł.',
-	'codereview-email-body3' => 'Awtomatiski test jo regresiju změnow w $1 dla nadejšeł.
+	'codereview-email-subj3' => '[$1] [$2]: Status wersije jo se změnił',
+	'codereview-email-body3' => 'Wužywaŕ "$1" jo změnił status wersije  $2.
 
-Dopołny URL: $2
-
-Zapominanje:
-
-$3',
+Stary status: $3
+Nowy status: $4',
+	'codereview-email-subj4' => '[$1] [$2]: Nowy komentar pśidany a status wersije změnjony',
 	'code-stats' => 'statistiki',
 	'code-stats-header' => 'Repozitoriumowa statistika za $1',
 	'code-stats-main' => 'Wót $1 repozitorium ma $2 {{PLURAL:$2|wersiju|wersiji|wersije|wersijow}} wót [[Special:Code/$3/author|$4 {{PLURAL:$4|awtora|awtorowu|awtorow|awtorow}}]].',
@@ -3223,6 +3228,7 @@ $4',
  * @author Mardetanha
  * @author Sahim
  * @author Wayiran
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'code' => 'مرور کد',
@@ -3305,6 +3311,9 @@ $messages['fa'] = array(
 	'code-status-verified' => 'تاییدشده',
 	'code-status-deferred' => 'معوق',
 	'code-status-old' => 'قدیمی',
+	'code-signoff-field-user' => 'کاربر',
+	'code-signoff-field-flag' => 'پرچم',
+	'code-signoff-field-date' => 'تاریخ',
 	'code-pathsearch-legend' => 'جستجوی نسخه‌ها در این مخزن بر اساس مسیر',
 	'code-pathsearch-path' => 'مسیر:',
 	'code-pathsearch-filter' => 'پالایهٔ اعمال‌شده:',
