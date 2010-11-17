@@ -73,10 +73,10 @@ class CodeRevisionCommitter extends CodeRevisionView {
 					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->mOldStatus, $this->mRev->mStatus
 				);
 			} else if ( $commentAdded ) {
-			$url = $this->mRev->getFullUrl( $commentId );
-			$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj', 'codereview-email-body',
-				$wgUser->getName(), $url, $this->mRev->getIdStringUnique(), $this->text
-			);
+				$url = $this->mRev->getFullUrl( $commentId );
+				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj', 'codereview-email-body',
+					$wgUser->getName(), $url, $this->mRev->getIdStringUnique(), $this->text
+				);
 			}
 	    }
 
