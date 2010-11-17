@@ -16,7 +16,7 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	function execute() {
-		global $wgOut, $wgUser, $wgRequest;
+		global $wgOut, $wgUser, $wgRequest, $wgLang;
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();
@@ -49,7 +49,7 @@ class CodeRevisionListView extends CodeView {
 		$wgOut->addHTML(
 			$navBar .
 			'<table><tr><td>' . $limitForm . '</td>' .
-			'<td>&#160;<strong>' . wfMsgHtml( 'code-rev-total', $revCount ) . '</strong></td>' .
+			'<td>&#160;<strong>' . wfMsgHtml( 'code-rev-total', $wgLang->formatNum( $revCount ) ) . '</strong></td>' .
 			'</tr></table>' .
 			Xml::openElement( 'form',
 				array( 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'post' )
@@ -203,7 +203,7 @@ class CodeRevisionListView extends CodeView {
 		$whereCond = array_merge( $whereCond, $this->getSpecializedWhereClause( $dbr ) );
 		$result = $dbr->selectRow( $tables, $selectFields, $whereCond );
 		if ( $result ) {
-			return $result->rev_count;
+			return intval( $result->rev_count );
 		} else {
 			return 0;
 		}
