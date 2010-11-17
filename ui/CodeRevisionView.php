@@ -3,13 +3,29 @@
 // Special:Code/MediaWiki/40696
 class CodeRevisionView extends CodeView {
 
-	function __construct( $repoName, $rev, $replyTarget = null ) {
+	/**
+	 * @param string|CodeRepository $repo
+	 * @param string|CodeRevision $rev
+	 * @param null $replyTarget
+     *
+	 */
+	function __construct( $repo, $rev, $replyTarget = null ) {
 		global $wgRequest;
 		parent::__construct();
-		$this->mRepo = CodeRepository::newFromName( $repoName );
-		$this->mRevId = intval( ltrim( $rev, 'r' ) );
-		$this->mRev = $this->mRepo ?
-			$this->mRepo->getRevision( $this->mRevId ) : null;
+		$this->mRepo = ( $repo instanceof CodeRepository )
+			? $repo
+			: CodeRepository::newFromName( $repo );
+
+		if ( $rev instanceof CodeRevision ) {
+			$this->mRevId = $rev->getId();
+		    $this->mRev = $rev;
+		} else {
+			$this->mRevId = intval( ltrim( $rev, 'r' ) );
+		    $this->mRev = $this->mRepo
+				? $this->mRepo->getRevision( $this->mRevId )
+				: null;
+		}
+
 		$this->mPreviewText = false;
 		# Search path for navigation links
 		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );

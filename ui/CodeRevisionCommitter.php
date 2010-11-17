@@ -1,12 +1,6 @@
 <?php
 
 class CodeRevisionCommitter extends CodeRevisionView {
-
-	function __construct( $repoName, $rev ) {
-		// Parent should set $this->mRepo, $this->mRev, $this->mReplyTarget
-		parent::__construct( $repoName, $rev );
-	}
-
 	function execute() {
 		global $wgRequest, $wgOut, $wgUser;
 
