@@ -18,10 +18,10 @@ class CodeRevisionView extends CodeView {
 
 		if ( $rev instanceof CodeRevision ) {
 			$this->mRevId = $rev->getId();
-		    $this->mRev = $rev;
+			$this->mRev = $rev;
 		} else {
 			$this->mRevId = intval( ltrim( $rev, 'r' ) );
-		    $this->mRev = $this->mRepo
+			$this->mRev = $this->mRepo
 				? $this->mRepo->getRevision( $this->mRevId )
 				: null;
 		}
