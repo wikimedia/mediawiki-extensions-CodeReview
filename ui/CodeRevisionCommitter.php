@@ -65,14 +65,14 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		$dbw->begin();
 		// Change the status if allowed
 		$statusChanged = false;
-		if ( $this->validPost( 'codereview-set-status' ) && $this->mRev->isValidStatus( $status ) ) {
+		if ( $this->mRev->isValidStatus( $status ) && $this->validPost( 'codereview-set-status' ) ) {
 			$statusChanged = $this->mRev->setStatus( $status, $wgUser );
 		}
 		$addTags = $removeTags = array();
-		if ( $this->validPost( 'codereview-add-tag' ) && count( $addTags ) ) {
+		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag' ) ) {
 			$validAddTags = $addTags;
 		}
-		if ( $this->validPost( 'codereview-remove-tag' ) && count( $removeTags ) ) {
+		if ( count( $removeTags ) && $this->validPost( 'codereview-remove-tag' ) ) {
 			$validRemoveTags = $removeTags;
 		}
 		// If allowed to change any tags, then do so
@@ -80,12 +80,12 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $wgUser );
 		}
 		// Add any signoffs
-		if ( $this->validPost( 'codereview-signoff' ) && count( $signoffFlags ) )  {
+		if ( count( $signoffFlags ) && $this->validPost( 'codereview-signoff' ) )  {
 			$this->mRev->addSignoff( $wgUser, $signoffFlags );
 		}
 		// Add any comments
 		$commentAdded = false;
-		if ( $this->validPost( 'codereview-post-comment' ) && strlen( $commentText ) ) {
+		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment' ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
 			$commentId = $this->mRev->saveComment( $commentText, $review, $parent );
 
