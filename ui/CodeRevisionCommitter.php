@@ -125,10 +125,4 @@ class CodeRevisionCommitter extends CodeRevisionView {
 
 	    return $redirTarget;
 	}
-
-	public function validPost( $permission ) {
-		global $wgUser, $wgRequest;
-		return parent::validPost( $permission ) && $wgRequest->wasPosted()
-			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) );
-	}
 }
