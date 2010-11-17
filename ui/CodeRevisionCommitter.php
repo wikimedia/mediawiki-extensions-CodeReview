@@ -20,37 +20,80 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			return;
 		}
 
+		$redirTarget = $this->doRevisionUpdate( $this->mStatus, $this->mAddTags, $this->mRemoveTags,
+			$this->mSignoffFlags, $this->text, $wgRequest->getIntOrNull( 'wpParent' ),
+			$wgRequest->getInt( 'wpReview' )
+		);
+
+		// Return to rev page
+		if ( !$redirTarget ) {
+			// Was "next & unresolved" clicked?
+			if ( $this->jumpToNext ) {
+				$next = $this->mRev->getNextUnresolved( $this->mPath );
+				if ( $next ) {
+					$redirTarget = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $next );
+				} else {
+					$redirTarget = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() );
+				}
+			} else {
+				# $redirTarget already set for comments
+				$redirTarget = $this->revLink();
+			}
+		}
+		$wgOut->redirect( $redirTarget->getFullUrl( array( 'path' => $this->mPath ) ) );
+	}
+
+	/**
+	 * Does the revision database update
+	 *
+	 * @param string $status Status to set the revision to
+	 * @param Array $addTags Tags to add to the revision
+	 * @param Array $removeTags Tags to remove from the Revision
+	 * @param Array $signoffFlags
+	 * @param string $commentText Comment to add to the revision
+	 * @param null|int $parent What the parent comment is (if a subcomment)
+	 * @param int $review (unused)
+	 * @return null|bool|Title False if not a valid rev. Title for redirect target, else null
+	 */
+	public function doRevisionUpdate( $status, $addTags, $removeTags, $signoffFlags, $commentText, $parent = null,
+									  $review = 0 ) {
+
+		if ( !$this->mRev ) {
+			return false;
+		}
+
+		global $wgUser;
+
 		$redirTarget = null;
+
 		$dbw = wfGetDB( DB_MASTER );
 
 		$dbw->begin();
 		// Change the status if allowed
 		$statusChanged = false;
-		if ( $this->validPost( 'codereview-set-status' ) && $this->mRev->isValidStatus( $this->mStatus ) ) {
-			$statusChanged = $this->mRev->setStatus( $this->mStatus, $wgUser );
+		if ( $this->validPost( 'codereview-set-status' ) && $this->mRev->isValidStatus( $status ) ) {
+			$statusChanged = $this->mRev->setStatus( $status, $wgUser );
 		}
 		$addTags = $removeTags = array();
-		if ( $this->validPost( 'codereview-add-tag' ) && count( $this->mAddTags ) ) {
-			$addTags = $this->mAddTags;
+		if ( $this->validPost( 'codereview-add-tag' ) && count( $addTags ) ) {
+			$validAddTags = $addTags;
 		}
-		if ( $this->validPost( 'codereview-remove-tag' ) && count( $this->mRemoveTags ) ) {
-			$removeTags = $this->mRemoveTags;
+		if ( $this->validPost( 'codereview-remove-tag' ) && count( $removeTags ) ) {
+			$validRemoveTags = $removeTags;
 		}
 		// If allowed to change any tags, then do so
-		if ( count( $addTags ) || count( $removeTags ) ) {
-			$this->mRev->changeTags( $addTags, $removeTags, $wgUser );
+		if ( count( $validAddTags ) || count( $validRemoveTags ) ) {
+			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $wgUser );
 		}
 		// Add any signoffs
-		if ( $this->validPost( 'codereview-signoff' ) && count( $this->mSignoffFlags ) )  {
-			$this->mRev->addSignoff( $wgUser, $this->mSignoffFlags );
+		if ( $this->validPost( 'codereview-signoff' ) && count( $signoffFlags ) )  {
+			$this->mRev->addSignoff( $wgUser, $signoffFlags );
 		}
 		// Add any comments
 		$commentAdded = false;
-		if ( $this->validPost( 'codereview-post-comment' ) && strlen( $this->text ) ) {
-			$parent = $wgRequest->getIntOrNull( 'wpParent' );
-			$review = $wgRequest->getInt( 'wpReview' );
+		if ( $this->validPost( 'codereview-post-comment' ) && strlen( $commentText ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
-			$commentId = $this->mRev->saveComment( $this->text, $review, $parent );
+			$commentId = $this->mRev->saveComment( $commentText, $review, $parent );
 
 		    $commentAdded = ($commentId !== 0);
 
@@ -80,22 +123,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			}
 	    }
 
-		// Return to rev page
-		if ( !$redirTarget ) {
-			// Was "next & unresolved" clicked?
-			if ( $this->jumpToNext ) {
-				$next = $this->mRev->getNextUnresolved( $this->mPath );
-				if ( $next ) {
-					$redirTarget = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $next );
-				} else {
-					$redirTarget = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() );
-				}
-			} else {
-				# $redirTarget already set for comments
-				$redirTarget = $this->revLink();
-			}
-		}
-		$wgOut->redirect( $redirTarget->getFullUrl( array( 'path' => $this->mPath ) ) );
+	    return $redirTarget;
 	}
 
 	public function validPost( $permission ) {
