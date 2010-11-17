@@ -68,7 +68,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		if ( $this->mRev->isValidStatus( $status ) && $this->validPost( 'codereview-set-status' ) ) {
 			$statusChanged = $this->mRev->setStatus( $status, $wgUser );
 		}
-		$addTags = $removeTags = array();
+		$validAddTags = $validRemoveTags = array();
 		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag' ) ) {
 			$validAddTags = $addTags;
 		}
