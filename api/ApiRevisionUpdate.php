@@ -50,7 +50,7 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['addtags'],
 			$params['removeTags'],
 			$params['flags'],
-	    	$params['comment']
+			$params['comment']
 		);
 
 		$r = array( 'result' => 'Success' );
