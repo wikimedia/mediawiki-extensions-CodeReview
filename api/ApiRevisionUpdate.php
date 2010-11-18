@@ -48,7 +48,7 @@ class ApiRevisionUpdate extends ApiBase {
 		$revisionCommitter->doRevisionUpdate(
 			$params['status'],
 			$params['addtags'],
-			$params['removeTags'],
+			$params['removetags'],
 			$params['flags'],
 			$params['comment']
 		);
@@ -126,7 +126,7 @@ class ApiRevisionUpdate extends ApiBase {
 
 	public function getExamples() {
 		return array(
-			'api.php?action=updaterev&repo=MediaWiki&rev=1&status=fixme',
+			'api.php?action=coderevisionupdate&repo=MediaWiki&rev=1&status=fixme',
 		);
 	}
 

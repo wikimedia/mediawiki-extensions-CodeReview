@@ -84,7 +84,7 @@ $wgSpecialPageGroups['RepoAdmin'] = 'developer';
 
 $wgAPIModules['codeupdate'] = 'ApiCodeUpdate';
 $wgAPIModules['codediff'] = 'ApiCodeDiff';
-$wgAPIModules['updaterev'] ='ApiRevisionUpdate';
+$wgAPIModules['coderevisionupdate'] ='ApiRevisionUpdate';
 $wgAPIListModules['codecomments'] = 'ApiQueryCodeComments';
 $wgAPIListModules['coderevisions'] = 'ApiQueryCodeRevisions';
 
