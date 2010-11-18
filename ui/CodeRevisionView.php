@@ -7,7 +7,7 @@ class CodeRevisionView extends CodeView {
 	 * @param string|CodeRepository $repo
 	 * @param string|CodeRevision $rev
 	 * @param null $replyTarget
-     *
+	 *
 	 */
 	function __construct( $repo, $rev, $replyTarget = null ) {
 		global $wgRequest;
