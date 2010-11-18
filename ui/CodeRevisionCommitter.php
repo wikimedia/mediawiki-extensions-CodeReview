@@ -19,7 +19,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$wgRequest->getInt( 'wpReview' )
 		);
 
-	    $redirTarget = null;
+		$redirTarget = null;
 
 		// For comments, take us back to the rev page focused on the new comment
 		if ( $commentId !== 0 && !$this->jumpToNext ) {
