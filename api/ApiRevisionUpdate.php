@@ -45,7 +45,7 @@ class ApiRevisionUpdate extends ApiBase {
 
 		$revisionCommitter = new CodeRevisionCommitterApi( $repo, $rev );
 
-		$revisionCommitter->doRevisionUpdate(
+		$revisionCommitter->revisionUpdate(
 			$params['status'],
 			$params['addtags'],
 			$params['removetags'],

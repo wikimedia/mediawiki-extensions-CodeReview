@@ -14,10 +14,17 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			return;
 		}
 
-		$redirTarget = $this->doRevisionUpdate( $this->mStatus, $this->mAddTags, $this->mRemoveTags,
+		$commentId = $this->revisionUpdate( $this->mStatus, $this->mAddTags, $this->mRemoveTags,
 			$this->mSignoffFlags, $this->text, $wgRequest->getIntOrNull( 'wpParent' ),
 			$wgRequest->getInt( 'wpReview' )
 		);
+
+	    $redirTarget = null;
+
+		// For comments, take us back to the rev page focused on the new comment
+		if ( $commentId !== 0 && !$this->jumpToNext ) {
+			$redirTarget = $this->commentLink( $commentId );
+		}
 
 		// Return to rev page
 		if ( !$redirTarget ) {
@@ -47,9 +54,9 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @param string $commentText Comment to add to the revision
 	 * @param null|int $parent What the parent comment is (if a subcomment)
 	 * @param int $review (unused)
-	 * @return null|bool|Title False if not a valid rev. Title for redirect target, else null
+	 * @return int Comment ID if added, else 0
 	 */
-	public function doRevisionUpdate( $status, $addTags, $removeTags, $signoffFlags, $commentText, $parent = null,
+	public function revisionUpdate( $status, $addTags, $removeTags, $signoffFlags, $commentText, $parent = null,
 									  $review = 0 ) {
 
 		if ( !$this->mRev ) {
@@ -57,8 +64,6 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		}
 
 		global $wgUser;
-
-		$redirTarget = null;
 
 		$dbw = wfGetDB( DB_MASTER );
 
@@ -85,16 +90,12 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		}
 		// Add any comments
 		$commentAdded = false;
+		$commentId = 0;
 		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment' ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
 			$commentId = $this->mRev->saveComment( $commentText, $review, $parent );
 
 		    $commentAdded = ($commentId !== 0);
-
-			// For comments, take us back to the rev page focused on the new comment
-			if ( !$this->jumpToNext ) {
-				$redirTarget = $this->commentLink( $commentId );
-			}
 		}
 		$dbw->commit();
 
@@ -117,6 +118,6 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			}
 	    }
 
-	    return $redirTarget;
+	    return $commentId;
 	}
 }
