@@ -137,14 +137,27 @@ class CodeRevision {
 		return $this->mCommonPath;
 	}
 
+	/*
+	 * List of all possible states a CodeRevision can be in
+	 * return Array
+	 */
 	public static function getPossibleStates() {
 		return array( 'new', 'fixme', 'reverted', 'resolved', 'ok', 'verified', 'deferred', 'old' );
 	}
-	
+
+	/*
+	 * List of all flags a user can mark themself as having done to a revision
+	 * Return Array
+	 */
 	public static function getPossibleFlags() {
 		return array( 'inspected', 'tested' );
 	}
 
+	/**
+	 * Returns whether the provided status is valid
+	 * @param String $status
+	 * @return bool
+	 */
 	public function isValidStatus( $status ) {
 		return in_array( $status, self::getPossibleStates(), true );
 	}
