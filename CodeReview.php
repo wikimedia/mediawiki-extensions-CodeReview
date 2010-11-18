@@ -39,6 +39,7 @@ $dir = dirname( __FILE__ ) . '/';
 
 $wgAutoloadClasses['ApiCodeUpdate'] = $dir . 'api/ApiCodeUpdate.php';
 $wgAutoloadClasses['ApiCodeDiff'] = $dir . 'api/ApiCodeDiff.php';
+$wgAutoloadClasses['ApiRevisionUpdate'] = $dir . 'api/ApiRevisionUpdate.php';
 $wgAutoloadClasses['ApiQueryCodeComments'] = $dir . 'api/ApiQueryCodeComments.php';
 $wgAutoloadClasses['ApiQueryCodeRevisions'] = $dir . 'api/ApiQueryCodeRevisions.php';
 $wgAutoloadClasses['CodeRevisionCommitterApi'] = $dir . 'api/CodeRevisionCommitterApi.php';
@@ -83,6 +84,7 @@ $wgSpecialPageGroups['RepoAdmin'] = 'developer';
 
 $wgAPIModules['codeupdate'] = 'ApiCodeUpdate';
 $wgAPIModules['codediff'] = 'ApiCodeDiff';
+$wgAPIModules['updaterev'] ='ApiRevisionUpdate';
 $wgAPIListModules['codecomments'] = 'ApiQueryCodeComments';
 $wgAPIListModules['coderevisions'] = 'ApiQueryCodeRevisions';
 
