@@ -29,11 +29,14 @@ class SpecialCode extends SpecialPage {
 		}
 
 		// Add subtitle for easy navigation
-		$repo = $view->getRepo();
-		if ( $view instanceof CodeView && $repo ) {
-			$wgOut->setSubtitle(
-				wfMsgExt( 'codereview-subtitle', 'parse', CodeRepoListView::getNavItem( $repo ) )
-			);
+		if ( $view instanceof CodeView ) {
+			$repo = $view->getRepo();
+
+			if ( $repo ) {
+				$wgOut->setSubtitle(
+					wfMsgExt( 'codereview-subtitle', 'parse', CodeRepoListView::getNavItem( $repo ) )
+				);
+			}
 		}
 	}
 
