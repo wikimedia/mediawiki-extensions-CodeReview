@@ -42,7 +42,7 @@ class SpecialCode extends SpecialPage {
 
 	/**
 	 * Get a view object from a sub page path.
-	 * @return View object or null if no valid action could be found
+	 * @return CodeView object or null if no valid action could be found
 	 */
 	private function getViewFrom( $subpage ) {
 		global $wgRequest;
