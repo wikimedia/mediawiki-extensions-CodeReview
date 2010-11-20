@@ -2906,7 +2906,10 @@ $messages['es'] = array(
 	'code-status-desc-deferred' => 'La revisión no requiere revisión.',
 	'code-status-old' => 'antiguo',
 	'code-status-desc-old' => 'Revisión antigua que puede contener defectos, pero cuya verificación no se justifica.',
+	'code-signoff-flag-inspected' => 'Inspeccionado',
+	'code-signoff-flag-tested' => 'Probado',
 	'code-signoff-field-user' => 'Usuario',
+	'code-signoff-field-flag' => 'Marcar',
 	'code-signoff-field-date' => 'Fecha',
 	'code-pathsearch-legend' => 'Buscar revisiones en este repositorio por ruta',
 	'code-pathsearch-path' => 'Ruta:',
@@ -2946,14 +2949,23 @@ Resumen de las confirmaciones:
 
 $4',
 	'codereview-email-subj3' => '[$1] [$2] : El estado de revisión ha cambiado',
-	'codereview-email-body3' => 'La prueba automática ha mostrado una regresión debido a los cambios realizados en $1.
+	'codereview-email-body3' => 'El usuario "$1" modificó el estado de $2.
 
-URL completa: $2
-
-Resumen de confirmación:
-
-$3',
+Estado antiguo: $3
+Estado nuevo: $4',
 	'codereview-email-subj4' => '[$1] [$2]: Nuevo comentario añadido, y cambiado el estado de la revisión',
+	'codereview-email-body4' => 'El usuario "$1" modificó el estado de $2.
+
+Estado antiguo: $3
+Estado nuevo: $4
+
+El usuario "$1" ha escrito también un comentario en $2.
+
+URL completa: $5
+
+Comentario:
+
+$6',
 	'code-stats' => 'estadísticas',
 	'code-stats-header' => 'Estadísticas del repositorio $1',
 	'code-stats-main' => ' A la fecha de $1, el repositorio tiene $2 {{PLURAL:$2|revisión|revisiones}} hechas por [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autores}}]].',
@@ -5324,7 +5336,8 @@ $messages['id'] = array(
 	'code-authors' => 'penulis',
 	'code-status' => 'keadaan',
 	'code-tags' => 'Penanda',
-	'code-authors-text' => 'Di bawah adalah daftar pemilik penyimpanan menurut urutan namanya. Akun wiki lokal ditampilkan dalam tanda kurung.',
+	'code-tags-no-tags' => 'Tidak ada tag di repositori ini.',
+	'code-authors-text' => 'Berikut adalah daftar penulis repo diurutkan menurut nama pelaksana. Akun wiki lokal ditampilkan dalam tanda kurung. Data mungkin disinggahkan.',
 	'code-author-haslink' => 'Penulis ini terhubung ke pengguna wiki $1',
 	'code-author-orphan' => 'Penulis ini tidak terhubung dengan akun wiki',
 	'code-author-dolink' => 'Kaitkan penulis ke Wiki pengguna:',
@@ -5337,12 +5350,14 @@ $messages['id'] = array(
 	'code-author-unlinksuccess' => 'Hubungan penulis $1 telah di putus',
 	'code-author-badtoken' => 'Kesalahan sesi ketika mencoba melakukan tindakan.',
 	'code-author-total' => 'Jumlah total pemilik: $1',
+	'code-author-lastcommit' => 'Tanggal pemasukan terakhir',
 	'code-browsing-path' => "Jelajahi revisi pada '''$1'''",
 	'code-field-id' => 'Revisi',
 	'code-field-author' => 'Pembuat',
 	'code-field-user' => 'Komentar',
 	'code-field-message' => 'Ringkasan komit',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Deskripsi status',
 	'code-field-timestamp' => 'Tanggal',
 	'code-field-comments' => 'Catatan',
 	'code-field-path' => 'Jalan',
@@ -5375,13 +5390,29 @@ $messages['id'] = array(
 	'code-rev-total' => 'Jumlah hasil: $1',
 	'code-rev-not-found' => "Revisi '''$1''' tidak ditemukan!",
 	'code-status-new' => 'baru',
+	'code-status-desc-new' => 'Revisi masih menunggu tindakan (status bawaan).',
 	'code-status-fixme' => 'perbaiki',
+	'code-status-desc-fixme' => 'Seorang peninjau menandai revisi ini sebagai penyebab bug atau rusak. Ini harus diperbaiki.',
 	'code-status-reverted' => 'telah dikembalikan',
+	'code-status-desc-reverted' => 'Revisi itu dibatalkan oleh revisi selanjutnya.',
 	'code-status-resolved' => 'selesai',
+	'code-status-desc-resolved' => 'Revisi memiliki masalah yang dipecahkan oleh revisi berikutnya.',
 	'code-status-ok' => 'ok',
+	'code-status-desc-ok' => 'Revisi sepenuhnya ditinjau dan peninjau yakin revisi ini sudah baik dalam segala hal.',
 	'code-status-verified' => 'diverifikasi',
+	'code-status-desc-verified' => 'Revisi telah diuji dan bekerja sebagaimana yang diharapkan.',
 	'code-status-deferred' => 'ditangguhkan',
+	'code-status-desc-deferred' => 'Revisi tidak memerlukan tinjauan.',
 	'code-status-old' => 'lama',
+	'code-status-desc-old' => 'Revisi lama dengan potensi bug, namun potensi tersebut tidak sebanding dengan upaya tinjauan.',
+	'code-signoffs' => 'Persetujuan',
+	'code-signoff-legend' => 'Berikan persetujuan',
+	'code-signoff-submit' => 'Persetujuan',
+	'code-signoff-flag-inspected' => 'Inspeksi',
+	'code-signoff-flag-tested' => 'Diuji',
+	'code-signoff-field-user' => 'Pengguna',
+	'code-signoff-field-flag' => 'Tanda',
+	'code-signoff-field-date' => 'Tanggal',
 	'code-pathsearch-legend' => 'Cari revisi di jejak penyimpanan ini:',
 	'code-pathsearch-path' => 'Jalan:',
 	'code-pathsearch-filter' => 'Penerapan filter:',
@@ -5419,16 +5450,26 @@ URL penuh: $3
 Ringkasan:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2]: Ujicoba langsung terdeteksi pemulihan',
-	'codereview-email-body3' => 'Pengujian otomatis telah mengungkapkan regresi akibat perubahan dalam $1.
+	'codereview-email-subj3' => '[$1] [$2]: Status revisi berubah',
+	'codereview-email-body3' => 'Pengguna "$1" mengganti status $2.
 
-URL lengkap: $2 
+Status lama: $3
+Status baru: $4',
+	'codereview-email-subj4' => '[$1] [$2]: Komentar baru ditambahkan dan revisi status berubah',
+	'codereview-email-body4' => 'Pengguna "$1" mengganti status $2.
 
-Ringkasan: 
+Status lama: $3
+Status baru: $4
 
-$3',
+Pengguna "$1" juga mengirim komentar terhadap $2.
+
+URL lengkap: $5
+
+Komentar:
+
+$6',
 	'code-stats' => 'statistik',
-	'code-stats-header' => 'Statistik penyimpanan untuk $1',
+	'code-stats-header' => 'Statistik repositori $1',
 	'code-stats-main' => 'Pada $1, penyimpanan ini memiliki $2 {{PLURAL:$2|revisi|revisi}} oleh [[Special:Code/$3/author|$4 {{PLURAL:$4|pemilik|pemilik}}]].',
 	'code-stats-status-breakdown' => 'Jumlah revisi per kondisi',
 	'code-stats-fixme-breakdown' => 'Perincian fixme per pemilik',
@@ -5443,12 +5484,14 @@ $3',
 	'repoadmin-edit-view' => 'Jejak ViewV:',
 	'repoadmin-edit-button' => 'OK',
 	'repoadmin-edit-sucess' => 'Penyimpanan "[[Special:Code/$1|$1]]"  selesai diubah.',
+	'repoadmin-nav' => 'administrasi repositori',
 	'right-repoadmin' => 'Pengelolaan kode penyimpanan',
 	'right-codereview-use' => 'Penggunaan Khusus:Kode',
 	'right-codereview-add-tag' => 'Tambahkan tag baru pada revisi',
 	'right-codereview-remove-tag' => 'Buang tag dari revisi',
 	'right-codereview-post-comment' => 'Tambah komentar pada revisi',
 	'right-codereview-set-status' => 'Ubah status revisi',
+	'right-codereview-signoff' => 'Persetujuan revisi',
 	'right-codereview-link-user' => 'Pranala penulis ke wiki pengguna',
 	'specialpages-group-developer' => 'Alat Pengembang',
 );
