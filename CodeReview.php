@@ -175,16 +175,24 @@ function efCodeReviewSchemaUpdates( $updater ) {
 	$base = dirname( __FILE__ );
 	switch ( $updater->getDB()->getType() ) {
 	case 'mysql':
-		$updater->addExtensionUpdate( array( 'addTable', 'code_rev', "$base/codereview.sql", true ) ); // Initial install tables
-		$updater->addExtensionUpdate( array( 'addField', 'code_rev', 'cr_diff', "$base/archives/codereview-cr_diff.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addIndex', 'code_relations', 'repo_to_from', "$base/archives/code_relations_index.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addTable', 'code_rev',
+			"$base/codereview.sql", true ) ); // Initial install tables
+		$updater->addExtensionUpdate( array( 'addField', 'code_rev', 'cr_diff',
+			"$base/archives/codereview-cr_diff.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addIndex', 'code_relations', 'repo_to_from',
+			"$base/archives/code_relations_index.sql", true ) );
 
 		if ( !$updater->updateRowExists( 'make cr_status varchar' ) ) {
-			$updater->addExtensionUpdate( array( 'modifyField', 'code_rev', 'cr_status', "$base/archives/codereview-cr_status_varchar.sql", true ) );
+			$updater->addExtensionUpdate( array( 'modifyField', 'code_rev', 'cr_status',
+				"$base/archives/codereview-cr_status_varchar.sql", true ) );
 		}
 
 		$updater->addExtensionUpdate( array( 'addTable', 'code_bugs', "$base/archives/code_bugs.sql", true ) );
+
 		$updater->addExtensionUpdate( array( 'addTable', 'code_signoffs', "$base/archives/code_signoffs.sql", true ) );
+
+		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_user',
+			"$base/archives/code_signoffs_userid.sql", true ) );
 		break;
 	case 'sqlite':
 		$updater->addExtensionUpdate( array( 'addTable', 'code_rev', "$base/codereview.sql", true ) );

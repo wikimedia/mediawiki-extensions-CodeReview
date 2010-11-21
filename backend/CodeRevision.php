@@ -648,7 +648,7 @@ class CodeRevision {
 	public function getSignoffs( $from = DB_SLAVE ) {
 		$db = wfGetDB( $from );
 		$result = $db->select( 'code_signoffs',
-			array( 'cs_user_text', 'cs_flag', 'cs_timestamp' ),
+			array( 'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp' ),
 			array(
 				'cs_repo_id' => $this->mRepoId,
 				'cs_rev_id' => $this->mId,
@@ -664,6 +664,11 @@ class CodeRevision {
 		return $signoffs;
 	}
 
+	/**
+	 * @param  $user User
+	 * @param  $flags
+	 * @return void
+	 */
 	public function addSignoff( $user, $flags ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$rows = array();
@@ -671,6 +676,7 @@ class CodeRevision {
 			$rows[] = array(
 				'cs_repo_id' => $this->mRepoId,
 				'cs_rev_id' => $this->mId,
+				'cs_user' => $user->getID(),
 				'cs_user_text' => $user->getName(),
 				'cs_flag' => $flag,
 				'cs_timestamp' => $dbw->timestamp(),

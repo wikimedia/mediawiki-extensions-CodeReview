@@ -1,10 +1,11 @@
 <?php
 class CodeSignoff {
-	public $rev, $user, $flag, $timestamp;
+	public $rev, $user, $flag, $timestamp, $userText;
 	
-	public function __construct( $rev, $user, $flag, $timestamp ) {
+	public function __construct( $rev, $user, $userText, $flag, $timestamp ) {
 		$this->rev = $rev;
 		$this->user = $user;
+		$this->userText = $userText;
 		$this->flag = $flag;
 		$this->timestamp = $timestamp;
 	}
@@ -14,7 +15,7 @@ class CodeSignoff {
 	}
 	
 	public static function newFromData( $rev, $data ) {
-		return new self( $rev, $data['cs_user_text'], $data['cs_flag'],
+		return new self( $rev, $data['cs_user'], $data['cs_user_text'], $data['cs_flag'],
 			wfTimestamp( TS_MW, $data['cs_timestamp'] )
 		);
 	}

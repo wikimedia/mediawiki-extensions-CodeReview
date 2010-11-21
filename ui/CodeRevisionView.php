@@ -481,9 +481,14 @@ class CodeRevisionView extends CodeView {
 		return "<table border='1' class='TablePager'><tr>{$header}</tr>{$refs}</table>";
 	}
 
+	/**
+	 * @param  $signoff CodeSignoff
+	 * @return string
+	 */
 	protected function formatSignoffInline( $signoff ) {
 		global $wgLang;
-		$user = htmlspecialchars( $signoff->user );
+		$user = $this->skin->userLink( $signoff->user, $signoff->userText );
+
 		$flag = htmlspecialchars( $signoff->flag );
 		$date = $wgLang->timeanddate( $signoff->timestamp, true );
 		$class = "mw-codereview-signoff-$flag";

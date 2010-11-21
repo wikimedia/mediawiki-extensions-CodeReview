@@ -228,6 +228,7 @@ CREATE TABLE /*_*/code_signoffs (
   cs_rev_id int not null,
 
   -- User that signed off
+  cs_user int not null,
   cs_user_text varchar(255) not null,
 
   -- Type of signoff. Current values: 'inspected', 'tested'
