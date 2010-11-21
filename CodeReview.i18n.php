@@ -220,6 +220,7 @@ $6',
  * @author Raymond
  * @author Siebrand
  * @author Sp5uhe
+ * @author Verdy p
  */
 $messages['qqq'] = array(
 	'code-comments' => '{{Identical|Comments}}',
@@ -255,7 +256,9 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-signoff-flag-inspected' => 'Type of sign-off indicating the code has been looked at.',
 	'code-signoff-flag-tested' => 'Type of sign-off indicating the code has been tested.',
 	'code-signoff-field-user' => 'Table column header: name of the user that did the sign-off.',
-	'code-signoff-field-flag' => 'Table column header: "type" of sign-off. One of the code-signoff-flag-* messages.',
+	'code-signoff-field-flag' => 'Table column header: "type" of sign-off. One of the code-signoff-flag-* messages, such as:
+* {{msg-mw|code-signoff-flag-inspected}}
+* {{msg-mw|code-signoff-flag-tested}}',
 	'code-signoff-field-date' => 'Table column header: timestamp of the sign-off. {{Identical|Date}}',
 	'code-pathsearch-path' => '{{Identical|Path}}',
 	'code-revfilter-cr_status' => '{{Identical|Status}}',
@@ -6536,6 +6539,7 @@ $messages['lb'] = array(
 	'code-field-user' => 'Commentateur',
 	'code-field-message' => 'Bemierkung ofspäicheren',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Beschreiwung vum Status',
 	'code-field-timestamp' => 'Datum',
 	'code-field-comments' => 'Notizen',
 	'code-field-path' => 'Pad',
@@ -11431,7 +11435,8 @@ $messages['tr'] = array(
 	'code-authors' => 'yazarlar',
 	'code-status' => 'durum',
 	'code-tags' => 'etiketler',
-	'code-authors-text' => 'Aşağıdaki, yakın zamandaki teslimlerine göre sıralanmış depo yazarları listesidir. Yerel viki hesapları parantez içinde gösterilmiştir.',
+	'code-tags-no-tags' => 'Bu havuzda etiket mevcut değil.',
+	'code-authors-text' => 'Aşağıdaki, teslim isimlerine göre sıralanmış depo yazarları listesidir. Yerel viki hesapları parantez içinde gösterilmiştir. Veri önbellekte olabilir.',
 	'code-author-haslink' => 'Bu yazar $1 viki kullanıcısına bağlıdır',
 	'code-author-orphan' => 'Bu yazarın bir viki hesabıyla bağı yoktur',
 	'code-author-dolink' => 'Bu yazarı bir viki kullanıcısına bağla:',
@@ -11443,6 +11448,7 @@ $messages['tr'] = array(
 	'code-author-unlink' => 'bağı kaldır?',
 	'code-author-unlinksuccess' => '$1 yazarının bağı kaldırıldı',
 	'code-author-badtoken' => 'Eylemi gerçekleştirmeye çalışırken oturum hatası.',
+	'code-author-total' => 'Toplam yazar sayısı: $1',
 	'code-browsing-path' => "'''$1''' içinde revizyonlara göz atılıyor",
 	'code-field-id' => 'Revizyon',
 	'code-field-author' => 'Yazar',
