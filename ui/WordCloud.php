@@ -119,7 +119,7 @@ class WordCloud {
 		if( count( $keys ) && is_array( $keys ) ) {
 			$tmpArray = $this->wordsArray;
 			$this->wordsArray = array();
-			foreach( $keys as $key => $value ) {
+			foreach( $keys as $value ) {
 				$this->wordsArray[$value] = $tmpArray[$value];
 			}
 		}

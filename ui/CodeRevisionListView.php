@@ -3,6 +3,9 @@
 // Special:Code/MediaWiki
 class CodeRevisionListView extends CodeView {
 	public $mRepo, $mPath;
+
+	private $batchForm;
+
 	function __construct( $repoName ) {
 		global $wgRequest;
 		parent::__construct();
