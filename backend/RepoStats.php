@@ -12,7 +12,7 @@ class RepoStats {
 		$fixmes;
 
 	public static function newFromRepo( CodeRepository $repo ) {
-		global $wgMemc;
+		global $wgMemc, $wgCodeReviewRepoStatsCacheTime;
 
 		$key = wfMemcKey( 'codereview1', 'stats', $repo->getName() );
 		$stats = $wgMemc->get( $key );
@@ -24,7 +24,7 @@ class RepoStats {
 		wfDebug( "miss\n" );
 		$stats = new RepoStats( $repo );
 		$stats->generate();
-		$wgMemc->set( $key, $stats, 6 * 60 * 60 ); // 6 hours
+		$wgMemc->set( $key, $stats, $wgCodeReviewRepoStatsCacheTime );
 		return $stats;
 	}
 
