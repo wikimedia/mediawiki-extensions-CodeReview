@@ -373,14 +373,6 @@ class CodeRevision {
 
 				//Notify commenters and revision author of followup revision
 				foreach ( $users as $user ) {
-					// Notify user with its own message if he already want
-					// to be CCed of all emails it sends.
-					if ( $commitAuthorId == $user->getId() ) {
-						if(! $user->getBoolOption( 'ccmeonemails' ) ) {
-							continue;
-						}
-					}	
-
 					if ( $user->canReceiveEmail() ) {
 						// Send message in receiver's language
 						$lang = array( 'language' => $user->getOption( 'language' ) );
@@ -473,14 +465,6 @@ class CodeRevision {
 		}
 
 		foreach ( $users as $user ) {
-			// Notify user with its own message if he already want
-			// to be CCed of all emails it sends.
-			if ( $wgUser->getId() == $user->getId() ) {
-				if(! $user->getBoolOption( 'ccmeonemails' ) ) {
-					continue;
-				}
-			}
-
 			if ( $user->canReceiveEmail() ) {
 				// Send message in receiver's language
 				$lang = array( 'language' => $user->getOption( 'language' ) );
