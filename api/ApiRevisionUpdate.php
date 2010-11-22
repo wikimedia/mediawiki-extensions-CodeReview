@@ -45,7 +45,7 @@ class ApiRevisionUpdate extends ApiBase {
 
 		$revisionCommitter = new CodeRevisionCommitterApi( $repo, $rev );
 
-		$revisionCommitter->revisionUpdate(
+		$commentID = $revisionCommitter->revisionUpdate(
 			$params['status'],
 			$params['addtags'],
 			$params['removetags'],
@@ -54,6 +54,11 @@ class ApiRevisionUpdate extends ApiBase {
 		);
 
 		$r = array( 'result' => 'Success' );
+
+		if ( $commentID !== 0 ) {
+			$r['commentid'] = intval($commentID);
+		}
+
 		$this->getResult()->addValue( null, $this->getModuleName(), $r );
 	}
 
