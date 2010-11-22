@@ -169,7 +169,8 @@ $wgCodeReviewUDPPort = false;
 $wgCodeReviewUDPPrefix = '';
 
 /**
- * Length of time to cache repo stats for
+* How long to cache repository statistics in seconds
+* See http://www.mediawiki.org/wiki/Special:Code/MediaWiki/stats
  */
 $wgCodeReviewRepoStatsCacheTime = 6 * 60 * 60; // 6 Hours
 
