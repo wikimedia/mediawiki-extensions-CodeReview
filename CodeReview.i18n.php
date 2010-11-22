@@ -8212,6 +8212,13 @@ $messages['pdc'] = array(
 	'repoadmin-edit-button' => 'OK',
 );
 
+/** Pfälzisch (Pfälzisch)
+ * @author Xqt
+ */
+$messages['pfl'] = array(
+	'code-stats' => 'Schdadischdike',
+);
+
 /** Polish (Polski)
  * @author Derbeth
  * @author Equadus
@@ -10586,6 +10593,7 @@ $messages['sv'] = array(
 	'code-authors' => 'författare',
 	'code-status' => 'tillstånd',
 	'code-tags' => 'taggar',
+	'code-tags-no-tags' => 'Inga taggar finns i denna repository.',
 	'code-authors-text' => 'Nedan är en lista av repoförfattare ordnade efter bidragsnamn. Lokala wikikonton visas inom parentes. Data kan vara cachad.',
 	'code-author-haslink' => 'Denna författare är länkad till wiki-användaren $1',
 	'code-author-orphan' => 'Författaren är inte länkad med något wiki-konto',
@@ -10606,6 +10614,7 @@ $messages['sv'] = array(
 	'code-field-user' => 'Kommenerare',
 	'code-field-message' => 'Spara sammanfattning',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Statusbeskrivning',
 	'code-field-timestamp' => 'Datum',
 	'code-field-comments' => 'Noter',
 	'code-field-path' => 'Sökväg',
@@ -10653,6 +10662,14 @@ $messages['sv'] = array(
 	'code-status-desc-deferred' => 'Revisionen kräver inte översyn.',
 	'code-status-old' => 'gammal',
 	'code-status-desc-old' => 'Gammal revision med potentiella buggar men inte värt bemödandet att se över dem.',
+	'code-signoffs' => 'Signeringar',
+	'code-signoff-legend' => 'Lägg till signering',
+	'code-signoff-submit' => 'Signera',
+	'code-signoff-flag-inspected' => 'Inspekterad',
+	'code-signoff-flag-tested' => 'Testad',
+	'code-signoff-field-user' => 'Användare',
+	'code-signoff-field-flag' => 'Flagga',
+	'code-signoff-field-date' => 'Datum',
 	'code-pathsearch-legend' => 'Sök versioner i denna repo efter sökväg',
 	'code-pathsearch-path' => 'Sökväg:',
 	'code-pathsearch-filter' => 'Använt filter:',
@@ -10690,14 +10707,24 @@ Full URL:  $3
 Sammanfattning:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2]: Regression upptäcktes vid automatisk testning',
-	'codereview-email-body3' => 'Vid automatisk testning upptäcktes regression på grund av förändringar i $1.
+	'codereview-email-subj3' => '[$1] [$2]: Versionsstatus ändrad',
+	'codereview-email-body3' => "Användare ''$1'' ändrade statusen för $2.
 
-Fullständig webbadress: $2
+Gammal status: $3
+Ny status: $4",
+	'codereview-email-subj4' => '[$1] [$2]: Ny kommentar tillagd, och versionsstatus ändrad',
+	'codereview-email-body4' => 'Användare "$1" ändrade statusen för $2.
 
-Bidragssammanfattning:
+Gammal status: $3
+Ny status: $4
 
-$3',
+Användare "$1" postade också en kommentar på $2.
+
+Fullständig URL: $5
+
+Kommentar:
+
+$6',
 	'code-stats' => 'statistik',
 	'code-stats-header' => 'Statistik för repositoriet $1',
 	'code-stats-main' => '$1 hade repositoriet $2 {{PLURAL:$2|revision|revisioner}} av [[Special:Code/$3/author|$4 författare]].',
@@ -10721,6 +10748,7 @@ $3',
 	'right-codereview-remove-tag' => 'Ta bort taggar från versioner',
 	'right-codereview-post-comment' => 'Lägga till kommentarer till versioner',
 	'right-codereview-set-status' => 'Ändra versioners status',
+	'right-codereview-signoff' => 'Signera versioner',
 	'right-codereview-link-user' => 'Länka författare med wikianvändare',
 	'specialpages-group-developer' => 'Utvecklarverktyg',
 );
