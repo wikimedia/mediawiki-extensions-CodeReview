@@ -203,6 +203,8 @@ function efCodeReviewSchemaUpdates( $updater ) {
 	case 'sqlite':
 		$updater->addExtensionUpdate( array( 'addTable', 'code_rev', "$base/codereview.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'code_signoffs', "$base/archives/code_signoffs.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_user',
+			"$base/archives/code_signoffs_userid-sqlite.sql", true ) );
 		break;
 	case 'postgres':
 		// TODO
