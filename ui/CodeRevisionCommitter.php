@@ -86,7 +86,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		}
 		// Add any signoffs
 		if ( count( $signoffFlags ) && $this->validPost( 'codereview-signoff' ) )  {
-			$this->mRev->addSignoff( $wgUser, $signoffFlags );
+			$this->mRev->mergeSignoff( $wgUser, $signoffFlags );
 		}
 		// Add any comments
 		$commentAdded = false;
