@@ -654,6 +654,7 @@ class CodeRevisionView extends CodeView {
 			'</div>';
 	}
 
+	/** TODO : checkboxes should be disabled if user already has set the flag */
 	protected function signoffForm() {
 		$form = Xml::element( 'legend', array(), wfMsg( 'code-signoff-legend' ) );
 		foreach ( CodeRevision::getPossibleFlags() as $flag ) {
