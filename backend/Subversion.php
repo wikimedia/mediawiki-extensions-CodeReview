@@ -123,8 +123,9 @@ class SubversionShell extends SubversionAdaptor {
 	}
 
 	function getFile( $path, $rev = null ) {
-		if ( $rev )
+		if ( $rev ) {
 			$path .= "@$rev";
+		}
 		$command = sprintf(
 			"svn cat %s %s",
 			$this->getExtraArgs(),
