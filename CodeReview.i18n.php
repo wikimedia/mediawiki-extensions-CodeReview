@@ -2734,6 +2734,7 @@ $messages['eo'] = array(
 	'code-status-desc-deferred' => 'Revizio ne nepras kontroladon.',
 	'code-status-old' => 'malnova',
 	'code-status-desc-old' => 'Malnova revizio kun eblaj cimoj kiuj ne sufiĉe gravas kontroli ilin.',
+	'code-signoff-field-user' => 'Uzanto',
 	'code-pathsearch-legend' => 'Serĉi versiojn en ĉi tiu kodujo laŭ vojo',
 	'code-pathsearch-path' => 'Vojo:',
 	'code-pathsearch-filter' => 'Filtrilo uzata:',
@@ -2771,7 +2772,7 @@ Plena URL: $3
 Resumo de ŝanĝoj:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2]: Aŭtomata testado detektis regresion',
+	'codereview-email-subj3' => '[$1] [$2]: Revizio-statuso ŝanĝis',
 	'codereview-email-body3' => 'Aŭtomata testado malkaŝis regresion pro la ŝanĝoj en $1.
 
 Plena URL: $2
