@@ -685,7 +685,7 @@ class CodeRevision {
 				'cs_timestamp' => $dbw->timestamp(),
 			);
 		}
-		$dbw->insert( 'code_signoffs', $rows, __METHOD__ );
+		$dbw->insert( 'code_signoffs', $rows, __METHOD__, array( 'IGNORE' ) );
 	}
 
 	/**
