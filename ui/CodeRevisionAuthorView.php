@@ -45,10 +45,9 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 		parent::execute();
 	}
 
-	function getSpecializedWhereClause( $dbr ) {
+	function getSpecializedWhereClause() {
 		return array( 'cr_author' => $this->mAuthor );
 	}
-
 }
 
 class SvnRevAuthorTablePager extends SvnRevTablePager {

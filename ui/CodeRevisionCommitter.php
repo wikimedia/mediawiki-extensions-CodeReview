@@ -50,14 +50,14 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @param string $status Status to set the revision to
 	 * @param Array $addTags Tags to add to the revision
 	 * @param Array $removeTags Tags to remove from the Revision
-	 * @param Array $signoffFlags Array of sign-off flags to add
+	 * @param Array $addSignoffs Array of sign-off flags to add
 	 * @param Array $strikeSignoffs Array of sign-off IDs to strike
 	 * @param string $commentText Comment to add to the revision
 	 * @param null|int $parent What the parent comment is (if a subcomment)
 	 * @param int $review (unused)
 	 * @return int Comment ID if added, else 0
 	 */
-	public function revisionUpdate( $status, $addTags, $removeTags, $signoffFlags, $strikeSignoffs,
+	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
 						$commentText, $parent = null, $review = 0 ) {
 		if ( !$this->mRev ) {
 			return false;
@@ -85,8 +85,8 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $wgUser );
 		}
 		// Add any signoffs
-		if ( count( $signoffFlags ) && $this->validPost( 'codereview-signoff' ) )  {
-			$this->mRev->addSignoff( $wgUser, $signoffFlags );
+		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff' ) )  {
+			$this->mRev->addSignoff( $wgUser, $addSignoffs );
 		}
 		// Strike any signoffs
 		if ( count( $strikeSignoffs ) && $this->validPost( 'codereview-signoff' ) ) {

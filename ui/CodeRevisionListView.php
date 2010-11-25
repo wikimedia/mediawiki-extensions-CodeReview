@@ -212,10 +212,7 @@ class CodeRevisionListView extends CodeView {
 		}
 	}
 
-	/**
-	 * @todo Document
-	 */
-	function getSpecializedWhereClause( $dbr ) {
+	function getSpecializedWhereClause() {
 		return array();
 	}
 
