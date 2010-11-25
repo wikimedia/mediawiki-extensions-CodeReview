@@ -131,11 +131,8 @@ class CodeRevisionView extends CodeView {
 			$html .= $this->formatImgDiff();
 		}
 		# Show sign-offs
-		$signoffs = $this->formatSignoffs( $this->canSignoff() );
-		if ( $signoffs ) {
-			$html .= "<h2 id='code-signoffs'>" . wfMsgHtml( 'code-signoffs' ) .
-				"</h2>\n" . $signoffs;
-		}
+		$html .= "<h2 id='code-signoffs'>" . wfMsgHtml( 'code-signoffs' ) .
+			"</h2>\n" . $this->formatSignoffs( $this->canSignoff() );
 		# Show code relations
 		$relations = $this->formatReferences();
 		if ( $relations ) {
@@ -434,9 +431,6 @@ class CodeRevisionView extends CodeView {
 		$signoffs = implode( "\n",
 			array_map( array( $this, 'formatSignoffInline' ), $this->mRev->getSignoffs() )
 		);
-		if ( !$signoffs ) {
-			return false;
-		}
 		$header = '<th></th>';
 		$header .= '<th>' . wfMsg( 'code-signoff-field-user' ) . '</th>';
 		$header .= '<th>' . wfMsg( 'code-signoff-field-flag' ). '</th>';
