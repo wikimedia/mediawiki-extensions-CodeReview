@@ -632,7 +632,7 @@ class CodeRevision {
 	public function getSignoffs( $from = DB_SLAVE ) {
 		$db = wfGetDB( $from );
 		$result = $db->select( 'code_signoffs',
-			array( 'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp' ),
+			array( 'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp', 'cs_timestamp_struck' ),
 			array(
 				'cs_repo_id' => $this->mRepoId,
 				'cs_rev_id' => $this->mId,
@@ -664,9 +664,20 @@ class CodeRevision {
 				'cs_user_text' => $user->getName(),
 				'cs_flag' => $flag,
 				'cs_timestamp' => $dbw->timestamp(),
+				'cs_timestamp_struck' => Block::infinity()
 			);
 		}
 		$dbw->insert( 'code_signoffs', $rows, __METHOD__, array( 'IGNORE' ) );
+	}
+
+	public function strikeSignoffs( $user, $ids ) {
+		foreach ( $ids as $id ) {
+			$signoff = CodeSignoff::newFromId( $this, $id );
+			// Only allow striking own signoffs
+			if ( $signoff && $signoff->userText === $user->getName() ) {
+				$signoff->strike();
+			}
+		}
 	}
 
 	public function getTags( $from = DB_SLAVE ) {

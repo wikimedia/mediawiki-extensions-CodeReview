@@ -44,7 +44,9 @@ class CodeRevisionView extends CodeView {
 		# Make tag arrays
 		$this->mAddTags = $this->splitTags( $this->mAddTags );
 		$this->mRemoveTags = $this->splitTags( $this->mRemoveTags );
-		$this->mSignoffFlags = $wgRequest->getArray( 'wpSignoffFlags' );
+		$this->mSignoffFlags = $wgRequest->getCheck( 'wpSignoff' ) ? $wgRequest->getArray( 'wpSignoffFlags' ) : array();
+		$this->mSelectedSignoffs = $wgRequest->getArray( 'wpSignoffs' );
+		$this->mStrikeSignoffs = $wgRequest->getCheck( 'wpStrikeSignoffs' ) ? $this->mSelectedSignoffs : array();
 	}
 
 	function execute() {
@@ -129,13 +131,10 @@ class CodeRevisionView extends CodeView {
 			$html .= $this->formatImgDiff();
 		}
 		# Show sign-offs
-		$signoffs = $this->formatSignoffs();
+		$signoffs = $this->formatSignoffs( $this->canSignoff() );
 		if ( $signoffs ) {
 			$html .= "<h2 id='code-signoffs'>" . wfMsgHtml( 'code-signoffs' ) .
 				"</h2>\n" . $signoffs;
-		}
-		if( $this->canSignoff() ) {
-			$html .= $this->signoffForm();
 		}
 		# Show code relations
 		$relations = $this->formatReferences();
@@ -431,17 +430,19 @@ class CodeRevisionView extends CodeView {
 		return wfMsg( 'code-load-diff' );
 	}
 	
-	protected function formatSignoffs() {
+	protected function formatSignoffs( $showButtons ) {
 		$signoffs = implode( "\n",
 			array_map( array( $this, 'formatSignoffInline' ), $this->mRev->getSignoffs() )
 		);
 		if ( !$signoffs ) {
 			return false;
 		}
-		$header = '<th>' . wfMsg( 'code-signoff-field-user' ) . '</th>';
+		$header = '<th></th>';
+		$header .= '<th>' . wfMsg( 'code-signoff-field-user' ) . '</th>';
 		$header .= '<th>' . wfMsg( 'code-signoff-field-flag' ). '</th>';
 		$header .= '<th>' . wfMsg( 'code-signoff-field-date' ). '</th>';
-		return "<table border='1' class='TablePager'><tr>$header</tr>$signoffs</table>";
+		$buttonrow = $showButtons ? $this->signoffButtons() : '';
+		return "<table border='1' class='TablePager'><tr>$header</tr>$signoffs$buttonrow</table>";
 	}
 
 	protected function formatComments() {
@@ -487,12 +488,19 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function formatSignoffInline( $signoff ) {
 		global $wgLang;
+		$checkbox = Html::input( 'wpSignoffs[]', $signoff->getID(), 'checkbox' );
 		$user = $this->skin->userLink( $signoff->user, $signoff->userText );
-
 		$flag = htmlspecialchars( $signoff->flag );
-		$date = $wgLang->timeanddate( $signoff->timestamp, true );
-		$class = "mw-codereview-signoff-$flag";
-		return "<tr class='$class'><td>$user</td><td>$flag</td><td>$date</td></tr>";
+		$signoffDate = $wgLang->timeanddate( $signoff->timestamp, true );
+		$class = "mw-codereview-signoff-flag-$flag";
+		if ( $signoff->isStruck() ) {
+			$class .= ' mw-codereview-struck';
+			$struckDate = $wgLang->timeanddate( $signoff->getTimestampStruck(), true );
+			$date = wfMsg( 'code-signoff-struckdate', $signoffDate, $struckDate );
+		} else {
+			$date = $signoffDate;
+		}
+		return "<tr class='$class'><td>$checkbox</td><td>$user</td><td>$flag</td><td>$date</td></tr>";
 	}
 
 	protected function formatCommentInline( $comment ) {
@@ -655,14 +663,17 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/** TODO : checkboxes should be disabled if user already has set the flag */
-	protected function signoffForm() {
-		$form = Xml::element( 'legend', array(), wfMsg( 'code-signoff-legend' ) );
+	protected function signoffButtons() {
+		$strikeButton = Xml::submitButton( wfMsg( 'code-signoff-strike' ), array( 'name' => 'wpStrikeSignoffs' ) );
+		$signoffText = wfMsgHtml( 'code-signoff-signoff' );
+		$signoffButton = Xml::submitButton( wfMsg( 'code-signoff-submit' ), array( 'name' => 'wpSignoff' ) );
+		$checks = '';
 		foreach ( CodeRevision::getPossibleFlags() as $flag ) {
-			$form .= Html::input( 'wpSignoffFlags[]', $flag, 'checkbox', array( 'id' => "wpSignoffFlags-$flag" ) ) .
-				Xml::label( wfMsg( "code-signoff-flag-$flag" ), "wpSignoffFlags-$flag" ) . "\n";
+			$checks .= Html::input( 'wpSignoffFlags[]', $flag, 'checkbox', array( 'id' => "wpSignoffFlags-$flag" ) ) .
+				' ' . Xml::label( wfMsg( "code-signoff-flag-$flag" ), "wpSignoffFlags-$flag" ) . ' ';
 		}
-		$form .= Xml::submitButton( wfMsg( 'code-signoff-submit' ) );
-		return Xml::tags( 'fieldset', array(), $form );
+		return "<tr class='mw-codereview-signoffbuttons'><td colspan='4'>$strikeButton " . 
+			"<div class='mw-codereview-signoffchecks'>$signoffText $checks $signoffButton</div></td></tr>";
 	}
 
 	protected function addActionButtons() {

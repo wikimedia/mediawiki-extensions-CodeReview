@@ -99,6 +99,15 @@ table.mw-codereview-meta td {
 	color: #666;
 }
 
+.mw-codereview-signoffchecks {
+	float: right;
+}
+
+.mw-codereview-struck td {
+	text-decoration: line-through;
+	background: #aaa;
+}
+
 .mw-codereview-success {
 	color: #1a2;
 }
