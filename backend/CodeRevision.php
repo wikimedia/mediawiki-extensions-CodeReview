@@ -670,6 +670,13 @@ class CodeRevision {
 		$dbw->insert( 'code_signoffs', $rows, __METHOD__, array( 'IGNORE' ) );
 	}
 
+	/**
+	 * Strike a set of sign-offs by a given user. Any sign-offs in $ids not
+	 * by $user are silently ignored, as well as nonexistent IDs and
+	 * already-struck sign-offs.
+	 * @param $user User object
+	 * @param $ids array of sign-off IDs to strike
+	 */
 	public function strikeSignoffs( $user, $ids ) {
 		foreach ( $ids as $id ) {
 			$signoff = CodeSignoff::newFromId( $this, $id );
