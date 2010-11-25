@@ -629,33 +629,14 @@ class CodeRevision {
 		return $refs;
 	}
 
-	public function getSignoffsForUser( $user, $from = DB_SLAVE ) {
-		return $this->fetchSignoffs( array( 'user' => $user ), $from );
-	}
-
-	public function getSignoffs( $from = DB_SLAVE) {
-		return $this->fetchSignoffs( array(), $from );
-	}
-
-	/**
-	 * @param $options Array: array of filtering options
-	 * @param $from DB_SLAVE|DB_MASTER
-	 */
-	private function fetchSignoffs( $options, $from = DB_SLAVE ) {
-		# Default conditions for DB query.
-		$fetchConditions = array(
-			'cs_repo_id' => $this->mRepoId,
-			'cs_rev_id' => $this->mId,
-		);
-		# Add a filter on user id (see getSignoffsForUser())
-		if( isset($options['user']) ) {
-			$fetchConditions['cs_user'] = $options['user']->getID() ;
-		}
-
+	public function getSignoffs( $from = DB_SLAVE ) {
 		$db = wfGetDB( $from );
 		$result = $db->select( 'code_signoffs',
 			array( 'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp' ),
-			$fetchConditions,
+			array(
+				'cs_repo_id' => $this->mRepoId,
+				'cs_rev_id' => $this->mId,
+			),
 			__METHOD__,
 			array( 'ORDER BY' => 'cs_timestamp' )
 		);
@@ -686,27 +667,6 @@ class CodeRevision {
 			);
 		}
 		$dbw->insert( 'code_signoffs', $rows, __METHOD__, array( 'IGNORE' ) );
-	}
-
-	/**
-	 * Skip already existing signoffs.
-	 */
-	public function mergeSignoff( $user, $postedFlags, $from = DB_SLAVE ) {
-		$existingFlags = array();
-		$userSignoffs = $this->getSignoffsForUser( $user, $from );
-
-		# get user existing signoffs flags
-		foreach( $userSignoffs as $signoff ) {
-			$existingFlags[] = $signoff->flag;
-		}
-
-		# compare with posted ones and only keep non existant
-		$addFlags = array_diff( $postedFlags, $existingFlags );
-		if( count( $addFlags ) ) {
-			$this->addSignoff( $user, $addFlags );
-		} else {
-			# We skipped insertion / replacement
-		}
 	}
 
 	public function getTags( $from = DB_SLAVE ) {
