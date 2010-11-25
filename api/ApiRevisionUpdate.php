@@ -49,7 +49,8 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['status'],
 			$params['addtags'],
 			$params['removetags'],
-			$params['flags'],
+			$params['addflags'],
+			$params['removeflags'],
 			$params['comment']
 		);
 
@@ -93,7 +94,12 @@ class ApiRevisionUpdate extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
 			),
-			'flags' => array(
+			'addflags' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_ISMULTI => true,
+				ApiBase::PARAM_TYPE => CodeRevision::getPossibleFlags()
+			),
+			'removeflags' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_TYPE => CodeRevision::getPossibleFlags()
@@ -109,7 +115,8 @@ class ApiRevisionUpdate extends ApiBase {
 			'status' => 'Status to set the revision to',
 			'addtags' => 'Tags to be added to the revision',
 			'removetags' => 'Tags to be removed from the revision',
-			'flags' => 'Code Signoff flags to assign to the revision by the current user',
+			'addflags' => 'Code Signoff flags to assign to the revision by the current user',
+			'removeflags' => 'Code Signoff flags to strike from the revision by the current user',
 		);
 	}
 
