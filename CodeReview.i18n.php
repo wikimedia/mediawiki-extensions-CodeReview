@@ -256,6 +256,8 @@ $messages['qqq'] = array(
 	'code-signoff-submit' => 'Submit button text.
 
 A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
+	'code-signoff-strike' => 'Submit button that, when clicked, will cause the selected sign-offs to be struck. Struck sign-offs are visible but displayed <s>with a line through them</s>.',
+	'code-signoff-signoff' => 'Label text which is followed by a checkbox for each sign-off state and a submit button.',
 	'code-signoff-flag-inspected' => 'Type of sign-off indicating the code has been looked at.',
 	'code-signoff-flag-tested' => 'Type of sign-off indicating the code has been tested.',
 	'code-signoff-field-user' => 'Table column header: name of the user that did the sign-off.',
@@ -263,6 +265,7 @@ A "sign-off" is a concept in code review that means that the person doing the si
 * {{msg-mw|code-signoff-flag-inspected}}
 * {{msg-mw|code-signoff-flag-tested}}',
 	'code-signoff-field-date' => 'Table column header: timestamp of the sign-off. {{Identical|Date}}',
+	'code-signoff-struckdate' => 'This is displayed in the date column for a struck sign-off. $1 is the timestamp of the sign-off, $2 is the timestamp of when it was struck.',
 	'code-pathsearch-path' => '{{Identical|Path}}',
 	'code-revfilter-cr_status' => '{{Identical|Status}}',
 	'code-revfilter-cr_author' => '{{Identical|Author}}',
