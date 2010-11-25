@@ -210,13 +210,14 @@ class CodeRevision {
 	/**
 	 * Quickie protection against huuuuuuuuge batch inserts
 	 */
-	protected function insertChunks( $db, $table, $data, $method, $options = array() ) {
+	protected function insertChunks( $db, $table, $data, $method = __METHOD__, $options = array() ) {
 		$chunkSize = 100;
 		for ( $i = 0; $i < count( $data ); $i += $chunkSize ) {
-			$db->insert( 'code_paths',
+			$db->insert( $table,
 				array_slice( $data, $i, $chunkSize ),
-				__METHOD__,
-				array( 'IGNORE' ) );
+				$method,
+				$options
+			);
 		}
 	}
 
