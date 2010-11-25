@@ -332,7 +332,6 @@ class CodeRevision {
 			// Get committer wiki user name, or repo name at least
 			$commitAuthor = $this->getWikiUser();
 			# Author might not have a username in the wiki:
-			$commitAuthorId = $commitAuthor ? $commitAuthor->getId() : false;
 			$committer = $commitAuthor ? $commitAuthor->getName() : htmlspecialchars( $this->mAuthor );
 			// Get the authors of these revisions
 			$res = $dbw->select( 'code_rev',
