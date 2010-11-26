@@ -34,7 +34,7 @@ class CodeRevisionListView extends CodeView {
 		}
 
 		$pathForm = $this->showForm();
-	    $wgOut->addHTML( $pathForm );
+		$wgOut->addHTML( $pathForm );
 
 		// Get the total count across all pages
 		$dbr = wfGetDB( DB_SLAVE );
@@ -64,7 +64,7 @@ class CodeRevisionListView extends CodeView {
 			Xml::closeElement( 'form' )
 		);
 
-	    $wgOut->addHTML( $pathForm );
+		$wgOut->addHTML( $pathForm );
 	}
 
 	function doBatchChange() {
@@ -174,7 +174,7 @@ class CodeRevisionListView extends CodeView {
 		}
 		$ret .= "</tr></table></fieldset>" ;
 
-	    return $ret;
+		return $ret;
 	}
 
 	function getPager() {
@@ -212,6 +212,9 @@ class CodeRevisionListView extends CodeView {
 		}
 	}
 
+	/**
+	 * @todo Document
+	 */
 	function getSpecializedWhereClause() {
 		return array();
 	}

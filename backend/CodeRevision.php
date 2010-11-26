@@ -209,6 +209,13 @@ class CodeRevision {
 
 	/**
 	 * Quickie protection against huuuuuuuuge batch inserts
+	 *
+	 * @param DatabaseBase $db
+	 * @param String $table
+	 * @param Array $data
+	 * @param string $method
+	 * @param array $options
+	 * @return void
 	 */
 	protected function insertChunks( $db, $table, $data, $method = __METHOD__, $options = array() ) {
 		$chunkSize = 100;
