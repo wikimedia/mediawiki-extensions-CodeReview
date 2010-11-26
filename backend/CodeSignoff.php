@@ -20,7 +20,7 @@ class CodeSignoff {
 	
 	/**
 	 * This constructor is only used by newFrom*(). You should not create your own
-	 * CodeSignoff objects, they'll be useless if they don't correspond to existing entires
+	 * CodeSignoff objects, they'll be useless if they don't correspond to existing entries
 	 * in the database.
 	 *
 	 * For more detailed explanations of what each of the parameters mean, see public members.
