@@ -137,17 +137,17 @@ class CodeRevision {
 		return $this->mCommonPath;
 	}
 
-	/*
+	/**
 	 * List of all possible states a CodeRevision can be in
-	 * return Array
+	 * @return Array
 	 */
 	public static function getPossibleStates() {
 		return array( 'new', 'fixme', 'reverted', 'resolved', 'ok', 'verified', 'deferred', 'old' );
 	}
 
-	/*
+	/**
 	 * List of all flags a user can mark themself as having done to a revision
-	 * Return Array
+	 * @return Array
 	 */
 	public static function getPossibleFlags() {
 		return array( 'inspected', 'tested' );
@@ -636,6 +636,11 @@ class CodeRevision {
 		return $refs;
 	}
 
+	/**
+	 * Get all sign-offs for this revision
+	 * @param $from DB_SLAVE or DB_MASTER
+	 * @return array of CodeSignoff objects
+	 */
 	public function getSignoffs( $from = DB_SLAVE ) {
 		$db = wfGetDB( $from );
 		$result = $db->select( 'code_signoffs',
@@ -656,14 +661,14 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $user User
-	 * @param  $flags
-	 * @return void
+	 * Add signoffs for this revision
+	 * @param $user User object for the user who did the sign-off
+	 * @param $flags array of flags (strings, see getPossibleFlags()). Each flag is added as a separate sign-off
 	 */
 	public function addSignoff( $user, $flags ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$rows = array();
-		foreach ( $flags as $flag ) {
+		foreach ( (array)$flags as $flag ) {
 			$rows[] = array(
 				'cs_repo_id' => $this->mRepoId,
 				'cs_rev_id' => $this->mId,

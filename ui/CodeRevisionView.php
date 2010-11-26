@@ -218,6 +218,9 @@ class CodeRevisionView extends CodeView {
 		return $wgUser->isAllowed( 'codereview-post-comment' ) && !$wgUser->isBlocked();
 	}
 
+	/**
+	 * @return bool Whether the current user can sign off on revisions
+	 */
 	protected function canSignoff() {
 		global $wgUser;
 		return $wgUser->isAllowed( 'codereview-signoff' ) && !$wgUser->isBlocked();
@@ -427,6 +430,11 @@ class CodeRevisionView extends CodeView {
 		return wfMsg( 'code-load-diff' );
 	}
 	
+	/**
+	 * Format the sign-offs table
+	 * @param $showButtons bool Whether the buttons to strike and submit sign-offs should be shown
+	 * @return string HTML
+	 */
 	protected function formatSignoffs( $showButtons ) {
 		$signoffs = implode( "\n",
 			array_map( array( $this, 'formatSignoffInline' ), $this->mRev->getSignoffs() )
@@ -477,8 +485,9 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param  $signoff CodeSignoff
-	 * @return string
+	 * Format a single sign-off row. Helper function for formatSignoffs()
+	 * @param $signoff CodeSignoff
+	 * @return string HTML
 	 */
 	protected function formatSignoffInline( $signoff ) {
 		global $wgLang;
@@ -656,7 +665,12 @@ class CodeRevisionView extends CodeView {
 			'</div>';
 	}
 
-	/** TODO : checkboxes should be disabled if user already has set the flag */
+	// TODO : checkboxes should be disabled if user already has set the flag
+	/**
+	 * Render the bottom row of the sign-offs table containing the buttons to
+	 * strike and submit sign-offs
+	 * @return string HTML
+	 */
 	protected function signoffButtons() {
 		$strikeButton = Xml::submitButton( wfMsg( 'code-signoff-strike' ), array( 'name' => 'wpStrikeSignoffs' ) );
 		$signoffText = wfMsgHtml( 'code-signoff-signoff' );
