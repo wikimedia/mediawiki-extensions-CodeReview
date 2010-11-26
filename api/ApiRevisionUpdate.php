@@ -72,6 +72,7 @@ class ApiRevisionUpdate extends ApiBase {
 	}
 
 	public function getAllowedParams() {
+		$flags = CodeRevision::getPossibleFlags();
 		return array(
 			'repo' => array(
 				ApiBase::PARAM_TYPE => 'string',
@@ -97,12 +98,12 @@ class ApiRevisionUpdate extends ApiBase {
 			'addflags' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_TYPE => CodeRevision::getPossibleFlags()
+				ApiBase::PARAM_TYPE => $flags
 			),
 			'removeflags' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_TYPE => CodeRevision::getPossibleFlags()
+				ApiBase::PARAM_TYPE => $flags
 			)
 		);
 	}
