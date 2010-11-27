@@ -98,6 +98,7 @@ $wgAvailableRights[] = 'codereview-remove-tag';
 $wgAvailableRights[] = 'codereview-post-comment';
 $wgAvailableRights[] = 'codereview-set-status';
 $wgAvailableRights[] = 'codereview-signoff';
+$wgAvailableRights[] = 'codereview-associate';
 $wgAvailableRights[] = 'codereview-link-user';
 
 $wgGroupPermissions['*']['codereview-use'] = true;
@@ -108,6 +109,7 @@ $wgGroupPermissions['user']['codereview-post-comment'] = true;
 $wgGroupPermissions['user']['codereview-set-status'] = true;
 $wgGroupPermissions['user']['codereview-link-user'] = true;
 $wgGroupPermissions['user']['codereview-signoff'] = true;
+$wgGroupPermissions['user']['codereview-associate'] = true;
 
 $wgGroupPermissions['steward']['repoadmin'] = true; // temp
 

@@ -324,19 +324,8 @@ class CodeRevision {
 			}
 		}
 
-		// Filter any duplicate revisions
 		if ( count( $affectedRevs ) ) {
-			$data = array();
-			$affectedRevs = array_unique( $affectedRevs );
-			foreach ( $affectedRevs as $rev ) {
-				$data[] = array(
-					'cf_repo_id' => $this->mRepoId,
-					'cf_from'    => $this->mId,
-					'cf_to'      => $rev
-				);
-				$affectedRevs[] = intval( $rev );
-			}
-			$dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
+			$this->addReferences( $affectedRevs );
 		}
 
 		global $wgEnableEmail;
@@ -620,6 +609,13 @@ class CodeRevision {
 		return $users;
 	}
 
+	/**
+	 * Get all revisions referring to this revision (called followups of this revision in the UI).
+	 *
+	 * Any references from a revision to itself or from a revision to a revision in its past
+	 * (i.e. with a lower revision ID) are silently dropped.
+	 * @return array of code_rev database row objects
+	 */
 	public function getReferences() {
 		$refs = array();
 		$dbr = wfGetDB( DB_SLAVE );
@@ -635,11 +631,49 @@ class CodeRevision {
 			__METHOD__
 		);
 		foreach( $res as $row ) {
-			if ( $this->mId != intval( $row->cr_id ) ) {
+			if ( $this->mId < intval( $row->cr_id ) ) {
 				$refs[] = $row;
 			}
 		}
 		return $refs;
+	}
+	
+	/**
+	 * Add references from the specified revisions to this revision. In the UI, this will
+	 * show the specified revisions as follow-ups to this one.
+	 *
+	 * This function will silently refuse to add a reference from a revision to itself or from
+	 * revisions in its past (i.e. with lower revision IDs)
+	 * @param $revs array of revision IDs
+	 */
+	public function addReferences( $revs ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$data = array();
+		foreach ( array_unique( (array)$revs ) as $rev ) {
+			if ( $rev > $this->getId() ) {
+				$data[] = array(
+					'cf_repo_id' => $this->getRepoId(),
+					'cf_from' => $rev,
+					'cf_to' => $this->getId()
+				);
+			}
+		}
+		$dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
+	}
+	
+	/**
+	 * Remove references from the specified revisions to this revision. In the UI, this will
+	 * no longer show the specified revisions as follow-ups to this one.
+	 * @param $revs array of revision IDs
+	 */
+	public function removeReferences( $revs ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->delete( 'code_relations', array(
+				'cf_repo_id' => $this->getRepoId(),
+				'cf_from' => $revs,
+				'cf_to' => $this->getId()
+			), __METHOD__
+		);
 	}
 
 	/**

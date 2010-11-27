@@ -44,9 +44,15 @@ class CodeRevisionView extends CodeView {
 		# Make tag arrays
 		$this->mAddTags = $this->splitTags( $this->mAddTags );
 		$this->mRemoveTags = $this->splitTags( $this->mRemoveTags );
-		$this->mSignoffFlags = $wgRequest->getCheck( 'wpSignoff' ) ? $wgRequest->getArray( 'wpSignoffFlags' ) : array();
+		$this->mSignoffFlags = $wgRequest->getCheck( 'wpSignoff' ) ?
+			$wgRequest->getArray( 'wpSignoffFlags' ) : array();
 		$this->mSelectedSignoffs = $wgRequest->getArray( 'wpSignoffs' );
-		$this->mStrikeSignoffs = $wgRequest->getCheck( 'wpStrikeSignoffs' ) ? $this->mSelectedSignoffs : array();
+		$this->mStrikeSignoffs = $wgRequest->getCheck( 'wpStrikeSignoffs' ) ?
+			$this->mSelectedSignoffs : array();
+		$this->mAddReference = $wgRequest->getCheck( 'wpAddReferenceSubmit' ) ?
+			$wgRequest->getIntOrNull( 'wpAddReference' ) : null;
+		$this->mRemoveReferences = $wgRequest->getCheck( 'wpRemoveReferences' ) ?
+			$wgRequest->getIntArray( 'wpReferences', array() ) : array();
 	}
 
 	function execute() {
@@ -134,11 +140,8 @@ class CodeRevisionView extends CodeView {
 		$html .= "<h2 id='code-signoffs'>" . wfMsgHtml( 'code-signoffs' ) .
 			"</h2>\n" . $this->formatSignoffs( $this->canSignoff() );
 		# Show code relations
-		$relations = $this->formatReferences();
-		if ( $relations ) {
-			$html .= "<h2 id='code-references'>" . wfMsgHtml( 'code-references' ) .
-				"</h2>\n" . $relations;
-		}
+		$html .= "<h2 id='code-references'>" . wfMsgHtml( 'code-references' ) .
+			"</h2>\n" . $this->formatReferences( $this->canAssociate() );
 		# Add revision comments
 		if ( $comments ) {
 			$html .= "<h2 id='code-comments'>" . wfMsgHtml( 'code-comments' ) .
@@ -224,6 +227,14 @@ class CodeRevisionView extends CodeView {
 	protected function canSignoff() {
 		global $wgUser;
 		return $wgUser->isAllowed( 'codereview-signoff' ) && !$wgUser->isBlocked();
+	}
+	
+	/**
+	 * @return bool Whether the current user can add and remove associations between revisions
+	 */
+	protected function canAssociate() {
+		global $wgUser;
+		return $wgUser->isAllowed( 'codereview-associate' ) && !$wgUser->isBlocked();
 	}
 
 	protected function formatPathLine( $path, $action ) {
@@ -470,18 +481,17 @@ class CodeRevisionView extends CodeView {
 		return "<ul class='mw-codereview-changes'>$changes</ul>";
 	}
 
-	protected function formatReferences() {
+	protected function formatReferences( $showButtons ) {
 		$refs = implode( "\n",
 			array_map( array( $this, 'formatReferenceInline' ), $this->mRev->getReferences() )
 		);
-		if ( !$refs ) {
-			return false;
-		}
-		$header = '<th>' . wfMsgHtml( 'code-field-id' ) . '</th>';
+		$header = '<th></th>';
+		$header .= '<th>' . wfMsgHtml( 'code-field-id' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-message' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-author' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-timestamp' ) . '</th>';
-		return "<table border='1' class='TablePager'><tr>{$header}</tr>{$refs}</table>";
+		$buttonrow = $showButtons ? $this->referenceButtons() : '';
+		return "<table border='1' class='TablePager'><tr>{$header}</tr>{$refs}{$buttonrow}</table>";
 	}
 
 	/**
@@ -563,7 +573,8 @@ class CodeRevisionView extends CodeView {
 		$revLink = $this->skin->link( $title, $this->mRev->getIdString( $rev ) );
 		$summary = $this->messageFragment( $row->cr_message );
 		$author = $this->authorLink( $row->cr_author );
-		return "<tr class='$css'><td>$revLink</td><td>$summary</td><td>$author</td><td>$date</td></tr>";
+		$checkbox = Html::input( 'wpReferences[]', $rev, 'checkbox' );
+		return "<tr class='$css'><td>$checkbox</td><td>$revLink</td><td>$summary</td><td>$author</td><td>$date</td></tr>";
 	}
 
 	protected function commentLink( $commentId ) {
@@ -682,6 +693,21 @@ class CodeRevisionView extends CodeView {
 		}
 		return "<tr class='mw-codereview-signoffbuttons'><td colspan='4'>$strikeButton " . 
 			"<div class='mw-codereview-signoffchecks'>$signoffText $checks $signoffButton</div></td></tr>";
+	}
+	
+	/**
+	 * Render the bottom row of the follow-up revisions table containing the buttons and
+	 * textbox to add and remove follow-up associations
+	 * @return string HTML
+	 */
+	protected function referenceButtons() {
+		$removeButton = Xml::submitButton( wfMsg( 'code-reference-remove' ), array( 'name' => 'wpRemoveReferences' ) );
+		$associateText = wfMsgHtml( 'code-reference-associate' );
+		$associateButton = Xml::submitButton( wfMsg( 'code-reference-associate-submit' ),
+			array( 'name' => 'wpAddReferenceSubmit' ) );
+		$textbox = Html::input( 'wpAddReference' );
+		return "<tr class='mw-codereview-associatebuttons'><td colspan='5'>$removeButton " .
+			"<div class='mw-codereview-associateform'>$associateText $textbox $associateButton</div></td></tr>";
 	}
 
 	protected function addActionButtons() {

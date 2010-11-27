@@ -99,6 +99,10 @@ table.mw-codereview-meta td {
 	color: #666;
 }
 
+.mw-codereview-associateform {
+	float: right;
+}
+
 .mw-codereview-signoffchecks {
 	float: right;
 }

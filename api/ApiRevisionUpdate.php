@@ -51,6 +51,8 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['removetags'],
 			$params['addflags'],
 			$params['removeflags'],
+			null, // TODO: implement reference add/remove
+			array(),
 			$params['comment']
 		);
 
