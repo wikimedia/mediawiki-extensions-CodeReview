@@ -158,10 +158,16 @@ class CodeRevision {
 	 * @param String $status
 	 * @return bool
 	 */
-	public function isValidStatus( $status ) {
+	public static function isValidStatus( $status ) {
 		return in_array( $status, self::getPossibleStates(), true );
 	}
 
+	/**
+	 * @throws MWException
+	 * @param $status String, value in CodeRevision::getPossibleStates
+	 * @param $user User
+	 * @return bool
+	 */
 	public function setStatus( $status, $user ) {
 		if ( !$this->isValidStatus( $status ) ) {
 			throw new MWException( "Tried to save invalid code revision status" );
