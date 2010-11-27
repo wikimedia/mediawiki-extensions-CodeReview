@@ -1025,14 +1025,14 @@ $messages['be-tarask'] = array(
 	'code-signoffs' => 'Зацьвержданьні',
 	'code-signoff-legend' => 'Зацьвердзіць',
 	'code-signoff-submit' => 'Зацьвердзіць',
-	'code-signoff-strike' => 'Націсьніце на выбраныя выхады з сыстэмы',
-	'code-signoff-signoff' => 'Адпісацца ад гэтай вэрсіі:',
+	'code-signoff-strike' => 'Закрэсьліць выбраныя зацьверджаньні',
+	'code-signoff-signoff' => 'Зацьвердзіць гэтую вэрсію як:',
 	'code-signoff-flag-inspected' => 'Праінспэктаваны',
 	'code-signoff-flag-tested' => 'Пратэставаны',
 	'code-signoff-field-user' => 'Распрацоўшчык',
 	'code-signoff-field-flag' => 'Сьцяг',
 	'code-signoff-field-date' => 'Дата',
-	'code-signoff-struckdate' => '$1 (націснуў $2)',
+	'code-signoff-struckdate' => '$1 (закрэсьленая $2)',
 	'code-pathsearch-legend' => 'Пошук у гэтым сховішчы вэрсіяў па іх адрасе',
 	'code-pathsearch-path' => 'Шлях:',
 	'code-pathsearch-filter' => 'Выкарыстаны фільтар:',
@@ -3896,14 +3896,11 @@ URL complèta : $3
 Rèsumâ des changements :
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2] : l’èprôva ôtomatica at dècelâ una règrèssion',
-	'codereview-email-body3' => 'L’èprôva ôtomatica at dècelâ una règrèssion a côsa des changements arrevâs dens $1.
+	'codereview-email-subj3' => '[$1] [$2] : l’ètat de la vèrsion at changiê',
+	'codereview-email-body3' => 'L’utilisator « $1 » at changiê l’ètat de $2.
 
-Lim hipèrtèxto complèt : $2
-
-Rèsumâ pendent la somission :
-
-$3',
+Viely ètat : $3
+Novél ètat : $4',
 	'code-stats' => 'statistiques',
 	'code-stats-header' => 'Statistiques por lo dèpôt $1',
 	'code-stats-main' => 'A la dâta du $1, lo dèpôt at $2 {{PLURAL:$2|rèvision fêta|rèvisions fêtes}} per [[Special:Code/$3/author|$4 ôtor{{PLURAL:$4||s}}]].',
@@ -4899,7 +4896,7 @@ $messages['hsb'] = array(
 	'code-signoff-field-user' => 'Wužiwar',
 	'code-signoff-field-flag' => 'Chorhojčka',
 	'code-signoff-field-date' => 'Datum',
-	'code-signoff-struckdate' => '$1 (je $2 wušmórnył)',
+	'code-signoff-struckdate' => '$1 (je so $2 wušmórnyło)',
 	'code-pathsearch-legend' => 'W tutym repozitoriju po šćežce pytać',
 	'code-pathsearch-path' => 'Šćežka:',
 	'code-pathsearch-filter' => 'Nałoženy filter:',
@@ -8357,11 +8354,14 @@ $messages['pl'] = array(
 	'code-signoffs' => 'Autorytarnie zatwierdzone',
 	'code-signoff-legend' => 'Oznacz jako autorytarnie zatwierdzone',
 	'code-signoff-submit' => 'Autorytarnie zatwierdzam',
+	'code-signoff-strike' => 'Przekreśl wybrane autorytarne zatwierdzenia',
+	'code-signoff-signoff' => 'Autorytarnie zatwierdź tę wersję jako',
 	'code-signoff-flag-inspected' => 'Skontrolowane',
 	'code-signoff-flag-tested' => 'Przetestowane',
 	'code-signoff-field-user' => 'Użytkownik',
 	'code-signoff-field-flag' => 'Flaga',
 	'code-signoff-field-date' => 'Data',
+	'code-signoff-struckdate' => '$1 (skreślił $2)',
 	'code-pathsearch-legend' => 'Szukaj wersji w tym repozytorium na podstawie ścieżki',
 	'code-pathsearch-path' => 'Ścieżka',
 	'code-pathsearch-filter' => 'Zastosowany filtr',
@@ -10245,11 +10245,14 @@ $messages['sl'] = array(
 	'code-signoffs' => 'Odobritve',
 	'code-signoff-legend' => 'Dodajte odobritev',
 	'code-signoff-submit' => 'Odobri',
+	'code-signoff-strike' => 'Udari izbrane odobritve',
+	'code-signoff-signoff' => 'Odobri to redakcijo kot:',
 	'code-signoff-flag-inspected' => 'Pregledano',
 	'code-signoff-flag-tested' => 'Preizkušeno',
 	'code-signoff-field-user' => 'Uporabnik',
 	'code-signoff-field-flag' => 'Oznaka',
 	'code-signoff-field-date' => 'Datum',
+	'code-signoff-struckdate' => '$1 (udarjeno $2)',
 	'code-pathsearch-legend' => 'Iskanje redakcij v tej shrambi po poti',
 	'code-pathsearch-path' => 'Pot:',
 	'code-pathsearch-filter' => 'Uporabljen filter:',
