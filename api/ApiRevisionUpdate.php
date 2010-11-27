@@ -51,8 +51,8 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['removetags'],
 			$params['addflags'],
 			$params['removeflags'],
-			null, // TODO: implement reference add/remove
-			array(),
+			$params['addreferences'],
+			$params['removereferences'],
 			$params['comment']
 		);
 
@@ -106,7 +106,15 @@ class ApiRevisionUpdate extends ApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_TYPE => $flags
-			)
+			),
+			'addreferences' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_ISMULTI => true,
+			),
+			'removereferences' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_ISMULTI => true,
+			),
 		);
 	}
 
