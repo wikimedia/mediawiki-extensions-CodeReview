@@ -440,9 +440,9 @@ class CodeRevisionView extends CodeView {
 			array_map( array( $this, 'formatSignoffInline' ), $this->mRev->getSignoffs() )
 		);
 		$header = '<th></th>';
-		$header .= '<th>' . wfMsg( 'code-signoff-field-user' ) . '</th>';
-		$header .= '<th>' . wfMsg( 'code-signoff-field-flag' ). '</th>';
-		$header .= '<th>' . wfMsg( 'code-signoff-field-date' ). '</th>';
+		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-user' ) . '</th>';
+		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-flag' ). '</th>';
+		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-date' ). '</th>';
 		$buttonrow = $showButtons ? $this->signoffButtons() : '';
 		return "<table border='1' class='TablePager'><tr>$header</tr>$signoffs$buttonrow</table>";
 	}
@@ -477,10 +477,10 @@ class CodeRevisionView extends CodeView {
 		if ( !$refs ) {
 			return false;
 		}
-		$header = '<th>' . wfMsg( 'code-field-id' ) . '</th>';
-		$header .= '<th>' . wfMsg( 'code-field-message' ) . '</th>';
-		$header .= '<th>' . wfMsg( 'code-field-author' ) . '</th>';
-		$header .= '<th>' . wfMsg( 'code-field-timestamp' ) . '</th>';
+		$header = '<th>' . wfMsgHtml( 'code-field-id' ) . '</th>';
+		$header .= '<th>' . wfMsgHtml( 'code-field-message' ) . '</th>';
+		$header .= '<th>' . wfMsgHtml( 'code-field-author' ) . '</th>';
+		$header .= '<th>' . wfMsgHtml( 'code-field-timestamp' ) . '</th>';
 		return "<table border='1' class='TablePager'><tr>{$header}</tr>{$refs}</table>";
 	}
 
@@ -499,9 +499,9 @@ class CodeRevisionView extends CodeView {
 		if ( $signoff->isStruck() ) {
 			$class .= ' mw-codereview-struck';
 			$struckDate = $wgLang->timeanddate( $signoff->getTimestampStruck(), true );
-			$date = wfMsg( 'code-signoff-struckdate', $signoffDate, $struckDate );
+			$date = wfMsgHtml( 'code-signoff-struckdate', $signoffDate, $struckDate );
 		} else {
-			$date = $signoffDate;
+			$date = htmlspecialchars( $signoffDate );
 		}
 		return "<tr class='$class'><td>$checkbox</td><td>$user</td><td>$flag</td><td>$date</td></tr>";
 	}
@@ -526,7 +526,7 @@ class CodeRevisionView extends CodeView {
 		$line .= " <i>[";
 		// Items that were changed or set...
 		if ( $change->removed ) {
-			$line .= '<b>' . wfMsg( 'code-change-removed' ) . '</b> ';
+			$line .= '<b>' . wfMsgHtml( 'code-change-removed' ) . '</b> ';
 			// Status changes...
 			if ( $change->attrib == 'status' ) {
 				$line .= wfMsgHtml( 'code-status-' . $change->removed );
@@ -539,7 +539,7 @@ class CodeRevisionView extends CodeView {
 		}
 		// Items that were changed to something else...
 		if ( $change->added ) {
-			$line .= '<b>' . wfMsg( 'code-change-added' ) . '</b> ';
+			$line .= '<b>' . wfMsgHtml( 'code-change-added' ) . '</b> ';
 			// Status changes...
 			if ( $change->attrib == 'status' ) {
 				$line .= wfMsgHtml( 'code-status-' . $change->added );
