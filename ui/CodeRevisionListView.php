@@ -79,7 +79,7 @@ class CodeRevisionListView extends CodeView {
 		$dbr = wfGetDB( DB_SLAVE );
 		$revObjects = array();
 		$res = $dbr->select( 'code_rev', '*', array( 'cr_id' => $revisions, 'cr_repo_id' => $this->mRepo->getId() ), __METHOD__ );
-		foreach ($res as $row ) {
+		foreach ( $res as $row ) {
 			$revObjects[] = CodeRevision::newFromRow( $this->mRepo, $row );
 		}
 
