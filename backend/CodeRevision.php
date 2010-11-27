@@ -671,7 +671,7 @@ class CodeRevision {
 		$dbw = wfGetDB( DB_MASTER );
 		$data = array();
 		foreach ( array_unique( (array)$revs ) as $rev ) {
-			if ( $rev > $this->getId() ) {
+			if ( $rev < $this->getId() ) {
 				$data[] = array(
 					'cf_repo_id' => $this->getRepoId(),
 					'cf_from' => $this->getId(),
