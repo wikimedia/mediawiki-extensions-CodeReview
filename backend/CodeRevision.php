@@ -325,7 +325,7 @@ class CodeRevision {
 		}
 
 		if ( count( $affectedRevs ) ) {
-			$this->addReferences( $affectedRevs );
+			$this->addReferencesTo( $affectedRevs );
 		}
 
 		global $wgEnableEmail;
@@ -646,7 +646,7 @@ class CodeRevision {
 	 * revisions in its past (i.e. with lower revision IDs)
 	 * @param $revs array of revision IDs
 	 */
-	public function addReferences( $revs ) {
+	public function addReferencesFrom( $revs ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$data = array();
 		foreach ( array_unique( (array)$revs ) as $rev ) {
@@ -662,11 +662,33 @@ class CodeRevision {
 	}
 	
 	/**
+	 * Same as addReferencesFrom(), but adds references from this revision to
+	 * the specified revisions.
+	 * @param $revs array of revision IDs
+	 */
+	public function addReferencesTo( $revs ) {
+		// TODO: Refactor common bits out
+		$dbw = wfGetDB( DB_MASTER );
+		$data = array();
+		foreach ( array_unique( (array)$revs ) as $rev ) {
+			if ( $rev > $this->getId() ) {
+				$data[] = array(
+					'cf_repo_id' => $this->getRepoId(),
+					'cf_from' => $this->getId(),
+					'cf_to' => $rev,
+				);
+			}
+		}
+		$dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
+	}
+	
+	/**
 	 * Remove references from the specified revisions to this revision. In the UI, this will
 	 * no longer show the specified revisions as follow-ups to this one.
 	 * @param $revs array of revision IDs
 	 */
-	public function removeReferences( $revs ) {
+	public function removeReferencesFrom( $revs ) {
+		// TODO: Introduce removeReferencesTo() and refactor common bits out
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'code_relations', array(
 				'cf_repo_id' => $this->getRepoId(),
