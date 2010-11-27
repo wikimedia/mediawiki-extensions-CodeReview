@@ -50,7 +50,7 @@ class CodeRevisionView extends CodeView {
 		$this->mStrikeSignoffs = $wgRequest->getCheck( 'wpStrikeSignoffs' ) ?
 			$this->mSelectedSignoffs : array();
 		$this->mAddReference = $wgRequest->getCheck( 'wpAddReferenceSubmit' ) ?
-			$wgRequest->getIntOrNull( 'wpAddReference' ) : null;
+			$wgRequest->getIntArray( 'wpAddReference', array() ) : array();
 		$this->mRemoveReferences = $wgRequest->getCheck( 'wpRemoveReferences' ) ?
 			$wgRequest->getIntArray( 'wpReferences', array() ) : array();
 	}

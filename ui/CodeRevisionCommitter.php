@@ -53,7 +53,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @param Array $removeTags Tags to remove from the Revision
 	 * @param Array $addSignoffs Array of sign-off flags to add
 	 * @param Array $strikeSignoffs Array of sign-off IDs to strike
-	 * @param mixed $addReference ID of revision to add reference from (int) or null
+	 * @param Array $addReferences Array of revision IDs to add reference from
 	 * @param Array $removeReferences Array of revision IDs to remove references from
 	 * @param string $commentText Comment to add to the revision
 	 * @param null|int $parent What the parent comment is (if a subcomment)
@@ -61,7 +61,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @return int Comment ID if added, else 0
 	 */
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
-						$addReference, $removeReferences, $commentText,
+						$addReferences, $removeReferences, $commentText,
 						$parent = null, $review = 0 ) {
 		if ( !$this->mRev ) {
 			return false;
@@ -97,8 +97,8 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$this->mRev->strikeSignoffs( $wgUser, $strikeSignoffs );
 		}
 		// Add reference if requested
-		if ( $addReference !== null && $this->validPost( 'codereview-associate' ) ) {
-			$this->mRev->addReferencesFrom( array( $addReference ) );
+		if ( count( $addReferences ) && $this->validPost( 'codereview-associate' ) ) {
+			$this->mRev->addReferencesFrom( $addReferences );
 		}
 		// Remove references if requested
 		if ( count( $removeReferences ) && $this->validPost( 'codereview-associate' ) ) {
