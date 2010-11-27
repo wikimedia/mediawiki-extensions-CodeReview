@@ -14,7 +14,7 @@ class BulkStatusUpdate extends Maintenance {
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all. Repos:'
 				. implode( ", ", CodeRepository::getRepoList() ) );
 		$this->addArg( 'revisions', "The revisions to set status for. Format: start:end" );
-		$this->addArg( 'status', implode( ", ", CodeRevision::getPossibleStates() ) );
+		$this->addArg( 'status', "Code Status: " . implode( ", ", CodeRevision::getPossibleStates() ) );
 		$this->addArg( 'user', "Username for whom to accredit the state changes to." .
 				"The User needs to have the 'codereview-set-status' right" );
 	}
@@ -28,7 +28,7 @@ class BulkStatusUpdate extends Maintenance {
 
 		$repo = CodeRepository::newFromName( $repoName );
 		if ( !$repo ) {
-			$this->error( "Repo '{$$repoName}' is not a valid Repository", true );
+			$this->error( "Repo '{$repoName}' is not a valid Repository", true );
 		}
 
 		$revisions = $this->getArg( 1 );
