@@ -355,9 +355,9 @@ class CodeRepository {
 
 	/*
 	 * Link the $author to the wikiuser $user
-	 * @param string $author
-	 * @param User $user
-	 * @return bool success
+	 * @param $author String
+	 * @param $user User
+	 * @return bool Success
 	 */
 	public function linkUser( $author, User $user ) {
 		// We must link to an existing user
