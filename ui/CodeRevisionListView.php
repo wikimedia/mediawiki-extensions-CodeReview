@@ -2,9 +2,7 @@
 
 // Special:Code/MediaWiki
 class CodeRevisionListView extends CodeView {
-	public $mRepo, $mPath;
-
-	private $batchForm;
+	public $mRepo, $mPath, $batchForm;
 
 	function __construct( $repoName ) {
 		global $wgRequest;
@@ -298,7 +296,7 @@ class SvnRevTablePager extends SvnTablePager {
 			'cr_timestamp' => wfMsg( 'code-field-timestamp' ),
 		);
 		# Only show checkboxen as needed
-		if ( !empty( $this->mView->batchForm ) ) {
+		if ( $this->mView->batchForm ) {
 			$fields = array( 'selectforchange' => wfMsg( 'code-field-select' ) ) + $fields;
 		}
 		return $fields;

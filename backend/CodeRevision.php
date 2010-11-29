@@ -667,7 +667,6 @@ class CodeRevision {
 	 * @param $revs array of revision IDs
 	 */
 	public function addReferencesTo( $revs ) {
-		// TODO: Refactor common bits out
 		$dbw = wfGetDB( DB_MASTER );
 		$data = array();
 		foreach ( array_unique( (array)$revs ) as $rev ) {
@@ -688,7 +687,6 @@ class CodeRevision {
 	 * @param $revs array of revision IDs
 	 */
 	public function removeReferencesFrom( $revs ) {
-		// TODO: Introduce removeReferencesTo() and refactor common bits out
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete( 'code_relations', array(
 				'cf_repo_id' => $this->getRepoId(),
