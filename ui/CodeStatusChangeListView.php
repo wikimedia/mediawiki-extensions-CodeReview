@@ -54,6 +54,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 			'cpc_timestamp' => wfMsg( 'code-field-timestamp' ),
 			'cpc_user_text' => wfMsg( 'code-field-user' ),
 			'cpc_rev_id' => wfMsg( 'code-field-id' ),
+			'cr_author' => WfMsg( 'code-field-author' ),
 			'cr_message' => wfMsg( 'code-field-message' ),
 			'cpc_removed' => wfMsg( 'code-old-status' ),
 			'cpc_added' => wfMsg( 'code-new-status' ),
@@ -67,6 +68,8 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 			return $this->mView->skin->link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-changes' ),
 				htmlspecialchars( $value ) );
+		case 'cr_author':
+			return $this->mView->authorLink( $value );
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cr_status':
