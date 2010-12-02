@@ -318,7 +318,7 @@ class SvnRevTablePager extends SvnTablePager {
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value ),
 				htmlspecialchars( $value ),
 				array(),
-				array( 'path' => $this->mView->mPath )
+				$pathQuery
 			);
 		case 'cr_status':
 			return $this->mView->skin->link(
