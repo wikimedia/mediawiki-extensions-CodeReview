@@ -3286,6 +3286,7 @@ $4',
  * @author Komeil 4life
  * @author Ladsgroup
  * @author Mardetanha
+ * @author Mjbmr
  * @author Sahim
  * @author Wayiran
  * @author ZxxZxxZ
@@ -3337,6 +3338,7 @@ $messages['fa'] = array(
 	'code-field-path' => 'مسیر',
 	'code-field-text' => 'نکته',
 	'code-field-select' => 'انتخاب',
+	'code-reference-associate-submit' => 'یکپارچه کردن',
 	'code-rev-author' => 'مولف:',
 	'code-rev-date' => 'تاریخ:',
 	'code-rev-message' => 'توضیح:',
@@ -3371,6 +3373,7 @@ $messages['fa'] = array(
 	'code-status-verified' => 'تاییدشده',
 	'code-status-deferred' => 'معوق',
 	'code-status-old' => 'قدیمی',
+	'code-signoff-flag-tested' => 'آزمایش شد',
 	'code-signoff-field-user' => 'کاربر',
 	'code-signoff-field-flag' => 'پرچم',
 	'code-signoff-field-date' => 'تاریخ',
@@ -5840,6 +5843,9 @@ $messages['ja'] = array(
 	'code-field-path' => 'パス',
 	'code-field-text' => 'コメント',
 	'code-field-select' => '選択',
+	'code-reference-remove' => '選択された関連付けを除去',
+	'code-reference-associate' => '追補版を関連付け：',
+	'code-reference-associate-submit' => '関連付け',
 	'code-rev-author' => '著者:',
 	'code-rev-date' => '日付:',
 	'code-rev-message' => 'コメント:',
@@ -5885,11 +5891,14 @@ $messages['ja'] = array(
 	'code-signoffs' => 'サインオフ',
 	'code-signoff-legend' => 'サインオフを追加',
 	'code-signoff-submit' => 'サインオフ',
+	'code-signoff-strike' => '選択されたサインオフを取り消し',
+	'code-signoff-signoff' => 'このリビジョンを以下のようにサインオフ：',
 	'code-signoff-flag-inspected' => '検査済み',
 	'code-signoff-flag-tested' => '試験済み',
 	'code-signoff-field-user' => 'ユーザー',
 	'code-signoff-field-flag' => 'フラグ',
 	'code-signoff-field-date' => '日付',
+	'code-signoff-struckdate' => '$1（$2に取り消し）',
 	'code-pathsearch-legend' => 'このリポジトリ内のリビジョンをパスで検索する',
 	'code-pathsearch-path' => 'パス:',
 	'code-pathsearch-filter' => 'フィルターの適用',
@@ -10110,7 +10119,7 @@ $messages['sk'] = array(
 	'code-field-message' => 'Zhrnutie commitu',
 	'code-field-status' => 'Stav',
 	'code-field-timestamp' => 'Dátum',
-	'code-field-comments' => 'Poznámky',
+	'code-field-comments' => 'Komentáre',
 	'code-field-path' => 'Cesta',
 	'code-field-text' => 'Poznámka',
 	'code-field-select' => 'Vybrať',
@@ -10193,14 +10202,11 @@ Plný URL: $3
 Zhrnutie začlenenia:
 
 $4',
-	'codereview-email-subj3' => '[$1] [$2]: Automatický test zistil regresiu',
-	'codereview-email-body3' => 'Automatický test odhalil regresiu kvôli zmenám vykonaným v $1.
+	'codereview-email-subj3' => '[$1] [$2]: Stav revízie sa zmenil',
+	'codereview-email-body3' => 'Používateľ „$1“ zmenil stav $2.
 
-Plný URL: $2
-
-Zhrnutie commitu:
-
-$3',
+Starý stav: $2
+Nový stav:  $3',
 	'code-stats' => 'štatistika',
 	'code-stats-header' => 'Štatistika úložiska $1',
 	'code-stats-main' => '$1, úložisko má $2 {{PLURAL:$2|revíziu|revízie|revízií}} od [[Special:Code/$3/author|$4 {{PLURAL:$4|autora|autorov}}]].',
