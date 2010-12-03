@@ -42,27 +42,47 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 
 		$this->props = array_flip( $params['prop'] );
 
-		$listview = new CodeRevisionListView( $params['repo'] );
-		if ( is_null( $listview->getRepo() ) ) {
+		$repo = CodeRepository::newFromName( $params['repo'] );
+
+		if ( !$repo ) {
 			$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
 		}
+
+		$data = array();
+
+		$listview = new CodeRevisionListView( $repo );
 		$pager = $listview->getPager();
 
-		if ( !is_null( $params['start'] ) ) {
-			$pager->setOffset( $this->getDB()->timestamp( $params['start'] ) );
+		$revsSet = count( $params['revs'] );
+
+		if ( $revsSet ) {
+			$db = wfGetDB( DB_SLAVE );
+
+			$list = $db->makeList( $params['revs'] );
+
+			$query = $pager->getQueryInfo();
+
+		    $query['conds'][] = 'cr_id IN ( ' . $list . ' )';
+
+		    $revisions = $db->select( $query['tables'], $query['fields'], $query['conds'],
+			    __METHOD__, $query['options'], $query['join_conds'] );
+
+		} else {
+			if ( !is_null( $params['start'] ) ) {
+				$pager->setOffset( $this->getDB()->timestamp( $params['start'] ) );
+			}
+			$limit = $params['limit'];
+			$pager->setLimit( $limit );
+
+		    $pager->doQuery();
+
+			$revisions = $pager->getResult();
 		}
-		$limit = $params['limit'];
-		$pager->setLimit( $limit );
-
-		$pager->doQuery();
-
-		$revisions = $pager->getResult();
-		$data = array();
 
 		$count = 0;
 		$lastTimestamp = 0;
 		foreach ( $revisions as $row ) {
-			if ( $count == $limit ) {
+			if ( !$revsSet && $count == $limit ) {
 				$this->setContinueEnumParameter( 'start',
 					wfTimestamp( TS_ISO_8601, $lastTimestamp ) );
 				break;
@@ -72,7 +92,6 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			$lastTimestamp = $row->cr_timestamp;
 			$count++;
 		}
-		$revisions->free();
 
 		$result = $this->getResult();
 		$result->setIndexedTagName( $data, 'revision' );
@@ -102,7 +121,6 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		if ( isset( $this->props['timestamp'] ) ) {
 			$item['timestamp'] = wfTimestamp( TS_ISO_8601, $row->cr_timestamp );
 		}
-
 		return $item;
 	}
 
@@ -122,9 +140,14 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			'start' => array(
 				ApiBase::PARAM_TYPE => 'timestamp'
 			),
+			'revs' => array(
+				ApiBase::PARAM_ISMULTI => true,
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_MIN => 1,
+			),
 			'prop' => array(
 				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_DFLT => 'revid|author|status|timestamp',
+				ApiBase::PARAM_DFLT => 'revid|status|author|timestamp',
 				ApiBase::PARAM_TYPE => array(
 					'revid',
 					'status',
@@ -139,10 +162,12 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	}
 
 	public function getParamDescription() {
+		$p = $this->getModulePrefix();
 		return array(
 			'repo' => 'Name of the repository',
 			'limit' => 'How many revisions to return',
 			'start' => 'Timestamp to start listing at',
+			'revs' => "List of revisions to get information about. Overrides {$p}start",
 			'prop' => 'Which properties to return',
 		);
 	}
