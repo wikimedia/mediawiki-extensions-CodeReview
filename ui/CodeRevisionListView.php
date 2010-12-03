@@ -279,15 +279,17 @@ class SvnRevTablePager extends SvnTablePager {
 	}
 
 	function getSelectFields() {
-		return array( $this->getDefaultSort(),
-			'cr_id',
-			'cr_repo_id',
-			'cr_status',
-			'COUNT(DISTINCT cc_id) AS comments',
-			'cr_path',
-			'cr_message',
-			'cr_author',
-			'cr_timestamp' );
+		return array_unique(
+			array( $this->getDefaultSort(),
+				'cr_id',
+				'cr_repo_id',
+				'cr_status',
+				'COUNT(DISTINCT cc_id) AS comments',
+				'cr_path',
+				'cr_message',
+				'cr_author',
+				'cr_timestamp'
+			) );
 	}
 
 	function getFieldNames() {
