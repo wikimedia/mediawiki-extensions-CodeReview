@@ -2423,7 +2423,7 @@ $messages['dsb'] = array(
 	'code-field-message' => 'Zespominanje nagraś',
 	'code-field-status' => 'Status',
 	'code-field-timestamp' => 'Datum',
-	'code-field-comments' => 'Pśipiski',
+	'code-field-comments' => 'Komentary',
 	'code-field-path' => 'Sćažka',
 	'code-field-text' => 'Pśipisk',
 	'code-field-select' => 'Wubraś',
@@ -3082,7 +3082,7 @@ $messages['et'] = array(
 	'code-field-message' => 'Kommentaar',
 	'code-field-status' => 'Olek',
 	'code-field-timestamp' => 'Kuupäev',
-	'code-field-comments' => 'Märkused',
+	'code-field-comments' => 'Kommentaarid',
 	'code-field-path' => 'Rada',
 	'code-field-text' => 'Märkus',
 	'code-field-select' => 'Vali',
@@ -3333,6 +3333,7 @@ $messages['fa'] = array(
 	'code-field-user' => 'نظر دهنده',
 	'code-field-message' => 'خلاصهٔ سپردن',
 	'code-field-status' => 'وضعیت',
+	'code-field-status-description' => 'شرح وضعیت',
 	'code-field-timestamp' => 'تاریخ',
 	'code-field-comments' => 'توضیحات',
 	'code-field-path' => 'مسیر',
@@ -3366,6 +3367,7 @@ $messages['fa'] = array(
 	'code-rev-total' => 'تعداد کل نتایج: $1',
 	'code-rev-not-found' => "هیچ‌گونه تجدیدنظری برای '''$1''' وجود ندارد.",
 	'code-status-new' => 'تازه',
+	'code-status-desc-new' => 'نسخه در حال انتظار (وضعیت پیش‌فرض).',
 	'code-status-fixme' => 'درستم کن',
 	'code-status-reverted' => 'واگردانی شده',
 	'code-status-resolved' => 'حل شده',
@@ -3377,6 +3379,7 @@ $messages['fa'] = array(
 	'code-signoff-field-user' => 'کاربر',
 	'code-signoff-field-flag' => 'پرچم',
 	'code-signoff-field-date' => 'تاریخ',
+	'code-signoff-struckdate' => '$1 (رخ داد $2)',
 	'code-pathsearch-legend' => 'جستجوی نسخه‌ها در این مخزن بر اساس مسیر',
 	'code-pathsearch-path' => 'مسیر:',
 	'code-pathsearch-filter' => 'پالایهٔ اعمال‌شده:',
@@ -3414,6 +3417,22 @@ $4',
 خلاصهٔ ارتکاب‌شدن‌ها:
 
 $4',
+	'codereview-email-body3' => 'کاربر "$1" تغییر وضعیت داد از $2.
+
+وضعیت قدیمی: $3
+وضعیت جدید: $4',
+	'codereview-email-body4' => 'کاربر "$1" تغییر وضعیت داد از $2.
+
+وضعیت قدیمی: $3
+وضعیت جدید: $4
+
+کاربر "$1" همچنین یک نظر فرستاد در $2.
+
+نشانی کامل: $5
+
+نظر:
+
+$6',
 	'code-stats' => 'آمار',
 	'code-stats-header' => 'آمار برای مخزن $1',
 	'code-stats-main' => 'از تاریخ $1، انبار دارای $2 نسخه توسط [[Special:Code/$3/author|$4 نویسنده]] است.',
@@ -8571,10 +8590,13 @@ $messages['pms'] = array(
 	'code-field-status' => 'Stat',
 	'code-field-status-description' => 'Descrission dlë stat',
 	'code-field-timestamp' => 'Data',
-	'code-field-comments' => 'Nòte',
+	'code-field-comments' => 'Coment',
 	'code-field-path' => 'Përcors',
 	'code-field-text' => 'Nòta',
 	'code-field-select' => 'Selession-a',
+	'code-reference-remove' => 'Gava associassion selessionà',
+	'code-reference-associate' => 'Assòcia revision tacà:',
+	'code-reference-associate-submit' => 'Assòcia',
 	'code-rev-author' => 'Autor:',
 	'code-rev-date' => 'Data:',
 	'code-rev-message' => 'Coment:',
@@ -12556,6 +12578,7 @@ $messages['zh-hans'] = array(
 	'code-load-diff' => '加载差异中...',
 	'code-notes' => '新近发言',
 	'code-statuschanges' => '更改状态',
+	'code-mycommits' => '我的提交',
 	'code-authors' => '作者',
 	'code-status' => '状态',
 	'code-tags' => '标签',
@@ -12641,6 +12664,8 @@ $messages['zh-hans'] = array(
 $4',
 	'codereview-email-subj2' => '[$1] [$2]：后续更改',
 	'codereview-email-body2' => '用户“$1”对$2作出了后续更改。
+
+后续修订的URL链接：$5
 
 URL链接：$3
 
