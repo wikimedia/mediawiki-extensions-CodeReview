@@ -541,6 +541,26 @@ class CodeRevision {
 		return $comments;
 	}
 
+	/*
+	 * @return int
+	 */
+	public function getCommentCount() {
+		$dbr = wfGetDB( DB_SLAVE );
+		$result = $dbr->select( 'code_comment',
+			array( 'cc_id' ),
+			array(
+				'cc_repo_id' => $this->mRepoId,
+				'cc_rev_id' => $this->mId ),
+			__METHOD__
+		);
+
+		if ( $result ) {
+			return intval( $result->comments );
+		} else {
+			return 0;
+		}
+	}
+
 	public function getPropChanges() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( array( 'code_prop_changes', 'user' ),
