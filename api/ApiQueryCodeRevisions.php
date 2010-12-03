@@ -62,10 +62,10 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 
 			$query = $pager->getQueryInfo();
 
-		    $query['conds'][] = 'cr_id IN ( ' . $list . ' )';
+			$query['conds'][] = 'cr_id IN ( ' . $list . ' )';
 
-		    $revisions = $db->select( $query['tables'], $query['fields'], $query['conds'],
-			    __METHOD__, $query['options'], $query['join_conds'] );
+			$revisions = $db->select( $query['tables'], $query['fields'], $query['conds'],
+				__METHOD__, $query['options'], $query['join_conds'] );
 
 		} else {
 			if ( !is_null( $params['start'] ) ) {
@@ -74,7 +74,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			$limit = $params['limit'];
 			$pager->setLimit( $limit );
 
-		    $pager->doQuery();
+			$pager->doQuery();
 
 			$revisions = $pager->getResult();
 		}
