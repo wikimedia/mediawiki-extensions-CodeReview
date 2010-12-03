@@ -58,11 +58,9 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		if ( $revsSet ) {
 			$db = wfGetDB( DB_SLAVE );
 
-			$list = $db->makeList( $params['revs'] );
-
 			$query = $pager->getQueryInfo();
 
-			$query['conds'][] = 'cr_id IN ( ' . $list . ' )';
+			$query['conds'][] = array( 'cr_id IN' => $params['revs'] );
 
 			$revisions = $db->select( $query['tables'], $query['fields'], $query['conds'],
 				__METHOD__, $query['options'], $query['join_conds'] );
