@@ -144,7 +144,9 @@ $wgSubversionPassword = false;
 $wgCodeReviewENotif = false;
 
 // Set this to an e-mail list to send all comments to
-$wgCodeReviewCommentWatcher = false;
+$wgCodeReviewCommentWatcherEmail = false;
+// Name to use in the To: header of e-mails to the list. Ignored if $wgCodeReviewCommentWatcherEmail isn't set
+$wgCodeReviewCommentWatcherName = "CodeReview comments list";
 
 // What images can be used for client-side side-by-side comparisons?
 $wgCodeReviewImgRegex = '/\.(png|jpg|jpeg|gif)$/i';

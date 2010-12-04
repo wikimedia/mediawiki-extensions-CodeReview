@@ -462,7 +462,8 @@ class CodeRevision {
 		// If we've got a spam list, send e-mails to it too
 		if ( $wgCodeReviewCommentWatcher ) {
 			$watcher = new User();
-			$watcher->setEmail( $wgCodeReviewCommentWatcher );
+			$watcher->setEmail( $wgCodeReviewCommentWatcherEmail );
+			$watcher->setName( $wgCodeReviewCommentWatcherName );
 			$users[0] = $watcher; // We don't have any anons, so using 0 is safe
 		}
 
