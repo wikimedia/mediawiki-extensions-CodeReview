@@ -466,8 +466,10 @@ class CodeRevision {
 			$users[0] = $watcher; // We don't have any anons, so using 0 is safe
 		}
 
-		foreach ( $users as $user ) {
-			if ( $user->canReceiveEmail() ) {
+		foreach ( $users as $id => $user ) {
+			// canReceiveEmail() returns false for the fake watcher user, so exempt it
+			// This is ugly
+			if ( $id == 0 || $user->canReceiveEmail() ) {
 				// Send message in receiver's language
 				$lang = array( 'language' => $user->getOption( 'language' ) );
 
