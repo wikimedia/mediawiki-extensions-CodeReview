@@ -460,7 +460,7 @@ class CodeRevision {
 			$users[$user->getId()] = $user;
 		}
 		// If we've got a spam list, send e-mails to it too
-		if ( $wgCodeReviewCommentWatcher ) {
+		if ( $wgCodeReviewCommentWatcherEmail ) {
 			$watcher = new User();
 			$watcher->setEmail( $wgCodeReviewCommentWatcherEmail );
 			$watcher->setName( $wgCodeReviewCommentWatcherName );
