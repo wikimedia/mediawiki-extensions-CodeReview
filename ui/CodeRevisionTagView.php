@@ -19,7 +19,7 @@ class SvnRevTagTablePager extends SvnRevTablePager {
 
 	function getQueryInfo() {
 		$info = parent::getQueryInfo();
-		$info['tables'][] = 'code_tags';
+		$info['tables'] = array_merge(  array( 'code_tags' ), $info['tables'] );
 		$info['conds'][] = 'cr_repo_id=ct_repo_id';
 		$info['conds'][] = 'cr_id=ct_rev_id';
 		$info['conds']['ct_tag'] = $this->mTag; // fixme: normalize input?
