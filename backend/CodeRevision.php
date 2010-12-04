@@ -443,8 +443,8 @@ class CodeRevision {
 	 */
 	public function emailNotifyUsersOfChanges( $subject, $body ) {
 		// Give email notices to committer and commenters
-		global $wgCodeReviewENotif, $wgEnableEmail, $wgCodeReviewCommentWatcher,
-			$wgUser;
+		global $wgCodeReviewENotif, $wgEnableEmail, $wgCodeReviewCommentWatcherEmail,
+			$wgCodeReviewCommentWatcherName, $wgUser;
 		if ( !$wgCodeReviewENotif && !$wgEnableEmail ) {
 			return;
 		}
