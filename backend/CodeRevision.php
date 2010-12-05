@@ -142,7 +142,7 @@ class CodeRevision {
 	 * @return Array
 	 */
 	public static function getPossibleStates() {
-		return array( 'new', 'fixme', 'reverted', 'resolved', 'ok', 'verified', 'deferred', 'old' );
+		return array( 'new', 'fixme', 'reverted', 'resolved', 'ok', 'deferred', 'old' );
 	}
 
 	/**

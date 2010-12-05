@@ -51,7 +51,6 @@ CREATE TABLE /*_*/code_rev (
   -- 'reverted': Was completely reverted by a later revision
   -- 'resolved': Issues with this rev have been since resolved
   -- 'ok': Reviewed, no issues spotted
-  -- 'verified': Reviewed and tested, no issues spotted
   -- 'deferred': Not reviewed at this time (usually non-Wikimedia extension)
   -- 'old': Predates the extension/doesn't require review
   -- See CodeRevision::getPossibleStates() (in backend/CodeRevision.php) for most up to date list

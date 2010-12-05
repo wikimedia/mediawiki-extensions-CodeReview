@@ -14,7 +14,7 @@ CREATE TABLE code_repo (
 
 CREATE INDEX code_repo_repo_name ON code_repo (repo_name);
 
-CREATE TYPE cr_cr_status AS ENUM ('new', 'fixme', 'reverted', 'resolved', 'ok', 'verified', 'deferred');
+CREATE TYPE cr_cr_status AS ENUM ('new', 'fixme', 'reverted', 'resolved', 'ok', 'deferred');
 CREATE TABLE code_rev (
   cr_repo_id INTEGER NOT NULL,
 
