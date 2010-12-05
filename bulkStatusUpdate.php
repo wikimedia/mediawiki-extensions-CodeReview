@@ -14,7 +14,7 @@ class BulkStatusUpdate extends Maintenance {
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 		$this->addArg( 'revisions', "The revisions to set status for. Format: start:end" );
 		$this->addArg( 'status', "Code States: 'new', 'fixme', 'reverted', "
-			. "'resolved', 'ok', 'verified', 'deferred', 'old'" );
+			. "'resolved', 'ok', 'deferred', 'old'" );
 		$this->addArg( 'user', "Username for whom to accredit the state changes to." .
 				"The User needs to have the 'codereview-set-status' right" );
 	}
