@@ -234,10 +234,6 @@ class SvnRevTablePager extends SvnTablePager {
 		return $this->mView->mPath;
 	}
 
-	function isFieldSortable( $field ) {
-		return $field == $this->getDefaultSort();
-	}
-
 	function getDefaultSort() {
 		return strlen( $this->mView->mPath ) ? 'cp_rev_id' : 'cr_id';
 	}
