@@ -138,7 +138,7 @@ $messages['en'] = array(
 
 	'codereview-reply-link' => 'reply',
 
-	'codereview-email-subj' => '[$1] [$2]: New comment added',
+	'codereview-email-subj' => '$1 $2: New comment added',
 	'codereview-email-body' => 'User "$1" posted a comment on $3.
 
 Full URL: $2
@@ -147,7 +147,7 @@ Comment:
 
 $4',
 
-	'codereview-email-subj2' => '[$1] [$2]: Follow-up changes',
+	'codereview-email-subj2' => '$1 $2: Follow-up changes',
 	'codereview-email-body2' => 'User "$1" made follow-up changes to $2.
 
 Full URL for followed up revision: $5
@@ -158,13 +158,13 @@ Commit summary:
 
 $4',
 
-	'codereview-email-subj3' => '[$1] [$2]: Revision status changed',
+	'codereview-email-subj3' => '$1 $2: Revision status changed',
 	'codereview-email-body3' => 'User "$1" changed the status of $2.
 
 Old Status: $3
 New Status: $4',
 
-	'codereview-email-subj4' => '[$1] [$2]: New comment added, and revision status changed',
+	'codereview-email-subj4' => '$1 $2: New comment added, and revision status changed',
 	'codereview-email-body4' => 'User "$1" changed the status of $2.
 
 Old Status: $3
