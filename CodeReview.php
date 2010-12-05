@@ -157,6 +157,12 @@ $wgCodeReviewImgRegex = '/\.(png|jpg|jpeg|gif)$/i';
 $wgCodeReviewMaxDiffSize = 500000;
 
 /**
+ * Limit of the revisions accessible to the search by path.
+ * Set to 0 to disable the limit.
+ */
+$wgCodeReviewPathSearchHorizon = 20000;
+
+/**
  * Key is repository name. Value is an array of regexes
  *
  * Any base paths matching regular expressions in these arrays will have their

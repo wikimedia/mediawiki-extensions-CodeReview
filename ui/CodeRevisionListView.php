@@ -200,7 +200,7 @@ class CodeRevisionListView extends CodeView {
 							'cr_id = cp_rev_id',
 							' cp_path' . $dbr->buildLike( $this->mPath, $dbr->anyString() ),
 							// Performance
-							' cp_rev_id > ' . ( $this->mRepo->getLastStoredRev() - 20000 )
+							' cp_rev_id > ' . $this->mRepo->getPathSearchHorizon()
 						);
 		// No path; count of code_rev
 		} else {
@@ -252,7 +252,7 @@ class SvnRevTablePager extends SvnTablePager {
 					'cp_repo_id' => $this->mRepo->getId(),
 					'cp_path ' . $this->mDb->buildLike( $this->getSVNPath(), $this->mDb->anyString() ),
 					// performance
-					'cp_rev_id > ' . ( $this->mRepo->getLastStoredRev() - 20000 )
+					'cp_rev_id > ' . $this->mRepo->getPathSearchHorizon()
 				),
 				'options' => array( 'GROUP BY' => 'cp_rev_id', 'USE INDEX' => array( 'code_path' => 'cp_repo_id' ) ),
 				'join_conds' => array(
