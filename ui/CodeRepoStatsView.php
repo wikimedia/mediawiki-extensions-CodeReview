@@ -49,8 +49,10 @@ class CodeRepoStatsView extends CodeView {
 			foreach ( $stats->fixmes as $user => $count ) {
 				$count = htmlspecialchars( $wgLang->formatNum( $count ) );
 				$link = $this->skin->link(
-					SpecialPage::getTitleFor( 'Code', $repoName . '/author/' . $user ),
-					htmlspecialchars( $user )
+					SpecialPage::getTitleFor( 'Code', $repoName . '/status/fixme' ),
+					htmlspecialchars( $user ),
+					array(),
+					array( 'author' => $user )
 				);
 				$wgOut->addHTML( "<tr><td>$link</td>"
 					. "<td>$count</td></tr>" );
