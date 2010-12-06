@@ -134,10 +134,6 @@ table.mw-codereview-meta td {
 	color: darkcyan;
 }
 
-.mw-codereview-live td {
-	border-color: #33cc99 !important;
-}
-
 .mw-wordcloud-size-1, .mw-wordcloud-size-2,
 .mw-wordcloud-size-3, .mw-wordcloud-size-4,
 .mw-wordcloud-size-5, .mw-wordcloud-size-6,

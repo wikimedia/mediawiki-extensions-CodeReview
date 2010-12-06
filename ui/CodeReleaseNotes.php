@@ -2,7 +2,7 @@
 
 class CodeReleaseNotes extends CodeView {
 	function __construct( $repoName ) {
-		global $wgRequest, $wgWikiSVN, $IP;
+		global $wgRequest, $IP;
 		parent::__construct( $repoName );
 		$this->mRepo = CodeRepository::newFromName( $repoName );
 		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
@@ -12,10 +12,6 @@ class CodeReleaseNotes extends CodeView {
 		$this->mPath = preg_replace( '/\/$/', '', $this->mPath ); // kill last slash
 		$this->mStartRev = $wgRequest->getIntOrNull( 'startrev' );
 		$this->mEndRev = $wgRequest->getIntOrNull( 'endrev' );
-		# Default start rev to last live one if possible
-		if ( !$this->mStartRev && $this->mRepo && $this->mRepo->getName() == $wgWikiSVN ) {
-			$this->mStartRev = SpecialVersion::getSvnRevision( $IP ) + 1;
-		}
 	}
 
 	function execute() {

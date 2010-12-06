@@ -228,11 +228,7 @@ abstract class SvnTablePager extends TablePager {
 
 	// Note: this function is poorly factored in the parent class
 	function formatRow( $row ) {
-		global $wgWikiSVN;
 		$css = "mw-codereview-status-{$row->cr_status}";
-		if ( $this->mRepo->getName() == $wgWikiSVN ) {
-			$css .= " mw-codereview-" . ( $row-> { $this->getDefaultSort() } <= $this->mCurSVN ? 'live' : 'notlive' );
-		}
 		$s = "<tr class=\"$css\">\n";
 		// Some of this stolen from Pager.php...sigh
 		$fieldNames = $this->getFieldNames();
