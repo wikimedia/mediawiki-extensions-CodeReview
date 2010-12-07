@@ -226,6 +226,10 @@ abstract class SvnTablePager extends TablePager {
 		return $field == $this->getDefaultSort();
 	}
 
+	function formatRevValue( $name, $value, $row ) {
+		return $this->formatValue( $name, $value );
+	}
+
 	// Note: this function is poorly factored in the parent class
 	function formatRow( $row ) {
 		$css = "mw-codereview-status-{$row->cr_status}";
@@ -235,7 +239,7 @@ abstract class SvnTablePager extends TablePager {
 		$this->mCurrentRow = $row;  # In case formatValue needs to know
 		foreach ( $fieldNames as $field => $name ) {
 			$value = isset( $row->$field ) ? $row->$field : null;
-			$formatted = strval( $this->formatValue( $field, $value ) );
+			$formatted = strval( $this->formatRevValue( $field, $value, $row ) );
 			if ( $formatted == '' ) {
 				$formatted = '&#160;';
 			}
