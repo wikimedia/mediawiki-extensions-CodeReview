@@ -354,6 +354,27 @@ class SvnRevTablePager extends SvnTablePager {
 		}
 	}
 
+		// Note: this function is poorly factored in the parent class
+	function formatRow( $row ) {
+		global $wgWikiSVN;
+		$css = "mw-codereview-status-{$row->cr_status}";
+		$s = "<tr class=\"$css\">\n";
+		// Some of this stolen from Pager.php...sigh
+		$fieldNames = $this->getFieldNames();
+		$this->mCurrentRow = $row;  # In case formatValue needs to know
+		foreach ( $fieldNames as $field => $name ) {
+			$value = isset( $row->$field ) ? $row->$field : null;
+			$formatted = strval( $this->formatRevValue( $field, $value, $row ) );
+			if ( $formatted == '' ) {
+				$formatted = '&#160;';
+			}
+			$class = 'TablePager_col_' . htmlspecialchars( $field );
+			$s .= "<td class=\"$class\">$formatted</td>\n";
+		}
+		$s .= "</tr>\n";
+		return $s;
+	}
+
 	function getTitle() {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() );
 	}
