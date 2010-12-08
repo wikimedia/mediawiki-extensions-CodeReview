@@ -190,7 +190,7 @@ class CodeRevisionListView extends CodeView {
 	 * @return int Number of revisions
 	 */
 	function getRevCount( $dbr ) {
-		$tables = array( 'code_rev' );
+		/*$tables = array( 'code_rev' );
 		$selectFields = array( 'COUNT( DISTINCT cr_id ) AS rev_count' );
 		// Count if code_rev where path matches
 		if ( strlen( $this->mPath ) ) {
@@ -213,6 +213,8 @@ class CodeRevisionListView extends CodeView {
 		} else {
 			return 0;
 		}
+		*/
+		return mt_rand( 0, $this->mRepo->getLastStoredRev() );
 	}
 
 	/**
