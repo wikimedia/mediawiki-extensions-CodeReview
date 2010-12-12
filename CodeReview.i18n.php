@@ -12574,6 +12574,7 @@ $3',
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Chenzw
  * @author Gaoxuewei
+ * @author Hydra
  * @author Liangent
  * @author PhiLiP
  * @author Wmr89502270
@@ -12653,6 +12654,11 @@ $messages['zh-hans'] = array(
 	'code-status-resolved' => '解决',
 	'code-status-ok' => '确定',
 	'code-status-deferred' => '推迟',
+	'code-status-old' => '旧',
+	'code-signoff-field-user' => '用户',
+	'code-signoff-field-flag' => '标志',
+	'code-signoff-field-date' => '日期',
+	'code-signoff-struckdate' => '$ 1 （打$2）',
 	'code-pathsearch-path' => '路径：',
 	'code-pathsearch-filter' => '过滤器适用于：',
 	'code-revfilter-cr_status' => '状态 = $1',
