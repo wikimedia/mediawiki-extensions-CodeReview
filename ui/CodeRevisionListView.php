@@ -31,13 +31,13 @@ class CodeRevisionListView extends CodeView {
 
 		// Check for batch change requests.
 		$editToken = $wgRequest->getVal( 'wpBatchChangeEditToken' );
-		if ( $wgRequest->wasPosted() && $wgUser->matchEditToken( $editToken ) ) {
+		$revisions = $wgRequest->getArray( 'wpRevisionSelected' );
+		if ( $wgRequest->wasPosted() && count( $revisions ) && $wgUser->matchEditToken( $editToken ) ) {
 			$this->doBatchChange();
 			return;
 		}
 
 		$pathForm = $this->showForm();
-		$wgOut->addHTML( $pathForm );
 
 		// Get the total count across all pages
 		$dbr = wfGetDB( DB_SLAVE );
@@ -50,20 +50,23 @@ class CodeRevisionListView extends CodeView {
 			$wgUser->isAllowed( 'codereview-add-tag' );
 
 		$navBar = $pager->getNavigationBar();
-		$limitForm = $pager->getLimitForm();
+
+		$wgOut->addHTML( $pathForm );
 
 		$wgOut->addHTML(
 			$navBar .
-			'<table><tr><td>' . $limitForm . '</td>' .
+			'<table><tr><td>' . $pager->getLimitForm() . '</td>' .
 			'<td>&#160;<strong>' . wfMsgHtml( 'code-rev-total', $wgLang->formatNum( $revCount ) ) . '</strong></td>' .
 			'</tr></table>' .
 			Xml::openElement( 'form',
 				array( 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'post' )
 			) .
 			$pager->getBody() .
-			$limitForm .
+			//$pager->getLimitDropdown() .
 			$navBar .
-			( $this->batchForm ? $this->buildBatchInterface( $pager ) : "" ) .
+			( $this->batchForm ?
+					$this->buildBatchInterface( $pager )
+					: "" ) .
 			Xml::closeElement( 'form' )
 		);
 
@@ -175,7 +178,7 @@ class CodeRevisionListView extends CodeView {
 		} else {
 			$ret .= Html::hidden( 'title', $special->getPrefixedDBKey() ) ;
 		}
-		$ret .= "</tr></table></fieldset>" ;
+		$ret .= "</tr></table></fieldset></form>" ;
 
 		return $ret;
 	}
@@ -360,4 +363,3 @@ class SvnRevTablePager extends SvnTablePager {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() );
 	}
 }
-
