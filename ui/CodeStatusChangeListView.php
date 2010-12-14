@@ -16,6 +16,7 @@ class CodeStatusChangeListView extends CodeView {
 			$pager->getNavigationBar() .
 			$pager->getLimitForm() .
 			$pager->getBody() .
+			$pager->getLimitForm() .
 			$pager->getNavigationBar()
 		);
 	}
