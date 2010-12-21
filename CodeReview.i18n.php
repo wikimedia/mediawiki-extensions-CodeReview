@@ -3690,13 +3690,10 @@ Yhteenveto muokkaukselle:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Automaattinen testaus havaitsi regression',
-	'codereview-email-body3' => 'Automaattinen testaus havaitsi regression version $1 muutoksen takia.
+	'codereview-email-body3' => 'Käyttäjä $1 muutti kohteen $2 tilaa.
 
-Täydellinen osoite: $2
-
-Lähdekoodiversion kommentti:
-
-$3',
+Vanha tila: $3
+Uusi tila: $4',
 	'code-stats' => 'tilastot',
 	'code-stats-header' => 'Versionhallinnan $1 tilastot',
 	'code-stats-main' => '$1 versionhallinnassa oli {{PLURAL:$2|yksi muokkaus|$2 muokkausta}} [[Special:Code/$3/author|$4 {{PLURAL:$4|käyttäjältä|eri käyttäjältä}}]].',
@@ -4893,11 +4890,14 @@ $messages['hr'] = array(
 	'code-signoffs' => 'Završetci',
 	'code-signoff-legend' => 'Dodaj završetak',
 	'code-signoff-submit' => 'Odjavi se',
+	'code-signoff-strike' => 'Precrtaj odabrana odobrenja',
+	'code-signoff-signoff' => 'Odobri ovu reviziju kao:',
 	'code-signoff-flag-inspected' => 'Ispitano',
 	'code-signoff-flag-tested' => 'Testirano',
 	'code-signoff-field-user' => 'Suradnik',
 	'code-signoff-field-flag' => 'Zastavica',
 	'code-signoff-field-date' => 'Datum',
+	'code-signoff-struckdate' => '$1 (poništeno $2)',
 	'code-pathsearch-legend' => 'Traži izmjene u ovom repozitoriju preko putanje',
 	'code-pathsearch-path' => 'Putanja:',
 	'code-pathsearch-filter' => 'Primijenjen filtar:',
@@ -4935,6 +4935,24 @@ Puni URL: $3
 Napravljeni sažetak:
 
 $4',
+	'codereview-email-subj3' => '[$1 $2]: Promjena stanja revizije',
+	'codereview-email-body3' => 'Suradnik "$1" promijenio je stanje $2.
+
+Staro stanje: $3
+Novo stanje: $4',
+	'codereview-email-subj4' => '[$1 $2]: Dodan je novi komentar i promijenjeno je stanje revizije',
+	'codereview-email-body4' => 'Suradnik "$1"  je promijenio stanje $2.
+
+Staro stanje: $3
+Novo stanje: $4
+
+Suradnik "$1" je postavio i komentar na $2.
+
+Puni URL: $5
+
+Komentar:
+
+$6',
 	'code-stats' => 'statistike',
 	'code-stats-header' => 'Statistike za repozitorij $1',
 	'code-stats-main' => 'Sa stanjem od $1, repozitorij je imao $2 {{PLURAL:$2|reviziju|revizije|revizija}} od strane [[Special:Code/$3/author|$4 {{PLURAL:$4|autora|autora|autora}}]].',
@@ -4958,6 +4976,7 @@ $4',
 	'right-codereview-remove-tag' => 'Uklanjanje oznake za revizije',
 	'right-codereview-post-comment' => 'Dodavanje komentara na reviziju',
 	'right-codereview-set-status' => 'Promijeni status revizije',
+	'right-codereview-signoff' => 'Završi izmjene revizija',
 	'right-codereview-link-user' => 'Povezivanje autora s wiki suradnikom',
 	'specialpages-group-developer' => 'Alati za razvijatelje',
 );
@@ -12456,14 +12475,23 @@ $messages['yi'] = array(
 	'code-change-added' => 'צוגעלייגט:',
 	'code-authors' => 'שרייבערס',
 	'code-field-author' => 'שרייבער',
+	'code-rev-date' => 'דאַטע:',
 	'code-rev-modified-a' => 'צוגעלייגט',
 	'code-rev-modified-d' => 'אויסגעמעקט',
+	'code-rev-status' => 'סטאַטוס:',
+	'code-rev-status-set' => 'ענדערן סטאַטוס',
+	'code-rev-tags' => 'טאַגן',
 	'code-rev-comment-preview' => 'פֿאראויסשטעלונג',
 	'code-rev-inline-preview' => 'פֿאראויסשטעלונג:',
 	'code-status-new' => 'נײַ',
 	'code-status-reverted' => 'צוריקגעשטעלט',
 	'code-status-ok' => 'אויספֿירן',
+	'code-status-old' => 'אַלט',
+	'code-revfilter-cr_status' => 'סטאַטוס = $1',
+	'code-revfilter-cr_author' => 'מחבר = $1',
 	'codereview-subtitle' => 'פֿאַר $1',
+	'code-stats' => 'סטאַטיסטיק',
+	'repoadmin-new-button' => 'שאַפֿן',
 );
 
 /** Cantonese (粵語) */
