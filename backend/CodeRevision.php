@@ -670,7 +670,6 @@ class CodeRevision {
 	 * @param $revs array of revision IDs
 	 */
 	public function addReferencesFrom( $revs ) {
-		$dbw = wfGetDB( DB_MASTER );
 		$data = array();
 		foreach ( array_unique( (array)$revs ) as $rev ) {
 			if ( $rev > $this->getId() ) {
@@ -681,7 +680,12 @@ class CodeRevision {
 				);
 			}
 		}
-		$dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
+		$this->addReferences( $data );
+	}
+
+	private function addReferences( $data ) {
+		$dbw = wfGetDB( DB_MASTER );
+	    $dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
 	}
 	
 	/**
@@ -690,7 +694,6 @@ class CodeRevision {
 	 * @param $revs array of revision IDs
 	 */
 	public function addReferencesTo( $revs ) {
-		$dbw = wfGetDB( DB_MASTER );
 		$data = array();
 		foreach ( array_unique( (array)$revs ) as $rev ) {
 			if ( $rev < $this->getId() ) {
@@ -701,7 +704,7 @@ class CodeRevision {
 				);
 			}
 		}
-		$dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
+		$this->addReferences( $data );
 	}
 	
 	/**
