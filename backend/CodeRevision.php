@@ -281,48 +281,7 @@ class CodeRevision {
 			$this->insertChunks( $dbw, 'code_paths', $data, __METHOD__, array( 'IGNORE' ) );
 		}
 
-		// Update bug references table...
-		$affectedBugs = array();
-		if ( preg_match_all( '/\bbug (\d+)\b/', $this->mMessage, $m ) ) {
-			$data = array();
-			foreach ( $m[1] as $bug ) {
-				$data[] = array(
-					'cb_repo_id' => $this->mRepoId,
-					'cb_from'    => $this->mId,
-					'cb_bug'     => $bug
-				);
-				$affectedBugs[] = intval( $bug );
-			}
-			$dbw->insert( 'code_bugs', $data, __METHOD__, array( 'IGNORE' ) );
-		}
-
-		// Get the revisions this commit references...
-		$affectedRevs = array();
-		if ( preg_match_all( '/\br(\d{2,})\b/', $this->mMessage, $m ) ) {
-			foreach ( $m[1] as $rev ) {
-				$affectedRev = intval( $rev );
-				if ( $affectedRev != $this->mId ) {
-					$affectedRevs[] = $affectedRev;
-				}
-			}
-		}
-
-		// Also, get previous revisions that have bugs in common...
-		if ( count( $affectedBugs ) ) {
-			$res = $dbw->select( 'code_bugs',
-				array( 'cb_from' ),
-				array(
-					'cb_repo_id' => $this->mRepoId,
-					'cb_bug'     => $affectedBugs,
-					'cb_from < ' . intval( $this->mId ), # just in case
-				),
-				__METHOD__,
-				array( 'USE INDEX' => 'cb_repo_id' )
-			);
-			foreach ( $res as $row ) {
-				$affectedRevs[] = intval( $row->cb_from );
-			}
-		}
+		$affectedRevs = $this->getUniqueAffectedRevs();
 
 		if ( count( $affectedRevs ) ) {
 			$this->addReferencesTo( $affectedRevs );
@@ -389,6 +348,76 @@ class CodeRevision {
 			}
 		}
 		$dbw->commit();
+	}
+
+	/**
+	 * Returns a unique value array from that of getAffectedRevs() and getAffectedBugRevs()
+	 *
+	 * @return array
+	 */
+	public function getUniqueAffectedRevs() {
+		return array_unique( array_merge( $this->getAffectedRevs(), $this->getAffectedBugRevs() ) );
+	}
+
+	/**
+	 * Get the revisions this commit references
+	 *
+	 * @return array
+	 */
+	public function getAffectedRevs() {
+		$affectedRevs = array();
+		if ( preg_match_all( '/\br(\d{2,})\b/', $this->mMessage, $m ) ) {
+			foreach ( $m[1] as $rev ) {
+				$affectedRev = intval( $rev );
+				if ( $affectedRev != $this->mId ) {
+					$affectedRevs[] = $affectedRev;
+				}
+			}
+		}
+	    return $affectedRevs;
+	}
+
+	/**
+	 * Parses references bugs in the comment, inserts them to code bugs, and returns an array of previous revs linking to the same bug
+	 *
+	 * @return array
+	 */
+	public function getAffectedBugRevs() {
+		// Update bug references table...
+		$affectedBugs = array();
+		if ( preg_match_all( '/\bbug (\d+)\b/', $this->mMessage, $m ) ) {
+			$data = array();
+			foreach ( $m[1] as $bug ) {
+				$data[] = array(
+					'cb_repo_id' => $this->mRepoId,
+					'cb_from'    => $this->mId,
+					'cb_bug'     => $bug
+				);
+				$affectedBugs[] = intval( $bug );
+			}
+			$dbw = wfGetDB( DB_MASTER );
+		    $dbw->insert( 'code_bugs', $data, __METHOD__, array( 'IGNORE' ) );
+		}
+
+		// Also, get previous revisions that have bugs in common...
+		$affectedRevs = array();
+		if ( count( $affectedBugs ) ) {
+			$res = $dbw->select( 'code_bugs',
+				array( 'cb_from' ),
+				array(
+					'cb_repo_id' => $this->mRepoId,
+					'cb_bug'     => $affectedBugs,
+					'cb_from < ' . intval( $this->mId ), # just in case
+				),
+				__METHOD__,
+				array( 'USE INDEX' => 'cb_repo_id' )
+			);
+			foreach ( $res as $row ) {
+				$affectedRevs[] = intval( $row->cb_from );
+			}
+		}
+
+	    return $affectedRevs;
 	}
 
 	public function getModifiedPaths() {
