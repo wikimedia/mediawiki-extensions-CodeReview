@@ -6605,7 +6605,7 @@ $messages['ksh'] = array(
 	'code-rev-repo' => 'Repositorijum:',
 	'code-rev-rev' => 'Version:',
 	'code-rev-rev-viewvc' => 'op <i lang="en">ViewVC</i>',
-	'code-rev-paths' => 'Pahde met Veränderunge:',
+	'code-rev-paths' => 'Jeändert woodte:',
 	'code-rev-modified-a' => 'dobeij jedonn',
 	'code-rev-modified-r' => 'ußjetuusch',
 	'code-rev-modified-d' => 'fottjeschmeße',
