@@ -337,7 +337,7 @@ class CodeRevision {
 			$committer = $commitAuthor ? $commitAuthor->getName() : htmlspecialchars( $this->mAuthor );
 			// Get the authors of these revisions
 			$res = $dbw->select( 'code_rev',
-				array( 
+				array(
 					'cr_repo_id',
 					'cr_id',
 					'cr_author',
@@ -363,11 +363,11 @@ class CodeRevision {
 			foreach ( $res as $row ) {
 				$revision = CodeRevision::newFromRow( $this->mRepo, $row );
 				$users = $revision->getCommentingUsers();
-				
+
 				$rowUrl = $revision->getFullUrl();
-				
+
 				$revisionAuthor = $revision->getWikiUser();
-				
+
 				//Add the followup revision author if they have not already been added as a commentor (they won't want dupe emails!)
 				if ( $revisionAuthor && !array_key_exists( $revisionAuthor->getId(), $users ) ) {
 					$users[$revisionAuthor->getId()] = $revisionAuthor;
@@ -589,7 +589,7 @@ class CodeRevision {
 		}
 		return $changes;
 	}
-	
+
 	public function getPropChangeUsers() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( 'code_prop_changes',
@@ -606,7 +606,7 @@ class CodeRevision {
 		}
 		return $users;
 	}
-	
+
 	/**
 	* "Review" being revision commenters, and people who set/removed tags and changed the status
 	*/
@@ -660,7 +660,7 @@ class CodeRevision {
 		}
 		return $refs;
 	}
-	
+
 	/**
 	 * Add references from the specified revisions to this revision. In the UI, this will
 	 * show the specified revisions as follow-ups to this one.
@@ -685,9 +685,9 @@ class CodeRevision {
 
 	private function addReferences( $data ) {
 		$dbw = wfGetDB( DB_MASTER );
-	    $dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
+		$dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
 	}
-	
+
 	/**
 	 * Same as addReferencesFrom(), but adds references from this revision to
 	 * the specified revisions.
@@ -706,7 +706,7 @@ class CodeRevision {
 		}
 		$this->addReferences( $data );
 	}
-	
+
 	/**
 	 * Remove references from the specified revisions to this revision. In the UI, this will
 	 * no longer show the specified revisions as follow-ups to this one.
@@ -738,7 +738,7 @@ class CodeRevision {
 			__METHOD__,
 			array( 'ORDER BY' => 'cs_timestamp' )
 		);
-		
+
 		$signoffs = array();
 		foreach ( $result as $row ) {
 			$signoffs[] = CodeSignoff::newFromRow( $this, $row );
@@ -969,14 +969,14 @@ class CodeRevision {
 			return false;
 		}
 	}
-	
+
 	public function getFullUrl( $commentId = '' ) {
 		$title = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $this->mId );
-		
+
 		if ( $commentId !== '' ) {
 			$title->setFragment( "#c{$commentId}" );
 		}
-		
+
 		return $title->getFullUrl();
 	}
 
@@ -991,14 +991,14 @@ class CodeRevision {
 			$line = wfMsg( 'code-rev-message' ) . " \00314(" . $this->mRepo->getName() .
 					")\003 \0037" . $this->getIdString() . "\003 \00303" . RecentChange::cleanupForIRC( $wgUser->getName() ) .
 					"\003: \00310" . RecentChange::cleanupForIRC( $wgLang->truncate( $text, 100 ) ) . "\003 " . $url;
-			
+
 			RecentChange::sendToUDP( $line, $wgCodeReviewUDPAddress, $wgCodeReviewUDPPrefix, $wgCodeReviewUDPPort );
 		}
 	}
 
 	protected function sendStatusToUDP( $status, $oldStatus ) {
 		global $wgCodeReviewUDPAddress, $wgCodeReviewUDPPort, $wgCodeReviewUDPPrefix, $wgUser;
-		
+
 		if( $wgCodeReviewUDPAddress ) {
 			$url = $this->getFullUrl();
 
