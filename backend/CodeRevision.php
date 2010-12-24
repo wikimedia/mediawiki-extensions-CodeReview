@@ -3,6 +3,12 @@
 class CodeRevision {
 	public $mRepoId, $mRepo, $mId, $mAuthor, $mTimestamp, $mMessage, $mPaths, $mStatus, $mOldStatus, $mCommonPath;
 
+	/**
+	 * @static
+	 * @param CodeRepository $repo
+	 * @param  $data
+	 * @return CodeRevision
+	 */
 	public static function newFromSvn( CodeRepository $repo, $data ) {
 		$rev = new CodeRevision();
 		$rev->mRepoId = $repo->getId();
@@ -62,6 +68,13 @@ class CodeRevision {
 		return $rev;
 	}
 
+	/**
+	 * @static
+	 * @throws MWException
+	 * @param CodeRepository $repo
+	 * @param  $row
+	 * @return CodeRevision
+	 */
 	public static function newFromRow( CodeRepository $repo, $row ) {
 		$rev = new CodeRevision();
 		$rev->mRepoId = intval( $row->cr_repo_id );
@@ -79,6 +92,9 @@ class CodeRevision {
 		return $rev;
 	}
 
+	/**
+	 * @return int
+	 */
 	public function getId() {
 		return intval( $this->mId );
 	}
@@ -86,6 +102,7 @@ class CodeRevision {
 	/**
 	 * Like getId(), but returns the result as a string, including prefix,
 	 * i.e. "r123" instead of 123.
+	 * @param $id
 	 */
 	public function getIdString( $id = null ) {
 		if ( $id === null ) {
@@ -101,6 +118,9 @@ class CodeRevision {
 	 * This ensures you get a unique reference, as the revision ID alone can be
 	 * confusing (e.g. in e-mails, page titles etc.).  If only one repository is
 	 * defined then this returns the same as getIdString() as there is no ambiguity.
+	 *
+	 * @param null $id
+	 * @return
 	 */
 	public function getIdStringUnique( $id = null ) {
 		if ( $id === null ) {
@@ -109,30 +129,51 @@ class CodeRevision {
 		return $this->mRepo->getRevIdStringUnique( $id );
 	}
 
+	/**
+	 * @return int
+	 */
 	public function getRepoId() {
 		return intval( $this->mRepoId );
 	}
 
+	/**
+	 * @return
+	 */
 	public function getAuthor() {
 		return $this->mAuthor;
 	}
 
+	/**
+	 * @return
+	 */
 	public function getWikiUser() {
 		return $this->mRepo->authorWikiUser( $this->getAuthor() );
 	}
 
+	/**
+	 * @return
+	 */
 	public function getTimestamp() {
 		return $this->mTimestamp;
 	}
 
+	/**
+	 * @return
+	 */
 	public function getMessage() {
 		return $this->mMessage;
 	}
 
+	/**
+	 * @return
+	 */
 	public function getStatus() {
 		return $this->mStatus;
 	}
 
+	/**
+	 * @return
+	 */
 	public function getCommonPath() {
 		return $this->mCommonPath;
 	}
@@ -234,6 +275,9 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @return void
+	 */
 	public function save() {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->begin();
@@ -420,6 +464,9 @@ class CodeRevision {
 	    return $affectedRevs;
 	}
 
+	/**
+	 * @return
+	 */
 	public function getModifiedPaths() {
 		$dbr = wfGetDB( DB_SLAVE );
 		return $dbr->select(
@@ -430,6 +477,9 @@ class CodeRevision {
 		);
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function isDiffable() {
 		$paths = $this->getModifiedPaths();
 		if ( !$paths->numRows() || $paths->numRows() > 20 ) {
@@ -438,12 +488,24 @@ class CodeRevision {
 		return true;
 	}
 
+	/**
+	 * @param  $text
+	 * @param  $review
+	 * @param null $parent
+	 * @return CodeComment
+	 */
 	public function previewComment( $text, $review, $parent = null ) {
 		$data = $this->commentData( $text, $review, $parent );
 		$data['cc_id'] = null;
 		return CodeComment::newFromData( $this, $data );
 	}
 
+	/**
+	 * @param  $text
+	 * @param  $review
+	 * @param null $parent
+	 * @return int
+	 */
 	public function saveComment( $text, $review, $parent = null ) {
 		$text = trim( $text );
 		if ( !strlen( $text ) ) {
@@ -511,6 +573,12 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @param  $text
+	 * @param  $review
+	 * @param null $parent
+	 * @return array
+	 */
 	protected function commentData( $text, $review, $parent = null ) {
 		global $wgUser;
 		$dbw = wfGetDB( DB_MASTER );
@@ -528,6 +596,12 @@ class CodeRevision {
 			'cc_sortkey' => $sortkey );
 	}
 
+	/**
+	 * @throws MWException
+	 * @param  $parent
+	 * @param  $ts
+	 * @return string
+	 */
 	protected function threadedSortKey( $parent, $ts ) {
 		if ( $parent ) {
 			// We construct a threaded sort key by concatenating the timestamps
@@ -548,6 +622,9 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getComments() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( 'code_comment',
@@ -593,6 +670,9 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getPropChanges() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( array( 'code_prop_changes', 'user' ),
@@ -619,6 +699,9 @@ class CodeRevision {
 		return $changes;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getPropChangeUsers() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( 'code_prop_changes',
@@ -643,6 +726,9 @@ class CodeRevision {
 		return array_merge( $this->getCommentingUsers(), $this->getPropChangeUsers() );
 	}
 
+	/**
+	 * @return array
+	 */
 	protected function getCommentingUsers() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select( 'code_comment',
@@ -712,6 +798,10 @@ class CodeRevision {
 		$this->addReferences( $data );
 	}
 
+	/**
+	 * @param  $data
+	 * @return void
+	 */
 	private function addReferences( $data ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->insert( 'code_relations', $data, __METHOD__, array( 'IGNORE' ) );
@@ -814,6 +904,10 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @param int $from
+	 * @return array
+	 */
 	public function getTags( $from = DB_SLAVE ) {
 		$db = wfGetDB( $from );
 		$result = $db->select( 'code_tags',
@@ -830,6 +924,12 @@ class CodeRevision {
 		return $tags;
 	}
 
+	/**
+	 * @param  $addTags
+	 * @param  $removeTags
+	 * @param null $user
+	 * @return void
+	 */
 	public function changeTags( $addTags, $removeTags, $user = null ) {
 		// Get the current tags and see what changes
 		$tagsNow = $this->getTags( DB_MASTER );
@@ -874,6 +974,10 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @param  $tags
+	 * @return array
+	 */
 	protected function normalizeTags( $tags ) {
 		$out = array();
 		foreach ( $tags as $tag ) {
@@ -882,6 +986,10 @@ class CodeRevision {
 		return $out;
 	}
 
+	/**
+	 * @param  $tags
+	 * @return array
+	 */
 	protected function tagData( $tags ) {
 		$data = array();
 		foreach ( $tags as $tag ) {
@@ -894,6 +1002,10 @@ class CodeRevision {
 		return $data;
 	}
 
+	/**
+	 * @param  $tag
+	 * @return bool
+	 */
 	public function normalizeTag( $tag ) {
 		global $wgContLang;
 		$lower = $wgContLang->lc( $tag );
@@ -906,10 +1018,18 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @param  $tag
+	 * @return  bool
+	 */
 	public function isValidTag( $tag ) {
 		return ( $this->normalizeTag( $tag ) !== false );
 	}
 
+	/**
+	 * @param string $path
+	 * @return bool|int
+	 */
 	public function getPrevious( $path = '' ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$encId = $dbr->addQuotes( $this->mId );
@@ -935,6 +1055,10 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @param string $path
+	 * @return bool|int
+	 */
 	public function getNext( $path = '' ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$encId = $dbr->addQuotes( $this->mId );
@@ -960,6 +1084,10 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @param  $path
+	 * @return array
+	 */
 	protected function getPathConds( $path ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		return array(
@@ -973,6 +1101,10 @@ class CodeRevision {
 		);
 	}
 
+	/**
+	 * @param string $path
+	 * @return bool|int
+	 */
 	public function getNextUnresolved( $path = '' ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$encId = $dbr->addQuotes( $this->mId );
@@ -999,6 +1131,10 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @param string $commentId
+	 * @return \type
+	 */
 	public function getFullUrl( $commentId = '' ) {
 		$title = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $this->mId );
 
@@ -1009,6 +1145,12 @@ class CodeRevision {
 		return $title->getFullUrl();
 	}
 
+	/**
+	 * @param  $commentId
+	 * @param  $text
+	 * @param null $url
+	 * @return void
+	 */
 	protected function sendCommentToUDP( $commentId, $text, $url = null ) {
 		global $wgCodeReviewUDPAddress, $wgCodeReviewUDPPort, $wgCodeReviewUDPPrefix, $wgLang, $wgUser;
 
@@ -1025,6 +1167,11 @@ class CodeRevision {
 		}
 	}
 
+	/**
+	 * @param  $status
+	 * @param  $oldStatus
+	 * @return void
+	 */
 	protected function sendStatusToUDP( $status, $oldStatus ) {
 		global $wgCodeReviewUDPAddress, $wgCodeReviewUDPPort, $wgCodeReviewUDPPrefix, $wgUser;
 
