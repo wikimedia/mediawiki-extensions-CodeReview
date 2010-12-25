@@ -2651,6 +2651,7 @@ $messages['ee'] = array(
 /** Greek (Ελληνικά)
  * @author Crazymadlover
  * @author Dead3y3
+ * @author Glavkos
  * @author Omnipaedista
  * @author ZaDiak
  */
@@ -2668,6 +2669,7 @@ $messages['el'] = array(
 	'code-prop-changes' => 'Αρχείο καταγραφής κατάστασης και προσθήκης ετικετών',
 	'codereview-desc' => '[[Special:Code|Εργαλείο ανασκόπησης κώδικα]] με [[Special:RepoAdmin|υποστήριξη Subversion]]',
 	'code-no-repo' => 'Κανένα αποθηκευτήριο δεν έχει διαμορφωθεί!',
+	'code-repo-not-found' => "Repository  '''\$ 1'' ' δεν υπάρχει!",
 	'code-load-diff' => 'Φόρτωση διαφ...',
 	'code-notes' => 'πρόσφατα σχόλια',
 	'code-statuschanges' => 'αλλαγές κατάστασης',
@@ -2675,7 +2677,8 @@ $messages['el'] = array(
 	'code-authors' => 'συγγραφείς',
 	'code-status' => 'καταστάσεις',
 	'code-tags' => 'ετικέτες',
-	'code-authors-text' => 'Παρακάτω είναι ένας κατάλογος των συγγραφέων αποθηκευτηρίου κατά σειρά προσφάτων προσθηκών. Οι τοπικοί λογαριασμοί βίκι εμφανίζονται σε παρενθέσεις.',
+	'code-tags-no-tags' => 'Δεν υπάρχουν ετικέτες  σε αυτό το αποθετήριο.',
+	'code-authors-text' => 'Παρακάτω είναι μια λίστα από συντάκτες επανάκτησης κατά σειρά commit όνομα. Οι τοπικοί wiki λογαριασμοί  θα εμφανίζονται σε παρένθεση. Ενδέχεται να αποθηκευτεί προσωρινά δεδομένα.',
 	'code-author-haslink' => 'Αυτός ο συγγραφέας είναι συνδεδεμένος με τον χρήστη wiki $1',
 	'code-author-orphan' => 'Αυτός ο συγγραφέας δεν έχει σύνδεσμο με ένα λογαριασμό wiki',
 	'code-author-dolink' => 'Σύνδεση αυτού του χρήστη με έναν χρήστη wiki:',
@@ -2692,7 +2695,7 @@ $messages['el'] = array(
 	'code-field-message' => 'Περίληψη προσθηκών',
 	'code-field-status' => 'Κατάσταση',
 	'code-field-timestamp' => 'Ημερομηνία',
-	'code-field-comments' => 'Σημειώσεις',
+	'code-field-comments' => 'Σχόλια',
 	'code-field-path' => 'Διαδρομή',
 	'code-field-text' => 'Σημείωμα',
 	'code-field-select' => 'Επιλογή',
@@ -6574,6 +6577,7 @@ $messages['ksh'] = array(
 	'code-authors' => 'de Schriiver',
 	'code-status' => 'Shtattuße',
 	'code-tags' => 'Makeerunge',
+	'code-tags-no-tags' => 'Mer han kein Makeerunge en dämm Repositorijum.',
 	'code-authors-text' => 'Hee kütt en Leß met dä Schriever aan dämm Repositorijum, zotteet noh dänne iehre Name doh. De Name als Metmaacher hee em Wiki sen en Klammere met dobei, woh et se jitt. Di Leß künnt uss_em Zwescheshpeicher kumme un nit janz om neuste Shtand sin.',
 	'code-author-haslink' => 'Dä Schriiver es em Wiki mem Metmaacher $1 verlengk',
 	'code-author-orphan' => 'Dä Schriiver es nit met enem Metmaacher em Wiki verlengk',
@@ -6594,11 +6598,15 @@ $messages['ksh'] = array(
 	'code-field-user' => 'Kommentaa-Schriever',
 	'code-field-message' => 'Koot zosamme jefaß',
 	'code-field-status' => 'Shtattus',
+	'code-field-status-description' => 'Dä Status beschrevve',
 	'code-field-timestamp' => 'Zick un Dattum',
-	'code-field-comments' => 'Bemerkunge',
+	'code-field-comments' => 'Aanmärkunge',
 	'code-field-path' => 'Pad',
 	'code-field-text' => 'Notiz',
 	'code-field-select' => 'Ußsöke',
+	'code-reference-remove' => 'Ußjewählte Zosammehäng oplühse',
+	'code-reference-associate' => 'Opfoljer-Version faßlääje:',
+	'code-reference-associate-submit' => 'Donn se zesamme!',
 	'code-rev-author' => 'Schriiver / Projrammierer:',
 	'code-rev-date' => 'Dattum:',
 	'code-rev-message' => 'Kommentaa:',
@@ -6639,6 +6647,17 @@ $messages['ksh'] = array(
 	'code-status-desc-deferred' => 'Di Version bruch jez kein Prööfung.',
 	'code-status-old' => 'ahl',
 	'code-status-desc-old' => 'En älder Version met udder ohne Fähler, woh ävver et Prööfe der Möh nit wäät es.',
+	'code-signoffs' => 'Jodjeheiße',
+	'code-signoff-legend' => 'Jodheiße',
+	'code-signoff-submit' => 'Jodheiße!',
+	'code-signoff-strike' => 'De ußjewählte Jodheißunge ophävve',
+	'code-signoff-signoff' => 'Di Versione jodheiße als:',
+	'code-signoff-flag-inspected' => 'Enspezeert',
+	'code-signoff-flag-tested' => 'Ußprobeet',
+	'code-signoff-field-user' => 'Metmaacher',
+	'code-signoff-field-flag' => 'Wie?',
+	'code-signoff-field-date' => 'Dattum',
+	'code-signoff-struckdate' => '$1 (fottjeschmeße: $2)',
 	'code-pathsearch-legend' => 'Söhk en däm Repositorijum noh Versione, övver dänne iere Pahdt',
 	'code-pathsearch-path' => 'Pahdt:',
 	'code-pathsearch-filter' => 'Ußjesöhk noh:',
@@ -6658,12 +6677,12 @@ $messages['ksh'] = array(
 	'code-release-badrange' => 'Dä Berett es zoh jruhß!',
 	'codereview-subtitle' => 'För $1',
 	'codereview-reply-link' => 'antwoote',
-	'codereview-email-subj' => '[$1 $2]: Neue Kommentaa dobei jedonn',
-	'codereview-email-body' => 'Dä Metmaacher „$1“ hät ene Kommentaa för de $3 loßjeloose.
+	'codereview-email-subj' => '[$1 $2]: Neu Aanmerkung dobei jedonn',
+	'codereview-email-body' => 'Dä Metmaacher „$1“ hät en Aanmerkung för de $3 enjedraare.
 
 De janze URL es: $2
 
-Dä Kommentaa es:
+De Aanmerkung es:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: De Änderunge donoh',
@@ -6678,15 +6697,25 @@ $3
 {{GENDER:$1|Däm singe|Däm sing|Däm Metmaacher sing|Dä ier|Em sing}} Aanmerkung för en et Logbooch dozo:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: En automattesche Prööfung hät ene Fähler (widder)jefonge.',
-	'codereview-email-body3' => 'Et automattesche Prööfe hät ene Fähler opjedeck,
-dä met dä Version $1 (widder) opjetrodde es.
+	'codereview-email-subj3' => '[$1 $2]: Dä Stattus von dä Version woodt jeändert',
+	'codereview-email-body3' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät von de Version $2 der Stattus verändert.
 
-Der kumplätte URL es: $2
+Dä wohr: $3
+un es jäz: $4',
+	'codereview-email-subj4' => '[$1 $2]: Neu Aanmerkung dobei jedonn, un der Stattus verändert',
+	'codereview-email-body4' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät von de Version $2 der Stattus verändert.
 
-Beim Afshpeishere wood aanjejovve:
+Dä wohr: $3
+un es jäz: $4
 
-$3',
+{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät och en Aanmerkung dobei jedonn.
+
+Dä kumplätte URL:
+$5
+
+De Aanmerkung för en et Logbooch:
+
+$6',
 	'code-stats' => 'Statistike',
 	'code-stats-header' => 'Statistike vum Repositorijum „$1“',
 	'code-stats-main' => 'Bes aam $6 öm $5 Uhr {{PLURAL:$4|hät [[Special:Code/$3/author|eine Schriever]]|han [[Special:Code/$3/author|$4 Schriever]]}} {{PLURAL:$2|ein Änderung|$2 Änderunge}} em Repositorijum jemaat.',
@@ -6710,6 +6739,7 @@ $3',
 	'right-codereview-remove-tag' => 'Makeerunge vun Projramm-Versione fott nämme',
 	'right-codereview-post-comment' => 'Eije Kommentaare för Projramm-Versione veröffentlesche',
 	'right-codereview-set-status' => 'Dä Stattus vun ene Version ändere',
+	'right-codereview-signoff' => 'Änderonge jodheiße',
 	'right-codereview-link-user' => 'Schriiver op Metmaacher em Wiki verlinke',
 	'specialpages-group-developer' => 'Werkzüch fö Entwecklere',
 );
@@ -12487,6 +12517,8 @@ $messages['yi'] = array(
 	'code-status-reverted' => 'צוריקגעשטעלט',
 	'code-status-ok' => 'אויספֿירן',
 	'code-status-old' => 'אַלט',
+	'code-signoff-field-flag' => 'פֿענדל',
+	'code-signoff-field-date' => 'דאַטע',
 	'code-revfilter-cr_status' => 'סטאַטוס = $1',
 	'code-revfilter-cr_author' => 'מחבר = $1',
 	'codereview-subtitle' => 'פֿאַר $1',
