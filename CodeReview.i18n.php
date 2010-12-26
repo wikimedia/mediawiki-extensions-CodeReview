@@ -12517,6 +12517,7 @@ $messages['yi'] = array(
 	'code-status-reverted' => 'צוריקגעשטעלט',
 	'code-status-ok' => 'אויספֿירן',
 	'code-status-old' => 'אַלט',
+	'code-signoff-field-user' => 'באַניצער',
 	'code-signoff-field-flag' => 'פֿענדל',
 	'code-signoff-field-date' => 'דאַטע',
 	'code-revfilter-cr_status' => 'סטאַטוס = $1',
