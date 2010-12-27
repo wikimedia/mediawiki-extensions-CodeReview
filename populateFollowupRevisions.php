@@ -12,6 +12,7 @@ class PopulateFollowupRevisions extends Maintenance {
 		$this->mDescription = "Populates followup revisions. Useful for setting them on old revisions, without reimporting";
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 		$this->addArg( 'revisions', "The revisions to set status for. Format: start:end" );
+		$this->addOption( 'dry-run', 'Perform a dry run' );
 	}
 
 	public function execute() {
@@ -38,6 +39,8 @@ class PopulateFollowupRevisions extends Maintenance {
 
 		$revisions = range( $start, $end );
 
+		$dryrun = $this->hasOption( 'dry-run' );
+
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$res = $dbr->select( 'code_rev', '*', array( 'cr_id' => $revisions, 'cr_repo_id' => $repo->getId() ),
@@ -52,7 +55,10 @@ class PopulateFollowupRevisions extends Maintenance {
 
 			if ( count( $affectedRevs ) ) {
 				$this->output( "associating revs " . implode( ',', $affectedRevs ) . "\n" );
-				$rev->addReferencesTo( $affectedRevs );
+
+				if ( !$dryrun ) {
+					$rev->addReferencesTo( $affectedRevs );
+				}
 			} else {
 				$this->output( "no revisions followed up\n" );
 			}
