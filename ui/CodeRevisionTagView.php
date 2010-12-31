@@ -17,6 +17,10 @@ class SvnRevTagTablePager extends SvnRevTablePager {
 		$this->mTag = $tag;
 	}
 
+	function getDefaultSort() {
+		return strlen( $this->mView->mPath ) ? 'cp_rev_id' : 'ct_rev_id';
+	}
+
 	function getQueryInfo() {
 		$info = parent::getQueryInfo();
 		//Don't change table order, see http://www.mediawiki.org/wiki/Special:Code/MediaWiki/77733

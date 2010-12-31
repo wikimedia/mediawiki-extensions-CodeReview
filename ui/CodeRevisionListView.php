@@ -244,8 +244,9 @@ class SvnRevTablePager extends SvnTablePager {
 	}
 
 	function getQueryInfo() {
+		$defaultSort = $this->getDefaultSort();
 		// Path-based query...
-		if ( $this->getDefaultSort() === 'cp_rev_id' ) {
+		if ( $defaultSort === 'cp_rev_id' ) {
 			$query = array(
 				'tables' => array( 'code_paths', 'code_rev', 'code_comment' ),
 				'fields' => $this->getSelectFields(),
@@ -255,7 +256,7 @@ class SvnRevTablePager extends SvnTablePager {
 					// performance
 					'cp_rev_id > ' . $this->mRepo->getPathSearchHorizon()
 				),
-				'options' => array( 'GROUP BY' => 'cp_rev_id', 'USE INDEX' => array( 'code_path' => 'cp_repo_id' ) ),
+				'options' => array( 'GROUP BY' => $defaultSort, 'USE INDEX' => array( 'code_path' => 'cp_repo_id' ) ),
 				'join_conds' => array(
 					'code_rev' => array( 'INNER JOIN', 'cr_repo_id = cp_repo_id AND cr_id = cp_rev_id' ),
 					'code_comment' => array( 'LEFT JOIN', 'cc_repo_id = cp_repo_id AND cc_rev_id = cp_rev_id' ),
@@ -267,7 +268,7 @@ class SvnRevTablePager extends SvnTablePager {
 				'tables' => array( 'code_rev', 'code_comment' ),
 				'fields' => $this->getSelectFields(),
 				'conds' => array( 'cr_repo_id' => $this->mRepo->getId() ),
-				'options' => array( 'GROUP BY' => 'cr_id' ),
+				'options' => array( 'GROUP BY' => $defaultSort ),
 				'join_conds' => array(
 					'code_comment' => array( 'LEFT JOIN', 'cc_repo_id = cr_repo_id AND cc_rev_id = cr_id' ),
 				)
