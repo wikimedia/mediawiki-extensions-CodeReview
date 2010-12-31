@@ -78,16 +78,16 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		}
 
 		$count = 0;
-		$lastId = 0;
+		$start = 0;
+		$defaultSort = $pager->getDefaultSort();
 		foreach ( $revisions as $row ) {
 			if ( !$revsSet && $count == $limit ) {
-				$this->setContinueEnumParameter( 'start',
-					$lastId );
+				$this->setContinueEnumParameter( 'start', $start );
 				break;
 			}
 
 			$data[] = $this->formatRow( $row );
-			$lastId = $row->cr_id;
+			$start = $row->$defaultSort;
 			$count++;
 		}
 
