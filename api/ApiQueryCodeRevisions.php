@@ -67,7 +67,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 
 		} else {
 			if ( !is_null( $params['start'] ) ) {
-				$pager->setOffset( $this->getDB()->timestamp( $params['start'] ) );
+				$pager->setOffset( $params['start'] );
 			}
 			$limit = $params['limit'];
 			$pager->setLimit( $limit );
@@ -78,16 +78,16 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		}
 
 		$count = 0;
-		$lastTimestamp = 0;
+		$lastId = 0;
 		foreach ( $revisions as $row ) {
 			if ( !$revsSet && $count == $limit ) {
 				$this->setContinueEnumParameter( 'start',
-					wfTimestamp( TS_ISO_8601, $lastTimestamp ) );
+					$lastId );
 				break;
 			}
 
 			$data[] = $this->formatRow( $row );
-			$lastTimestamp = $row->cr_timestamp;
+			$lastId = $row->cr_id;
 			$count++;
 		}
 
@@ -136,7 +136,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
 			),
 			'start' => array(
-				ApiBase::PARAM_TYPE => 'timestamp'
+				ApiBase::PARAM_TYPE => 'integer'
 			),
 			'revs' => array(
 				ApiBase::PARAM_ISMULTI => true,
