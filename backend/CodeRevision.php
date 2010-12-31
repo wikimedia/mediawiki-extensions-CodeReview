@@ -22,7 +22,6 @@ class CodeRevision {
 		$rev->mOldStatus = '';
 
 		$common = null;
-		$allPaths = array();
 		if ( $rev->mPaths ) {
 			if ( count( $rev->mPaths ) == 1 ) {
 				$common = $rev->mPaths[0]['path'];
@@ -48,26 +47,15 @@ class CodeRevision {
 						}
 					}
 					$common = $tmp;
-
-					$path = "/";
-					foreach( $compare as $partPath ) {
-
-						if ( $path !== "/" ) {
-							$path .= '/';
-						}
-
-						$path .= $partPath;
-
-						$allPaths[] = $path;
-					}
 				}
 				$common = implode( '/', $common );
+
+				$rev->mPaths = CodeRevision::getPathFragments( $rev->mPaths );
 
 				array_unshift( $rev->mPaths, $first );
 			}
 		}
 		$rev->mCommonPath = $common;
-		$rev->mPaths = $allPaths;
 
 		// Check for ignored paths
 		global $wgCodeReviewDeferredPaths;
@@ -80,6 +68,28 @@ class CodeRevision {
 			}
 		}
 		return $rev;
+	}
+
+	/**
+	 * @static
+	 * @param array $paths
+	 * @return array
+	 */
+	public static function getPathFragments( $paths = array() ) {
+		$allPaths = array();
+		$path = "/";
+		foreach( $compare as $partPath ) {
+
+			if ( $path !== "/" ) {
+				$path .= '/';
+			}
+
+			$path .= $partPath;
+
+			$allPaths[] = $path;
+		}
+
+	    return array_unique( $allPaths );
 	}
 
 	/**
