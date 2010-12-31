@@ -44,12 +44,13 @@ class RepopulateCodePaths extends Maintenance {
 
 	    $data = array();
 		foreach ( $res as $row ) {
-			$this->output( "r{$row->cp_rev_id}, path: " . $row->cp_path . "\n" );
+			$fragments = CodeRevision::getPathFragments( array( $row->cp_path ) );
+			$this->output( "r{$row->cp_rev_id}, path: " . $row->cp_path . " Fragments: " . count( $fragments ) );
 
 			$data[] = array(
 				'cp_repo_id' => $repo->getId(),
 				'cp_rev_id'  => $row->cp_rev_id,
-				'cp_path'    => CodeRevision::getPathFragments( array( $row->cp_path ) ),
+				'cp_path'    => $fragments,
 				'cp_action'  => $row->cp_action
 			);
 		}
