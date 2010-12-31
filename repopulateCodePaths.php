@@ -44,7 +44,7 @@ class RepopulateCodePaths extends Maintenance {
 
 	    $data = array();
 		foreach ( $res as $row ) {
-			$this->output( "r{$row->cp_rev_id}\n" );
+			$this->output( "r{$row->cp_rev_id}, path: " . $row->cp_path . "\n" );
 
 			$data[] = array(
 				'cp_repo_id' => $repo->getId(),
