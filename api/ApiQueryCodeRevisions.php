@@ -176,7 +176,6 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 
 	public function getPossibleErrors() {
 		return array_merge( parent::getPossibleErrors(), array(
-			array( 'missingparam', 'repo' ),
 			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to view code revisions' ),
 			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
 		) );

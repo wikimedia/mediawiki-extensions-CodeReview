@@ -142,8 +142,6 @@ class ApiRevisionUpdate extends ApiBase {
 			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to update code' ),
 			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
 			array( 'code' => 'nosuchrev', 'info' => 'There is no revision with ID \'rev\'' ),
-			array( 'missingparam', 'repo' ),
-			array( 'missingparam', 'rev' ),
 		) );
 	}
 

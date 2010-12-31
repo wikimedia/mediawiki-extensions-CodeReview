@@ -113,8 +113,6 @@ class ApiCodeUpdate extends ApiBase {
 		return array_merge( parent::getPossibleErrors(), array(
 			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to update code' ),
 			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
-			array( 'missingparam', 'repo' ),
-			array( 'missingparam', 'rev' ),
 		) );
 	}
 
