@@ -78,7 +78,7 @@ class CodeRevision {
 	public static function getPathFragments( $paths = array() ) {
 		$allPaths = array();
 		$path = "/";
-		foreach( $compare as $partPath ) {
+		foreach( $paths as $partPath ) {
 
 			if ( $path !== "/" ) {
 				$path .= '/';
