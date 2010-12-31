@@ -2,7 +2,11 @@
 
 // Special:Code/MediaWiki
 class CodeRevisionListView extends CodeView {
-	public $mRepo, $mPath, $batchForm;
+	/**
+	 * @var CodeRepository
+	 */
+	public $mRepo;
+	public $mPath, $batchForm;
 
 	/**
 	 * @param $repo CodeRepository or String
@@ -252,9 +256,7 @@ class SvnRevTablePager extends SvnTablePager {
 				'fields' => $this->getSelectFields(),
 				'conds' => array(
 					'cp_repo_id' => $this->mRepo->getId(),
-					'cp_path ' . $this->mDb->buildLike( $this->getSVNPath(), $this->mDb->anyString() ),
-					// performance
-					'cp_rev_id > ' . $this->mRepo->getPathSearchHorizon()
+					'cp_path' => $this->getSVNPath(),
 				),
 				'options' => array( 'GROUP BY' => $defaultSort, 'USE INDEX' => array( 'code_path' => 'cp_repo_id' ) ),
 				'join_conds' => array(
