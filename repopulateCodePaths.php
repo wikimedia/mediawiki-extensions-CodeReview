@@ -45,7 +45,7 @@ class RepopulateCodePaths extends Maintenance {
 		$data = array();
 		foreach ( $res as $row ) {
 			$fragments = CodeRevision::getPathFragments(
-				                     array( 'path' => $row->cp_path, 'action' => $row->cp_action ) );
+				                     array( array( 'path' => $row->cp_path, 'action' => $row->cp_action ) ) );
 			$data = array_merge( $data, $fragments );
 
 			$this->output( "r{$row->cp_rev_id}, path: " . $row->cp_path . " Fragments: " .
@@ -58,7 +58,7 @@ class RepopulateCodePaths extends Maintenance {
 		CodeRevision::insertPaths( $dbw, $data, $repo->getId(), $row->cp_rev_id );
 		$dbw->commit();
 
-	    $this->output( "Done!\n" );
+		$this->output( "Done!\n" );
 	}
 }
 

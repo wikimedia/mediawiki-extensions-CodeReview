@@ -91,7 +91,7 @@ class CodeRevision {
 			}
 		}
 
-	    return array_unique( $allPaths );
+	    return $allPaths;
 	}
 
 	/**
