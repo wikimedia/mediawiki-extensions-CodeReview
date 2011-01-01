@@ -42,20 +42,19 @@ class RepopulateCodePaths extends Maintenance {
 		$res = $dbr->select( 'code_paths', '*', array( 'cp_rev_id' => $revisions, 'cp_repo_id' => $repo->getId() ),
 			__METHOD__ );
 
-		$data = array();
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->begin();
+
 		foreach ( $res as $row ) {
 			$fragments = CodeRevision::getPathFragments(
 				                     array( array( 'path' => $row->cp_path, 'action' => $row->cp_action ) ) );
-			$data = array_merge( $data, $fragments );
+
+			CodeRevision::insertPaths( $dbw, $fragments, $repo->getId(), $row->cp_rev_id );
 
 			$this->output( "r{$row->cp_rev_id}, path: " . $row->cp_path . " Fragments: " .
 			               count( $fragments ) . "\n" );
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin();
-		$this->output( "Commiting paths..." );
-		CodeRevision::insertPaths( $dbw, $data, $repo->getId(), $row->cp_rev_id );
 		$dbw->commit();
 
 		$this->output( "Done!\n" );
