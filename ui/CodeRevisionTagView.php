@@ -18,7 +18,7 @@ class SvnRevTagTablePager extends SvnRevTablePager {
 	}
 
 	function getDefaultSort() {
-		return strlen( $this->mView->mPath ) ? 'cp_rev_id' : 'ct_rev_id';
+		return 'ct_rev_id';
 	}
 
 	function getQueryInfo() {
