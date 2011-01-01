@@ -77,16 +77,18 @@ class CodeRevision {
 	 */
 	public static function getPathFragments( $paths = array() ) {
 		$allPaths = array();
-		$path = "/";
-		foreach( $paths as $partPath ) {
 
-			if ( $path !== "/" ) {
-				$path .= '/';
+		foreach( $paths as $path ) {
+			$currentPath = "/";
+			foreach( explode( '/', $path['path'] ) as $fragment ) {
+				if ( $currentPath !== "/" ) {
+					$currentPath .= '/';
+				}
+
+				$currentPath .= $fragment;
+
+				$allPaths[] = array( 'path' => $currentPath, 'action' => $path['action'] ) ;
 			}
-
-			$path .= $partPath;
-
-			$allPaths[] = $path;
 		}
 
 	    return array_unique( $allPaths );
@@ -288,7 +290,7 @@ class CodeRevision {
 	 * @param array $options
 	 * @return void
 	 */
-	protected function insertChunks( $db, $table, $data, $method = __METHOD__, $options = array() ) {
+	protected static function insertChunks( $db, $table, $data, $method = __METHOD__, $options = array() ) {
 		$chunkSize = 100;
 		for ( $i = 0; $i < count( $data ); $i += $chunkSize ) {
 			$db->insert( $table,
@@ -338,15 +340,7 @@ class CodeRevision {
 
 		// Update path tracking used for output and searching
 		if ( $this->mPaths ) {
-			$data = array();
-			foreach ( $this->mPaths as $path ) {
-				$data[] = array(
-					'cp_repo_id' => $this->mRepoId,
-					'cp_rev_id'  => $this->mId,
-					'cp_path'    => $path['path'],
-					'cp_action'  => $path['action'] );
-			}
-			$this->insertChunks( $dbw, 'code_paths', $data, __METHOD__, array( 'IGNORE' ) );
+			CodeRevision::insertPaths( $dbw, $this->mPaths, $this->mRepoId, $this->mId );
 		}
 
 		$affectedRevs = $this->getUniqueAffectedRevs();
@@ -416,6 +410,18 @@ class CodeRevision {
 			}
 		}
 		$dbw->commit();
+	}
+
+	public static function insertPaths( $dbw, $paths, $repoId, $revId ) {
+		$data = array();
+		foreach ( $paths as $path ) {
+			$data[] = array(
+				'cp_repo_id' => $repoId,
+				'cp_rev_id'  => $revid,
+				'cp_path'    => $path['path'],
+				'cp_action'  => $path['action'] );
+		}
+		self::insertChunks( $dbw, 'code_paths', $data, __METHOD__, array( 'IGNORE' ) );
 	}
 
 	/**

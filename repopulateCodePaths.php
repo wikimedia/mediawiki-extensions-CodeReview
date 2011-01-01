@@ -44,35 +44,20 @@ class RepopulateCodePaths extends Maintenance {
 
 	    $data = array();
 		foreach ( $res as $row ) {
-			$fragments = CodeRevision::getPathFragments( array( $row->cp_path ) );
-			$this->output( "r{$row->cp_rev_id}, path: " . $row->cp_path . " Fragments: " . count( $fragments ) );
+			$data = array_merge(CodeRevision::getPathFragments(
+				                     array( 'path' => $row->cp_path, 'action' => $row->cp_action ) ) );
 
-			$data[] = array(
-				'cp_repo_id' => $repo->getId(),
-				'cp_rev_id'  => $row->cp_rev_id,
-				'cp_path'    => $fragments,
-				'cp_action'  => $row->cp_action
-			);
+			$this->output( "r{$row->cp_rev_id}, path: " . $row->cp_path . " Fragments: " .
+			               count( $fragments ) . "\n" );
 		}
 
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->begin();
 		$this->output( "Commiting paths...\n" );
-	    $this->insertChunks( $dbw, 'code_paths', $data, __METHOD__, array( 'IGNORE' ) );
-	    $dbw->commit();
+		CodeRevision::insertPaths( $dbw, $data, $repo->getId(), $row->cp_rev_id );
+		$dbw->commit();
 
 	    $this->output( "Done!\n" );
-	}
-
-	private static function insertChunks( $db, $table, $data, $method = __METHOD__, $options = array() ) {
-		$chunkSize = 100;
-		for ( $i = 0; $i < count( $data ); $i += $chunkSize ) {
-			$db->insert( $table,
-				array_slice( $data, $i, $chunkSize ),
-				$method,
-				$options
-			);
-		}
 	}
 }
 
