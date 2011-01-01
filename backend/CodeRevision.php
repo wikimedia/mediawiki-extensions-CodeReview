@@ -417,7 +417,7 @@ class CodeRevision {
 		foreach ( $paths as $path ) {
 			$data[] = array(
 				'cp_repo_id' => $repoId,
-				'cp_rev_id'  => $revid,
+				'cp_rev_id'  => $revId,
 				'cp_path'    => $path['path'],
 				'cp_action'  => $path['action'] );
 		}
