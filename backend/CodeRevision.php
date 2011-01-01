@@ -25,6 +25,7 @@ class CodeRevision {
 		if ( $rev->mPaths ) {
 			if ( count( $rev->mPaths ) == 1 ) {
 				$common = $rev->mPaths[0]['path'];
+				$rev->mPaths = CodeRevision::getPathFragments( $rev->mPaths );
 			} else {
 				$first = array_shift( $rev->mPaths );
 
