@@ -57,7 +57,7 @@ class CodeReleaseNotes extends CodeView {
 			$where[] = 'cr_id >= ' . intval( $this->mStartRev );
 		}
 		if ( $this->mPath ) {
-			$where[] = 'cr_path' => $this->mPath;
+			$where['cr_path'] => $this->mPath;
 		}
 		# Select commits within this range...
 		$res = $dbr->select( array( 'code_rev', 'code_tags' ),
