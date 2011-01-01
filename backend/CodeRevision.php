@@ -25,10 +25,8 @@ class CodeRevision {
 		if ( $rev->mPaths ) {
 			if ( count( $rev->mPaths ) == 1 ) {
 				$common = $rev->mPaths[0]['path'];
-				$rev->mPaths = CodeRevision::getPathFragments( $rev->mPaths );
 			} else {
 				$first = array_shift( $rev->mPaths );
-
 				$common = explode( '/', $first['path'] );
 
 				foreach ( $rev->mPaths as $path ) {
@@ -51,10 +49,10 @@ class CodeRevision {
 				}
 				$common = implode( '/', $common );
 
-				$rev->mPaths = CodeRevision::getPathFragments( $rev->mPaths );
-
 				array_unshift( $rev->mPaths, $first );
 			}
+
+			$rev->mPaths = CodeRevision::getPathFragments( $rev->mPaths );
 		}
 		$rev->mCommonPath = $common;
 
