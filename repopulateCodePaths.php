@@ -8,7 +8,7 @@ require( "$IP/maintenance/Maintenance.php" );
 class RepopulateCodePaths extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-	    $this->mDescription = "Rebuilds all code paths to support more efficient searching";
+		$this->mDescription = "Rebuilds all code paths to support more efficient searching";
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 		$this->addArg( 'revisions', "The revisions to set status for. Format: start:end" );
 	}
@@ -47,12 +47,12 @@ class RepopulateCodePaths extends Maintenance {
 
 		foreach ( $res as $row ) {
 			$fragments = CodeRevision::getPathFragments(
-				                     array( array( 'path' => $row->cp_path, 'action' => $row->cp_action ) ) );
+				array( array( 'path' => $row->cp_path, 'action' => $row->cp_action ) ) );
 
 			CodeRevision::insertPaths( $dbw, $fragments, $repo->getId(), $row->cp_rev_id );
 
 			$this->output( "r{$row->cp_rev_id}, path: " . $row->cp_path . " Fragments: " .
-			               count( $fragments ) . "\n" );
+				count( $fragments ) . "\n" );
 		}
 
 		$dbw->commit();
