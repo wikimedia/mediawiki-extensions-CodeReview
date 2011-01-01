@@ -50,23 +50,23 @@ class CodeReleaseNotes extends CodeView {
 		global $wgOut;
 		$linker = new CodeCommentLinkerHtml( $this->mRepo );
 		$dbr = wfGetDB( DB_SLAVE );
+		$where = array();
 		if ( $this->mEndRev ) {
-			$where = 'cr_id BETWEEN ' . intval( $this->mStartRev ) . ' AND ' . intval( $this->mEndRev );
+			$where[] = 'cr_id BETWEEN ' . intval( $this->mStartRev ) . ' AND ' . intval( $this->mEndRev );
 		} else {
-			$where = 'cr_id >= ' . intval( $this->mStartRev );
+			$where[] = 'cr_id >= ' . intval( $this->mStartRev );
 		}
 		if ( $this->mPath ) {
-			$where .= ' AND cr_path = ' . $dbr->addQuotes( $this->mPath );
+			$where[] = 'cr_path' => $this->mPath;
 		}
 		# Select commits within this range...
 		$res = $dbr->select( array( 'code_rev', 'code_tags' ),
 			array( 'cr_message', 'cr_author', 'cr_id', 'ct_tag AS rnotes' ),
-			array(
+			array_merge( array(
 				'cr_repo_id' => $this->mRepo->getId(), // this repo
 				"cr_status NOT IN('reverted','deferred','fixme')", // not reverted/deferred/fixme
 				"cr_message != ''",
-				$where // in range
-			),
+			), $where ),
 			__METHOD__,
 			array( 'ORDER BY' => 'cr_id DESC' ),
 			array( 'code_tags' => array( 'LEFT JOIN', # Tagged for release notes?
