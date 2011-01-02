@@ -139,6 +139,9 @@ class SpecialCode extends SpecialPage {
  * Extended by CodeRevisionListView and CodeRevisionView
  */
 abstract class CodeView {
+	/**
+	 * @var CodeRepository
+	 */
 	var $mRepo;
 
 	function __construct() {
