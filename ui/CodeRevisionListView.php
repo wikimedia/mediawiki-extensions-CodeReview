@@ -9,7 +9,7 @@ class CodeRevisionListView extends CodeView {
 	public $mPath, $batchForm;
 
 	/**
-	 * @param $repo CodeRepository or String
+	 * @param $repo CodeRepository|String
 	 */
 	function __construct( $repo ) {
 		global $wgRequest;

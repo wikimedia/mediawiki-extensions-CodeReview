@@ -2,6 +2,9 @@
 
 
 abstract class SubversionAdaptor {
+	/**
+	 * @var CodeRepository
+	 */
 	protected $mRepo;
 
 	public static function newFromRepo( $repo ) {
@@ -15,6 +18,9 @@ abstract class SubversionAdaptor {
 		}
 	}
 
+	/**
+	 * @param  $repo CodeRepository
+	 */
 	function __construct( $repo ) {
 		$this->mRepo = $repo;
 	}
