@@ -49,7 +49,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 	}
 
 	function getQueryInfo() {
-		return array(
+		$query = array(
 			'tables' => array( 'code_comment', 'code_rev' ),
 			'fields' => array_keys( $this->getFieldNames() ),
 			'conds' => array( 'cc_repo_id' => $this->mRepo->getId() ),
@@ -57,10 +57,16 @@ class CodeCommentsTablePager extends SvnTablePager {
 				'code_rev' => array( 'LEFT JOIN', 'cc_repo_id = cr_repo_id AND cc_rev_id = cr_id' )
 			)
 		);
+
+		if( $this->mView->mAuthor ) {
+			$query['conds']['cc_user_text'] = $this->mView->mAuthor;
+		}
+
+	    return $query;
 	}
 
 	function getFieldNames() {
-		$query = array(
+		return array(
 			'cc_timestamp' => wfMsg( 'code-field-timestamp' ),
 			'cc_user_text' => wfMsg( 'code-field-user' ),
 			'cc_rev_id' => wfMsg( 'code-field-id' ),
@@ -68,12 +74,6 @@ class CodeCommentsTablePager extends SvnTablePager {
 			'cr_message' => wfMsg( 'code-field-message' ),
 			'cc_text' => wfMsg( 'code-field-text' ),
 		);
-
-		if( $this->mView->mAuthor ) {
-		        $query['conds']['cc_user_text'] = $this->mView->mAuthor;
-		}
-
-	    return $query;
 	}
 
 	function formatValue( $name, $value ) {
