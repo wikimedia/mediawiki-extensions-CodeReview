@@ -115,7 +115,7 @@ class SpecialCode extends SpecialPage {
 					$view = new CodeRevisionAuthorLink( $params[0], $params[2] );
 					break;
 				} elseif ( $params[1] === 'comments' ) {
-					$view = new CodeCommentAuthorListView( $params[0], $params[3]  );
+					$view = new CodeCommentsAuthorListView( $params[0], $params[3]  );
 					break;
 				}
 			default:
