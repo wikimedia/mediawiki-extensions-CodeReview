@@ -213,6 +213,9 @@ function efCodeReviewSchemaUpdates( $updater ) {
 			"$base/archives/code_signoffs_userid.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_timestamp_struck',
 			"$base/archives/code_signoffs_timestamp_struck.sql", true ) );
+
+		$updater->addExtensionUpdate( array( 'addIndex', 'code_comments', 'cc_author',
+			"$base/archives/code_comment_author-index.sql", true ) );
 		break;
 	case 'sqlite':
 		$updater->addExtensionUpdate( array( 'addTable', 'code_rev', "$base/codereview.sql", true ) );

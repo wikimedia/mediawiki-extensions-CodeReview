@@ -194,6 +194,7 @@ CREATE TABLE /*_*/code_comment (
 
 CREATE INDEX /*i*/cc_repo_id ON /*_*/code_comment (cc_repo_id,cc_rev_id,cc_sortkey);
 CREATE INDEX /*i*/cc_repo_time ON /*_*/code_comment (cc_repo_id,cc_timestamp);
+CREATE INDEX /*i*/cc_author ON /*_*/code_comment (cc_repo_id, cc_user_text, cc_timestamp);
 
 --
 -- Changes to review metadata for a single code revision.
