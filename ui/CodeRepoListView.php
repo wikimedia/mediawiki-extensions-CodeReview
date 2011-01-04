@@ -24,14 +24,17 @@ class CodeRepoListView {
 		$links[] = "[[Special:Code/$name/comments|" . wfMsgHtml( 'code-notes' ) . "]]";
 		$links[] = "[[Special:Code/$name/statuschanges|" . wfMsgHtml( 'code-statuschanges' ) . "]]";
 		if ( $wgUser->getId() ) {
-			$userName = $wgUser->getName();
-			$author = $repo->wikiUserAuthor( $userName );
+			$author = $repo->wikiUserAuthor( $wgUser->getName() );
 			if ( $author !== false ) {
 				$links[] = "[[Special:Code/$name/author/$author|" . wfMsgHtml( 'code-mycommits' ) . "]]";
 			}
-
-		    $links[] = "[[Special:Code/$name/comments/author/$userName|" . wfMsgHtml( 'code-mycomments' ) . "]]";
 		}
+
+		if ( $wgUser->isAllowed( 'codereview-post-comment' ) ) {
+			$userName = $wgUser->getName();
+			$links[] = "[[Special:Code/$name/comments/author/$userName|" . wfMsgHtml( 'code-mycomments' ) . "]]";
+		}
+
 		$links[] = "[[Special:Code/$name/tag|" . wfMsgHtml( 'code-tags' ) . "]]";
 		$links[] = "[[Special:Code/$name/author|" . wfMsgHtml( 'code-authors' ) . "]]";
 		$links[] = "[[Special:Code/$name/status|" . wfMsgHtml( 'code-status' ) . "]]";
