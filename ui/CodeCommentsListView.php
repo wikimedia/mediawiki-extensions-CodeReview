@@ -4,9 +4,15 @@
 class CodeCommentsListView extends CodeView {
 	public $mRepo;
 
-	function __construct( $repoName ) {
+	function __construct( $repo ) {
 		parent::__construct();
-		$this->mRepo = CodeRepository::newFromName( $repoName );
+
+		$this->mRepo = ( $repo instanceof CodeRepository )
+			? $repo
+			: CodeRepository::newFromName( $repo );
+
+		global $wgRequest;
+		$this->mAuthor = $wgRequest->getText( 'author' );
 	}
 
 	function execute() {
@@ -54,7 +60,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 	}
 
 	function getFieldNames() {
-		return array(
+		$query = array(
 			'cc_timestamp' => wfMsg( 'code-field-timestamp' ),
 			'cc_user_text' => wfMsg( 'code-field-user' ),
 			'cc_rev_id' => wfMsg( 'code-field-id' ),
@@ -62,6 +68,12 @@ class CodeCommentsTablePager extends SvnTablePager {
 			'cr_message' => wfMsg( 'code-field-message' ),
 			'cc_text' => wfMsg( 'code-field-text' ),
 		);
+
+		if( $this->mView->mAuthor ) {
+		        $query['conds']['cc_user_text'] = $this->mView->mAuthor;
+		}
+
+	    return $query;
 	}
 
 	function formatValue( $name, $value ) {

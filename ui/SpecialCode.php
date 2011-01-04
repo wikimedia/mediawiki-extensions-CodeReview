@@ -99,7 +99,7 @@ class SpecialCode extends SpecialPage {
 					$view = new CodeRevisionStatusView( $params[0], $params[2] );
 					break;
 				} elseif ( $params[1] === 'comments' ) {
-					$view = new CodeCommentsListView( $params[0] );
+					$view = new CodeCommentAuthorListView( $params[0], $params[2]  );
 					break;
 				} else {
 					# Nonsense parameters, back out
