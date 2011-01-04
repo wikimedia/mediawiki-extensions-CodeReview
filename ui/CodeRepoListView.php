@@ -24,11 +24,13 @@ class CodeRepoListView {
 		$links[] = "[[Special:Code/$name/comments|" . wfMsgHtml( 'code-notes' ) . "]]";
 		$links[] = "[[Special:Code/$name/statuschanges|" . wfMsgHtml( 'code-statuschanges' ) . "]]";
 		if ( $wgUser->getId() ) {
-			$author = $repo->wikiUserAuthor( $wgUser->getName() );
+			$userName = $wgUser->getName();
+			$author = $repo->wikiUserAuthor( $userName );
 			if ( $author !== false ) {
 				$links[] = "[[Special:Code/$name/author/$author|" . wfMsgHtml( 'code-mycommits' ) . "]]";
-			    $links[] = "[[Special:Code/$name/comments/$author|" . wfMsgHtml( 'code-mycomments' ) . "]]";
 			}
+
+		    $links[] = "[[Special:Code/$name/comments/author/$userName|" . wfMsgHtml( 'code-mycomments' ) . "]]";
 		}
 		$links[] = "[[Special:Code/$name/tag|" . wfMsgHtml( 'code-tags' ) . "]]";
 		$links[] = "[[Special:Code/$name/author|" . wfMsgHtml( 'code-authors' ) . "]]";
