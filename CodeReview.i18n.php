@@ -10685,7 +10685,7 @@ $messages['sr-ec'] = array(
 	'code-status-old' => 'старо',
 	'code-pathsearch-path' => 'Путања:',
 	'code-revfilter-cr_status' => 'Статус = $1',
-	'code-rev-submit' => 'Запамти измене',
+	'code-rev-submit' => 'Сачувај измене',
 	'code-batch-status' => 'Измени статус:',
 	'code-batch-tags' => 'Измени тагове:',
 	'codereview-batch-title' => 'Измени све изабране ревизије',
