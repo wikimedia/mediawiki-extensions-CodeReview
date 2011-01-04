@@ -216,6 +216,20 @@ abstract class CodeView {
 
 abstract class SvnTablePager extends TablePager {
 
+	/**
+	 * @var CodeRepository
+	 */
+	protected $mRepo;
+
+	/**
+	 * @var CodeView
+	 */
+	protected $mView;
+
+	/**
+	 * @param  $view CodeView
+	 *
+	 */
 	function __construct( $view ) {
 		global $IP;
 		$this->mView = $view;
