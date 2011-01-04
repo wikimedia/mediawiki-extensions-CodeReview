@@ -27,6 +27,7 @@ class CodeRepoListView {
 			$author = $repo->wikiUserAuthor( $wgUser->getName() );
 			if ( $author !== false ) {
 				$links[] = "[[Special:Code/$name/author/$author|" . wfMsgHtml( 'code-mycommits' ) . "]]";
+			    $links[] = "[[Special:Code/$name/comments/$author|" . wfMsgHtml( 'code-mycomments' ) . "]]";
 			}
 		}
 		$links[] = "[[Special:Code/$name/tag|" . wfMsgHtml( 'code-tags' ) . "]]";

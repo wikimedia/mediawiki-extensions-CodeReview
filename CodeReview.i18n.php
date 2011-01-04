@@ -28,6 +28,7 @@ $messages['en'] = array(
 	'code-notes' => 'recent comments',
 	'code-statuschanges' => 'status changes',
 	'code-mycommits' => 'my commits',
+	'code-mycomments' => 'my comments',
 	'code-authors' => 'authors',
 	'code-status' => 'states',
 	'code-tags' => 'tags',
