@@ -2238,6 +2238,7 @@ $messages['de'] = array(
 	'code-notes' => 'Kommentare',
 	'code-statuschanges' => 'Statusänderungen',
 	'code-mycommits' => 'Eigene Commits',
+	'code-mycomments' => 'meine Kommentare',
 	'code-authors' => 'Autoren',
 	'code-status' => 'Status',
 	'code-tags' => 'Tags',
@@ -2338,7 +2339,6 @@ $messages['de'] = array(
 	'code-release-legend' => 'Protokoll der Änderungen erzeugen',
 	'code-release-startrev' => 'Startrevision:',
 	'code-release-endrev' => 'Letzte Revision:',
-	'code-release-badrange' => 'Der Bereich ist zu groß!',
 	'codereview-subtitle' => 'Für $1',
 	'codereview-reply-link' => 'antworten',
 	'codereview-email-subj' => '[$1 $2]: Neuer Kommentar hinzugefügt',
@@ -2716,6 +2716,7 @@ $messages['ee'] = array(
 /** Greek (Ελληνικά)
  * @author Crazymadlover
  * @author Dead3y3
+ * @author Evropi
  * @author Glavkos
  * @author Omnipaedista
  * @author ZaDiak
@@ -2808,7 +2809,6 @@ $messages['el'] = array(
 	'code-release-legend' => 'Παραγωγή σημειώσεων έκδοσης',
 	'code-release-startrev' => 'Εναρκτήρια αναθ:',
 	'code-release-endrev' => 'Τελευταία αναθ:',
-	'code-release-badrange' => 'Το βεληνεκές είναι πολύ μεγάλο!',
 	'codereview-subtitle' => 'Για το $1',
 	'codereview-reply-link' => 'απάντηση',
 	'codereview-email-subj' => '[$1 $2]: Προστέθηκε νέο σχόλιο',
@@ -2820,21 +2820,18 @@ $messages['el'] = array(
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Παρακολούθηση αλλαγών',
-	'codereview-email-body2' => 'Ο Χρήστης "$1" πραγματοποίησε αλλαγές παρακολούθησης στο $2.
+	'codereview-email-body2' => 'Ο χρήστης "$1" πραγματοποίησε αλλαγές παρακολούθησης στο $2.
 
-Πλήρες URL: $3
+Πλήρες URL για τη μεταγενέστερη αλλαγή: $3
 
 Υποβολή περίληψης:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Η αυτόματη δοκιμή εντόπισε παλινδρόμηση',
-	'codereview-email-body3' => 'Η αυτόματη δοκιμή αποκάλυψε μια οπισθοδρόμηση εξαιτίας των αλλαγών στο $1.
+	'codereview-email-body3' => 'Ο/η χρήστης "$ 1" άλλαξε τη κατάσταση του $2.
 
-Πλήρες URL: $2
-
-Υποβολή σύνοψης:
-
-$3',
+Παλαιά Κατάσταση: $3
+Νέα Κατάσταση: $4',
 	'code-stats' => 'στατιστικές',
 	'repoadmin' => 'Διαχείριση του αποθηκευτηρίου',
 	'repoadmin-new-legend' => 'Δημιουργία νέου αποθηκευτηρίου',
@@ -7403,6 +7400,7 @@ $messages['ml'] = array(
 	'code-notes' => 'സമീപകാല അഭിപ്രായങ്ങൾ',
 	'code-statuschanges' => 'സ്ഥിതിയിലെ മാറ്റങ്ങൾ',
 	'code-mycommits' => 'ഞാൻ ചുമതലപ്പെടുത്തിയവ',
+	'code-mycomments' => 'എന്റെ കുറിപ്പുകൾ',
 	'code-authors' => 'രചയിതാക്കൾ',
 	'code-status' => 'അവസ്ഥകൾ',
 	'code-tags' => 'റ്റാഗുകൾ',
@@ -7503,7 +7501,6 @@ $messages['ml'] = array(
 	'code-release-legend' => 'പുറത്തിറക്കൽ കുറിപ്പുകൾ സൃഷ്ടിക്കുക',
 	'code-release-startrev' => 'ആദ്യ നാൾപ്പതിപ്പ്:',
 	'code-release-endrev' => 'അവസാന നാൾപ്പതിപ്പ്:',
-	'code-release-badrange' => 'വളരെ വലിയ പരിധി!',
 	'codereview-subtitle' => 'റെപ്പോസിറ്ററി $1',
 	'codereview-reply-link' => 'മറുപടി',
 	'codereview-email-subj' => '[$1 $2]: പുതിയ അഭിപ്രായം ചേർത്തിരിക്കുന്നു',
@@ -8563,6 +8560,7 @@ $messages['pl'] = array(
 	'code-notes' => 'ostatnie komentarze',
 	'code-statuschanges' => 'zmiany statusu',
 	'code-mycommits' => 'moje aktualizacje',
+	'code-mycomments' => 'moje komentarze',
 	'code-authors' => 'autorzy',
 	'code-status' => 'statusy',
 	'code-tags' => 'znaczniki',
@@ -8663,7 +8661,6 @@ $messages['pl'] = array(
 	'code-release-legend' => 'Wygeneruj opis wersji',
 	'code-release-startrev' => 'Wersja początkowa',
 	'code-release-endrev' => 'Ostatnia wersja',
-	'code-release-badrange' => 'Zakres jest zbyt szeroki!',
 	'codereview-subtitle' => 'Dla $1',
 	'codereview-reply-link' => 'odpowiedz',
 	'codereview-email-subj' => '[$1 $2] - dodano nowy komentarz',
@@ -10450,6 +10447,7 @@ $messages['sl'] = array(
 	'code-notes' => 'nedavne pripombe',
 	'code-statuschanges' => 'spremembe stanj',
 	'code-mycommits' => 'moji prispevki',
+	'code-mycomments' => 'moje pripombe',
 	'code-authors' => 'avtorji',
 	'code-status' => 'stanja',
 	'code-tags' => 'oznake',
@@ -10550,7 +10548,6 @@ $messages['sl'] = array(
 	'code-release-legend' => 'Ustvari opombe ob izidu',
 	'code-release-startrev' => 'Začetna redakcija:',
 	'code-release-endrev' => 'Končna redakcija:',
-	'code-release-badrange' => 'Razpon je preširok!',
 	'codereview-subtitle' => 'Za $1',
 	'codereview-reply-link' => 'odgovori',
 	'codereview-email-subj' => '[$1 $2]: Dodana nova pripomba',
@@ -12748,6 +12745,7 @@ $messages['zh-hans'] = array(
 	'code-notes' => '新近发言',
 	'code-statuschanges' => '更改状态',
 	'code-mycommits' => '我的提交',
+	'code-mycomments' => '我的评论',
 	'code-authors' => '作者',
 	'code-status' => '状态',
 	'code-tags' => '标签',
