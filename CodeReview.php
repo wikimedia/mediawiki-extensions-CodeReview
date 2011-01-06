@@ -31,7 +31,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'CodeReview',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:CodeReview',
-	'author' => array( 'Brion Vibber', 'Aaron Schulz', 'Alexandre Emsenhuber', 'Chad Horohoe' ),
+	'author' => array( 'Brion Vibber', 'Aaron Schulz', 'Alexandre Emsenhuber', 'Chad Horohoe', 'Sam Reed', 'Roan Kattouw' ),
 	'descriptionmsg' => 'codereview-desc',
 );
 
