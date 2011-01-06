@@ -1074,6 +1074,7 @@ $messages['be-tarask'] = array(
 	'code-notes' => 'апошнія камэнтары',
 	'code-statuschanges' => 'зьмены статусу',
 	'code-mycommits' => 'мае зьмены коду',
+	'code-mycomments' => 'мае камэнтары',
 	'code-authors' => 'аўтары',
 	'code-status' => 'станы',
 	'code-tags' => 'тэгі',
@@ -1174,7 +1175,6 @@ $messages['be-tarask'] = array(
 	'code-release-legend' => 'Стварыць заўвагі да выпуску',
 	'code-release-startrev' => 'Пачатковая вэрсія:',
 	'code-release-endrev' => 'Апошняя вэрсія:',
-	'code-release-badrange' => 'Занадта вялікі дыяпазон!',
 	'codereview-subtitle' => 'Для $1',
 	'codereview-reply-link' => 'адказаць',
 	'codereview-email-subj' => '[$1 $2]: Дададзены новы камэнтар',
@@ -1607,6 +1607,7 @@ $messages['bs'] = array(
 	'code-notes' => 'nedavni komentari',
 	'code-statuschanges' => 'izmjene stanja',
 	'code-mycommits' => 'moje publikacije',
+	'code-mycomments' => 'moji komentari',
 	'code-authors' => 'autori',
 	'code-status' => 'statusi',
 	'code-tags' => 'oznake',
@@ -1707,7 +1708,6 @@ $messages['bs'] = array(
 	'code-release-legend' => 'Generisanje bilješki izdanja',
 	'code-release-startrev' => 'Početna rev:',
 	'code-release-endrev' => 'Zadnja rev:',
-	'code-release-badrange' => 'Raspon je prevelik!',
 	'codereview-subtitle' => 'Za $1',
 	'codereview-reply-link' => 'odgovor',
 	'codereview-email-subj' => '[$1 $2]: Dodan novi komentar',
@@ -5423,6 +5423,7 @@ $messages['ia'] = array(
 	'code-notes' => 'commentos recente',
 	'code-statuschanges' => 'cambios de stato',
 	'code-mycommits' => 'mi publicationes',
+	'code-mycomments' => 'mi commentos',
 	'code-authors' => 'autores',
 	'code-status' => 'statos',
 	'code-tags' => 'etiquettas',
@@ -5523,7 +5524,6 @@ $messages['ia'] = array(
 	'code-release-legend' => 'Generar notas del version',
 	'code-release-startrev' => 'Version initial:',
 	'code-release-endrev' => 'Version final:',
-	'code-release-badrange' => 'Intervallo troppo grande!',
 	'codereview-subtitle' => 'Pro $1',
 	'codereview-reply-link' => 'responder',
 	'codereview-email-subj' => '[$1] [v$2]: Nove commento addite',
@@ -5616,6 +5616,7 @@ $messages['id'] = array(
 	'code-notes' => 'komentar terbaru',
 	'code-statuschanges' => 'perubahan status',
 	'code-mycommits' => 'komitmen saya',
+	'code-mycomments' => 'komentar saya',
 	'code-authors' => 'penulis',
 	'code-status' => 'keadaan',
 	'code-tags' => 'Penanda',
@@ -5716,7 +5717,6 @@ $messages['id'] = array(
 	'code-release-legend' => 'Buat catatan rilis',
 	'code-release-startrev' => 'Memulai rev:',
 	'code-release-endrev' => 'Akhir rev:',
-	'code-release-badrange' => 'Interval terlalu besar!',
 	'codereview-subtitle' => 'Untuk $1',
 	'codereview-reply-link' => 'balas',
 	'codereview-email-subj' => '[$1 $2]: Komenter baru ditambahkan',
@@ -5989,6 +5989,7 @@ $4',
  * @author Iwai.masaharu
  * @author Kanon und wikipedia
  * @author Naohiro19
+ * @author Ohgi
  * @author Whym
  * @author 青子守歌
  */
@@ -6011,6 +6012,7 @@ $messages['ja'] = array(
 	'code-notes' => '最近のコメント',
 	'code-statuschanges' => '状態の変更',
 	'code-mycommits' => '自分のコミット',
+	'code-mycomments' => '自分のコメント',
 	'code-authors' => '著者',
 	'code-status' => '状態',
 	'code-tags' => 'タグ',
@@ -6111,7 +6113,6 @@ $messages['ja'] = array(
 	'code-release-legend' => 'リリースノートの生成',
 	'code-release-startrev' => '開始リビジョン:',
 	'code-release-endrev' => '最終リビジョン:',
-	'code-release-badrange' => '範囲が広すぎます！',
 	'codereview-subtitle' => '$1',
 	'codereview-reply-link' => '返信',
 	'codereview-email-subj' => '[$1 $2]: 新規コメント追加',
@@ -7210,6 +7211,7 @@ $messages['mk'] = array(
 	'code-notes' => 'скорешни коментари',
 	'code-statuschanges' => 'измени на статусот',
 	'code-mycommits' => 'мои поднесувања',
+	'code-mycomments' => 'мои коментари',
 	'code-authors' => 'автори',
 	'code-status' => 'состојби',
 	'code-tags' => 'ознаки',
@@ -7311,7 +7313,6 @@ $messages['mk'] = array(
 	'code-release-legend' => 'Создај белешки за изданието',
 	'code-release-startrev' => 'Почетна ревиз:',
 	'code-release-endrev' => 'Последна ревиз:',
-	'code-release-badrange' => 'Опсегот е преголем',
 	'codereview-subtitle' => 'За $1',
 	'codereview-reply-link' => 'одговори',
 	'codereview-email-subj' => '[$1 $2]: Додаден е нов коментар',
@@ -7855,6 +7856,7 @@ $messages['nds-nl'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Mihxil
  * @author SPQRobin
  * @author Siebrand
  */
@@ -7877,6 +7879,7 @@ $messages['nl'] = array(
 	'code-notes' => 'recente opmerkingen',
 	'code-statuschanges' => 'statuswijzigingen',
 	'code-mycommits' => 'mijn commits',
+	'code-mycomments' => 'mijn opmerkingen',
 	'code-authors' => 'auteurs',
 	'code-status' => 'statussen',
 	'code-tags' => 'labels',
@@ -7979,7 +7982,6 @@ De gegevens kunnen uit een cache komen.',
 	'code-release-legend' => 'Release notes aanmaken',
 	'code-release-startrev' => 'Beginversie:',
 	'code-release-endrev' => 'Eindversie:',
-	'code-release-badrange' => 'De reeks is te groot.',
 	'codereview-subtitle' => 'Voor $1',
 	'codereview-reply-link' => 'antwoorden',
 	'codereview-email-subj' => '[$1 $2]: Nieuwe opmerking toegevoegd',
@@ -12323,6 +12325,7 @@ $messages['vi'] = array(
 	'code-notes' => 'ghi chú gần đây',
 	'code-statuschanges' => 'thay đổi trạng thái',
 	'code-mycommits' => 'thay đổi của tôi',
+	'code-mycomments' => 'ghi chú của tôi',
 	'code-authors' => 'tác giả',
 	'code-status' => 'tình trạng',
 	'code-tags' => 'thẻ',
@@ -12423,7 +12426,6 @@ $messages['vi'] = array(
 	'code-release-legend' => 'Tạo thông báo phát hành',
 	'code-release-startrev' => 'Phiên bản khởi đầu:',
 	'code-release-endrev' => 'Phiên bản kết thúc:',
-	'code-release-badrange' => 'Dãy lớn quá!',
 	'codereview-subtitle' => 'Dành cho $1',
 	'codereview-reply-link' => 'trả lời',
 	'codereview-email-subj' => '[$1] [r$2]: Tin nhắn mới',
