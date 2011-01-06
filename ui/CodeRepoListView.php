@@ -18,6 +18,11 @@ class CodeRepoListView {
 		$wgOut->addWikiText( $text );
 	}
 
+	/**
+	 * @static
+	 * @param  $repo CodeRepository
+	 * @return string
+	 */
 	public static function getNavItem( $repo ) {
 		global $wgLang, $wgUser;
 		$name = $repo->getName();
