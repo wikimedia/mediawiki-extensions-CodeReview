@@ -72,7 +72,7 @@ class SubversionPecl extends SubversionAdaptor {
 	 */
 	function canConnect() {
 		wfSuppressWarnings();
-		$result = svn_info( $this->mRepo );
+		$result = svn_info( $this->mRepo->getPath() );
 		wfRestoreWarnings();
 		return (bool)$result;
 	}
