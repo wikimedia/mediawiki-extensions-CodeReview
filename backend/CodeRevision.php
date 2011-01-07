@@ -524,7 +524,7 @@ class CodeRevision {
 	 * @return CodeComment
 	 */
 	public function previewComment( $text, $review, $parent = null ) {
-		$data = $this->commentData( $text, $review, $parent );
+		$data = $this->commentData( rtrim( $text ), $review, $parent );
 		$data['cc_id'] = null;
 		return CodeComment::newFromData( $this, $data );
 	}
@@ -536,7 +536,7 @@ class CodeRevision {
 	 * @return int
 	 */
 	public function saveComment( $text, $review, $parent = null ) {
-		$text = trim( $text );
+		$text = rtrim( $text );
 		if ( !strlen( $text ) ) {
 			return 0;
 		}
