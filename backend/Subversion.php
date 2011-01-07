@@ -64,6 +64,8 @@ abstract class SubversionAdaptor {
 class SubversionPecl extends SubversionAdaptor {
 
 	/**
+	 * Just return true for now. svn_info() is too slow to be useful...
+	 *
 	 * Using undocumented svn_info function. Looking at the source, this has
 	 * existed since version 0.3 of the Pecl extension (per release notes).
 	 * Nobody ever bothered filling in the documentation on php.net though.
@@ -71,10 +73,10 @@ class SubversionPecl extends SubversionAdaptor {
 	 * It throws a warning if the repository does not exist.
 	 */
 	function canConnect() {
-		wfSuppressWarnings();
-		$result = svn_info( $this->mRepo->getPath() );
-		wfRestoreWarnings();
-		return (bool)$result;
+		//wfSuppressWarnings();
+		//$result = svn_info( $this->mRepo );
+		//wfRestoreWarnings();
+		return true;
 	}
 
 	function getFile( $path, $rev = null ) {
