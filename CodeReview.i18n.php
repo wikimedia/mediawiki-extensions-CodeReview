@@ -1952,6 +1952,7 @@ $messages['cs'] = array(
 	'code-notes' => 'nedávné poznámky',
 	'code-statuschanges' => 'změny stavu',
 	'code-mycommits' => 'moje commity',
+	'code-mycomments' => 'moje komentáře',
 	'code-authors' => 'autoři',
 	'code-status' => 'stavy',
 	'code-tags' => 'značky',
@@ -2876,6 +2877,7 @@ $messages['eo'] = array(
 	'code-notes' => 'lastaj komentoj',
 	'code-statuschanges' => 'statusaj ŝanĝoj',
 	'code-mycommits' => 'miaj publikigitaĵoj',
+	'code-mycomments' => 'miaj komentoj',
 	'code-authors' => 'aŭtoroj',
 	'code-status' => 'statoj',
 	'code-tags' => 'etikedoj',
@@ -2961,7 +2963,6 @@ $messages['eo'] = array(
 	'code-release-legend' => 'Generi eldonajn notojn',
 	'code-release-startrev' => 'Komenca revizio:',
 	'code-release-endrev' => 'Lasta revizio:',
-	'code-release-badrange' => 'Intervalo estas tro granda!',
 	'codereview-subtitle' => 'Por $1',
 	'codereview-reply-link' => 'respondo',
 	'codereview-email-subj' => '[$1 $2]: Nova komento estis aldonita',
@@ -3796,6 +3797,7 @@ Uusi tila: $4',
  * @author Jean-Frédéric
  * @author Peter17
  * @author PieRRoMaN
+ * @author Sherbrooke
  * @author Verdy p
  * @author Zetud
  */
@@ -3818,6 +3820,7 @@ $messages['fr'] = array(
 	'code-notes' => 'commentaires récents',
 	'code-statuschanges' => 'modifications de statut',
 	'code-mycommits' => 'mes publications',
+	'code-mycomments' => 'mes commentaires',
 	'code-authors' => 'auteurs',
 	'code-status' => 'états',
 	'code-tags' => 'balises',
@@ -3918,7 +3921,6 @@ $messages['fr'] = array(
 	'code-release-legend' => 'Générer les notes de publication',
 	'code-release-startrev' => 'Révision de début :',
 	'code-release-endrev' => 'Révision de fin :',
-	'code-release-badrange' => 'La portée est trop grande !',
 	'codereview-subtitle' => 'Pour $1',
 	'codereview-reply-link' => 'répondre',
 	'codereview-email-subj' => '[$1 $2] : nouveau commentaire ajouté',
@@ -5068,6 +5070,7 @@ $messages['hsb'] = array(
 	'code-notes' => 'aktualne komentary',
 	'code-statuschanges' => 'změny statusa',
 	'code-mycommits' => 'moje přepodaća',
+	'code-mycomments' => 'moje komentary',
 	'code-authors' => 'awtorojo',
 	'code-status' => 'statusy',
 	'code-tags' => 'taflički',
@@ -5168,7 +5171,6 @@ $messages['hsb'] = array(
 	'code-release-legend' => 'Přispomnjenki wo wersiji wutworić',
 	'code-release-startrev' => 'Prěnja wersija',
 	'code-release-endrev' => 'Poslednja wersija:',
-	'code-release-badrange' => 'Wobłuk přewulki!',
 	'codereview-subtitle' => 'Za $1',
 	'codereview-reply-link' => 'wotmołwić',
 	'codereview-email-subj' => '[$1 $2]: Nowy komentar přidaty',
@@ -8754,6 +8756,7 @@ $messages['pms'] = array(
 	'code-notes' => 'coment recent',
 	'code-statuschanges' => 'cangiament dë statù',
 	'code-mycommits' => 'mie publicassion',
+	'code-mycomments' => 'ij mè coment',
 	'code-authors' => 'autor',
 	'code-status' => 'stat',
 	'code-tags' => 'tichëtte',
@@ -8854,7 +8857,6 @@ $messages['pms'] = array(
 	'code-release-legend' => 'Generé le nòte ëd publicassion',
 	'code-release-startrev' => 'Revision inissial:',
 	'code-release-endrev' => 'Ùltima revision',
-	'code-release-badrange' => "L'antërval a l'é tròp gròss!",
 	'codereview-subtitle' => 'Për $1',
 	'codereview-reply-link' => 'arspond',
 	'codereview-email-subj' => '[$1 $2]: Pa gnun coment giontà',
@@ -8995,6 +8997,7 @@ $messages['pt'] = array(
 	'code-notes' => 'comentários recentes',
 	'code-statuschanges' => 'alterações de estado',
 	'code-mycommits' => 'as minhas efectivações',
+	'code-mycomments' => 'os meus comentarios',
 	'code-authors' => 'autores',
 	'code-status' => 'estados',
 	'code-tags' => 'etiquetas',
@@ -9095,7 +9098,6 @@ $messages['pt'] = array(
 	'code-release-legend' => 'Gerar notas de lançamento',
 	'code-release-startrev' => 'Primeira rev:',
 	'code-release-endrev' => 'Última rev:',
-	'code-release-badrange' => 'Intervalo é demasiado elevado!',
 	'codereview-subtitle' => 'Para $1',
 	'codereview-reply-link' => 'responder',
 	'codereview-email-subj' => '[$1 $2]: Comentário adicionado',
@@ -10280,6 +10282,7 @@ $messages['si'] = array(
 	'code-field-timestamp' => 'දිනය',
 	'code-rev-message' => 'පරිකථනය:',
 	'code-rev-comment-preview' => 'පෙර දසුන',
+	'code-stats' => 'සංඛ්‍යාන දත්ත',
 );
 
 /** Slovak (Slovenčina)
