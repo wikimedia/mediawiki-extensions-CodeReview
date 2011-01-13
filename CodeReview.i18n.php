@@ -1417,6 +1417,7 @@ $messages['br'] = array(
 	'code-notes' => 'Evezhiadennoù diwezhañ',
 	'code-statuschanges' => 'kemmoù statud',
 	'code-mycommits' => 'va embannoù',
+	'code-mycomments' => 'ma evezhiadennoù',
 	'code-authors' => 'aozerien',
 	'code-status' => 'statudoù',
 	'code-tags' => 'balizennoù',
@@ -1517,7 +1518,6 @@ $messages['br'] = array(
 	'code-release-legend' => 'Genel an notennoù embann',
 	'code-release-startrev' => 'Adweladenn penn-kentañ :',
 	'code-release-endrev' => 'Aweladenn ziwezhañ :',
-	'code-release-badrange' => 'Re vras eo al levezon !',
 	'codereview-subtitle' => 'Evit $1',
 	'codereview-reply-link' => 'respont',
 	'codereview-email-subj' => '[$1 $2] : evezhiadenn nevez bet ouzhpennet',
@@ -5238,6 +5238,13 @@ $6',
 	'specialpages-group-developer' => 'Nastroje wuwiwarjow',
 );
 
+/** Haitian (Kreyòl ayisyen)
+ * @author Boukman
+ */
+$messages['ht'] = array(
+	'code-status-desc-reverted' => 'Revizyon sa te defè pa yon lòt revizyon ki te fèt pi ta',
+);
+
 /** Hungarian (Magyar)
  * @author BáthoryPéter
  * @author Dani
@@ -6278,6 +6285,7 @@ $4',
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author Dawid Deutschland
  * @author Malafaya
  * @author გიორგიმელა
  */
@@ -6300,9 +6308,12 @@ $messages['ka'] = array(
 	'code-author-unlink' => 'კავშირის მოხსნა?',
 	'code-field-id' => 'ვერსია',
 	'code-field-author' => 'ავტორი',
+	'code-field-user' => 'კომენტატორი',
 	'code-field-status' => 'სტატუსი',
+	'code-field-status-description' => 'სტატუსის აღწერა',
 	'code-field-timestamp' => 'თარიღი',
 	'code-field-comments' => 'კომენტარები',
+	'code-field-path' => 'გზა',
 	'code-field-text' => 'შენიშვნა',
 	'code-field-select' => 'არჩევა',
 	'code-rev-author' => 'ავტორი:',
@@ -6336,6 +6347,8 @@ $messages['ka'] = array(
 	'code-status-old' => 'ძველი',
 	'code-signoff-flag-tested' => 'დაცდილი',
 	'code-signoff-field-user' => 'მომხმარებელი',
+	'code-signoff-field-flag' => 'დროშა',
+	'code-signoff-field-date' => 'თარიღი',
 	'code-pathsearch-legend' => 'კონკრეტული რედაქციების ძიება ამ საცავში მისამართის მიხედვით',
 	'code-pathsearch-path' => 'გზა:',
 	'code-pathsearch-filter' => 'გამოყენებული ფილტრები:',
@@ -8204,6 +8217,7 @@ $messages['no'] = array(
 	'code-notes' => 'Siste kommentarer',
 	'code-statuschanges' => 'statusendringer',
 	'code-mycommits' => 'mine innsendinger',
+	'code-mycomments' => 'mine kommentarer',
 	'code-authors' => 'forfattere',
 	'code-status' => 'tilstander',
 	'code-tags' => 'tagger',
