@@ -10931,6 +10931,7 @@ $4',
  * @author Najami
  * @author Per
  * @author Rotsee
+ * @author Tobulos1
  */
 $messages['sv'] = array(
 	'code' => 'Kodgranskning',
@@ -10951,6 +10952,7 @@ $messages['sv'] = array(
 	'code-notes' => 'senaste kommentarer',
 	'code-statuschanges' => 'Statusändringar',
 	'code-mycommits' => 'mina insändningar',
+	'code-mycomments' => 'mina kommentarer',
 	'code-authors' => 'författare',
 	'code-status' => 'tillstånd',
 	'code-tags' => 'taggar',
@@ -10977,7 +10979,7 @@ $messages['sv'] = array(
 	'code-field-status' => 'Status',
 	'code-field-status-description' => 'Statusbeskrivning',
 	'code-field-timestamp' => 'Datum',
-	'code-field-comments' => 'Noter',
+	'code-field-comments' => 'Kommentarer',
 	'code-field-path' => 'Sökväg',
 	'code-field-text' => 'Not',
 	'code-field-select' => 'Välj',
@@ -11045,7 +11047,6 @@ $messages['sv'] = array(
 	'code-release-legend' => 'Generera versionsnoter',
 	'code-release-startrev' => 'Första revision:',
 	'code-release-endrev' => 'Senaste revision:',
-	'code-release-badrange' => 'Intervallet är för stort!',
 	'codereview-subtitle' => 'För $1',
 	'codereview-reply-link' => 'svara',
 	'codereview-email-subj' => '[$1 $2]: Ny kommentar tillagd',
@@ -11984,6 +11985,7 @@ $messages['uk'] = array(
 	'code-notes' => 'останні коментарі',
 	'code-statuschanges' => 'зміни статусу',
 	'code-mycommits' => 'мої дії',
+	'code-mycomments' => 'мої коментарі',
 	'code-authors' => 'автори',
 	'code-status' => 'статуси',
 	'code-tags' => 'мітки',
@@ -12070,7 +12072,6 @@ $messages['uk'] = array(
 	'code-release-legend' => 'Створити примітки до випуску',
 	'code-release-startrev' => 'Початкова версія:',
 	'code-release-endrev' => 'Остання версія:',
-	'code-release-badrange' => 'Діапазон надто великий!',
 	'codereview-subtitle' => 'Для $1',
 	'codereview-reply-link' => 'відповісти',
 	'codereview-email-subj' => '[$1 $2]: Доданий новий коментар',
