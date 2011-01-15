@@ -1923,6 +1923,13 @@ $4',
 	'specialpages-group-developer' => 'Eines de desenvolupador',
 );
 
+/** Chechen (Нохчийн)
+ * @author Sasan700
+ */
+$messages['ce'] = array(
+	'codereview-reply-link' => 'жоп ло',
+);
+
 /** Sorani (کوردی) */
 $messages['ckb'] = array(
 	'codereview-batch-submit' => 'ناردن',
@@ -11841,7 +11848,7 @@ $messages['tr'] = array(
 	'code-field-message' => 'Teslim özeti',
 	'code-field-status' => 'Durum',
 	'code-field-timestamp' => 'Tarih',
-	'code-field-comments' => 'Notlar',
+	'code-field-comments' => 'Yorumlar',
 	'code-field-path' => 'Yol',
 	'code-field-text' => 'Not',
 	'code-field-select' => 'Seç',
@@ -11893,7 +11900,6 @@ $messages['tr'] = array(
 	'code-release-legend' => 'Sürüm notları oluştur',
 	'code-release-startrev' => 'Başlangıç rev:',
 	'code-release-endrev' => 'Son rev:',
-	'code-release-badrange' => 'Aralık çok büyük!',
 	'codereview-subtitle' => '$1 için',
 	'codereview-reply-link' => 'yanıtla',
 	'codereview-email-subj' => '[$1 $2]: Yeni yorum eklendi',
@@ -12952,6 +12958,7 @@ $6',
  * @author FireJackey
  * @author Horacewai2
  * @author Liangent
+ * @author Mark85296341
  * @author Skjackey tse
  */
 $messages['zh-hant'] = array(
@@ -12968,12 +12975,16 @@ $messages['zh-hant'] = array(
 	'code-prop-changes' => '狀態或標籤日誌',
 	'codereview-desc' => '[[Special:Code|程式碼預覽工具]] with [[Special:RepoAdmin|子版本支援]]',
 	'code-no-repo' => '沒有存放配置！',
-	'code-load-diff' => '加載差異中...',
+	'code-repo-not-found' => "儲存庫'''$1'''不存在！",
+	'code-load-diff' => '載入差異 ...',
 	'code-notes' => '新近發言',
 	'code-statuschanges' => '更改狀態',
+	'code-mycommits' => '我的提交',
+	'code-mycomments' => '我的評論',
 	'code-authors' => '作者',
 	'code-status' => '狀態',
 	'code-tags' => '標籤',
+	'code-tags-no-tags' => '此儲存庫中不存在的任何標記。',
 	'code-authors-text' => '以下是回購作者的最近承諾。',
 	'code-author-haslink' => '此作者與維基用戶$1連結',
 	'code-author-orphan' => '此作者沒有與任何維基用戶連結',
@@ -12985,17 +12996,23 @@ $messages['zh-hant'] = array(
 	'code-author-link' => '相關聯？',
 	'code-author-unlink' => '取消關聯？',
 	'code-author-unlinksuccess' => '作者 $1 已經取消關聯',
+	'code-author-badtoken' => '會話錯誤嘗試執行的操作。',
+	'code-author-total' => '作者總數：$1',
+	'code-author-lastcommit' => '最後提交日期',
 	'code-browsing-path' => "正在瀏覽在'''$1'''的修改",
 	'code-field-id' => '修訂',
 	'code-field-author' => '作者',
 	'code-field-user' => '評論員',
 	'code-field-message' => '評論匯總',
 	'code-field-status' => '狀態',
+	'code-field-status-description' => '狀態說明',
 	'code-field-timestamp' => '日期',
 	'code-field-comments' => '註釋',
 	'code-field-path' => '路徑',
 	'code-field-text' => '註釋',
 	'code-field-select' => '選定',
+	'code-reference-remove' => '移除選定的關聯',
+	'code-reference-associate-submit' => '將相關聯',
 	'code-rev-author' => '作者：',
 	'code-rev-date' => '日期：',
 	'code-rev-message' => '評論：',
@@ -13011,7 +13028,7 @@ $messages['zh-hant'] = array(
 	'code-rev-status' => '狀態：',
 	'code-rev-status-set' => '更改狀態',
 	'code-rev-tags' => '標籤：',
-	'code-rev-tag-add' => '添加標籤：',
+	'code-rev-tag-add' => '新增標籤：',
 	'code-rev-tag-remove' => '移除標籤：',
 	'code-rev-comment-by' => '$1 的評論',
 	'code-rev-comment-preview' => '預覽',
@@ -13021,12 +13038,29 @@ $messages['zh-hant'] = array(
 	'code-rev-diff-too-large' => '該差異太大，無法顯示。',
 	'code-rev-purge-link' => '清除',
 	'code-rev-total' => '總共有$1個結果',
+	'code-rev-not-found' => "修訂'''$1'''不存在！",
 	'code-status-new' => '新',
+	'code-status-desc-new' => '修訂是掛起的操作 （預設狀態）。',
 	'code-status-fixme' => '修正',
+	'code-status-desc-fixme' => '審閱者標記此版本引入一個錯誤或已損壞。它應該得到糾正。',
 	'code-status-reverted' => '回復',
 	'code-status-resolved' => '解決',
 	'code-status-ok' => '確定',
+	'code-status-desc-ok' => '修訂全面審查，確保它是好在每個方法中審閱者。',
 	'code-status-deferred' => '推遲',
+	'code-status-desc-deferred' => '修訂並不要求審查。',
+	'code-status-old' => '舊',
+	'code-status-desc-old' => '與潛在的錯誤，但這不值得檢討他們的努力的舊版本。',
+	'code-signoffs' => '簽收',
+	'code-signoff-legend' => '新增簽收',
+	'code-signoff-submit' => '批准',
+	'code-signoff-flag-inspected' => '檢查過',
+	'code-signoff-flag-tested' => '測試過了',
+	'code-signoff-field-user' => '用戶',
+	'code-signoff-field-flag' => '標記',
+	'code-signoff-field-date' => '日期',
+	'code-signoff-struckdate' => '$1（打$2）',
+	'code-pathsearch-legend' => '在此進行回購協議的路徑中搜尋修訂',
 	'code-pathsearch-path' => '路徑：',
 	'code-pathsearch-filter' => '過濾器適用於：',
 	'code-revfilter-cr_status' => '狀態 = $1',
@@ -13042,9 +13076,8 @@ $messages['zh-hant'] = array(
 	'code-release-legend' => '產發發佈說明',
 	'code-release-startrev' => '開始修訂：',
 	'code-release-endrev' => '結束修訂：',
-	'code-release-badrange' => '範圍過大！',
 	'codereview-subtitle' => '對$1',
-	'codereview-reply-link' => '回復',
+	'codereview-reply-link' => '回覆',
 	'codereview-email-subj' => '[$1 $2]: 新的評論已添加',
 	'codereview-email-body' => '用戶 "$1" 在 $3 上添加了一條評論。
 
@@ -13054,9 +13087,11 @@ $messages['zh-hant'] = array(
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]：後續更改',
-	'codereview-email-body2' => '用戶“$1”對$2作出了後續更改。
+	'codereview-email-body2' => '用戶「$1」對$2作出了後續更改。
 
-URL鏈接：$3
+後續修訂的URL連結：$5
+
+URL連結：$3
 
 提交摘要：
 
@@ -13064,28 +13099,37 @@ $4',
 	'codereview-email-subj3' => '[$1 $2]：自動測試發現已知錯誤',
 	'codereview-email-body3' => '自動測試發現$1導致了已知的錯誤。
 
-URL鏈接：$2
+URL連結：$2
 
 提交摘要：
 
 $3',
+	'codereview-email-subj4' => '[$1 $2]： 新增，新的註釋和修訂狀態改變',
+	'code-stats' => '統計',
+	'code-stats-header' => '$1 儲存庫的統計資訊',
+	'code-stats-main' => '$1的儲存庫已$2{{PLURAL:$2|修改|修改}}的[[Special:Code/$3/author|$4{{PLURAL:$4|作者|作者}}]]。',
+	'code-stats-status-breakdown' => '每情況修訂的數目',
+	'code-stats-fixme-breakdown' => '每個作者 fixmes 的分項數字',
+	'code-stats-count' => '修訂的數目',
 	'repoadmin' => '儲存庫管理',
 	'repoadmin-new-legend' => '建立新的儲存庫',
 	'repoadmin-new-label' => '儲存庫名稱：',
-	'repoadmin-new-button' => '創建',
+	'repoadmin-new-button' => '建立',
 	'repoadmin-edit-legend' => '修改儲存庫"$1"',
 	'repoadmin-edit-path' => '儲存庫路徑：',
 	'repoadmin-edit-bug' => 'Bugzilla路徑：',
 	'repoadmin-edit-view' => 'ViewVC路徑：',
 	'repoadmin-edit-button' => '確定',
 	'repoadmin-edit-sucess' => '儲存庫"[[Special:Code/$1|$1]]"已被成功修改。',
+	'repoadmin-nav' => '儲存庫管理',
 	'right-repoadmin' => '管理代碼儲存庫',
 	'right-codereview-use' => '使用Special:Code',
 	'right-codereview-add-tag' => '添加新標籤到修訂',
 	'right-codereview-remove-tag' => '自修訂移除標籤',
 	'right-codereview-post-comment' => '添加評論到修訂',
 	'right-codereview-set-status' => '修改修訂狀態',
-	'right-codereview-link-user' => '將作者鏈接到維基用戶',
+	'right-codereview-signoff' => '登入修訂',
+	'right-codereview-link-user' => '將作者連結到維基用戶',
 	'specialpages-group-developer' => '開發者工具',
 );
 
