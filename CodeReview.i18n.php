@@ -13066,7 +13066,7 @@ $messages['zh-hant'] = array(
 	'code-revfilter-cr_status' => '狀態 = $1',
 	'code-revfilter-cr_author' => '作者= $1',
 	'code-revfilter-clear' => '清除過濾器',
-	'code-rev-submit' => '保存修改',
+	'code-rev-submit' => '儲存修改',
 	'code-rev-submit-next' => '保存，並處理下一條',
 	'code-batch-status' => '更改狀態：',
 	'code-batch-tags' => '更改標籤：',
