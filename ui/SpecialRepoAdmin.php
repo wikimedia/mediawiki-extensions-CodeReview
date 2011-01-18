@@ -124,7 +124,7 @@ class RepoAdminRepoView {
 						'repo_viewvc' => $viewPath,
 						'repo_bugzilla' => $bugPath
 					),
-					array( 'repo_id' => $this->mRepo->getId() ),
+					array( 'repo_id' => $this->repo->getId() ),
 					__METHOD__
 				);
 			} else {
