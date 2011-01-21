@@ -90,7 +90,8 @@ class CodeRepository {
 
 	static function getRepoList() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select( 'code_repo', '*', array(), __METHOD__ );
+		$options = array( 'ORDER BY' => 'repo_name' );
+		$res = $dbr->select( 'code_repo', '*', array(), __METHOD__, $options );
 		$repos = array();
 		foreach ( $res as $row ) {
 			$repos[] = self::newFromRow( $row );
