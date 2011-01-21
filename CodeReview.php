@@ -155,6 +155,14 @@ $wgCodeReviewImgRegex = '/\.(png|jpg|jpeg|gif)$/i';
 $wgCodeReviewMaxDiffSize = 500000;
 
 /**
+ * The maximum number of paths that we will perform a diff on.
+ * If a revision contains more changed paths than this, we will skip getting the 
+ * diff altogether.
+ * May be set to 0 to indicate no limit.
+ */
+$wgCodeReviewMaxDiffPaths = 20;
+
+/**
  * Limit of the revisions accessible to the search by path.
  * Set to 0 to disable the limit.
  */
