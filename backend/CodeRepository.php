@@ -259,29 +259,54 @@ class CodeRepository {
 	 * @param int $rev Revision ID
 	 * @param $useCache 'skipcache' to avoid caching
 	 *                   'cached' to *only* fetch if cached
+	 * @return string|int The diff text on success, a DIFFRESULT_* constant on failure.
 	 */
 	public function getDiff( $rev, $useCache = '' ) {
-		global $wgMemc;
+		global $wgMemc, $wgCodeReviewMaxDiffPaths;
 		wfProfileIn( __METHOD__ );
+
+		$data = null;
 
 		$rev1 = $rev - 1;
 		$rev2 = $rev;
 
+	// Check that a valid revision was specified.
 		$revision = $this->getRevision( $rev );
-		if ( $revision == null || !$revision->isDiffable() ) {
+		if ( $revision == null ) {
+			$data = DIFFRESULT_BadRevision;
+		}
+	// Check that there is at least one, and at most $wgCodeReviewMaxDiffPaths
+	// paths changed in this revision.
+		else {
+			$paths = $revision->getModifiedPaths();
+			if ( !$paths->numRows() ) {
+				$data = DIFFRESULT_NothingToCompare;
+			}
+			elseif ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() > $wgCodeReviewMaxDiffPaths ) {
+				$data = DIFFRESULT_TooManyPaths;
+			}
+		}
+	
+	// If an error has occurred, return it.
+		if ( $data !== null ) {
 			wfProfileOut( __METHOD__ );
-			return false;
+			return $data;
 		}
 
-		# Try memcached...
+	// Set up the cache key, which will be used both to check if already in the
+	// cache, and to write the final result to the cache.
 		$key = wfMemcKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
+
+	// If not set to explicitly skip the cache, get the current diff from memcached
+	// directly.
 		if ( $useCache === 'skipcache' ) {
 			$data = null;
 		} else {
 			$data = $wgMemc->get( $key );
 		}
 
-		# Try the database...
+	// If the diff hasn't already been retrieved from the cache, see if we can get 
+	// it from the DB.
 		if ( !$data && $useCache != 'skipcache' ) {
 			$dbr = wfGetDB( DB_SLAVE );
 			$row = $dbr->selectRow( 'code_rev',
@@ -292,7 +317,7 @@ class CodeRepository {
 			if ( $row ) {
 				$flags = explode( ',', $row->cr_flags );
 				$data = $row->cr_diff;
-				// If the text was fetched without an error, convert it
+			// If the text was fetched without an error, convert it
 				if ( $data !== false && in_array( 'gzip', $flags ) ) {
 					# Deal with optional compression of archived pages.
 					# This can be done periodically via maintenance/compressOld.php, and
@@ -302,22 +327,36 @@ class CodeRepository {
 			}
 		}
 
-		# Generate the diff as needed...
+	// If the data was not already in the cache or in the DB, we need to retrieve
+	// it from SVN.
 		if ( !$data && $useCache !== 'cached' ) {
 			$svn = SubversionAdaptor::newFromRepo( $this->path );
 			$data = $svn->getDiff( '', $rev1, $rev2 );
+
+		// If $data is blank, report the error that no data was returned.
+		// TODO: Currently we can't tell the difference between an SVN/connection
+		//		 failure and an empty diff.  See if we can remedy this!
+			if ($data == "") {
+				$data = DIFFRESULT_NoDataReturned;
+			}
+		// Otherwise, store the resulting diff to both the temporary cache and
+		// permanent DB storage.
+			else {
 			// Store to cache
-			$wgMemc->set( $key, $data, 3600 * 24 * 3 );
+				$wgMemc->set( $key, $data, 3600 * 24 * 3 );
+
 			// Permanent DB storage
-			$storedData = $data;
-			$flags = Revision::compressRevisionText( $storedData );
-			$dbw = wfGetDB( DB_MASTER );
-			$dbw->update( 'code_rev',
-				array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
-				array( 'cr_repo_id' => $this->id, 'cr_id' => $rev ),
-				__METHOD__
-			);
+				$storedData = $data;
+				$flags = Revision::compressRevisionText( $storedData );
+				$dbw = wfGetDB( DB_MASTER );
+				$dbw->update( 'code_rev',
+					array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
+					array( 'cr_repo_id' => $this->id, 'cr_id' => $rev ),
+					__METHOD__
+				);
+			}
 		}
+
 		wfProfileOut( __METHOD__ );
 		return $data;
 	}

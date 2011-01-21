@@ -50,7 +50,7 @@ class SvnImport extends Maintenance {
 	 * @param $start Int Revision to begin the import from (Default: null, means last stored revision);
 	 */
 	private function importRepo( $repoName, $start = null, $cacheSize = 0 ) {
-		global $wgCodeReviewImportBatchSize;
+		global $wgCodeReviewImportBatchSize, $wgCodeReviewMaxDiffPaths;
 
 		$repo = CodeRepository::newFromName( $repoName );
 
@@ -136,6 +136,14 @@ class SvnImport extends Maintenance {
 				$options['LIMIT'] = $cacheSize;
 			}
 
+		// Get all rows for this repository that don't already have a diff filled in.  
+		// This is LIMITed according to the $cacheSize setting, above, so only the 
+		// rows that we plan to pre-cache are returned.
+		// TODO: This was optimised in order to skip rows that already have a diff, 
+		//		 which is mostly what is required, but there may be situations where 
+		//		 you want to re-calculate diffs (e.g. if $wgCodeReviewMaxDiffPaths
+		//		 changes).  If these situations arise we will either want to revert
+		//		 this behaviour, or add a --force flag or something.
 			$res = $dbw->select( 'code_rev', 'cr_id',
 				array( 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL OR cr_diff = ""' ),
 				__METHOD__,
@@ -143,8 +151,33 @@ class SvnImport extends Maintenance {
 			);
 			foreach ( $res as $row ) {
 				$repo->getRevision( $row->cr_id );
-				$repo->getDiff( $row->cr_id ); // trigger caching
-				$this->output( "Diff r{$row->cr_id} done\n" );
+				$diff = $repo->getDiff( $row->cr_id ); // trigger caching
+				$msg = "Diff r{$row->cr_id} ";
+				if (is_integer($diff)) {
+					$msg .= "Skipped: ";
+					switch ($diff) {
+						case DIFFRESULT_BadRevision:
+							$msg .= "Bad revision";
+							break;
+						case DIFFRESULT_NothingToCompare:
+							$msg .= "Nothing to compare";
+							break;
+						case DIFFRESULT_TooManyPaths:
+							$msg .= "Too many paths (\$wgCodeReviewMaxDiffPaths = " 
+							      . $wgCodeReviewMaxDiffPaths . ")";
+							break;
+						case DIFFRESULT_NoDataReturned:
+							$msg .= "No data returned - no diff data, or connection lost.";
+							break;
+						default:
+							$msg .= "Unknown reason!";
+							break;
+					}
+				}
+				else {
+					$msg .= "done";
+				}
+				$this->output( $msg . "\n" );
 			}
 		}
 		else {

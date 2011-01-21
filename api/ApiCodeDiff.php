@@ -40,7 +40,7 @@ class ApiCodeDiff extends ApiBase {
 
 		$diff = $repo->getDiff( $params['rev'] );
 
-		if ( strval( $diff ) === '' ) {
+		if ( !is_string( $diff ) ) {
 			// FIXME: Are we sure we don't want to throw an error here?
 			$html = 'Failed to load diff.';
 		} elseif ( strlen( $diff ) > $wgCodeReviewMaxDiffSize ) {

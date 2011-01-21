@@ -114,6 +114,12 @@ $wgGroupPermissions['user']['codereview-associate'] = true;
 
 $wgGroupPermissions['steward']['repoadmin'] = true; // temp
 
+// Constants returned from CodeRepository::getDiff() when no diff can be calculated.
+define("DIFFRESULT_BadRevision",        0);
+define("DIFFRESULT_NothingToCompare",   1);
+define("DIFFRESULT_TooManyPaths",       2);
+define("DIFFRESULT_NoDataReturned",     3);
+
 // If you can't directly access the remote SVN repo, you can set this
 // to an offsite proxy running this fun little proxy tool:
 // http://svn.wikimedia.org/viewvc/mediawiki/trunk/tools/codereview-proxy/
