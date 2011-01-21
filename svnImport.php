@@ -136,14 +136,14 @@ class SvnImport extends Maintenance {
 				$options['LIMIT'] = $cacheSize;
 			}
 
-		// Get all rows for this repository that don't already have a diff filled in.  
-		// This is LIMITed according to the $cacheSize setting, above, so only the 
-		// rows that we plan to pre-cache are returned.
-		// TODO: This was optimised in order to skip rows that already have a diff, 
-		//		 which is mostly what is required, but there may be situations where 
-		//		 you want to re-calculate diffs (e.g. if $wgCodeReviewMaxDiffPaths
-		//		 changes).  If these situations arise we will either want to revert
-		//		 this behaviour, or add a --force flag or something.
+			// Get all rows for this repository that don't already have a diff filled in.
+			// This is LIMITed according to the $cacheSize setting, above, so only the
+			// rows that we plan to pre-cache are returned.
+			// TODO: This was optimised in order to skip rows that already have a diff,
+			//		 which is mostly what is required, but there may be situations where
+			//		 you want to re-calculate diffs (e.g. if $wgCodeReviewMaxDiffPaths
+			//		 changes).  If these situations arise we will either want to revert
+			//		 this behaviour, or add a --force flag or something.
 			$res = $dbw->select( 'code_rev', 'cr_id',
 				array( 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL OR cr_diff = ""' ),
 				__METHOD__,
@@ -153,7 +153,7 @@ class SvnImport extends Maintenance {
 				$repo->getRevision( $row->cr_id );
 				$diff = $repo->getDiff( $row->cr_id ); // trigger caching
 				$msg = "Diff r{$row->cr_id} ";
-				if (is_integer($diff)) {
+				if ( is_integer( $diff ) ) {
 					$msg .= "Skipped: ";
 					switch ($diff) {
 						case DIFFRESULT_BadRevision:
@@ -173,14 +173,12 @@ class SvnImport extends Maintenance {
 							$msg .= "Unknown reason!";
 							break;
 					}
-				}
-				else {
+				} else {
 					$msg .= "done";
 				}
 				$this->output( $msg . "\n" );
 			}
-		}
-		else {
+		} else {
 			$this->output( "Pre-caching skipped.\n" );
 		}
 		$this->output( "Done!\n" );
