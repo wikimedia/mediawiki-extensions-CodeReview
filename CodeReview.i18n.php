@@ -379,7 +379,6 @@ $messages['af'] = array(
 	'code-status-reverted' => 'teruggerol',
 	'code-status-resolved' => 'opgelos',
 	'code-status-ok' => 'ok',
-	'code-status-verified' => 'geverifieer',
 	'code-status-old' => 'oud',
 	'code-signoff-field-user' => 'Gebruiker',
 	'code-signoff-field-date' => 'Datum',
@@ -387,7 +386,6 @@ $messages['af'] = array(
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Outeur = $1',
 	'codereview-batch-submit' => 'Dien in',
-	'code-release-badrange' => 'Die reeks is te groot.',
 	'codereview-subtitle' => 'Vir $1',
 	'codereview-reply-link' => 'antwoord',
 	'code-stats' => 'statistieke',
@@ -427,7 +425,6 @@ $messages['aln'] = array(
 	'code-release-legend' => 'Shënime Generate lirimin',
 	'code-release-startrev' => 'rev Fillimi:',
 	'code-release-endrev' => 'rev fundit:',
-	'code-release-badrange' => 'Varg është tepër i madh!',
 	'codereview-subtitle' => 'Për $1',
 	'codereview-reply-link' => 'përgjigje',
 	'codereview-email-subj' => '[$1 $2]: koment i ri shtuar',
@@ -615,7 +612,6 @@ $messages['ar'] = array(
 	'code-release-legend' => 'توليد ملاحظات الإصدار',
 	'code-release-startrev' => 'مراجعة البداية:',
 	'code-release-endrev' => 'آخر مراجعة:',
-	'code-release-badrange' => 'النطاق كبير للغاية!',
 	'codereview-subtitle' => 'ل$1',
 	'codereview-reply-link' => 'رد',
 	'codereview-email-subj' => '[$1 $2]: تعليق جديد تمت إضافته',
@@ -804,7 +800,7 @@ $4',
 	'specialpages-group-developer' => 'أدوات المطورين',
 );
 
-/** Bashkir (Башҡорт)
+/** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar
  */
@@ -927,7 +923,6 @@ $messages['ba'] = array(
 	'code-release-legend' => 'Сығарылыш иҫкәрмәләрен яһарға',
 	'code-release-startrev' => 'Башланғыс өлгө:',
 	'code-release-endrev' => 'Һуңғы өлгө:',
-	'code-release-badrange' => 'Арауыҡ бик ҙур!',
 	'codereview-subtitle' => '«$1» өсөн',
 	'codereview-reply-link' => 'яуапларға',
 	'codereview-email-subj' => '[$1 $2]: Яңы иҫкәрмә өҫтәлде',
@@ -1049,7 +1044,7 @@ $messages['be'] = array(
 	'code-stats' => 'статыстыка',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -1324,7 +1319,6 @@ $messages['bg'] = array(
 	'codereview-batch-submit' => 'Изпращане',
 	'code-release-startrev' => 'Първа редакция:',
 	'code-release-endrev' => 'Последна редакция:',
-	'code-release-badrange' => 'Обхватът е твърде голям!',
 	'codereview-subtitle' => 'За $1',
 	'codereview-reply-link' => 'отговаряне',
 	'codereview-email-subj' => '[$1 $2]: Беше добавен нов коментар',
@@ -2190,7 +2184,6 @@ $messages['da'] = array(
 	'code-status-reverted' => 'tilbagestillet',
 	'code-status-resolved' => 'løst',
 	'code-status-ok' => 'o.k.',
-	'code-status-verified' => 'verificeret',
 	'code-status-deferred' => 'udsat',
 	'code-pathsearch-legend' => 'Søg versioner i dette arkiv efter sti',
 	'code-pathsearch-path' => 'Sti:',
@@ -2509,7 +2502,6 @@ $messages['diq'] = array(
 	'code-release-legend' => 'Notanê releaseyî viraze',
 	'code-release-startrev' => 'Revizyonê verînî:',
 	'code-release-endrev' => 'Revizyonê penî:',
-	'code-release-badrange' => 'Menzil zaf derg o!',
 	'codereview-subtitle' => 'Qe $1',
 	'codereview-reply-link' => 'cewab bide',
 	'codereview-email-subj' => '[$1 $2]: Xulasayê newî de biyo',
@@ -2658,7 +2650,6 @@ $messages['dsb'] = array(
 	'code-release-legend' => 'Pśipomnjeśa wó wersiji napóraś',
 	'code-release-startrev' => 'Prědna wersija:',
 	'code-release-endrev' => 'Slědna wersija:',
-	'code-release-badrange' => 'Wobłuk jo pśewjeliki!',
 	'codereview-subtitle' => 'Za $1',
 	'codereview-reply-link' => 'wótegroniś',
 	'codereview-email-subj' => '[$1 $2]: Nowy komentar pśidany',
@@ -3147,7 +3138,6 @@ $messages['es'] = array(
 	'code-release-legend' => 'Generar notas de entrega',
 	'code-release-startrev' => 'Primera rev:',
 	'code-release-endrev' => 'Última rev:',
-	'code-release-badrange' => 'Rango es demasiado largo!',
 	'codereview-subtitle' => 'Para $1',
 	'codereview-reply-link' => 'responder',
 	'codereview-email-subj' => '[$1 $2]: Añadido nuevo comentario',
@@ -3307,7 +3297,6 @@ $messages['et'] = array(
 	'code-release-legend' => 'Redaktsioonimärkmete loomine',
 	'code-release-startrev' => 'Esimene redaktsioon:',
 	'code-release-endrev' => 'Viimane redaktsioon:',
-	'code-release-badrange' => 'Vahemik on liiga suur!',
 	'codereview-subtitle' => 'Hoidla $1 jaoks',
 	'codereview-reply-link' => 'vasta',
 	'codereview-email-subj' => '[$1 $2]: Lisatud uus kommentaar',
@@ -3740,7 +3729,6 @@ $messages['fi'] = array(
 	'code-release-legend' => 'Luo julkaisuhuomautukset',
 	'code-release-startrev' => 'Ensimmäinen versio',
 	'code-release-endrev' => 'Viimeinen versio',
-	'code-release-badrange' => 'Alue on liian suuri!',
 	'codereview-subtitle' => 'Varastolle $1',
 	'codereview-reply-link' => 'vastaa',
 	'codereview-email-subj' => '[$1 $2]: Uusi kommentti lisätty',
@@ -4092,7 +4080,6 @@ $messages['frp'] = array(
 	'code-release-legend' => 'Fâre les notes de publecacion',
 	'code-release-startrev' => 'Rèvision de comencement :',
 	'code-release-endrev' => 'Rèvision de fin :',
-	'code-release-badrange' => 'La portâ est trop granta !',
 	'codereview-subtitle' => 'Por $1',
 	'codereview-reply-link' => 'rèpondre',
 	'codereview-email-subj' => '[$1 $2] : novél comentèro apondu',
@@ -4987,7 +4974,6 @@ $messages['hr'] = array(
 	'code-release-legend' => 'Kreiraj bilješke uz izdanje',
 	'code-release-startrev' => 'Početna revizija:',
 	'code-release-endrev' => 'Posljednja revizija:',
-	'code-release-badrange' => 'Raspon je prevelik!',
 	'codereview-subtitle' => 'Za $1',
 	'codereview-reply-link' => 'odgovori',
 	'codereview-email-subj' => '[$1 $2]: Dodan novi komentar',
@@ -5360,7 +5346,6 @@ $messages['hu'] = array(
 	'code-release-legend' => 'Kiadási megjegyzések generálása',
 	'code-release-startrev' => 'Első változat:',
 	'code-release-endrev' => 'Utolsó változat:',
-	'code-release-badrange' => 'A tartomány túl nagy!',
 	'codereview-subtitle' => '$1 részére',
 	'codereview-reply-link' => 'válasz',
 	'codereview-email-subj' => '[$1 $2]: Új hozzászólás',
@@ -5959,7 +5944,6 @@ $messages['it'] = array(
 	'code-release-legend' => 'Genera note di versione',
 	'code-release-startrev' => 'Revisione iniziale:',
 	'code-release-endrev' => 'Revisione finale:',
-	'code-release-badrange' => "L'intervallo è troppo ampio!",
 	'codereview-subtitle' => 'Per $1',
 	'codereview-reply-link' => 'rispondi',
 	'codereview-email-subj' => '[$1 $2]: Aggiunto un commento',
@@ -6312,9 +6296,11 @@ $messages['ka'] = array(
 	'code-author-name' => 'მომხმარებლის სახელის შეტანა:',
 	'code-author-link' => 'კავშირის დამყარება?',
 	'code-author-unlink' => 'კავშირის მოხსნა?',
+	'code-author-total' => 'ავტორთა საერთო რაოდენობა: $1',
 	'code-field-id' => 'ვერსია',
 	'code-field-author' => 'ავტორი',
 	'code-field-user' => 'კომენტატორი',
+	'code-field-message' => 'კომენტარი',
 	'code-field-status' => 'სტატუსი',
 	'code-field-status-description' => 'სტატუსის აღწერა',
 	'code-field-timestamp' => 'თარიღი',
@@ -6344,10 +6330,12 @@ $messages['ka'] = array(
 	'code-rev-diff-too-large' => 'ცვლილება ვერსიებს შორის ზედმეტად დიდია საჩვენებლად',
 	'code-rev-purge-link' => 'ქეშის გაწმენდა',
 	'code-rev-total' => 'რეზულტატების რაოდენობა:$1',
+	'code-rev-not-found' => "ვერსია '''$1''' არ არსებობს!",
 	'code-status-new' => 'ახალი',
 	'code-status-fixme' => 'შემოწმება',
 	'code-status-reverted' => 'გაუქმებულია',
 	'code-status-resolved' => 'მოგვარებულია',
+	'code-status-desc-resolved' => 'ვერსიას ჰქონდა პრობლემა, რომელიც შემდგომ ვერსიაში გამოსწორდა.',
 	'code-status-ok' => 'ok',
 	'code-status-deferred' => 'გადატანილია',
 	'code-status-old' => 'ძველი',
@@ -6380,13 +6368,11 @@ $messages['ka'] = array(
 კომენტარი:
 
 $4',
-	'codereview-email-body3' => 'ავტომატურმა შემოწმებამ აღმოაჩინა რეგრესია $1 ცვლილებასთან.
+	'codereview-email-body3' => 'მომხმარებელმა „$1“ შეცვალა $2-ის სტატუსი.
 
-სრული URL: $2
+ძველი სტატუსი: $3
 
-ცვლილებების აღწერა:
-
-$3',
+ახალი სტატუსი: $4',
 	'code-stats' => 'სტატისტიკა',
 	'repoadmin-new-button' => 'შექმნა',
 	'repoadmin-edit-button' => 'კარგი',
@@ -6448,7 +6434,6 @@ $messages['km'] = array(
 	'code-status-new' => 'ថ្មី',
 	'code-status-resolved' => 'ត្រូវ​បាន​ដោះស្រាយ​រួច​',
 	'code-status-ok' => 'យល់ព្រម',
-	'code-status-verified' => 'ត្រូវ​បាន​បញ្ជាក់​ត្រឹម​ត្រូវ​',
 	'code-pathsearch-path' => 'ផ្លូវ៖',
 	'code-rev-submit' => 'រក្សាទុក​បំលាស់ប្ដូរ',
 	'code-batch-status' => 'ផ្លាស់ប្ដូរ​ស្ថានភាព​៖',
@@ -6589,7 +6574,6 @@ $messages['ko'] = array(
 	'code-release-legend' => '배포 노트 만들기',
 	'code-release-startrev' => '시작 버전:',
 	'code-release-endrev' => '마지막 버전:',
-	'code-release-badrange' => '범위가 너무 넓습니다!',
 	'codereview-subtitle' => '$1',
 	'codereview-reply-link' => '답변',
 	'codereview-email-subj' => '[$1] [$2판]: 새 의견이 추가되었습니다.',
@@ -6762,7 +6746,6 @@ $messages['ksh'] = array(
 	'code-release-legend' => 'Henwiiß för_t Ußjävve zosammeshtälle',
 	'code-release-startrev' => 'Aanfangsversion:',
 	'code-release-endrev' => 'Läz Version:',
-	'code-release-badrange' => 'Dä Berett es zoh jruhß!',
 	'codereview-subtitle' => 'För $1',
 	'codereview-reply-link' => 'antwoote',
 	'codereview-email-subj' => '[$1 $2]: Neu Aanmerkung dobei jedonn',
@@ -7117,7 +7100,6 @@ $messages['li'] = array(
 	'code-release-legend' => 'Maak vriegegaeve ópmèrkinger',
 	'code-release-startrev' => 'Begintóch:',
 	'code-release-endrev' => 'Ènjtóch:',
-	'code-release-badrange' => 'De reeks is te groet.',
 	'codereview-subtitle' => 'Veur $1',
 	'codereview-reply-link' => 'antjwäörje',
 	'codereview-email-subj' => '[$1 $2]: Nuuj ópmèrking toegevoeg',
@@ -8472,7 +8454,6 @@ $messages['oc'] = array(
 	'code-release-legend' => 'Generir las nòtas de version',
 	'code-release-startrev' => 'Revision de començament :',
 	'code-release-endrev' => 'Revision de fin :',
-	'code-release-badrange' => 'La portada es tròp granda !',
 	'codereview-subtitle' => 'Per $1',
 	'codereview-reply-link' => 'respondre',
 	'codereview-email-subj' => '[$1 $2] : Comentari novèl apondut',
@@ -8554,7 +8535,7 @@ $messages['pdc'] = array(
 	'repoadmin-edit-button' => 'OK',
 );
 
-/** Pfälzisch (Pfälzisch)
+/** Pälzisch (Pälzisch)
  * @author Xqt
  */
 $messages['pfl'] = array(
@@ -9469,7 +9450,6 @@ $messages['ro'] = array(
 	'code-release-legend' => 'Generați note de lansare',
 	'code-release-startrev' => 'Revizuirea de început:',
 	'code-release-endrev' => 'Ultima rev:',
-	'code-release-badrange' => 'Întinderea este prea mare!',
 	'codereview-subtitle' => 'De la $1',
 	'codereview-reply-link' => 'răspunde',
 	'codereview-email-subj' => '[$1 $2]: Comentariu nou adăugat',
@@ -9619,7 +9599,6 @@ $messages['roa-tara'] = array(
 	'code-release-legend' => 'Crijà note de relasse',
 	'code-release-startrev' => 'Prime rev:',
 	'code-release-endrev' => 'Urteme rev:',
-	'code-release-badrange' => 'Indervalle troppe larie!',
 	'codereview-subtitle' => 'Pe $1',
 	'codereview-reply-link' => 'respunne',
 	'codereview-email-subj' => '[$1 $2]: Nuève commende aggiunde',
@@ -10413,7 +10392,6 @@ $messages['sk'] = array(
 	'code-release-legend' => 'Vytvoriť poznámky k vydaniu',
 	'code-release-startrev' => 'Počiatočná rev.:',
 	'code-release-endrev' => 'Posledná rev.:',
-	'code-release-badrange' => 'Rozsah je príliš veľký!',
 	'codereview-subtitle' => 'Pre $1',
 	'codereview-reply-link' => 'odpovedať',
 	'codereview-email-subj' => '[$1 $2]: Pridaný nový komentár',
@@ -10655,7 +10633,7 @@ $6',
 	'specialpages-group-developer' => 'Razvijalska orodja',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Rancher
  * @author Јованвб
  * @author Жељко Тодоровић
@@ -10745,7 +10723,7 @@ $messages['sr-ec'] = array(
 	'specialpages-group-developer' => 'Програмерски алати',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -10819,7 +10797,6 @@ $messages['sr-el'] = array(
 	'codereview-batch-submit' => 'Pošalji',
 	'code-release-startrev' => 'Početna revizija:',
 	'code-release-endrev' => 'Poslednja revizija:',
-	'code-release-badrange' => 'Opseg je prevelik!',
 	'codereview-subtitle' => 'Za $1',
 	'codereview-reply-link' => 'odgovori',
 	'codereview-email-subj' => '[$1 $2]: Novi komentar dodat',
@@ -11176,7 +11153,6 @@ $messages['ta'] = array(
 	'code-status-reverted' => 'முன்நிலையாக்கப்பட்டது',
 	'code-status-resolved' => 'தீர்வு காணப்பட்டது',
 	'code-status-ok' => 'ஆம்',
-	'code-status-verified' => 'சரிபார்க்கப்பட்டது',
 	'code-status-old' => 'பழைய',
 	'code-pathsearch-path' => 'வழி:',
 	'codereview-batch-submit' => 'சமர்ப்பி',
@@ -11239,7 +11215,6 @@ $messages['te'] = array(
 	'code-batch-status' => 'మార్పు స్థితి:',
 	'codereview-batch-submit' => 'దాఖలుచెయ్యి',
 	'code-releasenotes' => 'విడుదల విశేషాలు',
-	'code-release-badrange' => 'అవధి మరీ పెద్దగా ఉంది!',
 	'codereview-subtitle' => '$1 కొరకు',
 	'codereview-reply-link' => 'స్పందించు',
 	'codereview-email-subj' => '[$1 $2]: కొత్త వ్యాఖ్యని చేర్చారు',
@@ -11583,7 +11558,6 @@ $messages['tk'] = array(
 	'code-release-legend' => 'Goýberiliş belliklerini döret',
 	'code-release-startrev' => 'Başlangyç wersiýa:',
 	'code-release-endrev' => 'Soňky wersiýa:',
-	'code-release-badrange' => 'Diapazon örän uly!',
 	'codereview-subtitle' => '$1 üçin',
 	'codereview-reply-link' => 'jogap ber',
 	'codereview-email-subj' => '[$1 $2]: Täze teswir goşuldy',
@@ -11744,7 +11718,6 @@ $messages['tl'] = array(
 	'code-release-legend' => 'Gawin ang pagpapalabas ng mga tala',
 	'code-release-startrev' => 'Simula ng pagbabago:',
 	'code-release-endrev' => 'Huling pagbabago:',
-	'code-release-badrange' => 'Napakalaki ng saklaw!',
 	'codereview-subtitle' => 'Para kay $1',
 	'codereview-reply-link' => 'tugon',
 	'codereview-email-subj' => '[$1 $2]: Nagdagdag ng bagong puna/kumento',
@@ -12249,7 +12222,6 @@ $messages['vec'] = array(
 	'code-release-legend' => 'Gènera le note de rilascio',
 	'code-release-startrev' => 'Revision de partensa:',
 	'code-release-endrev' => 'Ultima revision:',
-	'code-release-badrange' => 'Intervalo massa grando!',
 	'codereview-subtitle' => 'Par $1',
 	'codereview-reply-link' => 'rispondi',
 	'codereview-email-subj' => '[$1 $2]: Zontà un comento nóvo',
@@ -12959,6 +12931,7 @@ $6',
  * @author Liangent
  * @author Mark85296341
  * @author Skjackey tse
+ * @author Waihorace
  */
 $messages['zh-hant'] = array(
 	'code' => '預覽程式碼',
