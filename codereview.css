@@ -12,6 +12,7 @@ table.mw-codereview-meta td {
 }
 .TablePager_col_cr_message {
 	max-width: 20em;
+	overflow: hidden;
 }
 
 .TablePager_col_cr_timestamp {
