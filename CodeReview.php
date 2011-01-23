@@ -135,8 +135,20 @@ $wgSubversionOptions = "--non-interactive --trust-server-cert";
 // What is the default SVN import chunk size?
 $wgCodeReviewImportBatchSize = 400;
 
-// Bump the version number every time you change a CodeReview .css/.js file
-$wgCodeReviewStyleVersion = 7;
+$commonModuleInfo = array(
+	'localBasePath' => dirname( __FILE__ ) . '/modules',
+	'remoteExtPath' => 'CodeReview/modules',
+);
+
+// Styles and any code common to all Special:Code subviews:
+$wgResourceModules['ext.codereview'] = array(
+	'styles' => 'ext.codereview.css',
+) + $commonModuleInfo;
+
+// On-demand diff loader for CodeRevisionView:
+$wgResourceModules['ext.codereview.loaddiff'] = array(
+	'scripts' => 'ext.codereview.loaddiff.js'
+) + $commonModuleInfo;
 
 // If you are running a closed svn, fill the following two lines with the username and password
 // of a user allowed to access it. Otherwise, leave it false.

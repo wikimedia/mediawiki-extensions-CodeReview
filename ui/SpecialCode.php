@@ -9,7 +9,7 @@ class SpecialCode extends SpecialPage {
 	}
 
 	public function execute( $subpage ) {
-		global $wgOut, $wgUser, $wgExtensionAssetsPath, $wgCodeReviewStyleVersion;
+		global $wgOut, $wgUser;
 
 		if ( !$this->userCanExecute( $wgUser ) ) {
 			$this->displayRestrictionError();
@@ -17,7 +17,8 @@ class SpecialCode extends SpecialPage {
 		}
 
 		$this->setHeaders();
-		$wgOut->addStyle( "$wgExtensionAssetsPath/CodeReview/codereview.css?$wgCodeReviewStyleVersion" );
+		// Base styles used for all code review UI actions.
+		$wgOut->addModules( 'ext.codereview' );
 
 		$view = $this->getViewFrom( $subpage );
 		if( $view ) {

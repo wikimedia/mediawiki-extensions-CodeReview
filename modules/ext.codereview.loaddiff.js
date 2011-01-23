@@ -1,4 +1,4 @@
-var CodeReview = new Object;
+var CodeReview = window.CodeReview = new Object;
 CodeReview.loadDiff = function(repo, rev) {
 	var path = wgScriptPath +
 		"/api.php" +

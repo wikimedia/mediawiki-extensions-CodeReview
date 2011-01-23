@@ -428,10 +428,10 @@ class CodeRevisionView extends CodeView {
 	}
 
 	protected function stubDiffLoader() {
-		global $wgOut, $wgExtensionAssetsPath, $wgCodeReviewStyleVersion;
+		global $wgOut;
 		$encRepo = Xml::encodeJsVar( $this->mRepo->getName() );
 		$encRev = Xml::encodeJsVar( $this->mRev->getId() );
-		$wgOut->addScriptFile( "$wgExtensionAssetsPath/CodeReview/codereview.js?$wgCodeReviewStyleVersion" );
+		$wgOut->addModules( 'ext.codereview.loaddiff' );
 		$wgOut->addInlineScript(
 			"addOnloadHook(
 				function() {
