@@ -365,7 +365,7 @@ class CodeRevisionView extends CodeView {
 			$cache = '';
 		}
 		$diff = $this->mRepo->getDiff( $this->mRev->getId(), $cache );
-		if ( is_integer($diff) && $deferDiffs ) {
+		if ( (is_null($diff) || is_integer($diff)) && $deferDiffs ) {
 			// We'll try loading it by AJAX...
 			return $this->stubDiffLoader();
 		} elseif ( strlen( $diff ) > $wgCodeReviewMaxDiffSize ) {

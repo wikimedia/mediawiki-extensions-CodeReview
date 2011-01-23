@@ -260,6 +260,9 @@ class CodeRepository {
 	 * @param $useCache 'skipcache' to avoid caching
 	 *                   'cached' to *only* fetch if cached
 	 * @return string|int The diff text on success, a DIFFRESULT_* constant on failure.
+	 * @fixme Actually returns null if $useCache='cached' and there's no cached
+	 *        data. Either add a relevant constant or fix the comment above;
+	 *        caller in CodeRevisionView fixed by adding is_null check.
 	 */
 	public function getDiff( $rev, $useCache = '' ) {
 		global $wgMemc, $wgCodeReviewMaxDiffPaths;
