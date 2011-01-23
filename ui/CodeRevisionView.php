@@ -241,6 +241,7 @@ class CodeRevisionView extends CodeView {
 		// Uses messages 'code-rev-modified-a', 'code-rev-modified-r', 'code-rev-modified-d', 'code-rev-modified-m'
 		$desc = wfMsgHtml( 'code-rev-modified-' . strtolower( $action ) );
 		// Find any ' (from x)' from rename comment in the path.
+		$matches = array();
 		preg_match( '/ \([^\)]+\)$/', $path, $matches );
 		$from = isset( $matches[0] ) ? $matches[0] : '';
 		// Remove ' (from x)' from rename comment in the path.
