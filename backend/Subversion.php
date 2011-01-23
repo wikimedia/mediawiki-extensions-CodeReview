@@ -204,6 +204,7 @@ class SubversionShell extends SubversionAdaptor {
 				$i = 0;
 				foreach ( $formats as $key => $regex ) {
 					$text = $bits[$i++];
+					$matches = array();
 					if ( preg_match( $regex, $text, $matches ) ) {
 						$data[$key] = $matches[1];
 					} else {
@@ -231,6 +232,7 @@ class SubversionShell extends SubversionAdaptor {
 					// Out of paths. Move on to the message...
 					$state = 'msg';
 				} else {
+					$matches = array();
 					if ( preg_match( '/^   (.) (.*)$/', $line, $matches ) ) {
 						$data['paths'][] = array(
 							'action' => $matches[1],

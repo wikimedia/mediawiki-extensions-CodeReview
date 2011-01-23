@@ -439,6 +439,7 @@ class CodeRevision {
 	 */
 	public function getAffectedRevs() {
 		$affectedRevs = array();
+		$m = array();
 		if ( preg_match_all( '/\br(\d{2,})\b/', $this->mMessage, $m ) ) {
 			foreach ( $m[1] as $rev ) {
 				$affectedRev = intval( $rev );
@@ -456,8 +457,11 @@ class CodeRevision {
 	 * @return array
 	 */
 	public function getAffectedBugRevs() {
+		$dbw = wfGetDB( DB_MASTER );
+
 		// Update bug references table...
 		$affectedBugs = array();
+		$m = array();
 		if ( preg_match_all( '/\bbug (\d+)\b/', $this->mMessage, $m ) ) {
 			$data = array();
 			foreach ( $m[1] as $bug ) {
@@ -468,7 +472,6 @@ class CodeRevision {
 				);
 				$affectedBugs[] = intval( $bug );
 			}
-			$dbw = wfGetDB( DB_MASTER );
 		    $dbw->insert( 'code_bugs', $data, __METHOD__, array( 'IGNORE' ) );
 		}
 

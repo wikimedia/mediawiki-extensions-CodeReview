@@ -284,8 +284,7 @@ class CodeRepository {
 			$paths = $revision->getModifiedPaths();
 			if ( !$paths->numRows() ) {
 				$data = DIFFRESULT_NothingToCompare;
-			}
-			elseif ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() > $wgCodeReviewMaxDiffPaths ) {
+			} elseif ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() > $wgCodeReviewMaxDiffPaths ) {
 				$data = DIFFRESULT_TooManyPaths;
 			}
 		}
