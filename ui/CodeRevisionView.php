@@ -517,6 +517,10 @@ class CodeRevisionView extends CodeView {
 		return "<tr class='$class'><td>$checkbox</td><td>$user</td><td>$flag</td><td>$date</td></tr>";
 	}
 
+	/**
+	 * @param  $comment CodeComment
+	 * @return string
+	 */
 	protected function formatCommentInline( $comment ) {
 		if ( $comment->id === $this->mReplyTarget ) {
 			return $this->formatComment( $comment,
@@ -526,6 +530,10 @@ class CodeRevisionView extends CodeView {
 		}
 	}
 
+	/**
+	 * @param  $change CodePropChange
+	 * @return string
+	 */
 	protected function formatChangeInline( $change ) {
 		global $wgLang;
 		$revId = $change->rev->getIdString();
@@ -598,6 +606,11 @@ class CodeRevisionView extends CodeView {
 		return $this->formatComment( $comment );
 	}
 
+	/**
+	 * @param  $comment CodeComment
+	 * @param string $replyForm
+	 * @return string
+	 */
 	protected function formatComment( $comment, $replyForm = '' ) {
 		global $wgOut, $wgLang;
 		$linker = new CodeCommentLinkerWiki( $this->mRepo );

@@ -1,7 +1,13 @@
 <?php
 
 class CodeRevision {
-	public $mRepoId, $mRepo, $mId, $mAuthor, $mTimestamp, $mMessage, $mPaths, $mStatus, $mOldStatus, $mCommonPath;
+
+	/**
+	 * @var CodeRepository
+	 */
+	public $mRepo;
+
+	public $mRepoId, $mId, $mAuthor, $mTimestamp, $mMessage, $mPaths, $mStatus, $mOldStatus, $mCommonPath;
 
 	/**
 	 * @static
@@ -128,6 +134,7 @@ class CodeRevision {
 	 * Like getId(), but returns the result as a string, including prefix,
 	 * i.e. "r123" instead of 123.
 	 * @param $id
+	 * @return String
 	 */
 	public function getIdString( $id = null ) {
 		if ( $id === null ) {
@@ -197,7 +204,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @return
+	 * @return String
 	 */
 	public function getCommonPath() {
 		return $this->mCommonPath;
@@ -497,7 +504,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @return
+	 * @return ResultWrapper
 	 */
 	public function getModifiedPaths() {
 		$dbr = wfGetDB( DB_SLAVE );

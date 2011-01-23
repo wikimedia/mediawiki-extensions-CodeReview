@@ -403,7 +403,7 @@ class CodeRepository {
 		return false;
 	}
 
-	/*
+	/**
 	 * Link the $author to the wikiuser $user
 	 * @param $author String
 	 * @param $user User
@@ -442,7 +442,7 @@ class CodeRepository {
 		return ( $dbw->affectedRows() > 0 );
 	}
 
-	/*
+	/**
 	 * Remove local user links for $author
 	 * @param string $author
 	 * @return bool success
@@ -461,9 +461,10 @@ class CodeRepository {
 		return ( $dbw->affectedRows() > 0 );
 	}
 
-	/*
+	/**
 	 * returns a User object if $author has a wikiuser associated,
 	 * or false
+	 * @return User|bool
 	 */
 	public function authorWikiUser( $author ) {
 		if ( isset( self::$userLinks[$author] ) )
@@ -491,7 +492,7 @@ class CodeRepository {
 		return self::$userLinks[$author] = $res;
 	}
 
-	/*
+	/**
 	 * returns an author name if $name wikiuser has an author associated,
 	 * or false
 	 */

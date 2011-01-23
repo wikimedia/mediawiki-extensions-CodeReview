@@ -1,6 +1,9 @@
 <?php
 
 class CodePropChange {
+
+	public $attrib, $removed, $added, $user, $userText, $timestamp;
+
 	function __construct( $rev ) {
 		$this->rev = $rev;
 	}
