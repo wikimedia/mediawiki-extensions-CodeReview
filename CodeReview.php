@@ -119,6 +119,7 @@ define("DIFFRESULT_BadRevision",        0);
 define("DIFFRESULT_NothingToCompare",   1);
 define("DIFFRESULT_TooManyPaths",       2);
 define("DIFFRESULT_NoDataReturned",     3);
+define("DIFFRESULT_NotInCache",         4);
 
 // If you can't directly access the remote SVN repo, you can set this
 // to an offsite proxy running this fun little proxy tool:

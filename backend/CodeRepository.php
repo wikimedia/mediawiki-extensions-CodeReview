@@ -260,9 +260,6 @@ class CodeRepository {
 	 * @param $useCache 'skipcache' to avoid caching
 	 *                   'cached' to *only* fetch if cached
 	 * @return string|int The diff text on success, a DIFFRESULT_* constant on failure.
-	 * @fixme Actually returns null if $useCache='cached' and there's no cached
-	 *        data. Either add a relevant constant or fix the comment above;
-	 *        caller in CodeRevisionView fixed by adding is_null check.
 	 */
 	public function getDiff( $rev, $useCache = '' ) {
 		global $wgMemc, $wgCodeReviewMaxDiffPaths;
@@ -331,30 +328,38 @@ class CodeRepository {
 
 		// If the data was not already in the cache or in the DB, we need to retrieve
 		// it from SVN.
-		if ( !$data && $useCache !== 'cached' ) {
-			$svn = SubversionAdaptor::newFromRepo( $this->path );
-			$data = $svn->getDiff( '', $rev1, $rev2 );
+		if ( !$data ) {
+			// If the calling code is forcing a cache check, report that it wasn't
+			// in the cache.
+			if ( $useCache === 'cached' ) {
+				$data = DIFFRESULT_NotInCache;
 
-			// If $data is blank, report the error that no data was returned.
-			// TODO: Currently we can't tell the difference between an SVN/connection
-			//		 failure and an empty diff.  See if we can remedy this!
-			if ($data == "") {
-				$data = DIFFRESULT_NoDataReturned;
+			// Otherwise, retrieve the diff using SubversionAdaptor.
 			} else {
-				// Otherwise, store the resulting diff to both the temporary cache and
-				// permanent DB storage.
-				// Store to cache
-				$wgMemc->set( $key, $data, 3600 * 24 * 3 );
+				$svn = SubversionAdaptor::newFromRepo( $this->path );
+				$data = $svn->getDiff( '', $rev1, $rev2 );
 
-				// Permanent DB storage
-				$storedData = $data;
-				$flags = Revision::compressRevisionText( $storedData );
-				$dbw = wfGetDB( DB_MASTER );
-				$dbw->update( 'code_rev',
-					array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
-					array( 'cr_repo_id' => $this->id, 'cr_id' => $rev ),
-					__METHOD__
-				);
+				// If $data is blank, report the error that no data was returned.
+				// TODO: Currently we can't tell the difference between an SVN/connection
+				//		 failure and an empty diff.  See if we can remedy this!
+				if ($data == "") {
+					$data = DIFFRESULT_NoDataReturned;
+				} else {
+					// Otherwise, store the resulting diff to both the temporary cache and
+					// permanent DB storage.
+					// Store to cache
+					$wgMemc->set( $key, $data, 3600 * 24 * 3 );
+
+					// Permanent DB storage
+					$storedData = $data;
+					$flags = Revision::compressRevisionText( $storedData );
+					$dbw = wfGetDB( DB_MASTER );
+					$dbw->update( 'code_rev',
+						array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
+						array( 'cr_repo_id' => $this->id, 'cr_id' => $rev ),
+						__METHOD__
+					);
+				}
 			}
 		}
 
