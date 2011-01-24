@@ -6646,6 +6646,7 @@ $messages['ksh'] = array(
 	'code-notes' => 'De neuste Bemerkunge',
 	'code-statuschanges' => 'Änderunge aam Stattus',
 	'code-mycommits' => 'ming Beidrääsch',
+	'code-mycomments' => 'ming Aanmärkunge',
 	'code-authors' => 'de Schriiver',
 	'code-status' => 'Shtattuße',
 	'code-tags' => 'Makeerunge',
@@ -6813,6 +6814,19 @@ $6',
 	'right-codereview-signoff' => 'Änderonge jodheiße',
 	'right-codereview-link-user' => 'Schriiver op Metmaacher em Wiki verlinke',
 	'specialpages-group-developer' => 'Werkzüch fö Entwecklere',
+);
+
+/** Kurdish (Latin) (Kurdî (Latin))
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'code-status-new' => 'nû',
+	'code-status-ok' => 'temam',
+	'code-status-old' => 'kevn',
+	'code-signoff-field-user' => 'Bikarhêner',
+	'codereview-subtitle' => 'Ji bo $1',
+	'code-stats' => 'statîstîkan',
+	'repoadmin-edit-button' => 'Temam',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -10669,9 +10683,9 @@ $messages['sr-ec'] = array(
 	'code-field-message' => 'Пошаљи опис',
 	'code-field-status' => 'Статус',
 	'code-field-timestamp' => 'Датум',
-	'code-field-comments' => 'Напомене',
+	'code-field-comments' => 'Коментари',
 	'code-field-path' => 'Путања',
-	'code-field-text' => 'Напомена',
+	'code-field-text' => 'Белешка',
 	'code-field-select' => 'Изабери',
 	'code-rev-author' => 'Аутор:',
 	'code-rev-date' => 'Датум:',
