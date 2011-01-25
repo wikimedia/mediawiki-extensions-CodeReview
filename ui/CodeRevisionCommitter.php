@@ -104,7 +104,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		if ( count( $removeReferences ) && $this->validPost( 'codereview-associate' ) ) {
 			$this->mRev->removeReferencesFrom( $removeReferences );
 		}
-		
+
 		// Add any comments
 		$commentAdded = false;
 		$commentId = 0;
@@ -112,7 +112,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
 			$commentId = $this->mRev->saveComment( $commentText, $review, $parent );
 
-		    $commentAdded = ($commentId !== 0);
+			$commentAdded = ($commentId !== 0);
 		}
 		$dbw->commit();
 
@@ -133,8 +133,8 @@ class CodeRevisionCommitter extends CodeRevisionView {
 					$wgUser->getName(), $url, $this->mRev->getIdStringUnique(), $this->text
 				);
 			}
-	    }
+		}
 
-	    return $commentId;
+		return $commentId;
 	}
 }

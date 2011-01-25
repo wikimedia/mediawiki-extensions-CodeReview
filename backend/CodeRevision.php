@@ -96,7 +96,7 @@ class CodeRevision {
 			}
 		}
 
-	    return $allPaths;
+		return $allPaths;
 	}
 
 	/**
@@ -455,7 +455,7 @@ class CodeRevision {
 				}
 			}
 		}
-	    return $affectedRevs;
+		return $affectedRevs;
 	}
 
 	/**
@@ -479,7 +479,7 @@ class CodeRevision {
 				);
 				$affectedBugs[] = intval( $bug );
 			}
-		    $dbw->insert( 'code_bugs', $data, __METHOD__, array( 'IGNORE' ) );
+			$dbw->insert( 'code_bugs', $data, __METHOD__, array( 'IGNORE' ) );
 		}
 
 		// Also, get previous revisions that have bugs in common...
@@ -500,7 +500,7 @@ class CodeRevision {
 			}
 		}
 
-	    return $affectedRevs;
+		return $affectedRevs;
 	}
 
 	/**
