@@ -576,7 +576,7 @@ class CodeRevision {
 		// Give email notices to committer and commenters
 		global $wgCodeReviewENotif, $wgEnableEmail, $wgCodeReviewCommentWatcherEmail,
 			$wgCodeReviewCommentWatcherName, $wgUser;
-		if ( !$wgCodeReviewENotif && !$wgEnableEmail ) {
+		if ( !$wgCodeReviewENotif || !$wgEnableEmail ) {
 			return;
 		}
 
