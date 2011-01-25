@@ -8846,7 +8846,7 @@ $messages['pms'] = array(
 	'code-status-old' => 'vej',
 	'code-status-desc-old' => "Na veja revision con d'eror potensiaj ma che a val pa lë sfòrs ëd revisionela.",
 	'code-signoffs' => 'Conclud',
-	'code-signoff-legend' => 'Gionta conclusion',
+	'code-signoff-legend' => "Gionté n'aprovassion",
 	'code-signoff-submit' => 'Conclud',
 	'code-signoff-strike' => 'Treuva firme selessionà',
 	'code-signoff-signoff' => 'Firma sta revision com:',
@@ -8892,7 +8892,7 @@ Adrëssa dl\'aragnà completa: $3
 Resumé dël coment:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: Cangià stat ëd revision',
+	'codereview-email-subj3' => "[$1 $2]: Lë stat ëd revision a l'é cangià",
 	'codereview-email-body3' => 'L\'utent "$1" a l\'ha cangià lë stat ëd $2.
 
 Stat Vej: $3
