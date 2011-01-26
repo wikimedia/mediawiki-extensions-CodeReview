@@ -74,7 +74,7 @@ $wgAutoloadClasses['CodeCommentsAuthorListView'] = $dir . 'ui/CodeCommentsAuthor
 $wgAutoloadClasses['CodeReleaseNotes'] = $dir . 'ui/CodeReleaseNotes.php';
 $wgAutoloadClasses['CodeStatusChangeListView'] = $dir . 'ui/CodeStatusChangeListView.php';
 $wgAutoloadClasses['SpecialCode'] = $dir . 'ui/SpecialCode.php';
-$wgAutoloadClasses['CodeView'] = $dir . 'ui/SpecialCode.php';
+$wgAutoloadClasses['CodeView'] = $dir . 'ui/CodeView.php';
 $wgAutoloadClasses['SpecialRepoAdmin'] = $dir . 'ui/SpecialRepoAdmin.php';
 $wgAutoloadClasses['WordCloud'] = $dir . 'ui/WordCloud.php';
 
