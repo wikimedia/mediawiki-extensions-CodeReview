@@ -1129,10 +1129,9 @@ class CodeRevision {
 	 * @return array
 	 */
 	protected function getPathConds( $path ) {
-		$dbr = wfGetDB( DB_SLAVE );
 		return array(
 			'cp_repo_id' => $this->mRepoId,
-			'cp_path ' . $dbr->buildLike( $path, $dbr->anyString() ),
+			'cp_path'  => $path,
 			// join conds
 			'cr_repo_id = cp_repo_id',
 			'cr_id = cp_rev_id'
