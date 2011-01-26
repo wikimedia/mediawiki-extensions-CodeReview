@@ -203,8 +203,6 @@ class CodeRevisionListView extends CodeView {
 	function getRevCount( $dbr ) {
 		$query = $this->getPager()->getCountQuery();
 
-		$query['conds'] = array_merge( $query['conds'], $this->getSpecializedWhereClause() );
-
 		$result = $dbr->selectRow( $query['tables'],
 			$query['fields'],
 			$query['conds'],
