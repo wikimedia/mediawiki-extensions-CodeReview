@@ -240,7 +240,7 @@ class SvnRevTablePager extends SvnTablePager {
 	}
 
 	function getDefaultSort() {
-		return 'cr_id';
+		return strlen( $this->mView->mPath ) ? 'cp_rev_id' : 'cr_id';
 	}
 
 	function getQueryInfo() {
