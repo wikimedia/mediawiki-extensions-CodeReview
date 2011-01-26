@@ -141,15 +141,6 @@ class CodeRepository {
 		return intval( $row );
 	}
 
-	public function getPathSearchHorizon() {
-		global $wgCodeReviewPathSearchHorizon;
-		
-		if( $wgCodeReviewPathSearchHorizon )
-			return $this->getLastStoredRev() - $wgCodeReviewPathSearchHorizon;
-		else
-			return 0;
-	}
-
 	public function getAuthorList() {
 		global $wgMemc;
 		$key = wfMemcKey( 'codereview', 'authors', $this->getId() );

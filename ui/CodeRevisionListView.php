@@ -205,12 +205,10 @@ class CodeRevisionListView extends CodeView {
 			$whereCond = array(
 							'cr_repo_id' => $this->mRepo->getId(),
 							'cr_id = cp_rev_id',
-							' cp_path' . $dbr->buildLike( $this->mPath, $dbr->anyString() ),
-							// Performance
-							' cp_rev_id > ' . $this->mRepo->getPathSearchHorizon()
+							'cp_path' => $this->mPath,
 						);
-		// No path; count of code_rev
 		} else {
+			// No path; count of code_rev
 			$whereCond = array( 'cr_repo_id' => $this->mRepo->getId() );
 		}
 		$whereCond = array_merge( $whereCond, $this->getSpecializedWhereClause( $dbr ) );
