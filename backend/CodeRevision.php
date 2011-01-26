@@ -5,9 +5,9 @@ class CodeRevision {
 	/**
 	 * @var CodeRepository
 	 */
-	public $mRepo;
+	protected $repo;
 
-	public $mRepoId, $mId, $mAuthor, $mTimestamp, $mMessage, $mPaths, $mStatus, $mOldStatus, $mCommonPath;
+	protected $repoId, $id, $author, $timestamp, $message, $paths, $status, $oldStatus, $commonPath;
 
 	/**
 	 * @static
@@ -17,25 +17,25 @@ class CodeRevision {
 	 */
 	public static function newFromSvn( CodeRepository $repo, $data ) {
 		$rev = new CodeRevision();
-		$rev->mRepoId = $repo->getId();
-		$rev->mRepo = $repo;
-		$rev->mId = intval( $data['rev'] );
-		$rev->mAuthor = $data['author'];
-		$rev->mTimestamp = wfTimestamp( TS_MW, strtotime( $data['date'] ) );
-		$rev->mMessage = rtrim( $data['msg'] );
-		$rev->mPaths = $data['paths'];
-		$rev->mStatus = 'new';
-		$rev->mOldStatus = '';
+		$rev->repoId = $repo->getId();
+		$rev->repo = $repo;
+		$rev->id = intval( $data['rev'] );
+		$rev->author = $data['author'];
+		$rev->timestamp = wfTimestamp( TS_MW, strtotime( $data['date'] ) );
+		$rev->message = rtrim( $data['msg'] );
+		$rev->paths = $data['paths'];
+		$rev->status = 'new';
+		$rev->oldStatus = '';
 
 		$common = null;
-		if ( $rev->mPaths ) {
-			if ( count( $rev->mPaths ) == 1 ) {
-				$common = $rev->mPaths[0]['path'];
+		if ( $rev->paths ) {
+			if ( count( $rev->paths ) == 1 ) {
+				$common = $rev->paths[0]['path'];
 			} else {
-				$first = array_shift( $rev->mPaths );
+				$first = array_shift( $rev->paths );
 				$common = explode( '/', $first['path'] );
 
-				foreach ( $rev->mPaths as $path ) {
+				foreach ( $rev->paths as $path ) {
 					$compare = explode( '/', $path['path'] );
 
 					// make sure $common is the shortest path
@@ -55,19 +55,19 @@ class CodeRevision {
 				}
 				$common = implode( '/', $common );
 
-				array_unshift( $rev->mPaths, $first );
+				array_unshift( $rev->paths, $first );
 			}
 
-			$rev->mPaths = CodeRevision::getPathFragments( $rev->mPaths );
+			$rev->paths = CodeRevision::getPathFragments( $rev->paths );
 		}
-		$rev->mCommonPath = $common;
+		$rev->commonPath = $common;
 
 		// Check for ignored paths
 		global $wgCodeReviewDeferredPaths;
 		if ( isset( $wgCodeReviewDeferredPaths[ $repo->getName() ] ) ) {
 			foreach ( $wgCodeReviewDeferredPaths[ $repo->getName() ] as $defer ) {
-				if ( preg_match( $defer, $rev->mCommonPath ) ) {
-					$rev->mStatus = 'deferred';
+				if ( preg_match( $defer, $rev->commonPath ) ) {
+					$rev->status = 'deferred';
 					break;
 				}
 			}
@@ -108,18 +108,18 @@ class CodeRevision {
 	 */
 	public static function newFromRow( CodeRepository $repo, $row ) {
 		$rev = new CodeRevision();
-		$rev->mRepoId = intval( $row->cr_repo_id );
-		if ( $rev->mRepoId != $repo->getId() ) {
+		$rev->repoId = intval( $row->cr_repo_id );
+		if ( $rev->repoId != $repo->getId() ) {
 			throw new MWException( "Invalid repo ID in " . __METHOD__ );
 		}
-		$rev->mRepo = $repo;
-		$rev->mId = intval( $row->cr_id );
-		$rev->mAuthor = $row->cr_author;
-		$rev->mTimestamp = wfTimestamp( TS_MW, $row->cr_timestamp );
-		$rev->mMessage = $row->cr_message;
-		$rev->mStatus = $row->cr_status;
-		$rev->mOldStatus = '';
-		$rev->mCommonPath = $row->cr_path;
+		$rev->repo = $repo;
+		$rev->id = intval( $row->cr_id );
+		$rev->author = $row->cr_author;
+		$rev->timestamp = wfTimestamp( TS_MW, $row->cr_timestamp );
+		$rev->message = $row->cr_message;
+		$rev->status = $row->cr_status;
+		$rev->oldStatus = '';
+		$rev->commonPath = $row->cr_path;
 		return $rev;
 	}
 
@@ -127,7 +127,7 @@ class CodeRevision {
 	 * @return int
 	 */
 	public function getId() {
-		return intval( $this->mId );
+		return intval( $this->id );
 	}
 
 	/**
@@ -140,7 +140,7 @@ class CodeRevision {
 		if ( $id === null ) {
 			$id = $this->getId();
 		}
-		return $this->mRepo->getRevIdString( $id );
+		return $this->repo->getRevIdString( $id );
 	}
 
 	/**
@@ -158,56 +158,63 @@ class CodeRevision {
 		if ( $id === null ) {
 			$id = $this->getId();
 		}
-		return $this->mRepo->getRevIdStringUnique( $id );
+		return $this->repo->getRevIdStringUnique( $id );
 	}
 
 	/**
 	 * @return int
 	 */
 	public function getRepoId() {
-		return intval( $this->mRepoId );
+		return intval( $this->repoId );
 	}
 
 	/**
-	 * @return
+	 * @return String
 	 */
 	public function getAuthor() {
-		return $this->mAuthor;
+		return $this->author;
 	}
 
 	/**
 	 * @return
 	 */
 	public function getWikiUser() {
-		return $this->mRepo->authorWikiUser( $this->getAuthor() );
+		return $this->repo->authorWikiUser( $this->getAuthor() );
 	}
 
 	/**
 	 * @return
 	 */
 	public function getTimestamp() {
-		return $this->mTimestamp;
+		return $this->timestamp;
 	}
 
 	/**
-	 * @return
+	 * @return String
 	 */
 	public function getMessage() {
-		return $this->mMessage;
+		return $this->message;
 	}
 
 	/**
-	 * @return
+	 * @return String
 	 */
 	public function getStatus() {
-		return $this->mStatus;
+		return $this->status;
+	}
+
+	/**
+	 * @return String
+	 */
+	public function getOldStatus() {
+		return $this->oldStatus;
 	}
 
 	/**
 	 * @return String
 	 */
 	public function getCommonPath() {
-		return $this->mCommonPath;
+		return $this->commonPath;
 	}
 
 	/**
@@ -247,21 +254,21 @@ class CodeRevision {
 		}
 		// Get the old status from the master
 		$dbw = wfGetDB( DB_MASTER );
-		$this->mOldStatus = $dbw->selectField( 'code_rev',
+		$this->oldStatus = $dbw->selectField( 'code_rev',
 			'cr_status',
-			array( 'cr_repo_id' => $this->mRepoId, 'cr_id' => $this->mId ),
+			array( 'cr_repo_id' => $this->repoId, 'cr_id' => $this->id ),
 			__METHOD__
 		);
-		if ( $this->mOldStatus === $status ) {
+		if ( $this->oldStatus === $status ) {
 			return false; // nothing to do here
 		}
 		// Update status
-		$this->mStatus = $status;
+		$this->status = $status;
 		$dbw->update( 'code_rev',
 			array( 'cr_status' => $status ),
 			array(
-				'cr_repo_id' => $this->mRepoId,
-				'cr_id' => $this->mId ),
+				'cr_repo_id' => $this->repoId,
+				'cr_id' => $this->id ),
 			__METHOD__
 		);
 		// Log this change
@@ -271,7 +278,7 @@ class CodeRevision {
 					'cpc_repo_id'   => $this->getRepoId(),
 					'cpc_rev_id'    => $this->getId(),
 					'cpc_attrib'    => 'status',
-					'cpc_removed'   => $this->mOldStatus,
+					'cpc_removed'   => $this->oldStatus,
 					'cpc_added'     => $status,
 					'cpc_timestamp' => $dbw->timestamp(),
 					'cpc_user'      => $user->getId(),
@@ -281,7 +288,7 @@ class CodeRevision {
 			);
 		}
 
-		$this->sendStatusToUDP( $status, $this->mOldStatus );
+		$this->sendStatusToUDP( $status, $this->oldStatus );
 
 		return true;
 	}
@@ -316,13 +323,13 @@ class CodeRevision {
 
 		$dbw->insert( 'code_rev',
 			array(
-				'cr_repo_id' => $this->mRepoId,
-				'cr_id' => $this->mId,
-				'cr_author' => $this->mAuthor,
-				'cr_timestamp' => $dbw->timestamp( $this->mTimestamp ),
-				'cr_message' => $this->mMessage,
-				'cr_status' => $this->mStatus,
-				'cr_path' => $this->mCommonPath,
+				'cr_repo_id' => $this->repoId,
+				'cr_id' => $this->id,
+				'cr_author' => $this->author,
+				'cr_timestamp' => $dbw->timestamp( $this->timestamp ),
+				'cr_message' => $this->message,
+				'cr_status' => $this->status,
+				'cr_path' => $this->commonPath,
 				'cr_flags' => '' ),
 			__METHOD__,
 			array( 'IGNORE' )
@@ -333,20 +340,20 @@ class CodeRevision {
 		if ( !$newRevision ) {
 			$dbw->update( 'code_rev',
 				array(
-					'cr_author' => $this->mAuthor,
-					'cr_timestamp' => $dbw->timestamp( $this->mTimestamp ),
-					'cr_message' => $this->mMessage,
-					'cr_path' => $this->mCommonPath ),
+					'cr_author' => $this->author,
+					'cr_timestamp' => $dbw->timestamp( $this->timestamp ),
+					'cr_message' => $this->message,
+					'cr_path' => $this->commonPath ),
 				array(
-					'cr_repo_id' => $this->mRepoId,
-					'cr_id' => $this->mId ),
+					'cr_repo_id' => $this->repoId,
+					'cr_id' => $this->id ),
 				__METHOD__
 			);
 		}
 
 		// Update path tracking used for output and searching
-		if ( $this->mPaths ) {
-			CodeRevision::insertPaths( $dbw, $this->mPaths, $this->mRepoId, $this->mId );
+		if ( $this->paths ) {
+			CodeRevision::insertPaths( $dbw, $this->paths, $this->repoId, $this->id );
 		}
 
 		$affectedRevs = $this->getUniqueAffectedRevs();
@@ -361,7 +368,7 @@ class CodeRevision {
 			// Get committer wiki user name, or repo name at least
 			$commitAuthor = $this->getWikiUser();
 			# Author might not have a username in the wiki:
-			$committer = $commitAuthor ? $commitAuthor->getName() : htmlspecialchars( $this->mAuthor );
+			$committer = $commitAuthor ? $commitAuthor->getName() : htmlspecialchars( $this->author );
 			// Get the authors of these revisions
 			$res = $dbw->select( 'code_rev',
 				array(
@@ -374,11 +381,11 @@ class CodeRevision {
 					'cr_path',
 				),
 				array(
-					'cr_repo_id' => $this->mRepoId,
+					'cr_repo_id' => $this->repoId,
 					'cr_id'      => $affectedRevs,
-					'cr_id < ' . intval( $this->mId ), # just in case
+					'cr_id < ' . intval( $this->id ), # just in case
 					// No sense in notifying if it's the same person
-					'cr_author != ' . $dbw->addQuotes( $this->mAuthor )
+					'cr_author != ' . $dbw->addQuotes( $this->author )
 				),
 				__METHOD__,
 				array( 'USE INDEX' => 'PRIMARY' )
@@ -388,7 +395,7 @@ class CodeRevision {
 			$url = $this->getFullUrl();
 
 			foreach ( $res as $row ) {
-				$revision = CodeRevision::newFromRow( $this->mRepo, $row );
+				$revision = CodeRevision::newFromRow( $this->repo, $row );
 				$users = $revision->getCommentingUsers();
 
 				$rowUrl = $revision->getFullUrl();
@@ -406,10 +413,10 @@ class CodeRevision {
 						// Send message in receiver's language
 						$lang = array( 'language' => $user->getOption( 'language' ) );
 						$user->sendMail(
-							wfMsgExt( 'codereview-email-subj2', $lang, $this->mRepo->getName(),
+							wfMsgExt( 'codereview-email-subj2', $lang, $this->repo->getName(),
 								$this->getIdString( $row->cr_id ) ),
 							wfMsgExt( 'codereview-email-body2', $lang, $committer,
-								$this->getIdStringUnique( $row->cr_id ), $url, $this->mMessage, $rowUrl )
+								$this->getIdStringUnique( $row->cr_id ), $url, $this->message, $rowUrl )
 						);
 					}
 				}
@@ -447,10 +454,10 @@ class CodeRevision {
 	public function getAffectedRevs() {
 		$affectedRevs = array();
 		$m = array();
-		if ( preg_match_all( '/\br(\d{2,})\b/', $this->mMessage, $m ) ) {
+		if ( preg_match_all( '/\br(\d{2,})\b/', $this->message, $m ) ) {
 			foreach ( $m[1] as $rev ) {
 				$affectedRev = intval( $rev );
-				if ( $affectedRev != $this->mId ) {
+				if ( $affectedRev != $this->id ) {
 					$affectedRevs[] = $affectedRev;
 				}
 			}
@@ -469,12 +476,12 @@ class CodeRevision {
 		// Update bug references table...
 		$affectedBugs = array();
 		$m = array();
-		if ( preg_match_all( '/\bbug (\d+)\b/', $this->mMessage, $m ) ) {
+		if ( preg_match_all( '/\bbug (\d+)\b/', $this->message, $m ) ) {
 			$data = array();
 			foreach ( $m[1] as $bug ) {
 				$data[] = array(
-					'cb_repo_id' => $this->mRepoId,
-					'cb_from'    => $this->mId,
+					'cb_repo_id' => $this->repoId,
+					'cb_from'    => $this->id,
 					'cb_bug'     => $bug
 				);
 				$affectedBugs[] = intval( $bug );
@@ -488,9 +495,9 @@ class CodeRevision {
 			$res = $dbw->select( 'code_bugs',
 				array( 'cb_from' ),
 				array(
-					'cb_repo_id' => $this->mRepoId,
+					'cb_repo_id' => $this->repoId,
 					'cb_bug'     => $affectedBugs,
-					'cb_from < ' . intval( $this->mId ), # just in case
+					'cb_from < ' . intval( $this->id ), # just in case
 				),
 				__METHOD__,
 				array( 'USE INDEX' => 'cb_repo_id' )
@@ -511,7 +518,7 @@ class CodeRevision {
 		return $dbr->select(
 			'code_paths',
 			array( 'cp_path', 'cp_action' ),
-			array( 'cp_repo_id' => $this->mRepoId, 'cp_rev_id' => $this->mId ),
+			array( 'cp_repo_id' => $this->repoId, 'cp_rev_id' => $this->id ),
 			__METHOD__
 		);
 	}
@@ -605,7 +612,7 @@ class CodeRevision {
 				// Send message in receiver's language
 				$lang = array( 'language' => $user->getOption( 'language' ) );
 
-				$localSubject = wfMsgExt( $subject, $lang, $this->mRepo->getName(), $this->getIdString() );
+				$localSubject = wfMsgExt( $subject, $lang, $this->repo->getName(), $this->getIdString() );
 				$localBody = call_user_func_array( 'wfMsgExt', array_merge( array( $body, $lang, $wgUser->getName() ), $args ) );
 
 				$user->sendMail( $localSubject, $localBody );
@@ -625,8 +632,8 @@ class CodeRevision {
 		$ts = wfTimestamp( TS_MW );
 		$sortkey = $this->threadedSortkey( $parent, $ts );
 		return array(
-			'cc_repo_id' => $this->mRepoId,
-			'cc_rev_id' => $this->mId,
+			'cc_repo_id' => $this->repoId,
+			'cc_rev_id' => $this->id,
 			'cc_text' => $text,
 			'cc_parent' => $parent,
 			'cc_user' => $wgUser->getId(),
@@ -677,8 +684,8 @@ class CodeRevision {
 				'cc_review',
 				'cc_sortkey' ),
 			array(
-				'cc_repo_id' => $this->mRepoId,
-				'cc_rev_id' => $this->mId ),
+				'cc_repo_id' => $this->repoId,
+				'cc_rev_id' => $this->id ),
 			__METHOD__,
 			array(
 				'ORDER BY' => 'cc_sortkey' )
@@ -698,8 +705,8 @@ class CodeRevision {
 		$result = $dbr->select( 'code_comment',
 			array( 'cc_id' ),
 			array(
-				'cc_repo_id' => $this->mRepoId,
-				'cc_rev_id' => $this->mId ),
+				'cc_repo_id' => $this->repoId,
+				'cc_rev_id' => $this->id ),
 			__METHOD__
 		);
 
@@ -725,8 +732,8 @@ class CodeRevision {
 				'cpc_user_text',
 				'user_name'
 			), array(
-				'cpc_repo_id' => $this->mRepoId,
-				'cpc_rev_id' => $this->mId,
+				'cpc_repo_id' => $this->repoId,
+				'cpc_rev_id' => $this->id,
 			),
 			__METHOD__,
 			array( 'ORDER BY' => 'cpc_timestamp DESC' ),
@@ -747,8 +754,8 @@ class CodeRevision {
 		$result = $dbr->select( 'code_prop_changes',
 			'DISTINCT(cpc_user)',
 			array(
-				'cpc_repo_id' => $this->mRepoId,
-				'cpc_rev_id' => $this->mId,
+				'cpc_repo_id' => $this->repoId,
+				'cpc_rev_id' => $this->id,
 			),
 			__METHOD__
 		);
@@ -774,8 +781,8 @@ class CodeRevision {
 		$res = $dbr->select( 'code_comment',
 			'DISTINCT(cc_user)',
 			array(
-				'cc_repo_id' => $this->mRepoId,
-				'cc_rev_id' => $this->mId,
+				'cc_repo_id' => $this->repoId,
+				'cc_rev_id' => $this->id,
 				'cc_user != 0' // users only
 			),
 			__METHOD__
@@ -801,15 +808,15 @@ class CodeRevision {
 			array( 'code_relations', 'code_rev' ),
 			array( 'cr_id', 'cr_status', 'cr_timestamp', 'cr_author', 'cr_message' ),
 			array(
-				'cf_repo_id' => $this->mRepoId,
-				'cf_to' => $this->mId,
+				'cf_repo_id' => $this->repoId,
+				'cf_to' => $this->id,
 				'cr_repo_id = cf_repo_id',
 				'cr_id = cf_from'
 			),
 			__METHOD__
 		);
 		foreach( $res as $row ) {
-			if ( $this->mId < intval( $row->cr_id ) ) {
+			if ( $this->id < intval( $row->cr_id ) ) {
 				$refs[] = $row;
 			}
 		}
@@ -891,8 +898,8 @@ class CodeRevision {
 		$result = $db->select( 'code_signoffs',
 			array( 'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp', 'cs_timestamp_struck' ),
 			array(
-				'cs_repo_id' => $this->mRepoId,
-				'cs_rev_id' => $this->mId,
+				'cs_repo_id' => $this->repoId,
+				'cs_rev_id' => $this->id,
 			),
 			__METHOD__,
 			array( 'ORDER BY' => 'cs_timestamp' )
@@ -915,8 +922,8 @@ class CodeRevision {
 		$rows = array();
 		foreach ( (array)$flags as $flag ) {
 			$rows[] = array(
-				'cs_repo_id' => $this->mRepoId,
-				'cs_rev_id' => $this->mId,
+				'cs_repo_id' => $this->repoId,
+				'cs_rev_id' => $this->id,
 				'cs_user' => $user->getID(),
 				'cs_user_text' => $user->getName(),
 				'cs_flag' => $flag,
@@ -953,8 +960,8 @@ class CodeRevision {
 		$result = $db->select( 'code_tags',
 			array( 'ct_tag' ),
 			array(
-				'ct_repo_id' => $this->mRepoId,
-				'ct_rev_id' => $this->mId ),
+				'ct_repo_id' => $this->repoId,
+				'ct_rev_id' => $this->id ),
 			__METHOD__ );
 
 		$tags = array();
@@ -990,8 +997,8 @@ class CodeRevision {
 		if ( $removeTags ) {
 			$dbw->delete( 'code_tags',
 				array(
-					'ct_repo_id' => $this->mRepoId,
-					'ct_rev_id'  => $this->mId,
+					'ct_repo_id' => $this->repoId,
+					'ct_rev_id'  => $this->id,
 					'ct_tag'     => $removeTags ),
 				__METHOD__
 			);
@@ -1035,8 +1042,8 @@ class CodeRevision {
 		foreach ( $tags as $tag ) {
 			if ( $tag == '' ) continue;
 			$data[] = array(
-				'ct_repo_id' => $this->mRepoId,
-				'ct_rev_id'  => $this->mId,
+				'ct_repo_id' => $this->repoId,
+				'ct_rev_id'  => $this->id,
 				'ct_tag'     => $this->normalizeTag( $tag ) );
 		}
 		return $data;
@@ -1072,14 +1079,14 @@ class CodeRevision {
 	 */
 	public function getPrevious( $path = '' ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$encId = $dbr->addQuotes( $this->mId );
+		$encId = $dbr->addQuotes( $this->id );
 		$tables = array( 'code_rev' );
 		if ( $path != '' ) {
 			$conds = $this->getPathConds( $path );
 			$order = 'cp_rev_id DESC';
 			$tables[] = 'code_paths';
 		} else {
-			$conds = array( 'cr_repo_id' => $this->mRepoId );
+			$conds = array( 'cr_repo_id' => $this->repoId );
 			$order = 'cr_id DESC';
 		}
 		$conds[] = "cr_id < $encId";
@@ -1101,14 +1108,14 @@ class CodeRevision {
 	 */
 	public function getNext( $path = '' ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$encId = $dbr->addQuotes( $this->mId );
+		$encId = $dbr->addQuotes( $this->id );
 		$tables = array( 'code_rev' );
 		if ( $path != '' ) {
 			$conds = $this->getPathConds( $path );
 			$order = 'cp_rev_id ASC';
 			$tables[] = 'code_paths';
 		} else {
-			$conds = array( 'cr_repo_id' => $this->mRepoId );
+			$conds = array( 'cr_repo_id' => $this->repoId );
 			$order = 'cr_id ASC';
 		}
 		$conds[] = "cr_id > $encId";
@@ -1130,7 +1137,7 @@ class CodeRevision {
 	 */
 	protected function getPathConds( $path ) {
 		return array(
-			'cp_repo_id' => $this->mRepoId,
+			'cp_repo_id' => $this->repoId,
 			'cp_path'  => $path,
 			// join conds
 			'cr_repo_id = cp_repo_id',
@@ -1144,14 +1151,14 @@ class CodeRevision {
 	 */
 	public function getNextUnresolved( $path = '' ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$encId = $dbr->addQuotes( $this->mId );
+		$encId = $dbr->addQuotes( $this->id );
 		$tables = array( 'code_rev' );
 		if ( $path != '' ) {
 			$conds = $this->getPathConds( $path );
 			$order = 'cp_rev_id ASC';
 			$tables[] = 'code_paths';
 		} else {
-			$conds = array( 'cr_repo_id' => $this->mRepoId );
+			$conds = array( 'cr_repo_id' => $this->repoId );
 			$order = 'cr_id ASC';
 		}
 		$conds[] = "cr_id > $encId";
@@ -1173,7 +1180,7 @@ class CodeRevision {
 	 * @return \type
 	 */
 	public function getFullUrl( $commentId = '' ) {
-		$title = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $this->mId );
+		$title = SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/' . $this->id );
 
 		if ( $commentId !== '' ) {
 			$title->setFragment( "#c{$commentId}" );
@@ -1196,7 +1203,7 @@ class CodeRevision {
 				$url = $this->getFullUrl( $commentId );
 			}
 
-			$line = wfMsg( 'code-rev-message' ) . " \00314(" . $this->mRepo->getName() .
+			$line = wfMsg( 'code-rev-message' ) . " \00314(" . $this->repo->getName() .
 					")\003 \0037" . $this->getIdString() . "\003 \00303" . RecentChange::cleanupForIRC( $wgUser->getName() ) .
 					"\003: \00310" . RecentChange::cleanupForIRC( $wgLang->truncate( $text, 100 ) ) . "\003 " . $url;
 
@@ -1215,7 +1222,7 @@ class CodeRevision {
 		if( $wgCodeReviewUDPAddress ) {
 			$url = $this->getFullUrl();
 
-			$line = wfMsg( 'code-rev-status' ) . " \00314(" . $this->mRepo->getName() .
+			$line = wfMsg( 'code-rev-status' ) . " \00314(" . $this->repo->getName() .
 					")\00303 " . RecentChange::cleanupForIRC( $wgUser->getName() ) . "\003 " .
 					/* Remove three apostrophes as they are intended for the parser  */
 					str_replace( "'''", '', wfMsg( 'code-change-status', "\0037" . $this->getIdString() . "\003" ) ) .
