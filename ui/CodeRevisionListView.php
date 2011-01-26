@@ -187,6 +187,9 @@ class CodeRevisionListView extends CodeView {
 		return $ret;
 	}
 
+	/**
+	 * @return SvnRevTablePager
+	 */
 	function getPager() {
 		return new SvnRevTablePager( $this );
 	}
@@ -194,37 +197,26 @@ class CodeRevisionListView extends CodeView {
 	/**
 	 * Get total number of revisions for this revision view
 	 *
+	 * @var $dbr DatabaseBase
 	 * @return int Number of revisions
 	 */
 	function getRevCount( $dbr ) {
-		$tables = array( 'code_rev' );
-		$selectFields = array( 'COUNT( DISTINCT cr_id ) AS rev_count' );
-		// Count if code_rev where path matches
-		if ( strlen( $this->mPath ) ) {
-			$tables[] = 'code_paths';
-			$whereCond = array(
-							'cr_repo_id' => $this->mRepo->getId(),
-							'cr_id = cp_rev_id',
-							'cp_path' => $this->mPath,
-						);
-		} else {
-			// No path; count of code_rev
-			$whereCond = array( 'cr_repo_id' => $this->mRepo->getId() );
-		}
-		$whereCond = array_merge( $whereCond, $this->getSpecializedWhereClause( $dbr ) );
-		$result = $dbr->selectRow( $tables, $selectFields, $whereCond );
+		$query = $this->getPager()->getCountQuery();
+
+		$query['conds'] = array_merge( $query['conds'], $this->getSpecializedWhereClause() );
+
+		$result = $dbr->selectRow( $query['tables'],
+			$query['fields'],
+			$query['conds'],
+			__METHOD__,
+			$query['options'],
+			$query['join_conds']
+		);
 		if ( $result ) {
 			return intval( $result->rev_count );
 		} else {
 			return 0;
 		}
-	}
-
-	/**
-	 * @todo Document
-	 */
-	function getSpecializedWhereClause() {
-		return array();
 	}
 
 	function getRepo() {
@@ -275,6 +267,14 @@ class SvnRevTablePager extends SvnTablePager {
 		if( $this->mView->mAuthor ) {
 			$query['conds']['cr_author'] = $this->mView->mAuthor;
 		}
+		return $query;
+	}
+
+	function getCountQuery() {
+		$query = $this->getQueryInfo();
+
+		$query['fields'] = array( 'COUNT( DISTINCT cr_id ) AS rev_count' );
+		unset( $query['options']['GROUP BY'] );
 		return $query;
 	}
 
