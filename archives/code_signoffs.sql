@@ -12,7 +12,10 @@ CREATE TABLE /*_*/code_signoffs (
   cs_flag varchar(25) not null,
   
   -- Timestamp of the sign-off
-  cs_timestamp binary(14) not null default ''
+  cs_timestamp binary(14) not null default '',
+ 
+  -- Timestamp the sign-off was struck, or Block::infinity() if not struck
+  cs_timestamp_struck varbinary(14) not null default 'infinity'
 ) /*$wgDBTableOptions*/;
-CREATE UNIQUE INDEX /*i*/cs_repo_rev_user_flag ON /*_*/code_signoffs (cs_repo_id, cs_rev_id, cs_user_text, cs_flag);
+CREATE UNIQUE INDEX /*i*/cs_repo_rev_user_flag_tstruck ON /*_*/code_signoffs (cs_repo_id, cs_rev_id, cs_user_text, cs_flag, cs_timestamp_struck);
 CREATE INDEX /*i*/cs_repo_repo_rev_timestamp ON /*_*/code_signoffs (cs_repo_id, cs_rev_id, cs_timestamp);
