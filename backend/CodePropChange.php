@@ -13,7 +13,7 @@ class CodePropChange {
 	}
 
 	static function newFromData( $rev, $data ) {
-		$change = new CodeComment( $rev );
+		$change = new CodePropChange( $rev );
 		$change->attrib = $data['cpc_attrib'];
 		$change->removed = $data['cpc_removed'];
 		$change->added = $data['cpc_added'];
