@@ -2982,13 +2982,22 @@ Resumo de ŝanĝoj:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Revizio-statuso ŝanĝis',
-	'codereview-email-body3' => 'Aŭtomata testado malkaŝis regresion pro la ŝanĝoj en $1.
+	'codereview-email-body3' => 'Uzanto $1 ŝanĝis la statuson de $2.
 
-Plena URL: $2
+Malnova statuso: $3
+Nova statuso: $4',
+	'codereview-email-body4' => 'Uzanto "$1" ŝanĝis la statuson de $2.
 
-Ŝanĝa resumo:
+Malnova statuso: $3
+Nova statuso: $4
 
-$3',
+La uzanto "$1" ankaŭ skribis komenton en $2.
+
+Plena URL-o: $5
+
+Komento:
+
+$6',
 	'code-stats' => 'statistiko',
 	'code-stats-header' => 'Statistiko por deponejo $1',
 	'code-stats-main' => 'Ekde $1, la deponejo havas $2 {{PLURAL:$2|revizion|reviziojn}} de [[Special:Code/$3/author|$4 {{PLURAL:$4|aŭtoro|aŭtoroj}}]].',
@@ -6733,7 +6742,7 @@ $messages['ksh'] = array(
 	'code-signoff-struckdate' => '$1 (fottjeschmeße: $2)',
 	'code-pathsearch-legend' => 'Söhk en däm Repositorijum noh Versione, övver dänne iere Pahdt',
 	'code-pathsearch-path' => 'Pahdt:',
-	'code-pathsearch-filter' => 'Ußjesöhk noh:',
+	'code-pathsearch-filter' => 'Ußjesöhk noh:&nbsp;',
 	'code-revfilter-cr_status' => 'Stattus = $1',
 	'code-revfilter-cr_author' => 'Schriever = $1',
 	'code-revfilter-clear' => 'Donn de Ußwahl fottschmieße',
@@ -10702,11 +10711,11 @@ $messages['sr-ec'] = array(
 	'code-rev-tags' => 'Ознаке:',
 	'code-rev-tag-add' => 'Додај тагове:',
 	'code-rev-tag-remove' => 'Избриши тагове:',
-	'code-rev-comment-by' => 'Комантарисао $1',
+	'code-rev-comment-by' => 'Прокоментарисао/-ла $1',
 	'code-rev-comment-preview' => 'Прикажи',
 	'code-rev-inline-preview' => 'Преглед:',
-	'code-rev-diff' => 'Разл.',
-	'code-rev-diff-link' => 'разл.',
+	'code-rev-diff' => 'Разл',
+	'code-rev-diff-link' => 'разл',
 	'code-rev-purge-link' => 'освежи',
 	'code-status-new' => 'нов',
 	'code-status-fixme' => 'поправи ме',
