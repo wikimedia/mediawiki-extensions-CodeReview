@@ -5,14 +5,14 @@ class CodeRepoStatsView extends CodeView {
 
 	function __construct( $repoName ) {
 		parent::__construct();
-		$this->mRepo = CodeRepository::newFromName( $repoName );
+		$this->repo = CodeRepository::newFromName( $repoName );
 	}
 
 	function execute() {
 		global $wgOut, $wgLang;
 
-		$stats = RepoStats::newFromRepo( $this->mRepo );
-		$repoName = $this->mRepo->getName();
+		$stats = RepoStats::newFromRepo( $this->repo );
+		$repoName = $this->repo->getName();
 		$wgOut->wrapWikiMsg( '<h2 id="stats-main">$1</h2>', array( 'code-stats-header', $repoName ) );
 		$wgOut->addWikiMsg( 'code-stats-main',
 			$wgLang->timeanddate( $stats->time, true ),

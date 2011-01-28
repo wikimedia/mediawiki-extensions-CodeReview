@@ -2,17 +2,18 @@
 
 // Special:Code/MediaWiki
 class CodeCommentsListView extends CodeView {
-	public $mRepo;
+
+	protected $author;
 
 	function __construct( $repo ) {
 		parent::__construct();
 
-		$this->mRepo = ( $repo instanceof CodeRepository )
+		$this->repo = ( $repo instanceof CodeRepository )
 			? $repo
 			: CodeRepository::newFromName( $repo );
 
 		global $wgRequest;
-		$this->mAuthor = $wgRequest->getText( 'author' );
+		$this->author = $wgRequest->getText( 'author' );
 	}
 
 	function execute() {
@@ -28,12 +29,22 @@ class CodeCommentsListView extends CodeView {
 		);
 	}
 
+	function getAuthor() {
+		return $this->author;
+	}
+
+	/**
+	 * @return CodeCommentsTablePager
+	 */
 	function getPager() {
 		return new CodeCommentsTablePager( $this );
 	}
 
+	/**
+	 * @return CodeRepository|null
+	 */
 	function getRepo() {
-		return $this->mRepo;
+		return $this->repo;
 	}
 }
 
@@ -52,14 +63,14 @@ class CodeCommentsTablePager extends SvnTablePager {
 		$query = array(
 			'tables' => array( 'code_comment', 'code_rev' ),
 			'fields' => array_keys( $this->getFieldNames() ),
-			'conds' => array( 'cc_repo_id' => $this->mRepo->getId() ),
+			'conds' => array( 'cc_repo_id' => $this->repo->getId() ),
 			'join_conds' => array(
 				'code_rev' => array( 'LEFT JOIN', 'cc_repo_id = cr_repo_id AND cc_rev_id = cr_id' )
 			)
 		);
 
-		if( $this->mView->mAuthor ) {
-			$query['conds']['cc_user_text'] = $this->mView->mAuthor;
+		if( $this->view instanceof CodeCommentsListView ) {
+			$query['conds']['cc_user_text'] = $this->view->getAuthor();
 		}
 
 	    return $query;
@@ -80,18 +91,18 @@ class CodeCommentsTablePager extends SvnTablePager {
 		global $wgLang;
 		switch( $name ) {
 		case 'cc_rev_id':
-			return $this->mView->skin->link(
-				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-comments' ),
+			return $this->view->skin->link(
+				SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/' . $value . '#code-comments' ),
 				htmlspecialchars( $value ) );
 		case 'cr_status':
-			return $this->mView->skin->link(
+			return $this->view->skin->link(
 				SpecialPage::getTitleFor( 'Code',
-					$this->mRepo->getName() . '/status/' . $value ),
-				htmlspecialchars( $this->mView->statusDesc( $value ) ) );
+					$this->repo->getName() . '/status/' . $value ),
+				htmlspecialchars( $this->view->statusDesc( $value ) ) );
 		case 'cc_user_text':
-			return $this->mView->skin->userLink( - 1, $value );
+			return $this->view->skin->userLink( - 1, $value );
 		case 'cr_message':
-			return $this->mView->messageFragment( $value );
+			return $this->view->messageFragment( $value );
 		case 'cc_text':
 			# Truncate this, blah blah...
 			return htmlspecialchars( $wgLang->truncate( $value, 300 ) );
@@ -102,6 +113,6 @@ class CodeCommentsTablePager extends SvnTablePager {
 	}
 
 	function getTitle() {
-		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/comments' );
+		return SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/comments' );
 	}
 }

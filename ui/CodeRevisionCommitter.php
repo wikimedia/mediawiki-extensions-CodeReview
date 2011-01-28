@@ -9,13 +9,13 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			parent::execute();
 			return;
 		}
-		if ( !$this->mRev ) {
+		if ( !$this->rev ) {
 			parent::execute();
 			return;
 		}
 
-		$commentId = $this->revisionUpdate( $this->mStatus, $this->mAddTags, $this->mRemoveTags,
-			$this->mSignoffFlags, $this->mStrikeSignoffs, $this->mAddReference, $this->mRemoveReferences,
+		$commentId = $this->revisionUpdate( $this->status, $this->addTags, $this->removeTags,
+			$this->signoffFlags, $this->strikeSignoffs, $this->addReference, $this->removeReferences,
 			$this->text, $wgRequest->getIntOrNull( 'wpParent' ),
 			$wgRequest->getInt( 'wpReview' )
 		);
@@ -31,18 +31,18 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		if ( !$redirTarget ) {
 			// Was "next & unresolved" clicked?
 			if ( $this->jumpToNext ) {
-				$next = $this->mRev->getNextUnresolved( $this->mPath );
+				$next = $this->rev->getNextUnresolved( $this->path );
 				if ( $next ) {
-					$redirTarget = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $next );
+					$redirTarget = SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/' . $next );
 				} else {
-					$redirTarget = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() );
+					$redirTarget = SpecialPage::getTitleFor( 'Code', $this->repo->getName() );
 				}
 			} else {
 				# $redirTarget already set for comments
 				$redirTarget = $this->revLink();
 			}
 		}
-		$wgOut->redirect( $redirTarget->getFullUrl( array( 'path' => $this->mPath ) ) );
+		$wgOut->redirect( $redirTarget->getFullUrl( array( 'path' => $this->path ) ) );
 	}
 
 	/**
@@ -63,7 +63,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
 						$addReferences, $removeReferences, $commentText,
 						$parent = null, $review = 0 ) {
-		if ( !$this->mRev ) {
+		if ( !$this->rev ) {
 			return false;
 		}
 
@@ -74,8 +74,8 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		$dbw->begin();
 		// Change the status if allowed
 		$statusChanged = false;
-		if ( $this->mRev->isValidStatus( $status ) && $this->validPost( 'codereview-set-status' ) ) {
-			$statusChanged = $this->mRev->setStatus( $status, $wgUser );
+		if ( $this->rev->isValidStatus( $status ) && $this->validPost( 'codereview-set-status' ) ) {
+			$statusChanged = $this->rev->setStatus( $status, $wgUser );
 		}
 		$validAddTags = $validRemoveTags = array();
 		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag' ) ) {
@@ -86,23 +86,23 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		}
 		// If allowed to change any tags, then do so
 		if ( count( $validAddTags ) || count( $validRemoveTags ) ) {
-			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $wgUser );
+			$this->rev->changeTags( $validAddTags, $validRemoveTags, $wgUser );
 		}
 		// Add any signoffs
 		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff' ) )  {
-			$this->mRev->addSignoff( $wgUser, $addSignoffs );
+			$this->rev->addSignoff( $wgUser, $addSignoffs );
 		}
 		// Strike any signoffs
 		if ( count( $strikeSignoffs ) && $this->validPost( 'codereview-signoff' ) ) {
-			$this->mRev->strikeSignoffs( $wgUser, $strikeSignoffs );
+			$this->rev->strikeSignoffs( $wgUser, $strikeSignoffs );
 		}
 		// Add reference if requested
 		if ( count( $addReferences ) && $this->validPost( 'codereview-associate' ) ) {
-			$this->mRev->addReferencesFrom( $addReferences );
+			$this->rev->addReferencesFrom( $addReferences );
 		}
 		// Remove references if requested
 		if ( count( $removeReferences ) && $this->validPost( 'codereview-associate' ) ) {
-			$this->mRev->removeReferencesFrom( $removeReferences );
+			$this->rev->removeReferencesFrom( $removeReferences );
 		}
 
 		// Add any comments
@@ -110,7 +110,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		$commentId = 0;
 		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment' ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
-			$commentId = $this->mRev->saveComment( $commentText, $review, $parent );
+			$commentId = $this->rev->saveComment( $commentText, $review, $parent );
 
 			$commentAdded = ($commentId !== 0);
 		}
@@ -118,19 +118,19 @@ class CodeRevisionCommitter extends CodeRevisionView {
 
 		if ( $statusChanged || $commentAdded ) {
 			if ( $statusChanged && $commentAdded ) {
-				$url = $this->mRev->getFullUrl( $commentId );
-				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj4', 'codereview-email-body4',
-					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(), $this->mRev->getStatus(),
+				$url = $this->rev->getFullUrl( $commentId );
+				$this->rev->emailNotifyUsersOfChanges( 'codereview-email-subj4', 'codereview-email-body4',
+					$wgUser->getName(), $this->rev->getIdStringUnique(), $this->rev->getOldStatus(), $this->rev->getStatus(),
 					$url, $this->text
 				);
 			} else if ( $statusChanged ) {
-				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj3', 'codereview-email-body3',
-					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(), $this->mRev->getStatus()
+				$this->rev->emailNotifyUsersOfChanges( 'codereview-email-subj3', 'codereview-email-body3',
+					$wgUser->getName(), $this->rev->getIdStringUnique(), $this->rev->getOldStatus(), $this->rev->getStatus()
 				);
 			} else if ( $commentAdded ) {
-				$url = $this->mRev->getFullUrl( $commentId );
-				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj', 'codereview-email-body',
-					$wgUser->getName(), $url, $this->mRev->getIdStringUnique(), $this->text
+				$url = $this->rev->getFullUrl( $commentId );
+				$this->rev->emailNotifyUsersOfChanges( 'codereview-email-subj', 'codereview-email-body',
+					$wgUser->getName(), $url, $this->rev->getIdStringUnique(), $this->text
 				);
 			}
 		}

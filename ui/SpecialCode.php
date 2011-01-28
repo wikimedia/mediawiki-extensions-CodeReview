@@ -129,7 +129,7 @@ class SpecialCode extends SpecialPage {
 
 			// If a repository was specified, but it does not exist, redirect to the
 			// repository list with an appropriate message.
-			if ( !$view->mRepo ) {
+			if ( !$view->repo ) {
 				$view = new CodeRepoListView();
 				global $wgOut;
 				$wgOut->addWikiMsg( 'code-repo-not-found', wfEscapeWikiText( $params[0] ) );

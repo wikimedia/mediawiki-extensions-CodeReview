@@ -3,15 +3,15 @@
 // Special:Code/MediaWiki/author/johndoe/link
 
 class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
-	function __construct( $repoName, $author ) {
+	function __construct( $repo, $author ) {
 		global $wgRequest;
-		parent::__construct( $repoName, $author );
-		$this->mTarget = $wgRequest->getVal( 'linktouser' );
+		parent::__construct( $repo, $author );
+		$this->target = $wgRequest->getVal( 'linktouser' );
 	}
 
 	function getTitle() {
-		$repo = $this->mRepo->getName();
-		$auth = $this->mAuthor;
+		$repo = $this->repo->getName();
+		$auth = $this->author;
 		return SpecialPage::getTitleFor( 'Code', "$repo/author/$auth/link" );
 	}
 
@@ -39,7 +39,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 
 		$additional = '';
 		// Is there already a user linked to this author?
-		if ( $this->mUser ) {
+		if ( $this->user ) {
 			$form .= Xml::element( 'legend', array(), wfMsg( 'code-author-alterlink' ) );
 			$additional = Xml::openElement( 'fieldset' ) .
 				Xml::element( 'legend', array(), wfMsg( 'code-author-orunlink' ) ) .
@@ -67,29 +67,29 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 			return;
 		}
 
-		if ( strlen( $this->mTarget ) && $wgRequest->getCheck( 'newname' ) ) {
-			$user = User::newFromName( $this->mTarget, false );
+		if ( strlen( $this->target ) && $wgRequest->getCheck( 'newname' ) ) {
+			$user = User::newFromName( $this->target, false );
 			if ( !$user || !$user->getId() ) {
-				$wgOut->addWikiMsg( 'nosuchusershort', $this->mTarget );
+				$wgOut->addWikiMsg( 'nosuchusershort', $this->target );
 				return;
 			}
-			$this->mRepo->linkUser( $this->mAuthor, $user );
+			$this->repo->linkUser( $this->author, $user );
 			$userlink = $this->skin->userLink( $user->getId(), $user->getName() );
 			$wgOut->addHTML(
 				'<div class="successbox">' .
-				wfMsgHtml( 'code-author-success', $this->authorLink( $this->mAuthor ), $userlink ) .
+				wfMsgHtml( 'code-author-success', $this->authorLink( $this->author ), $userlink ) .
 				'</div>'
 			);
 		// Unlink an author to a wiki users
 		} else if ( $wgRequest->getVal( 'unlink' ) ) {
-			if ( !$this->mUser ) {
+			if ( !$this->user ) {
 				$wgOut->addHTML( wfMsg( 'code-author-orphan' ) );
 				return;
 			}
-			$this->mRepo->unlinkUser( $this->mAuthor );
+			$this->repo->unlinkUser( $this->author );
 			$wgOut->addHTML(
 				'<div class="successbox">' .
-				wfMsgHtml( 'code-author-unlinksuccess', $this->authorLink( $this->mAuthor ) ) .
+				wfMsgHtml( 'code-author-unlinksuccess', $this->authorLink( $this->author ) ) .
 				'</div>'
 			);
 		}

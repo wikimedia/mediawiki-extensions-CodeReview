@@ -4,15 +4,15 @@
 class CodeAuthorListView extends CodeView {
 	function __construct( $repoName ) {
 		parent::__construct();
-		$this->mRepo = CodeRepository::newFromName( $repoName );
+		$this->repo = CodeRepository::newFromName( $repoName );
 	}
 
 	function execute() {
 		global $wgOut, $wgLang;
-		$authors = $this->mRepo->getAuthorList();
-		$repo = $this->mRepo->getName();
+		$authors = $this->repo->getAuthorList();
+		$repo = $this->repo->getName();
 		$text = wfMsg( 'code-authors-text' ) . "\n\n";
-		$text .= '<strong>' . wfMsg( 'code-author-total', $wgLang->formatNum( $this->mRepo->getAuthorCount() ) )  . "</strong>\n";
+		$text .= '<strong>' . wfMsg( 'code-author-total', $wgLang->formatNum( $this->repo->getAuthorCount() ) )  . "</strong>\n";
 
 		$wgOut->addWikiText( $text );
 
@@ -25,7 +25,7 @@ class CodeAuthorListView extends CodeView {
 				$wgOut->addHTML( "<tr><td>" );
 				$author = $committer["author"];
 				$text = "[[Special:Code/$repo/author/$author|$author]]";
-				$user = $this->mRepo->authorWikiUser( $author );
+				$user = $this->repo->authorWikiUser( $author );
 				if ( $user ) {
 					$title = htmlspecialchars( $user->getUserPage()->getPrefixedText() );
 					$name = htmlspecialchars( $user->getName() );

@@ -7,7 +7,7 @@ abstract class CodeView {
 	/**
 	 * @var CodeRepository
 	 */
-	var $mRepo;
+	var $repo;
 
 	function __construct() {
 		global $wgUser;
@@ -24,7 +24,7 @@ abstract class CodeView {
 	abstract function execute();
 
 	function authorLink( $author, $extraParams = array() ) {
-		$repo = $this->mRepo->getName();
+		$repo = $this->repo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/author/$author" );
 		return $this->skin->link( $special, htmlspecialchars( $author ), array(), $extraParams );
 	}
@@ -35,7 +35,7 @@ abstract class CodeView {
 
 	function formatMessage( $text ) {
 		$text = nl2br( htmlspecialchars( $text ) );
-		$linker = new CodeCommentLinkerHtml( $this->mRepo );
+		$linker = new CodeCommentLinkerHtml( $this->repo );
 		return $linker->link( $text );
 	}
 
@@ -72,8 +72,8 @@ abstract class CodeView {
 	}
 
 	function getRepo() {
-		if ( $this->mRepo ) {
-			return $this->mRepo;
+		if ( $this->repo ) {
+			return $this->repo;
 		}
 		return false;
 	}
@@ -84,12 +84,12 @@ abstract class SvnTablePager extends TablePager {
 	/**
 	 * @var CodeRepository
 	 */
-	protected $mRepo;
+	protected $repo;
 
 	/**
 	 * @var CodeView
 	 */
-	protected $mView;
+	protected $view;
 
 	/**
 	 * @param  $view CodeView
@@ -97,10 +97,10 @@ abstract class SvnTablePager extends TablePager {
 	 */
 	function __construct( $view ) {
 		global $IP;
-		$this->mView = $view;
-		$this->mRepo = $view->mRepo;
-		$this->mDefaultDirection = true;
-		$this->mCurSVN = SpecialVersion::getSvnRevision( $IP );
+		$this->view = $view;
+		$this->repo = $view->repo;
+		$this->defaultDirection = true;
+		$this->curSVN = SpecialVersion::getSvnRevision( $IP );
 		parent::__construct();
 	}
 
@@ -118,7 +118,7 @@ abstract class SvnTablePager extends TablePager {
 		$s = "<tr class=\"$css\">\n";
 		// Some of this stolen from Pager.php...sigh
 		$fieldNames = $this->getFieldNames();
-		$this->mCurrentRow = $row;  # In case formatValue needs to know
+		$this->currentRow = $row;  # In case formatValue needs to know
 		foreach ( $fieldNames as $field => $name ) {
 			$value = isset( $row->$field ) ? $row->$field : null;
 			$formatted = strval( $this->formatRevValue( $field, $value, $row ) );
