@@ -118,7 +118,7 @@ abstract class SvnTablePager extends TablePager {
 		$s = "<tr class=\"$css\">\n";
 		// Some of this stolen from Pager.php...sigh
 		$fieldNames = $this->getFieldNames();
-		$this->currentRow = $row;  # In case formatValue needs to know
+		$this->mCurrentRow = $row;  # In case formatValue needs to know
 		foreach ( $fieldNames as $field => $name ) {
 			$value = isset( $row->$field ) ? $row->$field : null;
 			$formatted = strval( $this->formatRevValue( $field, $value, $row ) );
