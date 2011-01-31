@@ -214,6 +214,7 @@ function efCodeReviewSchemaUpdates( $updater ) {
 	$base = dirname( __FILE__ );
 	switch ( $updater->getDB()->getType() ) {
 	case 'mysql':
+		$updater->addNewExtension( 'CodeReview', "$base/codereview.sql" );
 		$updater->addExtensionUpdate( array( 'addTable', 'code_rev',
 			"$base/codereview.sql", true ) ); // Initial install tables
 		$updater->addExtensionUpdate( array( 'addField', 'code_rev', 'cr_diff',
@@ -239,6 +240,7 @@ function efCodeReviewSchemaUpdates( $updater ) {
 			"$base/archives/code_comment_author-index.sql", true ) );
 		break;
 	case 'sqlite':
+		$updater->addNewExtension( 'CodeReview', "$base/codereview.sql" );
 		$updater->addExtensionUpdate( array( 'addTable', 'code_rev', "$base/codereview.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addTable', 'code_signoffs', "$base/archives/code_signoffs.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_user',
