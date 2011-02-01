@@ -2,20 +2,10 @@
 
 abstract class CodeCommentLinker {
 
-	/**
-	 * @var CodeRepository
-	 */
-	protected $repo;
-
-	/**
-	 * @var Skin
-	 */
-	protected $skin;
-
 	function __construct( $repo ) {
 		global $wgUser;
 		$this->skin = $wgUser->getSkin();
-		$this->repo = $repo;
+		$this->mRepo = $repo;
 	}
 
 	function link( $text ) {
@@ -39,7 +29,7 @@ abstract class CodeCommentLinker {
 	function messageBugLink( $arr ) {
 		$text = $arr[0];
 		$bugNo = intval( $arr[1] );
-		$url = $this->repo->getBugPath( $bugNo );
+		$url = $this->mRepo->getBugPath( $bugNo );
 		if ( $url ) {
 			return $this->makeExternalLink( $url, $text );
 		} else {
@@ -51,7 +41,7 @@ abstract class CodeCommentLinker {
 		$text = $matches[0];
 		$rev = intval( $matches[1] );
 
-		$repo = $this->repo->getName();
+		$repo = $this->mRepo->getName();
 		$title = SpecialPage::getTitleFor( 'Code', "$repo/$rev" );
 
 		return $this->makeInternalLink( $title, $text );

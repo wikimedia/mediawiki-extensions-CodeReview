@@ -5,7 +5,7 @@ abstract class SubversionAdaptor {
 	/**
 	 * @var string
 	 */
-	protected $repoPath;
+	protected $mRepoPath;
 
 	public static function newFromRepo( $repo ) {
 		global $wgSubversionProxy, $wgSubversionProxyTimeout;
@@ -22,7 +22,7 @@ abstract class SubversionAdaptor {
 	 * @param  $repo String Path to SVN Repo
 	 */
 	function __construct( $repoPath ) {
-		$this->repoPath = $repoPath;
+		$this->mRepoPath = $repoPath;
 	}
 
 	abstract function canConnect();
@@ -80,13 +80,13 @@ class SubversionPecl extends SubversionAdaptor {
 	}
 
 	function getFile( $path, $rev = null ) {
-		return svn_cat( $this->repoPath . $path, $rev );
+		return svn_cat( $this->mRepoPath . $path, $rev );
 	}
 
 	function getDiff( $path, $rev1, $rev2 ) {
 		list( $fout, $ferr ) = svn_diff(
-			$this->repoPath . $path, $rev1,
-			$this->repoPath . $path, $rev2 );
+			$this->mRepoPath . $path, $rev1,
+			$this->mRepoPath . $path, $rev2 );
 
 		if ( $fout ) {
 			// We have to read out the file descriptors. :P
@@ -104,13 +104,13 @@ class SubversionPecl extends SubversionAdaptor {
 	}
 
 	function getDirList( $path, $rev = null ) {
-		return svn_ls( $this->repoPath . $path,
+		return svn_ls( $this->mRepoPath . $path,
 			$this->_rev( $rev, SVN_REVISION_HEAD ) );
 	}
 
 	function getLog( $path, $startRev = null, $endRev = null ) {
 		wfSuppressWarnings();
-		$log = svn_log( $this->repoPath . $path,
+		$log = svn_log( $this->mRepoPath . $path,
 			$this->_rev( $startRev, SVN_REVISION_INITIAL ),
 			$this->_rev( $endRev, SVN_REVISION_HEAD ) );
 		wfRestoreWarnings();
@@ -127,7 +127,7 @@ class SubversionShell extends SubversionAdaptor {
 		$command = sprintf(
 			"svn info %s %s",
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->repoPath ) );
+			wfEscapeShellArg( $this->mRepoPath ) );
 
 		$result = wfShellExec( $command );
 		if ( $result == "" ) {
@@ -146,7 +146,7 @@ class SubversionShell extends SubversionAdaptor {
 		$command = sprintf(
 			"svn cat %s %s",
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->repoPath . $path ) );
+			wfEscapeShellArg( $this->mRepoPath . $path ) );
 
 		return wfShellExec( $command );
 	}
@@ -157,7 +157,7 @@ class SubversionShell extends SubversionAdaptor {
 			intval( $rev1 ),
 			intval( $rev2 ),
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->repoPath . $path ) );
+			wfEscapeShellArg( $this->mRepoPath . $path ) );
 
 		return wfShellExec( $command );
 	}
@@ -169,7 +169,7 @@ class SubversionShell extends SubversionAdaptor {
 			wfEscapeShellArg( $this->_rev( $startRev, 'BASE' ) ),
 			wfEscapeShellArg( $this->_rev( $endRev, 'HEAD' ) ),
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->repoPath . $path ) );
+			wfEscapeShellArg( $this->mRepoPath . $path ) );
 
 		$lines = explode( "\n", wfShellExec( $command ) );
 		$out = array();
@@ -265,7 +265,7 @@ class SubversionShell extends SubversionAdaptor {
 			"svn list --xml -r%s %s %s",
 			wfEscapeShellArg( $this->_rev( $rev, 'HEAD' ) ),
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->repoPath . $path ) );
+			wfEscapeShellArg( $this->mRepoPath . $path ) );
 		$document = new DOMDocument();
 
 		if ( !@$document->loadXML( wfShellExec( $command ) ) )
@@ -326,8 +326,8 @@ class SubversionShell extends SubversionAdaptor {
 class SubversionProxy extends SubversionAdaptor {
 	function __construct( $repo, $proxy, $timeout = 30 ) {
 		parent::__construct( $repo );
-		$this->proxy = $proxy;
-		$this->timeout = $timeout;
+		$this->mProxy = $proxy;
+		$this->mTimeout = $timeout;
 	}
 
 	function canConnect() {
@@ -342,7 +342,7 @@ class SubversionProxy extends SubversionAdaptor {
 	function getDiff( $path, $rev1, $rev2 ) {
 		return $this->_proxy( array(
 			'action' => 'diff',
-			'base' => $this->repoPath,
+			'base' => $this->mRepoPath,
 			'path' => $path,
 			'rev1' => $rev1,
 			'rev2' => $rev2 ) );
@@ -351,7 +351,7 @@ class SubversionProxy extends SubversionAdaptor {
 	function getLog( $path, $startRev = null, $endRev = null ) {
 		return $this->_proxy( array(
 			'action' => 'log',
-			'base' => $this->repoPath,
+			'base' => $this->mRepoPath,
 			'path' => $path,
 			'start' => $startRev,
 			'end' => $endRev ) );
@@ -360,7 +360,7 @@ class SubversionProxy extends SubversionAdaptor {
 	function getDirList( $path, $rev = null ) {
 		return $this->_proxy( array(
 			'action' => 'list',
-			'base' => $this->repoPath,
+			'base' => $this->mRepoPath,
 			'path' => $path,
 			'rev' => $rev ) );
 	}
@@ -372,8 +372,8 @@ class SubversionProxy extends SubversionAdaptor {
 				unset( $params[$key] );
 			}
 		}
-		$target = $this->proxy . '?' . wfArrayToCgi( $params );
-		$blob = Http::get( $target, $this->timeout );
+		$target = $this->mProxy . '?' . wfArrayToCgi( $params );
+		$blob = Http::get( $target, $this->mTimeout );
 		if ( $blob === false ) {
 			throw new MWException( "SVN proxy error" );
 		}

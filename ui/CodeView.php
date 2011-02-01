@@ -7,7 +7,7 @@ abstract class CodeView {
 	/**
 	 * @var CodeRepository
 	 */
-	var $repo;
+	var $mRepo;
 
 	function __construct() {
 		global $wgUser;
@@ -24,7 +24,7 @@ abstract class CodeView {
 	abstract function execute();
 
 	function authorLink( $author, $extraParams = array() ) {
-		$repo = $this->repo->getName();
+		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/author/$author" );
 		return $this->skin->link( $special, htmlspecialchars( $author ), array(), $extraParams );
 	}
@@ -35,7 +35,7 @@ abstract class CodeView {
 
 	function formatMessage( $text ) {
 		$text = nl2br( htmlspecialchars( $text ) );
-		$linker = new CodeCommentLinkerHtml( $this->repo );
+		$linker = new CodeCommentLinkerHtml( $this->mRepo );
 		return $linker->link( $text );
 	}
 
@@ -72,8 +72,8 @@ abstract class CodeView {
 	}
 
 	function getRepo() {
-		if ( $this->repo ) {
-			return $this->repo;
+		if ( $this->mRepo ) {
+			return $this->mRepo;
 		}
 		return false;
 	}
@@ -84,12 +84,12 @@ abstract class SvnTablePager extends TablePager {
 	/**
 	 * @var CodeRepository
 	 */
-	protected $repo;
+	protected $mRepo;
 
 	/**
 	 * @var CodeView
 	 */
-	protected $view;
+	protected $mView;
 
 	/**
 	 * @param  $view CodeView
@@ -97,10 +97,10 @@ abstract class SvnTablePager extends TablePager {
 	 */
 	function __construct( $view ) {
 		global $IP;
-		$this->view = $view;
-		$this->repo = $view->repo;
-		$this->defaultDirection = true;
-		$this->curSVN = SpecialVersion::getSvnRevision( $IP );
+		$this->mView = $view;
+		$this->mRepo = $view->mRepo;
+		$this->mDefaultDirection = true;
+		$this->mCurSVN = SpecialVersion::getSvnRevision( $IP );
 		parent::__construct();
 	}
 

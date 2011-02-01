@@ -3,29 +3,29 @@
 class CodeRevisionStatusView extends CodeRevisionListView {
 	function __construct( $repoName, $status ) {
 		parent::__construct( $repoName );
-		$this->status = $status;
-		$this->appliedFilter = wfMsg( 'code-revfilter-cr_status', $status );
+		$this->mStatus = $status;
+		$this->mAppliedFilter = wfMsg( 'code-revfilter-cr_status', $status );
 	}
 
 	function getPager() {
-		return new SvnRevStatusTablePager( $this, $this->status );
+		return new SvnRevStatusTablePager( $this, $this->mStatus );
 	}
 }
 
 class SvnRevStatusTablePager extends SvnRevTablePager {
 	function __construct( $view, $status ) {
 		parent::__construct( $view );
-		$this->status = $status;
+		$this->mStatus = $status;
 	}
 
 	function getQueryInfo() {
 		$info = parent::getQueryInfo();
-		$info['conds']['cr_status'] = $this->status; // FIXME: normalize input?
+		$info['conds']['cr_status'] = $this->mStatus; // FIXME: normalize input?
 		return $info;
 	}
 
 	function getTitle() {
-		$repo = $this->repo->getName();
-		return SpecialPage::getTitleFor( 'Code', "$repo/status/$this->status" );
+		$repo = $this->mRepo->getName();
+		return SpecialPage::getTitleFor( 'Code', "$repo/status/$this->mStatus" );
 	}
 }

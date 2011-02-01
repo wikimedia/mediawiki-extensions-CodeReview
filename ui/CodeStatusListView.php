@@ -4,12 +4,12 @@
 class CodeStatusListView extends CodeView {
 	function __construct( $repoName ) {
 		parent::__construct();
-		$this->repo = CodeRepository::newFromName( $repoName );
+		$this->mRepo = CodeRepository::newFromName( $repoName );
 	}
 
 	function execute() {
 		global $wgOut;
-		$name = $this->repo->getName();
+		$name = $this->mRepo->getName();
 		$states = CodeRevision::getPossibleStates();
 		$wgOut->addWikiText( "== " . wfMsg ( "code-field-status" ) . " ==\n" );
 

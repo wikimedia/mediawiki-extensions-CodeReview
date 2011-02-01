@@ -2,11 +2,11 @@
 
 // Special:Code/MediaWiki
 class CodeStatusChangeListView extends CodeView {
-	public $repo;
+	public $mRepo;
 
 	function __construct( $repoName ) {
 		parent::__construct();
-		$this->repo = CodeRepository::newFromName( $repoName );
+		$this->mRepo = CodeRepository::newFromName( $repoName );
 	}
 
 	function execute() {
@@ -27,7 +27,7 @@ class CodeStatusChangeListView extends CodeView {
 	}
 
 	function getRepo() {
-		return $this->repo;
+		return $this->mRepo;
 	}
 }
 
@@ -44,7 +44,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		return array(
 			'tables' => array( 'code_prop_changes', 'code_rev' ),
 			'fields' => array_keys( $this->getFieldNames() ),
-			'conds' => array( 'cpc_repo_id' => $this->repo->getId(), 'cpc_attrib' => 'status' ),
+			'conds' => array( 'cpc_repo_id' => $this->mRepo->getId(), 'cpc_attrib' => 'status' ),
 			'join_conds' => array(
 				'code_rev' => array( 'LEFT JOIN', 'cpc_repo_id = cr_repo_id AND cpc_rev_id = cr_id' )
 			)
@@ -67,20 +67,20 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 	function formatValue( $name, $value ) {
 		switch( $name ) {
 		case 'cpc_rev_id':
-			return $this->view->skin->link(
-				SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/' . $value . '#code-changes' ),
+			return $this->mView->skin->link(
+				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-changes' ),
 				htmlspecialchars( $value ) );
 		case 'cr_author':
-			return $this->view->authorLink( $value );
+			return $this->mView->authorLink( $value );
 		case 'cr_message':
-			return $this->view->messageFragment( $value );
+			return $this->mView->messageFragment( $value );
 		case 'cr_status':
-			return $this->view->skin->link(
+			return $this->mView->skin->link(
 				SpecialPage::getTitleFor( 'Code',
-					$this->repo->getName() . '/status/' . $value ),
-				htmlspecialchars( $this->view->statusDesc( $value ) ) );
+					$this->mRepo->getName() . '/status/' . $value ),
+				htmlspecialchars( $this->mView->statusDesc( $value ) ) );
 		case 'cpc_user_text':
-			return $this->view->skin->userLink( - 1, $value );
+			return $this->mView->skin->userLink( - 1, $value );
 		case 'cpc_removed':
 			return wfMsgHtml( $value ? "code-status-$value" : "code-status-new" );
 		case 'cpc_added':
@@ -92,6 +92,6 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 	}
 
 	function getTitle() {
-		return SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/statuschanges' );
+		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/statuschanges' );
 	}
 }

@@ -1,24 +1,24 @@
 <?php
 
 class CodeRevisionAuthorView extends CodeRevisionListView {
-	function __construct( $repo, $author ) {
-		parent::__construct( $repo );
-		$this->author = $author;
-		$this->user = $this->repo->authorWikiUser( $author );
-		$this->appliedFilter = wfMsg( 'code-revfilter-cr_author', $author );
+	function __construct( $repoName, $author ) {
+		parent::__construct( $repoName );
+		$this->mAuthor = $author;
+		$this->mUser = $this->mRepo->authorWikiUser( $author );
+		$this->mAppliedFilter = wfMsg( 'code-revfilter-cr_author', $author );
 	}
 
 	function getPager() {
-		return new SvnRevAuthorTablePager( $this, $this->author );
+		return new SvnRevAuthorTablePager( $this, $this->mAuthor );
 	}
 
 	function linkStatus() {
-		if ( !$this->user )
+		if ( !$this->mUser )
 			return wfMsg( 'code-author-orphan' );
 
 		return wfMsgHtml( 'code-author-haslink',
-			$this->skin->userLink( $this->user->getId(), $this->user->getName() ) .
-			$this->skin->userToolLinks( $this->user->getId(), $this->user->getName() ) );
+			$this->skin->userLink( $this->mUser->getId(), $this->mUser->getName() ) .
+			$this->skin->userToolLinks( $this->mUser->getId(), $this->mUser->getName() ) );
 	}
 
 	function execute() {
@@ -27,17 +27,17 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 		$linkInfo = $this->linkStatus();
 
 		if ( $wgUser->isAllowed( 'codereview-link-user' ) ) {
-			$repo = $this->repo->getName();
-			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->author/link" );
+			$repo = $this->mRepo->getName();
+			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor/link" );
 			$linkInfo .= ' (' . $this->skin->link( $page,
-				wfMsg( 'code-author-' . ( $this->user ? 'un':'' ) . 'link' ) ) . ')' ;
+				wfMsg( 'code-author-' . ( $this->mUser ? 'un':'' ) . 'link' ) ) . ')' ;
 		}
 
-		$repoLink = $wgUser->getSkin()->link( SpecialPage::getTitleFor( 'Code', $this->repo->getName() ),
-			htmlspecialchars( $this->repo->getName() ) );
+		$repoLink = $wgUser->getSkin()->link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+			htmlspecialchars( $this->mRepo->getName() ) );
 		$fields = array(
 			'code-rev-repo' => $repoLink,
-			'code-rev-author' => $this->authorLink( $this->author ),
+			'code-rev-author' => $this->authorLink( $this->mAuthor ),
 		);
 
 		$wgOut->addHTML( $this->formatMetaData( $fields ) . $linkInfo );
@@ -49,17 +49,17 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 class SvnRevAuthorTablePager extends SvnRevTablePager {
 	function __construct( $view, $author ) {
 		parent::__construct( $view );
-		$this->author = $author;
+		$this->mAuthor = $author;
 	}
 
 	function getQueryInfo() {
 		$info = parent::getQueryInfo();
-		$info['conds']['cr_author'] = $this->author; // fixme: normalize input?
+		$info['conds']['cr_author'] = $this->mAuthor; // fixme: normalize input?
 		return $info;
 	}
 
 	function getTitle() {
-		$repo = $this->repo->getName();
-		return SpecialPage::getTitleFor( 'Code', "$repo/author/$this->author" );
+		$repo = $this->mRepo->getName();
+		return SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor" );
 	}
 }

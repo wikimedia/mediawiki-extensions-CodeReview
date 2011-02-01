@@ -4,18 +4,18 @@ class CodeReleaseNotes extends CodeView {
 	function __construct( $repoName ) {
 		global $wgRequest, $IP;
 		parent::__construct( $repoName );
-		$this->repo = CodeRepository::newFromName( $repoName );
-		$this->path = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
-		if ( strlen( $this->path ) && $this->path[0] !== '/' ) {
-			$this->path = "/{$this->path}"; // make sure this is a valid path
+		$this->mRepo = CodeRepository::newFromName( $repoName );
+		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
+		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
+			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path
 		}
-		$this->path = preg_replace( '/\/$/', '', $this->path ); // kill last slash
-		$this->startRev = $wgRequest->getIntOrNull( 'startrev' );
-		$this->endRev = $wgRequest->getIntOrNull( 'endrev' );
+		$this->mPath = preg_replace( '/\/$/', '', $this->mPath ); // kill last slash
+		$this->mStartRev = $wgRequest->getIntOrNull( 'startrev' );
+		$this->mEndRev = $wgRequest->getIntOrNull( 'endrev' );
 	}
 
 	function execute() {
-		if ( !$this->repo ) {
+		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();
 			return;
@@ -23,23 +23,23 @@ class CodeReleaseNotes extends CodeView {
 		$this->showForm();
 
 		# Show notes if we have at least a starting revision
-		if ( $this->startRev ) {
+		if ( $this->mStartRev ) {
 			$this->showReleaseNotes();
 		}
 	}
 
 	protected function showForm() {
 		global $wgOut, $wgScript;
-		$special = SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/releasenotes' );
+		$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/releasenotes' );
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 			"<fieldset><legend>" . wfMsgHtml( 'code-release-legend' ) . "</legend>" .
 				Html::hidden( 'title', $special->getPrefixedDBKey() ) . '<b>' .
-				Xml::inputlabel( wfMsg( "code-release-startrev" ), 'startrev', 'startrev', 10, $this->startRev ) .
+				Xml::inputlabel( wfMsg( "code-release-startrev" ), 'startrev', 'startrev', 10, $this->mStartRev ) .
 				'</b>&#160;' .
-				Xml::inputlabel( wfMsg( "code-release-endrev" ), 'endrev', 'endrev', 10, $this->endRev ) .
+				Xml::inputlabel( wfMsg( "code-release-endrev" ), 'endrev', 'endrev', 10, $this->mEndRev ) .
 				'&#160;' .
-				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 45, $this->path ) .
+				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 45, $this->mPath ) .
 				'&#160;' .
 				Xml::submitButton( wfMsg( 'allpagessubmit' ) ) . "\n" .
 			"</fieldset>" . Xml::closeElement( 'form' )
@@ -48,22 +48,22 @@ class CodeReleaseNotes extends CodeView {
 
 	protected function showReleaseNotes() {
 		global $wgOut;
-		$linker = new CodeCommentLinkerHtml( $this->repo );
+		$linker = new CodeCommentLinkerHtml( $this->mRepo );
 		$dbr = wfGetDB( DB_SLAVE );
 		$where = array();
-		if ( $this->endRev ) {
-			$where[] = 'cr_id BETWEEN ' . intval( $this->startRev ) . ' AND ' . intval( $this->endRev );
+		if ( $this->mEndRev ) {
+			$where[] = 'cr_id BETWEEN ' . intval( $this->mStartRev ) . ' AND ' . intval( $this->mEndRev );
 		} else {
-			$where[] = 'cr_id >= ' . intval( $this->startRev );
+			$where[] = 'cr_id >= ' . intval( $this->mStartRev );
 		}
-		if ( $this->path ) {
-			$where['cr_path'] = $this->path;
+		if ( $this->mPath ) {
+			$where['cr_path'] = $this->mPath;
 		}
 		# Select commits within this range...
 		$res = $dbr->select( array( 'code_rev', 'code_tags' ),
 			array( 'cr_message', 'cr_author', 'cr_id', 'ct_tag AS rnotes' ),
 			array_merge( array(
-				'cr_repo_id' => $this->repo->getId(), // this repo
+				'cr_repo_id' => $this->mRepo->getId(), // this repo
 				"cr_status NOT IN('reverted','deferred','fixme')", // not reverted/deferred/fixme
 				"cr_message != ''",
 			), $where ),
