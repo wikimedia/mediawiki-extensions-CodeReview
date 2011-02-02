@@ -21,7 +21,7 @@ table.mw-codereview-meta td {
 
 .mw-codereview-comment {
 	border: solid 1px #aaaab3;
-	padding: 0px;
+	padding: 0;
 	background: #eee;
 	margin-bottom: 8px;
 }
@@ -42,8 +42,7 @@ table.mw-codereview-meta td {
 }
 
 .mw-codereview-comment .mw-codereview-post-comment {
-	padding: 16px;
-	padding-left: 48px;
+	padding: 16px 16px 16px 48px;
 }
 
 .mw-codereview-status-new,
