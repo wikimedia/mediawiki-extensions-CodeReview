@@ -10989,6 +10989,7 @@ $messages['sv'] = array(
 	'code-field-path' => 'Sökväg',
 	'code-field-text' => 'Not',
 	'code-field-select' => 'Välj',
+	'code-reference-remove' => 'Ta bort markerade associationer',
 	'code-rev-author' => 'Författare:',
 	'code-rev-date' => 'Datum:',
 	'code-rev-message' => 'Kommentar:',
