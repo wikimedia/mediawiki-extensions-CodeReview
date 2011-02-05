@@ -3058,9 +3058,11 @@ $messages['es'] = array(
 	'code-notes' => 'comentarios recientes',
 	'code-statuschanges' => 'cambios de status',
 	'code-mycommits' => 'mis publicaciones',
+	'code-mycomments' => 'mis comentarios',
 	'code-authors' => 'autores',
 	'code-status' => 'estados',
 	'code-tags' => 'etiquetas',
+	'code-tags-no-tags' => 'No hay etiquetas en este repositorio.',
 	'code-authors-text' => 'A continuación verás un listado de los autores de repositorios en orden de nombre de tarea. Las cuentas de wiki locales se muestran entre paréntesis. La información puede ser cacheada.',
 	'code-author-haslink' => 'Este autor está enlazado con el usuario $1',
 	'code-author-orphan' => 'Este autor no está enlazado con ningún usuario de la wiki',
@@ -3081,11 +3083,15 @@ $messages['es'] = array(
 	'code-field-user' => 'Comentarista',
 	'code-field-message' => 'Comentario',
 	'code-field-status' => 'Estatus',
+	'code-field-status-description' => 'Descripción del estado',
 	'code-field-timestamp' => 'Fecha',
-	'code-field-comments' => 'Apuntes',
+	'code-field-comments' => 'Comentarios',
 	'code-field-path' => 'Ruta',
 	'code-field-text' => 'Nota',
 	'code-field-select' => 'Seleccionar',
+	'code-reference-remove' => 'Quitar las asociaciones seleccionadas',
+	'code-reference-associate' => 'Asociar la revisión de seguimiento:',
+	'code-reference-associate-submit' => 'Asociar',
 	'code-rev-author' => 'Autor:',
 	'code-rev-date' => 'Fecha:',
 	'code-rev-message' => 'Comentario:',
@@ -6399,6 +6405,7 @@ $4',
 /** Khmer (ភាសាខ្មែរ)
  * @author Lovekhmer
  * @author Thearith
+ * @author គីមស៊្រុន
  * @author វ័ណថារិទ្ធ
  */
 $messages['km'] = array(
@@ -6413,7 +6420,7 @@ $messages['km'] = array(
 	'code-author-haslink' => '​អ្នកនិពន្ធ​នេះត្រូវ​បាន​តភ្ជាប់​ទៅ​នឹង​អ្នក​ប្រើប្រាស់​​វិគី​​ ​$1',
 	'code-author-orphan' => '​អ្នកនិពន្ធ​នេះមិន​មាន​តំណភ្ជាប់​ជាមួយ​គណនី​វិគី​ទេ​',
 	'code-author-dolink' => 'តភ្ជាប់​អ្នកនិពន្ធ​នេះ​ទៅនឹង​អ្នក​ប្រើប្រាស់​វិគី​៖',
-	'code-author-name' => 'បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់៖',
+	'code-author-name' => 'បញ្ចូលអត្តនាម៖',
 	'code-author-link' => 'តំណភ្ជាប់?',
 	'code-author-unlink' => 'មិន​ដាក់​តំណភ្ជាប់​?',
 	'code-field-id' => 'ពិនិត្យឡើងវិញ',
@@ -6859,6 +6866,7 @@ $messages['lb'] = array(
 	'code-notes' => 'rezent Bemierkungen',
 	'code-statuschanges' => 'Ännerunge vum Status',
 	'code-mycommits' => 'meng Publikatiounen',
+	'code-mycomments' => 'meng Bemierkungen',
 	'code-authors' => 'Auteuren',
 	'code-status' => 'Statussen',
 	'code-tags' => 'Tagen',
@@ -6876,6 +6884,7 @@ $messages['lb'] = array(
 	'code-author-badtoken' => 'Sessiouns-Feeler beim Versuch vun der Aktioun',
 	'code-author-total' => 'Total vun der Zuel vun Auteuren: $1',
 	'code-author-lastcommit' => 'Leschten Datum vum Iwwerdroen',
+	'code-browsing-path' => "Versiounen op '''$1''' duerchbliederen",
 	'code-field-id' => 'Revisioun',
 	'code-field-author' => 'Auteur',
 	'code-field-user' => 'Commentateur',
