@@ -11,7 +11,7 @@ class CodeStatusListView extends CodeView {
 		global $wgOut;
 		$name = $this->mRepo->getName();
 		$states = CodeRevision::getPossibleStates();
-		$wgOut->wrapWikiMsg( "== $1 ==\n", 'code-field-status' );
+		$wgOut->wrapWikiMsg( "== $1 ==", 'code-field-status' );
 
 		$table_rows = '';
 		foreach ( $states as $state ) {
