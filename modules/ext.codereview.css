@@ -178,3 +178,9 @@ table.mw-codereview-meta td {
 	color: #ccc;
 	font-size: .6em;
 }
+.mw-codereview-diff ins {
+	background: #DDFFDD;
+}
+.mw-codereview-diff del {
+	background: #FFDDDD;
+}
