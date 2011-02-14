@@ -3,7 +3,7 @@
 // Special:Code/MediaWiki/40696
 class CodeRevisionView extends CodeView {
 
-	protected $showButtonsFormatReference = false;
+	protected $showButtonsFormatReference = false, $showButtonsFormatSignoffs = false;
 
 	/**
 	 * @param string|CodeRepository $repo
@@ -450,10 +450,15 @@ class CodeRevisionView extends CodeView {
 	 * @return string HTML
 	 */
 	protected function formatSignoffs( $showButtons ) {
+		$this->showButtonsFormatSignoffs = $showButtons;
 		$signoffs = implode( "\n",
 			array_map( array( $this, 'formatSignoffInline' ), $this->mRev->getSignoffs() )
 		);
-		$header = '<th></th>';
+
+		$header = '';
+		if ( $showButtons ) {
+			$header = '<th></th>';
+		}
 		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-user' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-flag' ). '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-date' ). '</th>';
@@ -509,7 +514,6 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function formatSignoffInline( $signoff ) {
 		global $wgLang;
-		$checkbox = Html::input( 'wpSignoffs[]', $signoff->getID(), 'checkbox' );
 		$user = $this->skin->userLink( $signoff->user, $signoff->userText );
 		$flag = htmlspecialchars( $signoff->flag );
 		$signoffDate = $wgLang->timeanddate( $signoff->timestamp, true );
@@ -521,7 +525,14 @@ class CodeRevisionView extends CodeView {
 		} else {
 			$date = htmlspecialchars( $signoffDate );
 		}
-		return "<tr class='$class'><td>$checkbox</td><td>$user</td><td>$flag</td><td>$date</td></tr>";
+
+		$ret = "<tr class='$class'>";
+		if ( $this->showButtonsFormatSignoffs ) {
+			$checkbox = Html::input( 'wpSignoffs[]', $signoff->getID(), 'checkbox' );
+			$ret .= "<td>$checkbox</td>";
+		}
+		$ret .= "<td>$user</td><td>$flag</td><td>$date</td></tr>";
+		return $ret;
 	}
 
 	/**
