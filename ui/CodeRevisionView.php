@@ -3,6 +3,8 @@
 // Special:Code/MediaWiki/40696
 class CodeRevisionView extends CodeView {
 
+	protected $showButtonsFormatReference = false;
+
 	/**
 	 * @param string|CodeRepository $repo
 	 * @param string|CodeRevision $rev
@@ -483,6 +485,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	protected function formatReferences( $showButtons ) {
+		$this->showButtonsFormatReference = $showButtons;
 		$refs = implode( "\n",
 			array_map( array( $this, 'formatReferenceInline' ), $this->mRev->getReferences() )
 		);
@@ -584,8 +587,14 @@ class CodeRevisionView extends CodeView {
 		$revLink = $this->skin->link( $title, $this->mRev->getIdString( $rev ) );
 		$summary = $this->messageFragment( $row->cr_message );
 		$author = $this->authorLink( $row->cr_author );
-		$checkbox = Html::input( 'wpReferences[]', $rev, 'checkbox' );
-		return "<tr class='$css'><td>$checkbox</td><td>$revLink</td><td>$summary</td><td>$author</td><td>$date</td></tr>";
+
+		$ret = "<tr class='$css'>";
+		if ( $this->showButtonsFormatReference ) {
+			$checkbox = Html::input( 'wpReferences[]', $rev, 'checkbox' );
+			$ret .= "<td>$checkbox</td>";
+		}
+		$ret .= "<td>$revLink</td><td>$summary</td><td>$author</td><td>$date</td></tr>";
+		return $ret;
 	}
 
 	protected function commentLink( $commentId ) {
