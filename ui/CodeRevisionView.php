@@ -489,10 +489,12 @@ class CodeRevisionView extends CodeView {
 		$refs = implode( "\n",
 			array_map( array( $this, 'formatReferenceInline' ), $this->mRev->getReferences() )
 		);
-		$header = '<th></th>';
+
+		$header = '';
 		if ( $showButtons ) {
-			$header .= '<th>' . wfMsgHtml( 'code-field-id' ) . '</th>';
+			$header = '<th></th>';
 		}
+		$header .= '<th>' . wfMsgHtml( 'code-field-id' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-message' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-author' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-timestamp' ) . '</th>';
