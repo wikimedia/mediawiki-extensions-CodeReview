@@ -157,7 +157,7 @@ div.mw-wordcloud { width: 100%; }
 }
 .mw-wordcloud-size-4 {
 	color: #999;
-	font-size: 1.0em;
+	font-size: 1.8em;
 }
 .mw-wordcloud-size-5 {
 	color: #aaa;
@@ -173,11 +173,15 @@ div.mw-wordcloud { width: 100%; }
 }
 .mw-wordcloud-size-8 {
 	color: #ddd;
-	font-size: .8em;
+	font-size: 1em;
 }
-.mw-wordcloud-size-0 {
-	color: #ccc;
-	font-size: .6em;
+.mw-wordcloud-size-9 {
+	color: #ddd;
+	font-size: 0.8em;
+}
+.mw-wordcloud-size-10 {
+	color: #ddd;
+	font-size: 0.8em;
 }
 .mw-codereview-diff ins {
 	background: #DDFFDD;
