@@ -575,14 +575,14 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $subject
-	 * @param  $body
+	 * @param $subject String
+	 * @param $body String
 	 * @return void
 	 */
 	public function emailNotifyUsersOfChanges( $subject, $body ) {
 		// Give email notices to committer and commenters
 		global $wgCodeReviewENotif, $wgEnableEmail, $wgCodeReviewCommentWatcherEmail,
-			$wgCodeReviewCommentWatcherName, $wgUser;
+			$wgCodeReviewCommentWatcherName;
 		if ( !$wgCodeReviewENotif || !$wgEnableEmail ) {
 			return;
 		}
@@ -613,7 +613,7 @@ class CodeRevision {
 				$lang = array( 'language' => $user->getOption( 'language' ) );
 
 				$localSubject = wfMsgExt( $subject, $lang, $this->repo->getName(), $this->getIdString() );
-				$localBody = call_user_func_array( 'wfMsgExt', array_merge( array( $body, $lang, $wgUser->getName() ), $args ) );
+				$localBody = call_user_func_array( 'wfMsgExt', array_merge( array( $body, $lang ), $args ) );
 
 				$user->sendMail( $localSubject, $localBody );
 			}
