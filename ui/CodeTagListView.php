@@ -24,6 +24,6 @@ class CodeTagListView extends CodeView {
 		$query = $this->mRepo->getName() . '/tag/' . $tag;
 		return Html::element( 'a', array(
 			'href' => SpecialPage::getTitleFor( 'Code', $query )->getFullURL(),
-			'class' => 'plainlinks mw-wordcloud-size-' . $weight ), $tag );
+			'class' => 'plainlinks mw-wordcloud-size-' . $weight ), $tag ) . "\n";
 	}
 }
