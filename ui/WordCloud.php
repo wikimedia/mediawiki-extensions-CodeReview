@@ -136,6 +136,6 @@ class WordCloud {
 				return $class;
 			}
 		}
-		return 0;
+		return max( array_keys( $this->classPercentages ) ) + 1;
 	}
 }
