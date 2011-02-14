@@ -112,7 +112,7 @@ $wgGroupPermissions['user']['codereview-link-user'] = true;
 $wgGroupPermissions['user']['codereview-signoff'] = true;
 $wgGroupPermissions['user']['codereview-associate'] = true;
 
-$wgGroupPermissions['steward']['repoadmin'] = true; // temp
+$wgGroupPermissions['svnadmins']['repoadmin'] = true; // temp
 
 // Constants returned from CodeRepository::getDiff() when no diff can be calculated.
 define("DIFFRESULT_BadRevision",        0);
