@@ -205,7 +205,7 @@ $6',
 	'right-codereview-set-status' => 'Change revisions status',
 	'right-codereview-signoff' => 'Sign off on revisions',
 	'right-codereview-link-user' => 'Link authors to wiki users',
-	'right-codereview-associate' => 'Add/remove revision association',
+	'right-codereview-associate' => 'Manage revision associations',
 
 	'specialpages-group-developer' => 'Developer tools',
 );
