@@ -227,6 +227,7 @@ $6',
  * @author Raymond
  * @author Siebrand
  * @author Sp5uhe
+ * @author Umherirrender
  * @author Verdy p
  */
 $messages['qqq'] = array(
@@ -320,6 +321,7 @@ $1 = Repository name',
 	'right-codereview-set-status' => '{{doc-right}}',
 	'right-codereview-signoff' => 'A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
 	'right-codereview-link-user' => '{{Doc-right}}',
+	'right-codereview-associate' => '{{doc-right|codereview-associate}}',
 );
 
 /** Afrikaans (Afrikaans)
@@ -1578,6 +1580,7 @@ $6',
 	'right-codereview-set-status' => 'Kemmañ statud an adweladennoù',
 	'right-codereview-signoff' => 'Aprouiñ adweladennoù',
 	'right-codereview-link-user' => "Liammañ an oberourien d'an implijerien wiki",
+	'right-codereview-associate' => "Ouzhpennañ/lemel ar c'henstroll adwelet",
 	'specialpages-group-developer' => 'Ostilhoù diorren',
 );
 
@@ -2301,33 +2304,33 @@ $messages['de'] = array(
 	'code-rev-diff-too-large' => 'Der Diff ist zu groß.',
 	'code-rev-purge-link' => 'Cache löschen',
 	'code-rev-total' => 'Anzahl der Ergebnisse: $1',
-	'code-rev-not-found' => "Version '''$1''' existiert nicht!",
+	'code-rev-not-found' => "Revision '''$1''' ist nicht vorhanden!",
 	'code-status-new' => 'neu',
-	'code-status-desc-new' => 'Version erwartet eine Aktion (Standardstatus).',
+	'code-status-desc-new' => 'Revision erwartet eine Aktion (Standardstatus).',
 	'code-status-fixme' => 'FIXME',
-	'code-status-desc-fixme' => 'Ein Begutachter markierte diese Version als kaputt oder Verursacher eines Bugs. Sie sollte korrigiert werden.',
+	'code-status-desc-fixme' => 'Ein Begutachter markierte diese Revision als fehlerhaft oder Verursacher eines Softwarefehlers. Sie sollte korrigiert werden.',
 	'code-status-reverted' => 'rückgängig gemacht',
-	'code-status-desc-reverted' => 'Version wurde durch eine spätere Version rückgängig gemacht.',
+	'code-status-desc-reverted' => 'Revision wurde durch eine spätere Revision rückgängig gemacht.',
 	'code-status-resolved' => 'erledigt',
-	'code-status-desc-resolved' => 'Version hatte ein Problem, das in einer späteren Version korrigiert wurde.',
+	'code-status-desc-resolved' => 'Mit dieser Revision gab es ein Problem, das mit einer späteren Revision berichtigt wurde.',
 	'code-status-ok' => 'OK',
-	'code-status-desc-ok' => 'Version wurde vollständig begutachtet und der Begutachter ist sich sicher, dass sie in jeder Hinsicht in Ordnung ist.',
+	'code-status-desc-ok' => 'Die Revision wurde vollständig begutachtet und der Begutachter ist sich sicher, dass sie in jeder Hinsicht einwandfrei ist.',
 	'code-status-deferred' => 'zurückgestellt',
-	'code-status-desc-deferred' => 'Die Version erfordert keine Begutachtung.',
+	'code-status-desc-deferred' => 'Die Revision erfordert keine Begutachtung.',
 	'code-status-old' => 'alt',
-	'code-status-desc-old' => 'Alte Version mit potenziellen Bugs, die es aber nicht wert sind, begutachtet zu werden.',
+	'code-status-desc-old' => 'Alte Revision mit potentiellen Softwarefehlern, die es aber nicht wert sind, begutachtet zu werden.',
 	'code-signoffs' => 'Freigaben',
 	'code-signoff-legend' => 'Freigabe hinzufügen',
 	'code-signoff-submit' => 'Freigeben',
 	'code-signoff-strike' => 'Ausgewählte Freigaben streichen',
-	'code-signoff-signoff' => 'Diese Version freigeben:',
+	'code-signoff-signoff' => 'Diese Revision freigeben als:',
 	'code-signoff-flag-inspected' => 'Geprüft',
 	'code-signoff-flag-tested' => 'Getestet',
 	'code-signoff-field-user' => 'Benutzer',
 	'code-signoff-field-flag' => 'Kennzeichen',
 	'code-signoff-field-date' => 'Datum',
 	'code-signoff-struckdate' => '$1 (gestrichen $2)',
-	'code-pathsearch-legend' => 'Suche in diesem Repositorium nach Versionen, per Pfad',
+	'code-pathsearch-legend' => 'Suche in diesem Repositorium per Pfad nach Revisionen',
 	'code-pathsearch-path' => 'Pfad:',
 	'code-pathsearch-filter' => 'Angewendeter Filter:',
 	'code-revfilter-cr_status' => 'Status = $1',
@@ -2356,7 +2359,7 @@ $4',
 	'codereview-email-subj2' => '[$1 $2]: Darauffolgende Änderungen',
 	'codereview-email-body2' => 'Benutzer „$1“ machte darauffolgende Änderungen zu $2.
 
-Volle URL der darauffolgenden Version: $5
+Volle URL der darauffolgenden Revision: $5
 
 Volle URL: $3
 
@@ -2398,14 +2401,15 @@ $6',
 	'repoadmin-edit-button' => 'OK',
 	'repoadmin-edit-sucess' => 'Das Repositorium „[[Special:Code/$1|$1]]“ wurde erfolgreich geändert.',
 	'repoadmin-nav' => 'Repositoriumsadministration',
-	'right-repoadmin' => 'Code-Repositorien verwalten',
-	'right-codereview-use' => 'Special:Code benutzen',
+	'right-repoadmin' => 'Coderepositorien verwalten',
+	'right-codereview-use' => 'Special:Code nutzen',
 	'right-codereview-add-tag' => 'Neue Tags zu Revisionen hinzufügen',
 	'right-codereview-remove-tag' => 'Tags von Revisionen entfernen',
 	'right-codereview-post-comment' => 'Eigene Kommentare zu Revisionen einstellen',
 	'right-codereview-set-status' => 'Revisionsstatus ändern',
 	'right-codereview-signoff' => 'Änderungen freigeben',
 	'right-codereview-link-user' => 'Autoren auf Wiki-Benutzer verlinken',
+	'right-codereview-associate' => 'Revisionsverknüpfung hinzufügen/ entfernen',
 	'specialpages-group-developer' => 'Entwicklerwerkzeuge',
 );
 
@@ -5207,7 +5211,9 @@ $4',
 
 
 Stary status: $3
-Nowy status: $4',
+Nowy status: $4
+
+Dospołny URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Nowy komentar přidaty, a status wersije je so změnił',
 	'codereview-email-body4' => 'Wužiwar "$1" je status za $2 změnił.
 
@@ -5246,6 +5252,7 @@ $6',
 	'right-codereview-set-status' => 'Status rewizijow změnić',
 	'right-codereview-signoff' => 'Wersije dopušćić',
 	'right-codereview-link-user' => 'Awtorow z wikijowymi wužiwarjemi zwjazać',
+	'right-codereview-associate' => '´Wersijowy zwisk přidać/wotstronić',
 	'specialpages-group-developer' => 'Nastroje wuwiwarjow',
 );
 
@@ -7428,6 +7435,7 @@ $6',
 	'right-codereview-set-status' => 'Менување статус на ревизии',
 	'right-codereview-signoff' => 'Заверка на ревизии',
 	'right-codereview-link-user' => 'Сврзување на автори со корисници',
+	'right-codereview-associate' => 'Додај/отстрани придружување на ревизии',
 	'specialpages-group-developer' => 'Развојни алатки',
 );
 
@@ -8097,6 +8105,7 @@ $6',
 	'right-codereview-set-status' => 'Versiestatus wijzigen',
 	'right-codereview-signoff' => 'Versies goedkeuren',
 	'right-codereview-link-user' => 'Auteurs aan wikigebruikers koppelen',
+	'right-codereview-associate' => 'Koppeling toevoegen/verwijderen',
 	'specialpages-group-developer' => 'Hulpmiddelen voor ontwikkelaars',
 );
 
@@ -8778,6 +8787,7 @@ $6',
 	'right-codereview-set-status' => 'Zmiana statusu wersji',
 	'right-codereview-signoff' => 'Autorytarnie zaakceptuj wersje',
 	'right-codereview-link-user' => 'Linkowanie autorów do ich kont na wiki',
+	'right-codereview-associate' => 'Dodawanie i usuwanie skojarzeń wersji',
 	'specialpages-group-developer' => 'Narzędzia dewelopera',
 );
 
