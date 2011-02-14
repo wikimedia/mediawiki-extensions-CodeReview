@@ -150,9 +150,9 @@ $4',
 	'codereview-email-subj2' => '[$1 $2]: Follow-up changes',
 	'codereview-email-body2' => 'User "$1" made follow-up changes to $2.
 
-Full URL for followed up revision: $5
-
 Full URL: $3
+
+Full URL for followed up revision: $5
 
 Commit summary:
 
