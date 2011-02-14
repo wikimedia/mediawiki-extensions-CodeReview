@@ -138,12 +138,23 @@ class CodeRevisionView extends CodeView {
 				"<div class='mw-codereview-diff' id='mw-codereview-diff'>" . $diffHtml . "</div>\n";
 			$html .= $this->formatImgDiff();
 		}
+
 		# Show sign-offs
-		$html .= "<h2 id='code-signoffs'>" . wfMsgHtml( 'code-signoffs' ) .
-			"</h2>\n" . $this->formatSignoffs( $this->canSignoff() );
+		$userCanSignoff = $this->canSignoff();
+		$signOffs = $this->mRev->getSignoffs();
+		if ( count( $signOffs ) || $userCanSignoff ) {
+			$html .= "<h2 id='code-signoffs'>" . wfMsgHtml( 'code-signoffs' ) .
+				"</h2>\n" . $this->formatSignoffs( $signOffs, $userCanSignoff );
+		}
+
 		# Show code relations
-		$html .= "<h2 id='code-references'>" . wfMsgHtml( 'code-references' ) .
-			"</h2>\n" . $this->formatReferences( $this->canAssociate() );
+		$userCanAssociate = $this->canAssociate();
+		$references = $this->mRev->getReferences();
+		if ( count( $references ) || $userCanAssociate ) {
+			$html .= "<h2 id='code-references'>" . wfMsgHtml( 'code-references' ) .
+				"</h2>\n" . $this->formatReferences( $references, $userCanAssociate );
+		}
+
 		# Add revision comments
 		if ( $comments ) {
 			$html .= "<h2 id='code-comments'>" . wfMsgHtml( 'code-comments' ) .
@@ -449,10 +460,10 @@ class CodeRevisionView extends CodeView {
 	 * @param $showButtons bool Whether the buttons to strike and submit sign-offs should be shown
 	 * @return string HTML
 	 */
-	protected function formatSignoffs( $showButtons ) {
+	protected function formatSignoffs( $signOffs, $showButtons ) {
 		$this->showButtonsFormatSignoffs = $showButtons;
 		$signoffs = implode( "\n",
-			array_map( array( $this, 'formatSignoffInline' ), $this->mRev->getSignoffs() )
+			array_map( array( $this, 'formatSignoffInline' ), $signOffs )
 		);
 
 		$header = '';
@@ -489,10 +500,10 @@ class CodeRevisionView extends CodeView {
 		return "<ul class='mw-codereview-changes'>$changes</ul>";
 	}
 
-	protected function formatReferences( $showButtons ) {
+	protected function formatReferences( $references, $showButtons ) {
 		$this->showButtonsFormatReference = $showButtons;
 		$refs = implode( "\n",
-			array_map( array( $this, 'formatReferenceInline' ), $this->mRev->getReferences() )
+			array_map( array( $this, 'formatReferenceInline' ), $references )
 		);
 
 		$header = '';
