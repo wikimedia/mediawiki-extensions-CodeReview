@@ -117,18 +117,18 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		$dbw->commit();
 
 		if ( $statusChanged || $commentAdded ) {
+			$url = $this->mRev->getFullUrl( $commentId );
 			if ( $statusChanged && $commentAdded ) {
-				$url = $this->mRev->getFullUrl( $commentId );
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj4', 'codereview-email-body4',
-					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(), $this->mRev->getStatus(),
-					$url, $this->text
+					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
+					$this->mRev->getStatus(), $url, $this->text
 				);
 			} else if ( $statusChanged ) {
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj3', 'codereview-email-body3',
-					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(), $this->mRev->getStatus()
+					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
+					$this->mRev->getStatus(), $url
 				);
 			} else if ( $commentAdded ) {
-				$url = $this->mRev->getFullUrl( $commentId );
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj', 'codereview-email-body',
 					$wgUser->getName(), $url, $this->mRev->getIdStringUnique(), $this->text
 				);
