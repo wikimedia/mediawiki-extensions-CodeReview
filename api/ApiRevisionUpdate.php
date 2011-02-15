@@ -128,6 +128,8 @@ class ApiRevisionUpdate extends ApiBase {
 			'removetags' => 'Tags to be removed from the revision',
 			'addflags' => 'Code Signoff flags to assign to the revision by the current user',
 			'removeflags' => 'Code Signoff flags to strike from the revision by the current user',
+			'addreferences' => 'Add references to this revision',
+			'removereferences' => 'Remove references from this revision',
 		);
 	}
 
