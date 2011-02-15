@@ -299,9 +299,11 @@ $1 = Repository name',
 * <code>$5</code> – URL to followed revision.',
 	'codereview-email-subj3' => '* <code>$1</code> – Repository name
 * <code>$2</code> – Number of the revision',
-	'codereview-email-body3' => '* <code>$1</code> – Number of the revision where a regression has been introduced
-* <code>$2</code> – URL to the revision
-* <code>$3</code> – Commit message for the revision',
+	'codereview-email-body3' => '* $1 is a user name
+* $2 is a revision number
+* $3 is the old status
+* $4 is the new status
+* $5 is the full URL to code review',
 	'code-stats' => '{{Identical|Statistics}}',
 	'code-stats-main' => 'Parameters:
 * $1 - time and date when statistics was cached
@@ -1198,8 +1200,10 @@ $4',
 	'codereview-email-subj3' => '[$1 $2]: Статус вэрсіі зьменены',
 	'codereview-email-body3' => 'Карыстальнік «$1» зьмяніў статус $2.
 
-Старая вэрсія: $3
-Новая вэрсія: $4',
+Стары статус: $3
+Новы статус: $4
+
+URL-адрас: $5',
 	'codereview-email-subj4' => '[$1 $2]: Дададзены новы камэнтар, статус вэрсіі зьменены',
 	'codereview-email-body4' => 'Удзельнік «$1» зьмяніў статус $2.
 
@@ -1238,6 +1242,7 @@ $6',
 	'right-codereview-set-status' => 'Зьмяніць статус вэрсіяў',
 	'right-codereview-signoff' => 'Зацьвердзіць вэрсіі',
 	'right-codereview-link-user' => 'Даданьне да аўтараў спасылак на рахункі ўдзельнікаў вікі',
+	'right-codereview-associate' => 'кіраваньне сувязямі вэрсіяў',
 	'specialpages-group-developer' => 'Інструмэнты распрацоўшчыка',
 );
 
@@ -2370,7 +2375,9 @@ $4',
 	'codereview-email-body3' => 'Benutzer „$1“ änderte den Status von $2.
 
 Alter Status: $3
-Neuer Status: $4',
+Neuer Status: $4
+
+Vollständige URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Neuen Kommentar hinzugefügt und den Änderungsstatus geändert',
 	'codereview-email-body4' => 'Benutzer „$1“ änderte den Status von $2.
 
@@ -4617,7 +4624,9 @@ $4',
 	'codereview-email-body3' => 'Benutzer „$1“ het dr Status vu $2 gänderet.
 
 Alte Status: $3
-Neje Status: $4',
+Neje Status: $4
+
+Vollständigi URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Neje Kommentar zuegfiegt un dr Versionsstatus gänderet',
 	'codereview-email-body4' => 'Benutzer „$1“ het dr Status vu $2 gänderet.
 
@@ -4656,6 +4665,7 @@ $6',
 	'right-codereview-set-status' => 'Revisionsstatus ändere',
 	'right-codereview-signoff' => 'Änderige frejgee',
 	'right-codereview-link-user' => 'Autore uf Wiki-Benutzer vergleiche',
+	'right-codereview-associate' => 'Verchnipfig zuefiege/uuseneh',
 	'specialpages-group-developer' => 'Entwicklerwärchzyyg',
 );
 
@@ -4821,7 +4831,9 @@ $4',
 	'codereview-email-body3' => 'המשתמש "$1" שינה את המצב של $2.
 
 מצב קודם: $3
-מצב חדש: $4',
+מצב חדש: $4
+
+כתובת מלאה: $5',
 	'codereview-email-subj4' => '[$1 $2]: נוספה הערה חדשה ומצב הגרסה השתנה',
 	'codereview-email-body4' => 'המשתמש "$1" החליף את המצב של $2.
 
@@ -7001,7 +7013,9 @@ $4',
 	'codereview-email-body3' => 'De Benotzer „$1“ huet de Statut vu(n) $2 geännert.
 
 Ale Statut: $3
-Neie Statut: $4',
+Neie Statut: $4
+
+Komplett URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Nei  Bemierkung derbäigesat, an de Statut vun der Versioun geännert',
 	'codereview-email-body4' => 'De Benotzer "$1" huet de Statut vun $2 gännert.
 
@@ -7393,10 +7407,12 @@ $4',
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Статусот на ревизијата се промени',
-	'codereview-email-body3' => 'Корисникот „$1“ го смени статусот на $2.
+	'codereview-email-body3' => 'Корисникот „$1“ го измени статусот на $2.
 
 Стар статус: $3
-Нов статус: $4',
+Нов статус: $4
+
+Полна URL-адреса: $5',
 	'codereview-email-subj4' => '[$1 $2]: Додаден нов коментар и изменет е статусот на ревизијата',
 	'codereview-email-body4' => 'Корисникот „$1“ го смени статусот на $2.
 
@@ -7586,7 +7602,9 @@ $4',
 	'codereview-email-body3' => '$2 എന്നതിന്റെ സ്ഥിതി ഉപയോക്താവ് "$1" മാറ്റിയിരിക്കുന്നു.
 
 പഴയ സ്ഥിതി: $3
-പുതിയ സ്ഥിതി: $4',
+പുതിയ സ്ഥിതി: $4
+
+പൂർണ്ണ യു.ആർ.എൽ.: $5',
 	'codereview-email-subj4' => '[$1 $2]: പുതിയ കുറിപ്പ് ചേർത്തിരിക്കുന്നു, നാൾപ്പതിപ്പിന്റെ സ്ഥിതി മാറ്റിയിരിക്കുന്നു',
 	'codereview-email-body4' => '$2 എന്നതിന്റെ സ്ഥിതി ഉപയോക്താവ് "$1" മാറ്റിയിരിക്കുന്നു.
 
@@ -7625,6 +7643,7 @@ $6',
 	'right-codereview-set-status' => 'നാൾപ്പതിപ്പുകളുടെ സ്ഥിതിയിൽ മാറ്റം വരുത്തുക',
 	'right-codereview-signoff' => 'നാൾപ്പതിപ്പുകൾ അവസാനിപ്പിച്ചിറങ്ങുക',
 	'right-codereview-link-user' => 'രചയിതാക്കളെ വിക്കി ഉപയോക്താക്കളുമായി കണ്ണി ചേർക്കുക',
+	'right-codereview-associate' => 'നാൾപ്പതിപ്പ് ബന്ധങ്ങളുടെ കൈകാര്യം',
 	'specialpages-group-developer' => 'വികസന ഉപകരണങ്ങൾ',
 );
 
@@ -8066,7 +8085,9 @@ $4',
 	'codereview-email-body3' => 'Gebruiker "$1" heeft de status van versie $2 gewijzigd.
 
 Oude status: $3
-Nieuwe status: $4',
+Nieuwe status: $4
+
+Volledige URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Nieuwe opmerking toegevoegd en versiestatus gewijzigd',
 	'codereview-email-body4' => 'Gebruiker "$1" heeft de status van $2 gewijzigd.
 
@@ -8747,8 +8768,10 @@ $4',
 	'codereview-email-subj3' => '[$1 $2] - zmiana statusu wersji',
 	'codereview-email-body3' => 'Użytkownik „$1” zmienił status $2.
 
-Stary status – $3
-Nowy status – $4',
+Poprzedni status – $3
+Nowy status – $4
+
+Pełny adres URL – $5',
 	'codereview-email-subj4' => '[$1 $2] - dodano nowy komentarz i zmieniono status wersji',
 	'codereview-email-body4' => 'Użytkownik „$1” zmienił status $2.
 
@@ -8787,7 +8810,7 @@ $6',
 	'right-codereview-set-status' => 'Zmiana statusu wersji',
 	'right-codereview-signoff' => 'Autorytarnie zaakceptuj wersje',
 	'right-codereview-link-user' => 'Linkowanie autorów do ich kont na wiki',
-	'right-codereview-associate' => 'Dodawanie i usuwanie skojarzeń wersji',
+	'right-codereview-associate' => 'Zarządzanie powiązaniem wersji',
 	'specialpages-group-developer' => 'Narzędzia dewelopera',
 );
 
@@ -9834,10 +9857,12 @@ $4',
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Изменение состояния ревизии',
-	'codereview-email-body3' => 'Пользователь «$1» изменил состояние $1.
+	'codereview-email-body3' => 'Пользователь «$1» изменил состояние $2.
 
 Старое состояние: $3
-Новое состояние: $3',
+Новое состояние: $4
+
+полный URL-адрес: $5',
 	'codereview-email-subj4' => '[$1 $2]: Добавлен новый комментарий, изменилось состояние ревизии',
 	'codereview-email-body4' => 'Пользователь «$1» изменил состояние $2.
 
@@ -9876,6 +9901,7 @@ $6',
 	'right-codereview-set-status' => 'Изменение статуса ревизий',
 	'right-codereview-signoff' => 'подтверждение ревизий',
 	'right-codereview-link-user' => 'Связь авторов с учётными записями вики-проекта',
+	'right-codereview-associate' => 'управление ассоциациями ревизий',
 	'specialpages-group-developer' => 'Инструменты разработчика',
 );
 
@@ -10648,7 +10674,9 @@ $4',
 	'codereview-email-body3' => 'Uporabnik »$1« je spremenil stanje $2.
 
 Staro stanje: $3
-Novo stanje: $4',
+Novo stanje: $4
+
+Polni URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Dodana je bil nova pripomba in spremenjeno je bilo stanje redakcije',
 	'codereview-email-body4' => 'Uporabnik »$1« je spremenil stanje $2.
 
@@ -10687,6 +10715,7 @@ $6',
 	'right-codereview-set-status' => 'Spreminjanje stanj redakcij',
 	'right-codereview-signoff' => 'Odobritev redakcij',
 	'right-codereview-link-user' => 'Povezovanje avtorjev z wikiuporabniki',
+	'right-codereview-associate' => 'Upravljanje združitev redakcij',
 	'specialpages-group-developer' => 'Razvijalska orodja',
 );
 
@@ -11243,8 +11272,9 @@ $messages['te'] = array(
 	'code-field-user' => 'వ్యాఖ్యాత',
 	'code-field-message' => 'కమిట్ వ్యాఖ్య',
 	'code-field-status' => 'స్థితి',
+	'code-field-status-description' => 'స్థితి వివరణ',
 	'code-field-timestamp' => 'తేదీ',
-	'code-field-comments' => 'గమనికలు',
+	'code-field-comments' => 'వ్యాఖ్యలు',
 	'code-field-text' => 'గమనిక',
 	'code-rev-author' => 'రచయిత:',
 	'code-rev-date' => 'తేది:',
@@ -12377,7 +12407,7 @@ $messages['vep'] = array(
  */
 $messages['vi'] = array(
 	'code' => 'Duyệt mã',
-	'code-rev-title' => 'r$1 - Duyệt Mã',
+	'code-rev-title' => '$1 – Duyệt mã',
 	'code-comments' => 'Ghi chú',
 	'code-references' => 'Các phiên bản ngay sau',
 	'code-change-status' => "đã đổi '''trạng thái''' của phiên bản r$1",
@@ -12390,7 +12420,7 @@ $messages['vi'] = array(
 	'codereview-desc' => '[[Special:Code|Công cụ duyệt mã]] [[Special:RepoAdmin|hỗ trợ Subversion]]',
 	'code-no-repo' => 'Chưa thiết lập kho dữ liệu!',
 	'code-repo-not-found' => "Kho '''$1''' không tồn tại!",
-	'code-load-diff' => 'Đang tải khác biệt...',
+	'code-load-diff' => 'Đang tải khác biệt…',
 	'code-notes' => 'ghi chú gần đây',
 	'code-statuschanges' => 'thay đổi trạng thái',
 	'code-mycommits' => 'thay đổi của tôi',
@@ -12498,7 +12528,7 @@ $messages['vi'] = array(
 	'codereview-subtitle' => 'Dành cho $1',
 	'codereview-reply-link' => 'trả lời',
 	'codereview-email-subj' => '[$1] [r$2]: Tin nhắn mới',
-	'codereview-email-body' => 'Người dùng “$1” đã bình luận về r$3.
+	'codereview-email-body' => 'Người dùng "$1" đã bình luận về $3.
 
 URL đầy đủ: $2
 
@@ -12506,7 +12536,7 @@ Tin nhắn:
 
 $4',
 	'codereview-email-subj2' => '[$1] [r$2]: Các thay đổi tiếp theo',
-	'codereview-email-body2' => 'Thành viên "$1" đã thực hiện các thay đổi tiếp theo r$2.
+	'codereview-email-body2' => 'Người dùng "$1" đã thực hiện các thay đổi tiếp theo r$2.
 
 URL đầy đủ đến phiên bản được tiếp theo: $5
 
@@ -12516,10 +12546,12 @@ Tóm lược thay đổi:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Trạng thái thay đổi đã thay đổi',
-	'codereview-email-body3' => 'Người dùng “$1” đã thay đổi trạng thái của $2.
+	'codereview-email-body3' => 'Người dùng "$1" đã thay đổi trạng thái của $2.
 
 Trạng thái cũ: $3
-Trạng thái mới: $4',
+Trạng thái mới: $4
+
+URL đầy đủ: $5',
 	'codereview-email-subj4' => '[$1 $2]: Đã thêm bình luận mới và thay đổi trạng thái thay đổi',
 	'codereview-email-body4' => 'Người dùng “$1” đã thay đổi trạng thái $2.
 
@@ -12551,13 +12583,14 @@ $6',
 	'repoadmin-edit-sucess' => 'Kho dữ liệu “[[Special:Code/$1|$1]]” đã được sửa đổi thành công.',
 	'repoadmin-nav' => 'quản lý kho',
 	'right-repoadmin' => 'Quản lý các kho mã',
-	'right-codereview-use' => 'Sử dụng Special:Code',
+	'right-codereview-use' => 'Sử dụng Đặc biệt:Mã nguồn',
 	'right-codereview-add-tag' => 'Thêm thẻ mới vào phiên bản',
 	'right-codereview-remove-tag' => 'Dời thẻ khỏi phiên bản',
 	'right-codereview-post-comment' => 'Ghi chú về phiên bản',
 	'right-codereview-set-status' => 'Thay đổi trạng thái phiên bản',
 	'right-codereview-signoff' => 'Tán thành các thay đổi',
 	'right-codereview-link-user' => 'Liên kết tác giả mã nguồn đến thành viên wiki',
+	'right-codereview-associate' => 'Quản lý các liên kết giữa phiên bản',
 	'specialpages-group-developer' => 'Công cụ dành cho lập trình viên',
 );
 
