@@ -1024,7 +1024,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $tags
+	 * @param $tags Array
 	 * @return array
 	 */
 	protected function normalizeTags( $tags ) {
@@ -1036,13 +1036,15 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $tags
+	 * @param $tags Array
 	 * @return array
 	 */
 	protected function tagData( $tags ) {
 		$data = array();
 		foreach ( $tags as $tag ) {
-			if ( $tag == '' ) continue;
+			if ( $tag == '' ) {
+				continue;
+			}
 			$data[] = array(
 				'ct_repo_id' => $this->repoId,
 				'ct_rev_id'  => $this->id,
@@ -1052,23 +1054,21 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $tag
+	 * @param $tag String
 	 * @return bool
 	 */
 	public function normalizeTag( $tag ) {
-		global $wgContLang;
-		$lower = $wgContLang->lc( $tag );
-
 		$title = Title::newFromText( $tag );
-		if ( $title && $lower === $wgContLang->lc( $title->getPrefixedText() ) ) {
-			return $lower;
-		} else {
-			return false;
+		if ( $title ) {
+			global $wgContLang;
+			return $wgContLang->lc( $title->getDbKey() );
 		}
+
+		return false;
 	}
 
 	/**
-	 * @param  $tag
+	 * @param $tag String
 	 * @return  bool
 	 */
 	public function isValidTag( $tag ) {
