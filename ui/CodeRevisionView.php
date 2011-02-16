@@ -2,6 +2,9 @@
 
 // Special:Code/MediaWiki/40696
 class CodeRevisionView extends CodeView {
+
+	protected $showButtonsFormatReference = false, $showButtonsFormatSignoffs = false;
+
 	/**
 	 * @param string|CodeRepository $repo
 	 * @param string|CodeRevision $rev
@@ -456,13 +459,14 @@ class CodeRevisionView extends CodeView {
 	
 	/**
 	 * Format the sign-offs table
-	 * @param $signOffs Array
 	 * @param $showButtons bool Whether the buttons to strike and submit sign-offs should be shown
 	 * @return string HTML
 	 */
 	protected function formatSignoffs( $signOffs, $showButtons ) {
-		array_walk( $signOffs, array( $this, 'formatSignoffInline' ), $showButtons  );
-		$signoffs = implode( "\n", $signOffs );
+		$this->showButtonsFormatSignoffs = $showButtons;
+		$signoffs = implode( "\n",
+			array_map( array( $this, 'formatSignoffInline' ), $signOffs )
+		);
 
 		$header = '';
 		if ( $showButtons ) {
@@ -498,14 +502,11 @@ class CodeRevisionView extends CodeView {
 		return "<ul class='mw-codereview-changes'>$changes</ul>";
 	}
 
-	/**
-	 * @param $references Array
-	 * @param $showButtons Bool
-	 * @return string
-	 */
 	protected function formatReferences( $references, $showButtons ) {
-		array_walk( $references, array( $this, 'formatReferenceInline' ), $showButtons  );
-		$refs = implode( "\n", $references );
+		$this->showButtonsFormatReference = $showButtons;
+		$refs = implode( "\n",
+			array_map( array( $this, 'formatReferenceInline' ), $references )
+		);
 
 		$header = '';
 		if ( $showButtons ) {
@@ -522,10 +523,9 @@ class CodeRevisionView extends CodeView {
 	/**
 	 * Format a single sign-off row. Helper function for formatSignoffs()
 	 * @param $signoff CodeSignoff
-	 * @param $showButtons Bool
 	 * @return string HTML
 	 */
-	protected function formatSignoffInline( $signoff, $showButtons ) {
+	protected function formatSignoffInline( $signoff ) {
 		global $wgLang;
 		$user = $this->skin->userLink( $signoff->user, $signoff->userText );
 		$flag = htmlspecialchars( $signoff->flag );
@@ -540,7 +540,7 @@ class CodeRevisionView extends CodeView {
 		}
 
 		$ret = "<tr class='$class'>";
-		if ( $showButtons ) {
+		if ( $this->showButtonsFormatSignoffs ) {
 			$checkbox = Html::input( 'wpSignoffs[]', $signoff->getID(), 'checkbox' );
 			$ret .= "<td>$checkbox</td>";
 		}
@@ -602,7 +602,7 @@ class CodeRevisionView extends CodeView {
 		return "<li>$line</li>";
 	}
 
-	protected function formatReferenceInline( $row, $showButtons ) {
+	protected function formatReferenceInline( $row ) {
 		global $wgLang;
 		$rev = intval( $row->cr_id );
 		$repo = $this->mRepo->getName();
@@ -615,7 +615,7 @@ class CodeRevisionView extends CodeView {
 		$author = $this->authorLink( $row->cr_author );
 
 		$ret = "<tr class='$css'>";
-		if ( $showButtons ) {
+		if ( $this->showButtonsFormatReference ) {
 			$checkbox = Html::input( 'wpReferences[]', $rev, 'checkbox' );
 			$ret .= "<td>$checkbox</td>";
 		}
