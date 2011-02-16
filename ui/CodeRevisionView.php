@@ -52,11 +52,17 @@ class CodeRevisionView extends CodeView {
 		$this->mStrikeSignoffs = $wgRequest->getCheck( 'wpStrikeSignoffs' ) ?
 			$this->mSelectedSignoffs : array();
 
-		$this->mAddReference = $wgRequest->getCheck( 'wpAddReferenceSubmit' ) ?
-			$wgRequest->getArray( 'wpAddReference', array() ) : array();
+		$this->mAddReference = $wgRequest->getCheck( 'wpAddReferenceSubmit' )
+				? array_map( array( $this, 'ltrimIntval' ), $wgRequest->getArray( 'wpAddReference', array() ) )
+				: array();
 
 		$this->mRemoveReferences = $wgRequest->getCheck( 'wpRemoveReferences' ) ?
 			$wgRequest->getIntArray( 'wpReferences', array() ) : array();
+	}
+
+	private function ltrimIntval( $item ) {
+		$item = ltrim( $item, 'r' );
+		return intval( $item );
 	}
 
 	function execute() {

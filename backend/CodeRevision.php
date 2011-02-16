@@ -834,7 +834,6 @@ class CodeRevision {
 	public function addReferencesFrom( $revs ) {
 		$data = array();
 		foreach ( array_unique( (array)$revs ) as $rev ) {
-			$rev = intval( ltrim( $rev, 'r' ) );
 			if ( $rev > $this->getId() ) {
 				$data[] = array(
 					'cf_repo_id' => $this->getRepoId(),
@@ -863,7 +862,6 @@ class CodeRevision {
 	public function addReferencesTo( $revs ) {
 		$data = array();
 		foreach ( array_unique( (array)$revs ) as $rev ) {
-			$rev = intval( ltrim( $rev, 'r' ) );
 			if ( $rev < $this->getId() ) {
 				$data[] = array(
 					'cf_repo_id' => $this->getRepoId(),
