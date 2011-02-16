@@ -1550,7 +1550,9 @@ $4',
 	'codereview-email-body3' => 'Kemmet eo bet statud $2 gant an implijer "$1".
 
 Statud kozh : $3
-Stad nevez : $4',
+Stad nevez : $4
+
+URL klok : $5',
 	'codereview-email-subj4' => '[$1 $2]: Evezhiadenn nevez ouzhpennet, ha cheñchet statud ar sutmm',
 	'codereview-email-body4' => 'Kemmet eo bet statud $2 gant an implijer "$1".
 
@@ -1591,6 +1593,9 @@ $6',
 	'right-codereview-link-user' => "Liammañ an oberourien d'an implijerien wiki",
 	'right-codereview-associate' => "Ouzhpennañ/lemel ar c'henstroll adwelet",
 	'specialpages-group-developer' => 'Ostilhoù diorren',
+	'group-svnadmins' => 'Merourien SVN',
+	'group-svnadmins-member' => 'Merour SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Merourien SVN',
 );
 
 /** Bosnian (Bosanski)
@@ -1741,7 +1746,9 @@ $4',
 	'codereview-email-body3' => 'Korisnik "$1" je promijenio stanje od $2.
 
 Staro stanje: $3
-Novo stanje: $4',
+Novo stanje: $4
+
+Puni URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Dodan novi komentar i promijenjeno stanje revizije',
 	'codereview-email-body4' => 'Korisnik "$1"  je promijenio stanje od $2.
 
@@ -1781,12 +1788,16 @@ $6',
 	'right-codereview-signoff' => 'Završi izmjene revizija',
 	'right-codereview-link-user' => 'Poveži autore sa wiki korisnicima',
 	'specialpages-group-developer' => 'Razvojni alati',
+	'group-svnadmins' => 'SVN administratori',
+	'group-svnadmins-member' => 'SVN administrator',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN administratori',
 );
 
 /** Catalan (Català)
  * @author El libre
  * @author Loupeter
  * @author Paucabot
+ * @author SMP
  * @author Solde
  */
 $messages['ca'] = array(
@@ -1930,6 +1941,9 @@ $4',
 	'right-codereview-set-status' => "Canvia l'estat de les revisions",
 	'right-codereview-signoff' => 'Aprova revisions',
 	'specialpages-group-developer' => 'Eines de desenvolupador',
+	'group-svnadmins' => 'administradors SVN',
+	'group-svnadmins-member' => 'administrador SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administradors SVN',
 );
 
 /** Chechen (Нохчийн)
@@ -3973,7 +3987,9 @@ $4',
 	'codereview-email-body3' => 'L’utilisateur « $1 » a modifié l’état de $2. 
 
 Ancien état : $3
-Nouvel état : $4',
+Nouvel état : $4
+
+URL complète : $5',
 	'codereview-email-subj4' => '[$1 $2] : nouveau commentaire ajouté et état de la version changé',
 	'codereview-email-body4' => 'L’utilisateur « $1 » a modifié l’état de $2.
 
@@ -4012,7 +4028,11 @@ $6',
 	'right-codereview-set-status' => 'Changer l’état des révisions',
 	'right-codereview-signoff' => 'Approuver des révisions',
 	'right-codereview-link-user' => 'Lier les auteurs aux utilisateurs wiki',
+	'right-codereview-associate' => 'Gérer les associations de révisions',
 	'specialpages-group-developer' => 'Outils du développeur',
+	'group-svnadmins' => 'Administrateurs SVN',
+	'group-svnadmins-member' => 'administrateur SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administrateurs SVN',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -6175,10 +6195,12 @@ $4',
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: リビジョンの状態が変更されました',
-	'codereview-email-body3' => 'ユーザー$1が、$2の状態を変更しました。
+	'codereview-email-body3' => '利用者「$1」が、$2の状態を変更しました。
 
-もとの状態：$3
-新しい状態：$4',
+もとの状態: $3
+新しい状態: $4
+
+完全なURL: $5',
 	'codereview-email-subj4' => '[$1 $2]: 新しいコメントが追加され、リビジョンの状態が変更されました',
 	'codereview-email-body4' => 'ユーザー「$1」が、$2の状況を変更しました。
 
@@ -6217,7 +6239,11 @@ $6',
 	'right-codereview-set-status' => 'リビジョンの状態を変更する',
 	'right-codereview-signoff' => 'リビジョンでサインオフ',
 	'right-codereview-link-user' => '著者とウィキ利用者を対応付ける',
+	'right-codereview-associate' => '版のつながりを管理する',
 	'specialpages-group-developer' => '開発者用ツール',
+	'group-svnadmins' => 'SVN管理者',
+	'group-svnadmins-member' => 'SVN管理者',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN管理者',
 );
 
 /** Javanese (Basa Jawa)
@@ -7050,6 +7076,9 @@ $6',
 	'right-codereview-signoff' => 'Ännerunge fräiginn',
 	'right-codereview-link-user' => 'Auteure mat Wiki-Benotzer verbannen (verlinken)',
 	'specialpages-group-developer' => 'Handwierksgeschir fir Entwéckler (Programméierer)',
+	'group-svnadmins' => 'SVN-Administrateuren',
+	'group-svnadmins-member' => 'SVN-Administrateur',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administrateuren',
 );
 
 /** Lingua Franca Nova (Lingua Franca Nova)
@@ -8627,6 +8656,7 @@ $messages['pfl'] = array(
  * @author Derbeth
  * @author Equadus
  * @author Leinad
+ * @author Marcin Łukasz Kiejzik
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -8754,7 +8784,7 @@ $messages['pl'] = array(
 	'codereview-email-subj' => '[$1 $2] - dodano nowy komentarz',
 	'codereview-email-body' => 'Użytkownik „$1” dodał komentarz w $3.
 
-Pełny URL – $2
+Pełny adres URL – $2
 
 Komentarz:
 
@@ -8784,7 +8814,7 @@ Nowy status – $4
 
 Użytkownik „$1” dodał również komentarz w $2.
 
-Pełny URL – $5
+Pełny adres URL – $5
 
 Komentarz:
 
@@ -8816,6 +8846,9 @@ $6',
 	'right-codereview-link-user' => 'Linkowanie autorów do ich kont na wiki',
 	'right-codereview-associate' => 'Zarządzanie powiązaniem wersji',
 	'specialpages-group-developer' => 'Narzędzia dewelopera',
+	'group-svnadmins' => 'Administratorzy SVN',
+	'group-svnadmins-member' => 'Administrator SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administratorzy SVN',
 );
 
 /** Piedmontese (Piemontèis)
@@ -12164,7 +12197,9 @@ $4',
 	'codereview-email-body3' => 'Користувач "$1" змінив статус $2.
 
 Старий статус: $3
-Новий статус: $4',
+Новий статус: $4
+
+URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Додано новий коментар, статус редакції змінено',
 	'codereview-email-body4' => 'Користувач "$1" змінив статус $2.
 
@@ -12833,6 +12868,7 @@ $3',
  * @author PhiLiP
  * @author Wmr89502270
  * @author Xiaomingyan
+ * @author 阿pp
  */
 $messages['zh-hans'] = array(
 	'code' => '查看代码',
@@ -12975,10 +13011,12 @@ URL链接：$3
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]： 修订状态改变',
-	'codereview-email-body3' => '$2的状态更改用户"$1"。
+	'codereview-email-body3' => '用户"$1"更改"$2"的状态。
 
-旧状态：$3
-新局面：$4',
+之前：$3
+目前：$4
+
+完整URL：$5',
 	'codereview-email-subj4' => '[$1 $2]： 添加，新的注释和修订状态改变',
 	'codereview-email-body4' => '$2的状态更改用户"$1"。
 
@@ -13017,7 +13055,11 @@ $6',
 	'right-codereview-set-status' => '修改修订状态',
 	'right-codereview-signoff' => '登录修订',
 	'right-codereview-link-user' => '将作者链接到维基用户',
+	'right-codereview-associate' => '管理版本关联',
 	'specialpages-group-developer' => '开发者工具',
+	'group-svnadmins' => 'SVN 管理员',
+	'group-svnadmins-member' => 'SVN 管理员',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN 管理员',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
