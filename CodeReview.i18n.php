@@ -210,6 +210,10 @@ $6',
 	'right-codereview-associate' => 'Manage revision associations',
 
 	'specialpages-group-developer' => 'Developer tools',
+
+	'group-svnadmins' => 'SVN admins',
+	'group-svnadmins-member' => 'SVN admin',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN admins',
 );
 
 /** Message documentation (Message documentation)
