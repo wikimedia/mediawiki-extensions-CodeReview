@@ -107,7 +107,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 
 		// Add any comments
 		$commentAdded = false;
-		$commentId = 0;
+		$commentId = '';
 		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment' ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
 			$commentId = $this->mRev->saveComment( $commentText, $review, $parent );
