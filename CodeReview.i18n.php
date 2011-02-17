@@ -2107,7 +2107,9 @@ $4',
 	'codereview-email-body3' => 'Uživatel „$1“ změnil stav $2.
 
 Předchozí stav: $3
-Nový stav: $4',
+Nový stav: $4
+
+Plné URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Přidán nový komentář a změnil se stav revize',
 	'codereview-email-body4' => 'Uživatel „$1“ změnil stav $2.
 
@@ -2146,7 +2148,11 @@ $6',
 	'right-codereview-set-status' => 'Přepínání stavu revizí',
 	'right-codereview-signoff' => 'Schvalování revizí',
 	'right-codereview-link-user' => 'Správa vazeb autorů s wikiuživateli',
+	'right-codereview-associate' => 'Správa vztahů mezi revizemi',
 	'specialpages-group-developer' => 'Vývojářské nástroje',
+	'group-svnadmins' => 'Správci SVN',
+	'group-svnadmins-member' => 'správce SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Správci SVN',
 );
 
 /** Danish (Dansk)
@@ -5610,7 +5616,9 @@ $4',
 	'codereview-email-body3' => 'Le usator "$1" cambiava le stato de $2.
 
 Previe stato: $3
-Nove stato: $4',
+Nove stato: $4
+
+URL complete: $5',
 	'codereview-email-subj4' => '[$1 $2]: Nove commento addite, e stato del version cambiate',
 	'codereview-email-body4' => 'Le usator "$1" cambiava le stato de $2.
 
@@ -5649,7 +5657,11 @@ $6',
 	'right-codereview-set-status' => 'Cambiar le stato de versiones',
 	'right-codereview-signoff' => 'Approbar versiones',
 	'right-codereview-link-user' => 'Ligar autores a usatores del wiki',
+	'right-codereview-associate' => 'Gerer associationes de versiones',
 	'specialpages-group-developer' => 'Instrumentos pro disveloppatores',
+	'group-svnadmins' => 'Administratores SVN',
+	'group-svnadmins-member' => 'Administrator SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administratores SVN',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -9240,7 +9252,9 @@ $4',
 	'codereview-email-body3' => 'O utilizador "$1" alterou o estado da revisão $2.
 
 Estado Antigo: $3
-Estado Novo: $4',
+Estado Novo: $4
+
+URL Completa: $5',
 	'codereview-email-subj4' => '[$1 $2]: Comentário adicionado e estado da revisão alterado',
 	'codereview-email-body4' => 'O utilizador "$1" alterou o estado da revisão $2.
 
@@ -9279,7 +9293,11 @@ $6',
 	'right-codereview-set-status' => 'Alterar estado de revisões',
 	'right-codereview-signoff' => 'Aprovação de revisões',
 	'right-codereview-link-user' => 'Associar autores a utilizadores wiki',
+	'right-codereview-associate' => 'Administrar a associação de revisões',
 	'specialpages-group-developer' => 'Ferramentas de desenvolvimento',
+	'group-svnadmins' => 'Administradores do SVN',
+	'group-svnadmins-member' => 'Administrador do SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
@@ -9429,10 +9447,12 @@ Resumo da efetivação:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Alterado o estada da revisão',
-	'codereview-email-body3' => 'O usuário "$1" alterou o estado de $2
+	'codereview-email-body3' => 'O usuário "$1" alterou o estado da revisão $2.
 
-Estado anterior: $3
-Estado atual: $4',
+Estado Antigo: $3
+Estado Novo: $4
+
+URL Completa: $5',
 	'codereview-email-subj4' => '[$1 $2]: Adicionado novo comentário e alterado o estado da revisão',
 	'codereview-email-body4' => 'O usuário "$1" alterou o estado de $2.
 
@@ -9471,7 +9491,11 @@ $6',
 	'right-codereview-set-status' => 'Alterar estado de revisões',
 	'right-codereview-signoff' => 'Aprovação de revisões',
 	'right-codereview-link-user' => 'Associar autores a utilizadores de wiki',
+	'right-codereview-associate' => 'Administrar a associação de revisões',
 	'specialpages-group-developer' => 'Ferramentas de desenvolvimento',
+	'group-svnadmins' => 'Administradores do SVN',
+	'group-svnadmins-member' => 'Administrador do SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
 /** Romanian (Română)
