@@ -1787,6 +1787,7 @@ $6',
 	'right-codereview-set-status' => 'Promjena stanja revizija',
 	'right-codereview-signoff' => 'Završi izmjene revizija',
 	'right-codereview-link-user' => 'Poveži autore sa wiki korisnicima',
+	'right-codereview-associate' => 'Upravljanje pridruženim revizijama',
 	'specialpages-group-developer' => 'Razvojni alati',
 	'group-svnadmins' => 'SVN administratori',
 	'group-svnadmins-member' => 'SVN administrator',
@@ -9011,7 +9012,9 @@ $4',
 	'codereview-email-body3' => 'L\'utent "$1" a l\'ha cangià lë stat ëd $2.
 
 Stat Vej: $3
-Stat Neuv: $4',
+Stat Neuv: $4
+
+Anliura completa: $5',
 	'codereview-email-subj4' => '[$1 $2]: Giontà coment neuv, e cangià stat ëd la revision',
 	'codereview-email-body4' => 'L\'utent "$1" a l\'ha cangià lë stat ëd $2.
 
@@ -9050,7 +9053,11 @@ $6',
 	'right-codereview-set-status' => 'Cangia stat ëd revision',
 	'right-codereview-signoff' => 'Conclud le revision',
 	'right-codereview-link-user' => 'Colega autor a utent wiki',
+	'right-codereview-associate' => 'Gestiss assossiassion ëd revision',
 	'specialpages-group-developer' => 'Utiss dël dësvlupador',
+	'group-svnadmins' => 'Aministrator SVN',
+	'group-svnadmins-member' => 'Aministrator SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Aministrator SVN',
 );
 
 /** Pontic (Ποντιακά)
