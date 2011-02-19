@@ -4364,7 +4364,9 @@ $4',
 	'codereview-email-body3' => 'O usuario "$1" cambiou o estado de $2.
 
 Estado vello: $3
-Estado novo: $4',
+Estado novo: $4
+
+URL completo: $5',
 	'codereview-email-subj4' => '[$1 $2]: engadido un novo comentario e cambiado o estado da revisión',
 	'codereview-email-body4' => 'O usuario "$1" cambiou o estado de $2.
 
@@ -4403,7 +4405,11 @@ $6',
 	'right-codereview-set-status' => 'Cambiar o estado das revisións',
 	'right-codereview-signoff' => 'Aprobar revisións',
 	'right-codereview-link-user' => 'Ligar autores a usuarios do wiki',
+	'right-codereview-associate' => 'Xestionar as asociacións de revisións',
 	'specialpages-group-developer' => 'Ferramentas dos desenvolvedores',
+	'group-svnadmins' => 'Administradores do SVN',
+	'group-svnadmins-member' => 'Administrador do SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -6866,7 +6872,9 @@ $4',
 	'codereview-email-body3' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät von de Version $2 der Stattus verändert.
 
 Dä wohr: $3
-un es jäz: $4',
+un es jäz: $4
+
+Dä kumplätte <i lang="en">URL</i> es: $5',
 	'codereview-email-subj4' => '[$1 $2]: Neu Aanmerkung dobei jedonn, un der Stattus verändert',
 	'codereview-email-body4' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät von de Version $2 der Stattus verändert.
 
@@ -6906,7 +6914,11 @@ $6',
 	'right-codereview-set-status' => 'Dä Stattus vun ene Version ändere',
 	'right-codereview-signoff' => 'Änderonge jodheiße',
 	'right-codereview-link-user' => 'Schriiver op Metmaacher em Wiki verlinke',
+	'right-codereview-associate' => 'Verbendunge zwesche Projrammversione verwallde',
 	'specialpages-group-developer' => 'Werkzüch fö Entwecklere',
+	'group-svnadmins' => 'Verwallder vum SVN',
+	'group-svnadmins-member' => 'Verwallder vum SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Verwallder vum SVN',
 );
 
 /** Kurdish (Latin) (Kurdî (Latin))
