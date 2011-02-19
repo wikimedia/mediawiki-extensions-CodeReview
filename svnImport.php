@@ -156,17 +156,17 @@ class SvnImport extends Maintenance {
 				if ( is_integer( $diff ) ) {
 					$msg .= "Skipped: ";
 					switch ($diff) {
-						case DIFFRESULT_BadRevision:
+						case CodeRepository::DIFFRESULT_BadRevision:
 							$msg .= "Bad revision";
 							break;
-						case DIFFRESULT_NothingToCompare:
+						case CodeRepository::DIFFRESULT_NothingToCompare:
 							$msg .= "Nothing to compare";
 							break;
-						case DIFFRESULT_TooManyPaths:
+						case CodeRepository::DIFFRESULT_TooManyPaths:
 							$msg .= "Too many paths (\$wgCodeReviewMaxDiffPaths = " 
 							      . $wgCodeReviewMaxDiffPaths . ")";
 							break;
-						case DIFFRESULT_NoDataReturned:
+						case CodeRepository::DIFFRESULT_NoDataReturned:
 							$msg .= "No data returned - no diff data, or connection lost.";
 							break;
 						default:

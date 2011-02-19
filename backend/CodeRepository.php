@@ -5,6 +5,12 @@
  */
 class CodeRepository {
 
+	const DIFFRESULT_BadRevision = 0;
+	const DIFFRESULT_NothingToCompare = 1;
+	const DIFFRESULT_TooManyPaths = 2;
+	const DIFFRESULT_NoDataReturned = 3;
+	const DIFFRESULT_NotInCache = 4;
+
 	/**
 	 * Local cache of Wiki user -> SVN user mappings
 	 * @var Array
@@ -264,16 +270,16 @@ class CodeRepository {
 		// Check that a valid revision was specified.
 		$revision = $this->getRevision( $rev );
 		if ( $revision == null ) {
-			$data = DIFFRESULT_BadRevision;
+			$data = self::DIFFRESULT_BadRevision;
 		} else {
 			// Check that there is at least one, and at most $wgCodeReviewMaxDiffPaths
 			// paths changed in this revision.
 
 			$paths = $revision->getModifiedPaths();
 			if ( !$paths->numRows() ) {
-				$data = DIFFRESULT_NothingToCompare;
+				$data = self::DIFFRESULT_NothingToCompare;
 			} elseif ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() > $wgCodeReviewMaxDiffPaths ) {
-				$data = DIFFRESULT_TooManyPaths;
+				$data = self::DIFFRESULT_TooManyPaths;
 			}
 		}
 	
@@ -323,7 +329,7 @@ class CodeRepository {
 			// If the calling code is forcing a cache check, report that it wasn't
 			// in the cache.
 			if ( $useCache === 'cached' ) {
-				$data = DIFFRESULT_NotInCache;
+				$data = self::DIFFRESULT_NotInCache;
 
 			// Otherwise, retrieve the diff using SubversionAdaptor.
 			} else {
@@ -334,7 +340,7 @@ class CodeRepository {
 				// TODO: Currently we can't tell the difference between an SVN/connection
 				//		 failure and an empty diff.  See if we can remedy this!
 				if ($data == "") {
-					$data = DIFFRESULT_NoDataReturned;
+					$data = self::DIFFRESULT_NoDataReturned;
 				} else {
 					// Otherwise, store the resulting diff to both the temporary cache and
 					// permanent DB storage.
