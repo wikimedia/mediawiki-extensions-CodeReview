@@ -81,7 +81,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		switch( $name ) {
 		case 'cc_rev_id':
 			return $this->mView->skin->link(
-				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-comments' ),
+				SpecialPage::getSafeTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-comments' ),
 				htmlspecialchars( $value ) );
 		case 'cr_status':
 			return $this->mView->skin->link(
