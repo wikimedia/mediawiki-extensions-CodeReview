@@ -2713,7 +2713,9 @@ $4',
 	'codereview-email-body3' => 'Wužywaŕ "$1" jo změnił status wersije  $2.
 
 Stary status: $3
-Nowy status: $4',
+Nowy status: $4
+
+Dopołny URL: $5',
 	'codereview-email-subj4' => '[$1 $2]: Nowy komentar pśidany a status wersije změnjony',
 	'code-stats' => 'statistiki',
 	'code-stats-header' => 'Repozitoriumowa statistika za $1',
@@ -2739,6 +2741,9 @@ Nowy status: $4',
 	'right-codereview-set-status' => 'Status rewizijow změniś',
 	'right-codereview-link-user' => 'Awtorow z wikijowymi wužywarjami zwězaś',
 	'specialpages-group-developer' => 'Rědy wuwiwarjow',
+	'group-svnadmins' => 'SVN-administratory',
+	'group-svnadmins-member' => 'SVN-administrator',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-administratory',
 );
 
 /** Ewe (Eʋegbe)
@@ -3025,7 +3030,9 @@ $4',
 	'codereview-email-body3' => 'Uzanto $1 ŝanĝis la statuson de $2.
 
 Malnova statuso: $3
-Nova statuso: $4',
+Nova statuso: $4
+
+Plena URL-o: $5',
 	'codereview-email-body4' => 'Uzanto "$1" ŝanĝis la statuson de $2.
 
 Malnova statuso: $3
@@ -3063,6 +3070,9 @@ $6',
 	'right-codereview-set-status' => 'Ŝanĝi statuson de versioj',
 	'right-codereview-link-user' => 'Ligi aŭtorojn al viki-uzantoj',
 	'specialpages-group-developer' => 'Disvolvistaj iloj',
+	'group-svnadmins' => 'SVN-administrantoj',
+	'group-svnadmins-member' => 'SVN-administranto',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-administrantoj',
 );
 
 /** Spanish (Español)
@@ -8658,18 +8668,31 @@ $messages['pdc'] = array(
 	'code-references' => 'Neegschte Versione',
 	'code-change-removed' => 'gelöscht:',
 	'code-change-added' => 'dezu geduh:',
+	'code-authors' => 'Schreiwer',
 	'code-field-author' => 'Schreiwer',
+	'code-field-comments' => 'Aamaerickinge',
 	'code-rev-author' => 'Schreiwer',
 	'code-rev-message' => 'Aamaericking:',
+	'code-rev-modified-a' => 'dezu geduh',
 	'code-rev-modified-d' => 'gelöscht',
 	'code-rev-modified-m' => 'gennert',
+	'code-rev-comment-by' => 'Aamaericking vun $1',
 	'code-rev-comment-preview' => 'Aagucke',
 	'code-rev-inline-preview' => 'Aagucke:',
 	'code-status-new' => 'nei',
 	'code-status-ok' => 'OK',
+	'code-status-old' => 'ald',
+	'code-signoff-field-user' => 'Yuuser',
+	'code-revfilter-cr_author' => 'Schreiwer = $1',
 	'codereview-subtitle' => 'Fer $1',
 	'repoadmin-new-button' => 'Schtaerte',
+	'repoadmin-edit-path' => 'Paad zum Repository:',
+	'repoadmin-edit-bug' => 'Paad zu Bugzilla:',
+	'repoadmin-edit-view' => 'Paad zu ViewVC:',
 	'repoadmin-edit-button' => 'OK',
+	'group-svnadmins' => 'SVN-Verwalter',
+	'group-svnadmins-member' => 'SVN-Verwalter',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-Verwalter',
 );
 
 /** Pälzisch (Pälzisch)
