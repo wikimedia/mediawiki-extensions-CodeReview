@@ -2371,7 +2371,7 @@ $messages['de'] = array(
 	'code-batch-status' => 'Änderungsstatus:',
 	'code-batch-tags' => 'Tags ändern:',
 	'codereview-batch-title' => 'Alle ausgewählten Revisionen ändern',
-	'codereview-batch-submit' => 'Übertragen',
+	'codereview-batch-submit' => 'Speichern',
 	'code-releasenotes' => 'Protokoll der Änderungen',
 	'code-release-legend' => 'Protokoll der Änderungen erzeugen',
 	'code-release-startrev' => 'Startrevision:',
@@ -2443,6 +2443,9 @@ $6',
 	'right-codereview-link-user' => 'Autoren auf Wiki-Benutzer verlinken',
 	'right-codereview-associate' => 'Revisionsverknüpfung hinzufügen/ entfernen',
 	'specialpages-group-developer' => 'Entwicklerwerkzeuge',
+	'group-svnadmins' => 'SVN-Administratoren',
+	'group-svnadmins-member' => 'SVN-Administrator',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administratoren',
 );
 
 /** Zazaki (Zazaki)
