@@ -8115,7 +8115,7 @@ De gegevens kunnen uit een cache komen.',
 	'code-signoff-flag-inspected' => 'Onderzocht',
 	'code-signoff-flag-tested' => 'Getest',
 	'code-signoff-field-user' => 'Gebruiker',
-	'code-signoff-field-flag' => 'Vlag',
+	'code-signoff-field-flag' => 'Markering',
 	'code-signoff-field-date' => 'Datum',
 	'code-signoff-struckdate' => '$1 (heeft $2 doorgehaald)',
 	'code-pathsearch-legend' => 'Op pad versies in deze repository zoeken',
@@ -8201,6 +8201,9 @@ $6',
 	'right-codereview-link-user' => 'Auteurs aan wikigebruikers koppelen',
 	'right-codereview-associate' => 'Koppeling toevoegen/verwijderen',
 	'specialpages-group-developer' => 'Hulpmiddelen voor ontwikkelaars',
+	'group-svnadmins' => 'SVN-beheerders',
+	'group-svnadmins-member' => 'SVN-beheerder',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-beheerders',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
