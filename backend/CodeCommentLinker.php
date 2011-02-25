@@ -2,6 +2,16 @@
 
 abstract class CodeCommentLinker {
 
+	/**
+	 * @var Skin
+	 */
+	protected $skin;
+
+	/**
+	 * @var CodeRepository
+	 */
+	protected $mRepo;
+
 	function __construct( $repo ) {
 		global $wgUser;
 		$this->skin = $wgUser->getSkin();
