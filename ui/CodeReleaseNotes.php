@@ -138,7 +138,7 @@ class CodeReleaseNotes extends CodeView {
 	// Quick relevance tests (these *should* be over-inclusive a little if anything)
 	private function isRelevant( $summary, $whole = true ) {
 		# Fixed a bug? Mentioned a config var?
-		if ( preg_match( '/\b(bug #?(\d+)|\$[we]g[0-9a-z]{3,50})\b/i', $summary ) ) {
+		if ( preg_match( '/\b(bug ?#?(\d+)|\$[we]g[0-9a-z]{3,50})\b/i', $summary ) ) {
 			return true;
 		}
 		# Sanity check: summary cannot be *too* short to be useful
