@@ -135,10 +135,20 @@ class CodeReleaseNotes extends CodeView {
 		return $summary;
 	}
 
-	// Quick relevance tests (these *should* be over-inclusive a little if anything)
+	/**
+	 * Quick relevance tests (these *should* be over-inclusive a little if anything)
+	 *
+	 * @param  $summary
+	 * @param bool $whole
+	 * @return bool|int
+	 */
 	private function isRelevant( $summary, $whole = true ) {
-		# Fixed a bug? Mentioned a config var?
-		if ( preg_match( '/\b(bug ?#?(\d+)|\$[we]g[0-9a-z]{3,50})\b/i', $summary ) ) {
+		# Mentioned a bug?
+		if ( preg_match( CodeRevision::BugReference, $summary) ) {
+			return true;
+		}
+		#Mentioned a config var?
+		if ( preg_match( '/\b\$[we]g[0-9a-z]{3,50}\b/i', $summary ) ) {
 			return true;
 		}
 		# Sanity check: summary cannot be *too* short to be useful

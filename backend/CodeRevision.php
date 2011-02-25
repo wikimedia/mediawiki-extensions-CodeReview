@@ -3,6 +3,14 @@
 class CodeRevision {
 
 	/**
+	 * Regex to match bug mentions in comments, commit summaries, etc
+	 *
+	 * Examples:
+	 * bug 1234, bug1234, bug #1234, bug#1234
+	 */
+	const BugReference = '/\bbug ?#?(\d+)\b/';
+
+	/**
 	 * @var CodeRepository
 	 */
 	protected $repo;
@@ -476,7 +484,7 @@ class CodeRevision {
 		// Update bug references table...
 		$affectedBugs = array();
 		$m = array();
-		if ( preg_match_all( '/\bbug ?#?(\d+)\b/', $this->message, $m ) ) {
+		if ( preg_match_all( self::BugReference, $this->message, $m ) ) {
 			$data = array();
 			foreach ( $m[1] as $bug ) {
 				$data[] = array(
