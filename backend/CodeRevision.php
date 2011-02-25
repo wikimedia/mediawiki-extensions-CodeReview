@@ -476,7 +476,7 @@ class CodeRevision {
 		// Update bug references table...
 		$affectedBugs = array();
 		$m = array();
-		if ( preg_match_all( '/\bbug (\d+)\b/', $this->message, $m ) ) {
+		if ( preg_match_all( '/\bbug #?(\d+)\b/', $this->message, $m ) ) {
 			$data = array();
 			foreach ( $m[1] as $bug ) {
 				$data[] = array(
