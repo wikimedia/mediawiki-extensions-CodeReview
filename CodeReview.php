@@ -234,6 +234,9 @@ function efCodeReviewSchemaUpdates( $updater ) {
 
 		$updater->addExtensionUpdate( array( 'addIndex', 'code_comment', 'cc_author',
 			"$base/archives/code_comment_author-index.sql", true ) );
+
+		$updater->addExtensionUpdate( array( 'addIndex', 'code_prop_changes', 'cc_author',
+			"$base/archives/code_prop_changes_author-index.sql", true ) );
 		break;
 	case 'sqlite':
 		$updater->addNewExtension( 'CodeReview', "$base/codereview.sql" );

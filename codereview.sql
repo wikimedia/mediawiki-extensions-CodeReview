@@ -221,6 +221,7 @@ CREATE TABLE /*_*/code_prop_changes (
 
 CREATE INDEX /*i*/cpc_repo_rev_time ON /*_*/code_prop_changes (cpc_repo_id, cpc_rev_id, cpc_timestamp);
 CREATE INDEX /*i*/cpc_repo_time ON /*_*/code_prop_changes (cpc_repo_id, cpc_timestamp);
+CREATE INDEX /*i*/cpc_author ON /*_*/code_prop_changes (cpc_repo_id, cpc_user_text, cpc_timestamp);
 
 CREATE TABLE /*_*/code_signoffs (
   -- Repository ID and revision ID
