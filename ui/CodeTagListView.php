@@ -2,9 +2,8 @@
 
 // Special:Code/MediaWiki/tag
 class CodeTagListView extends CodeView {
-	function __construct( $repoName ) {
-		parent::__construct();
-		$this->mRepo = CodeRepository::newFromName( $repoName );
+	function __construct( $repo ) {
+		parent::__construct( $repo );
 	}
 
 	function execute() {

@@ -1,10 +1,9 @@
 <?php
 
 class CodeReleaseNotes extends CodeView {
-	function __construct( $repoName ) {
+	function __construct( $repo ) {
 		global $wgRequest, $IP;
-		parent::__construct( $repoName );
-		$this->mRepo = CodeRepository::newFromName( $repoName );
+		parent::__construct( $repo );
 		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
 		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
 			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path

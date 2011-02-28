@@ -1,8 +1,8 @@
 <?php
 
 class CodeRevisionTagView extends CodeRevisionListView {
-	function __construct( $repoName, $tag ) {
-		parent::__construct( $repoName );
+	function __construct( $repo, $tag ) {
+		parent::__construct( $repo );
 		$this->mTag = $tag;
 	}
 

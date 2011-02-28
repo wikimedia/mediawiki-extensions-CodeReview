@@ -1,8 +1,8 @@
 <?php
 
 class CodeRevisionAuthorView extends CodeRevisionListView {
-	function __construct( $repoName, $author ) {
-		parent::__construct( $repoName );
+	function __construct( $repo, $author ) {
+		parent::__construct( $repo );
 		$this->mAuthor = $author;
 		$this->mUser = $this->mRepo->authorWikiUser( $author );
 		$this->mAppliedFilter = wfMsg( 'code-revfilter-cr_author', $author );

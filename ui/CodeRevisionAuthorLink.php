@@ -3,9 +3,9 @@
 // Special:Code/MediaWiki/author/johndoe/link
 
 class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
-	function __construct( $repoName, $author ) {
+	function __construct( $repo, $author ) {
 		global $wgRequest;
-		parent::__construct( $repoName, $author );
+		parent::__construct( $repo, $author );
 		$this->mTarget = $wgRequest->getVal( 'linktouser' );
 	}
 

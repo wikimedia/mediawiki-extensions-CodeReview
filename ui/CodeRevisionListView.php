@@ -12,11 +12,9 @@ class CodeRevisionListView extends CodeView {
 	 * @param $repo CodeRepository|String
 	 */
 	function __construct( $repo ) {
+		parent::__construct( $repo );
 		global $wgRequest;
-		parent::__construct();
-		$this->mRepo = ( $repo instanceof CodeRepository )
-				? $repo
-				: CodeRepository::newFromName( $repo );
+
 		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
 		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
 			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path

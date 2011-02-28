@@ -9,7 +9,11 @@ abstract class CodeView {
 	 */
 	var $mRepo;
 
-	function __construct() {
+	function __construct( $repo ) {
+		$this->mRepo = ( $repo instanceof CodeRepository )
+			? $repo
+			: CodeRepository::newFromName( $repo );
+
 		global $wgUser;
 		$this->skin = $wgUser->getSkin();
 	}

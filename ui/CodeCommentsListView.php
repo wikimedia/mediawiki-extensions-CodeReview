@@ -5,11 +5,7 @@ class CodeCommentsListView extends CodeView {
 	public $mRepo;
 
 	function __construct( $repo ) {
-		parent::__construct();
-
-		$this->mRepo = ( $repo instanceof CodeRepository )
-			? $repo
-			: CodeRepository::newFromName( $repo );
+		parent::__construct( $repo );
 
 		global $wgRequest;
 		$this->mAuthor = $wgRequest->getText( 'author' );

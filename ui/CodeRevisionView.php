@@ -12,11 +12,8 @@ class CodeRevisionView extends CodeView {
 	 *
 	 */
 	function __construct( $repo, $rev, $replyTarget = null ) {
+		parent::__construct( $repo );
 		global $wgRequest;
-		parent::__construct();
-		$this->mRepo = ( $repo instanceof CodeRepository )
-			? $repo
-			: CodeRepository::newFromName( $repo );
 
 		if ( $rev instanceof CodeRevision ) {
 			$this->mRevId = $rev->getId();
