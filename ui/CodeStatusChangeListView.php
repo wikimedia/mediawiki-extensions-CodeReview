@@ -4,9 +4,14 @@
 class CodeStatusChangeListView extends CodeView {
 	public $mRepo;
 
-	function __construct( $repoName ) {
+	function __construct( $repo ) {
 		parent::__construct();
-		$this->mRepo = CodeRepository::newFromName( $repoName );
+		$this->mRepo = ( $repo instanceof CodeRepository )
+			? $repo
+			: CodeRepository::newFromName( $repo );
+
+		global $wgRequest;
+		$this->mAuthor = $wgRequest->getText( 'author' );
 	}
 
 	function execute() {
@@ -41,7 +46,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 	function getDefaultSort() { return 'cpc_timestamp'; }
 
 	function getQueryInfo() {
-		return array(
+		$query = array(
 			'tables' => array( 'code_prop_changes', 'code_rev' ),
 			'fields' => array_keys( $this->getFieldNames() ),
 			'conds' => array( 'cpc_repo_id' => $this->mRepo->getId(), 'cpc_attrib' => 'status' ),
@@ -49,6 +54,12 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 				'code_rev' => array( 'LEFT JOIN', 'cpc_repo_id = cr_repo_id AND cpc_rev_id = cr_id' )
 			)
 		);
+
+		if ( $this->mView->mAuthor ) {
+			$query['conds']['cpc_user_text'] = $this->mView->mAuthor;
+		}
+
+		return $query;
 	}
 
 	function getFieldNames() {

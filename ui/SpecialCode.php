@@ -112,11 +112,14 @@ class SpecialCode extends SpecialPage {
 					break;
 				}
 			case 4:
-				if ( $params[1] == 'author' && $params[3] == 'link' ) {
+				if ( $params[1] === 'author' && $params[3] === 'link' ) {
 					$view = new CodeRevisionAuthorLink( $params[0], $params[2] );
 					break;
 				} elseif ( $params[1] === 'comments' ) {
 					$view = new CodeCommentsAuthorListView( $params[0], $params[3]  );
+					break;
+				} elseif ( $params[1] === 'status' ) {
+					$view = new CodeStatusChangeAuthorListView( $params[0], $params[3] );
 					break;
 				}
 			default:
