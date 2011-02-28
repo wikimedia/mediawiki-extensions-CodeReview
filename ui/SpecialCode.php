@@ -118,7 +118,7 @@ class SpecialCode extends SpecialPage {
 				} elseif ( $params[1] === 'comments' ) {
 					$view = new CodeCommentsAuthorListView( $params[0], $params[3]  );
 					break;
-				} elseif ( $params[1] === 'status' ) {
+				} elseif ( $params[1] === 'statuschanges' ) {
 					$view = new CodeStatusChangeAuthorListView( $params[0], $params[3] );
 					break;
 				}
