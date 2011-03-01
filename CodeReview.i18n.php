@@ -1248,6 +1248,9 @@ $6',
 	'right-codereview-link-user' => 'Даданьне да аўтараў спасылак на рахункі ўдзельнікаў вікі',
 	'right-codereview-associate' => 'кіраваньне сувязямі вэрсіяў',
 	'specialpages-group-developer' => 'Інструмэнты распрацоўшчыка',
+	'group-svnadmins' => 'Адміністратары SVN',
+	'group-svnadmins-member' => 'Адміністратар SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Адміністратары SVN',
 );
 
 /** Bulgarian (Български)
@@ -2897,6 +2900,7 @@ $4',
 	'right-codereview-set-status' => 'Αλλαγή κατάστασης αναθεωρήσεων',
 	'right-codereview-link-user' => 'Σύνδεση συγγραφέων με χρήστες wiki',
 	'specialpages-group-developer' => 'Εργαλεία προγραμματιστών',
+	'group-svnadmins' => 'διαχειριστές SVN',
 );
 
 /** Esperanto (Esperanto)
@@ -4719,6 +4723,9 @@ $6',
 	'right-codereview-link-user' => 'Autore uf Wiki-Benutzer vergleiche',
 	'right-codereview-associate' => 'Verchnipfig zuefiege/uuseneh',
 	'specialpages-group-developer' => 'Entwicklerwärchzyyg',
+	'group-svnadmins' => 'SVN-Adminischtratore',
+	'group-svnadmins-member' => 'SVN-Adminischtrator',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-Adminischtratore',
 );
 
 /** Hausa (هَوُسَ) */
@@ -5322,6 +5329,9 @@ $6',
 	'right-codereview-link-user' => 'Awtorow z wikijowymi wužiwarjemi zwjazać',
 	'right-codereview-associate' => '´Wersijowy zwisk přidać/wotstronić',
 	'specialpages-group-developer' => 'Nastroje wuwiwarjow',
+	'group-svnadmins' => 'SVN-administratorojo',
+	'group-svnadmins-member' => 'SVN-administrator',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-administratorojo',
 );
 
 /** Haitian (Kreyòl ayisyen)
@@ -5881,6 +5891,9 @@ $6',
 	'right-codereview-signoff' => 'Persetujuan revisi',
 	'right-codereview-link-user' => 'Pranala penulis ke wiki pengguna',
 	'specialpages-group-developer' => 'Alat Pengembang',
+	'group-svnadmins' => 'Pengurus SVN',
+	'group-svnadmins-member' => 'Pengurus SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Pengurus SVN',
 );
 
 /** Igbo (Igbo)
@@ -6740,6 +6753,9 @@ $3',
 	'right-codereview-set-status' => '판의 상태를 변경',
 	'right-codereview-link-user' => '만든이를 위키 사용자로 링크',
 	'specialpages-group-developer' => '개발자 도구',
+	'group-svnadmins' => 'SVN 관리자',
+	'group-svnadmins-member' => 'SVN 관리자',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN 관리자',
 );
 
 /** Colognian (Ripoarisch)
@@ -7530,6 +7546,9 @@ $6',
 	'right-codereview-link-user' => 'Сврзување на автори со корисници',
 	'right-codereview-associate' => 'Додај/отстрани придружување на ревизии',
 	'specialpages-group-developer' => 'Развојни алатки',
+	'group-svnadmins' => 'Администратори на SVN',
+	'group-svnadmins-member' => 'Администратор на SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Администратори на SVN',
 );
 
 /** Malayalam (മലയാളം)
@@ -7722,6 +7741,9 @@ $6',
 	'right-codereview-link-user' => 'രചയിതാക്കളെ വിക്കി ഉപയോക്താക്കളുമായി കണ്ണി ചേർക്കുക',
 	'right-codereview-associate' => 'നാൾപ്പതിപ്പ് ബന്ധങ്ങളുടെ കൈകാര്യം',
 	'specialpages-group-developer' => 'വികസന ഉപകരണങ്ങൾ',
+	'group-svnadmins' => 'എസ്.വി.എൻ. കാര്യനിർവ്വഹകർ',
+	'group-svnadmins-member' => 'എസ്.വി.എൻ. കാര്യനിർവ്വാഹക(ൻ)',
+	'grouppage-svnadmins' => '{{ns:project}}:എസ്.വി.എൻ. കാര്യനിർവാഹകർ',
 );
 
 /** Mongolian (Монгол)
@@ -10018,6 +10040,9 @@ $6',
 	'right-codereview-link-user' => 'Связь авторов с учётными записями вики-проекта',
 	'right-codereview-associate' => 'управление ассоциациями ревизий',
 	'specialpages-group-developer' => 'Инструменты разработчика',
+	'group-svnadmins' => 'Администраторы SVN',
+	'group-svnadmins-member' => 'Администратор SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Администраторы SVN',
 );
 
 /** Rusyn (Русиньскый)
@@ -10176,6 +10201,9 @@ $4',
 	'right-codereview-set-status' => 'Зміна статусу ревізій',
 	'right-codereview-link-user' => 'Звязок авторів з вікі-хоснователями',
 	'specialpages-group-developer' => 'Інштрументы вывоя',
+	'group-svnadmins' => 'SVN адміністраторы',
+	'group-svnadmins-member' => 'SVN адміністратор',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN адміністраторы',
 );
 
 /** Yakut (Саха тыла)
@@ -10646,6 +10674,9 @@ Nový stav:  $3',
 	'right-codereview-set-status' => 'Zmeniť stav revízií',
 	'right-codereview-link-user' => 'Zviazať autorov s používateľmi wiki',
 	'specialpages-group-developer' => 'Nástroje vývojárov',
+	'group-svnadmins' => 'správcovia SVN',
+	'group-svnadmins-member' => 'správca SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Správcovia SVN',
 );
 
 /** Slovenian (Slovenščina)
@@ -10838,6 +10869,19 @@ $6',
 	'right-codereview-link-user' => 'Povezovanje avtorjev z wikiuporabniki',
 	'right-codereview-associate' => 'Upravljanje združitev redakcij',
 	'specialpages-group-developer' => 'Razvijalska orodja',
+	'group-svnadmins' => 'Skrbniki SVN',
+	'group-svnadmins-member' => 'Skrbnik SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Skrbniki SVN',
+);
+
+/** Albanian (Shqip)
+ * @author Mikullovci11
+ * @author Olsi
+ */
+$messages['sq'] = array(
+	'group-svnadmins' => 'Administruesit SVN',
+	'group-svnadmins-member' => 'administrues SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administruesit SVN',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
@@ -11302,6 +11346,9 @@ $6',
 	'right-codereview-signoff' => 'Signera versioner',
 	'right-codereview-link-user' => 'Länka författare med wikianvändare',
 	'specialpages-group-developer' => 'Utvecklarverktyg',
+	'group-svnadmins' => 'SVN administratörer',
+	'group-svnadmins-member' => 'SVN administratör',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN administratörer',
 );
 
 /** Swahili (Kiswahili)
@@ -12715,6 +12762,9 @@ $6',
 	'right-codereview-link-user' => 'Liên kết tác giả mã nguồn đến thành viên wiki',
 	'right-codereview-associate' => 'Quản lý các liên kết giữa phiên bản',
 	'specialpages-group-developer' => 'Công cụ dành cho lập trình viên',
+	'group-svnadmins' => 'Người quản lý SVN',
+	'group-svnadmins-member' => 'người quản lý SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Người quản lý SVN',
 );
 
 /** Volapük (Volapük)
