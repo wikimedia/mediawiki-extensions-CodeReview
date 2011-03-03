@@ -375,8 +375,10 @@ class CodeRevision {
 		if ( $wgEnableEmail && $newRevision && count( $affectedRevs ) > 0 ) {
 			// Get committer wiki user name, or repo name at least
 			$commitAuthor = $this->getWikiUser();
-			# Author might not have a username in the wiki:
-			$committer = $commitAuthor ? $commitAuthor->getName() : htmlspecialchars( $this->author );
+
+			$commitAuthorId = $commitAuthor->getId();
+			$committer = $commitAuthor ? $commitAuthor->getName() : htmlspecialchars( $this->mAuthor );
+
 			// Get the authors of these revisions
 			$res = $dbw->select( 'code_rev',
 				array(
@@ -411,18 +413,15 @@ class CodeRevision {
 				$revisionAuthor = $revision->getWikiUser();
 
 				//Add the followup revision author if they have not already been added as a commentor (they won't want dupe emails!)
-				if ( $revisionAuthor && !array_key_exists( $revisionAuthor->getId(), $users ) ) {
+				if ( !array_key_exists( $revisionAuthor->getId(), $users ) ) {
 					$users[$revisionAuthor->getId()] = $revisionAuthor;
 				}
 
 				//Notify commenters and revision author of followup revision
 				foreach ( $users as $user ) {
-					// Notify user with its own message if he already want
-					// to be CCed of all emails it sends.
+					// No sense in notifying the author of this rev if they are a commenter/the author on the target rev
 					if ( $commitAuthorId == $user->getId() ) {
-						if( !$user->getBoolOption( 'ccmeonemails' ) ) {
-							continue;
-						}
+						continue;
 					}	
 
 					if ( $user->canReceiveEmail() ) {
@@ -622,12 +621,9 @@ class CodeRevision {
 		}
 
 		foreach ( $users as $id => $user ) {
-			// Notify user with its own message if he already want
-			// to be CCed of all emails it sends.
+			// No sense in notifying this commenter
 			if ( $wgUser->getId() == $user->getId() ) {
-				if( !$user->getBoolOption( 'ccmeonemails' ) ) {
-					continue;
-				}
+				continue;
 			}
 
 			// canReceiveEmail() returns false for the fake watcher user, so exempt it
