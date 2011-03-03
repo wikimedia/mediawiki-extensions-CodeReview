@@ -4951,6 +4951,7 @@ $messages['hif-latn'] = array(
  * @author CERminator
  * @author Dalibor Bosits
  * @author Ex13
+ * @author Roberta F.
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
@@ -4972,6 +4973,7 @@ $messages['hr'] = array(
 	'code-notes' => 'nedavni komentari',
 	'code-statuschanges' => 'izmjene stanja',
 	'code-mycommits' => 'moje publikacije',
+	'code-mycomments' => 'moji komentari',
 	'code-authors' => 'autori',
 	'code-status' => 'statusi',
 	'code-tags' => 'oznake',
@@ -5136,6 +5138,7 @@ $6',
 	'right-codereview-signoff' => 'Završi izmjene revizija',
 	'right-codereview-link-user' => 'Povezivanje autora s wiki suradnikom',
 	'specialpages-group-developer' => 'Alati za razvijatelje',
+	'group-svnadmins-member' => 'SVN administrator',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -6400,6 +6403,7 @@ $4',
  */
 $messages['ka'] = array(
 	'code' => 'კოდის შემოწმება',
+	'code-rev-title' => '$1 – კოდის შემოწმება',
 	'code-comments' => 'კომენტარები:',
 	'code-change-removed' => 'წაშლილია:',
 	'code-change-added' => 'დაემატა:',
