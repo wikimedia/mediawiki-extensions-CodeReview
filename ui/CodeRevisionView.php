@@ -123,7 +123,16 @@ class CodeRevisionView extends CodeView {
 
 		$html = '';
 		if ( $this->mPath != '' ) {
-			$html .= wfMsgExt( 'code-browsing-path', 'parse', $this->mPath );
+			$links = array();
+			foreach( explode( '|', $this->mPath ) as $path ) {
+				$links[] = $this->skin->link(
+					SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+					$path,
+					array(),
+					array( 'path' => $path )
+				);
+			}
+			$html .= wfMsgExt( 'code-browsing-path', array( 'parse', 'replaceafter' ), $wgLang->commaList( $links ) );
 		}
 		# Output form
 		$html .= Xml::openElement( 'form', array( 'action' => $special->getLocalUrl(), 'method' => 'post' ) );

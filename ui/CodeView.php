@@ -9,6 +9,11 @@ abstract class CodeView {
 	 */
 	var $mRepo;
 
+	/**
+	 * @var Skin
+	 */
+	var $skin;
+
 	function __construct( $repo ) {
 		$this->mRepo = ( $repo instanceof CodeRepository )
 			? $repo

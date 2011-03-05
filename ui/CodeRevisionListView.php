@@ -145,6 +145,10 @@ class CodeRevisionListView extends CodeView {
 		$wgOut->redirect( $this->getPager()->getTitle()->getFullURL( $fields ) );
 	}
 
+	/**
+	 * @param SvnRevTablePager $pager
+	 * @return string
+	 */
 	protected function buildBatchInterface( $pager ) {
 		global $wgUser;
 
