@@ -15,12 +15,24 @@ class CodeRevisionListView extends CodeView {
 		parent::__construct( $repo );
 		global $wgRequest;
 
-		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
-		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
-			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path
-		}
+		$this->mPath = array_map( array( $this, 'preparePaths' ), explode( '|', $wgRequest->getVal( 'path' ) ) );
+
 		$this->mAuthor = $wgRequest->getText( 'author' );
 		$this->mAppliedFilter = null;
+	}
+
+	/**
+	 * @param string $path
+	 * @return string
+	 */
+	function preparePaths( $path ) {
+		$path = trim( $path );
+		$path = rtrim( $path, '/' );
+		$path = htmlspecialchars( $path );
+		if ( strlen( $path ) && $path[0] !== '/' ) {
+			$path = "/{$path}"; // make sure this is a valid path
+		}
+		return $path;
 	}
 
 	function execute() {
@@ -166,7 +178,7 @@ class CodeRevisionListView extends CodeView {
 		$ret = Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 			"<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
 				'<table width="100%"><tr><td>' .
-				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55, $this->mPath ) .
+				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55, implode( '|', $this->mPath ) ) .
 				'&#160;' . Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
 				'</td>';
 
@@ -228,7 +240,7 @@ class SvnRevTablePager extends SvnTablePager {
 	}
 
 	function getDefaultSort() {
-		return strlen( $this->mView->mPath ) ? 'cp_rev_id' : 'cr_id';
+		return count( $this->mView->mPath ) ? 'cp_rev_id' : 'cr_id';
 	}
 
 	function getQueryInfo() {
@@ -309,7 +321,7 @@ class SvnRevTablePager extends SvnTablePager {
 
 	function formatRevValue( $name, $value, $row ) {
 		global $wgLang;
-		$pathQuery = ( strlen( $this->mView->mPath ) ) ? array( 'path' => $this->mView->mPath ) : array();
+		$pathQuery = count( $this->mView->mPath ) ? array( 'path' => $this->mView->mPath ) : array();
 
 		switch( $name ) {
 		case 'selectforchange':
