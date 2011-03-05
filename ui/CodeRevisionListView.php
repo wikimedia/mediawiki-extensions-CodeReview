@@ -15,7 +15,13 @@ class CodeRevisionListView extends CodeView {
 		parent::__construct( $repo );
 		global $wgRequest;
 
-		$this->mPath = array_map( array( $this, 'preparePaths' ), explode( '|', $wgRequest->getVal( 'path' ) ) );
+		$path = $wgRequest->getVal( 'path' );
+		
+		if ( $path != '' ) {
+			$this->mPath = array_map( array( $this, 'preparePaths' ), explode( '|', $path ) );
+		} else {
+			$this->mPath = array();
+		}
 
 		$this->mAuthor = $wgRequest->getText( 'author' );
 		$this->mAppliedFilter = null;
