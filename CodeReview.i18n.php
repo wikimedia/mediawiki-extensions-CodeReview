@@ -145,6 +145,9 @@ $messages['en'] = array(
 	'codereview-email-body' => 'User "$1" posted a comment on $3.
 
 Full URL: $2
+Commit summary:
+
+$5
 
 Comment:
 
@@ -169,7 +172,10 @@ $4',
 Old Status: $3
 New Status: $4
 
-Full URL: $5',
+Full URL: $5
+Commit summary:
+
+$6',
 
 	'codereview-email-subj4' => '[$1 $2]: New comment added, and revision status changed',
 	'codereview-email-body4' => 'User "$1" changed the status of $2.
@@ -180,6 +186,9 @@ New Status: $4
 User "$1" also posted a comment on $2.
 
 Full URL: $5
+Commit summary:
+
+$7
 
 Comment:
 
