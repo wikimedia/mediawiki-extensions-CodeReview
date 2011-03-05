@@ -153,10 +153,12 @@ $4',
 	'codereview-email-subj2' => '[$1 $2]: Follow-up changes',
 	'codereview-email-body2' => 'User "$1" made follow-up changes to $2.
 
-Full URL: $3
-
 Full URL for followed up revision: $5
+Commit summary:
 
+$6
+
+Full URL: $3
 Commit summary:
 
 $4',
@@ -182,7 +184,7 @@ Full URL: $5
 Comment:
 
 $6',
-	
+
 	'code-stats' => 'statistics',
 	'code-stats-header' => 'Statistics for repository $1',
 	'code-stats-main' => 'As of $1, the repository has $2 {{PLURAL:$2|revision|revisions}} by [[Special:Code/$3/author|$4 {{PLURAL:$4|author|authors}}]].',

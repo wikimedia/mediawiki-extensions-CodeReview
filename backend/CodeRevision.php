@@ -420,6 +420,8 @@ class CodeRevision {
 
 				$revisionAuthor = $revision->getWikiUser();
 
+				$revisionCommitSummary = $revision->getMessage();
+
 				//Add the followup revision author if they have not already been added as a commentor (they won't want dupe emails!)
 				if ( !array_key_exists( $revisionAuthor->getId(), $users ) ) {
 					$users[$revisionAuthor->getId()] = $revisionAuthor;
@@ -439,7 +441,9 @@ class CodeRevision {
 							wfMsgExt( 'codereview-email-subj2', $lang, $this->repo->getName(),
 								$this->getIdString( $row->cr_id ) ),
 							wfMsgExt( 'codereview-email-body2', $lang, $committer,
-								$this->getIdStringUnique( $row->cr_id ), $url, $this->message, $rowUrl )
+								$this->getIdStringUnique( $row->cr_id ),
+								$url, $this->message,
+								$rowUrl, $revisionCommitSummary )
 						);
 					}
 				}
