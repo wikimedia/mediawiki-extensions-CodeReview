@@ -260,6 +260,14 @@ class CodeRevision {
 		if ( !$this->isValidStatus( $status ) ) {
 			throw new MWException( "Tried to save invalid code revision status" );
 		}
+
+		// Don't allow the user account tied to the committer account mark their own revisions as ok
+		// Obviously only works if user accounts are tied!
+		$wikiUser = $this->getWikiUser();
+		if ( $status == 'ok' && $wikiUser && $user->getName() == $wikiUser->getName() ) {
+			return false;
+		}
+
 		// Get the old status from the master
 		$dbw = wfGetDB( DB_MASTER );
 		$this->oldStatus = $dbw->selectField( 'code_rev',

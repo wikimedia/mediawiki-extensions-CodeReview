@@ -469,8 +469,9 @@ class CodeRepository {
 	 * @return User|bool
 	 */
 	public function authorWikiUser( $author ) {
-		if ( isset( self::$userLinks[$author] ) )
+		if ( isset( self::$userLinks[$author] ) ) {
 			return self::$userLinks[$author];
+		}
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$wikiUser = $dbr->selectField(
