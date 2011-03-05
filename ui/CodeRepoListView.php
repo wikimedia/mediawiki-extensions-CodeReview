@@ -8,7 +8,18 @@ class CodeRepoListView {
 		global $wgOut;
 		$repos = CodeRepository::getRepoList();
 		if ( !count( $repos ) ) {
+			global $wgUser;
 			$wgOut->addWikiMsg( 'code-no-repo' );
+
+			if ( $wgUser->isAllowed( 'repoadmin' ) ) {
+				$wgOut->addWikiMsg( 'code-create-repo' );
+			} else {
+				$wgOut->addWikiMsg( 'code-need-repoadmin-rights' );
+
+				if ( !count( User::getGroupsWithPermission( 'repoadmin' ) ) ) {
+					$wgOut->addWikiMsg( 'code-need-group-with-rights' );
+				}
+			}
 			return;
 		}
 		$text = '';
