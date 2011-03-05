@@ -41,6 +41,13 @@ class CodeRevisionListView extends CodeView {
 		return $path;
 	}
 
+	/**
+	 * @return string
+	 */
+	public function getPathsAsString() {
+		return implode( '|', $this->mPath );
+	}
+
 	function execute() {
 		global $wgOut, $wgUser, $wgRequest, $wgLang;
 		if ( !$this->mRepo ) {
@@ -184,7 +191,7 @@ class CodeRevisionListView extends CodeView {
 		$ret = Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 			"<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
 				'<table width="100%"><tr><td>' .
-				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55, implode( '|', $this->mPath ) ) .
+				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55, $this->getPathsAsString() ) .
 				'&#160;' . Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
 				'</td>';
 
@@ -327,7 +334,7 @@ class SvnRevTablePager extends SvnTablePager {
 
 	function formatRevValue( $name, $value, $row ) {
 		global $wgLang;
-		$pathQuery = count( $this->mView->mPath ) ? array( 'path' => $this->mView->mPath ) : array();
+		$pathQuery = count( $this->mView->mPath ) ? array( 'path' => $this->mView->getPathsAsString() ) : array();
 
 		switch( $name ) {
 		case 'selectforchange':
