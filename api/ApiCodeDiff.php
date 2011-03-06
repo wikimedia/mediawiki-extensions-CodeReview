@@ -42,7 +42,7 @@ class ApiCodeDiff extends ApiBase {
 
 		if ( !is_string( $diff ) ) {
 			// FIXME: Are we sure we don't want to throw an error here?
-			$html = 'Failed to load diff.';
+			$html = 'Failed to load diff. ' . CodeRepository::getDiffErrorMessage( $diff );
 		} elseif ( strlen( $diff ) > $wgCodeReviewMaxDiffSize ) {
 			$html = 'Diff too large.';
 		} else {

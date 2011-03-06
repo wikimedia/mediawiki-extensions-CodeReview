@@ -515,4 +515,24 @@ class CodeRepository {
 		);
 		return self::$authorLinks[$name] = $res;
 	}
+
+	/**
+	 * @static
+	 * @param int $error
+	 * @return string
+	 */
+	public static function getDiffErrorMessage( $error ) {
+		switch( $error ) {
+			case self::DIFFRESULT_BadRevision:
+				return 'Bad revision specified.';
+			case self::DIFFRESULT_TooManyPaths:
+				return 'Too many paths returned to diff';
+			case self::DIFFRESULT_NoDataReturned:
+				return 'No data returned for diff';
+			case self::DIFFRESULT_NotInCache:
+				return 'Not in cache';
+			default:
+				return 'Unknown';
+		}
+	}
 }
