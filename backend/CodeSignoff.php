@@ -15,9 +15,9 @@ class CodeSignoff {
 	public $flag;
 	/** Timestamp of the sign-off, in TS_MW format */
 	public $timestamp;
-	
+
 	private $timestampStruck;
-	
+
 	/**
 	 * This constructor is only used by newFrom*(). You should not create your own
 	 * CodeSignoff objects, they'll be useless if they don't correspond to existing entries
@@ -39,21 +39,21 @@ class CodeSignoff {
 		$this->timestamp = $timestamp;
 		$this->timestampStruck = $timestampStruck;
 	}
-	
+
 	/**
 	 * @return bool Whether this sign-off has been struck
 	 */
 	public function isStruck() {
 		return $this->timestampStruck !== Block::infinity();
 	}
-	
+
 	/**
 	 * @return mixed Timestamp (TS_MW format) the revision was struck at, or false if it hasn't been struck
 	 */
 	public function getTimestampStruck() {
 		return $this->isStruck() ? wfTimestamp( TS_MW, $this->timestampStruck ) : false;
 	}
-	
+
 	/**
 	 * Strike this sign-off. Attempts to strike an already-struck signoff will be silently ignored.
 	 */
@@ -72,7 +72,7 @@ class CodeSignoff {
 			), __METHOD__
 		);
 	}
-	
+
 	/**
 	 * Get the ID of this signoff. This is not a numerical ID that exists in the database,
 	 * but a representation that you can use in URLs and the like. It's also not unique:
@@ -84,7 +84,7 @@ class CodeSignoff {
 	public function getID() {
 		return implode( '|', array( $this->flag, $this->timestampStruck, $this->userText ) );
 	}
-	
+
 	/**
 	 * Create a CodeSignoff object from a revision and a database row object
 	 * @param $rev CodeRevision object the signoff belongs to
@@ -94,7 +94,7 @@ class CodeSignoff {
 	public static function newFromRow( $rev, $row ) {
 		return self::newFromData( $rev, get_object_vars( $row ) );
 	}
-	
+
 	/**
 	 * Create a CodeSignoff object from a revision and a database row in array format
 	 * @param $rev CodeRevision object the signoff belongs to
@@ -106,7 +106,7 @@ class CodeSignoff {
 			wfTimestamp( TS_MW, $data['cs_timestamp'] ), $data['cs_timestamp_struck']
 		);
 	}
-	
+
 	/**
 	 * Create a CodeSignoff object from a revision object and an ID previously obtained from getID()
 	 * @param $rev CodeRevision object

@@ -480,7 +480,7 @@ class CodeRevisionView extends CodeView {
 		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-user' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-flag' ). '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-date' ). '</th>';
-		$buttonrow = $showButtons ? $this->signoffButtons() : '';
+		$buttonrow = $showButtons ? $this->signoffButtons( $signOffs ) : '';
 		return "<table border='1' class='TablePager'><tr>$header</tr>$signoffs$buttonrow</table>";
 	}
 
@@ -732,25 +732,47 @@ class CodeRevisionView extends CodeView {
 			'</div>';
 	}
 
-	// TODO : checkboxes should be disabled if user already has set the flag
 	/**
 	 * Render the bottom row of the sign-offs table containing the buttons to
 	 * strike and submit sign-offs
 	 * @return string HTML
 	 */
-	protected function signoffButtons() {
+	protected function signoffButtons( $signOffs ) {
+		$userSignOffs = $this->getUserSignoffs( $signOffs );
 		$strikeButton = Xml::submitButton( wfMsg( 'code-signoff-strike' ), array( 'name' => 'wpStrikeSignoffs' ) );
 		$signoffText = wfMsgHtml( 'code-signoff-signoff' );
 		$signoffButton = Xml::submitButton( wfMsg( 'code-signoff-submit' ), array( 'name' => 'wpSignoff' ) );
 		$checks = '';
+
 		foreach ( CodeRevision::getPossibleFlags() as $flag ) {
-			$checks .= Html::input( 'wpSignoffFlags[]', $flag, 'checkbox', array( 'id' => "wpSignoffFlags-$flag" ) ) .
+			$checks .= Html::input( 'wpSignoffFlags[]', $flag, 'checkbox',
+				array(
+					'id' => "wpSignoffFlags-$flag",
+					isset( $userSignOffs[$flag] ) ? 'disabled' : '' => '',
+				) ) .
 				' ' . Xml::label( wfMsg( "code-signoff-flag-$flag" ), "wpSignoffFlags-$flag" ) . ' ';
 		}
 		return "<tr class='mw-codereview-signoffbuttons'><td colspan='4'>$strikeButton " . 
 			"<div class='mw-codereview-signoffchecks'>$signoffText $checks $signoffButton</div></td></tr>";
 	}
-	
+
+	/**
+	 * Gets all the current signoffs the user has against this revision
+	 *
+	 * @param Array $signOffs
+	 * @return Array
+	 */
+	protected function getUserSignoffs( $signOffs ) {
+		$ret = array();
+		global $wgUser;
+		foreach( $signOffs as $s ) {
+			if ( $s->userText == $wgUser->getName() && !$s->isStruck() ) {
+				$ret[$s->flag] = true;
+			}
+		}
+		return $ret;
+	}
+
 	/**
 	 * Render the bottom row of the follow-up revisions table containing the buttons and
 	 * textbox to add and remove follow-up associations
