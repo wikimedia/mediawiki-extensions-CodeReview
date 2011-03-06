@@ -1,45 +1,45 @@
-var CodeReview = window.CodeReview = new Object;
-CodeReview.loadDiff = function(repo, rev) {
-	var path = wgScriptPath +
-		"/api.php" +
-		"?action=codediff" +
-		"&format=json" +
-		"&repo=" + encodeURIComponent(repo) +
-		"&rev=" + encodeURIComponent(rev);
-	var xmlhttp = sajax_init_object();
-	if(xmlhttp){
+( function( $ ) {
+// Create or extend the object
+window.CodeReview = $.extend( window.CodeReview, {
+
+	loadDiff : function(repo, rev) {
+		var apiPath = mw.config.get( 'wgScriptPath' ) + '/api' + mw.config.get( 'wgScriptExtension' );
+		injectSpinner( CodeReview.diffTarget(), 'codereview-diff' );
 		try {
-			injectSpinner(CodeReview.diffTarget(), 'codereview-diff');
-			xmlhttp.open("GET", path, true);
-			xmlhttp.onreadystatechange=function(){
-				if (xmlhttp.readyState==4) {
-					CodeReview.decodeAndShowDiff(xmlhttp.responseText);
-					removeSpinner('codereview-diff');
+			$.ajax({
+				url: apiPath,
+				data : {
+					'format' : 'json',
+					'action' : 'codediff',
+					'repo' : repo,
+					'rev' : rev
+				},
+				dataType : 'json',
+				success : function( data ) {
+					CodeReview.decodeAndShowDiff( data );
+					removeSpinner( 'codereview-diff' );
 				}
-			};
-			xmlhttp.send(null);
-		} catch (e) {
-			if (window.location.hostname == "localhost") {
-				alert("Your browser blocks XMLHttpRequest to 'localhost', try using a real hostname for development/testing.");
+			});
+		} catch ( e ) {
+			if ( window.location.hostname == 'localhost' ) {
+				alert( 'Your browser blocks XMLHttpRequest to "localhost", try using a real hostname for development/testing.' );
 			}
 			throw e;
 		}
+	},
+	decodeAndShowDiff : function( data ) {
+		if ( data && data.code && data.code.rev && data.code.rev.diff ) {
+			CodeReview.setDiff( data.code.rev.diff );
+		} else {
+			CodeReview.setDiff( 'Diff load failed. :(' );
+		}
+	},
+	diffTarget : function() {
+		return document.getElementById( 'mw-codereview-diff' );
+	},
+	setDiff : function( diffHtml ) {
+		CodeReview.diffTarget().innerHTML = diffHtml;
 	}
-};
-CodeReview.decodeAndShowDiff = function(jsonText) {
-	// bleah
-	eval("var data=" + jsonText);
-	if (typeof data.code != 'undefined' &&
-		typeof data.code.rev != 'undefined' &&
-		typeof data.code.rev.diff != 'undefined') {
-		CodeReview.showDiff(data.code.rev.diff);
-	} else {
-		CodeReview.showDiff('Diff load failed. :(');
-	}
-};
-CodeReview.diffTarget = function() {
-	return document.getElementById('mw-codereview-diff');
-};
-CodeReview.showDiff = function(diffHtml) {
-	CodeReview.diffTarget().innerHTML = diffHtml;
-};
+
+});
+})( jQuery );

@@ -175,13 +175,6 @@ class CodeRevisionView extends CodeView {
 				"</h2>\n" . $comments;
 		}
 
-		if ( $this->mReplyTarget ) {
-			$id = intval( $this->mReplyTarget );
-			$html .= Html::inlineScript(
-				"addOnloadHook(function(){document.getElementById('wpReplyTo$id').focus();});"
-			) . "\n";
-		}
-
 		if ( $this->canPostComments() ) {
 			$html .= $this->addActionButtons();
 		}
