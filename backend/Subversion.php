@@ -122,6 +122,16 @@ class SubversionPecl extends SubversionAdaptor {
  * Using the thingy-bobber
  */
 class SubversionShell extends SubversionAdaptor {
+	const MIN_MEMORY = 204800;
+
+	function __construct( $repo ) {
+		parent::__construct( $repo );
+		global $wgMaxShellMemory;
+		if( $wgMaxShellMemory < SubversionShell::MIN_MEMORY ) {
+			$wgMaxShellMemory = 204800;
+			wfDebug( __METHOD__ . " raised wgMaxShellMemory to $wgMaxShellMemory\n" );
+		}
+	}
 
 	function canConnect() {
 		$command = sprintf(
