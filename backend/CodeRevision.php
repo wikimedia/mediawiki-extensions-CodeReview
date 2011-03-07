@@ -184,7 +184,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @return
+	 * @return User
 	 */
 	public function getWikiUser() {
 		return $this->repo->authorWikiUser( $this->getAuthor() );

@@ -340,6 +340,12 @@ class CodeRevisionView extends CodeView {
 		}
 	}
 
+	/**
+	 * @static
+	 * @param string $status
+	 * @param CodeView $view
+	 * @return string
+	 */
 	static function buildStatusList( $status, $view ) {
 		$states = CodeRevision::getPossibleStates();
 		$out = '';
