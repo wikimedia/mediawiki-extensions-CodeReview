@@ -232,6 +232,7 @@ $6',
 
 /** Message documentation (Message documentation)
  * @author Aotake
+ * @author Beta16
  * @author Dalibor Bosits
  * @author EugeneZelenko
  * @author Fryed-peach
@@ -252,6 +253,7 @@ $messages['qqq'] = array(
 	'code-comments' => '{{Identical|Comments}}',
 	'code-change-added' => '{{Identical|Added}}',
 	'codereview-desc' => '{{desc}}',
+	'code-need-group-with-rights' => 'Do not translate the word <code>repoadmin</code>.',
 	'code-repo-not-found' => "Message displayed when the requested repository does not exist in the wiki's repo definitions.  $1 is the name that was requested, and will be fully escaped before output.",
 	'code-tags' => '{{Identical|Tag}}',
 	'code-field-id' => '{{Identical|Revision}}',
@@ -259,7 +261,7 @@ $messages['qqq'] = array(
 	'code-field-message' => 'This is probably a noun instead of verb, a column header.',
 	'code-field-status' => '{{Identical|Status}}',
 	'code-field-timestamp' => '{{Identical|Date}}',
-	'code-field-comments' => '{{Identical|Notes}}',
+	'code-field-comments' => '{{Identical|Comments}}',
 	'code-field-path' => '{{Identical|Path}}',
 	'code-field-select' => '{{Identical|Select}}',
 	'code-reference-remove' => 'Caption of the button used to remove the selected (with checkboxes) revisions from the follow-up list.',
@@ -1089,6 +1091,9 @@ $messages['be-tarask'] = array(
 	'code-prop-changes' => 'Журнал зьменаў статусаў і тэгаў',
 	'codereview-desc' => '[[Special:Code|Інструмэнт рэцэнзаваньня коду]] з [[Special:RepoAdmin|падтрымкай Subversion]]',
 	'code-no-repo' => 'Адсутнічае сканфігураванае сховішча!',
+	'code-create-repo' => 'Перайсьці ў [[Special:RepoAdmin|RepoAdmin]] для стварэньня рэпазыторыя.',
+	'code-need-repoadmin-rights' => 'для стварэньня рэпазыторыя патрэбныя правы repoadmin',
+	'code-need-group-with-rights' => 'Ніводнай групе не нададзеныя правы repoadmin. Калі ласка, надайце правы для стварэньня рэпазыторыя.',
 	'code-repo-not-found' => "Сховішча '''$1''' не існуе!",
 	'code-load-diff' => 'Загрузка розьніцы…',
 	'code-notes' => 'апошнія камэнтары',
@@ -3903,6 +3908,9 @@ $messages['fr'] = array(
 	'code-prop-changes' => 'Journal des états et du balisage',
 	'codereview-desc' => '[[Special:Code|Outils de révision du code]] avec le [[Special:RepoAdmin|support de Subversion]]',
 	'code-no-repo' => 'Pas de dépôt configuré !',
+	'code-create-repo' => 'Allez à [[Special:RepoAdmin|support de Subversion]] pour créer un dépôt',
+	'code-need-repoadmin-rights' => "Des privilèges de niveau ''repoadmin'' sont requis pour créer un dépôt",
+	'code-need-group-with-rights' => "Aucun groupe de niveau ''repoadmin'' n'existe. Veuillez en ajouter un pour être en mesure de créer un nouveau dépôt.",
 	'code-repo-not-found' => "Le dépôt '''$1''' n'existe pas !",
 	'code-load-diff' => 'Chargement du diff en cours...',
 	'code-notes' => 'commentaires récents',
@@ -4780,6 +4788,9 @@ $messages['he'] = array(
 	'code-prop-changes' => 'יומן מצב ותיוג',
 	'codereview-desc' => '[[Special:Code|כלי בדיקת קוד]] עם [[Special:RepoAdmin|תמיכה ב־Subversion]]',
 	'code-no-repo' => 'לא הוגדר מאגר!',
+	'code-create-repo' => 'לכו לדף [[Special:RepoAdmin|RepoAdmin]] ליצירת מאגר',
+	'code-need-repoadmin-rights' => 'נחוצה הרשאת "מנהל מאגר" כדי ליצור מאגר',
+	'code-need-group-with-rights' => 'אין שום קבוצה עם הרשאת מנהל מאגר. נא ליצור קבוצה כזו כדי להוסיף מאגר חדש.',
 	'code-repo-not-found' => "המאגר '''$1''' לא קיים!",
 	'code-load-diff' => 'ההבדל בין הגרסאות בטעינה…',
 	'code-notes' => 'הערות אחרונות',
@@ -5178,6 +5189,9 @@ $messages['hsb'] = array(
 	'code-prop-changes' => 'Protokol wo statusu & tafličkach',
 	'codereview-desc' => '[[Special:Code|Nastroj za kodowu kontrolu]] z [[Special:RepoAdmin|podpěru za Subversion]]',
 	'code-no-repo' => 'Žadyn repozitorij konfigurowany',
+	'code-create-repo' => 'Dźi k specialnej stronje [[Special:RepoAdmin|RepoAdmin]], zo by repozitorij załožił',
+	'code-need-repoadmin-rights' => 'Prawa repoadmin su trěbne, zo by móhł repozitorij załožić',
+	'code-need-group-with-rights' => 'Njeje žana skupina z prawami repoadmin. Prošu přidaj jednu, zo by móhł nowy repozitorij załožić',
 	'code-repo-not-found' => "Repozitorij '''$1''' njeeksistuje!",
 	'code-load-diff' => 'Rozdźěl so začituje...',
 	'code-notes' => 'aktualne komentary',
@@ -5545,6 +5559,9 @@ $messages['ia'] = array(
 	'code-prop-changes' => 'Registro de stato e de etiquettage',
 	'codereview-desc' => '[[Special:Code|Instrumento pro revider le codice]] con [[Special:RepoAdmin|supporto de Subversion]]',
 	'code-no-repo' => 'Nulle deposito configurate!',
+	'code-create-repo' => 'Visita [[Special:RepoAdmin|RepoAdmin]] pro crear un deposito',
+	'code-need-repoadmin-rights' => 'Le derecto "repoadmin" es necessari pro poter crear un deposito',
+	'code-need-group-with-rights' => 'Nulle gruppo con derecto "repoadmin" existe. Per favor crea un tal pro poter adder un nove deposito.',
 	'code-repo-not-found' => "Le deposito '''$1''' non existe!",
 	'code-load-diff' => 'Carga diff…',
 	'code-notes' => 'commentos recente',
@@ -5744,6 +5761,9 @@ $messages['id'] = array(
 	'code-prop-changes' => 'Log Status & penandaan',
 	'codereview-desc' => '[[Special:Code|Alat peninjau kode]] dengan [[Special:RepoAdmin|dukungan Subversion]]',
 	'code-no-repo' => 'Tidak ada konfiguras tempat penyimpanan!',
+	'code-create-repo' => 'Gunakan [[Special:RepoAdmin|RepoAdmin]] untuk membuat suatu Repositori',
+	'code-need-repoadmin-rights' => 'Hak repoadmin diperlukan untuk dapat membuat suatu Repositori',
+	'code-need-group-with-rights' => 'Tidak ada kelompok yang memiliki hak akses repoadmin. Harap tambahkan untuk dapat membuat Repositori baru',
 	'code-repo-not-found' => "Gudang data '''$1''' tidak ada!",
 	'code-load-diff' => 'Memuat perbedaan...',
 	'code-notes' => 'komentar terbaru',
@@ -5871,10 +5891,15 @@ Ringkasan:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Status revisi berubah',
-	'codereview-email-body3' => 'Pengguna "$1" mengganti status $2.
+	'codereview-email-body3' => 'Pengguna "$1" mengubah status $2.
 
 Status lama: $3
-Status baru: $4',
+Status baru: $4
+
+URL lengkap: $5
+Ringkasan:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Komentar baru ditambahkan dan revisi status berubah',
 	'codereview-email-body4' => 'Pengguna "$1" mengganti status $2.
 
@@ -5913,6 +5938,7 @@ $6',
 	'right-codereview-set-status' => 'Ubah status revisi',
 	'right-codereview-signoff' => 'Persetujuan revisi',
 	'right-codereview-link-user' => 'Pranala penulis ke wiki pengguna',
+	'right-codereview-associate' => 'Mengelola keterkaitan revisi',
 	'specialpages-group-developer' => 'Alat Pengembang',
 	'group-svnadmins' => 'Pengurus SVN',
 	'group-svnadmins-member' => 'Pengurus SVN',
@@ -6020,7 +6046,7 @@ $messages['it'] = array(
 	'code-field-message' => 'Oggetto del commento',
 	'code-field-status' => 'Stato',
 	'code-field-timestamp' => 'Data',
-	'code-field-comments' => 'Note',
+	'code-field-comments' => 'Commenti',
 	'code-field-path' => 'Percorso',
 	'code-field-text' => 'Nota',
 	'code-field-select' => 'Seleziona',
@@ -6142,6 +6168,9 @@ $messages['ja'] = array(
 	'code-prop-changes' => '状態とタグ付けのログ',
 	'codereview-desc' => '[[Special:RepoAdmin|Subversion サポート]]付きの[[Special:Code|コードレビュー・ツール]]',
 	'code-no-repo' => '設定されたリポジトリはありません！',
+	'code-create-repo' => '[[Special:RepoAdmin|リポジトリ管理]]でリポジトリを作成',
+	'code-need-repoadmin-rights' => 'リポジトリを作成するには、リポジトリ管理権限が必要です',
+	'code-need-group-with-rights' => 'リポジトリ管理権限をもつ利用者グループがありません。新しいリポジトリを作成できるよう、リポジトリ管理権限をもつ利用者グループを作成してください。',
 	'code-repo-not-found' => "'''$1'''は存在しないレポジトリーです!",
 	'code-load-diff' => '差分を読み込み中…',
 	'code-notes' => '最近のコメント',
@@ -6304,7 +6333,7 @@ $6',
 	'repoadmin-edit-view' => 'ViewVC パス:',
 	'repoadmin-edit-button' => 'OK',
 	'repoadmin-edit-sucess' => 'リポジトリ "[[Special:Code/$1|$1]]" の変更に成功しました。',
-	'repoadmin-nav' => 'レポジトリー管理',
+	'repoadmin-nav' => 'リポジトリ管理',
 	'right-repoadmin' => 'コードリポジトリを管理する',
 	'right-codereview-use' => 'Special:Code の使用',
 	'right-codereview-add-tag' => 'リビジョンに新しいタグを追加する',
@@ -6799,6 +6828,10 @@ $messages['ksh'] = array(
 	'code-prop-changes' => 'Logboch för Shtattus un Makeerunge',
 	'codereview-desc' => 'Werkzüch för [[Special:Code|Projramm-Änderunge ze verwallde]] met [[Special:RepoAdmin|Ongershtözung för <i lang="en">Subversion</i>]]',
 	'code-no-repo' => 'Et es kei Repositorijum enjeshtallt.',
+	'code-create-repo' => 'Jangk op di Sigg <i lang="en">[[Special:RepoAdmin|RepoAdmin]]</i>, öm e neu Repositorijum aanzelääje.',
+	'code-need-repoadmin-rights' => 'Do mööts dat Rääsch <code lang="en">repoadmin</code> han, öm e Repositorijum neu aanlääje ze künne.',
+	'code-need-group-with-rights' => 'Et jitt kein Jropp met däm Rääsch <code lang="en">repoadmin</code>.
+Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum aanzelääje.',
 	'code-repo-not-found' => "E Repositorijum '''$1''' jidd_et heh nit!",
 	'code-load-diff' => 'Ben de Ungerscheide aam Lade&nbsp;…',
 	'code-notes' => 'De neuste Bemerkunge',
@@ -7396,6 +7429,9 @@ $messages['mk'] = array(
 	'code-prop-changes' => 'Дневник на статуси и ознаки',
 	'codereview-desc' => '[[Special:Code|Алатка за проверка на кодот]] со [[Special:RepoAdmin|поддршка за Subversion]]',
 	'code-no-repo' => 'Нема наместено складиште!',
+	'code-create-repo' => 'Одете на [[Special:RepoAdmin|RepoAdmin]] за да создадете Складиште',
+	'code-need-repoadmin-rights' => 'за да создадете Складиште ви требаат администраторски права',
+	'code-need-group-with-rights' => 'Не постои група со администраторски рпава. Направете таква група за да можете да додадете ново Складиште.',
 	'code-repo-not-found' => "Складиштето '''$1''' не постои!",
 	'code-load-diff' => 'Вчитувам разлики...',
 	'code-notes' => 'скорешни коментари',
@@ -7592,6 +7628,9 @@ $messages['ml'] = array(
 	'code-prop-changes' => 'സ്ഥിതിയുടേയും റ്റാഗിങ്ങിന്റേയും രേഖ',
 	'codereview-desc' => '[[Special:RepoAdmin|സബ്‌‌വേർഷൻ പിന്തുണയോടു]] കൂടിയ [[Special:Code|കോഡ് സംശോധന ഉപകരണം]]',
 	'code-no-repo' => 'റെപ്പോസിറ്ററികളൊന്നും ക്രമീകരിച്ചിട്ടില്ല!',
+	'code-create-repo' => 'റെപ്പോസിറ്ററി നിർമ്മിക്കാൻ [[Special:RepoAdmin|റെപ്പോകാര്യനിർവ്വാഹക]] താളിൽ ചെല്ലുക',
+	'code-need-repoadmin-rights' => 'റെപ്പോസിറ്ററി നിർമ്മിക്കാൻ റെപ്പോകാര്യനിർവ്വാഹക ശേഷികൾ ആവശ്യമാണ്',
+	'code-need-group-with-rights' => 'റെപ്പോകാര്യനിർവ്വാഹക ശേഷിയുള്ള ഒരു സംഘവും നിലവിലില്ല. പുതിയ റെപ്പോസിറ്ററി നിർമ്മിക്കാൻ കഴിവുള്ള ഒരു സംഘത്തെ സൃഷ്ടിക്കുക',
 	'code-repo-not-found' => "'''$1''' എന്ന റെപ്പോസിറ്ററി നിലവിലില്ല!",
 	'code-load-diff' => 'വ്യത്യാസം ശേഖരിക്കുന്നു...',
 	'code-notes' => 'സമീപകാല അഭിപ്രായങ്ങൾ',
@@ -8076,6 +8115,9 @@ $messages['nl'] = array(
 	'code-prop-changes' => 'Logboek status en labels',
 	'codereview-desc' => '[[Special:Code|Hulpprogramma voor codecontrole]] met [[Special:RepoAdmin|ondersteuning voor Subversion]]',
 	'code-no-repo' => 'Er is geen repository ingesteld!',
+	'code-create-repo' => 'Ga naar [[Special:RepoAdmin|RepoAdmin]] om een repository aan te maken.',
+	'code-need-repoadmin-rights' => 'U hebt het recht "repoadmin" nodig om een repository aan te kunnen maken.',
+	'code-need-group-with-rights' => 'Er bestaat geen groep met het recht "repoadmin". Voeg er een toe om een nieuwe repository aan te kunnen maken.',
 	'code-repo-not-found' => "De repository '''$1''' bestaat niet!",
 	'code-load-diff' => 'Bezig met het laden van de veranderingen…',
 	'code-notes' => 'recente opmerkingen',
@@ -8779,6 +8821,9 @@ $messages['pl'] = array(
 	'code-prop-changes' => 'Rejestr zmian statusu i znaczników',
 	'codereview-desc' => '[[Special:Code|Narzędzie do przeglądania]] oraz [[Special:RepoAdmin|zarządzania wersjami]] kodu źródłowego',
 	'code-no-repo' => 'Brak skonfigurowanego repozytorium!',
+	'code-create-repo' => 'Idź do [[Special:RepoAdmin|RepoAdmin]], aby utworzyć repozytorium',
+	'code-need-repoadmin-rights' => 'do utworzenia repozytorium konieczne są uprawnienia repoadmin',
+	'code-need-group-with-rights' => 'Brak grupy z uprawnieniami repoadmin. Dodaj jakąś, aby mieć możliwość utworzenia repozytorium.',
 	'code-repo-not-found' => "Repozytorium '''$1''' nie istnieje!",
 	'code-load-diff' => 'Ładowanie różnic…',
 	'code-notes' => 'ostatnie komentarze',
@@ -9222,6 +9267,9 @@ $messages['pt'] = array(
 	'code-prop-changes' => 'Registo de estado e etiquetagem',
 	'codereview-desc' => '[[Special:Code|Ferramenta de revisão de código]] com [[Special:RepoAdmin|suporte Subversion]]',
 	'code-no-repo' => 'Não há nenhum repositório configurado!',
+	'code-create-repo' => 'Visite o [[Special:RepoAdmin|suporte Subversion]] para criar um Repositório',
+	'code-need-repoadmin-rights' => 'o privilégio repoadmin é necessário para ser capaz de criar um Repositório',
+	'code-need-group-with-rights' => 'Não existe nenhum grupo com o privilégio repoadmin. Crie um para poder adicionar um novo Armazém, por favor.',
 	'code-repo-not-found' => "O repositório '''$1''' não existe!",
 	'code-load-diff' => 'A carregar diferenças…',
 	'code-notes' => 'comentários recentes',
@@ -10720,6 +10768,9 @@ $messages['sl'] = array(
 	'code-prop-changes' => 'Dnevnik stanj in označevanj',
 	'codereview-desc' => '[[Special:Code|Orodje za pregledovanje kode]] s [[Special:RepoAdmin|podporo Subversion]]',
 	'code-no-repo' => 'Nastavljena ni nobena shramba!',
+	'code-create-repo' => 'Pojdite na [[Special:RepoAdmin|RepoAdmin]] za ustvarjanje varne hrambe',
+	'code-need-repoadmin-rights' => 'za ustvarjanje varne hrambe so potrebne pravice repoadmin',
+	'code-need-group-with-rights' => 'Nobena skupina s pravicami repoadmin ne obstaja. Prosimo, dodajte eno, da boste lahko dodali novo varno hrambo.',
 	'code-repo-not-found' => "Shramba '''$1''' ne obstaja!",
 	'code-load-diff' => 'Nalaganje primerjave ...',
 	'code-notes' => 'nedavne pripombe',
@@ -11501,6 +11552,9 @@ $messages['te'] = array(
 	'codereview-email-body' => 'వాడుకరి "$1" $3పై ఒక వ్యాఖ్య రాసారు.
 
 పూర్తి చిరునామా: $2
+కమిట్ సారాశం:
+
+$5
 
 వ్యాఖ్య:
 
@@ -11909,14 +11963,19 @@ $messages['tl'] = array(
 	'code-prop-changes' => 'Talaan ng kalagayan at pagtatatak',
 	'codereview-desc' => '[[Special:Code|Kasangkapang na pang muling pagsusuri ng kodigo]] na may [[Special:RepoAdmin|Suportang pamuksa]]',
 	'code-no-repo' => 'Walang naisaayos na repositoryo!',
+	'code-create-repo' => 'Pumunta sa [[Special:RepoAdmin|Tagapangasiwa ng Taguan]] upang lumikha ng isang Taguan',
+	'code-need-repoadmin-rights' => 'kailangan ang mga karapatang pang-tagapangasiwa ng taguan upang makalikha ng isang Taguan',
+	'code-need-group-with-rights' => 'Walang umiiral na pangkat na may mga karapatang pang-tagapangasiwa ng taguan. Paki magdagdag ng isa upang makapagdagdag ng isang bagong Taguan.',
 	'code-repo-not-found' => "Hindi umiiral ang repositoryong '''$1'''!",
 	'code-load-diff' => 'Ikinakarga ang pagkakaiba…',
 	'code-notes' => 'kamakailang mga puna/kumento',
 	'code-statuschanges' => 'katayuan ng mga pagbabago',
 	'code-mycommits' => 'mga nagawa ko',
+	'code-mycomments' => 'mga puna ko',
 	'code-authors' => 'mga may-akda',
 	'code-status' => 'mga kalagayan',
 	'code-tags' => 'mga tatak',
+	'code-tags-no-tags' => 'Walang umiiral na mga tatak sa loob ng taguang ito.',
 	'code-authors-text' => 'Nasa ibaba ang isang talaan ng mga may-akda ng repositoryo ayon sa pagkakasunud-sunod ng pangalan ng paglalagak.  Ipinapakita sa loob ng mga saklong ang mga akawnt ng panglokal na wiki.  Dapat na nakatago ang dato.',
 	'code-author-haslink' => 'Nakakawing ang may-akdang ito sa tagagamit ng wiking si $1',
 	'code-author-orphan' => 'Ang may-akdang ito ay walang kawing sa isang kuwenta/akawnt ng wiki',
@@ -11937,11 +11996,15 @@ $messages['tl'] = array(
 	'code-field-user' => 'Tagapagpuna/Nagbigay ng kumento',
 	'code-field-message' => 'Isagawa ang buod',
 	'code-field-status' => 'Kalagayan',
+	'code-field-status-description' => 'Paglalarawan ng kalagayan',
 	'code-field-timestamp' => 'Petsa',
-	'code-field-comments' => 'Mga tala',
+	'code-field-comments' => 'Mga puna',
 	'code-field-path' => 'Daanan',
 	'code-field-text' => 'Tala',
 	'code-field-select' => 'Piliin',
+	'code-reference-remove' => 'Tanggalin ang napiling mga kaugnayan',
+	'code-reference-associate' => 'Iugnay ang rebisyong pangtugaygay:',
+	'code-reference-associate-submit' => 'Kaugnay',
 	'code-rev-author' => 'May-akda:',
 	'code-rev-date' => 'Petsa:',
 	'code-rev-message' => 'Kumento:',
@@ -11982,6 +12045,17 @@ $messages['tl'] = array(
 	'code-status-desc-deferred' => 'Hindi nangangailangan ng muling pagsusuri ang rebisyon.',
 	'code-status-old' => 'luma',
 	'code-status-desc-old' => 'Ang lumang rebisyon ay may maaaring maging mga depekto subalit hindi naaangkupan ng pagsisikap para suriin sila.',
+	'code-signoffs' => 'Mga paglalagda ng pagtatapos',
+	'code-signoff-legend' => 'Idagdag ang paglagda ng pagtatapos',
+	'code-signoff-submit' => 'Lumagdang patapos',
+	'code-signoff-strike' => 'Pangibabawan ng guhit ang napiling paglalagdang patapos',
+	'code-signoff-signoff' => 'Lumagda sa rebisyong ito bilang:',
+	'code-signoff-flag-inspected' => 'Nasiyasat',
+	'code-signoff-flag-tested' => 'Nasubok na',
+	'code-signoff-field-user' => 'Tagagamit',
+	'code-signoff-field-flag' => 'Watawat',
+	'code-signoff-field-date' => 'Petsa',
+	'code-signoff-struckdate' => '$1 (pinatamaan ang $2)',
 	'code-pathsearch-legend' => 'Maghanap ng mga pagbabago sa repositoryong ito sa pamamagitan ng daanan',
 	'code-pathsearch-path' => 'Daanan:',
 	'code-pathsearch-filter' => 'Ginamit na pansala:',
@@ -12018,14 +12092,32 @@ Buong URL: $3
 Buod ng pagsasagawa:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: Pagpapabalik na napansin ng kusang pagsubok',
-	'codereview-email-body3' => 'Nagbunyag ang kusang pagsusulit ng isang pagpapabalik dahil sa mga pagbabago sa loob ng $1.
+	'codereview-email-subj3' => '[$1 $2]: Nabago ang kalagayan ng rebisyon',
+	'codereview-email-body3' => 'Binago ng tagagamit na si "$1" ang kalagayan ng $2.
 
-Buongl URL: $2
+Lumang kalagayan: $3
+Bagong kalagayan: $4
 
+Buong URL: $5
 Buod ng pagsasagawa:
 
-$3',
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Nadagdag ang bagong puna, at nabago ang kalagayan ng rebisyon',
+	'codereview-email-body4' => 'Binago ng tagagamit na si "$1" ang katayuan ng $2.
+
+Lumang katayuan: $3
+Bagong katayuan: $4
+
+Nagpaskil din ng isang puna ang tagagamit na si "$1" sa $2.
+
+Buong URL: $5
+Buod ng pagsasagawa: 
+
+$7
+
+Puna:
+
+$6',
 	'code-stats' => 'estadistika',
 	'code-stats-header' => 'Estadistika para sa repositoryong $1',
 	'code-stats-main' => 'Magmula noong $1, ang repositoryo ay may $2 {{PLURAL:$2|rebisyon|mga rebisyon}} ng [[Special:Code/$3/author|$4 {{PLURAL:$4|may-akda|mga may-akda}}]].',
@@ -12049,8 +12141,13 @@ $3',
 	'right-codereview-remove-tag' => 'Tanggalin an mga tatak mula sa mga pagbabago',
 	'right-codereview-post-comment' => 'Magdagdag ng mga kumento sa mga pagbabago',
 	'right-codereview-set-status' => 'Baguhin ang kalagayan ng mga pagbabago',
+	'right-codereview-signoff' => 'Lumagdang patapos sa mga rebisyon',
 	'right-codereview-link-user' => 'Ikawing ang mga may-akda sa mga tagagamit ng wiki',
+	'right-codereview-associate' => 'Pangasiwaan ang mga ugnayan ng rebisyon',
 	'specialpages-group-developer' => 'Mga kasangkapan ng tagapagpaunlad',
+	'group-svnadmins' => 'Mga tagapangasiwa ng SVN',
+	'group-svnadmins-member' => 'Tagapangasiwa ng SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Mga tagapangasiwa ng SVN',
 );
 
 /** Turkish (Türkçe)
@@ -12613,6 +12710,9 @@ $messages['vi'] = array(
 	'code-prop-changes' => 'Nhật trình trạng thái và thẻ',
 	'codereview-desc' => '[[Special:Code|Công cụ duyệt mã]] [[Special:RepoAdmin|hỗ trợ Subversion]]',
 	'code-no-repo' => 'Chưa thiết lập kho dữ liệu!',
+	'code-create-repo' => 'Sử dụng [[Special:RepoAdmin|RepoAdmin]] để tạo kho dữ liệu',
+	'code-need-repoadmin-rights' => 'Cần quyền repoadmin để tạo kho dữ liệu',
+	'code-need-group-with-rights' => 'Không có nhóm nào có quyền repoadmin. Xin cấp quyền đó cho một nhóm để tạo kho dữ liệu mới.',
 	'code-repo-not-found' => "Kho '''$1''' không tồn tại!",
 	'code-load-diff' => 'Đang tải khác biệt…',
 	'code-notes' => 'ghi chú gần đây',
@@ -13042,6 +13142,9 @@ $messages['zh-hans'] = array(
 	'code-prop-changes' => '状态与标签记录',
 	'codereview-desc' => '使用[[Special:RepoAdmin|Subversion支持]]的[[Special:Code|代码检查工具]]',
 	'code-no-repo' => '储存库未被设置！',
+	'code-create-repo' => '转到[[Special:RepoAdmin|RepoAdmin]]创建Repository',
+	'code-need-repoadmin-rights' => '需要repoadmin权限来建立Repository',
+	'code-need-group-with-rights' => '不存在具有repoadmin权限的组，请添加新组以建立Repository',
 	'code-repo-not-found' => "存储库'''$1'''不存在！",
 	'code-load-diff' => '加载差异中...',
 	'code-notes' => '新近发言',
