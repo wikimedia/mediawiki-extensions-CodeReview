@@ -388,7 +388,7 @@ class CodeRevision {
 				$committer = $commitAuthor->getName();
 				$commitAuthorId = $commitAuthor->getId();
 			} else {
-				$committer = htmlspecialchars( $this->mAuthor );
+				$committer = htmlspecialchars( $this->author );
 				$commitAuthorId = 0;
 			}
 
@@ -428,7 +428,7 @@ class CodeRevision {
 				$revisionCommitSummary = $revision->getMessage();
 
 				//Add the followup revision author if they have not already been added as a commentor (they won't want dupe emails!)
-				if ( !array_key_exists( $revisionAuthor->getId(), $users ) ) {
+				if ( $revisionAuthor && !array_key_exists( $revisionAuthor->getId(), $users ) ) {
 					$users[$revisionAuthor->getId()] = $revisionAuthor;
 				}
 
