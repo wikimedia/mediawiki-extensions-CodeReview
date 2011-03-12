@@ -2857,7 +2857,7 @@ $messages['el'] = array(
 	'code-rev-tag-add' => 'Προσθήκη ετικετών:',
 	'code-rev-tag-remove' => 'Αφαίρεση ετικετών:',
 	'code-rev-comment-by' => 'Σχόλιο από τον $1',
-	'code-rev-comment-preview' => 'Προεπισκόπιση',
+	'code-rev-comment-preview' => 'Προεπισκόπηση',
 	'code-rev-inline-preview' => 'Προεπισκόπηση:',
 	'code-rev-diff' => 'Διαφορά',
 	'code-rev-diff-link' => 'διαφορά',
@@ -6450,6 +6450,7 @@ $4',
 /** Georgian (ქართული)
  * @author BRUTE
  * @author Dawid Deutschland
+ * @author ITshnik
  * @author Malafaya
  * @author გიორგიმელა
  */
@@ -6536,6 +6537,7 @@ $messages['ka'] = array(
 	'code-release-endrev' => 'ბოლო რევიზია:',
 	'codereview-subtitle' => '$1-სთვის',
 	'codereview-reply-link' => 'პასუხი',
+	'codereview-email-subj' => '[$1 $2]: დაემატა ახალი კომენტარი',
 	'codereview-email-body' => 'მომხმარებელმა "$1" დადო კომენტარი $3-ზე.
 
 ბმული: $2
@@ -6560,6 +6562,8 @@ $4',
 	'right-codereview-set-status' => 'რედაქციის სტატუსის ცვლილება',
 	'right-codereview-link-user' => 'ვიკიპროექტელებისა და რედაქციების კავშირი',
 	'specialpages-group-developer' => 'შემქმნელის ხელსაწყოები',
+	'group-svnadmins' => 'SVN ადმინისტრატორები',
+	'group-svnadmins-member' => 'SVN ადმინისტრატორი',
 );
 
 /** Khmer (ភាសាខ្មែរ)
