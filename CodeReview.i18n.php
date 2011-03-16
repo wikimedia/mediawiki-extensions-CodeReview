@@ -6937,7 +6937,7 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'code-pathsearch-filter' => 'Ußjesöhk noh:&nbsp;',
 	'code-revfilter-cr_status' => 'Stattus = $1',
 	'code-revfilter-cr_author' => 'Schriever = $1',
-	'code-revfilter-clear' => 'Donn de Ußwahl fottschmieße',
+	'code-revfilter-clear' => 'Donn nix mieh udder keine mieh ußwähle!',
 	'code-rev-submit' => 'Änderunge faßhallde',
 	'code-rev-submit-next' => 'Don dat faßhallde, un jangk nohm nächste unjelöste Kumflick',
 	'code-batch-status' => 'Shtattus ändere:',
