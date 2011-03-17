@@ -4988,6 +4988,7 @@ $messages['hif-latn'] = array(
  * @author CERminator
  * @author Dalibor Bosits
  * @author Ex13
+ * @author Herr Mlinka
  * @author Roberta F.
  * @author SpeedyGonsales
  */
@@ -5005,6 +5006,9 @@ $messages['hr'] = array(
 	'code-prop-changes' => 'Evidencija statusa i označavanja',
 	'codereview-desc' => '[[Special:Code|Alat za pregled koda]] s podrškom za [[Special:RepoAdmin|Subversion]]',
 	'code-no-repo' => 'Nema konfiguracije repozitorija!',
+	'code-create-repo' => 'Idi na [[Special:RepoAdmin|RepoAdmin]] kako bi kreirao repozitorij',
+	'code-need-repoadmin-rights' => 'repoadmin prava su potrebna kako bi mogli kreirati repozitorij',
+	'code-need-group-with-rights' => 'Niti jedna skupina s repoadmin pravima ne postoji. Molimo vas, dodajte barem jednu takvu skupinu kako biste mogli dodati novi repozitorij',
 	'code-repo-not-found' => "Repozitorij '''$1''' ne postoji!",
 	'code-load-diff' => 'Učitavam razliku...',
 	'code-notes' => 'nedavni komentari',
@@ -5132,10 +5136,15 @@ Napravljeni sažetak:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Promjena stanja revizije',
-	'codereview-email-body3' => 'Suradnik "$1" promijenio je stanje $2.
+	'codereview-email-body3' => 'Suradnik "$1" promijenio je status $2.
 
-Staro stanje: $3
-Novo stanje: $4',
+Stari status: $3
+Novi status: $4
+
+Potpuni URL: $5
+Commit summary:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Dodan je novi komentar i promijenjeno je stanje revizije',
 	'codereview-email-body4' => 'Suradnik "$1"  je promijenio stanje $2.
 
@@ -5175,7 +5184,9 @@ $6',
 	'right-codereview-signoff' => 'Završi izmjene revizija',
 	'right-codereview-link-user' => 'Povezivanje autora s wiki suradnikom',
 	'specialpages-group-developer' => 'Alati za razvijatelje',
+	'group-svnadmins' => 'SVN administratori',
 	'group-svnadmins-member' => 'SVN administrator',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN administratori',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -7969,9 +7980,11 @@ $messages['myv'] = array(
 
 /** Nahuatl (Nāhuatl)
  * @author Fluence
+ * @author Teòtlalili
  */
 $messages['nah'] = array(
-	'code-author-link' => '¿tiquitzonhuiliztīz?',
+	'code-author-link' => '¿motzòwìs?',
+	'code-author-unlink' => '¿motzòwilkỏtònas?',
 	'code-status-ok' => 'quēmah',
 );
 
