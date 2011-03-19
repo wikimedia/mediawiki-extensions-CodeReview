@@ -693,6 +693,10 @@ class CodeRevisionView extends CodeView {
 			'</div>';
 	}
 
+	/**
+	 * @param CodeComment $comment
+	 * @return string
+	 */
 	protected function commentStyle( $comment ) {
 		$depth = $comment->threadDepth();
 		$margin = ( $depth - 1 ) * 48;

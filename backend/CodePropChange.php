@@ -4,6 +4,11 @@ class CodePropChange {
 
 	public $attrib, $removed, $added, $user, $userText, $timestamp;
 
+	/**
+	 * @var CodeRevision
+	 */
+	public $rev;
+
 	function __construct( $rev ) {
 		$this->rev = $rev;
 	}
