@@ -26,7 +26,6 @@ class CodeReviewTest extends PHPUnit_Framework_TestCase {
 		// $this->assertEquals( '[[bugzilla:19359|bug 19359]]', $formatter->link( '[[bugzilla:19359|bug 19359]]' ) );
 		
 		// fails, bug 19299
-		// $this->assertEquals( '[[bugzilla:18989|Bug 18989]]', $formatter->link( '[[bugzilla:18989|Bug 18989]]' ) );
 		// $this->assertEquals( '[http://www.mediawiki.org/wiki/Special:Code/MediaWiki/75762#code-comments r75762 CR comments]',
 		//	$formatter->link( [http://www.mediawiki.org/wiki/Special:Code/MediaWiki/75762#code-comments r75762 CR comments]' ) );
 
