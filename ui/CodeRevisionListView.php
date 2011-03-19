@@ -374,9 +374,9 @@ class SvnRevTablePager extends SvnTablePager {
 				return '-';
 			}
 		case 'cr_path':
-			$title = $this->mRepo->getName() . '/path';
+			$title = $this->mRepo->getName();
 			if( $this->mView->mAuthor ) {
-				$title .= '/' . $this->mView->mAuthor;
+				$title .= '/author/' . $this->mView->mAuthor;
 			}
 
 			return Xml::openElement( 'div', array( 'title' => (string)$value ) ) .
