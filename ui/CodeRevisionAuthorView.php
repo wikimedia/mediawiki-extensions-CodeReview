@@ -13,8 +13,9 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 	}
 
 	function linkStatus() {
-		if ( !$this->mUser )
+		if ( !$this->mUser ) {
 			return wfMsg( 'code-author-orphan' );
+		}
 
 		return wfMsgHtml( 'code-author-haslink',
 			$this->skin->userLink( $this->mUser->getId(), $this->mUser->getName() ) .
