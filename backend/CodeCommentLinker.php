@@ -77,6 +77,11 @@ class CodeCommentLinkerWiki extends CodeCommentLinker {
 		return "[$url $text]";
 	}
 
+	/**
+	 * @param Title $title
+	 * @param  $text
+	 * @return string
+	 */
 	function makeInternalLink( $title, $text ) {
 		return "[[" . $title->getPrefixedText() . "|$text]]";
 	}
