@@ -7392,6 +7392,13 @@ $messages['lt'] = array(
 	'repoadmin-edit-button' => 'Gerai',
 );
 
+/** Latgalian (Latgaļu)
+ * @author Dark Eagle
+ */
+$messages['ltg'] = array(
+	'code-signoff-field-user' => 'Lītuotuojs',
+);
+
 /** Latvian (Latviešu)
  * @author Papuass
  */
@@ -8117,6 +8124,22 @@ $messages['nds-nl'] = array(
 	'code-rev-repo' => 'Repositorium:',
 	'code-rev-rev' => 'Versie:',
 	'code-rev-rev-viewvc' => 'in ViewVC',
+);
+
+/** Nepali (नेपाली)
+ * @author Bhawani Gautam Rhk
+ */
+$messages['ne'] = array(
+	'code-authors' => 'लेखकहरु',
+	'code-author-link' => 'लिङ्क गर्ने?',
+	'code-author-unlink' => 'लिङ्क तोड़ने',
+	'code-field-status' => 'स्थिति',
+	'code-field-path' => 'पथ',
+	'code-field-text' => 'सूचना',
+	'code-field-select' => 'चुन्ने',
+	'code-status-new' => 'नयाँ',
+	'code-status-ok' => 'हुन्छ',
+	'code-signoff-field-user' => 'प्रयोगकर्ता',
 );
 
 /** Dutch (Nederlands)
