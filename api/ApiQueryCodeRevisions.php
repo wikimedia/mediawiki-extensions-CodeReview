@@ -60,7 +60,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 
 			$query = $pager->getQueryInfo();
 
-			$query['conds'][] = array( 'cr_id IN' => $params['revs'] );
+			$query['conds'][] = 'cr_id IN (' . $db->makeList( $params['revs'] ) . ')';
 
 			$revisions = $db->select( $query['tables'], $query['fields'], $query['conds'],
 				__METHOD__, $query['options'], $query['join_conds'] );
