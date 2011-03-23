@@ -16,7 +16,7 @@ class CodeRevisionListView extends CodeView {
 		global $wgRequest;
 
 		$path = $wgRequest->getVal( 'path' );
-		
+
 		if ( $path != '' ) {
 			$this->mPath = array_map( array( $this, 'preparePaths' ), explode( '|', $path ) );
 		} else {
@@ -77,6 +77,8 @@ class CodeRevisionListView extends CodeView {
 			$wgUser->isAllowed( 'codereview-add-tag' );
 
 		$navBar = $pager->getNavigationBar();
+
+		$wgOut->addModules( 'ext.codereview.tooltips' );
 
 		$wgOut->addHTML( $pathForm );
 
