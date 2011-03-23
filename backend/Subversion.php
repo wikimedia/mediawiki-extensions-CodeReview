@@ -127,8 +127,8 @@ class SubversionShell extends SubversionAdaptor {
 	function __construct( $repo ) {
 		parent::__construct( $repo );
 		global $wgMaxShellMemory;
-		if( $wgMaxShellMemory < SubversionShell::MIN_MEMORY ) {
-			$wgMaxShellMemory = 204800;
+		if( $wgMaxShellMemory < self::MIN_MEMORY ) {
+			$wgMaxShellMemory = self::MIN_MEMORY;
 			wfDebug( __METHOD__ . " raised wgMaxShellMemory to $wgMaxShellMemory\n" );
 		}
 	}
