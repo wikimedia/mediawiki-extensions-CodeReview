@@ -151,7 +151,8 @@ $wgResourceModules['ext.codereview.loaddiff'] = array(
 
 // Revision tooltips CodeRevisionView:
 $wgResourceModules['ext.codereview.tooltips'] = array(
-	'scripts' => 'ext.codereview.tooltips.js'
+	'scripts' => 'ext.codereview.tooltips.js',
+	'dependencies' => 'jquery.tipsy'
 ) + $commonModuleInfo;
 
 // If you are running a closed svn, fill the following two lines with the username and password

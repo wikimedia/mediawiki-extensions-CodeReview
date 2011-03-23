@@ -78,8 +78,6 @@ class CodeRevisionListView extends CodeView {
 
 		$navBar = $pager->getNavigationBar();
 
-		$wgOut->addModules( 'ext.codereview.tooltips' );
-
 		$wgOut->addHTML( $pathForm );
 
 		$wgOut->addHTML(

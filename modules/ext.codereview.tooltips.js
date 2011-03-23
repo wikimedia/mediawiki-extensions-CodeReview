@@ -48,6 +48,4 @@ var CodeTooltipsInit = function() {
 	});
 };
 
-mw.loader.using( 'jquery.tipsy', function(){
-	$( document ).ready( CodeTooltipsInit );
-});
+$( document ).ready( CodeTooltipsInit );

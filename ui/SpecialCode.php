@@ -19,6 +19,7 @@ class SpecialCode extends SpecialPage {
 		$this->setHeaders();
 		// Base styles used for all code review UI actions.
 		$wgOut->addModules( 'ext.codereview' );
+		$wgOut->addModules( 'ext.codereview.tooltips' );
 
 		$view = $this->getViewFrom( $subpage );
 		if( $view ) {
