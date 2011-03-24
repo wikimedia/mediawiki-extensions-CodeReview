@@ -14,6 +14,11 @@ abstract class CodeView {
 	 */
 	var $skin;
 
+	/**
+	 * @var CodeCommentLinkerHtml
+	 */
+	var $codeCommentLinker;
+
 	function __construct( $repo ) {
 		$this->mRepo = ( $repo instanceof CodeRepository )
 			? $repo
@@ -21,6 +26,8 @@ abstract class CodeView {
 
 		global $wgUser;
 		$this->skin = $wgUser->getSkin();
+
+		$this->codeCommentLinker = new CodeCommentLinkerHtml( $repo );
 	}
 
 	function validPost( $permission ) {
@@ -44,8 +51,7 @@ abstract class CodeView {
 
 	function formatMessage( $text ) {
 		$text = nl2br( htmlspecialchars( $text ) );
-		$linker = new CodeCommentLinkerHtml( $this->mRepo );
-		return $linker->link( $text );
+		return $this->codeCommentLinker->link( $text );
 	}
 
 	function messageFragment( $value ) {
