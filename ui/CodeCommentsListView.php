@@ -89,8 +89,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cc_text':
-			# Truncate this, blah blah...
-			return htmlspecialchars( $wgLang->truncate( $value, 300 ) );
+			return $this->mView->messageFragment( $value );
 		case 'cc_timestamp':
 			global $wgLang;
 			return $wgLang->timeanddate( $value, true );
