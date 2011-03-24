@@ -47,7 +47,6 @@ class CodeReleaseNotes extends CodeView {
 
 	protected function showReleaseNotes() {
 		global $wgOut;
-		$linker = new CodeCommentLinkerHtml( $this->mRepo );
 		$dbr = wfGetDB( DB_SLAVE );
 		$where = array();
 		if ( $this->mEndRev ) {
@@ -85,8 +84,8 @@ class CodeReleaseNotes extends CodeView {
 					$summary = str_replace( "\n", "<br />", $summary ); // Newlines -> <br />
 					$wgOut->addHTML( "<li>" );
 					$wgOut->addHTML(
-						$linker->link( $summary ) . " <i>(" . htmlspecialchars( $row->cr_author ) .
-						', ' . $linker->link( "r{$row->cr_id}" ) . ")</i>"
+						$this->codeCommentLinkerHtml->link( $summary ) . " <i>(" . htmlspecialchars( $row->cr_author ) .
+						', ' . $this->codeCommentLinkerHtml->link( "r{$row->cr_id}" ) . ")</i>"
 					);
 					$wgOut->addHTML( "</li>\n" );
 				}

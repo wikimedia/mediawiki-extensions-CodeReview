@@ -661,7 +661,6 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function formatComment( $comment, $replyForm = '' ) {
 		global $wgOut, $wgLang;
-		$linker = new CodeCommentLinkerWiki( $this->mRepo );
 
 		if ( $comment->id === 0 ) {
 			$linkId = 'cpreview';
@@ -687,7 +686,7 @@ class CodeRevisionView extends CodeView {
 			$this->commentReplyLink( $comment->id ) .
 			'</div>' .
 			'<div class="mw-codereview-comment-text">' .
-			$wgOut->parse( $linker->link( $comment->text ) ) .
+			$wgOut->parse( $this->codeCommentLinkerWiki->link( $comment->text ) ) .
 			'</div>' .
 			$replyForm .
 			'</div>';
