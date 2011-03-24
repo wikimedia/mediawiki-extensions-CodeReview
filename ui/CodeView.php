@@ -58,11 +58,10 @@ abstract class CodeView {
 		$truncated = $wgLang->truncateHtml( $html, 80 );
 
 		if ( count( $lines ) > 1  ) { // If multiline, we might want to add an ellipse
-			$ellipse = wfMsgExt( 'ellipsis', array() );
-
-			$len = strlen( $truncated );
-			if ( substr( $truncated, $len ) !== $ellipse ) { // Don't add if the end is already an ellipse
-				$truncated .= $ellipse;
+			$ellipsis = wfMsgExt( 'ellipsis', array() );
+			// Hack: don't add if the end is already an ellipse
+			if ( substr( $truncated, -strlen( $ellipsis ) ) !== $ellipsis ) {
+				$truncated .= $ellipsis;
 			}
 		}
 
