@@ -139,4 +139,10 @@ abstract class SvnTablePager extends TablePager {
 		$s .= "</tr>\n";
 		return $s;
 	}
+
+	function getStartBody() {
+		global $wgOut;
+		$wgOut->addModules( 'ext.codereview.scapmap' );
+		return parent::getStartBody();
+	}
 }

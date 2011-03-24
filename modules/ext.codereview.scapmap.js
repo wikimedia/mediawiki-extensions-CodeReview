@@ -1,0 +1,137 @@
+/* Scap roadmap viewer, version [0.0.7]
+ * Originally from: http://www.mediawiki.org/wiki/User:Splarka/scapmap.js
+ *
+ *
+ * Loads on, for example: http://www.mediawiki.org/wiki/Special:Code/MediaWiki
+ * Click [overview] to generate map.
+ * Text in the "path" input box is stripped from the path line in the summary.
+ * Clicking a colored box takes you to that relevant line, and a backlink is created in the id column on focus.
+ * Hovering over a colored box pops up a little info packet box.
+ */
+
+// check if we're on a page with a useful list of revisions
+( function( $ ) {
+	if( $( '#path' ).size() && $('table.TablePager').size() ) {
+		mw.util.addPortletLink(
+				'p-cactions',
+				'#',
+				'Overview',
+				'ca-scapmap',
+				'Show a graphical overview of this list.',
+				'1'
+				);
+	}
+
+	$('#ca-scapmap').click( function ( $ ) {
+		var $tr = $('table.TablePager tr');
+		if( $tr.size() < 2 || $('#overviewmap').size() ) {
+			return;
+		}
+
+		var overviewPopupData = {};
+
+		$( '#contentSub' ).after( $( '<div id="overviewmap">' ) );
+		$( '#overviewmap' ).slideUp( 0 );
+
+		var vpath = $( '#path' ).val();
+		var totals = {};
+		$tr.each( function( i ){
+			var live = 'notlive';
+			var status = false;
+
+			var trc = $(this).attr( 'class' ).split(' ');
+			if( !trc.length ) {
+				return;
+			}
+			for( var j = 0; j < trc.length; j++ ) {
+				// WMF doesn't use live/not live ATM
+				// if( /mw\-codereview\-(not|)live/.test( trc[j] ) )
+				// 	live = trc[j].substring( 14 );
+				if( trc[j].substring( 0, 21 ) == 'mw-codereview-status-' ) {
+					status = trc[j].substring( 21 );
+				}
+			}
+			var $td = $( 'td', $(this) );
+
+			var statusname = $td.filter( '.TablePager_col_cr_status' ).text();
+
+			if( !statusname || !status || !live ) {
+				return;
+			}
+
+			var rev = $td.filter( '.TablePager_col_cr_id, .TablePager_col_cp_rev_id' ).text();
+			overviewPopupData[i] = {
+				'status' : status,
+				'statusname' : statusname,
+				'notes' : $td.filter( '.TablePager_col_comments' ).text(),
+				'author' : $td.filter( '.TablePager_col_cr_author' ).text(),
+				'rev' : rev
+			};
+
+			var path = $td.filter( '.TablePager_col_cr_path' ).text();
+			if( path && path.indexOf( vpath ) == 0 && path != vpath && vpath != '' ) {
+				path = '\u2026' + path.substring( vpath.length );
+			}
+			overviewPopupData[i]['path'] = path;
+
+			//overviewPopupData[i]['live'] = live;
+			if( !totals[statusname] ) {
+				totals[statusname] = 0;
+			}
+			//if( !totals[live] ) {
+			//	totals[live] = 0;
+			//}
+			totals[statusname]++;
+			//totals[live]++;
+
+			$(this).attr( 'id', 'TablePager-row-' + rev );
+
+			$td.filter( '.TablePager_col_selectforchange' )
+				.append( $( '<a href="#box-' + i + '" class="overview-backlink">^</a>' ) );
+
+			var $box = $( '<a href="#TablePager-row-' + rev + '" class="box-status-' + status + '" id="box-' + i + '"> </a>' );
+			// $box.append( document.createTextNode( live ) );
+			$( '#overviewmap' ).append( $box );
+		});
+
+		var sumtext = [];
+		for( var i in totals ) {
+			if( typeof i != 'string' || typeof totals[i] != 'number' ) {
+				continue;
+			}
+			sumtext.push( i + ': ' + totals[i] );
+		}
+		sumtext.sort();
+		var $summary = $( '<div class="summary">' )
+			.text( 'Total revisions: ' + ( $tr.size() - 1 ) + '. [' + sumtext.join(', ') + ']' );
+
+		$( '#overviewmap' )
+			.append( $summary )
+			.css( 'max-width', Math.floor( Math.sqrt( $tr.size() ) ) * 30 )
+			.slideDown();
+
+		// Add the hover popup
+		$( '#overviewmap > a' )
+			.mouseenter( function () {
+
+			var $el = $( this );
+				if ( $el.data('overviewPopup') ) {
+					return; // already processed
+				}
+				$el.tipsy( { fade: true, gravity: 'sw', html:true } );
+				var id = parseInt( $(this).attr( 'id' ).replace( /box\-/i, '' ) );
+
+				var $popup = $( '<div id="overviewpop">' +
+					'<div>Rev: r<span id="overviewpop-rev">' + overviewPopupData[id]['rev'] +
+					'</span> (<span id="overviewpop-status">' + overviewPopupData[id]['status'] + '</span>)</div>' +
+					'<div>Number of notes: <span id="overviewpop-notes">' + overviewPopupData[id]['notes'] + '</span></div>' +
+					'<div>Path: <span id="overviewpop-path">' + overviewPopupData[id]['path'] + '</span></div>' +
+					'<div>Author: r<span id="overviewpop-author">' + overviewPopupData[id]['author'] + '</span></div>' +
+					//'<div>Live: <span id="overviewpop-live">' + overviewPopupData[id]['live'] + '</span></div>' +
+					'</div>')
+				$el.attr( 'title', $popup.html() );
+				$el.data( 'codeTooltip', true );
+				$el.tipsy( 'show' );
+			});
+	});
+})( jQuery ) ;

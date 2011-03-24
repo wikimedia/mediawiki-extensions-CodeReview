@@ -155,6 +155,13 @@ $wgResourceModules['ext.codereview.tooltips'] = array(
 	'dependencies' => 'jquery.tipsy'
 ) + $commonModuleInfo;
 
+// Revision 'scapmap':
+$wgResourceModules['ext.codereview.scapmap'] = array(
+	'scripts' => 'ext.codereview.scapmap.js',
+	'styles' => 'ext.codereview.scapmap.css',
+	'dependencies' => 'jquery.tipsy'
+) + $commonModuleInfo;
+
 // If you are running a closed svn, fill the following two lines with the username and password
 // of a user allowed to access it. Otherwise, leave it false.
 // This is only necessary if using the shell method to access Subversion
