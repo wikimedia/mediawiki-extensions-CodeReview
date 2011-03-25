@@ -10775,7 +10775,12 @@ $4',
 	'codereview-email-body3' => 'Používateľ „$1“ zmenil stav $2.
 
 Starý stav: $2
-Nový stav:  $3',
+Nový stav:  $3
+
+Plný URL: $5
+Zhrnutie úprav:
+
+$6',
 	'code-stats' => 'štatistika',
 	'code-stats-header' => 'Štatistika úložiska $1',
 	'code-stats-main' => '$1, úložisko má $2 {{PLURAL:$2|revíziu|revízie|revízií}} od [[Special:Code/$3/author|$4 {{PLURAL:$4|autora|autorov}}]].',
@@ -12738,6 +12743,13 @@ $messages['vep'] = array(
 	'code-rev-modified-d' => 'heittud',
 	'code-rev-status' => 'Status:',
 	'code-rev-tags' => 'Virgad:',
+	'code-rev-tag-add' => 'Ližata virgad:',
+	'code-rev-tag-remove' => 'Čuta virgad poiš:',
+	'code-rev-comment-by' => '$1-kävutajan kommentarii',
+	'code-rev-comment-preview' => 'Ezikacund',
+	'code-rev-inline-preview' => 'Ezikacund:',
+	'code-rev-diff' => 'Erinendad',
+	'code-rev-diff-link' => 'erinend',
 	'code-status-ok' => 'ok',
 	'code-pathsearch-path' => 'Te:',
 	'code-batch-status' => 'Vajehtada status:',
