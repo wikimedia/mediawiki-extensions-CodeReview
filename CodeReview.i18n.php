@@ -7140,6 +7140,8 @@ $messages['lb'] = array(
 	'code-status-old' => 'al',
 	'code-status-desc-old' => 'Al Versioun mat méigleche Feeler (Bugs), déi et awer net derwäert si fir nogekuckt ze ginn.',
 	'code-signoffs' => 'Zoustëmmungen',
+	'code-signoff-legend' => 'Fräiginn derbäisetzen',
+	'code-signoff-submit' => 'Fräiginn',
 	'code-signoff-flag-inspected' => 'Inspizéiert',
 	'code-signoff-flag-tested' => 'Getest',
 	'code-signoff-field-user' => 'Benotzer',
@@ -9973,6 +9975,7 @@ $4',
  * @author Ferrer
  * @author JenVan
  * @author Kaganer
+ * @author Lockal
  * @author MaxSem
  * @author Putnik
  * @author Александр Сигачёв
@@ -10059,7 +10062,7 @@ $messages['ru'] = array(
 	'code-rev-purge-link' => 'очистить кеш',
 	'code-rev-total' => 'Общее количество результатов: $1',
 	'code-rev-not-found' => "Ревизии '''$1''' не существует!",
-	'code-status-new' => 'новое',
+	'code-status-new' => 'новая',
 	'code-status-desc-new' => 'Ревизия ожидает действия (статус по умолчанию).',
 	'code-status-fixme' => 'исправить',
 	'code-status-desc-fixme' => 'Рецензент отметил в этой ревизии ошибку или неисправность. Она должна быть исправлена.',
