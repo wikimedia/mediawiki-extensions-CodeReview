@@ -48,6 +48,7 @@ CREATE TABLE /*_*/code_rev (
   -- Status key for how this thang is...
   -- 'new': Hasn't yet been reviewed
   -- 'fixme': This revision has some problem which needs to be resolved
+  -- 'improveme': This revision has no major errors, but needs further work
   -- 'reverted': Was completely reverted by a later revision
   -- 'resolved': Issues with this rev have been since resolved
   -- 'ok': Reviewed, no issues spotted
