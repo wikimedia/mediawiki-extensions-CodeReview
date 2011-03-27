@@ -71,7 +71,7 @@ table.mw-codereview-meta td {
 
 .mw-codereview-status-improveme,
 .mw-codereview-status-improveme td {
-	background: #ff9900 !important;
+	background: #fc0 !important;
 	color: white;
 }
 .mw-codereview-status-improveme:hover,
