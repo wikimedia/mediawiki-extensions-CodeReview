@@ -207,7 +207,7 @@ CREATE TABLE /*_*/code_prop_changes (
   cpc_rev_id int not null,
 
   -- The item that was changed
-  cpc_attrib enum('status','tags') not null,
+  cpc_attrib varchar(10) not null,
   -- How it was changed
   cpc_removed blob,
   cpc_added blob,

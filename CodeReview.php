@@ -250,6 +250,11 @@ function efCodeReviewSchemaUpdates( $updater ) {
 			$updater->addExtensionUpdate( array( 'modifyField', 'code_paths', 'cp_action',
 				"$base/archives/codereview-cp_action_char.sql", true ) );
 		}
+
+		if ( !$updater->updateRowExists( 'make cp_action char' ) ) {
+			$updater->addExtensionUpdate( array( 'modifyField', 'code_prop_changes', 'cpc_attrib',
+				"$base/archives/codereview-cpc_attrib_varchar.sql", true ) );
+		}
 		break;
 	case 'sqlite':
 		$updater->addNewExtension( 'CodeReview', "$base/codereview.sql" );
