@@ -251,7 +251,7 @@ function efCodeReviewSchemaUpdates( $updater ) {
 				"$base/archives/codereview-cp_action_char.sql", true ) );
 		}
 
-		if ( !$updater->updateRowExists( 'make cp_action char' ) ) {
+		if ( !$updater->updateRowExists( 'make code_prop_changes char' ) ) {
 			$updater->addExtensionUpdate( array( 'modifyField', 'code_prop_changes', 'cpc_attrib',
 				"$base/archives/codereview-cpc_attrib_varchar.sql", true ) );
 		}
