@@ -1314,7 +1314,7 @@ $messages['bg'] = array(
 	'code-field-user' => 'Коментатор',
 	'code-field-status' => 'Статут',
 	'code-field-timestamp' => 'Дата',
-	'code-field-comments' => 'Бележки',
+	'code-field-comments' => 'Коментари',
 	'code-field-path' => 'Път',
 	'code-field-text' => 'Бележка',
 	'code-field-select' => 'Избиране',
@@ -2371,13 +2371,15 @@ $messages['de'] = array(
 	'code-status-new' => 'neu',
 	'code-status-desc-new' => 'Revision erwartet eine Aktion (Standardstatus).',
 	'code-status-fixme' => 'FIXME',
-	'code-status-desc-fixme' => 'Ein Begutachter markierte diese Revision als fehlerhaft oder Verursacher eines Softwarefehlers. Sie sollte korrigiert werden.',
+	'code-status-desc-fixme' => 'Ein Gutachter markierte diese Revision als fehlerhaft oder Verursacher eines Softwarefehlers. Sie sollte korrigiert werden.',
+	'code-status-improveme' => 'IMPROVEME',
+	'code-status-desc-improveme' => 'Ein Gutachter markierte diese Revision als verbesserungsbedürftig. Sie sollte korrigiert werden.',
 	'code-status-reverted' => 'rückgängig gemacht',
 	'code-status-desc-reverted' => 'Revision wurde durch eine spätere Revision rückgängig gemacht.',
 	'code-status-resolved' => 'erledigt',
 	'code-status-desc-resolved' => 'Mit dieser Revision gab es ein Problem, das mit einer späteren Revision berichtigt wurde.',
 	'code-status-ok' => 'OK',
-	'code-status-desc-ok' => 'Die Revision wurde vollständig begutachtet und der Begutachter ist sich sicher, dass sie in jeder Hinsicht einwandfrei ist.',
+	'code-status-desc-ok' => 'Die Revision wurde vollständig begutachtet und der Gutachter ist sich sicher, dass sie in jeder Hinsicht einwandfrei ist.',
 	'code-status-deferred' => 'zurückgestellt',
 	'code-status-desc-deferred' => 'Die Revision erfordert keine Begutachtung.',
 	'code-status-old' => 'alt',
@@ -2405,38 +2407,47 @@ $messages['de'] = array(
 	'code-batch-tags' => 'Tags ändern:',
 	'codereview-batch-title' => 'Alle ausgewählten Revisionen ändern',
 	'codereview-batch-submit' => 'Speichern',
-	'code-releasenotes' => 'Protokoll der Änderungen',
-	'code-release-legend' => 'Protokoll der Änderungen erzeugen',
+	'code-releasenotes' => 'Versionsinformationen',
+	'code-release-legend' => 'Versionsinformationen generieren',
 	'code-release-startrev' => 'Startrevision:',
 	'code-release-endrev' => 'Letzte Revision:',
 	'codereview-subtitle' => 'Für $1',
 	'codereview-reply-link' => 'antworten',
-	'codereview-email-subj' => '[$1 $2]: Neuer Kommentar hinzugefügt',
+	'codereview-email-subj' => '[$1 $2]: Neuen Kommentar hinzugefügt',
 	'codereview-email-body' => 'Benutzer „$1“ hat Revision $3 kommentiert:
 
 Vollständige URL: $2
+Zusammenfassung:
+
+$5
 
 Kommentar:
 
 $4',
-	'codereview-email-subj2' => '[$1 $2]: Darauffolgende Änderungen',
-	'codereview-email-body2' => 'Benutzer „$1“ machte darauffolgende Änderungen zu $2.
+	'codereview-email-subj2' => '[$1 $2]: Nachbearbeitung',
+	'codereview-email-body2' => 'Benutzer „$1“ machte eine Nachbearbeitung zu $2.
 
-Volle URL der darauffolgenden Revision: $5
+Vollständige URL der nachbearbeiteten Revision: $5
+Zusammenfassung:
 
-Volle URL: $3
+$6
 
-Übertragungszusammenfassung:
+Vollständige URL: $3
+
+Zusammenfassung:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: Änderungsstatus wurde geändert',
+	'codereview-email-subj3' => '[$1 $2]: Revisionsstatus geändert',
 	'codereview-email-body3' => 'Benutzer „$1“ änderte den Status von $2.
 
 Alter Status: $3
 Neuer Status: $4
 
-Vollständige URL: $5',
-	'codereview-email-subj4' => '[$1 $2]: Neuen Kommentar hinzugefügt und den Änderungsstatus geändert',
+Vollständige URL: $5
+Zusammenfassung:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Neuen Kommentar hinzugefügt und Revisionsstatus geändert',
 	'codereview-email-body4' => 'Benutzer „$1“ änderte den Status von $2.
 
 Alter Status: $3
@@ -2445,6 +2456,9 @@ Neuer Status: $4
 Benutzer „$1“ fügte zudem einen Kommentar zu $2 hinzu.
 
 Vollständige URL: $5
+Zusammenfassung:
+
+$7
 
 Kommentar:
 
@@ -2799,13 +2813,14 @@ $messages['ee'] = array(
  * @author Glavkos
  * @author Omnipaedista
  * @author ZaDiak
+ * @author Απεργός
  */
 $messages['el'] = array(
 	'code' => 'Επιθεώρηση του κώδικα',
 	'code-rev-title' => '$1 - Επιθεώρηση του Κώδικα',
 	'code-comments' => 'Σχόλια',
 	'code-references' => 'Παρακολούθηση επεξεργασιών',
-	'code-change-status' => "έγινε αλλαγή της '''κατάστασης''' της $1",
+	'code-change-status' => "έγινε αλλαγή της '''κατάστασης''' του $1",
 	'code-change-tags' => "έγινε αλλαγή των '''ετικετών''' για την $1",
 	'code-change-removed' => 'αφαιρέθηκε:',
 	'code-change-added' => 'προστέθηκε:',
@@ -2819,11 +2834,12 @@ $messages['el'] = array(
 	'code-notes' => 'πρόσφατα σχόλια',
 	'code-statuschanges' => 'αλλαγές κατάστασης',
 	'code-mycommits' => 'οι δεσμεύσεις μου',
+	'code-mycomments' => 'Τα σχόλια μου',
 	'code-authors' => 'συγγραφείς',
 	'code-status' => 'καταστάσεις',
 	'code-tags' => 'ετικέτες',
 	'code-tags-no-tags' => 'Δεν υπάρχουν ετικέτες  σε αυτό το αποθετήριο.',
-	'code-authors-text' => 'Παρακάτω είναι μια λίστα από συντάκτες επανάκτησης κατά σειρά commit όνομα. Οι τοπικοί wiki λογαριασμοί  θα εμφανίζονται σε παρένθεση. Ενδέχεται να αποθηκευτεί προσωρινά δεδομένα.',
+	'code-authors-text' => 'Παρακάτω είναι μια λίστα από συντάκτες του αποθηκευτηρίου κατά σειρά του ονόματος που χρησιμοποιεί ο καθένας για καταχωρήσεις. Οι τοπικοί λογαριασμοί στο wiki εμφανίζονται μέσα σε παρενθέσεις. Ενδέχεται τα δεδομένα να έχουν ληφθεί από προσωρινή μνήμη (και να μην είναι ενημερωμένα).',
 	'code-author-haslink' => 'Αυτός ο συγγραφέας είναι συνδεδεμένος με τον χρήστη wiki $1',
 	'code-author-orphan' => 'Αυτός ο συγγραφέας δεν έχει σύνδεσμο με ένα λογαριασμό wiki',
 	'code-author-dolink' => 'Σύνδεση αυτού του χρήστη με έναν χρήστη wiki:',
@@ -2834,11 +2850,14 @@ $messages['el'] = array(
 	'code-author-link' => 'σύνδεση;',
 	'code-author-unlink' => 'αποσύνδεση;',
 	'code-author-unlinksuccess' => 'Ο συγγραφέας $1 έχει αποδιασυνδεθεί',
+	'code-author-total' => 'Συνολικός αριθμός συγγραφέων: $1',
+	'code-author-lastcommit' => 'Τελευταία ημερομηνία μιας καταχώρησης:',
 	'code-field-id' => 'Αναθεώρηση',
 	'code-field-author' => 'Συγγραφέας',
 	'code-field-user' => 'Σχολιαστής',
 	'code-field-message' => 'Περίληψη προσθηκών',
 	'code-field-status' => 'Κατάσταση',
+	'code-field-status-description' => 'Περιγραφή κατάστασης',
 	'code-field-timestamp' => 'Ημερομηνία',
 	'code-field-comments' => 'Σχόλια',
 	'code-field-path' => 'Διαδρομή',
@@ -2866,16 +2885,27 @@ $messages['el'] = array(
 	'code-rev-inline-preview' => 'Προεπισκόπηση:',
 	'code-rev-diff' => 'Διαφορά',
 	'code-rev-diff-link' => 'διαφορά',
+	'code-rev-diff-too-large' => 'Η διαφορά είναι πολύ μεγάλη για να εμφανιστεί.',
 	'code-rev-purge-link' => 'εκκαθάριση',
+	'code-rev-total' => 'Συνολικός αριθμός αποτελεσμάτων: $1',
+	'code-rev-not-found' => "Η αναθεώρηση '''$1''' δεν υπάρχει!",
 	'code-status-new' => 'νέο',
 	'code-status-fixme' => 'επιδιόρθωση',
+	'code-status-improveme' => 'βελτίωση',
 	'code-status-reverted' => 'αναστράφηκε',
+	'code-status-desc-reverted' => 'Η αλλαγή αναιρέθηκε από μεταγενέστερη αναθεώρηση.',
 	'code-status-resolved' => 'επιλύθηκε',
+	'code-status-desc-resolved' => 'Η αλλαγή είχε πρόβλημα που λύθηκε από μεταγενέστερη αναθεώρηση.',
 	'code-status-ok' => 'εντάξει',
 	'code-status-deferred' => 'αναβλήθηκε',
+	'code-status-desc-deferred' => 'Η αλλαγή δεν χρειάζεται επιθεώρηση.',
 	'code-status-old' => 'παλαιά',
+	'code-status-desc-old' => 'Παλιά αναθεώρηση με ενδεχόμενα σφάλματα τα οποία δεν αξίζουν τον κόπο της επιθεώρησης.',
+	'code-signoff-field-user' => 'Χρήστης',
+	'code-signoff-field-date' => 'Ημερομηνία',
 	'code-pathsearch-legend' => 'Αναζήτηση αναθεωρήσεων σε αυτό το αποθηκευτήριο κατά διαδρομή',
 	'code-pathsearch-path' => 'Διαδρομή:',
+	'code-pathsearch-filter' => 'Εφαρμόστηκε το φίλτρο:',
 	'code-revfilter-cr_status' => 'Κατάσταση = $1',
 	'code-revfilter-cr_author' => 'Συγγραφέας = $1',
 	'code-rev-submit' => 'Αποθήκευση αλλαγών',
@@ -2891,27 +2921,57 @@ $messages['el'] = array(
 	'codereview-subtitle' => 'Για το $1',
 	'codereview-reply-link' => 'απάντηση',
 	'codereview-email-subj' => '[$1 $2]: Προστέθηκε νέο σχόλιο',
-	'codereview-email-body' => 'Ο χρήστης "$1" απέστειλε κάποιο σχόλιο στο $3.
+	'codereview-email-body' => 'Ο χρήστης "$1" απέστειλε σχόλιο για το $3.
 
-Πλήρης URL: $2
+Πλήρες URL: $2
+Σύνοψη της καταχώρησης:
+
+$5
 
 Σχόλιο:
 
 $4',
-	'codereview-email-subj2' => '[$1 $2]: Παρακολούθηση αλλαγών',
-	'codereview-email-body2' => 'Ο χρήστης "$1" πραγματοποίησε αλλαγές παρακολούθησης στο $2.
+	'codereview-email-subj2' => '[$1 $2]: Περαιτέρω αλλαγές',
+	'codereview-email-body2' => 'Ο χρήστης "$1" πραγματοποίησε περαιτέρω αλλαγές στο $2.
 
-Πλήρες URL για τη μεταγενέστερη αλλαγή: $3
+Πλήρες URL για τη προγενέστερη αλλαγή: $5
+Σύνοψη της καταχώρησης:
 
-Υποβολή περίληψης:
+$6
+
+Πλήρες URL: $3
+Σύνοψη της καταχώρησης: 
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: Η αυτόματη δοκιμή εντόπισε παλινδρόμηση',
-	'codereview-email-body3' => 'Ο/η χρήστης "$ 1" άλλαξε τη κατάσταση του $2.
+	'codereview-email-subj3' => '[$1 $2]: Η κατάσταση της αλλαγής άλλαξε',
+	'codereview-email-body3' => 'Ο/η χρήστης "$1" άλλαξε τη κατάσταση του $2.
 
-Παλαιά Κατάσταση: $3
-Νέα Κατάσταση: $4',
+Παλιά κατάσταση: $3
+Νέα κατάσταση: $4
+
+Πλήρες URL: $5
+Σύνοψη της καταχώρησης:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Προστέθηκε καινούριο σχόλιο  κι άλλαξε επίσης η κατάσταση της αλλαγής',
+	'codereview-email-body4' => 'Ο χρήστης "$1" άλλαξε την κατάσταση του $2.
+
+Παλιά κατάσταση: $3
+Νέα κατάσταση: $4
+
+Ο χρήστης "$1" επίσης απέστειλε σχόλιο για το $2.
+
+Πλήρες URL: $5
+Σύνοψη της καταχώρησης: 
+
+$7
+
+Σχόλιο:
+
+$6',
 	'code-stats' => 'στατιστικές',
+	'code-stats-status-breakdown' => 'Αριθμός αναθεωρήσεων ανά κατάσταση',
+	'code-stats-count' => 'Αριθμός αναθεωρήσεων',
 	'repoadmin' => 'Διαχείριση του αποθηκευτηρίου',
 	'repoadmin-new-legend' => 'Δημιουργία νέου αποθηκευτηρίου',
 	'repoadmin-new-label' => 'Όνομα αποθηκευτηρίου:',
@@ -2922,6 +2982,7 @@ $4',
 	'repoadmin-edit-view' => 'Διαδρομή ViewVC:',
 	'repoadmin-edit-button' => 'Εντάξει',
 	'repoadmin-edit-sucess' => 'Το αποθηκευτήριο "[[Special:Code/$1|$1]]" τροποποιήθηκε επιτυχώς.',
+	'repoadmin-nav' => 'Διαχείριση του αποθηκευτηρίου',
 	'right-repoadmin' => 'Διαχείριση αποθηκευτηρίων κώδικα',
 	'right-codereview-use' => 'Χρήση του Special:Code',
 	'right-codereview-add-tag' => 'Προσθήκη νέων ετικετών σε αναθεωρήσεις',
@@ -4048,7 +4109,10 @@ $4',
 Ancien état : $3
 Nouvel état : $4
 
-URL complète : $5',
+URL complète : $5
+Résumé de la modification :
+
+$6',
 	'codereview-email-subj4' => '[$1 $2] : nouveau commentaire ajouté et état de la version changé',
 	'codereview-email-body4' => 'L’utilisateur « $1 » a modifié l’état de $2.
 
@@ -4911,9 +4975,12 @@ $messages['he'] = array(
 	'codereview-subtitle' => 'עבור $1',
 	'codereview-reply-link' => 'תגובה',
 	'codereview-email-subj' => '[$1] [גרסה $2]: נוספה הערה חדשה',
-	'codereview-email-body' => 'המשתמש "$1" פרסם הערה אודות $3.
+	'codereview-email-body' => 'המשתמש "$1" פרסם הערה ב־{{GRAMMAR:תחילית|$3}}.
 
 הכתובת המלאה: $2
+תקציר השמירה:
+
+$5
 
 ההערה:
 
@@ -4922,10 +4989,12 @@ $4',
 	'codereview-email-body2' => 'המשתמש "$1" הוסיף גרסאות המשך לגרסה $2.
 
 הכתובת המלאה לגרסת ההמשך: $5.
+תקציר השמירה:
+
+$6
 
 הכתובת המלאה: $3
-
-תקציר השינוי:
+תקציר השמירה:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: מצב הגרסה השתנה',
@@ -4934,16 +5003,22 @@ $4',
 מצב קודם: $3
 מצב חדש: $4
 
-כתובת מלאה: $5',
+כתובת מלאה: $5
+תקציר שמירה:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: נוספה הערה חדשה ומצב הגרסה השתנה',
 	'codereview-email-body4' => 'המשתמש "$1" החליף את המצב של $2.
 
 המצב הישן: $3
 המצב החדש: $4
 
-המשתמש "$1" הגיב גם כן על $2.
+המשתמש "$1" גם הגיב על $2.
 
 הכתובת המלאה: $5
+תקציר השמירה:
+
+$7
 
 הערה:
 
