@@ -313,19 +313,28 @@ $1 = Repository name',
 	'codereview-email-subj2' => 'Subject of an e-mail sent to a user whose revision has been followed upon.
 * <code>$1</code> – Repository name
 * <code>$2</code> – Number of the original revision (which has been followed upon)',
-	'codereview-email-body2' => 'Subject of an e-mail sent to a user whose revision has been followed upon.
+	'codereview-email-body2' => 'Body of an e-mail sent to a user whose revision has been followed upon.
 * <code>$1</code> – User who created the follow-up revision
 * <code>$2</code> – Number of the revision that has been followed upon.
 * <code>$3</code> – URL to the new revision.
 * <code>$4</code> – Commit message of the new revision.
-* <code>$5</code> – URL to followed revision.',
+* <code>$5</code> – URL to followed revision.
+* <code>$6</code> – Commit message of the followed revision.',
 	'codereview-email-subj3' => '* <code>$1</code> – Repository name
 * <code>$2</code> – Number of the revision',
 	'codereview-email-body3' => '* $1 is a user name
 * $2 is a revision number
 * $3 is the old status
 * $4 is the new status
-* $5 is the full URL to code review',
+* $5 is the full URL to code review
+* $6 is the commit summary for the change',
+	'codereview-email-body4' => '* $1 is a user name
+* $2 is a revision number
+* $3 is the old status
+* $4 is the new status
+* $5 is the full URL to code review
+* $6 is the commit summary for the change
+* $7 is the comment for the change',
 	'code-stats' => '{{Identical|Statistics}}',
 	'code-stats-main' => 'Parameters:
 * $1 - time and date when statistics was cached
@@ -1165,6 +1174,8 @@ $messages['be-tarask'] = array(
 	'code-status-desc-new' => 'Вэрсія чакае дзеяньня (статус па змоўчваньні).',
 	'code-status-fixme' => 'выправіць',
 	'code-status-desc-fixme' => 'Рэцэнзэнт пазначыў гэтую вэрсію як памылковую, ці як непрацуючую. Яна павінна быць выпраўленая.',
+	'code-status-improveme' => 'палепшыць код',
+	'code-status-desc-improveme' => 'Рэцэнзэнт пазначыў гэтую вэрсію як тую, што ўтрымлівае невялікія праблемы. Яны павінны быць выпраўленыя.',
 	'code-status-reverted' => 'адмененая',
 	'code-status-desc-reverted' => 'Вэрсія была замененая больш позьняю.',
 	'code-status-resolved' => 'вырашаная',
@@ -1207,7 +1218,10 @@ $messages['be-tarask'] = array(
 	'codereview-email-subj' => '[$1 $2]: Дададзены новы камэнтар',
 	'codereview-email-body' => 'Удзельнік «$1» дадаў камэнтар для $3.
 
-Поўны URL: $2
+Поўны URL-адрас: $2
+Кароткае апісаньне зьменаў:
+
+$5
 
 Камэнтар:
 
@@ -1216,6 +1230,9 @@ $4',
 	'codereview-email-body2' => 'Карыстальнік «$1» зрабіў наступныя зьмены ў $2.
 
 Поўны URL-адрас папярэдняй вэрсіі: $5
+Кароткае апісаньне зьменаў:
+
+$6
 
 Поўны URL-адрас: $3
 
@@ -1228,7 +1245,10 @@ $4',
 Стары статус: $3
 Новы статус: $4
 
-URL-адрас: $5',
+URL-адрас: $5
+Кароткае апісаньне зьменаў:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Дададзены новы камэнтар, статус вэрсіі зьменены',
 	'codereview-email-body4' => 'Удзельнік «$1» зьмяніў статус $2.
 
@@ -1238,6 +1258,9 @@ URL-адрас: $5',
 Удзельнік «$1» таксама пакінуў камэнтар у $2.
 
 Поўны URL-адрас: $5
+Кароткае апісаньне зьменаў:
+
+$7
 
 Камэнтар:
 
@@ -1516,6 +1539,8 @@ $messages['br'] = array(
 	'code-status-desc-new' => "Un oberiaden zo o c'hortoz evit an adweladenn-mañ (stad dre ziouer)",
 	'code-status-fixme' => 'da zresañ',
 	'code-status-desc-fixme' => 'Merket eo bet an adweladenn-mañ evel faziek pe dreinek gant un adlenner. Ret eo he reizhañ.',
+	'code-status-improveme' => 'da wellaat',
+	'code-status-desc-improveme' => 'Merket eo bet gant un adlenner e oa tammoù kudennoùigoù gant an adweladenn-mañ. Ret eo he reizhañ.',
 	'code-status-reverted' => 'distaolet',
 	'code-status-desc-reverted' => "Distaolet eo bet an adweladenn dre un adweladenn nevesoc'h.",
 	'code-status-resolved' => 'diskoulmet',
@@ -1559,6 +1584,9 @@ $messages['br'] = array(
 	'codereview-email-body' => 'Lakaet en deus an implijer "$1" un evezhiadenn war $3.
 
 URL klok : $2
+Diverrañ ar c\'hemm :
+
+$5
 
 Evezhiadenn :
 
@@ -1567,9 +1595,11 @@ $4',
 	'codereview-email-body2' => 'Degaset ez eus bet kemmoù liammet ouzh $2 gant an implijer "$1".
 
 URL klok da heuliañ an adweladenn : $5
+Diverran eus ar c\'hemmoù :
+
+$6
 
 URL klok : $3
-
 Diverrañ eus ar c\'hemmoù :
 
 $4',
@@ -1577,9 +1607,12 @@ $4',
 	'codereview-email-body3' => 'Kemmet eo bet statud $2 gant an implijer "$1".
 
 Statud kozh : $3
-Stad nevez : $4
+Stadud nevez : $4
 
-URL klok : $5',
+URL klok : $5
+Diverrañ eus ar c\'hemmoù :
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Evezhiadenn nevez ouzhpennet, ha cheñchet statud ar sutmm',
 	'codereview-email-body4' => 'Kemmet eo bet statud $2 gant an implijer "$1".
 
@@ -1589,6 +1622,9 @@ Statud nevez : $4
 Postet ez eus bet un evezhiadenn war $2 gant an implijer "$1" ivez.
 
 URL klok : $5
+Diverrañ eus ar c\'hemmoù : 
+
+$7
 
 Evezhiadenn :
 
@@ -1715,6 +1751,8 @@ $messages['bs'] = array(
 	'code-status-desc-new' => 'Revizija očekuje akciju (osnovno stanje).',
 	'code-status-fixme' => 'popravi me',
 	'code-status-desc-fixme' => 'Provjerivač je označio ovu reviziju kao uzrok greške ili je neisptavna. Treba se popraviti.',
+	'code-status-improveme' => 'poboljšajme',
+	'code-status-desc-improveme' => 'Provjerivač je označio ovu reviziju da ima neke manje neispravnosti. Treba se popraviti.',
 	'code-status-reverted' => 'vraćeno',
 	'code-status-desc-reverted' => 'Revizija je odbačena od neke kasnije revizije.',
 	'code-status-resolved' => 'riješeno',
@@ -1758,6 +1796,9 @@ $messages['bs'] = array(
 	'codereview-email-body' => 'Korisnik "$1" je napravio komentar na $3.
 
 Puni URL: $2
+Poslani sažetak:
+
+$5
 
 Komentar:
 
@@ -1766,9 +1807,11 @@ $4',
 	'codereview-email-body2' => 'Korisnik "$1" je izvršio povezane izmjene na $2.
 
 Puni URL za povezane revizije: $5
+Napravljeni sažetak:
+
+$6
 
 Puni URL: $3
-
 Napravljeni sažetak:
 
 $4',
@@ -1778,7 +1821,10 @@ $4',
 Staro stanje: $3
 Novo stanje: $4
 
-Puni URL: $5',
+Puni URL: $5
+Napravljeni sažetak:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Dodan novi komentar i promijenjeno stanje revizije',
 	'codereview-email-body4' => 'Korisnik "$1"  je promijenio stanje od $2.
 
@@ -1788,6 +1834,9 @@ Novo stanje: $4
 Korisnik "$1" je postavio i komentar na $2.
 
 Puni URL: $5
+Napravljeni sažetak:
+
+$7
 
 Komentar:
 
@@ -2829,11 +2878,12 @@ $messages['el'] = array(
 	'code-prop-changes' => 'Αρχείο καταγραφής κατάστασης και προσθήκης ετικετών',
 	'codereview-desc' => '[[Special:Code|Εργαλείο ανασκόπησης κώδικα]] με [[Special:RepoAdmin|υποστήριξη Subversion]]',
 	'code-no-repo' => 'Κανένα αποθηκευτήριο δεν έχει διαμορφωθεί!',
+	'code-need-repoadmin-rights' => 'Δικαιώματα διαχείρισης αποθηκευτηρίου απαιτούνται για τη δημιουργία αποθηκευτηρίου.',
 	'code-repo-not-found' => "Repository  '''\$ 1'' ' δεν υπάρχει!",
 	'code-load-diff' => 'Φόρτωση διαφ...',
 	'code-notes' => 'πρόσφατα σχόλια',
 	'code-statuschanges' => 'αλλαγές κατάστασης',
-	'code-mycommits' => 'οι δεσμεύσεις μου',
+	'code-mycommits' => 'οι καταχωρήσεις μου',
 	'code-mycomments' => 'Τα σχόλια μου',
 	'code-authors' => 'συγγραφείς',
 	'code-status' => 'καταστάσεις',
@@ -2891,16 +2941,25 @@ $messages['el'] = array(
 	'code-rev-not-found' => "Η αναθεώρηση '''$1''' δεν υπάρχει!",
 	'code-status-new' => 'νέο',
 	'code-status-fixme' => 'επιδιόρθωση',
+	'code-status-desc-fixme' => 'Ένας επιθεωρητής σημείωσε αυτή την αλλαγή διότι δημιουργεί σφάλμα ή δεν λειτουργεί.  Θα έπρεπε να διορθωθεί.',
 	'code-status-improveme' => 'βελτίωση',
+	'code-status-desc-improveme' => 'Ένας επιθεωρητής σημείωσε αυτή την αλλαγή για βελτίωση διότι έχει κάποια μικρά προβλήματα. Θα έπρεπε να διορθωθεί.',
 	'code-status-reverted' => 'αναστράφηκε',
 	'code-status-desc-reverted' => 'Η αλλαγή αναιρέθηκε από μεταγενέστερη αναθεώρηση.',
 	'code-status-resolved' => 'επιλύθηκε',
 	'code-status-desc-resolved' => 'Η αλλαγή είχε πρόβλημα που λύθηκε από μεταγενέστερη αναθεώρηση.',
 	'code-status-ok' => 'εντάξει',
+	'code-status-desc-ok' => 'Η αλλαγή υπέστη αναθεώρηση και ο επιθεωρητής είναι σίγουρος ότι η αλλαγή είναι μια χαρά από όλες τις όψεις.',
 	'code-status-deferred' => 'αναβλήθηκε',
 	'code-status-desc-deferred' => 'Η αλλαγή δεν χρειάζεται επιθεώρηση.',
 	'code-status-old' => 'παλαιά',
 	'code-status-desc-old' => 'Παλιά αναθεώρηση με ενδεχόμενα σφάλματα τα οποία δεν αξίζουν τον κόπο της επιθεώρησης.',
+	'code-signoffs' => 'Εγκρίσεις',
+	'code-signoff-legend' => 'Προσθήκη έγκρισης',
+	'code-signoff-submit' => 'Έγκριση',
+	'code-signoff-strike' => 'Διακριτή διαγραφή επιλεγμένων εγκρίσεων',
+	'code-signoff-signoff' => 'Έγκριση αυτής της αναθεώρησης ως:',
+	'code-signoff-flag-inspected' => 'Εξετάστηκε',
 	'code-signoff-field-user' => 'Χρήστης',
 	'code-signoff-field-date' => 'Ημερομηνία',
 	'code-pathsearch-legend' => 'Αναζήτηση αναθεωρήσεων σε αυτό το αποθηκευτήριο κατά διαδρομή',
@@ -2970,6 +3029,8 @@ $7
 
 $6',
 	'code-stats' => 'στατιστικές',
+	'code-stats-header' => 'Στατιστικά για το αποθηκευτήριο $1',
+	'code-stats-main' => 'Από τις $1, το αποθηκευτήριο περιέχει $2 {{PLURAL:$2|αναθεώρηση|αναθεωρήσεις}} από [[Special:Code/$3/author|$4 {{PLURAL:$4|συγγραφέα|συγγραφείς}}]].',
 	'code-stats-status-breakdown' => 'Αριθμός αναθεωρήσεων ανά κατάσταση',
 	'code-stats-count' => 'Αριθμός αναθεωρήσεων',
 	'repoadmin' => 'Διαχείριση του αποθηκευτηρίου',
@@ -2977,7 +3038,7 @@ $6',
 	'repoadmin-new-label' => 'Όνομα αποθηκευτηρίου:',
 	'repoadmin-new-button' => 'Δημιουργία',
 	'repoadmin-edit-legend' => 'Μετατροπή του αποθηκευτηρίου "$1"',
-	'repoadmin-edit-path' => 'Διαδρομη αποθηκευτηρίου:',
+	'repoadmin-edit-path' => 'Διαδρομή αποθηκευτηρίου:',
 	'repoadmin-edit-bug' => 'Διαδρομή Bugzilla:',
 	'repoadmin-edit-view' => 'Διαδρομή ViewVC:',
 	'repoadmin-edit-button' => 'Εντάξει',
@@ -2989,9 +3050,12 @@ $6',
 	'right-codereview-remove-tag' => 'Αφαίρεση ετικετών από αναθεωρήσεις',
 	'right-codereview-post-comment' => 'Προσθήκη σχολίων σε αναθεωρήσεις',
 	'right-codereview-set-status' => 'Αλλαγή κατάστασης αναθεωρήσεων',
+	'right-codereview-signoff' => 'Έγκριση αναθεωρήσεων',
 	'right-codereview-link-user' => 'Σύνδεση συγγραφέων με χρήστες wiki',
 	'specialpages-group-developer' => 'Εργαλεία προγραμματιστών',
 	'group-svnadmins' => 'διαχειριστές SVN',
+	'group-svnadmins-member' => 'Διαχειριστής SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Διαχειριστές SVN',
 );
 
 /** Esperanto (Esperanto)
@@ -4046,6 +4110,8 @@ $messages['fr'] = array(
 	'code-status-desc-new' => 'Une action est en attente pour cette révision (état par défaut).',
 	'code-status-fixme' => 'à corriger',
 	'code-status-desc-fixme' => 'Un relecteur a marqué cette révision comme introduisant un bug ou étant erronée. Elle devrait être corrigée.',
+	'code-status-improveme' => 'à améliorer',
+	'code-status-desc-improveme' => 'Un relecteur a marqué cette révision comme ayant quelques problèmes mineurs. Elle devrait être corrigée.',
 	'code-status-reverted' => 'révoqué',
 	'code-status-desc-reverted' => 'La révision a été rejetée par une révision ultérieure.',
 	'code-status-resolved' => 'résolu',
@@ -4089,6 +4155,10 @@ $messages['fr'] = array(
 	'codereview-email-body' => 'L’utilisateur « $1 » a posté un commentaire sur $3.
 
 Lien hypertexte complet : $2
+
+Résumé de la modification :
+
+$5
 
 Commentaire :
 
@@ -4422,6 +4492,8 @@ $messages['gl'] = array(
 	'code-status-desc-new' => 'Esta revisión está á espera dunha acción (estado por defecto).',
 	'code-status-fixme' => 'arránxeme',
 	'code-status-desc-fixme' => 'Un revisor marcou esta revisión como que introduce un erro ou que é errónea. Cómpre corrección.',
+	'code-status-improveme' => 'mellóreme',
+	'code-status-desc-improveme' => 'Un revisor marcou esta revisión como que ten algún pequeno problema. Cómpre corrección.',
 	'code-status-reverted' => 'revertido',
 	'code-status-desc-reverted' => 'A revisión desbotouna outra revisión posterior.',
 	'code-status-resolved' => 'resolto',
@@ -4465,6 +4537,9 @@ $messages['gl'] = array(
 	'codereview-email-body' => 'O usuario "$1" deixou un comentario na versión $3.
 
 Enderezo URL: $2
+Resumo da edición:
+
+$5
 
 Comentario:
 
@@ -4473,6 +4548,9 @@ $4',
 	'codereview-email-body2' => 'O usuario "$1" fixo un seguimento dos cambios feitos na versión $2.
 
 URL da versión seguida: $5
+Resumo da edición:
+
+$6
 
 Enderezo URL: $3
 
@@ -4485,7 +4563,10 @@ $4',
 Estado vello: $3
 Estado novo: $4
 
-URL completo: $5',
+URL completo: $5
+Resumo da edición:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: engadido un novo comentario e cambiado o estado da revisión',
 	'codereview-email-body4' => 'O usuario "$1" cambiou o estado de $2.
 
@@ -4495,6 +4576,9 @@ Estado novo: $4
 O usuario "$1" tamén deixou un comentario en $2.
 
 Enderezo URL: $5
+Resumo da edición:
+
+$7
 
 Comentario:
 
@@ -4935,6 +5019,8 @@ $messages['he'] = array(
 	'code-status-desc-new' => 'הגרסה ממתינה לפעולה (מצב בררת המחדל).',
 	'code-status-fixme' => 'לתיקון',
 	'code-status-desc-fixme' => 'סוקר סימן שגרסה זו גורמת לתקלה או שאינה תקינה. יש לתקן זאת.',
+	'code-status-improveme' => 'שפר־אותי',
+	'code-status-desc-improveme' => 'סוקר סימן את הגרסה הזאת כגרסה בעלת בעיות קטנות מסוימות. רצוי לתקן אותן.',
 	'code-status-reverted' => 'בוטל',
 	'code-status-desc-reverted' => 'הגרסה נדחקה הצידה על ידי גרסה עדכנית יותר.',
 	'code-status-resolved' => 'תוקן',
@@ -5728,6 +5814,8 @@ $messages['ia'] = array(
 	'code-status-desc-new' => 'Le version attende un action (stato predefinite).',
 	'code-status-fixme' => 'corrigeme',
 	'code-status-desc-fixme' => 'Un revisor marcava iste version como introductor de un error o como defectuose. Illo debe esser corrigite.',
+	'code-status-improveme' => 'meliorame',
+	'code-status-desc-improveme' => 'Un revisor marcava iste version como habente minor problemas. Illo debe esser corrigite.',
 	'code-status-reverted' => 'revertite',
 	'code-status-desc-reverted' => 'Le version esseva jectate via per un version plus recente.',
 	'code-status-resolved' => 'resolvite',
@@ -5768,9 +5856,12 @@ $messages['ia'] = array(
 	'codereview-subtitle' => 'Pro $1',
 	'codereview-reply-link' => 'responder',
 	'codereview-email-subj' => '[$1] [v$2]: Nove commento addite',
-	'codereview-email-body' => 'Le usator "$1" publicava un commento in v$3.
+	'codereview-email-body' => 'Le usator "$1" publicava un commento super $3.
 
 Adresse URL complete: $2
+Summario del commit:
+
+$5
 
 Commento:
 
@@ -5779,9 +5870,11 @@ $4',
 	'codereview-email-body2' => 'Le usator "$1" faceva cambios subsequente a $2.
 
 URL complete del version subsequente: $5
+Summario del commit:
+
+$6
 
 URL complete: $3
-
 Summario del commit:
 
 $4',
@@ -5791,7 +5884,10 @@ $4',
 Previe stato: $3
 Nove stato: $4
 
-URL complete: $5',
+URL complete: $5
+Summario del commit:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Nove commento addite, e stato del version cambiate',
 	'codereview-email-body4' => 'Le usator "$1" cambiava le stato de $2.
 
@@ -5801,6 +5897,9 @@ Nove stato: $4
 Le usator "$1" dava etiam un commento sur $2.
 
 URL complete: $5
+Summario del commit:
+
+$7
 
 Commento:
 
@@ -7002,6 +7101,8 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'code-status-desc-new' => 'Di Version es drop am waade, dat mer jet med_er deiht, dad_es och der Aanfangs_Zohshtand.',
 	'code-status-fixme' => 'zom Verbessere',
 	'code-status-desc-fixme' => 'Ene Prööfer hät di Version als kappott ennjeshtoof udder se määt jet kapoot un leuf nit. Doh jidd_et jet draan ze verbäßere.',
+	'code-status-improveme' => 'verbäßere',
+	'code-status-desc-improveme' => 'Ene Prööfer hät di Version als esu ennjeshtoof, dat mer Kleineschkeite draan verbeßßere sullt, di ävver övverhoup nit schlemm sin.',
 	'code-status-reverted' => 'retuur jemaat',
 	'code-status-desc-reverted' => 'Di Version es vun ene shpäädere Version widder opjehovve woode.',
 	'code-status-resolved' => 'äleedesch',
@@ -7035,30 +7136,36 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'code-batch-tags' => 'Makeerunge ändere:',
 	'codereview-batch-title' => 'All de ußjesoohte Versione ändere',
 	'codereview-batch-submit' => 'Loß Jonn!',
-	'code-releasenotes' => 'Henwiiß för de Ußjaav',
-	'code-release-legend' => 'Henwiiß för_t Ußjävve zosammeshtälle',
+	'code-releasenotes' => 'Aanmerkunge för Versione',
+	'code-release-legend' => 'Aanmerkunge för Versione zosammeshtälle',
 	'code-release-startrev' => 'Aanfangsversion:',
 	'code-release-endrev' => 'Läz Version:',
 	'codereview-subtitle' => 'För $1',
 	'codereview-reply-link' => 'antwoote',
 	'codereview-email-subj' => '[$1 $2]: Neu Aanmerkung dobei jedonn',
-	'codereview-email-body' => 'Dä Metmaacher „$1“ hät en Aanmerkung för de $3 enjedraare.
+	'codereview-email-body' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät en Aanmerkung enjedraare för $3
 
 De janze URL es: $2
+
+En et Logbooch hät {{GENDER:$1|hä|et|dä Metmaacher|sei|et}} jeschrevve:
+
+$5
 
 De Aanmerkung es:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: De Änderunge donoh',
-	'codereview-email-body2' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät aan de Version $2 noch noch jet jedonn.
+	'codereview-email-body2' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät aan dä Version $2 jet jedonn.
 
-Dä kumplätte URL vun dä Oppaß-Version:
+Dä kumplätte URL vun dä Version:
 $5
+De Aanmerkung em Logbooch dohzo:
+
+$6
 
 Dä kumplätte URL vun dä neue Fassung:
 $3
-
-{{GENDER:$1|Däm singe|Däm sing|Däm Metmaacher sing|Dä ier|Em sing}} Aanmerkung för en et Logbooch dozo:
+Dä Endrach em Logbooch dohzo:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Dä Stattus von dä Version woodt jeändert',
@@ -7067,7 +7174,10 @@ $4',
 Dä wohr: $3
 un es jäz: $4
 
-Dä kumplätte <i lang="en">URL</i> es: $5',
+Dä kumplätte URL es: $5
+De Aanmerkung em Logbooch dozo:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Neu Aanmerkung dobei jedonn, un der Stattus verändert',
 	'codereview-email-body4' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät von de Version $2 der Stattus verändert.
 
@@ -7079,7 +7189,11 @@ un es jäz: $4
 Dä kumplätte URL:
 $5
 
-De Aanmerkung för en et Logbooch:
+De Aanmerkung em Logbooch:
+
+$7
+
+De Aanerkung vör di Version:
 
 $6',
 	'code-stats' => 'Statistike',
@@ -7245,6 +7359,9 @@ $messages['lb'] = array(
 	'codereview-email-body' => 'De Benotzer "$1" huet eng Bemierkung op $3 hannerlooss.
 
 Ganz URL: $2
+Resumé vun der Ännerung:
+
+$5
 
 Bemierkung:
 
@@ -7265,7 +7382,10 @@ $4',
 Ale Statut: $3
 Neie Statut: $4
 
-Komplett URL: $5',
+Komplett URL: $5
+Resumé vun der Ännerung:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Nei  Bemierkung derbäigesat, an de Statut vun der Versioun geännert',
 	'codereview-email-body4' => 'De Benotzer "$1" huet de Statut vun $2 gännert.
 
@@ -7612,6 +7732,8 @@ $messages['mk'] = array(
 	'code-status-desc-new' => 'Ревизијата е во исчекување на дејство (статус по основно).',
 	'code-status-fixme' => 'корегирај ме',
 	'code-status-desc-fixme' => 'Прегледувач во оваа ревизија означил грешка или неисправност. Треба да се поправи.',
+	'code-status-improveme' => 'подобри ме',
+	'code-status-desc-improveme' => 'Прегледувач во оваа ревизија означил грешка или неисправност. Треба да се поправи.',
 	'code-status-reverted' => 'вратено',
 	'code-status-desc-reverted' => 'Ревизијата е исфрлена од понова верзија.',
 	'code-status-resolved' => 'разрешено',
@@ -7655,6 +7777,9 @@ $messages['mk'] = array(
 	'codereview-email-body' => 'Корисникот „$1“ објави коментар за $3.
 
 Полна URL-адреса: $2
+Опис на измените
+
+$5
 
 Коментар:
 
@@ -7663,10 +7788,11 @@ $4',
 	'codereview-email-body2' => 'Корисникот „$1“ направи подоцнежни промени на $2.
 
 Полна URL-адреса за подоцнежната ревизија: $5
+Опис на измените:
+
+$6
 
 Полна URL-адреса: $3
-
-Опис на измените:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Статусот на ревизијата се промени',
@@ -7675,7 +7801,10 @@ $4',
 Стар статус: $3
 Нов статус: $4
 
-Полна URL-адреса: $5',
+Полна URL-адреса: $5
+Опис на измените:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Додаден нов коментар и изменет е статусот на ревизијата',
 	'codereview-email-body4' => 'Корисникот „$1“ го смени статусот на $2.
 
@@ -7685,6 +7814,9 @@ $4',
 Корисникот „$1“ исто така објави коментар на $2.
 
 Полна URL-адреса: $5
+Опис на измените:
+
+$7
 
 Коментар:
 
@@ -7810,6 +7942,8 @@ $messages['ml'] = array(
 	'code-status-desc-new' => 'നാൾപ്പതിപ്പിന് ഒരു പ്രവൃത്തി അവശേഷിക്കുന്നു (സ്വതേയുള്ള സ്ഥിതി).',
 	'code-status-fixme' => 'ഈ പ്രശ്നം പരിഹരിക്കുക',
 	'code-status-desc-fixme' => 'ഈ നാൾപ്പതിപ്പ് ബഗ് ആണെന്നോ തകർന്നതാണെന്നോ ഒരു സംശോധകൻ അടയാളപ്പെടുത്തിയിരിക്കുന്നു. ഇത് ശരിയാക്കേണ്ടതാണ്.',
+	'code-status-improveme' => 'ഇതുമെച്ചപ്പെടുത്തുക',
+	'code-status-desc-improveme' => 'ഈ നാൾപ്പതിപ്പിൽ ചില നിസ്സാരപ്രശ്നങ്ങൾ ഉള്ളതായി ഒരു സംശോധകൻ അടയാളപ്പെടുത്തിയിരിക്കുന്നു. ഇത് ശരിയാക്കേണ്ടതാണ്.',
 	'code-status-reverted' => 'മുൻപ്രാപനം ചെയ്തിരിക്കുന്നു',
 	'code-status-desc-reverted' => 'പിന്നീട് വന്ന നാൾപ്പതിപ്പിനാൽ ഈ നാൾപ്പതിപ്പ് മാറ്റപ്പെട്ടിരിക്കുന്നു.',
 	'code-status-resolved' => 'പരിഹരിച്ചിരിക്കുന്നു',
@@ -7850,32 +7984,40 @@ $messages['ml'] = array(
 	'codereview-subtitle' => 'റെപ്പോസിറ്ററി $1',
 	'codereview-reply-link' => 'മറുപടി',
 	'codereview-email-subj' => '[$1 $2]: പുതിയ അഭിപ്രായം ചേർത്തിരിക്കുന്നു',
-	'codereview-email-body' => '$3-യിൽ "$1" ഒരു അഭിപ്രായം ചേർത്തിരിക്കുന്നു.
+	'codereview-email-body' => '$3 താളിൽ "$1" എന്ന ഉപയോക്താവ് ഒരു അഭിപ്രായം ചേർത്തിരിക്കുന്നു.
 
 പൂർണ്ണ യൂ.ആർ.എൽ.: $2
+ഉൾപ്പെടുത്തലിന്റെ സംഗ്രഹം:
+
+$5
 
 അഭിപ്രായം:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: പിന്തുടർച്ചാ മാറ്റങ്ങൾ',
-	'codereview-email-body2' => 'ഉപയോക്താവ് "$1" $2 എന്നതിനു പിന്തുടർച്ചാ മാറ്റങ്ങൾ നടത്തിയിരിക്കുന്നു.
+	'codereview-email-body2' => '"$1" എന്ന ഉപയോക്താവ് $2 എന്നതിനു പിന്തുടർച്ചാ മാറ്റങ്ങൾ നടത്തിയിരിക്കുന്നു.
 
-പിന്തുടർച്ചാ നാൾപ്പതിപ്പിന്റെ പൂർണ്ണ യൂ.ആർ.എൽ.: $5
+പിന്തുടർച്ചാനാൾപ്പതിപ്പിന്റെ പൂർണ്ണ യൂ.ആർ.എൽ.: $5
+ഉൾപ്പെടുത്തലിന്റെ സംഗ്രഹം:
+
+$6
 
 പൂർണ്ണ യു.ആർ.എൽ.: $3
-
-ചുരുക്കം അംഗീകരിക്കുക:
+ഉൾപ്പെടുത്തലിന്റെ സംഗ്രഹം:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: നാൾപ്പതിപ്പിന്റെ സ്ഥിതി മാറ്റിയിരിക്കുന്നു',
-	'codereview-email-body3' => '$2 എന്നതിന്റെ സ്ഥിതി ഉപയോക്താവ് "$1" മാറ്റിയിരിക്കുന്നു.
+	'codereview-email-body3' => '$2 എന്നതിന്റെ സ്ഥിതി "$1" എന്ന ഉപയോക്താവ് മാറ്റിയിരിക്കുന്നു.
 
 പഴയ സ്ഥിതി: $3
 പുതിയ സ്ഥിതി: $4
 
-പൂർണ്ണ യു.ആർ.എൽ.: $5',
+പൂർണ്ണ യു.ആർ.എൽ.: $5
+ഉൾപ്പെടുത്തലിന്റെ സംഗ്രഹം:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: പുതിയ കുറിപ്പ് ചേർത്തിരിക്കുന്നു, നാൾപ്പതിപ്പിന്റെ സ്ഥിതി മാറ്റിയിരിക്കുന്നു',
-	'codereview-email-body4' => '$2 എന്നതിന്റെ സ്ഥിതി ഉപയോക്താവ് "$1" മാറ്റിയിരിക്കുന്നു.
+	'codereview-email-body4' => '$2 എന്നതിന്റെ സ്ഥിതി "$1" എന്ന ഉപയോക്താവ് മാറ്റിയിരിക്കുന്നു.
 
 പഴയ സ്ഥിതി: $3
 പുതിയ സ്ഥിതി: $4
@@ -7883,6 +8025,9 @@ $4',
 $2 എന്നതിന് ഉപയോക്താവ് "$1" ഒരു കുറിപ്പും ഇട്ടിട്ടുണ്ട്.
 
 പൂർണ്ണ യൂ.ആർ.എൽ.: $5
+ഉൾപ്പെടുത്തലിന്റെ സംഗ്രഹം:
+
+$7
 
 അഭിപ്രായം: 
 
@@ -8317,6 +8462,8 @@ De gegevens kunnen uit een cache komen.',
 	'code-status-desc-new' => 'De versie wacht op een actie (standaardstatus).',
 	'code-status-fixme' => 'fixme',
 	'code-status-desc-fixme' => 'Een reviewer heeft geconstateerd dat door deze versie een bug wordt geïntroduceerd of dat deze versie stuk is. Dat moet gecorrigeerd worden.',
+	'code-status-improveme' => 'verbeter mij',
+	'code-status-desc-improveme' => 'Een controleur heeft vastgesteld dat voor deze versie kleine verbeteringen nodig zijn.',
 	'code-status-reverted' => 'teruggedraaid',
 	'code-status-desc-reverted' => 'De versie is ongedaan gemaakt door een latere versie.',
 	'code-status-resolved' => 'opgelost',
@@ -8360,6 +8507,9 @@ De gegevens kunnen uit een cache komen.',
 	'codereview-email-body' => 'Gebruiker "$1" heeft een opmerking toegevoegd aan $3:
 
 Volledige URL: $2
+Commitsamenvatting:
+
+$5
 
 Opmerking:
 
@@ -8368,10 +8518,13 @@ $4',
 	'codereview-email-body2' => 'Gebruiker "$1" heeft wijzigingen met correcties voor $2 gemaakt.
 
 Volledige URL naar de gecorrigeerde versie: $5
+Commitsamenvatting:
+
+$6
 
 Volledige URL: $3
 
-Toelichting bij commit:
+Commitsamenvatting:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Versiestatus gewijzigd',
@@ -8380,7 +8533,10 @@ $4',
 Oude status: $3
 Nieuwe status: $4
 
-Volledige URL: $5',
+Volledige URL: $5
+Commitsamenvatting:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Nieuwe opmerking toegevoegd en versiestatus gewijzigd',
 	'codereview-email-body4' => 'Gebruiker "$1" heeft de status van $2 gewijzigd.
 
@@ -8390,6 +8546,9 @@ Nieuwe status: $4
 Gebruiker "$1" heeft ook een opmerking toegevoegd aan $2.
 
 Volledige URL: $5
+Commitsamenvatting:
+
+$7
 
 Opmerking:
 
@@ -9470,6 +9629,8 @@ $messages['pt'] = array(
 	'code-status-desc-new' => 'Esta revisão está pendente (estado padrão).',
 	'code-status-fixme' => 'corrigir',
 	'code-status-desc-fixme' => 'Esta revisão introduz um defeito ou não funciona. Precisa de correcção.',
+	'code-status-improveme' => 'melhore-me',
+	'code-status-desc-improveme' => 'Um revisor indicou que esta edição tem pequenos problemas. Deve ser corrigida.',
 	'code-status-reverted' => 'revertido',
 	'code-status-desc-reverted' => 'A revisão foi descartada por outra revisão posterior.',
 	'code-status-resolved' => 'resolvido',
@@ -9513,17 +9674,22 @@ $messages['pt'] = array(
 	'codereview-email-body' => 'O utilizador "$1" colocou um comentário em $3.
 
 URL completa: $2
+Resumo da efectivação:
+
+$5
 
 Comentário:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Mudanças de seguimento',
-	'codereview-email-body2' => 'O utilizador "$1" fez alterações de seguimento à $2.
+	'codereview-email-body2' => 'O utilizador "$1" fez alterações de seguimento à revisão $2.
 
 URL completa para a revisão de seguimento: $5
+Resumo da efectivação:
+
+$6
 
 URL completa: $3
-
 Resumo da efectivação:
 
 $4',
@@ -9533,7 +9699,10 @@ $4',
 Estado Antigo: $3
 Estado Novo: $4
 
-URL Completa: $5',
+URL Completa: $5
+Resumo da efectivação:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Comentário adicionado e estado da revisão alterado',
 	'codereview-email-body4' => 'O utilizador "$1" alterou o estado da revisão $2.
 
@@ -9543,6 +9712,9 @@ Estado Novo: $4
 O utilizador "$1" também colocou um comentário em $2.
 
 URL completa: $5
+Resumo da efectivação:
+
+$7
 
 Comentário:
 
@@ -9873,21 +10045,28 @@ $messages['ro'] = array(
 	'codereview-subtitle' => 'De la $1',
 	'codereview-reply-link' => 'răspunde',
 	'codereview-email-subj' => '[$1 $2]: Comentariu nou adăugat',
-	'codereview-email-body' => 'Utilizatorul "$1" a adăugat un comentariu la $3.
+	'codereview-email-body' => 'Utilizatorul „$1” a adăugat un comentariu la $3.
 
 URL complet: $2
+
+Rezumatul modificării:
+
+$5
 
 Comentariu:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Urmărirea modificărilor',
-	'codereview-email-body2' => 'Utilizatorul "$1" a urmărit modificările la $2.
+	'codereview-email-body2' => 'Utilizatorul „$1” a urmărit modificările la $2.
 
 URL complet pentru reviziile urmărite: $5
+Rezumatul modificării:
+
+$6
 
 URL complet: $3
 
-Rezumatul publicării:
+Rezumatul modificării:
 
 $4',
 	'code-stats' => 'statistici',
@@ -10143,6 +10322,8 @@ $messages['ru'] = array(
 	'code-status-desc-new' => 'Ревизия ожидает действия (статус по умолчанию).',
 	'code-status-fixme' => 'исправить',
 	'code-status-desc-fixme' => 'Рецензент отметил в этой ревизии ошибку или неисправность. Она должна быть исправлена.',
+	'code-status-improveme' => 'improveme',
+	'code-status-desc-improveme' => 'Рецензент отметил, что эта ревизия имеет незначительные недоработки. Их следует исправить.',
 	'code-status-reverted' => 'откачена',
 	'code-status-desc-reverted' => 'Ревизия была откачена в другой ревизии.',
 	'code-status-resolved' => 'решена',
@@ -10183,9 +10364,12 @@ $messages['ru'] = array(
 	'codereview-subtitle' => 'для $1',
 	'codereview-reply-link' => 'ответить',
 	'codereview-email-subj' => '[$1] [r$2]: Добавлен новый комментарий',
-	'codereview-email-body' => 'Участник «$1» разместил комментарий к ревизии r$3.
+	'codereview-email-body' => 'Участник «$1» разместил комментарий к $3.
 
 Полный URL: $2
+Краткое описание:
+
+$5
 
 Комментарий:
 
@@ -10194,6 +10378,9 @@ $4',
 	'codereview-email-body2' => 'Пользователь «$1» внёс изменения, относящиеся к $2.
 
 Полный URL для предыдущей версии: $5
+Описание изменений:
+
+$6
 
 Полный URL: $3
 
@@ -10206,7 +10393,10 @@ $4',
 Старое состояние: $3
 Новое состояние: $4
 
-полный URL-адрес: $5',
+Полный URL-адрес: $5
+Описание изменений:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Добавлен новый комментарий, изменилось состояние ревизии',
 	'codereview-email-body4' => 'Пользователь «$1» изменил состояние $2.
 
@@ -10215,7 +10405,10 @@ $4',
 
 Пользователь «$1» также оставил комментарий для $2.
 
-полный URL: $5
+Полный URL: $5
+Описание изменений:
+
+$7
 
 Комментарий:
 
@@ -10980,6 +11173,8 @@ $messages['sl'] = array(
 	'code-status-desc-new' => 'Redakcija izvaja dejanje (privzeto stanje).',
 	'code-status-fixme' => 'popravi me',
 	'code-status-desc-fixme' => 'Pregledovalec je označil to redakcijo kot hroščato ali pokvarjeno. To je treba popraviti.',
+	'code-status-improveme' => 'izboljšajme',
+	'code-status-desc-improveme' => 'Pregledovalec je označil to redakcijo kot tako, ki ima nekaj manjših problemov. Treba jo je popraviti.',
 	'code-status-reverted' => 'vrnjeno',
 	'code-status-desc-reverted' => 'Redakcijo je zavrgla poznejša redakcija.',
 	'code-status-resolved' => 'razrešeno',
@@ -11023,6 +11218,9 @@ $messages['sl'] = array(
 	'codereview-email-body' => 'Uporabnik »$1« je objavil pripombo na $3.
 
 Polni URL: $2
+Prispevani povzetek:
+
+$5
 
 Pripomba:
 
@@ -11031,9 +11229,11 @@ $4',
 	'codereview-email-body2' => 'Uporabnik »$1« je naredil nadaljnje spremembe $2.
 
 Polni URL nadaljnjih redakcij: $5
+Prispevani povzetek:
+
+$6
 
 Polni URL: $3
-
 Prispevani povzetek:
 
 $4',
@@ -11043,7 +11243,10 @@ $4',
 Staro stanje: $3
 Novo stanje: $4
 
-Polni URL: $5',
+Polni URL: $5
+Prispevani povzetek:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Dodana je bil nova pripomba in spremenjeno je bilo stanje redakcije',
 	'codereview-email-body4' => 'Uporabnik »$1« je spremenil stanje $2.
 
@@ -11053,6 +11256,9 @@ Novo stanje: $4
 Uporabnik »$1« je tudi objavil pripombo na $2.
 
 Polni URL: $5
+Prispevani povzetek:
+
+$7
 
 Pripomba:
 
@@ -12175,6 +12381,8 @@ $messages['tl'] = array(
 	'code-status-desc-new' => 'Ang rebisyon ay naghihintay ng isang galaw (likas na nakatakdang katayuan).',
 	'code-status-fixme' => 'ayusinako',
 	'code-status-desc-fixme' => 'Isang tagapagsuri ang nagmarka sa rebisyong ito na magpakilala ng depekto o kaya sira.  Dapat itong itama.',
+	'code-status-improveme' => 'painamin ako',
+	'code-status-desc-improveme' => 'Isang tagapagsuri ang nagmarka sa rebisyong ito bilang may ilang mga suliraning hindi gaanong malaki.  Dapat itong itama.',
 	'code-status-reverted' => 'ibinalik',
 	'code-status-desc-reverted' => 'Itinapon papalayo ang rebisyon ng isang isang mas huling rebisyon.',
 	'code-status-resolved' => 'nalutas na',
@@ -12215,25 +12423,30 @@ $messages['tl'] = array(
 	'codereview-subtitle' => 'Para kay $1',
 	'codereview-reply-link' => 'tugon',
 	'codereview-email-subj' => '[$1 $2]: Nagdagdag ng bagong puna/kumento',
-	'codereview-email-body' => 'Nagtala si tagagamit "$1" ng bagong kumento/puna sa $3.
+	'codereview-email-body' => 'Nagpaskil ang tagagamit na si "$1" ng isang puna sa $3.
 
 Buong URL: $2
+Buod ng pagsasagawa:
 
-Kumento:
+$5
+
+Puna:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Pangtugaygay na mga pagbabago',
-	'codereview-email-body2' => 'Gumawa ng patugaygay na mga pagbabago si "$1" sa $2.
+	'codereview-email-body2' => 'Ang tagagamit na si "$1" ay gumawa ng karagdagang mga pagbabago sa $2.
 
-Buong URL para sa tinugaygayang rebisyon: $5
+Buong URL para sa karagdagang rebisyon: $5
+Buod ng pagsasagawa:
+
+$6
 
 Buong URL: $3
-
 Buod ng pagsasagawa:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Nabago ang kalagayan ng rebisyon',
-	'codereview-email-body3' => 'Binago ng tagagamit na si "$1" ang kalagayan ng $2.
+	'codereview-email-body3' => 'Binago ng tagagamit na si "$1" ang katayuan ng $2.
 
 Lumang kalagayan: $3
 Bagong kalagayan: $4
@@ -12245,10 +12458,10 @@ $6',
 	'codereview-email-subj4' => '[$1 $2]: Nadagdag ang bagong puna, at nabago ang kalagayan ng rebisyon',
 	'codereview-email-body4' => 'Binago ng tagagamit na si "$1" ang katayuan ng $2.
 
-Lumang katayuan: $3
-Bagong katayuan: $4
+Lumang kalagayan: $3
+Bagong kalagayan: $4
 
-Nagpaskil din ng isang puna ang tagagamit na si "$1" sa $2.
+Nagpaskil din ang tagagamit na si "$1" ng isang puna sa $2.
 
 Buong URL: $5
 Buod ng pagsasagawa: 
@@ -13361,6 +13574,8 @@ $messages['zh-hans'] = array(
 	'code-status-desc-new' => '修订是挂起的操作 （默认状态）。',
 	'code-status-fixme' => '修正',
 	'code-status-desc-fixme' => '审阅者标记此版本引入一个错误或已损坏。它应该得到纠正。',
+	'code-status-improveme' => '改造我',
+	'code-status-desc-improveme' => '审阅者标记此版本，有一些小问题。它应改正。',
 	'code-status-reverted' => '回复',
 	'code-status-desc-reverted' => '修订被撤消的更高版本的修订。',
 	'code-status-resolved' => '解决',
