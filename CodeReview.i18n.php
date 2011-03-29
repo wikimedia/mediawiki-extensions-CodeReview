@@ -3787,6 +3787,9 @@ $messages['fa'] = array(
 	'codereview-email-body' => 'کاربر «$1» یک نظر برای $3 ارسال کرد.
 
 نشانی کامل: $2
+خلاصهٔ ارتکاب‌شدن‌ها:
+
+$5
 
 نظر:
 
@@ -3795,6 +3798,11 @@ $4',
 	'codereview-email-body2' => 'کاربر «$1» این تغییرات را به $2 داده‌است.
 
 نشانی کامل برای این نسخه‌ها: $5
+
+خلاصهٔ ارتکاب‌شدن‌ها:
+
+$6
+
 
 نشانی کامل: $3
 
@@ -3806,7 +3814,11 @@ $4',
 وضعیت قدیمی: $3
 وضعیت جدید: $4
 
-نشانی کامل: $5',
+نشانی کامل: $5
+
+خلاصهٔ ارتکاب‌شدن‌ها:
+
+$6',
 	'codereview-email-body4' => 'کاربر "$1" تغییر وضعیت داد از $2.
 
 وضعیت قدیمی: $3
@@ -3815,6 +3827,9 @@ $4',
 کاربر "$1" همچنین یک نظر فرستاد در $2.
 
 نشانی کامل: $5
+خلاصهٔ ارتکاب‌شدن‌ها:
+
+$7
 
 نظر:
 
@@ -4167,10 +4182,12 @@ $4',
 	'codereview-email-body2' => 'L’utilisateur « $1 » a fait des modifications sur $2.
 
 URL complète de la révision suivie : $5
+Résumé de la modification :
+
+$6
 
 URL complète : $3
-
-Résumé des modifications :
+Résumé de la modification :
 
 $4',
 	'codereview-email-subj3' => '[$1 $2] : l’état de la version a changé',
@@ -4192,6 +4209,9 @@ Nouvel état : $4
 L’utilisateur « $1 » a également posté un commentaire sur $2.
 
 Adresse URL complète : $5
+Résumé de la modification :
+
+$7
 
 Commentaire :
 
@@ -6436,6 +6456,7 @@ $messages['ja'] = array(
 	'code-status-desc-new' => 'リビジョンは操作を保留中です（既定の状態）。',
 	'code-status-fixme' => '要修正',
 	'code-status-desc-fixme' => 'レビュアーは、この版にはバグがある、あるいは壊れていると印付けました。修正する必要があります。',
+	'code-status-desc-improveme' => 'この版に、査読者が細かい問題があるという印をつけました。修正する必要があります。',
 	'code-status-reverted' => '差し戻し済み',
 	'code-status-desc-reverted' => 'リビジョンは、以降の版で廃棄されました。',
 	'code-status-resolved' => '解決済',
@@ -6478,19 +6499,24 @@ $messages['ja'] = array(
 	'codereview-email-subj' => '[$1 $2]: 新規コメント追加',
 	'codereview-email-body' => '利用者「$1」が $3 にコメントをつけました。
 
-完全なURL: $2
+URL: $2
+要約:
+
+$5
 
 コメント:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: 追補の変更',
-	'codereview-email-body2' => '利用者$1が$2に追補の変更を加えました。
+	'codereview-email-body2' => '利用者「$1」が$2に追補の変更を加えました。
 
-追補版の全URL：$5
+追補版のURL：$5
+要約:
 
-全URL：$3
+$6
 
-コミットの要約：
+URL：$3
+要約：
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: リビジョンの状態が変更されました',
@@ -6499,16 +6525,22 @@ $4',
 もとの状態: $3
 新しい状態: $4
 
-完全なURL: $5',
+URL: $5
+要約:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: 新しいコメントが追加され、リビジョンの状態が変更されました',
-	'codereview-email-body4' => 'ユーザー「$1」が、$2の状況を変更しました。
+	'codereview-email-body4' => '利用者「$1」が、$2の状態を変更しました。
 
 もとの状態：$3
 新しい状態：$4
 
-また、ユーザー「$1」はコメントを$2に残しました。
+利用者「$1」は$2にコメントも投稿しました。
 
-全URL：$5
+URL：$5
+要約:
+
+$7
 
 コメント：
 
