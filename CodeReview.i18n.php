@@ -3957,6 +3957,7 @@ $messages['fi'] = array(
 	'code-status-desc-deferred' => 'Versio ei edellytä tarkistusta.',
 	'code-status-old' => 'vanha',
 	'code-status-desc-old' => 'Vanhat versiot, joissa todennäköisesti on ohjelmavirheitä, eivät ole tarkistamisen arvoisia.',
+	'code-signoff-field-user' => 'Käyttäjä',
 	'code-pathsearch-legend' => 'Etsi tämän varaston versioita polun perusteella',
 	'code-pathsearch-path' => 'Polku',
 	'code-pathsearch-filter' => 'Käytetty suodatin:',
