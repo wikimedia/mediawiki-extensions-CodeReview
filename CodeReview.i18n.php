@@ -2126,6 +2126,8 @@ $messages['cs'] = array(
 	'code-status-desc-new' => 'Revize čeká na označení (počáteční stav).',
 	'code-status-fixme' => 'opravit',
 	'code-status-desc-fixme' => 'Posuzovatel tuto revizi označil jako chybnou nebo nefunkční. Měla by být opravena.',
+	'code-status-improveme' => 'vylepšit',
+	'code-status-desc-improveme' => 'Posuzovatel na této revizi nalezl drobné nedostatky. Měla by být opravena.',
 	'code-status-reverted' => 'revertováno',
 	'code-status-desc-reverted' => 'Pozdější revize tuto revizi vyhodila.',
 	'code-status-resolved' => 'vyřešená',
@@ -2169,6 +2171,9 @@ $messages['cs'] = array(
 	'codereview-email-body' => 'Uživatel „$1“ přidal komentář k $3.
 
 Plné URL: $2
+Komentář ke změně:
+
+$5
 
 Komentář:
 
@@ -2177,6 +2182,9 @@ $4',
 	'codereview-email-body2' => 'Uživatel „$1“ svou změnou reagoval na $2.
 
 Úplné URL původní revize: $5
+Komentář ke změně:
+
+$6
 
 Úplné URL: $3
 
@@ -2189,7 +2197,10 @@ $4',
 Předchozí stav: $3
 Nový stav: $4
 
-Plné URL: $5',
+Plné URL: $5
+Komentář ke změně:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Přidán nový komentář a změnil se stav revize',
 	'codereview-email-body4' => 'Uživatel „$1“ změnil stav $2.
 
@@ -2199,6 +2210,9 @@ Nový stav: $4
 Uživatel „$1“ také přidal k $2 komentář.
 
 Plné URL: $5
+Komentář ke změně:
+
+$7
 
 Komentář:
 
@@ -5465,6 +5479,8 @@ $messages['hsb'] = array(
 	'code-status-desc-new' => 'Wersija akciju wočakuje (standardny status)',
 	'code-status-fixme' => 'porjedźić',
 	'code-status-desc-fixme' => 'Posudźowar markěrowaše wersiju jako poškodźeny abo jako zawinowar programoweho zmylka. Wona měła so porjedźić.',
+	'code-status-improveme' => 'IMPROVEME',
+	'code-status-desc-improveme' => 'Posudźowar je tutu wersiju jako polěpšenja potrěbnu markěrował. Měła so korigować.',
 	'code-status-reverted' => 'anulowany',
 	'code-status-desc-reverted' => 'Wersija bu přez pozdźišu wersiju cofnjena.',
 	'code-status-resolved' => 'sčinjeny',
@@ -5508,6 +5524,9 @@ $messages['hsb'] = array(
 	'codereview-email-body' => 'Wužiwar "$1" je komentar wo $3 pósłał.
 
 Dospołny URL: $2
+Zjeće:
+
+$5
 
 Komentar:
 
@@ -5516,10 +5535,12 @@ $4',
 	'codereview-email-body2' => 'Wužiwar "$1" je naslědne změny k $2 činił.
 
 Dospołny URL za naslědnu wersiju: $5
+Zjeće:
+
+$6
 
 Dospołny URL: $3
-
-Zjeće přenjesenja:
+Zjeće:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Wersijowy status je so změnił',
@@ -5529,7 +5550,10 @@ $4',
 Stary status: $3
 Nowy status: $4
 
-Dospołny URL: $5',
+Dospołny URL: $5
+Zjeće:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Nowy komentar přidaty, a status wersije je so změnił',
 	'codereview-email-body4' => 'Wužiwar "$1" je status za $2 změnił.
 
@@ -5539,6 +5563,10 @@ Nowy status: $4
 Wužiwar "$1" je tež dnja $2 komentar pósłał.
 
 Dospołny URL: $5
+
+Zjeće:
+
+$7
 
 Komentar:
 
@@ -7403,10 +7431,13 @@ $4',
 	'codereview-email-body2' => 'De Benotzer "$1" huet Ännerungen zu der Versioun $2 gemaach.
 
 Komplett URL vun der Ännerung: $5
+Resumé vun der Ännerung:
+
+$6
 
 Komplett URL: $3
 
-Resumé vun der Ännerung:
+Resumé vun der neier Versioun:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Statut vun der Versioun huet geännert',
@@ -7420,7 +7451,7 @@ Resumé vun der Ännerung:
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: Nei  Bemierkung derbäigesat, an de Statut vun der Versioun geännert',
-	'codereview-email-body4' => 'De Benotzer "$1" huet de Statut vun $2 gännert.
+	'codereview-email-body4' => 'De Benotzer "$1" huet de Statut vun $2 geännert.
 
 Ale Statut: $3
 Neie Statut: $4
@@ -7428,6 +7459,9 @@ Neie Statut: $4
 De Benotzer "$1" huet och eng Bemierkung iwwer $2 derbäigesat.
 
 Komplett URL: $5
+Resumé vun der Ännerung:
+
+$7
 
 Bemierkung:
 
@@ -9213,6 +9247,8 @@ $messages['pl'] = array(
 	'code-status-desc-new' => 'Wersja oczekuje podjęcia jakiegoś działania (status domyślny).',
 	'code-status-fixme' => 'wymaga naprawy',
 	'code-status-desc-fixme' => 'Redaktor oznaczył te zmianę jako zawierającą błędy. Wersja wymaga poprawek.',
+	'code-status-improveme' => 'wymaga poprawek',
+	'code-status-desc-improveme' => 'Redaktor oznaczył tę wersję jako wymagającą drobnych poprawek.',
 	'code-status-reverted' => 'cofnięty',
 	'code-status-desc-reverted' => 'Wersja została zastąpiona późniejszą treścią.',
 	'code-status-resolved' => 'rozwiązany',
@@ -9257,6 +9293,10 @@ $messages['pl'] = array(
 
 Pełny adres URL – $2
 
+Opis dokonanej zmiany:
+
+$5
+
 Komentarz:
 
 $4',
@@ -9264,10 +9304,12 @@ $4',
 	'codereview-email-body2' => 'Użytkownik „$1” wykonał kolejne zmiany w $2.
 
 Pełny adres URL do poprzedniej wersji – $5
+Opis dokonanej zmiany:
+
+$6
 
 Pełny adres URL do tej wersji – $3
-
-Skrócony opis:
+Opis dokonanej zmiany:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2] - zmiana statusu wersji',
@@ -9276,7 +9318,10 @@ $4',
 Poprzedni status – $3
 Nowy status – $4
 
-Pełny adres URL – $5',
+Pełny adres URL – $5
+Opis dokonanej zmiany:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2] - dodano nowy komentarz i zmieniono status wersji',
 	'codereview-email-body4' => 'Użytkownik „$1” zmienił status $2.
 
@@ -9286,6 +9331,9 @@ Nowy status – $4
 Użytkownik „$1” dodał również komentarz w $2.
 
 Pełny adres URL – $5
+Opis dokonanej zmiany:
+
+$7
 
 Komentarz:
 
@@ -10234,15 +10282,53 @@ $messages['roa-tara'] = array(
 	'codereview-subtitle' => 'Pe $1',
 	'codereview-reply-link' => 'respunne',
 	'codereview-email-subj' => '[$1 $2]: Nuève commende aggiunde',
-	'codereview-email-body' => 'Utende "$1" ha postete \'nu commende sus a $3.
+	'codereview-email-body' => 'L\'utende "$1" ha postate \'nu commende sus a $3.
 
-\'A URL comblete je: $2
+\'A URL comblete jè: $2
+Riepileghe d\'u sarvamende:
+
+$5
 
 Commende:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Revisiune supplemendare',
+	'codereview-email-body2' => 'L\'utende "$1" ha fatte le seguende cangiaminde a $2.
+
+\'A URL comblete pe seguì \'a revisione jè: $5
+Riepileghe d\'u sarvamende:
+
+$6
+
+\'A URL comblete jè: $3
+Riepileghe d\'u sarvamende:
+
+$4',
 	'codereview-email-subj3' => "[$1 $2]: State d'a revisione cangiate",
+	'codereview-email-body3' => 'L\'utende "$1" hacangiate \'u state de $2.
+
+State vecchie: $3
+State nuève: $4
+
+\'A URL comblete jè: $5
+Riepileghe d\'u sarvamende:
+
+$6',
+	'codereview-email-body4' => 'L\'utende "$1" hacangiate \'u state de $2.
+
+State vecchie: $3
+State nuève: $4
+
+L\'utende "$1" ave pure postate \'nu commende sus a $2.
+
+\'A URL comblete jè: $5
+Riepileghe d\'u sarvamende:
+
+$7
+
+Commende:
+
+$6',
 	'code-stats' => 'statisteche',
 	'code-stats-status-breakdown' => 'Numere de revisione pè state',
 	'code-stats-count' => 'Numere de le revisiune',
