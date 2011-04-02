@@ -319,7 +319,7 @@ class SvnRevTablePager extends SvnTablePager {
 
 	function getFieldNames() {
 		$fields = array(
-			$this->getDefaultSort() => wfMsg( 'code-field-id' ),
+			'cr_id' => wfMsg( 'code-field-id' ),
 			'cr_status' => wfMsg( 'code-field-status' ),
 			'comments' => wfMsg( 'code-field-comments' ),
 			'cr_path' => wfMsg( 'code-field-path' ),
@@ -344,8 +344,6 @@ class SvnRevTablePager extends SvnTablePager {
 		case 'selectforchange':
 			$sort = $this->getDefaultSort();
 			return Xml::check( "wpRevisionSelected[]", false, array( 'value' => $row->$sort ) );
-		case 'ct_rev_id':
-		case 'cp_rev_id':
 		case 'cr_id':
 			return $this->mView->skin->link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value ),
