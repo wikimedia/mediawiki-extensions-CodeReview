@@ -344,6 +344,7 @@ class SvnRevTablePager extends SvnTablePager {
 		case 'selectforchange':
 			$sort = $this->getDefaultSort();
 			return Xml::check( "wpRevisionSelected[]", false, array( 'value' => $row->$sort ) );
+		case 'ct_rev_id':
 		case 'cp_rev_id':
 		case 'cr_id':
 			return $this->mView->skin->link(
