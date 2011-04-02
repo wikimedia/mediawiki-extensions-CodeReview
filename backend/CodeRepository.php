@@ -177,11 +177,16 @@ class CodeRepository {
 		return count( $this->getAuthorList() );
 	}
 
-	public function getTagList() {
+	/**
+	 * Get a list of all tags in use in the repository
+	 * @param $recache Bool whether to get clean data
+	 * @return array
+	 */
+	public function getTagList( $recache = false ) {
 		global $wgMemc;
 		$key = wfMemcKey( 'codereview', 'tags', $this->getId() );
 		$tags = $wgMemc->get( $key );
-		if ( is_array( $tags ) ) {
+		if ( is_array( $tags ) && !$recache ) {
 			return $tags;
 		}
 		$dbr = wfGetDB( DB_SLAVE );
