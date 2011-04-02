@@ -8,7 +8,7 @@ class CodeTagListView extends CodeView {
 
 	function execute() {
 		global $wgOut;
-		$list = $this->mRepo->getTagList();
+		$list = $this->mRepo->getTagList( true );
 
 		if( count( $list ) === 0 ) {
 			$wgOut->addWikiMsg( 'code-tags-no-tags' );
