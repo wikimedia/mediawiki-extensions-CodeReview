@@ -845,7 +845,7 @@ $4',
 $messages['ba'] = array(
 	'code' => 'Кодты тикшереү',
 	'code-rev-title' => '$1 -Кодты тикшереү',
-	'code-comments' => 'Иҫкәрмәләр',
+	'code-comments' => 'Аңлатмалар',
 	'code-references' => 'Артабанғы өлгөләр',
 	'code-change-status' => "$1 '''торошон''' үҙгәрткән",
 	'code-change-tags' => "$1 '''билдәһен''' үҙгәрткән",
@@ -856,11 +856,15 @@ $messages['ba'] = array(
 	'code-prop-changes' => 'Тороштар һәм билдәләр яҙмалары журналы',
 	'codereview-desc' => '[[Special:RepoAdmin|Subversion ҡулланыусы]] [[Special:Code|Кодты тикшереү ҡоралы]]',
 	'code-no-repo' => 'Көйләнгән һаҡлағыс юҡ!',
+	'code-create-repo' => 'Һаҡлағыс булдырыу өсөн, [[Special:RepoAdmin|RepoAdmin]]-ға керегеҙ',
+	'code-need-repoadmin-rights' => 'Һаҡлағыс булдырыу өсөн repoadmin хоҡуҡтары кәрәк',
+	'code-need-group-with-rights' => 'Repoadmin хоҡуҡтары булған төркөм юҡ. Зинһар, яңы һаҡлағыс булдырыу өсөн, шундай төркөм булдырығыҙ',
 	'code-repo-not-found' => "'''$1''' һаҡлағысы юҡ!",
 	'code-load-diff' => 'Сағыштырыуҙы сығарыу...',
-	'code-notes' => 'һуңғы иҫкәрмәләр',
+	'code-notes' => 'һуңғы аңлатмалар',
 	'code-statuschanges' => 'торошто үҙгәртеүҙәр',
 	'code-mycommits' => 'минең тапшырыуҙарым (commit)',
+	'code-mycomments' => 'минең аңлатмаларым',
 	'code-authors' => 'авторҙар',
 	'code-status' => 'тороштар',
 	'code-tags' => 'билдәләр',
@@ -911,7 +915,7 @@ $messages['ba'] = array(
 	'code-rev-tags' => 'Билдәләр:',
 	'code-rev-tag-add' => 'Билдәләр өҫтәргә:',
 	'code-rev-tag-remove' => 'Билдәләрҙе алырға:',
-	'code-rev-comment-by' => '$1 исемле ҡулланыусынан иҫкәрмә',
+	'code-rev-comment-by' => '$1 исемле ҡулланыусынан аңлатма',
 	'code-rev-comment-preview' => 'Алдан байҡау',
 	'code-rev-inline-preview' => 'Алдан байҡау:',
 	'code-rev-diff' => 'Айыр.',
@@ -924,6 +928,8 @@ $messages['ba'] = array(
 	'code-status-desc-new' => 'Өлгө ғәмәлде көтә (ғәҙәттәге торош).',
 	'code-status-fixme' => 'төҙәтергә кәрәк',
 	'code-status-desc-fixme' => 'Тикшереүсе был өлгөлә хата барлығын йәки боҙолоуын билдәләгән. Уны төҙәтергә кәрәк.',
+	'code-status-improveme' => 'яҡшыртырға',
+	'code-status-desc-improveme' => 'Тикшереүсе был өлгөнөң эшләнеп еткерелмәгәнлеген билдәләгән. Уны төҙәтергә кәрәк.',
 	'code-status-reverted' => 'кире алынған',
 	'code-status-desc-reverted' => 'Өлгө һуңғыраҡ өлгөлә кире алынған',
 	'code-status-resolved' => 'төҙәтелгән',
@@ -957,24 +963,30 @@ $messages['ba'] = array(
 	'code-batch-tags' => 'Билдәләрҙе үҙгәртергә:',
 	'codereview-batch-title' => 'Һайланған бар өлгөләрҙе үҙгәртергә',
 	'codereview-batch-submit' => 'Ебәрергә',
-	'code-releasenotes' => 'сығарылыш иҫкәрмәләре',
-	'code-release-legend' => 'Сығарылыш иҫкәрмәләрен яһарға',
+	'code-releasenotes' => 'сығарылыш аңлатмалары',
+	'code-release-legend' => 'Сығарылыш аңлатмаларын булдырырға',
 	'code-release-startrev' => 'Башланғыс өлгө:',
 	'code-release-endrev' => 'Һуңғы өлгө:',
 	'codereview-subtitle' => '«$1» өсөн',
 	'codereview-reply-link' => 'яуапларға',
-	'codereview-email-subj' => '[$1 $2]: Яңы иҫкәрмә өҫтәлде',
-	'codereview-email-body' => '"$1" ҡулланыусыһы $3 өсөн иҫкәрмә өҫтәне.
+	'codereview-email-subj' => '[$1 $2]: Яңы аңлатма өҫтәлде',
+	'codereview-email-body' => '"$1" ҡулланыусыһы $3 өсөн аңлатма өҫтәне.
 
 Тулы URL: $2
+Ҡыҫҡаса тасуирлама: 
 
-Иҫкәрмә:
+$5
+
+Аңлатма:
 
 $4',
 	'codereview-email-subj2' => '[$1] [r$2]: Артабанғы үҙгәрештәр',
 	'codereview-email-body2' => '"$1" ҡатнашыусыһы $2 өлгөһөнә артабанғы үҙгәрештәр кереткән.
 
 Алдағы өлгөнөң тулы URL адресы: $5
+Ҡыҫҡаса тасуирлама: 
+
+$6
 
 Тулы URL адрес: $3
 
@@ -985,18 +997,27 @@ $4',
 	'codereview-email-body3' => '"$1" ҡатнашыусыһы $2 өлгөһөнөң торошон үҙгәрткән.
 
 Иҫке торошо: $3
-Яңы торошо: $4',
-	'codereview-email-subj4' => '[$1 $2]: Яңы иҫкәрмә өҫтәлгән һәм өлгөнөң торошо үҙгәргән',
+Яңы торошо: $4
+
+Тулы URL адрес: $5
+Тапшырыу тасуирламаһы:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Яңы аңлатма өҫтәлгән һәм өлгөнөң торошо үҙгәргән',
 	'codereview-email-body4' => '"$1" ҡатнашыусыһы $2 өлгөһөнөң торошон үҙгәркән.
 
 Иҫке торошо: $3
 Яңы торошо: $4
 
-"$1" ҡатнашыусыһы шулай уҡ $2 өсөн иҫкәрмә өҫтәгән.
+"$1" ҡатнашыусыһы шулай уҡ $2 өсөн аңлатма өҫтәгән.
 
 Тулы URL: $5
+Тапшырыу тасуирламаһы:
 
-Иҫкәрмә:
+$7
+
+
+Аңлатма:
 
 $6',
 	'code-stats' => 'статистика',
@@ -1020,11 +1041,15 @@ $6',
 	'right-codereview-use' => 'Special:Code ҡулланыу',
 	'right-codereview-add-tag' => 'Өлгөләргә билдәләр өҫтәү',
 	'right-codereview-remove-tag' => 'Өлгөләрҙән билдәләрҙе юйыу',
-	'right-codereview-post-comment' => 'Өлгөләргә иҫкәрмәләр өҫтәү',
+	'right-codereview-post-comment' => 'Өлгөләргә аңлатмалар өҫтәү',
 	'right-codereview-set-status' => 'Өлгөләрҙең торошон үҙгәртеү',
 	'right-codereview-signoff' => 'Өлгөләрҙе раҫлау',
 	'right-codereview-link-user' => 'Авторҙарҙы вики ҡатнашыусыларға бәйләү',
+	'right-codereview-associate' => 'Өлгөләрҙе бәйләү менән идара итеү',
 	'specialpages-group-developer' => 'Программист ҡоралдары',
+	'group-svnadmins' => 'SVN идарасылары',
+	'group-svnadmins-member' => 'SVN идарасыһы',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN идарасылары',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
@@ -4309,7 +4334,7 @@ $messages['frp'] = array(
 	'code-field-message' => 'Rèsumâ de publecacion',
 	'code-field-status' => 'Ètat',
 	'code-field-timestamp' => 'Dâta',
-	'code-field-comments' => 'Notes',
+	'code-field-comments' => 'Comentèros',
 	'code-field-path' => 'Chemin',
 	'code-field-text' => 'Nota',
 	'code-field-select' => 'Chouèsir',
@@ -4367,26 +4392,36 @@ $messages['frp'] = array(
 	'codereview-email-subj' => '[$1 $2] : novél comentèro apondu',
 	'codereview-email-body' => 'L’utilisator « $1 » at postâ un comentèro dessus $3.
 
-Lim hipèrtèxto complèt : $2
+URL complèta : $2
+Rèsumâ de changement :
+
+$5
 
 Comentèro :
 
 $4',
 	'codereview-email-subj2' => '[$1 $2] : survelyence du changement',
-	'codereview-email-body2' => 'L’utilisator « $1 » at fêt des changements sur $2.
+	'codereview-email-body2' => 'L’utilisator « $1 » at fêt des changements de ples sur $2.
 
 URL complèta de la vèrsion siuvua : $5
+Rèsumâ de changement :
+
+$6
 
 URL complèta : $3
-
-Rèsumâ des changements :
+Rèsumâ de changement :
 
 $4',
 	'codereview-email-subj3' => '[$1 $2] : l’ètat de la vèrsion at changiê',
 	'codereview-email-body3' => 'L’utilisator « $1 » at changiê l’ètat de $2.
 
 Viely ètat : $3
-Novél ètat : $4',
+Novél ètat : $4
+
+URL complèta : $5
+Rèsumâ de changement :
+
+$6',
 	'code-stats' => 'statistiques',
 	'code-stats-header' => 'Statistiques por lo dèpôt $1',
 	'code-stats-main' => 'A la dâta du $1, lo dèpôt at $2 {{PLURAL:$2|rèvision fêta|rèvisions fêtes}} per [[Special:Code/$3/author|$4 ôtor{{PLURAL:$4||s}}]].',
@@ -13272,6 +13307,8 @@ $messages['vi'] = array(
 	'code-status-desc-new' => 'Phiên bản đang chờ xử lý (trạng thái mặc định).',
 	'code-status-fixme' => 'cần sửa',
 	'code-status-desc-fixme' => 'Người duyệt đã đánh dấu phiên bản này là gây lỗi hoặc hư hỏng. Nó cần được sửa chữa.',
+	'code-status-improveme' => 'cần cải tiến',
+	'code-status-desc-improveme' => 'Người duyệt đã đánh dấu phiên bản này là có một số vấn đề nhỏ. Nó cần được sửa chữa.',
 	'code-status-reverted' => 'khôi phục',
 	'code-status-desc-reverted' => 'Phiên bản được thay thế bằng một phiên bản sau.',
 	'code-status-resolved' => 'giải quyết',
@@ -13315,17 +13352,22 @@ $messages['vi'] = array(
 	'codereview-email-body' => 'Người dùng "$1" đã bình luận về $3.
 
 URL đầy đủ: $2
+Tóm lược thay đổi:
+
+$5
 
 Tin nhắn:
 
 $4',
 	'codereview-email-subj2' => '[$1] [r$2]: Các thay đổi tiếp theo',
-	'codereview-email-body2' => 'Người dùng "$1" đã thực hiện các thay đổi tiếp theo r$2.
+	'codereview-email-body2' => 'Người dùng "$1" đã thực hiện các thay đổi tiếp theo $2.
 
 URL đầy đủ đến phiên bản được tiếp theo: $5
+Tóm lược thay đổi:
+
+$6
 
 URL đầy đủ: $3
-
 Tóm lược thay đổi:
 
 $4',
@@ -13335,16 +13377,22 @@ $4',
 Trạng thái cũ: $3
 Trạng thái mới: $4
 
-URL đầy đủ: $5',
+URL đầy đủ: $5
+Tóm lược thay đổi:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Đã thêm bình luận mới và thay đổi trạng thái thay đổi',
-	'codereview-email-body4' => 'Người dùng “$1” đã thay đổi trạng thái $2.
+	'codereview-email-body4' => 'Người dùng "$1" đã thay đổi trạng thái $2.
 
 Trạng thái cũ: $3
 Trạng thái mới: $4
 
-Người dùng “$1” cũng thêm bình luận vào $2.
+Người dùng "$1" cũng thêm bình luận vào $2.
 
 URL đầy đủ: $5
+Tóm lược thay đổi:
+
+$7
 
 Bình luận:
 
