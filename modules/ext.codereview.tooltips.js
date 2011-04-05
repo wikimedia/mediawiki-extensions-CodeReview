@@ -32,6 +32,8 @@ var CodeTooltipsInit = function() {
 					}
 					var rev = data.query.coderevisions[0];
 					var text = rev['*'].length > 82 ? rev['*'].substr(0,80) + '...' : rev['*'];
+					text = text.replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
+					text = text.replace( /\n/g, '<br/>' );
 
 					var tip = '<div class="mw-codereview-status-' + rev.status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">'
 						+ 'r' + matches[2]
