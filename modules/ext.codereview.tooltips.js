@@ -13,6 +13,7 @@ var CodeTooltipsInit = function() {
 			if ( $el.data('codeTooltip') ) {
 				return; // already processed
 			}
+			$el.data( 'codeTooltipLoading', true );
 			var reqData = {
 				format: 'json',
 				action: 'query',
@@ -43,9 +44,20 @@ var CodeTooltipsInit = function() {
 						+ '</div>';
 					$el.attr( 'title', tip );
 					$el.data( 'codeTooltip', true );
-					$el.tipsy( 'show' );
+					if ( !$el.data( 'codeTooltipLeft' ) ) {
+						$el.tipsy( 'show' );
+					}
 				}
 			);
+		});
+		// take care of cases when louse leaves our link while we load stuff from API.
+		// We shouldn't display the tooltip in such case.
+		$( this ).mouseleave( function( e ) {
+			var $el = $( this );
+			if ( $el.data( 'codeTooltip' ) || !$el.data( 'codeTooltipLoading' ) ) {
+				return;
+			}
+			$el.data( 'codeTooltipLeft', true );
 		});
 	});
 };
