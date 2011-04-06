@@ -12575,7 +12575,7 @@ $messages['tl'] = array(
 	'code-revfilter-cr_status' => 'Katayuan = $1',
 	'code-revfilter-cr_author' => 'May-akda = $1',
 	'code-revfilter-clear' => 'Dalisayin ang pansala',
-	'code-rev-submit' => 'Sagipin an mga pagbabago',
+	'code-rev-submit' => 'Sagipin ang mga pagbabago',
 	'code-rev-submit-next' => 'Sagipin at susunod na hindi pa nalulutas',
 	'code-batch-status' => 'Baguhin ang kalagayan:',
 	'code-batch-tags' => 'Baguhin ang mga tatak:',
