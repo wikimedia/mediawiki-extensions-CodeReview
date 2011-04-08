@@ -99,6 +99,10 @@ class CodeRevisionView extends CodeView {
 		$paths = '';
 		$modifiedPaths = $this->mRev->getModifiedPaths();
 		foreach ( $modifiedPaths as $row ) {
+			// Don't output NOOP paths
+			if ( strtolower( $row->cp_action ) == 'n' ){
+				continue;
+			}
 			$paths .= $this->formatPathLine( $row->cp_path, $row->cp_action );
 		}
 		if ( $paths ) {
@@ -248,7 +252,7 @@ class CodeRevisionView extends CodeView {
 		global $wgUser;
 		return $wgUser->isAllowed( 'codereview-signoff' ) && !$wgUser->isBlocked();
 	}
-	
+
 	/**
 	 * @return bool Whether the current user can add and remove associations between revisions
 	 */
@@ -258,8 +262,14 @@ class CodeRevisionView extends CodeView {
 	}
 
 	protected function formatPathLine( $path, $action ) {
+		$action = strtolower( $action );
+
+		// If NOOP passed, return ''
+		if ( $action == 'n' ) {
+			return '';
+		}
 		// Uses messages 'code-rev-modified-a', 'code-rev-modified-r', 'code-rev-modified-d', 'code-rev-modified-m'
-		$desc = wfMsgHtml( 'code-rev-modified-' . strtolower( $action ) );
+		$desc = wfMsgHtml( 'code-rev-modified-' . $action );
 		// Find any ' (from x)' from rename comment in the path.
 		$matches = array();
 		preg_match( '/ \([^\)]+\)$/', $path, $matches );

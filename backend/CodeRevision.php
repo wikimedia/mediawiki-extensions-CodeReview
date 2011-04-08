@@ -100,7 +100,13 @@ class CodeRevision {
 
 				$currentPath .= $fragment;
 
-				$allPaths[] = array( 'path' => $currentPath, 'action' => $path['action'] ) ;
+				if ( $currentPath == $path['path'] ) {
+					$action = $path['action'];
+				} else {
+					$action = 'N';
+				}
+
+				$allPaths[] = array( 'path' => $currentPath, 'action' => $action );
 			}
 		}
 
