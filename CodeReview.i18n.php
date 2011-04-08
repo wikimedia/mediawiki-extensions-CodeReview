@@ -224,6 +224,7 @@ $6',
 	'right-codereview-signoff' => 'Sign off on revisions',
 	'right-codereview-link-user' => 'Link authors to wiki users',
 	'right-codereview-associate' => 'Manage revision associations',
+	'right-codereview-review-own' => 'Mark your own revisions as OK',
 
 	'specialpages-group-developer' => 'Developer tools',
 
@@ -353,8 +354,9 @@ $1 = Repository name',
 	'right-codereview-post-comment' => '{{doc-right}}',
 	'right-codereview-set-status' => '{{doc-right}}',
 	'right-codereview-signoff' => 'A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
-	'right-codereview-link-user' => '{{Doc-right}}',
+	'right-codereview-link-user' => '{{doc-right}}',
 	'right-codereview-associate' => '{{doc-right|codereview-associate}}',
+	'right-right-codereview-review-own' => '{{doc-right}}',
 );
 
 /** Afrikaans (Afrikaans)

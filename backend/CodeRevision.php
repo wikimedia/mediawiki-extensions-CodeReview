@@ -265,7 +265,10 @@ class CodeRevision {
 		// Obviously only works if user accounts are tied!
 		$wikiUser = $this->getWikiUser();
 		if ( $status == 'ok' && $wikiUser && $user->getName() == $wikiUser->getName() ) {
-			return false;
+			// allow the user to review their own code if required
+			if ( !$wikiUser->isAllowed( 'codereview-review-own' ) ) {
+				return false;
+			}
 		}
 
 		// Get the old status from the master

@@ -102,6 +102,7 @@ $wgAvailableRights[] = 'codereview-set-status';
 $wgAvailableRights[] = 'codereview-signoff';
 $wgAvailableRights[] = 'codereview-associate';
 $wgAvailableRights[] = 'codereview-link-user';
+$wgAvailableRights[] = 'codereview-review-own';
 
 $wgGroupPermissions['*']['codereview-use'] = true;
 
