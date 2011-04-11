@@ -69,21 +69,6 @@ table.mw-codereview-meta td {
 	color: #ff0 !important;
 }
 
-.mw-codereview-status-improveme,
-.mw-codereview-status-improveme td {
-	background: #fc0 !important;
-	color: white;
-}
-.mw-codereview-status-improveme:hover,
-.mw-codereview-status-improveme:hover td {
-	background: #ff3300 !important;
-	color: white;
-}
-.mw-codereview-status-improveme:hover a,
-.mw-codereview-status-improveme:hover td a {
-	color: #ff0 !important;
-}
-
 .mw-codereview-status-resolved,
 .mw-codereview-status-resolved td {
 	background: #c0ffc0 !important;
