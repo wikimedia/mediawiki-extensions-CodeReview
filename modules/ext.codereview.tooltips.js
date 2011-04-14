@@ -15,7 +15,6 @@ var CodeTooltipsInit = function() {
 			}
 			$el.data( 'codeTooltipLoading', true );
 			var reqData = {
-				format: 'json',
 				action: 'query',
 				list: 'coderevisions',
 				crprop: 'revid|message|status|author',
@@ -24,16 +23,14 @@ var CodeTooltipsInit = function() {
 				crlimit: '1'
 			};
 			$el.tipsy( { fade: true, gravity: 'sw', html:true } );
-			$.getJSON(
-				mw.config.get( 'wgScriptPath' ) + '/api' + mw.config.get( 'wgScriptExtension' ),
-				reqData,
+			mw.api( reqData,
 				function( data ) {
 					if ( !data || !data.query || !data.query.coderevisions ) {
 						return;
 					}
 					var rev = data.query.coderevisions[0];
 					var text = rev['*'].length > 82 ? rev['*'].substr(0,80) + '...' : rev['*'];
-					text = text.replace( /</g, '&lt;' ).replace( />/g, '&gt;' );
+					text = mw.html.escape( text );
 					text = text.replace( /\n/g, '<br/>' );
 
 					var tip = '<div class="mw-codereview-status-' + rev.status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">'
