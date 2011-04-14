@@ -11,7 +11,7 @@ class PopulateFollowupRevisions extends Maintenance {
 		parent::__construct();
 		$this->mDescription = "Populates followup revisions. Useful for setting them on old revisions, without reimporting";
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
-		$this->addArg( 'revisions', "The revisions to set status for. Format: start:end" );
+		$this->addArg( 'revisions', "The revisions to set followups revisions for. Format: start:end" );
 		$this->addOption( 'dry-run', 'Perform a dry run' );
 	}
 
