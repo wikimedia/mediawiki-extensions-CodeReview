@@ -4,7 +4,7 @@ var CodeTooltipsInit = function() {
 		if ( !link ) {
 			return;
 		}
-		var matches = link.match( /^\/.*\/Special:Code\/([-A-Za-z\d_]*?)\/(\d+)$/ );
+		var matches = link.match( /^\/.*\/Special:Code\/([-A-Za-z\d_]*?)\/(\d+)(#.*)?$/ );
 		if ( !matches ) {
 			return;
 		}
