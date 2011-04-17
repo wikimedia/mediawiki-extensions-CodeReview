@@ -15,6 +15,7 @@ var CodeTooltipsInit = function() {
 			}
 			$el.data( 'codeTooltipLoading', true );
 			var reqData = {
+				format: 'json',
 				action: 'query',
 				list: 'coderevisions',
 				crprop: 'revid|message|status|author',
@@ -23,7 +24,9 @@ var CodeTooltipsInit = function() {
 				crlimit: '1'
 			};
 			$el.tipsy( { fade: true, gravity: 'sw', html:true } );
-			mw.api( reqData,
+			$.getJSON(
+				mw.config.get( 'wgScriptPath' ) + '/api' + mw.config.get( 'wgScriptExtension' ),
+				reqData,
 				function( data ) {
 					if ( !data || !data.query || !data.query.coderevisions ) {
 						return;
