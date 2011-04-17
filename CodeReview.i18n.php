@@ -5088,8 +5088,6 @@ $messages['he'] = array(
 	'code-status-desc-new' => 'הגרסה ממתינה לפעולה (מצב בררת המחדל).',
 	'code-status-fixme' => 'לתיקון',
 	'code-status-desc-fixme' => 'סוקר סימן שגרסה זו גורמת לתקלה או שאינה תקינה. יש לתקן זאת.',
-	'code-status-improveme' => 'שפר־אותי',
-	'code-status-desc-improveme' => 'סוקר סימן את הגרסה הזאת כגרסה בעלת בעיות קטנות מסוימות. רצוי לתקן אותן.',
 	'code-status-reverted' => 'בוטל',
 	'code-status-desc-reverted' => 'הגרסה נדחקה הצידה על ידי גרסה עדכנית יותר.',
 	'code-status-resolved' => 'תוקן',
@@ -5204,6 +5202,7 @@ $6',
 	'right-codereview-signoff' => 'חתימה על גרסאות',
 	'right-codereview-link-user' => 'קישור הכותבים למשתמשי ויקי',
 	'right-codereview-associate' => 'ניהול שיוכי גרסה',
+	'right-codereview-review-own' => 'לסמן את הגרסאות שלך כמאושרות',
 	'specialpages-group-developer' => 'כלי פיתוח',
 	'group-svnadmins' => 'מנהלי שרת SVN',
 	'group-svnadmins-member' => 'מנהל שרת SVN',
@@ -13656,6 +13655,7 @@ $3',
  * @author Chenzw
  * @author Gaoxuewei
  * @author Hydra
+ * @author Kuailong
  * @author Liangent
  * @author PhiLiP
  * @author Wmr89502270
@@ -13798,20 +13798,25 @@ $4',
 	'codereview-email-subj2' => '[$1 $2]：后续更改',
 	'codereview-email-body2' => '用户“$1”对$2作出了后续更改。
 
-后续修订的URL链接：$5
+后续修订的完整URL链接：$5
+编辑摘要：
 
-URL链接：$3
+$6
 
-提交摘要：
+完整URL链接：$3
+编辑摘要：
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]： 修订状态改变',
-	'codereview-email-body3' => '用户"$1"更改"$2"的状态。
+	'codereview-email-body3' => '用户“$1”更改了$2的状态。
 
-之前：$3
-目前：$4
+原状态：$3
+新状态：$4
 
-完整URL：$5',
+完整URL：$5
+编辑摘要：
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]： 添加，新的注释和修订状态改变',
 	'codereview-email-body4' => '$2的状态更改用户"$1"。
 
