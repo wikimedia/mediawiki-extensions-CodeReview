@@ -1587,7 +1587,7 @@ $messages['br'] = array(
 	'code-pathsearch-path' => 'Hent moned :',
 	'code-pathsearch-filter' => 'Sil arloet :',
 	'code-revfilter-cr_status' => 'Statud = $1',
-	'code-revfilter-cr_author' => 'Oberour = $1',
+	'code-revfilter-cr_author' => 'Aozer = $1',
 	'code-revfilter-clear' => 'Diverkañ ar sil',
 	'code-rev-submit' => "Enrollañ ar c'hemmoù",
 	'code-rev-submit-next' => "Enrollañ & kudenn war-lerc'h",
@@ -3570,6 +3570,9 @@ $messages['et'] = array(
 	'codereview-email-body' => 'Kasutaja $1 kommenteeris koodi $3.
 
 Täielik URL: $2
+Kehtestamise kokkuvõte:
+
+$5
 
 Kommentaar:
 
