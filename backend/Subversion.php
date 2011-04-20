@@ -188,7 +188,7 @@ class SubversionShell extends SubversionAdaptor {
 		$formats = array(
 			'rev' => '/^r(\d+)$/',
 			'author' => '/^(.*)$/',
-			'date' => '/^(.*?) \(.*\)$/',
+			'date' => '/^(?:(.*?) )?\(.*\)$/', // account for '(no date)'
 			'lines' => '/^(\d+) lines?$/',
 		);
 		$state = "start";
