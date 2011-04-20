@@ -42,6 +42,7 @@ $wgAutoloadClasses['ApiCodeDiff'] = $dir . 'api/ApiCodeDiff.php';
 $wgAutoloadClasses['ApiRevisionUpdate'] = $dir . 'api/ApiRevisionUpdate.php';
 $wgAutoloadClasses['ApiQueryCodeComments'] = $dir . 'api/ApiQueryCodeComments.php';
 $wgAutoloadClasses['ApiQueryCodeRevisions'] = $dir . 'api/ApiQueryCodeRevisions.php';
+$wgAutoloadClasses['ApiQueryCodeTags'] = $dir . 'api/ApiQueryCodeTags.php';
 $wgAutoloadClasses['CodeRevisionCommitterApi'] = $dir . 'api/CodeRevisionCommitterApi.php';
 
 $wgAutoloadClasses['SubversionAdaptor'] = $dir . 'backend/Subversion.php';
@@ -89,6 +90,7 @@ $wgAPIModules['codediff'] = 'ApiCodeDiff';
 $wgAPIModules['coderevisionupdate'] ='ApiRevisionUpdate';
 $wgAPIListModules['codecomments'] = 'ApiQueryCodeComments';
 $wgAPIListModules['coderevisions'] = 'ApiQueryCodeRevisions';
+$wgAPIListModules['codetags'] = 'ApiQueryCodeTags';
 
 $wgExtensionMessagesFiles['CodeReview'] = $dir . 'CodeReview.i18n.php';
 $wgExtensionAliasesFiles['CodeReview'] = $dir . 'CodeReview.alias.php';
