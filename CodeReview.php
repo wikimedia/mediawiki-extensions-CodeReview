@@ -145,6 +145,7 @@ $commonModuleInfo = array(
 $wgResourceModules['ext.codereview'] = array(
 	'styles' => 'ext.codereview.css',
 	'scripts' => 'ext.codereview.js',
+	'dependencies' => 'jquery.suggestions',
 ) + $commonModuleInfo;
 
 // On-demand diff loader for CodeRevisionView:
@@ -287,5 +288,20 @@ $wgHooks['UnitTestsList'][] = 'efCodeReviewUnitTests';
 
 function efCodeReviewUnitTests( &$files ) {
 	$files[] = dirname( __FILE__ ) . '/tests/CodeReviewTest.php';
+	return true;
+}
+
+# Add global JS vars
+$wgHooks['MakeGlobalVariablesScript'][] = 'efCodeReviewResourceLoaderGlobals';
+
+function efCodeReviewResourceLoaderGlobals( &$values ){
+	# Bleugh, this is horrible
+	global $wgTitle;
+	if( $wgTitle->isSpecial( 'Code' ) ){
+		$bits = explode( '/', $wgTitle->getText() );
+		if( isset( $bits[1] ) ){
+			$values['wgCodeReviewRepository'] = $bits[1];
+		}
+	}
 	return true;
 }
