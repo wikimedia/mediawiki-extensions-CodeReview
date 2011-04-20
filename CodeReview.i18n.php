@@ -3211,9 +3211,12 @@ $messages['eo'] = array(
 	'codereview-subtitle' => 'Por $1',
 	'codereview-reply-link' => 'respondo',
 	'codereview-email-subj' => '[$1 $2]: Nova komento estis aldonita',
-	'codereview-email-body' => 'Uzanto "$1" afiŝis komenton de $3.
+	'codereview-email-body' => 'Uzanto "$1" afiŝis komenton en $3.
 
 Plena URL-o: $2
+Resumo de faraĵo:
+
+$5
 
 Komento:
 
@@ -3222,10 +3225,12 @@ $4',
 	'codereview-email-body2' => 'Uzanto "$1" faris postatentadajn ŝanĝojn al $2.
 
 Plena URL por la postatentadaj revizio: $5
+Resumo de faraĵo:
+
+$6
 
 Plena URL: $3
-
-Resumo de ŝanĝoj:
+Resumo de faraĵo:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Revizio-statuso ŝanĝis',
@@ -3234,7 +3239,10 @@ $4',
 Malnova statuso: $3
 Nova statuso: $4
 
-Plena URL-o: $5',
+Plena URL-o: $5
+Resumo de faraĵo:
+
+$6',
 	'codereview-email-body4' => 'Uzanto "$1" ŝanĝis la statuson de $2.
 
 Malnova statuso: $3
@@ -3243,6 +3251,9 @@ Nova statuso: $4
 La uzanto "$1" ankaŭ skribis komenton en $2.
 
 Plena URL-o: $5
+Resumo de faraĵo:
+
+$7
 
 Komento:
 
@@ -11654,8 +11665,8 @@ $messages['sr-el'] = array(
 $messages['stq'] = array(
 	'code' => 'Codewröich',
 	'code-comments' => 'Kommentoare',
-	'code-change-status' => "annerde dän '''Stoatus''' fon disse Revision",
-	'code-change-tags' => "annerde do '''Tags''' fon disse Revision",
+	'code-change-status' => "annerde dän '''Stoatus''' fon Revision $1",
+	'code-change-tags' => "annerde do '''Tags''' fon Revision $1",
 	'code-change-removed' => 'wächhoald:',
 	'code-change-added' => 'bietouföiged:',
 	'code-prop-changes' => 'Stoatus- un Tagging-Logbouk',
@@ -11666,7 +11677,7 @@ $messages['stq'] = array(
 	'code-authors' => 'Autore',
 	'code-status' => 'Stoatus',
 	'code-tags' => 'Tags',
-	'code-authors-text' => 'Dit is ne Lieste fon do Autore ap Riege fon do Ienspielengen.',
+	'code-authors-text' => 'Hierunner foulget ne Lieste fon Repositoriumautore, ätter Noomen sortierd. Lokoale Wikikonten wäide in runde Klammere anwiesd. Doaten kuuden uut dän Cache stamme.',
 	'code-author-haslink' => 'Dissen Autor is tou dän Wiki-Benutser $1 ferlinked',
 	'code-author-orphan' => 'Dissen Autor häd neen Link tou n Wiki-Benutserkonto',
 	'code-author-dolink' => 'Dissen Autor tou n Wiki-Benutserkonto ferlinkje:',
@@ -11719,7 +11730,14 @@ $messages['stq'] = array(
 	'code-rev-submit-next' => 'Spiekerje un gung tou n naisten nit-wröigeden',
 	'codereview-reply-link' => 'oantwoudje',
 	'codereview-email-subj' => '[$1 $2]: Näien Kommentoar bietouföiged',
-	'codereview-email-body' => 'Benutser <b>$1</b> häd $3 <a href="$2">kommentierd</a>:
+	'codereview-email-body' => 'Benutser "$1" häd Revision $3 kommentierd:
+
+Fulständige URL: $2
+Touhoopefoatenge:
+
+$5
+
+Kommentoar:
 
 $4',
 	'repoadmin' => 'Repositoriums-Administration',
