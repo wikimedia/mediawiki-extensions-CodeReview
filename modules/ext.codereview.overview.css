@@ -1,0 +1,82 @@
+#overviewmap {
+	border: 1px solid #2F6FAB;
+	padding: 2px;
+	min-width: 300px;
+}
+#overviewmap #overviewpop {
+	padding: 3px;
+	border: 1px solid black;
+	position: absolute;
+	height: 6.5em;
+	width: 16em;
+	display: none;
+	background-color: #ffffdd;
+	font-size: 80%;
+	line-height: 100%;
+	overflow: hidden;
+	white-space: pre;
+}
+#overviewmap > a {
+	display: block;
+	border: 1px solid #888;
+	float: left;
+	width: 26px; /* 26px for body + 2px for border + 2px for margin = 30px total */
+	height: 26px;
+	margin: 1px;
+	overflow: hidden;
+}
+#overviewmap > a:target {
+	border-style: dashed;
+}
+#overviewmap .summary {
+	clear: both;
+}
+
+/** Revision statuses **/
+.box-status-new {
+	background:  #ffffc0 !important;
+}
+.box-status-new:hover {
+	background:  #dfdfa0 !important;
+}
+.box-status-fixme {
+	background:  #ff9999 !important;
+}
+.box-status-fixme:hover {
+	background:  #df0000 !important;
+}
+.box-status-resolved {
+	background:  #b0eeb0 !important;
+}
+.box-status-resolved:hover {
+	background:  #80ff80 !important;
+}
+.box-status-reverted {
+	background:  #bbddee !important;
+} 
+.box-status-reverted:hover {
+	background:  #66bbff !important;
+}
+.box-status-deferred {
+	background:  #dddddd !important;
+} 
+.box-status-deferred:hover {
+	background:  #aaaaaa !important;
+}
+
+.box-live-live {
+	border: 1px solid #00ff00 !important;
+}
+
+table.TablePager tr:target {
+	font-weight: bold;
+}
+
+.overview-backlink {
+	clear:both;
+	display: none;
+}
+
+tr:target .overview-backlink {
+	display: inline;
+}
