@@ -1,5 +1,9 @@
 var CodeTooltipsInit = function() {
 	$( 'a[href]' ).each( function() {
+		if ( $( this ).parent().is( '.TablePager_col_cr_id' ) ) {
+			// Tooltips are unnecessary and annoying in revision lists
+			return;
+		}
 		var link = this.getAttribute( 'href' );
 		if ( !link ) {
 			return;
@@ -8,7 +12,8 @@ var CodeTooltipsInit = function() {
 		if ( !matches ) {
 			return;
 		}
-		$( this ).mouseenter( function( e ) {
+		
+		function showTooltip() {
 			var $el = $( this );
 			if ( $el.data('codeTooltip') ) {
 				return; // already processed
@@ -49,11 +54,31 @@ var CodeTooltipsInit = function() {
 					}
 				}
 			);
-		});
+		}
+		
+		// We want to avoid doing API calls just because someone accidentally moves the mouse
+		// over a link, so we only want to do an API call after the mouse has been on a link
+		// for 250ms.
+		$( this ).mouseenter( function( e ) {
+			var that = this;
+			var timerID = $( this ).data( 'codeTooltipTimer' );
+			if ( typeof timerID != 'undefined' ) {
+				// Clear the running timer
+				clearTimeout( timerID );
+			}
+			timerID = setTimeout( function() { showTooltip.apply( that ); }, 250 );
+			$( this ).data( 'codeTooltipTimer', timerID );
+		} );
 		// take care of cases when louse leaves our link while we load stuff from API.
 		// We shouldn't display the tooltip in such case.
 		$( this ).mouseleave( function( e ) {
 			var $el = $( this );
+			var timerID = $el.data( 'codeTooltipTimer' );
+			if ( typeof timerID != 'undefined' ) {
+				// Clear the running timer
+				clearTimeout( timerID );
+			}
+			
 			if ( $el.data( 'codeTooltip' ) || !$el.data( 'codeTooltipLoading' ) ) {
 				return;
 			}
