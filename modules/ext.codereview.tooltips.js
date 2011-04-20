@@ -40,11 +40,13 @@ var CodeTooltipsInit = function() {
 					var text = rev['*'].length > 82 ? rev['*'].substr(0,80) + '...' : rev['*'];
 					text = mw.html.escape( text );
 					text = text.replace( /\n/g, '<br/>' );
+					var status = mw.html.escape( rev.status );
+					var author = mw.html.escape( rev.author );
 
-					var tip = '<div class="mw-codereview-status-' + rev.status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">'
+					var tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">'
 						+ 'r' + matches[2]
-						+ ' [' + rev.status + '] by '
-						+ rev.author
+						+ ' [' + status + '] by '
+						+ author
 						+ ( rev['*'] ? ' - ' + text : '' )
 						+ '</div>';
 					$el.attr( 'title', tip );
