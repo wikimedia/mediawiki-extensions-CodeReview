@@ -3,8 +3,6 @@
 /**
  * Created on Oct 29, 2008
  *
- * API for MediaWiki 1.8+
- *
  * Copyright © 2008 Bryan Tong Minh <Bryan.TongMinh@Gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify

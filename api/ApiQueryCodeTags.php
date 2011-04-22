@@ -3,8 +3,6 @@
 /**
  * Created on 20 April 2011
  *
- * API for MediaWiki 1.8+
- *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -22,8 +20,6 @@
  */
 
 class ApiQueryCodeTags extends ApiQueryBase {
-	private $props;
-
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'ct' );
 	}

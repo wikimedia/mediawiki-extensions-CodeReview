@@ -3,8 +3,6 @@
 /**
  * Created on July 06, 2010
  *
- * API for MediaWiki 1.8+
- *
  * Copyright © 2010 Sam Reed
  * Copyright © 2008 Bryan Tong Minh <Bryan.TongMinh@Gmail.com>
  *
