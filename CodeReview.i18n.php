@@ -580,6 +580,7 @@ $messages['ar'] = array(
 	'code-load-diff' => 'جاري تحميل الفرق...',
 	'code-notes' => 'التعليقات الحديثة',
 	'code-statuschanges' => 'تغييرات الحالة',
+	'code-mycomments' => 'تعليقاتي',
 	'code-authors' => 'مؤلفون',
 	'code-status' => 'الحالات',
 	'code-tags' => 'وسوم',
@@ -644,7 +645,7 @@ $messages['ar'] = array(
 	'code-batch-status' => 'غير الحالة:',
 	'code-batch-tags' => 'غير الوسوم:',
 	'codereview-batch-title' => 'غير كل المراجعات المختارة',
-	'codereview-batch-submit' => 'تنفيذ',
+	'codereview-batch-submit' => 'أرسل',
 	'code-releasenotes' => 'ملاحظات الإصدار',
 	'code-release-legend' => 'توليد ملاحظات الإصدار',
 	'code-release-startrev' => 'مراجعة البداية:',
@@ -675,6 +676,7 @@ $4',
 ملخص الكوميت:
 
 $3',
+	'code-stats' => 'إحصاءات',
 	'repoadmin' => 'إدارة المستودع',
 	'repoadmin-new-legend' => 'إنشاء مستودع جديد',
 	'repoadmin-new-label' => 'اسم المستودع:',
@@ -2512,15 +2514,15 @@ $5
 Kommentar:
 
 $4',
-	'codereview-email-subj2' => '[$1 $2]: Nachbearbeitung',
-	'codereview-email-body2' => 'Benutzer „$1“ machte eine Nachbearbeitung zu $2.
+	'codereview-email-subj2' => '[$1 $2]: Folgebearbeitung',
+	'codereview-email-body2' => 'Benutzer „$1“ machte eine Folgebearbeitung zu $2.
 
-Vollständige URL der nachbearbeiteten Revision: $5
+URL der nachfolgenden Revision: $5
 Zusammenfassung:
 
 $6
 
-Vollständige URL: $3
+URL: $3
 
 Zusammenfassung:
 
@@ -6178,18 +6180,23 @@ $messages['id'] = array(
 	'codereview-email-body' => 'Pengguna "$1" berkomentar pada $3.
 
 URL lengkap: $2
+Ringkasan masukan:
+
+$5
 
 Komentar:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]:Menindaklanjuti perubahan',
-	'codereview-email-body2' => 'Pengguna "$1" membbuat perubahan lanjutan terhadap $2.
+	'codereview-email-body2' => 'Pengguna "$1" membuat perubahan lanjutan terhadap $2.
 
-URL penuh untuk revisi lanjutan: $5
+URL lengkap untuk revisi lanjutan: $5
+Ringkasan masukan:
 
-URL penuh: $3
+$6
 
-Ringkasan:
+URL lengkap: $3
+Ringkasan masukan:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Status revisi berubah',
@@ -6199,18 +6206,21 @@ Status lama: $3
 Status baru: $4
 
 URL lengkap: $5
-Ringkasan:
+Ringkasan masukan:
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: Komentar baru ditambahkan dan revisi status berubah',
-	'codereview-email-body4' => 'Pengguna "$1" mengganti status $2.
+	'codereview-email-body4' => 'Pengguna "$1" mengubah status $2.
 
 Status lama: $3
 Status baru: $4
 
-Pengguna "$1" juga mengirim komentar terhadap $2.
+Pengguna "$1" juga berkomentar terhadap $2.
 
 URL lengkap: $5
+Ringkasan masukan:
+
+$7
 
 Komentar:
 
@@ -9641,11 +9651,12 @@ $messages['pnt'] = array(
  */
 $messages['ps'] = array(
 	'code-comments' => 'تبصرې',
+	'code-new-status' => 'نوی دريځ',
 	'code-authors' => 'ليکوالان',
 	'code-field-author' => 'ليکوال',
 	'code-field-status' => 'دريځ',
 	'code-field-timestamp' => 'نېټه',
-	'code-field-comments' => 'يادښتونه',
+	'code-field-comments' => 'تبصرې',
 	'code-field-text' => 'يادښت',
 	'code-field-select' => 'ټاکل',
 	'code-rev-author' => 'ليکوال:',
@@ -9662,16 +9673,23 @@ $messages['ps'] = array(
 	'code-status-new' => 'نوی',
 	'code-status-ok' => 'ښه',
 	'code-status-old' => 'زوړ',
+	'code-signoff-field-user' => 'کارن',
+	'code-signoff-field-flag' => 'رپی',
+	'code-signoff-field-date' => 'نېټه',
 	'code-rev-submit' => 'بدلونونه خوندي کول',
 	'codereview-batch-submit' => 'سپارل',
 	'codereview-reply-link' => 'ځوابول',
-	'codereview-email-body' => 'د "$1" کارن $3 ته يو نظر ورکړی.
+	'codereview-email-body' => 'د "$1" کارن په $3 يوه تبصره کړې.
 
 بشپړه پته: $2
+د تبصرې لنډيز:
+
+$5
 
 تبصره:
 
 $4',
+	'code-stats' => 'شمارنې',
 	'repoadmin-new-button' => 'جوړول',
 	'repoadmin-edit-button' => 'ښه',
 );
@@ -9896,6 +9914,7 @@ $6',
  * @author Giro720
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'code' => 'Revisão de Código',
@@ -10020,9 +10039,12 @@ $messages['pt-br'] = array(
 	'codereview-subtitle' => 'Para $1',
 	'codereview-reply-link' => 'responder',
 	'codereview-email-subj' => '[$1 $2]: Novo comentário adicionado',
-	'codereview-email-body' => 'O utilizador "$1" colocou um comentário em $3.
+	'codereview-email-body' => 'O usuário "$1" postou um comentário em $3.
 
 URL completa: $2
+Resumo de envio:
+
+$5
 
 Comentário:
 
