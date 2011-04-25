@@ -3119,6 +3119,7 @@ $messages['eo'] = array(
 	'code-prop-changes' => 'Protokolo pri statuso kaj etikedoj',
 	'codereview-desc' => '[[Special:Code|Koda kontrolilo]] kun [[Special:RepoAdmin|subteno por Subversion]]',
 	'code-no-repo' => 'Neniu kodujoj estas konfigurataj',
+	'code-create-repo' => 'Iru al [[Special:RepoAdmin|RepoAdmin]] por krei kodo-deponejon',
 	'code-repo-not-found' => "Dosierujo '''$1''' ne ekzistas!",
 	'code-load-diff' => 'Ŝarĝante diferencon...',
 	'code-notes' => 'lastaj komentoj',
@@ -3148,6 +3149,7 @@ $messages['eo'] = array(
 	'code-field-user' => 'Komentanto',
 	'code-field-message' => 'Resumo pri enigo',
 	'code-field-status' => 'Statuso',
+	'code-field-status-description' => 'Priskribo de statuso',
 	'code-field-timestamp' => 'Dato',
 	'code-field-comments' => 'Komentoj',
 	'code-field-path' => 'Vojo',
@@ -3194,6 +3196,7 @@ $messages['eo'] = array(
 	'code-status-old' => 'malnova',
 	'code-status-desc-old' => 'Malnova revizio kun eblaj cimoj kiuj ne sufiĉe gravas kontroli ilin.',
 	'code-signoff-field-user' => 'Uzanto',
+	'code-signoff-field-flag' => 'Marki',
 	'code-signoff-field-date' => 'Dato',
 	'code-pathsearch-legend' => 'Serĉi versiojn en ĉi tiu kodujo laŭ vojo',
 	'code-pathsearch-path' => 'Vojo:',
@@ -7196,7 +7199,7 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'code-field-comments' => 'Aanmärkunge',
 	'code-field-path' => 'Pad',
 	'code-field-text' => 'Notiz',
-	'code-field-select' => 'Ußsöke',
+	'code-field-select' => 'Ußsöhke',
 	'code-reference-remove' => 'Ußjewählte Zosammehäng oplühse',
 	'code-reference-associate' => 'Opfoljer-Version faßlääje:',
 	'code-reference-associate-submit' => 'Donn se zesamme!',
@@ -8794,6 +8797,8 @@ $messages['nn'] = array(
 	'code-status-ok' => 'OK',
 	'code-status-deferred' => 'forskjøve',
 	'code-status-old' => 'gamal',
+	'code-signoff-field-user' => 'Brukar',
+	'code-signoff-field-date' => 'Dato',
 	'code-pathsearch-legend' => 'Søk i versjonar i databsen etter stig',
 	'code-pathsearch-path' => 'Stig:',
 	'code-revfilter-cr_status' => 'Status = $1',
@@ -8866,6 +8871,9 @@ $messages['no'] = array(
 	'code-prop-changes' => 'Logg for status og tagging',
 	'codereview-desc' => '[[Special:Code|Kodegjennomgangsverktøy]] med [[Special:RepoAdmin|støtte for Subversion]]',
 	'code-no-repo' => 'Ingen database konfigurert!',
+	'code-create-repo' => 'Gå til [[Special:RepoAdmin|RepoAdmin]] for å opprette et repositorium',
+	'code-need-repoadmin-rights' => 'repoadminrettigheter kreves for å kunne opprette et repositorium',
+	'code-need-group-with-rights' => 'Ingen grupper med repoadminrettigheter finnes. Legg til en for å kunne legge til et nytt repositorium',
 	'code-repo-not-found' => "Lageret '''$1''' finnes ikke!",
 	'code-load-diff' => 'Laster diff...',
 	'code-notes' => 'Siste kommentarer',
@@ -8902,6 +8910,9 @@ $messages['no'] = array(
 	'code-field-path' => 'Sti',
 	'code-field-text' => 'Notat',
 	'code-field-select' => 'Velg',
+	'code-reference-remove' => 'Fjern valgte merker',
+	'code-reference-associate' => 'Merk revisjon for oppfølging:',
+	'code-reference-associate-submit' => 'Merk',
 	'code-rev-author' => 'Forfatter:',
 	'code-rev-date' => 'Dato:',
 	'code-rev-message' => 'Kommentar:',
@@ -8972,30 +8983,54 @@ $messages['no'] = array(
 	'codereview-subtitle' => 'For $1',
 	'codereview-reply-link' => 'svar',
 	'codereview-email-subj' => '[$1 $2]: Ny kommentar lagt inn',
-	'codereview-email-body' => 'Bruker $1 la inn en kommentar på $3
+	'codereview-email-body' => 'Brukeren «$1» la inn en kommentar på $3.
 
 Fullstendig URL: $2
+Bidragssammendrag:
+
+$5
 
 Kommentar:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Påfølgende endringer',
-	'codereview-email-body2' => 'Bruker «$1» gjorde oppfølgende endringer til $2.
+	'codereview-email-body2' => 'Brukeren «$1» gjorde oppfølgende endringer til $2.
 
 Full nettadresse til oppfølgende revisjon: $5
+BIdragssammendrag:
+
+$6
 
 Full nettadresse: $3
-
-Sammendrag:
+Bidragssammendrag:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Revisjonsstatus endret',
-	'codereview-email-body3' => 'Bruker «$1» endret statusen til $2.
+	'codereview-email-body3' => 'Brukeren «$1» endret statusen til $2.
 
 Gammel status: $3
-Ny status: $4',
+Ny status: $4
+
+Full URL: $5
+Bidragssammendrag:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Ny kommentar lagt til og revisjonsstatus endret',
-	'codereview-email-body4' => 'Bruker «$1» endret statusen til $2.
+	'codereview-email-body4' => 'Brukeren «$1» endret statusen til $2.
+
+Gammel status: $3
+Ny status: $4
+
+Brukeren «$1» la også inn en kommentar på $2.
+
+Full URL: $5
+Bidragssammendrag:
+
+$7
+
+Kommentar:
+
+$6
 
 Gammel status: $3
 Ny status: $4
@@ -9032,6 +9067,8 @@ $6',
 	'right-codereview-set-status' => 'Endre versjonens status',
 	'right-codereview-signoff' => 'Skriv under på revisjoner',
 	'right-codereview-link-user' => 'Lenke forfattere til wikibrukere',
+	'right-codereview-associate' => 'Behandle revisjonsmerker',
+	'right-codereview-review-own' => 'Merk dine egne revisjoner som OK',
 	'specialpages-group-developer' => 'Utviklerverktøy',
 	'group-svnadmins' => 'SVN administratorer',
 	'group-svnadmins-member' => 'SVN administrator',
@@ -9575,6 +9612,9 @@ $messages['pms'] = array(
 	'codereview-email-body' => 'L\'utent "$1" a l\'ha spedì un coment su $3.
 
 Adrëssa dl\'aragnà completa: $2
+Manda resumé:
+
+$5
 
 Coment:
 
@@ -9583,10 +9623,13 @@ $4',
 	'codereview-email-body2' => 'L\'utent "$1" a l\'ha fàit dij cangiament suplementar a $2.
 
 Adrëssa dl\'aragnà completa apress la revision: $5
+Manda resumé:
+
+$6
 
 Adrëssa dl\'aragnà completa: $3
 
-Resumé dël coment:
+Manda resumé:
 
 $4',
 	'codereview-email-subj3' => "[$1 $2]: Lë stat ëd revision a l'é cangià",
@@ -9595,7 +9638,10 @@ $4',
 Stat Vej: $3
 Stat Neuv: $4
 
-Anliura completa: $5',
+Anliura completa: $5
+Manda resumé:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Giontà coment neuv, e cangià stat ëd la revision',
 	'codereview-email-body4' => 'L\'utent "$1" a l\'ha cangià lë stat ëd $2.
 
@@ -9605,6 +9651,9 @@ Stat Neuv: $4
 L\'utent "$1" a l\'ha ëdcò spedì un coment su $2.
 
 Anliura completa: $5
+Manda resumé:
+
+$7
 
 Coment:
 
@@ -9635,6 +9684,7 @@ $6',
 	'right-codereview-signoff' => 'Conclud le revision',
 	'right-codereview-link-user' => 'Colega autor a utent wiki',
 	'right-codereview-associate' => 'Gestiss assossiassion ëd revision',
+	'right-codereview-review-own' => 'Marca toe revision com OK',
 	'specialpages-group-developer' => 'Utiss dël dësvlupador',
 	'group-svnadmins' => 'Aministrator SVN',
 	'group-svnadmins-member' => 'Aministrator SVN',
