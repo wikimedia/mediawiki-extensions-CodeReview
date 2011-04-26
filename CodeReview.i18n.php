@@ -1440,35 +1440,142 @@ $4',
 
 /** Bengali (বাংলা)
  * @author Bellayet
+ * @author Wikitanvir
  */
 $messages['bn'] = array(
+	'code' => 'কোড পর্যবেক্ষণ',
+	'code-rev-title' => '$1 - কোড পর্যবেক্ষণ',
 	'code-comments' => 'মন্তব্য',
+	'code-references' => 'পরবর্তীতে চালিয়ে যাওয়া সংস্করণসমূহ',
+	'code-change-status' => "$1-এর '''অবস্থান''' পরিবর্তন করুন",
+	'code-change-tags' => "$1-এর '''ট্যাগ''' পরিবর্তন করুন",
 	'code-change-removed' => 'অপসারিত',
 	'code-change-added' => 'সংযোজিত:',
+	'code-old-status' => 'পুরোনো অবস্থান',
+	'code-new-status' => 'নতুন অবস্থান',
+	'code-prop-changes' => 'অবস্থান ও ট্যাগিং লগ',
+	'codereview-desc' => '[[Special:RepoAdmin|সাবভার্সন সহায়তার]] সঙ্গে [[Special:Code|কোড রিভিউ সরঞ্জাম]]',
+	'code-no-repo' => 'কোনো রিপোজিটরি কনফিগার করা হয়নি!',
+	'code-create-repo' => 'রিপোজিটরি তৈরি করতে [[Special:RepoAdmin|রিপোঅ্যাডমিনে]] যান',
+	'code-need-repoadmin-rights' => 'রিপোজিটরি তৈরি করার জন্য আপনার রিপোঅ্যাডমিন অধিকার প্রয়োজন',
+	'code-need-group-with-rights' => 'রিপোঅ্যাডমিন অধিকার আছে এমন কোনো দল নেই। অনুগ্রহ করে এমন একটি যোগ করুন, যা নতুন রিপোজিটরি তৈরি করতে পারে',
+	'code-repo-not-found' => "'''$1''' নামে কোনো রিপোজিটরি নেই!",
+	'code-load-diff' => 'পার্থক্য লোড করা হচ্ছে...',
+	'code-notes' => 'সাম্প্রতিক মন্তব্যসমূহ',
+	'code-statuschanges' => 'অবস্থান পরিবর্তন',
+	'code-mycommits' => 'আমার কমিটসমূহ',
+	'code-mycomments' => 'আমার মন্তব্যসমূহ',
 	'code-authors' => 'লেখক',
+	'code-status' => 'অবস্থানসমূহ',
 	'code-tags' => 'ট্যাগসমূহ',
+	'code-tags-no-tags' => 'এই রিপোজিটরিতে কোনো ট্যাগ নেই।',
+	'code-authors-text' => 'নিচে কমিট নাম অনুসারে রিপো প্রণেতার নাম দেওয়া হলো। স্থানীয় উইকি অ্যাকাউন্টের নাম বন্ধনীতে উল্লেখ করা হয়েছে। তারিখ ক্যাশে করা থাকতে পারে।',
+	'code-author-haslink' => 'এই প্রণেতা উইকি ব্যবহারকারী $1 হিসেবে সংযোগকৃত',
+	'code-author-orphan' => 'এই অ্যাকাউন্টটির কোনো উইকি অ্যাকাউন্টে সংযোগ নেই',
+	'code-author-dolink' => 'এই প্রণেতাকে একটি উইকি ব্যবহারকারীতে সংযোগ প্রদান করুন:',
+	'code-author-alterlink' => 'উইকি ব্যবহারকারীর সংযোগটি অথরে পরিবর্তন করুন:',
+	'code-author-orunlink' => 'এই উইকি ব্যবহারকারীর সংযোগ বাতিল করুন:',
 	'code-author-name' => 'ব্যবহারকারীর নাম লিখুন:',
+	'code-author-success' => 'প্রণেতা $1-কে উইকি ব্যবহারকারী $2-এ সংযোগ প্রদান করা হয়েছে',
+	'code-author-link' => 'সংযোগ?',
+	'code-author-unlink' => 'সংযোগ বাতিল?',
+	'code-author-unlinksuccess' => 'প্রণেতা $1-এর সংযোগ বাতিল করা হয়েছে',
+	'code-author-badtoken' => 'সেশন ত্রুটি অ্যাকশনটি কার্যকর করার চেষ্টা করছে।',
+	'code-author-total' => 'প্রণেতার মোট সংখ্যা: $1',
+	'code-author-lastcommit' => 'সর্বশেষ কমিটের তারিখ',
+	'code-browsing-path' => "'''$1'''-এর ভেতর সংস্করণগুলো ব্রাউজ করছি",
+	'code-field-id' => 'সংস্করণ',
 	'code-field-author' => 'লেখক:',
+	'code-field-user' => 'মন্তব্যকারী',
+	'code-field-message' => 'কমিট সারাংশ',
 	'code-field-status' => 'অবস্থা',
+	'code-field-status-description' => 'অবস্থানের বিবরণ',
 	'code-field-timestamp' => 'তারিখ',
-	'code-field-comments' => 'টীকা',
+	'code-field-comments' => 'মন্তব্যসমূহ',
+	'code-field-path' => 'পাথ',
 	'code-field-text' => 'টীকা',
 	'code-field-select' => 'নির্বাচন',
+	'code-reference-remove' => 'নির্ধারিত অ্যাসোসিয়েশনগুলো বাতিল করো',
+	'code-reference-associate' => 'কার্য-পরবর্তী সংস্করণগুলো সংযোজিত করো:',
+	'code-reference-associate-submit' => 'অ্যাসোসিয়েট',
 	'code-rev-author' => 'লেখক:',
 	'code-rev-date' => 'তারিখ:',
 	'code-rev-message' => 'মন্তব্য:',
+	'code-rev-repo' => 'রিপোজিটরি:',
+	'code-rev-rev' => 'সংস্করণ:',
+	'code-rev-rev-viewvc' => 'ভিউভিসিতে দেখুন',
+	'code-rev-paths' => 'পরিবর্তিত পাথসমূহ:',
 	'code-rev-modified-a' => 'সংযোজিত',
 	'code-rev-modified-r' => 'প্রতিস্থাপিত',
+	'code-rev-modified-d' => 'অপসারিত',
+	'code-rev-modified-m' => 'পরিবর্তিত',
+	'code-rev-imagediff' => 'চিত্র পরিবর্তন',
+	'code-rev-status' => 'অবস্থা:',
+	'code-rev-status-set' => 'পরিবর্তনের অবস্থা',
+	'code-rev-tags' => 'ট্যাগসমূহ:',
+	'code-rev-tag-add' => 'ট্যাগ সংযোগ:',
+	'code-rev-tag-remove' => 'ট্যাগ বাতিল:',
+	'code-rev-comment-by' => '$1-এর মন্তব্য',
 	'code-rev-comment-preview' => 'প্রাকদর্শন',
+	'code-rev-inline-preview' => 'প্রাকদর্শন:',
+	'code-rev-diff' => 'পার্থক্য',
 	'code-rev-diff-link' => 'পার্থক্য',
+	'code-rev-diff-too-large' => 'এই পরিবর্তনটি প্রদর্শনের জন্য অনেক বড়।',
 	'code-rev-purge-link' => 'পার্জ',
 	'code-rev-total' => 'ফলাফলের মোট সংখ্যা: $1',
+	'code-rev-not-found' => "'''$1''' নামে কোনো সংস্করণ নেই!",
 	'code-status-new' => 'নতুন',
+	'code-status-desc-new' => 'সংস্করণটি একটি অ্যাকশন মূলতবি রয়েছে (প্রাথমিক অবস্থা)।',
+	'code-status-fixme' => 'ফিক্সমি',
+	'code-status-desc-fixme' => 'একজন পর্যবেক্ষক এই সংস্করণটিতে বাগ রয়েছে বা ভাঙা হিসেব নির্ধারণ করেছে। এটি শুদ্ধ করা প্রয়োজন।',
+	'code-status-reverted' => 'বাতিলকৃত',
+	'code-status-desc-reverted' => 'সংস্করণটি পরবর্তী সংস্করণ দ্বারা বাতিল করা হয়েছে।',
+	'code-status-resolved' => 'সমাধানকৃত',
+	'code-status-desc-resolved' => 'সংস্করণটি একটি সমস্যা ছিলো যা পরবর্তী সংস্করণে উল্লেখ করা হয়েছে।',
 	'code-status-ok' => 'ঠিক আছে',
+	'code-status-desc-ok' => 'সংস্করণটি সম্পূর্ণ পরীক্ষিত এবং পর্যবেক্ষক নিশ্চিত যে এটি সব দিক দিয়ে ঠিক আছে।',
+	'code-status-deferred' => 'পার্থক্যসূচক',
+	'code-status-desc-deferred' => 'সংস্করণটির কোনো পরীক্ষণের প্রয়োজন নেই।',
 	'code-status-old' => 'পুরাতন',
+	'code-status-desc-old' => 'সম্ভাব্য বাগসহ পুরোনো সংস্করণ, কিন্তু এগুলোকে পরীক্ষা করা কোনো কার্যকর প্রচেষ্টা নয়।',
+	'code-signoffs' => 'সাইন-অফ',
+	'code-signoff-legend' => 'সাইন-অফ যোগ',
+	'code-signoff-submit' => 'সাইন অফ',
+	'code-signoff-strike' => 'নির্বাচিত সাইন-অফগুলো বাতিল করো',
+	'code-signoff-signoff' => 'যে সংস্করণে সাইন অফ হয়েছে তা হচ্ছে:',
+	'code-signoff-flag-inspected' => 'পর্যবেক্ষণকৃত',
+	'code-signoff-flag-tested' => 'পরীক্ষিত',
+	'code-signoff-field-user' => 'ব্যবহারকারী',
+	'code-signoff-field-flag' => 'পতাকা',
+	'code-signoff-field-date' => 'তারিখ',
+	'code-pathsearch-legend' => 'রিপোতে পাথ অনুসারে সংস্করণ অনুসন্ধান করুন',
+	'code-pathsearch-path' => 'পাথ:',
+	'code-pathsearch-filter' => 'ফিল্টার প্রদান করা হয়েছে:',
+	'code-revfilter-cr_status' => 'অবস্থান = $1',
+	'code-revfilter-cr_author' => 'প্রণেতা = $1',
+	'code-revfilter-clear' => 'ফিল্টার পরিস্কার',
+	'code-rev-submit' => 'পরিবর্তন সংরক্ষণ',
+	'code-batch-status' => 'অবস্থা পরিবর্তন',
+	'code-batch-tags' => 'ট্যাগ পরিবর্তন:',
+	'codereview-batch-title' => 'নির্বাচিত সকল সংস্করণ পরিবর্তন করুন',
 	'codereview-batch-submit' => 'জমা',
+	'code-releasenotes' => 'রিলিজ টীকা',
+	'code-release-legend' => 'রিলিজ টীকা তৈরি করুন',
+	'code-release-startrev' => 'সংস্করণ শুরু:',
+	'code-release-endrev' => 'শেষ সংস্করণ:',
+	'codereview-subtitle' => '$1-এর জন্য',
 	'codereview-reply-link' => 'উত্তর',
+	'codereview-email-subj' => '[$1 $2]: নতুন মন্তব্য যোগ করা হয়েছে',
+	'codereview-email-subj2' => '[$1 $2]: কার্য-পরবর্তী পরির্তন',
+	'codereview-email-subj3' => '[$1 $2]: সংস্করণ অবস্থা পরিবর্তন',
+	'codereview-email-subj4' => '[$1 $2]: নতুন মন্তব্য যোগ করা হয়েছে, এবং সংস্করণ অবস্থা পরিবর্তিত হয়েছে',
 	'code-stats' => 'পরিসংখ্যান',
+	'code-stats-header' => 'রিপোজিটরি $1-এর জন্য পরিসংখ্যান',
+	'code-stats-status-breakdown' => 'প্রতিটি অবস্থায় সংস্করণের সংখ্যা',
+	'code-stats-count' => 'সংস্করণের সংখ্যা',
+	'repoadmin' => 'রিপোজিটরি প্রশাসন',
+	'repoadmin-new-legend' => 'নতুন রিপোজিটরি তৈরি করুন',
+	'repoadmin-new-label' => 'রিপোজিটরির নাম:',
 	'repoadmin-new-button' => 'তৈরি',
 	'repoadmin-edit-button' => 'ঠিক আছে',
 );
@@ -2922,7 +3029,7 @@ $messages['el'] = array(
 	'codereview-desc' => '[[Special:Code|Εργαλείο ανασκόπησης κώδικα]] με [[Special:RepoAdmin|υποστήριξη Subversion]]',
 	'code-no-repo' => 'Κανένα αποθηκευτήριο δεν έχει διαμορφωθεί!',
 	'code-need-repoadmin-rights' => 'Δικαιώματα διαχείρισης αποθηκευτηρίου απαιτούνται για τη δημιουργία αποθηκευτηρίου.',
-	'code-repo-not-found' => "Repository  '''\$ 1'' ' δεν υπάρχει!",
+	'code-repo-not-found' => "Το αποθετήριο '''$1''' δεν υπάρχει!",
 	'code-load-diff' => 'Φόρτωση διαφ...',
 	'code-notes' => 'πρόσφατα σχόλια',
 	'code-statuschanges' => 'αλλαγές κατάστασης',
@@ -2985,8 +3092,6 @@ $messages['el'] = array(
 	'code-status-new' => 'νέο',
 	'code-status-fixme' => 'επιδιόρθωση',
 	'code-status-desc-fixme' => 'Ένας επιθεωρητής σημείωσε αυτή την αλλαγή διότι δημιουργεί σφάλμα ή δεν λειτουργεί.  Θα έπρεπε να διορθωθεί.',
-	'code-status-improveme' => 'βελτίωση',
-	'code-status-desc-improveme' => 'Ένας επιθεωρητής σημείωσε αυτή την αλλαγή για βελτίωση διότι έχει κάποια μικρά προβλήματα. Θα έπρεπε να διορθωθεί.',
 	'code-status-reverted' => 'αναστράφηκε',
 	'code-status-desc-reverted' => 'Η αλλαγή αναιρέθηκε από μεταγενέστερη αναθεώρηση.',
 	'code-status-resolved' => 'επιλύθηκε',
@@ -5683,14 +5788,19 @@ $messages['hu'] = array(
 	'code-prop-changes' => 'Állapot & címkézési napló',
 	'codereview-desc' => '[[Special:Code|Kódellenőrző eszköz]] [[Special:RepoAdmin|Subversion-támogatással]]',
 	'code-no-repo' => 'Nincs kódtárhely beállítva!',
+	'code-create-repo' => 'Új tároló létrehozásához menj a [[Special:RepoAdmin|RepoAdmin]] lapra',
+	'code-need-repoadmin-rights' => 'Tároló létrehozásához repoadmin jogosultság szükséges',
+	'code-need-group-with-rights' => 'Nincs repoadmin jogosultsággal rendelkező csoport. Hozz létre egyet új tároló felvételéhez.',
 	'code-repo-not-found' => "A(z) '''$1''' kódtárhely nem létezik!",
 	'code-load-diff' => 'Változtatások betöltése...',
 	'code-notes' => 'legutóbbi hozzászólások',
 	'code-statuschanges' => 'állapotváltoztatások',
 	'code-mycommits' => 'saját commitok',
+	'code-mycomments' => 'saját megjegyzések',
 	'code-authors' => 'szerzők',
 	'code-status' => 'állapotok',
 	'code-tags' => 'címkék',
+	'code-tags-no-tags' => 'Nincs egyetlen címke sem ebben a tárolóban.',
 	'code-authors-text' => 'Alább a tárhelyen műveleteket végző szerzők láthatóak a commitok neve szerint rendezve. A helyi, wikis fiókok zárójelben szerepelnek. Lehetséges, hogy az adatok a gyorsítótárból származnak.',
 	'code-author-haslink' => 'Ez a szerző megegyezi a wiki $1 nevű szerkesztőjével',
 	'code-author-orphan' => 'Ez a szerkesztő nem rendelkezik felhasználói fiókkal ezen a wikin',
@@ -5711,11 +5821,14 @@ $messages['hu'] = array(
 	'code-field-user' => 'Hozzászóló',
 	'code-field-message' => 'Összefoglaló',
 	'code-field-status' => 'Állapot',
+	'code-field-status-description' => 'Állapotleírás',
 	'code-field-timestamp' => 'Időpont',
 	'code-field-comments' => 'Hozzászólások',
 	'code-field-path' => 'Elérési út',
 	'code-field-text' => 'Megjegyzés',
 	'code-field-select' => 'Kiválaszt',
+	'code-reference-associate' => 'Kapcsolódó későbbi változat:',
+	'code-reference-associate-submit' => 'Kapcsolódó',
 	'code-rev-author' => 'Szerző:',
 	'code-rev-date' => 'Dátum:',
 	'code-rev-message' => 'Megjegyzés:',
@@ -5746,7 +5859,6 @@ $messages['hu'] = array(
 	'code-status-desc-new' => 'A változat felülvizsgálatra vár (alapértelmezett állapot).',
 	'code-status-fixme' => 'javítandó',
 	'code-status-desc-fixme' => 'Az ellenőrzést végző személy szerint a változatban új hiba van, vagy nem működik. Javításra szorul.',
-	'code-status-improveme' => 'fejlesztendő',
 	'code-status-reverted' => 'visszaállítva',
 	'code-status-desc-reverted' => 'A változatot eldobták egy későbbi változatban.',
 	'code-status-resolved' => 'javítva',
@@ -5759,6 +5871,8 @@ $messages['hu'] = array(
 	'code-status-desc-old' => 'Olyan régi változat, ami tartalmazhat hibákat, de nem éri meg a fáradozást az ellenőrzésük.',
 	'code-signoffs' => 'Aláírások',
 	'code-signoff-legend' => 'Aláírás hozzáadása',
+	'code-signoff-strike' => 'A kiválasztott aláírások áthúzása',
+	'code-signoff-signoff' => 'Változat aláírása mint:',
 	'code-signoff-flag-inspected' => 'megvizsgálva',
 	'code-signoff-flag-tested' => 'tesztelve',
 	'code-signoff-field-user' => 'Felhasználó',
@@ -6255,6 +6369,7 @@ $6',
 	'right-codereview-signoff' => 'Persetujuan revisi',
 	'right-codereview-link-user' => 'Pranala penulis ke wiki pengguna',
 	'right-codereview-associate' => 'Mengelola keterkaitan revisi',
+	'right-codereview-review-own' => 'Tandai suntingan Anda sendiri sebagai OK',
 	'specialpages-group-developer' => 'Alat Pengembang',
 	'group-svnadmins' => 'Pengurus SVN',
 	'group-svnadmins-member' => 'Pengurus SVN',
@@ -7558,6 +7673,15 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administrateuren',
 );
 
+/** Lezghian (Лезги)
+ * @author Namik
+ */
+$messages['lez'] = array(
+	'code-rev-date' => 'Нумра/заман',
+	'code-status-old' => 'иски',
+	'code-signoff-field-flag' => 'Пайдах',
+);
+
 /** Lingua Franca Nova (Lingua Franca Nova)
  * @author Malafaya
  */
@@ -7739,6 +7863,7 @@ $messages['ltg'] = array(
 );
 
 /** Latvian (Latviešu)
+ * @author GreenZeb
  * @author Papuass
  */
 $messages['lv'] = array(
@@ -10332,9 +10457,11 @@ $messages['roa-tara'] = array(
 	'code-notes' => 'commende recende',
 	'code-statuschanges' => 'cangiaminde de le state',
 	'code-mycommits' => 'reggistraziune mie',
+	'code-mycomments' => 'commende mije',
 	'code-authors' => 'le autore',
 	'code-status' => 'state',
 	'code-tags' => 'le tag',
+	'code-tags-no-tags' => "Nisciune tag esiste jndr'à st'archivije.",
 	'code-author-haslink' => "Quiste autore jè cullegate a l'utinde uicchi $1",
 	'code-author-orphan' => "Quiste autore non ge tène nisciune cullegamende cu 'nu cunde uicchi",
 	'code-author-dolink' => "Colleghe st'autore a 'n'utende de Uicchi:",
@@ -10347,19 +10474,23 @@ $messages['roa-tara'] = array(
 	'code-author-unlinksuccess' => 'Autore $1 ha state scollegate',
 	'code-author-badtoken' => "Errore de sessione cercanne de combiere l'aziune.",
 	'code-author-total' => 'Numere totale de le autore: $1',
+	'code-author-lastcommit' => 'Urtema date de commit',
 	'code-field-id' => 'Revisione',
 	'code-field-author' => 'Autore',
 	'code-field-user' => 'Commendatore',
 	'code-field-message' => 'Reggistre riepileghe',
 	'code-field-status' => 'State',
+	'code-field-status-description' => "Descrizione d'u state",
 	'code-field-timestamp' => 'Date',
 	'code-field-comments' => 'Commende',
 	'code-field-path' => 'Percorse',
 	'code-field-text' => 'Note',
 	'code-field-select' => 'Scacchie',
+	'code-reference-associate-submit' => 'Associate',
 	'code-rev-author' => 'Autore:',
 	'code-rev-date' => 'Date:',
 	'code-rev-message' => 'Commende:',
+	'code-rev-repo' => 'Archivije:',
 	'code-rev-rev' => 'Revisione:',
 	'code-rev-rev-viewvc' => 'sus a ViewVC',
 	'code-rev-paths' => 'Percorse modifichete:',
@@ -10397,6 +10528,7 @@ $messages['roa-tara'] = array(
 	'code-signoff-field-user' => 'Utende',
 	'code-signoff-field-flag' => 'Bandiere',
 	'code-signoff-field-date' => 'Date',
+	'code-signoff-struckdate' => '$1 (colpite $2)',
 	'code-pathsearch-path' => 'Percorse:',
 	'code-pathsearch-filter' => 'Filtre applicate:',
 	'code-revfilter-cr_status' => 'State = $1',
@@ -10466,6 +10598,7 @@ $6',
 	'code-stats-status-breakdown' => 'Numere de revisione pè state',
 	'code-stats-count' => 'Numere de le revisiune',
 	'repoadmin-new-button' => 'Ccreje',
+	'repoadmin-edit-path' => "Percorse de l'archivije:",
 	'repoadmin-edit-bug' => 'Percorse de Bugzilla:',
 	'repoadmin-edit-view' => "Percorse d'u ViewVC:",
 	'repoadmin-edit-button' => 'OK',
@@ -10476,6 +10609,9 @@ $6',
 	'right-codereview-set-status' => "Cange 'u state d'a revisione",
 	'right-codereview-link-user' => 'Culleghe le autore a le utinde uicchi',
 	'specialpages-group-developer' => 'Struminde pe le sviluppature',
+	'group-svnadmins' => 'Amministrature de SVN',
+	'group-svnadmins-member' => 'Amministratore de SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Amministrature de SVN',
 );
 
 /** Russian (Русский)
@@ -11186,14 +11322,19 @@ $messages['sk'] = array(
 	'code-prop-changes' => 'Záznam stavu a značiek',
 	'codereview-desc' => '[[Special:Code|Nástroj na kontrolu kódu]] s [[Special:RepoAdmin|podporou Subversion]]',
 	'code-no-repo' => 'Nebolo nastavené žiadne úložisko',
+	'code-create-repo' => 'Prejsť na [[Special:RepoAdmin|RepoAdmin]] na vytvorenie Úložiska',
+	'code-need-repoadmin-rights' => 'Aby ste mohli vytvoriť úložisko, potrebujete práva repoadmin',
+	'code-need-group-with-rights' => 'Neexistuje žiadna skupina s právami repoadmin. Prosím, pridajte ju, aby ste mohli pridať nové Úložisko.',
 	'code-repo-not-found' => "Úložisko '''$1''' neexistuje!",
 	'code-load-diff' => 'Načítava sa rozdiel…',
 	'code-notes' => 'posledné komentáre',
 	'code-statuschanges' => 'zmeny stavu',
 	'code-mycommits' => 'moje začlenenia',
+	'code-mycomments' => 'moje komentáre',
 	'code-authors' => 'autori',
 	'code-status' => 'stavy',
 	'code-tags' => 'značky',
+	'code-tags-no-tags' => 'V tomto úložisku neexistujú žiadne značky.',
 	'code-authors-text' => 'Toto je zoznam autorov v úložisku v poradí podľa posledných začlenení. V zátvorkách sú zobrazené lokálne účty wiki. Dáta môžu pochádzať z vyrovnávacej pamäte.',
 	'code-author-haslink' => 'Tento autor je zviazaný s používateľom wiki $1',
 	'code-author-orphan' => 'Tento autor nie je zviazaný s používateľom wiki',
@@ -11214,11 +11355,15 @@ $messages['sk'] = array(
 	'code-field-user' => 'Komentoval',
 	'code-field-message' => 'Zhrnutie commitu',
 	'code-field-status' => 'Stav',
+	'code-field-status-description' => 'Popis stavu',
 	'code-field-timestamp' => 'Dátum',
 	'code-field-comments' => 'Komentáre',
 	'code-field-path' => 'Cesta',
 	'code-field-text' => 'Poznámka',
 	'code-field-select' => 'Vybrať',
+	'code-reference-remove' => 'Odstrániť vybrané združenia',
+	'code-reference-associate' => 'Združiť nadväzujúcu revíziu:',
+	'code-reference-associate-submit' => 'Združiť',
 	'code-rev-author' => 'Autor:',
 	'code-rev-date' => 'Dátum:',
 	'code-rev-message' => 'Komentár:',
@@ -11259,6 +11404,17 @@ $messages['sk'] = array(
 	'code-status-desc-deferred' => 'Revízia nevyžaduje kontrolu.',
 	'code-status-old' => 'stará',
 	'code-status-desc-old' => 'Stará revízia, ktorá môže obsahovať chyby, ale nestojí za snahu skontrolovať ju.',
+	'code-signoffs' => 'Schválenia',
+	'code-signoff-legend' => 'Pridať schválenie',
+	'code-signoff-submit' => 'Schváliť',
+	'code-signoff-strike' => 'Vyškrtnúť vybrané schválenia',
+	'code-signoff-signoff' => 'Schváliť túto revíziu ako:',
+	'code-signoff-flag-inspected' => 'Skontrolované',
+	'code-signoff-flag-tested' => 'Otestované',
+	'code-signoff-field-user' => 'Používateľ',
+	'code-signoff-field-flag' => 'Príznak',
+	'code-signoff-field-date' => 'Dátum',
+	'code-signoff-struckdate' => '$1 (vyškrtnuté $2)',
 	'code-pathsearch-legend' => 'Hľadať revízie v tomto úložisku podľa cesty',
 	'code-pathsearch-path' => 'Cesta:',
 	'code-pathsearch-filter' => 'Použitý filter:',
@@ -11281,6 +11437,9 @@ $messages['sk'] = array(
 	'codereview-email-body' => 'Používateľ „$1” poslal komentár k $3.
 
 Plný URL: $2
+Zhrnutie začlenenia:
+
+$5
 
 Komentár:
 
@@ -11289,20 +11448,39 @@ $4',
 	'codereview-email-body2' => 'Používateľ „$1“ urobil v $2 nadväzujúce zmeny.
 
 Plný URL nadväzujúcej revízie: $5
+Zhrnutie začlenenia:
+
+$6
 
 Plný URL: $3
-
 Zhrnutie začlenenia:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Stav revízie sa zmenil',
 	'codereview-email-body3' => 'Používateľ „$1“ zmenil stav $2.
 
-Starý stav: $2
-Nový stav:  $3
+Starý stav: $3
+Nový stav:  $4
 
 Plný URL: $5
-Zhrnutie úprav:
+Zhrnutie začlenenia:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Pridaný nový komentár a zmenený stav revízie',
+	'codereview-email-body4' => 'Používateľ „$1“ zmenil stav $2.
+
+Starý stav: $3
+Nový stav: $4
+
+Používateľ „$1“ tiež pridal komentár k $2.
+
+Plný URL: $5
+
+Zhrnutie začlenenia:
+
+$7
+
+Komentár:
 
 $6',
 	'code-stats' => 'štatistika',
@@ -11328,7 +11506,10 @@ $6',
 	'right-codereview-remove-tag' => 'Odstrániť značky z revízií',
 	'right-codereview-post-comment' => 'Pridať revíziám komentáre',
 	'right-codereview-set-status' => 'Zmeniť stav revízií',
+	'right-codereview-signoff' => 'Schváliť revízie',
 	'right-codereview-link-user' => 'Zviazať autorov s používateľmi wiki',
+	'right-codereview-associate' => 'Spravovať združenia revízií',
+	'right-codereview-review-own' => 'Označiť vlastné revízie ako OK',
 	'specialpages-group-developer' => 'Nástroje vývojárov',
 	'group-svnadmins' => 'správcovia SVN',
 	'group-svnadmins-member' => 'správca SVN',
@@ -13832,7 +14013,7 @@ $messages['zh-hans'] = array(
 	'code-rev-tags' => '标签：',
 	'code-rev-tag-add' => '添加标签：',
 	'code-rev-tag-remove' => '移除标签：',
-	'code-rev-comment-by' => '$1 的评论',
+	'code-rev-comment-by' => '$1的评论',
 	'code-rev-comment-preview' => '预览',
 	'code-rev-inline-preview' => '预览：',
 	'code-rev-diff' => '差异',
