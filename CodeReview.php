@@ -143,9 +143,12 @@ $commonModuleInfo = array(
 
 // Styles and any code common to all Special:Code subviews:
 $wgResourceModules['ext.codereview'] = array(
-	'styles' => 'ext.codereview.css',
 	'scripts' => 'ext.codereview.js',
 	'dependencies' => 'jquery.suggestions',
+) + $commonModuleInfo;
+
+$wgResourceModules['ext.codereview.styles'] = array(
+	'styles' => 'ext.codereview.styles.css',
 ) + $commonModuleInfo;
 
 // On-demand diff loader for CodeRevisionView:

@@ -20,6 +20,7 @@ class SpecialCode extends SpecialPage {
 		// Base styles used for all code review UI actions.
 		$wgOut->addModules( 'ext.codereview' );
 		$wgOut->addModules( 'ext.codereview.tooltips' );
+		$wgOut->addModuleStyles( 'ext.codereview.styles' );
 
 		$view = $this->getViewFrom( $subpage );
 		if( $view ) {
