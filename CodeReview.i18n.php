@@ -1577,7 +1577,27 @@ $messages['bn'] = array(
 	'repoadmin-new-legend' => 'নতুন রিপোজিটরি তৈরি করুন',
 	'repoadmin-new-label' => 'রিপোজিটরির নাম:',
 	'repoadmin-new-button' => 'তৈরি',
+	'repoadmin-edit-legend' => 'রিপোজিটরি "$1"-এর পরিবর্তন',
+	'repoadmin-edit-path' => 'রিপোজিটরি পাথ:',
+	'repoadmin-edit-bug' => 'বাগজিলা পাথ:',
+	'repoadmin-edit-view' => 'ভিউভিসি পাথ:',
 	'repoadmin-edit-button' => 'ঠিক আছে',
+	'repoadmin-edit-sucess' => 'রিপোজিটরি "[[Special:Code/$1|$1]]" সফলভাবে পরিবর্তিত হয়েছে।',
+	'repoadmin-nav' => 'রিপোজিটরি প্রশাসন',
+	'right-repoadmin' => 'কোড রিপোজিটরি ব্যবস্থাপনা',
+	'right-codereview-use' => 'বিশেষ: কোড-এর ব্যবহার',
+	'right-codereview-add-tag' => 'সংস্করণে নতুন ট্যাগ যোগ করুন',
+	'right-codereview-remove-tag' => 'সংস্করণ থেকে ট্যাগ অপসারণ করুন',
+	'right-codereview-post-comment' => 'সংস্করণে মন্তব্য যোগ করুন',
+	'right-codereview-set-status' => 'সংস্করণের অবস্থা পরিবর্তন করুন',
+	'right-codereview-signoff' => 'সংস্করণের ওপর সাইন অফ করুন',
+	'right-codereview-link-user' => 'উইকি ব্যবহারকারী হিসেবে প্রণেতার সংযোগ প্রদান করুন',
+	'right-codereview-associate' => 'সংস্করণের অ্যাসোসিয়েশনগুলো ব্যবস্থাপনা করুন',
+	'right-codereview-review-own' => 'আপনার নিজের সংস্করণ ঠিক হিসেবে চিহ্নিত করুন',
+	'specialpages-group-developer' => 'ডেভলপারের সরঞ্জাম',
+	'group-svnadmins' => 'এসভিএন প্রশাসক',
+	'group-svnadmins-member' => 'এসভিএন প্রশাসক',
+	'grouppage-svnadmins' => '{{ns:project}}:এসএভিএন প্রশাসক',
 );
 
 /** Breton (Brezhoneg)
@@ -2030,6 +2050,7 @@ $messages['ca'] = array(
 	'code-notes' => 'comentaris recents',
 	'code-statuschanges' => "Canvis d'estat",
 	'code-mycommits' => 'les meves publicacions',
+	'code-mycomments' => 'els meus comentaris',
 	'code-authors' => 'autors',
 	'code-status' => 'Estats',
 	'code-tags' => 'Etiquetes',
@@ -3300,6 +3321,8 @@ $messages['eo'] = array(
 	'code-status-desc-deferred' => 'Revizio ne nepras kontroladon.',
 	'code-status-old' => 'malnova',
 	'code-status-desc-old' => 'Malnova revizio kun eblaj cimoj kiuj ne sufiĉe gravas kontroli ilin.',
+	'code-signoff-flag-inspected' => 'Inspektita',
+	'code-signoff-flag-tested' => 'Testita',
 	'code-signoff-field-user' => 'Uzanto',
 	'code-signoff-field-flag' => 'Marki',
 	'code-signoff-field-date' => 'Dato',
@@ -8203,8 +8226,6 @@ $messages['ml'] = array(
 	'code-status-desc-new' => 'നാൾപ്പതിപ്പിന് ഒരു പ്രവൃത്തി അവശേഷിക്കുന്നു (സ്വതേയുള്ള സ്ഥിതി).',
 	'code-status-fixme' => 'ഈ പ്രശ്നം പരിഹരിക്കുക',
 	'code-status-desc-fixme' => 'ഈ നാൾപ്പതിപ്പ് ബഗ് ആണെന്നോ തകർന്നതാണെന്നോ ഒരു സംശോധകൻ അടയാളപ്പെടുത്തിയിരിക്കുന്നു. ഇത് ശരിയാക്കേണ്ടതാണ്.',
-	'code-status-improveme' => 'ഇതുമെച്ചപ്പെടുത്തുക',
-	'code-status-desc-improveme' => 'ഈ നാൾപ്പതിപ്പിൽ ചില നിസ്സാരപ്രശ്നങ്ങൾ ഉള്ളതായി ഒരു സംശോധകൻ അടയാളപ്പെടുത്തിയിരിക്കുന്നു. ഇത് ശരിയാക്കേണ്ടതാണ്.',
 	'code-status-reverted' => 'മുൻപ്രാപനം ചെയ്തിരിക്കുന്നു',
 	'code-status-desc-reverted' => 'പിന്നീട് വന്ന നാൾപ്പതിപ്പിനാൽ ഈ നാൾപ്പതിപ്പ് മാറ്റപ്പെട്ടിരിക്കുന്നു.',
 	'code-status-resolved' => 'പരിഹരിച്ചിരിക്കുന്നു',
@@ -8319,6 +8340,7 @@ $6',
 	'right-codereview-signoff' => 'നാൾപ്പതിപ്പുകൾ അവസാനിപ്പിച്ചിറങ്ങുക',
 	'right-codereview-link-user' => 'രചയിതാക്കളെ വിക്കി ഉപയോക്താക്കളുമായി കണ്ണി ചേർക്കുക',
 	'right-codereview-associate' => 'നാൾപ്പതിപ്പ് ബന്ധങ്ങളുടെ കൈകാര്യം',
+	'right-codereview-review-own' => 'താങ്കൾ സ്വയം സൃഷ്ടിച്ച നാൾപ്പതിപ്പുകൾ ശരിയാണെന്ന് അടയാളപ്പെടുത്തുക',
 	'specialpages-group-developer' => 'വികസന ഉപകരണങ്ങൾ',
 	'group-svnadmins' => 'എസ്.വി.എൻ. കാര്യനിർവ്വഹകർ',
 	'group-svnadmins-member' => 'എസ്.വി.എൻ. കാര്യനിർവ്വാഹക(ൻ)',
@@ -8980,6 +9002,7 @@ $4',
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
  * @author Laaknor
+ * @author Lokal Profil
  * @author Nghtwlkr
  */
 $messages['no'] = array(
@@ -9122,7 +9145,7 @@ $4',
 	'codereview-email-body2' => 'Brukeren «$1» gjorde oppfølgende endringer til $2.
 
 Full nettadresse til oppfølgende revisjon: $5
-BIdragssammendrag:
+Bidragssammendrag:
 
 $6
 
@@ -9808,7 +9831,7 @@ $6',
 	'right-codereview-set-status' => 'Cangia stat ëd revision',
 	'right-codereview-signoff' => 'Conclud le revision',
 	'right-codereview-link-user' => 'Colega autor a utent wiki',
-	'right-codereview-associate' => 'Gestiss assossiassion ëd revision',
+	'right-codereview-associate' => "Gestì j'associassion ëd revision",
 	'right-codereview-review-own' => 'Marca toe revision com OK',
 	'specialpages-group-developer' => 'Utiss dël dësvlupador',
 	'group-svnadmins' => 'Aministrator SVN',
@@ -10366,6 +10389,12 @@ $messages['ro'] = array(
 	'code-status-ok' => 'ok',
 	'code-status-deferred' => 'amânat',
 	'code-status-old' => 'vechi',
+	'code-signoff-submit' => 'Aprobă',
+	'code-signoff-flag-inspected' => 'Inspectat',
+	'code-signoff-flag-tested' => 'Testat',
+	'code-signoff-field-user' => 'Utilizator',
+	'code-signoff-field-flag' => 'Tip',
+	'code-signoff-field-date' => 'Dată',
 	'code-pathsearch-path' => 'Cale:',
 	'code-pathsearch-filter' => 'Filtru aplicat:',
 	'code-revfilter-cr_status' => 'Stare = $1',
@@ -10432,6 +10461,9 @@ $4',
 	'right-codereview-set-status' => 'Schimbă statutul reviziilor',
 	'right-codereview-link-user' => 'Leagă autori de utilizatori wiki',
 	'specialpages-group-developer' => 'Unelte pentru dezvolatori',
+	'group-svnadmins' => 'Administratori SVN',
+	'group-svnadmins-member' => 'Administrator SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administratori SVN',
 );
 
 /** Tarandíne (Tarandíne)
@@ -10523,12 +10555,17 @@ $messages['roa-tara'] = array(
 	'code-status-desc-ok' => "Revisione revisionate combletamende e 'u recensore jè secure ca jèdde vèje bbuène jndre ogne mode.",
 	'code-status-deferred' => 'differite',
 	'code-status-old' => 'vecchie',
+	'code-signoffs' => 'Smarche',
+	'code-signoff-legend' => "Aggiunge 'nu smarcamende",
+	'code-signoff-submit' => 'Smarche',
+	'code-signoff-strike' => 'Sbarre le smarcaminde scacchiate',
 	'code-signoff-flag-inspected' => 'Ispezionate',
 	'code-signoff-flag-tested' => 'Testate',
 	'code-signoff-field-user' => 'Utende',
 	'code-signoff-field-flag' => 'Bandiere',
 	'code-signoff-field-date' => 'Date',
 	'code-signoff-struckdate' => '$1 (colpite $2)',
+	'code-pathsearch-legend' => "Cirche le revisiune jndrìà st'archivije pe percorse",
 	'code-pathsearch-path' => 'Percorse:',
 	'code-pathsearch-filter' => 'Filtre applicate:',
 	'code-revfilter-cr_status' => 'State = $1',
@@ -10595,19 +10632,25 @@ Commende:
 
 $6',
 	'code-stats' => 'statisteche',
+	'code-stats-header' => "Statisteche pe l'archivije $1",
 	'code-stats-status-breakdown' => 'Numere de revisione pè state',
 	'code-stats-count' => 'Numere de le revisiune',
+	'repoadmin-new-legend' => "Ccreje 'n'archivije nuève",
+	'repoadmin-new-label' => "Nome de l'archivije:",
 	'repoadmin-new-button' => 'Ccreje',
 	'repoadmin-edit-path' => "Percorse de l'archivije:",
 	'repoadmin-edit-bug' => 'Percorse de Bugzilla:',
 	'repoadmin-edit-view' => "Percorse d'u ViewVC:",
 	'repoadmin-edit-button' => 'OK',
+	'repoadmin-nav' => "amministrazione de l'archivije",
 	'right-codereview-use' => 'Ause de speciale:Codece',
 	'right-codereview-add-tag' => 'Aggiunge nuève etichette pè le revsione',
 	'right-codereview-remove-tag' => 'Luà le etichette da le revisione',
 	'right-codereview-post-comment' => "Aggiunge commende sus 'a revisione",
 	'right-codereview-set-status' => "Cange 'u state d'a revisione",
+	'right-codereview-signoff' => 'Smarche sus le revisiune',
 	'right-codereview-link-user' => 'Culleghe le autore a le utinde uicchi',
+	'right-codereview-review-own' => 'Marche le revisiune tune cumme OK',
 	'specialpages-group-developer' => 'Struminde pe le sviluppature',
 	'group-svnadmins' => 'Amministrature de SVN',
 	'group-svnadmins-member' => 'Amministratore de SVN',
@@ -12021,6 +12064,7 @@ $4',
  * @author Fluff
  * @author Gabbe.g
  * @author GameOn
+ * @author Lokal Profil
  * @author Najami
  * @author Per
  * @author Rotsee
@@ -12147,25 +12191,36 @@ $messages['sv'] = array(
 	'codereview-email-body' => 'Användaren "$1" postade en kommenter på $3
 
 Fullständig URL: $2
+Bidragssammanfattning:
+
+$5
+
 
 Kommentar:
 
-$4',
+$4:',
 	'codereview-email-subj2' => '[$1 $2]: Påföljande ändringar',
 	'codereview-email-body2' => 'Användare "$1" gjorde påföljande ändringar till $2.
 
-Full URL för påföljande revision: $5
+Fullständig URL för påföljande revision: $5
+Bidragssammanfattning:
 
-Full URL:  $3
+$6
 
-Sammanfattning:
+Fullständig URL:  $3
+Bidragssammanfattning
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Versionsstatus ändrad',
 	'codereview-email-body3' => "Användare ''$1'' ändrade statusen för $2.
 
 Gammal status: $3
-Ny status: $4",
+Ny status: $4
+
+Fullständig URL: $5
+Bidragssammanfattning:
+
+$6",
 	'codereview-email-subj4' => '[$1 $2]: Ny kommentar tillagd, och versionsstatus ändrad',
 	'codereview-email-body4' => 'Användare "$1" ändrade statusen för $2.
 
@@ -12175,6 +12230,10 @@ Ny status: $4
 Användare "$1" postade också en kommentar på $2.
 
 Fullständig URL: $5
+Bidragssammanfattning:
+
+$7
+
 
 Kommentar:
 
@@ -14068,9 +14127,11 @@ $messages['zh-hans'] = array(
 	'codereview-email-subj' => '[$1 $2]: 新的评论已添加',
 	'codereview-email-body' => '用户 "$1" 在 $3 上添加了一条评论。
 
-完成URL地址: $2
+完整URL地址: $2
+评论摘要：
+$5
 
-评论:
+评论：
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]：后续更改',
@@ -14096,14 +14157,16 @@ $4',
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]： 添加，新的注释和修订状态改变',
-	'codereview-email-body4' => '$2的状态更改用户"$1"。
+	'codereview-email-body4' => '用户"$1"更改了$2的状态。
 
 旧状态： $3
-新局面： $4
+新状态： $4
 
 用户"$1"还张贴评论 $2。
 
-的完整 URL： $5
+完整 URL： $5
+评论摘要：
+$7
 
 评论：
 
