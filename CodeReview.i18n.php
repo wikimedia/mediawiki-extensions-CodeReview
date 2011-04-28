@@ -839,6 +839,23 @@ $4',
 	'specialpages-group-developer' => 'أدوات المطورين',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author Cekli829
+ */
+$messages['az'] = array(
+	'code-field-author' => 'Müəllif',
+	'code-field-text' => 'Qeyd',
+	'code-rev-author' => 'Müəllif:',
+	'code-rev-status' => 'Status:',
+	'code-status-ok' => 'ok',
+	'code-status-old' => 'qədim',
+	'code-signoff-field-user' => 'İstifadəçi',
+	'code-signoff-field-date' => 'Tarix',
+	'code-revfilter-cr_status' => 'Status = $1',
+	'code-revfilter-cr_author' => 'Müəllif = $1',
+	'repoadmin-edit-button' => 'OK',
+);
+
 /** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar
@@ -8485,13 +8502,20 @@ $messages['myv'] = array(
 	'code-field-user' => 'Мелень-арьсемань каицязо',
 	'code-field-timestamp' => 'Ковчизэ',
 	'code-field-path' => 'Яннэ',
+	'code-field-select' => 'Кочкамс',
 	'code-rev-author' => 'Теицязо:',
 	'code-rev-date' => 'Ковчизэ:',
+	'code-rev-modified-a' => 'поладозь',
+	'code-rev-modified-d' => 'нардазь',
+	'code-rev-modified-m' => 'лиякстомтозь',
+	'code-rev-comment-preview' => 'Васнянь неевтезэ',
 	'code-rev-diff' => 'Мейсэ явовить верзиятне',
 	'code-rev-purge-link' => 'панемс',
 	'code-status-new' => 'од',
 	'code-status-fixme' => 'витемак',
+	'code-status-old' => 'ташто',
 	'code-pathsearch-path' => 'Яннэсь:',
+	'code-revfilter-cr_author' => 'Авторозо = $1',
 	'code-stats' => 'статистикат',
 	'repoadmin-new-button' => 'Шкик-теик',
 	'repoadmin-edit-button' => 'Маштови',
