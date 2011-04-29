@@ -843,10 +843,20 @@ $4',
  * @author Cekli829
  */
 $messages['az'] = array(
+	'code-comments' => 'Şərhlər',
+	'code-old-status' => 'Qədim status',
+	'code-new-status' => 'Yeni status',
+	'code-authors' => 'müəlliflər',
 	'code-field-author' => 'Müəllif',
+	'code-field-status' => 'Status',
+	'code-field-timestamp' => 'Tarix',
+	'code-field-comments' => 'Şərhlər',
 	'code-field-text' => 'Qeyd',
 	'code-rev-author' => 'Müəllif:',
+	'code-rev-date' => 'Tarix:',
+	'code-rev-message' => 'Şərhlər:',
 	'code-rev-status' => 'Status:',
+	'code-status-new' => 'yeni',
 	'code-status-ok' => 'ok',
 	'code-status-old' => 'qədim',
 	'code-signoff-field-user' => 'İstifadəçi',
@@ -1388,6 +1398,7 @@ $messages['bg'] = array(
 	'code-rev-message' => 'Коментар:',
 	'code-rev-repo' => 'Хранилище:',
 	'code-rev-rev' => 'Версия:',
+	'code-rev-rev-viewvc' => 'във ViewVC',
 	'code-rev-paths' => 'Променени пътища:',
 	'code-rev-modified-a' => 'добавено',
 	'code-rev-modified-r' => 'заместено',
@@ -1453,6 +1464,9 @@ $4',
 	'right-codereview-set-status' => 'Променяне на статута на версиите',
 	'right-codereview-link-user' => 'Свързване на имената на авторите с имена на уики потребители',
 	'specialpages-group-developer' => 'Инструменти за разработчици',
+	'group-svnadmins' => 'SVN администратори',
+	'group-svnadmins-member' => 'SVN администратор',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN администратори',
 );
 
 /** Bengali (বাংলা)
@@ -3298,6 +3312,8 @@ $messages['eo'] = array(
 	'code-field-path' => 'Vojo',
 	'code-field-text' => 'Noto',
 	'code-field-select' => 'Elekti',
+	'code-reference-associate' => 'Kungrupigi revizion kontrolindan:',
+	'code-reference-associate-submit' => 'Kungrupigi',
 	'code-rev-author' => 'Aŭtoro:',
 	'code-rev-date' => 'Dato:',
 	'code-rev-message' => 'Komento:',
@@ -3343,6 +3359,7 @@ $messages['eo'] = array(
 	'code-signoff-field-user' => 'Uzanto',
 	'code-signoff-field-flag' => 'Marki',
 	'code-signoff-field-date' => 'Dato',
+	'code-signoff-struckdate' => '$1 (forstrekita $2)',
 	'code-pathsearch-legend' => 'Serĉi versiojn en ĉi tiu kodujo laŭ vojo',
 	'code-pathsearch-path' => 'Vojo:',
 	'code-pathsearch-filter' => 'Filtrilo uzata:',
@@ -4475,6 +4492,7 @@ $messages['frp'] = array(
 	'code-notes' => 'novéls comentèros',
 	'code-statuschanges' => 'changements d’ètat',
 	'code-mycommits' => 'mes publecacions',
+	'code-mycomments' => 'mos comentèros',
 	'code-authors' => 'ôtors',
 	'code-status' => 'ètats',
 	'code-tags' => 'balises',
@@ -4498,11 +4516,15 @@ $messages['frp'] = array(
 	'code-field-user' => 'Comentator',
 	'code-field-message' => 'Rèsumâ de publecacion',
 	'code-field-status' => 'Ètat',
+	'code-field-status-description' => 'Dèscripcion de l’ètat',
 	'code-field-timestamp' => 'Dâta',
 	'code-field-comments' => 'Comentèros',
 	'code-field-path' => 'Chemin',
 	'code-field-text' => 'Nota',
 	'code-field-select' => 'Chouèsir',
+	'code-reference-remove' => 'Enlevar les associacions chouèsies',
+	'code-reference-associate' => 'Associyér ceta rèvision :',
+	'code-reference-associate-submit' => 'Associyér',
 	'code-rev-author' => 'Ôtor :',
 	'code-rev-date' => 'Dâta :',
 	'code-rev-message' => 'Comentèro :',
@@ -4536,6 +4558,17 @@ $messages['frp'] = array(
 	'code-status-ok' => 'd’acôrd',
 	'code-status-deferred' => 'retardâ',
 	'code-status-old' => 'viely',
+	'code-signoffs' => 'Aprobacions',
+	'code-signoff-legend' => 'Apondre una aprobacion',
+	'code-signoff-submit' => 'Aprovar',
+	'code-signoff-strike' => 'Traciér les aprobacions chouèsies',
+	'code-signoff-signoff' => 'Aprovar cela rèvision coment :',
+	'code-signoff-flag-inspected' => 'Controlâ',
+	'code-signoff-flag-tested' => 'Èprovâ',
+	'code-signoff-field-user' => 'Utilisator',
+	'code-signoff-field-flag' => 'Endiquior',
+	'code-signoff-field-date' => 'Dâta',
+	'code-signoff-struckdate' => '$1 (at traciê $2)',
 	'code-pathsearch-legend' => 'Rechèrchiér des rèvisions dens ceti dèpôt per chemin',
 	'code-pathsearch-path' => 'Chemin :',
 	'code-pathsearch-filter' => 'Filtro aplicâ :',
@@ -4587,6 +4620,22 @@ URL complèta : $5
 Rèsumâ de changement :
 
 $6',
+	'codereview-email-subj4' => '[$1 $2] : novél comentèro apondu et pués ètat de la vèrsion changiê',
+	'codereview-email-body4' => 'L’utilisator « $1 » at changiê l’ètat de $2.
+
+Viely ètat : $3
+Novél ètat : $4
+
+L’utilisator « $1 » at asse-ben pôstâ un comentèro sur $2.
+
+Adrèce URL complèta : $5
+Rèsumâ du changement :
+
+$7
+
+Comentèro :
+
+$6',
 	'code-stats' => 'statistiques',
 	'code-stats-header' => 'Statistiques por lo dèpôt $1',
 	'code-stats-main' => 'A la dâta du $1, lo dèpôt at $2 {{PLURAL:$2|rèvision fêta|rèvisions fêtes}} per [[Special:Code/$3/author|$4 ôtor{{PLURAL:$4||s}}]].',
@@ -4610,8 +4659,14 @@ $6',
 	'right-codereview-remove-tag' => 'Enlevar des balises de les rèvisions',
 	'right-codereview-post-comment' => 'Apondre des comentèros a les rèvisions',
 	'right-codereview-set-status' => 'Changiér l’ètat de les rèvisions',
+	'right-codereview-signoff' => 'Aprovar des rèvisions',
 	'right-codereview-link-user' => 'Liyér los ôtors ux utilisators vouiqui',
+	'right-codereview-associate' => 'Administrar les associacions de rèvisions',
+	'right-codereview-review-own' => 'Marcar ses prôpres rèvisions coment OK',
 	'specialpages-group-developer' => 'Outils u dèvelopor',
+	'group-svnadmins' => 'Administrators SVN',
+	'group-svnadmins-member' => 'Administrator SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Administrators SVN',
 );
 
 /** Friulian (Furlan)
