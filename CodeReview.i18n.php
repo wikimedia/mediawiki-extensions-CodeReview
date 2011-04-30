@@ -3286,6 +3286,7 @@ $messages['eo'] = array(
 	'code-authors' => 'aŭtoroj',
 	'code-status' => 'statoj',
 	'code-tags' => 'etikedoj',
+	'code-tags-no-tags' => 'Neniuj etikedoj en ĉi tiu deponujo.',
 	'code-authors-text' => 'Jen listo de dosierujaj aŭtoroj ordigitaj laŭ sendita nomo. Loka vikikontoj estas montrataj en parentezoj. Datenoj eble estas en kaŝmemoro.',
 	'code-author-haslink' => 'Ĉi tiu aŭtoro estas ligita al la vikiuzanto $1',
 	'code-author-orphan' => 'La aŭtoro ne havas ligilon kun vikia konto',
@@ -3312,6 +3313,7 @@ $messages['eo'] = array(
 	'code-field-path' => 'Vojo',
 	'code-field-text' => 'Noto',
 	'code-field-select' => 'Elekti',
+	'code-reference-remove' => 'Forigi elektitajn kungrupigojn',
 	'code-reference-associate' => 'Kungrupigi revizion kontrolindan:',
 	'code-reference-associate-submit' => 'Kungrupigi',
 	'code-rev-author' => 'Aŭtoro:',
@@ -3354,6 +3356,11 @@ $messages['eo'] = array(
 	'code-status-desc-deferred' => 'Revizio ne nepras kontroladon.',
 	'code-status-old' => 'malnova',
 	'code-status-desc-old' => 'Malnova revizio kun eblaj cimoj kiuj ne sufiĉe gravas kontroli ilin.',
+	'code-signoffs' => 'Aprobadoj',
+	'code-signoff-legend' => 'Aldoni aprobon',
+	'code-signoff-submit' => 'Aprobi',
+	'code-signoff-strike' => 'Forstreki elektitajn aprobojn',
+	'code-signoff-signoff' => 'Aprobi ĉi tiun revizion kiel:',
 	'code-signoff-flag-inspected' => 'Inspektita',
 	'code-signoff-flag-tested' => 'Testita',
 	'code-signoff-field-user' => 'Uzanto',
@@ -3411,6 +3418,7 @@ Plena URL-o: $5
 Resumo de faraĵo:
 
 $6',
+	'codereview-email-subj4' => '[$1 $2]: Nova komento estis aldonita, kaj revizio-statuso estis ŝanĝita',
 	'codereview-email-body4' => 'Uzanto "$1" ŝanĝis la statuson de $2.
 
 Malnova statuso: $3
@@ -3449,6 +3457,7 @@ $6',
 	'right-codereview-remove-tag' => 'Forigi etikedojn de versioj',
 	'right-codereview-post-comment' => 'Aldoni komentojn en versioj',
 	'right-codereview-set-status' => 'Ŝanĝi statuson de versioj',
+	'right-codereview-signoff' => 'Aprobi reviziojn',
 	'right-codereview-link-user' => 'Ligi aŭtorojn al viki-uzantoj',
 	'specialpages-group-developer' => 'Disvolvistaj iloj',
 	'group-svnadmins' => 'SVN-administrantoj',
@@ -8277,7 +8286,7 @@ $messages['ml'] = array(
 	'code-rev-paths' => 'മാറ്റം വരുത്തിയ പഥങ്ങൾ:',
 	'code-rev-modified-a' => 'കൂട്ടിച്ചേർത്തു',
 	'code-rev-modified-r' => 'പകരം വെച്ചു',
-	'code-rev-modified-d' => 'മായ്ച്ചുകളഞ്ഞു',
+	'code-rev-modified-d' => 'മായ്ച്ചിരിക്കുന്നു',
 	'code-rev-modified-m' => 'മാറ്റം വരുത്തി',
 	'code-rev-imagediff' => 'ചിത്രത്തിന്റെ മാറ്റങ്ങൾ',
 	'code-rev-status' => 'സ്ഥിതി:',
@@ -12372,6 +12381,7 @@ $messages['sw'] = array(
 
 /** Tamil (தமிழ்)
  * @author TRYPPN
+ * @author செல்வா
  */
 $messages['ta'] = array(
 	'code-comments' => 'கருத்துரைகள்',
@@ -12391,7 +12401,7 @@ $messages['ta'] = array(
 	'code-field-text' => 'குறிப்பு',
 	'code-field-select' => 'தேர்வு செய்',
 	'code-rev-author' => 'ஆசிரியர்:',
-	'code-rev-date' => 'தேதி:',
+	'code-rev-date' => 'நாள் (தேதி):',
 	'code-rev-message' => 'கருத்து:',
 	'code-rev-rev' => 'திருத்தம்:',
 	'code-rev-modified-d' => 'நீக்கப்பட்டது',
@@ -12416,6 +12426,7 @@ $messages['ta'] = array(
 
 /** Telugu (తెలుగు)
  * @author C.Chandra Kanth Rao
+ * @author Chaduvari
  * @author Kiranmayee
  * @author Veeven
  */
@@ -12458,18 +12469,33 @@ $messages['te'] = array(
 	'code-rev-total' => 'మొత్తం ఫలితాల సంఖ్య: $1',
 	'code-rev-not-found' => "'''$1''' అనే కూర్పు లేనే లేదు!",
 	'code-status-new' => 'కొత్త',
+	'code-status-desc-fixme' => 'ఈ కూర్పు బగ్ ను చొప్పిస్తోందనో, లేక తెగిపోయిందనో ఒక వాడుకరి గుర్తు పెట్టారు. దాన్ని సరిచెయ్యాలి.',
 	'code-status-reverted' => 'వెనక్కి తీసుకోబడినది',
+	'code-status-desc-reverted' => 'ఈ కూర్పులో చేసిన మార్పులు తరువాతి మార్పు ద్వారా చెయ్యబడ్డాయి.',
+	'code-status-resolved' => 'పరిష్కరించబడింది',
+	'code-status-desc-resolved' => 'ఈ కూర్పులో ఒక సమస్య ఉండేది. అది తరువాతి కూర్పులో పరిష్కరించబడింది.',
 	'code-status-ok' => 'సరి',
+	'code-status-desc-ok' => 'ఈ కూర్పు కూలంకషంగా సమీక్షించబడింది. ఇది అన్ని విధాలా బాగుందని సమీక్షకుడు నిశ్చయంగా ఉన్నారు.',
 	'code-status-desc-deferred' => 'కూర్పుకి సమీక్ష అవసరం లేదు.',
 	'code-status-old' => 'పాతది',
+	'code-status-desc-old' => 'బగ్ లు ఉండే అవకాశం ఉన్న పాత కూర్పు. అయితే ఈ బగ్ లు సమీక్షించేంత శ్రమ పడాల్సిన అవసరం లేనివి.',
+	'code-signoff-flag-inspected' => 'పరీక్షించబడిన',
+	'code-signoff-flag-tested' => 'పరీక్షించబడినవి',
+	'code-signoff-field-user' => 'వాడుకరి',
+	'code-signoff-field-flag' => 'ప్లాగ్',
 	'code-signoff-field-date' => 'తేదీ',
+	'code-signoff-struckdate' => '$1 (రద్దైనది $2)',
 	'code-pathsearch-filter' => 'ఆపాదించిన వడపోత:',
 	'code-revfilter-cr_status' => 'స్థితి = $1',
 	'code-revfilter-cr_author' => 'రచయిత = $1',
+	'code-revfilter-clear' => 'వడపోతను ఖాళీచేయి',
 	'code-rev-submit' => 'మార్పులను భద్రపరచు',
+	'code-rev-submit-next' => 'భద్రపరచు & తరువాతి అపరిష్కృతం',
 	'code-batch-status' => 'మార్పు స్థితి:',
+	'codereview-batch-title' => 'ఎంచుకున్న అన్ని కూర్పులనూ మార్చు',
 	'codereview-batch-submit' => 'దాఖలుచెయ్యి',
 	'code-releasenotes' => 'విడుదల విశేషాలు',
+	'code-release-endrev' => 'చివరి కూర్పు:',
 	'codereview-subtitle' => '$1 కొరకు',
 	'codereview-reply-link' => 'స్పందించు',
 	'codereview-email-subj' => '[$1 $2]: కొత్త వ్యాఖ్యని చేర్చారు',
@@ -12484,13 +12510,70 @@ $5
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: తదనంతర మార్పులు',
+	'codereview-email-body2' => 'వాడుకరి "$1" $2 లో ఫాలో-అప్ మార్పులు చేసారు.
+
+ఫాలో-అప్ కూర్పు యొక్క పూర్తి URL: $5
+కమిట్ సారాంశాం:
+
+$6
+
+పూర్తి URL: $3
+కమిట్ సారాంశం:
+
+$4',
+	'codereview-email-subj3' => '[$1 $2]: కూర్పు స్థితి మారింది',
+	'codereview-email-body3' => 'వాడుకరి "$1", $2 యొక్క సథితిని మార్చారు.
+
+పాత స్థితి: $3
+కొత్త స్థితి: $4
+
+పూర్తి URL: $5
+కమిట్ సారాంశం:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: కొత్త కమిట్ చేర్చబడింది, కూర్పు స్థితి మార్చబడింది.',
+	'codereview-email-body4' => 'వాడుకరి "$1", $2 యొక్క స్థితిని మార్చారు.
+
+పాత స్థితి: $3
+కొత్త స్థితి: $4
+
+వాడుకరి "$1" $2 పై ఒక వ్యాఖ్య కూడా రాసారు.
+
+పూర్తి URL: $5
+కమిట్ సారాంశం:
+
+$7
+
+వ్యాఖ్య:
+
+$6',
 	'code-stats' => 'గణాంకాలు',
+	'code-stats-header' => 'ఖజానా $1 గణాంకాలు',
+	'code-stats-main' => '$1 నాటికి, ఖజానాలో [[Special:Code/$3/author|$4 {{PLURAL:$4|కర్త|కర్తలు}}]] చేసిన $2 {{PLURAL:$2|కూర్పు|కూర్పులు}} ఉన్నాయి.',
+	'code-stats-status-breakdown' => 'ఒక్కో స్థితికి ఉన్న కూర్పుల సంఖ్య',
 	'code-stats-count' => 'కూర్పుల యొక్క సంఖ్య',
+	'repoadmin' => 'ఖజానా నిర్వహణ',
+	'repoadmin-new-legend' => 'ఓ కొత్త ఖజానాను సృష్టించండి',
+	'repoadmin-new-label' => 'ఖజానా పేరు:',
 	'repoadmin-new-button' => 'సృష్టించు',
+	'repoadmin-edit-legend' => 'ఖజానా "$1" యొక్క మార్పు',
+	'repoadmin-edit-path' => 'ఖజానా పాత్:',
+	'repoadmin-edit-bug' => 'Bugzilla పాత్:',
+	'repoadmin-edit-view' => 'ViewVC పాత్:',
 	'repoadmin-edit-button' => 'సరే',
+	'repoadmin-edit-sucess' => 'ఖజానా "[[Special:Code/$1|$1]]" ను జయప్రదంగా మార్చాం.',
+	'repoadmin-nav' => 'ఖజానా నిర్వహణ',
+	'right-repoadmin' => 'కోడ్ ఖజానాలను నిర్వహించండి',
+	'right-codereview-add-tag' => 'కొత్త ట్యాగులు, కూర్పులను చేర్చు',
+	'right-codereview-remove-tag' => 'కూర్పుల నుండి ట్యాగులను తీసెయ్యి',
 	'right-codereview-post-comment' => 'కూర్పులపై వ్యాఖ్యలు చేర్చగలగడం',
 	'right-codereview-set-status' => 'కూర్పుల స్థితిని మార్చగలగడం',
+	'right-codereview-link-user' => 'కర్తలను వికీ వాడుకరులతో లింకు  చెయ్యి',
+	'right-codereview-review-own' => 'మీ స్వంత కూర్పులను ’సరే’ గా గుర్తించండి',
 	'specialpages-group-developer' => 'వికాసకుల పనిముట్లు',
+	'group-svnadmins' => 'SVN నిర్వాహకులు',
+	'group-svnadmins-member' => 'SVN నిర్వాహకుడు',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN నిర్వాహకులు',
 );
 
 /** Tetum (Tetun)
@@ -12511,6 +12594,7 @@ $messages['tet'] = array(
 	'code-rev-diff-link' => 'dif',
 	'code-status-new' => 'foun',
 	'code-status-ok' => 'ok',
+	'code-revfilter-cr_author' => 'Autór = $1',
 	'repoadmin-new-button' => 'Kria',
 	'repoadmin-edit-button' => 'OK',
 );
