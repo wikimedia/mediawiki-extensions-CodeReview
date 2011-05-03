@@ -9736,7 +9736,7 @@ $messages['pms'] = array(
 	'code-no-repo' => 'Gnun depòsit configurà!',
 	'code-create-repo' => 'Va a [[Special:RepoAdmin|RepoAdmin]] për creé un Depòsit',
 	'code-need-repoadmin-rights' => 'a-i é dabzògn dij drit ëd repoadmin për podèj creé un Depòsit',
-	'code-need-group-with-rights' => 'A esisto pa gnun-e partìe con ij drit ëd repoadmin. Për piasì giont-ne un për podèj gionté un Depòsit neuv',
+	'code-need-group-with-rights' => "A esisto gnun-e partìe con ij drit ëd repoadmin. Për piasì, ch'a na gionta un-a për podèj gionté un Depòsit neuv",
 	'code-repo-not-found' => "L'archivi '''$1''' a esist pa!",
 	'code-load-diff' => 'Cariament dif...',
 	'code-notes' => 'coment recent',
@@ -13445,9 +13445,12 @@ $messages['uk'] = array(
 	'codereview-subtitle' => 'Для $1',
 	'codereview-reply-link' => 'відповісти',
 	'codereview-email-subj' => '[$1 $2]: Доданий новий коментар',
-	'codereview-email-body' => 'Користувач «$1» розмістив коментар до редакції $3.
+	'codereview-email-body' => 'Користувач «$1» залишив коментар на $3.
 
 Повний URL: $2
+Опис коментаря:
+
+$5
 
 Коментар:
 
