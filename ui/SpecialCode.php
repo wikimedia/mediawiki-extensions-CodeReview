@@ -26,7 +26,7 @@ class SpecialCode extends SpecialPage {
 		if( $view ) {
 			$view->execute();
 		} else {
-			$wgOut->addWikiText( wfMsg( 'nosuchactiontext' ) );
+			$wgOut->addWikiMsg( 'nosuchactiontext' );
 			$wgOut->returnToMain( null, $this->getTitle() );
 			return;
 		}
