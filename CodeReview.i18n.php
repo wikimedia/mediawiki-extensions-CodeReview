@@ -9446,6 +9446,16 @@ $3',
 	'specialpages-group-developer' => 'Aisinas del desvolopaire',
 );
 
+/** Oriya (ଓଡ଼ିଆ)
+ * @author Odisha1
+ */
+$messages['or'] = array(
+	'code-status-ok' => 'ଠିକ ଅଛି',
+	'code-signoff-field-user' => 'ବ୍ୟବାହାରକାରୀ',
+	'repoadmin-new-button' => 'ତିଆରି',
+	'repoadmin-edit-button' => 'ଠିକ ଅଛି',
+);
+
 /** Ossetic (Иронау)
  * @author Amikeco
  */
