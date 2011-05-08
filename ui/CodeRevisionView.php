@@ -152,7 +152,7 @@ class CodeRevisionView extends CodeView {
 			$html .=
 				"<h2>" . wfMsgHtml( 'code-rev-diff' ) .
 				' <small>[' . $this->skin->makeLinkObj( $special,
-					wfMsg( 'code-rev-purge-link' ), 'action=purge' ) . ']</small></h2>' .
+					wfMsgHtml( 'code-rev-purge-link' ), 'action=purge' ) . ']</small></h2>' .
 				"<div class='mw-codereview-diff' id='mw-codereview-diff'>" . $diffHtml . "</div>\n";
 			$html .= $this->formatImgDiff();
 		}
