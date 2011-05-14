@@ -8,9 +8,7 @@
 
 $specialPageAliases = array();
 
-/** English
- * @author Brion Vibber
- */
+/** English (English) */
 $specialPageAliases['en'] = array(
 	'Code' => array( 'Code', 'CodeReview' ),
 	'RepoAdmin' => array( 'RepoAdmin' ),
@@ -75,6 +73,11 @@ $specialPageAliases['fi'] = array(
 	'Code' => array( 'Koodin_katselmointi' ),
 );
 
+/** Gagauz (Gagauz) */
+$specialPageAliases['gag'] = array(
+	'Code' => array( 'Kod' ),
+);
+
 /** Galician (Galego) */
 $specialPageAliases['gl'] = array(
 	'Code' => array( 'Código' ),
@@ -101,6 +104,17 @@ $specialPageAliases['hsb'] = array(
 	'Code' => array( 'Žórłowy_tekst' ),
 );
 
+/** 湘语 (湘语) */
+$specialPageAliases['hsn'] = array(
+	'Code' => array( '编码', '编码审查' ),
+);
+
+/** Haitian (Kreyòl ayisyen) */
+$specialPageAliases['ht'] = array(
+	'Code' => array( 'Kòd', 'RevizeKòd' ),
+	'RepoAdmin' => array( 'DepoAdmin' ),
+);
+
 /** Hungarian (Magyar) */
 $specialPageAliases['hu'] = array(
 	'Code' => array( 'Kód' ),
@@ -121,6 +135,11 @@ $specialPageAliases['id'] = array(
 $specialPageAliases['ja'] = array(
 	'Code' => array( 'コード', 'コードレビュー' ),
 	'RepoAdmin' => array( 'リポジトリ管理' ),
+);
+
+/** Georgian (ქართული) */
+$specialPageAliases['ka'] = array(
+	'Code' => array( 'კოდი' ),
 );
 
 /** Khmer (ភាសាខ្មែរ) */
@@ -154,6 +173,7 @@ $specialPageAliases['lb'] = array(
 /** Macedonian (Македонски) */
 $specialPageAliases['mk'] = array(
 	'Code' => array( 'ПрограмскиКод', 'Код', 'ПрегледНаКод' ),
+	'RepoAdmin' => array( 'АдминНаСкладиштето' ),
 );
 
 /** Malayalam (മലയാളം) */
@@ -221,7 +241,7 @@ $specialPageAliases['tl'] = array(
 /** Turkish (Türkçe) */
 $specialPageAliases['tr'] = array(
 	'Code' => array( 'Kod' ),
-	'RepoAdmin' => array( 'RepoHizmetli' ),
+	'RepoAdmin' => array( 'RepoHizmetli', 'RepoYönetici' ),
 );
 
 /** Vèneto (Vèneto) */
@@ -234,9 +254,15 @@ $specialPageAliases['vep'] = array(
 	'Code' => array( 'Kod' ),
 );
 
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'Code' => array( 'Mã_nguồn', 'Mã', 'Duyệt_mã' ),
+);
+
 /** Simplified Chinese (‪中文(简体)‬) */
 $specialPageAliases['zh-hans'] = array(
 	'Code' => array( '代码' ),
+	'RepoAdmin' => array( '信息库管理' ),
 );
 
 /** Traditional Chinese (‪中文(繁體)‬) */
