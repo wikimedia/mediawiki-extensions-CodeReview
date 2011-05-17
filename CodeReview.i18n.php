@@ -3886,7 +3886,7 @@ $4',
 	'repoadmin-edit-path' => 'Biltegiaren bidea:',
 	'repoadmin-edit-bug' => 'Bugzilla bidea:',
 	'repoadmin-edit-view' => 'ViewVC bidea:',
-	'repoadmin-edit-button' => 'Ondo',
+	'repoadmin-edit-button' => 'Ados',
 	'repoadmin-edit-sucess' => '"[[Special:Code/$1|$1]]" biltegia arrakastaz aldtu da.',
 	'right-repoadmin' => 'Kudeatu kode biltegiak',
 	'right-codereview-add-tag' => 'Gehitu etiketa berriak aldaketei',
@@ -10019,7 +10019,7 @@ $messages['pt'] = array(
 	'code-no-repo' => 'Não há nenhum repositório configurado!',
 	'code-create-repo' => 'Visite o [[Special:RepoAdmin|suporte Subversion]] para criar um Repositório',
 	'code-need-repoadmin-rights' => 'o privilégio repoadmin é necessário para ser capaz de criar um Repositório',
-	'code-need-group-with-rights' => 'Não existe nenhum grupo com o privilégio repoadmin. Crie um para poder adicionar um novo Armazém, por favor.',
+	'code-need-group-with-rights' => 'Não existe nenhum grupo com o privilégio repoadmin. Crie um para poder adicionar um novo Repositório, por favor.',
 	'code-repo-not-found' => "O repositório '''$1''' não existe!",
 	'code-load-diff' => 'A carregar diferenças…',
 	'code-notes' => 'comentários recentes',
@@ -10211,11 +10211,11 @@ $6',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author 555
  * @author Eduardo.mps
  * @author Giro720
  * @author Helder.wiki
  * @author Heldergeovane
- * @author 555
  */
 $messages['pt-br'] = array(
 	'code' => 'Revisão de Código',
@@ -10231,6 +10231,9 @@ $messages['pt-br'] = array(
 	'code-prop-changes' => "''Status'' e registro de etiquetagem",
 	'codereview-desc' => '[[Special:Code|Ferramenta de revisão de código]] com [[Special:RepoAdmin|suporte à subversão]]',
 	'code-no-repo' => 'Nenhum repositório configurado!',
+	'code-create-repo' => 'Visite o [[Special:RepoAdmin|suporte Subversion]] para criar um Repositório',
+	'code-need-repoadmin-rights' => 'o privilégio repoadmin é necessário para ser capaz de criar um Repositório',
+	'code-need-group-with-rights' => 'Não existe nenhum grupo com o privilégio repoadmin. Crie um para poder adicionar um novo Repositório, por favor.',
 	'code-repo-not-found' => "O repositório '''$1''' não existe!",
 	'code-load-diff' => 'Carregando diferenças…',
 	'code-notes' => 'comentários recentes',
@@ -10366,7 +10369,10 @@ $4',
 Estado Antigo: $3
 Estado Novo: $4
 
-URL Completa: $5',
+URL Completa: $5
+Resumo da efetivação:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Adicionado novo comentário e alterado o estado da revisão',
 	'codereview-email-body4' => 'O usuário "$1" alterou o estado de $2.
 
@@ -10406,6 +10412,7 @@ $6',
 	'right-codereview-signoff' => 'Aprovação de revisões',
 	'right-codereview-link-user' => 'Associar autores a utilizadores de wiki',
 	'right-codereview-associate' => 'Administrar a associação de revisões',
+	'right-codereview-review-own' => 'Marcar as suas próprias revisões como OK',
 	'specialpages-group-developer' => 'Ferramentas de desenvolvimento',
 	'group-svnadmins' => 'Administradores do SVN',
 	'group-svnadmins-member' => 'Administrador do SVN',
