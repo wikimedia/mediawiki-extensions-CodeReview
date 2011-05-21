@@ -64,13 +64,12 @@ class CodeRevisionListView extends CodeView {
 			return;
 		}
 
-		$pathForm = $this->showForm();
-
 		// Get the total count across all pages
 		$dbr = wfGetDB( DB_SLAVE );
 		$revCount = $this->getRevCount( $dbr );
 
 		$pager = $this->getPager();
+		$pathForm = $this->showForm( $pager->getHiddenFields( array( 'path' ) ) );
 
 		// Build batch change interface as needed
 		$this->batchForm = $wgUser->isAllowed( 'codereview-set-status' ) ||
@@ -182,15 +181,12 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	/**
+	 * @param $hidden string
+	 *
 	 * @return string
 	 */
-	function showForm() {
+	function showForm( $hidden = '' ) {
 		global $wgScript;
-		if ( $this->mAuthor ) {
-			$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/author/' . $this->mAuthor );
-		} else {
-			$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/path' );
-		}
 
 		$ret = Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 			"<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
@@ -204,11 +200,11 @@ class CodeRevisionListView extends CodeView {
 				Xml::label( wfMsg( 'code-pathsearch-filter' ), 'revFilter' ) . '&#160;<strong>' .
 				Xml::span( $this->mAppliedFilter, '' ) . '</strong>&#160;' .
 				Xml::submitButton( wfMsg( 'code-revfilter-clear' ) ) .
-				'</td>' .
-				Html::hidden( 'title', SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ) );
-		} else {
-			$ret .= Html::hidden( 'title', $special->getPrefixedDBKey() ) ;
+				'</td>';
 		}
+
+		$ret .= $hidden;
+
 		$ret .= "</tr></table></fieldset></form>" ;
 
 		return $ret;
