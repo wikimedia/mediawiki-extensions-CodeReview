@@ -24,6 +24,7 @@ class CodeRevisionListView extends CodeView {
 		}
 
 		$this->mAuthor = $wgRequest->getText( 'author' );
+		$this->mStatus = $wgRequest->getText( 'status' );
 		$this->mAppliedFilter = null;
 	}
 
@@ -348,14 +349,22 @@ class SvnRevTablePager extends SvnTablePager {
 				$pathQuery
 			);
 		case 'cr_status':
+			$options = $pathQuery;
+			if ( $this->mView->mAuthor ) {
+				$options['author'] = $this->mView->mAuthor;
+			}
 			return $this->mView->skin->link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/status/' . $value ),
 				htmlspecialchars( $this->mView->statusDesc( $value ) ),
 				array(),
-				$pathQuery
+				$options
 			);
 		case 'cr_author':
-			return $this->mView->authorLink( $value, $pathQuery );
+			$options = $pathQuery;
+			if ( $this->mView->mStatus ) {
+				$options['status'] = $this->mView->mStatus;
+			}
+			return $this->mView->authorLink( $value, $options );
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cr_timestamp':
