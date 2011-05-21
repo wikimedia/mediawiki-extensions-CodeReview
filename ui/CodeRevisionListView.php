@@ -353,8 +353,9 @@ class SvnRevTablePager extends SvnTablePager {
 			if ( $this->mView->mAuthor ) {
 				$options['author'] = $this->mView->mAuthor;
 			}
+			$options['status'] = $value;
 			return $this->mView->skin->link(
-				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/status/' . $value ),
+				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 				htmlspecialchars( $this->mView->statusDesc( $value ) ),
 				array(),
 				$options
@@ -364,7 +365,13 @@ class SvnRevTablePager extends SvnTablePager {
 			if ( $this->mView->mStatus ) {
 				$options['status'] = $this->mView->mStatus;
 			}
-			return $this->mView->authorLink( $value, $options );
+			$options['author'] = $value;
+			return $this->mView->skin->link(
+				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+				htmlspecialchars( $value ),
+				array(),
+				$options
+			);
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cr_timestamp':
