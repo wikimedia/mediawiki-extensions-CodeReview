@@ -379,8 +379,13 @@ class SvnRevTablePager extends SvnTablePager {
 			}
 		case 'cr_path':
 			$title = $this->mRepo->getName();
+
+			$options = array( 'path' => (string)$value );
 			if( $this->mView->mAuthor ) {
-				$title .= '/author/' . $this->mView->mAuthor;
+				$options['author'] = $this->mView->mAuthor;
+			}
+			if ( $this->mView->mStatus ) {
+				$options['status'] = $this->mView->mStatus;
 			}
 
 			return Xml::openElement( 'div', array( 'title' => (string)$value ) ) .
@@ -388,7 +393,7 @@ class SvnRevTablePager extends SvnTablePager {
 						SpecialPage::getTitleFor( 'Code', $title ),
 						$wgLang->truncate( (string)$value, 50 ),
 						array( 'title' => (string)$value ),
-						array( 'path' => (string)$value )
+						$options
 					) . "</div>";
 		}
 	}
