@@ -9,6 +9,11 @@ class CodeRevisionListView extends CodeView {
 	public $mPath, $batchForm;
 
 	/**
+	 * @var
+	 */
+	protected $filters = array();
+
+	/**
 	 * @param $repo CodeRepository|String
 	 */
 	function __construct( $repo ) {
@@ -26,17 +31,16 @@ class CodeRevisionListView extends CodeView {
 		$this->mAuthor = $wgRequest->getText( 'author' );
 		$this->mStatus = $wgRequest->getText( 'status' );
 
-		$filters = array();
 		if ( $this->mAuthor ) {
-			$filters[] = wfMsg( 'code-revfilter-cr_author', $this->mAuthor );
+			$this->filters[] = wfMsg( 'code-revfilter-cr_author', $this->mAuthor );
 		}
 		if ( $this->mStatus ) {
-			$filters[] = wfMsg( 'code-revfilter-cr_status', $this->mStatus );
+			$this->filters[] = wfMsg( 'code-revfilter-cr_status', $this->mStatus );
 		}
 
-		if ( count( $filters) ) {
+		if ( count( $this->filters ) ) {
 			global $wgLang;
-			$this->mAppliedFilter = $wgLang->listToText( $filters );
+			$this->mAppliedFilter = $wgLang->listToText( $this->filters );
 		} else {
 			$this->mAppliedFilter = null;
 		}
@@ -362,7 +366,7 @@ class SvnRevTablePager extends SvnTablePager {
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value ),
 				htmlspecialchars( $value ),
 				array(),
-				$pathQuery
+				array()
 			);
 		case 'cr_status':
 			$options = $pathQuery;

@@ -86,7 +86,7 @@ class WordCloud {
 	 */
 	public function getCloudHtml() {
 		if( 0 === count( $this->wordsArray ) ) {
-			return;
+			return '';
 		}
 		$this->shuffleCloud();
 		$max = max( $this->wordsArray );
@@ -98,10 +98,16 @@ class WordCloud {
 			}
 			return '<div class="mw-wordcloud">' . $return . '</div>';
 		}
+		return '';
 	}
 
 	/**
 	 * Default text callback for word display
+	 *
+	 * @param $word string
+	 * @param $sizeRange
+	 *
+	 * @return string
 	 */
 	public function defaultTextCallback( $word, $sizeRange ) {
 		return Html::element( 'span', array(
@@ -127,6 +133,8 @@ class WordCloud {
 
 	/**
 	 * Get the class range using a percentage
+	 *
+	 * @param $percent
 	 *
 	 * @return Int
 	 */

@@ -1,6 +1,6 @@
 <?php
 
-// Special:Code/MediaWiki
+// Special:Code/MediaWiki/comments
 class CodeCommentsListView extends CodeView {
 	public $mRepo;
 
@@ -33,7 +33,7 @@ class CodeCommentsListView extends CodeView {
 	}
 }
 
-// Pager for CodeRevisionListView
+// Pager for CodeCommentsListView
 class CodeCommentsTablePager extends SvnTablePager {
 
 	function isFieldSortable( $field ) {

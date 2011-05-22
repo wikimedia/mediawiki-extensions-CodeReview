@@ -112,7 +112,7 @@ abstract class SvnTablePager extends TablePager {
 	protected $mView;
 
 	/**
-	 * @param  $view CodeView
+	 * @param $view CodeView
 	 *
 	 */
 	function __construct( $view ) {

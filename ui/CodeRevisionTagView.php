@@ -2,8 +2,12 @@
 
 class CodeRevisionTagView extends CodeRevisionListView {
 	function __construct( $repo, $tag ) {
-		parent::__construct( $repo );
 		$this->mTag = $tag;
+
+		if ( $this->mTag ) {
+			$this->filters[] = wfMsg( 'code-revfilter-ct_tag', $this->mTag );
+		}
+		parent::__construct( $repo );
 	}
 
 	function getPager() {

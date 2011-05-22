@@ -122,6 +122,7 @@ $messages['en'] = array(
 	'code-pathsearch-filter' => 'Filter applied:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Author = $1',
+	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-revfilter-clear' => 'Clear filter',
 	'code-rev-submit' => 'Save changes',
 	'code-rev-submit-accesskey' => 's',
