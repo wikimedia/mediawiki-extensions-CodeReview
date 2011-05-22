@@ -115,14 +115,15 @@ class CodeRevisionListView extends CodeView {
 			) .
 			$pager->getBody() .
 			//$pager->getLimitDropdown() .
-			$navBar .
-			( $this->batchForm ?
-					$this->buildBatchInterface( $pager )
-					: "" ) .
-			Xml::closeElement( 'form' )
+			$navBar
 		);
+		if ( $this->batchForm ) {
+			$wgOut->addHTML(
+				$this->buildBatchInterface( $pager )
+			);
+		}
 
-		$wgOut->addHTML( $pathForm );
+		$wgOut->addHTML( Xml::closeElement( 'form' ) . $pathForm );
 	}
 
 	function doBatchChange() {
