@@ -680,6 +680,10 @@ class CodeRevisionView extends CodeView {
 			$permaLink = $this->skin->link( $this->commentLink( $comment->id ), "#" );
 		}
 
+		$popts = $wgOut->parserOptions();
+		$popts->setEditSection( false );
+		$wgOut->parserOptions( $popts );
+
 		return Xml::openElement( 'div',
 			array(
 				'class' => 'mw-codereview-comment',
@@ -696,7 +700,7 @@ class CodeRevisionView extends CodeView {
 			$this->commentReplyLink( $comment->id ) .
 			'</div>' .
 			'<div class="mw-codereview-comment-text">' .
-			$wgOut->parse( "__NOEDITSECTION__" . $this->codeCommentLinkerWiki->link( $comment->text ) ) .
+			$wgOut->parse( $this->codeCommentLinkerWiki->link( $comment->text ) ) .
 			'</div>' .
 			$replyForm .
 			'</div>';
@@ -713,7 +717,9 @@ class CodeRevisionView extends CodeView {
 	}
 
 	protected function commentReplyLink( $id ) {
-		if ( !$this->canPostComments() ) return '';
+		if ( !$this->canPostComments() ) {
+			return '';
+		}
 		$repo = $this->mRepo->getName();
 		$rev = $this->mRev->getId();
 		$self = SpecialPage::getTitleFor( 'Code', "$repo/$rev/reply/$id" );
