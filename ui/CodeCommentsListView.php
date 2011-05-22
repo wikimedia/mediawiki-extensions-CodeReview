@@ -1,35 +1,9 @@
 <?php
 
 // Special:Code/MediaWiki/comments
-class CodeCommentsListView extends CodeView {
-	public $mRepo;
-
-	function __construct( $repo ) {
-		parent::__construct( $repo );
-
-		global $wgRequest;
-		$this->mAuthor = $wgRequest->getText( 'author' );
-	}
-
-	function execute() {
-		global $wgOut;
-		$pager = $this->getPager();
-		$limitForm = $pager->getLimitForm();
-		$wgOut->addHTML(
-			$pager->getNavigationBar() .
-			$limitForm .
-			$pager->getBody() .
-			$limitForm .
-			$pager->getNavigationBar()
-		);
-	}
-
+class CodeCommentsListView extends CodeRevisionListView {
 	function getPager() {
 		return new CodeCommentsTablePager( $this );
-	}
-
-	function getRepo() {
-		return $this->mRepo;
 	}
 }
 
@@ -51,14 +25,28 @@ class CodeCommentsTablePager extends SvnTablePager {
 			'conds' => array( 'cc_repo_id' => $this->mRepo->getId() ),
 			'join_conds' => array(
 				'code_rev' => array( 'LEFT JOIN', 'cc_repo_id = cr_repo_id AND cc_rev_id = cr_id' )
-			)
+			),
+			'options' => array(),
 		);
 
+		if( count( $this->mView->mPath ) ) {
+			$query['tables'][] = 'code_paths';
+			$query['join_conds']['code_paths'] = array( 'INNER JOIN', 'cc_repo_id = cp_repo_id AND cc_rev_id = cp_rev_id' );
+			$query['conds']['cp_path'] = $this->mView->mPath;
+		}
 		if( $this->mView->mAuthor ) {
 			$query['conds']['cc_user_text'] = $this->mView->mAuthor;
 		}
 
 	    return $query;
+	}
+
+	function getCountQuery() {
+		$query = $this->getQueryInfo();
+
+		$query['fields'] = array( 'COUNT( DISTINCT cc_id ) AS rev_count' );
+		unset( $query['options']['GROUP BY'] );
+		return $query;
 	}
 
 	function getFieldNames() {

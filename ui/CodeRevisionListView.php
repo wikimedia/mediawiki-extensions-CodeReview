@@ -100,8 +100,15 @@ class CodeRevisionListView extends CodeView {
 
 		$wgOut->addHTML(
 			$navBar .
-			'<table><tr><td>' . $pager->getLimitForm() . '</td>' .
-			'<td>&#160;<strong>' . wfMsgHtml( 'code-rev-total', $wgLang->formatNum( $revCount ) ) . '</strong></td>' .
+			'<table><tr><td>' . $pager->getLimitForm() . '</td>'
+		);
+		if ( $revCount !== -1 ) {
+			$wgOut->addHTML(
+				'<td>&#160;<strong>' . wfMsgHtml( 'code-rev-total', $wgLang->formatNum( $revCount ) ) . '</strong></td>'
+			);
+		}
+
+		$wgOut->addHTML(
 			'</tr></table>' .
 			Xml::openElement( 'form',
 				array( 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'post' )
