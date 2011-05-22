@@ -5,7 +5,6 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 		parent::__construct( $repo );
 		$this->mAuthor = $author;
 		$this->mUser = $this->mRepo->authorWikiUser( $author );
-		$this->mAppliedFilter = wfMsg( 'code-revfilter-cr_author', $author );
 	}
 
 	function getPager() {

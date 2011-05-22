@@ -4,7 +4,6 @@ class CodeRevisionStatusView extends CodeRevisionListView {
 	function __construct( $repo, $status ) {
 		parent::__construct( $repo );
 		$this->mStatus = $status;
-		$this->mAppliedFilter = wfMsg( 'code-revfilter-cr_status', $status );
 	}
 
 	function getPager() {

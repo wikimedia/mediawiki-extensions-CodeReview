@@ -25,7 +25,21 @@ class CodeRevisionListView extends CodeView {
 
 		$this->mAuthor = $wgRequest->getText( 'author' );
 		$this->mStatus = $wgRequest->getText( 'status' );
-		$this->mAppliedFilter = null;
+
+		$filters = array();
+		if ( $this->mAuthor ) {
+			$filters[] = wfMsg( 'code-revfilter-cr_author', $this->mAuthor );
+		}
+		if ( $this->mStatus ) {
+			$filters[] = wfMsg( 'code-revfilter-cr_status', $this->mStatus );
+		}
+
+		if ( count( $filters) ) {
+			global $wgLang;
+			$this->mAppliedFilter = $wgLang->listToText( $filters );
+		} else {
+			$this->mAppliedFilter = null;
+		}
 	}
 
 	/**
@@ -70,7 +84,7 @@ class CodeRevisionListView extends CodeView {
 		$revCount = $this->getRevCount( $dbr );
 
 		$pager = $this->getPager();
-		$pathForm = $this->showForm( $pager->getHiddenFields( array( 'path' ) ) );
+		$pathForm = $this->showForm( $pager );
 
 		// Build batch change interface as needed
 		$this->batchForm = $wgUser->isAllowed( 'codereview-set-status' ) ||
@@ -182,31 +196,33 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	/**
-	 * @param $hidden string
+	 * @param $pager SvnTablePager
 	 *
 	 * @return string
 	 */
-	function showForm( $hidden = '' ) {
+	function showForm( $pager ) {
 		global $wgScript;
 
-		$ret = Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-			"<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
+		$ret = "<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
 				'<table width="100%"><tr><td>' .
+				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55, $this->getPathsAsString() ) .
 				'&#160;' . Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
+				$pager->getHiddenFields( array( 'path' ) ) .
+				Xml::closeElement( 'form' ) .
 				'</td>';
 
 		if ( strlen( $this->mAppliedFilter ) ) {
 			$ret .= '<td>' .
+				Xml::openElement( 'form', array( 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'get' ) ) .
 				Xml::label( wfMsg( 'code-pathsearch-filter' ), 'revFilter' ) . '&#160;<strong>' .
 				Xml::span( $this->mAppliedFilter, '' ) . '</strong>&#160;' .
 				Xml::submitButton( wfMsg( 'code-revfilter-clear' ) ) .
+				Xml::closeElement( 'form' ) .
 				'</td>';
 		}
 
-		$ret .= $hidden;
-
-		$ret .= "</tr></table></fieldset></form>" ;
+		$ret .= "</tr></table></fieldset>" ;
 
 		return $ret;
 	}
