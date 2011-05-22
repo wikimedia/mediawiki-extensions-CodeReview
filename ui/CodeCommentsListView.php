@@ -35,7 +35,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 			$query['conds']['cp_path'] = $this->mView->mPath;
 		}
 		if( $this->mView->mAuthor ) {
-			$query['conds']['cc_user_text'] = $this->mView->mAuthor;
+			$query['conds']['cc_user_text'] = User::newFromName( $this->mView->mAuthor )->getName();
 		}
 
 	    return $query;
