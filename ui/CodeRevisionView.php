@@ -696,7 +696,7 @@ class CodeRevisionView extends CodeView {
 			$this->commentReplyLink( $comment->id ) .
 			'</div>' .
 			'<div class="mw-codereview-comment-text">' .
-			$wgOut->parse( $this->codeCommentLinkerWiki->link( $comment->text ) ) .
+			$wgOut->parse( "__NOEDITSECTION__" . $this->codeCommentLinkerWiki->link( $comment->text ) ) .
 			'</div>' .
 			$replyForm .
 			'</div>';
