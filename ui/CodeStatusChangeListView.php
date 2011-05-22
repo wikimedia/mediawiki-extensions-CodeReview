@@ -1,35 +1,13 @@
 <?php
 
 // Special:Code/MediaWiki
-class CodeStatusChangeListView extends CodeView {
-	public $mRepo;
-
-	function __construct( $repo ) {
-		parent::__construct( $repo );
-
-		global $wgRequest;
-		$this->mAuthor = $wgRequest->getText( 'author' );
-	}
-
-	function execute() {
-		global $wgOut;
-		$pager = $this->getPager();
-		$limitForm = $pager->getLimitForm();
-		$wgOut->addHTML(
-			$pager->getNavigationBar() .
-			$limitForm .
-			$pager->getBody() .
-			$limitForm .
-			$pager->getNavigationBar()
-		);
-	}
-
+class CodeStatusChangeListView extends CodeRevisionListView {
 	function getPager() {
 		return new CodeStatusChangeTablePager( $this );
 	}
 
-	function getRepo() {
-		return $this->mRepo;
+	function getRevCount( $dbr ) {
+		return -1;
 	}
 }
 
@@ -40,7 +18,9 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		return $field == 'cpc_timestamp';
 	}
 
-	function getDefaultSort() { return 'cpc_timestamp'; }
+	function getDefaultSort() {
+		return 'cpc_timestamp';
+	}
 
 	function getQueryInfo() {
 		$query = array(
@@ -49,9 +29,15 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 			'conds' => array( 'cpc_repo_id' => $this->mRepo->getId(), 'cpc_attrib' => 'status' ),
 			'join_conds' => array(
 				'code_rev' => array( 'LEFT JOIN', 'cpc_repo_id = cr_repo_id AND cpc_rev_id = cr_id' )
-			)
+			),
+			'options' => array(),
 		);
 
+		if( count( $this->mView->mPath ) ) {
+			$query['tables'][] = 'code_paths';
+			$query['join_conds']['code_paths'] = array( 'INNER JOIN', 'cpc_repo_id = cp_repo_id AND cpc_rev_id = cp_rev_id' );
+			$query['conds']['cp_path'] = $this->mView->mPath;
+		}
 		if ( $this->mView->mAuthor ) {
 			$query['conds']['cpc_user_text'] = $this->mView->mAuthor;
 		}
