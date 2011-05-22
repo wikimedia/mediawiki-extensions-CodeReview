@@ -80,6 +80,13 @@ $wgAutoloadClasses['CodeView'] = $dir . 'ui/CodeView.php';
 $wgAutoloadClasses['SpecialRepoAdmin'] = $dir . 'ui/SpecialRepoAdmin.php';
 $wgAutoloadClasses['WordCloud'] = $dir . 'ui/WordCloud.php';
 
+$wgAutoloadClasses['SvnRevTablePager'] = $dir . 'ui/CodeRevisionListView.php';
+$wgAutoloadClasses['CodeCommentsTablePager'] = $dir . 'ui/CodeCommentsListView.php';
+$wgAutoloadClasses['SvnRevAuthorTablePager'] = $dir . 'ui/CodeRevisionAuthorView.php';
+$wgAutoloadClasses['SvnRevStatusTablePager'] = $dir . 'ui/CodeRevisionStatusView.php';
+$wgAutoloadClasses['SvnRevTagTablePager'] = $dir . 'ui/CodeRevisionTagView.php';
+$wgAutoloadClasses['CodeStatusChangeTablePager'] = $dir . 'ui/CodeRevisionStatusView.php';
+
 $wgSpecialPages['Code'] = 'SpecialCode';
 $wgSpecialPageGroups['Code'] = 'developer';
 $wgSpecialPages['RepoAdmin'] = 'SpecialRepoAdmin';
