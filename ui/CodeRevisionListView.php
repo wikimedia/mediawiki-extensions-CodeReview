@@ -23,7 +23,7 @@ class CodeRevisionListView extends CodeView {
 		$path = $wgRequest->getVal( 'path' );
 
 		if ( $path != '' ) {
-			$this->mPath = array_map( array( $this, 'preparePaths' ), explode( '|', $path ) );
+			$this->mPath = self::pathsToArray( $path );
 		} else {
 			$this->mPath = array();
 		}
@@ -47,10 +47,18 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	/**
-	 * @param string $path
+	 * @param $path string
+	 * @return array
+	 */
+	public static function pathsToArray( $path ) {
+		return array_map( array( 'self', 'preparePaths' ), explode( '|', $path ) );
+	}
+
+	/**
+	 * @param $path string
 	 * @return string
 	 */
-	function preparePaths( $path ) {
+	public static function preparePaths( $path ) {
 		$path = trim( $path );
 		$path = rtrim( $path, '/' );
 		$path = htmlspecialchars( $path );

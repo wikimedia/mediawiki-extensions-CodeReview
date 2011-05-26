@@ -49,6 +49,10 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		$data = array();
 
 		$listview = new CodeRevisionListView( $repo );
+		if ( isset( $params['path'] ) && $params['path'] !== '' ) {
+			$listview->mPath = CodeRevisionListView::pathsToArray( $params['path'] );
+		}
+
 		$pager = $listview->getPager();
 
 		$revsSet = count( $params['revs'] );
@@ -133,6 +137,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
 			),
+			'path' => null,
 			'start' => array(
 				ApiBase::PARAM_TYPE => 'integer'
 			),
@@ -162,6 +167,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		return array(
 			'repo' => 'Name of the repository',
 			'limit' => 'How many revisions to return',
+			'path' => 'Only show revisions in these path(s)',
 			'start' => 'Timestamp to start listing at',
 			'revs' => "List of revisions to get information about. Overrides {$p}start",
 			'prop' => 'Which properties to return',
