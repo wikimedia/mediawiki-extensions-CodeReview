@@ -9646,6 +9646,7 @@ $messages['pl'] = array(
 	'code-pathsearch-filter' => 'Zastosowany filtr',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
+	'code-revfilter-ct_tag' => 'Znacznik = $1',
 	'code-revfilter-clear' => 'Wyczyść filtr',
 	'code-rev-submit' => 'Zapisz zmiany',
 	'code-rev-submit-next' => 'Zapisz i pokaż kolejny nierozwiązany',
@@ -10370,12 +10371,14 @@ Comentário:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Mudanças seguintes',
-	'codereview-email-body2' => 'O usuário "$1" fez alterações de seguimento à $2.
+	'codereview-email-body2' => 'O usuário "$1" fez alterações de seguimento à revisão $2.
 
 URL completa para a revisão de seguimento: $5
+Resumo da efetivação:
+
+$6
 
 URL completa: $3
-
 Resumo da efetivação:
 
 $4',
@@ -10390,14 +10393,17 @@ Resumo da efetivação:
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: Adicionado novo comentário e alterado o estado da revisão',
-	'codereview-email-body4' => 'O usuário "$1" alterou o estado de $2.
+	'codereview-email-body4' => 'O usuário "$1" alterou o estado da revisão $2.
 
-Estado anterior: $3
-Estado atual: $4
+Estado Antigo: $3
+Estado Novo: $4
 
-O usuário "$1" postou também um comentário em $2.
+O usuário "$1" também colocou um comentário em $2.
 
 URL completa: $5
+Resumo da efetivação:
+
+$7
 
 Comentário:
 
