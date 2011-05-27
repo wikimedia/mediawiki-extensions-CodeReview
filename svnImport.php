@@ -50,7 +50,7 @@ class SvnImport extends Maintenance {
 	 * @param $start Int Revision to begin the import from (Default: null, means last stored revision);
 	 */
 	private function importRepo( $repoName, $start = null, $cacheSize = 0 ) {
-		global $wgCodeReviewImportBatchSize, $wgCodeReviewMaxDiffPaths;
+		global $wgCodeReviewImportBatchSize;
 
 		$repo = CodeRepository::newFromName( $repoName );
 
@@ -154,25 +154,7 @@ class SvnImport extends Maintenance {
 				$diff = $repo->getDiff( $row->cr_id ); // trigger caching
 				$msg = "Diff r{$row->cr_id} ";
 				if ( is_integer( $diff ) ) {
-					$msg .= "Skipped: ";
-					switch ($diff) {
-						case CodeRepository::DIFFRESULT_BadRevision:
-							$msg .= "Bad revision";
-							break;
-						case CodeRepository::DIFFRESULT_NothingToCompare:
-							$msg .= "Nothing to compare";
-							break;
-						case CodeRepository::DIFFRESULT_TooManyPaths:
-							$msg .= "Too many paths (\$wgCodeReviewMaxDiffPaths = " 
-							      . $wgCodeReviewMaxDiffPaths . ")";
-							break;
-						case CodeRepository::DIFFRESULT_NoDataReturned:
-							$msg .= "No data returned - no diff data, or connection lost.";
-							break;
-						default:
-							$msg .= "Unknown reason!";
-							break;
-					}
+					$msg .= "Skipped: " . CodeRepository::getDiffErrorMessage( $diff );
 				} else {
 					$msg .= "done";
 				}

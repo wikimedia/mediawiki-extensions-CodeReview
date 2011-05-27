@@ -523,21 +523,31 @@ class CodeRepository {
 
 	/**
 	 * @static
-	 * @param int $error
-	 * @return string
+	 * @param $diff int (error code) or string (diff text), as returned from getDiff()
+	 * @return string (error message, or empty string if valid diff)
 	 */
-	public static function getDiffErrorMessage( $error ) {
-		switch( $error ) {
-			case self::DIFFRESULT_BadRevision:
-				return 'Bad revision specified.';
-			case self::DIFFRESULT_TooManyPaths:
-				return 'Too many paths returned to diff';
-			case self::DIFFRESULT_NoDataReturned:
-				return 'No data returned for diff';
-			case self::DIFFRESULT_NotInCache:
-				return 'Not in cache';
-			default:
-				return 'Unknown';
+	public static function getDiffErrorMessage( $diff ) {
+		global $wgCodeReviewMaxDiffPaths;
+
+		if ( is_integer( $diff ) ) {
+			switch( $diff ) {
+				case self::DIFFRESULT_BadRevision:
+					return 'Bad revision';
+				case self::DIFFRESULT_NothingToCompare:
+					return 'Nothing to compare';
+				case self::DIFFRESULT_TooManyPaths:
+					return 'Too many paths ($wgCodeReviewMaxDiffPaths = '
+					       . $wgCodeReviewMaxDiffPaths . ')';
+				case self::DIFFRESULT_NoDataReturned:
+					return 'No data returned - no diff data, or connection lost';
+				case self::DIFFRESULT_NotInCache:
+					return 'Not in cache';
+				default:
+					return 'Unknown reason!';
+			}
 		}
+		
+		// TODO: Should this return "", $diff or a message string, e.g. "OK"?
+		return "";
 	}
 }
