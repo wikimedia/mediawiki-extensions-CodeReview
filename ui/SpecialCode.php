@@ -50,6 +50,22 @@ class SpecialCode extends SpecialPage {
 	private function getViewFrom( $subpage ) {
 		global $wgRequest;
 
+		// Defines the classes to use for each view type.
+		// The first class name is used if no additional parameters are provided.
+		// The second, if defined, is used if there is an additional parameter.  If
+		// there is no second class defined, then the first class is used in both 
+		// cases.
+		static $paramClasses 
+			= array(
+				'tag' => array( "CodeTagListView", "CodeRevisionTagView" ),
+				'author' => array( "CodeAuthorListView", "CodeRevisionAuthorView" ),
+				'status' => array( "CodeStatusListView", "CodeRevisionStatusView" ),
+				'comments' => array( "CodeCommentsListView" ),
+				'statuschanges' => array( "CodeStatusChangeListView" ),
+				'releasenotes' => array( "CodeReleaseNotes" ),
+				'stats' => array( "CodeRepoStatsView" ),
+			);
+
 		# Remove stray slashes
 		$subpage = preg_replace( '/\/$/', '', $subpage );
 		if ( $subpage == '' ) {
@@ -71,59 +87,25 @@ class SpecialCode extends SpecialPage {
 			case 1:
 				$view = new CodeRevisionListView( $repo );
 				break;
-			case 2:
-				if ( $params[1] === 'tag' ) {
-					$view = new CodeTagListView( $repo );
-					break;
-				} elseif ( $params[1] === 'author' ) {
-					$view = new CodeAuthorListView( $repo );
-					break;
-				} elseif ( $params[1] === 'stats' ) {
-					$view = new CodeRepoStatsView( $repo );
-					break;
-				} elseif ( $params[1] === 'status' ) {
-					$view = new CodeStatusListView( $repo );
-					break;
-				} elseif ( $params[1] === 'comments' ) {
-					$view = new CodeCommentsListView( $repo );
-					break;
-				} elseif ( $params[1] === 'statuschanges' ) {
-					$view = new CodeStatusChangeListView( $repo );
-					break;
-				} elseif ( $params[1] === 'releasenotes' ) {
-					$view = new CodeReleaseNotes( $repo );
-					break;
-				} else if ( $wgRequest->wasPosted() && !$wgRequest->getCheck( 'wpPreview' ) ) {
+			case 2:		// drop through...
+			case 3:
+				if ( isset( $paramClasses[$params[1]] ) ) {
+					$row = $paramClasses[$params[1]];
+					if ( isset( $params[2] ) && isset( $row[1] ) ) {
+						$view = new $row[1]( $repo, $params[2] );
+					} else {
+						$view = new $row[0]( $repo );
+					}
+				} elseif ( $wgRequest->wasPosted() && !$wgRequest->getCheck( 'wpPreview' ) ) {
 					# This is not really a view, but we return it nonetheless.
 					# Add any tags, Set status, Adds comments
 					$view = new CodeRevisionCommitter( $repo, $params[1] );
-					break;
-				} else { // revision details
-					$view = new CodeRevisionView( $repo, $params[1] );
-					break;
-				}
-			case 3:
-				if ( $params[1] === 'tag' ) {
-					$view = new CodeRevisionTagView( $repo, $params[2] );
-					break;
-				} elseif ( $params[1] === 'author' ) {
-					$view = new CodeRevisionAuthorView( $repo, $params[2] );
-					break;
-				} elseif ( $params[1] === 'status' ) {
-					$view = new CodeRevisionStatusView( $repo, $params[2] );
-					break;
-				} elseif ( $params[1] === 'comments' ) {
-					$view = new CodeCommentsListView( $repo );
-					break;
+				} elseif ( empty( $params[1] ) ) {
+					$view = new CodeRevisionListView( $repo );
 				} else {
-					# Nonsense parameters, back out
-					if ( empty( $params[1] ) ) {
-						$view = new CodeRevisionListView( $repo );
-					} else {
-						$view = new CodeRevisionView( $repo, $params[1] );
-					}
-					break;
+					$view = new CodeRevisionView( $repo, $params[1] );
 				}
+				break;
 			case 4:
 				if ( $params[1] === 'author' && $params[3] === 'link' ) {
 					$view = new CodeRevisionAuthorLink( $repo, $params[2] );
