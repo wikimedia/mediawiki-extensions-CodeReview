@@ -8468,9 +8468,12 @@ $messages['ms'] = array(
 	'code-change-tags' => "'''label''' untuk $1 ditukar",
 	'code-change-removed' => 'membuang:',
 	'code-change-added' => 'menambah:',
+	'code-old-status' => 'Status lama',
+	'code-new-status' => 'Status baru',
 	'code-prop-changes' => 'Log status & label',
 	'codereview-desc' => '[[Special:Code|Alat semakan kod]] dengan [[Special:RepoAdmin|sokongan Subversion]]',
 	'code-no-repo' => 'Tiada gedung yang ditetapkan!',
+	'code-repo-not-found' => "Repositort '''$1''' tidak wujud!",
 	'code-load-diff' => 'Memuat perbezaan…',
 	'code-notes' => 'komen terbaru',
 	'code-authors' => 'pengarang',
@@ -8516,6 +8519,7 @@ $messages['ms'] = array(
 	'code-rev-tag-remove' => 'Buang label:',
 	'code-rev-comment-by' => 'Ulasan oleh $1',
 	'code-rev-comment-preview' => 'Pratonton',
+	'code-rev-inline-preview' => 'Pralihat:',
 	'code-rev-diff' => 'Beza',
 	'code-rev-diff-link' => 'beza',
 	'code-rev-purge-link' => 'bersihkan',
@@ -8528,6 +8532,9 @@ $messages['ms'] = array(
 	'code-signoff-field-date' => 'Tarikh',
 	'code-pathsearch-legend' => 'Cari semakan dalam gedung ini mengikut laluan',
 	'code-pathsearch-path' => 'Laluan:',
+	'code-revfilter-cr_status' => 'Status = $1',
+	'code-revfilter-cr_author' => 'Pengarang = $1',
+	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-rev-submit' => 'Simpan perubahan',
 	'code-rev-submit-next' => 'Simpan & selesaikan yang berikutnya',
 	'code-batch-status' => 'Tukar status:',
@@ -8544,10 +8551,14 @@ $messages['ms'] = array(
 	'codereview-email-body' => 'Pengguna "$1" mengirim ulasan bagi s$3.
 
 URL penuh: $2
+Ringkasan komit:
+
+$5
 
 Ulasan:
 
 $4',
+	'code-stats' => 'statistik',
 	'repoadmin' => 'Pentadbiran Gedung',
 	'repoadmin-new-legend' => 'Cipta gedung baru',
 	'repoadmin-new-label' => 'Nama gedung:',
