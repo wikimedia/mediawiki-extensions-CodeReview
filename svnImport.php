@@ -33,14 +33,20 @@ class SvnImport extends Maintenance {
 			}
 		}
 
-		$repo = $this->getArg();
+		$startRev = null;
+		if ( $this->hasArg( 1 ) ) {
+			$startRev = $this->getArg( 1 );
+		}
+
+		$repo = $this->getArg( 0 );
+
 		if ( $repo == "all" ) {
 			$repoList = CodeRepository::getRepoList();
 			foreach ( $repoList as $repoInfo ) {
-				$this->importRepo( $repoInfo->getName(), null, $cacheSize );
+				$this->importRepo( $repoInfo->getName(), $startRev, $cacheSize );
 			}
 		} else {
-			$this->importRepo( $repo, $this->getArg( 1 ), $cacheSize );
+			$this->importRepo( $repo, $startRev, $cacheSize );
 		}
 	}
 
@@ -69,6 +75,7 @@ class SvnImport extends Maintenance {
 		$startTime = microtime( true );
 		$revCount = 0;
 		$start = ( $start !== null ) ? intval( $start ) : $lastStoredRev + 1;
+
 		/*
 		 * FIXME: when importing only a part of a repository, the given path
 		 * might not have been created with revision 1. For example, the
