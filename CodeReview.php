@@ -290,6 +290,8 @@ function efCodeReviewSchemaUpdates( $updater ) {
 			"$base/archives/code_signoffs_userid-sqlite.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_timestamp_struck',
 			"$base/archives/code_signoffs_timestamp_struck.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addIndex', 'code_paths', 'repo_path',
+			"$base/archives/codereview-repopath.sql", true ) );
 		break;
 	case 'postgres':
 		// TODO
