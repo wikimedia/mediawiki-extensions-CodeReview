@@ -116,6 +116,7 @@ CREATE TABLE /*_*/code_paths (
   primary key (cp_repo_id, cp_rev_id, cp_path)
 ) /*$wgDBTableOptions*/;
 
+CREATE INDEX /*i*/repo_path ON /*_*/code_paths (cp_repo_id, cp_path);
 
 -- And for our commenting system...
 -- To specify follow-up relationships...

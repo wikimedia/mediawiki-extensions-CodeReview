@@ -278,6 +278,9 @@ function efCodeReviewSchemaUpdates( $updater ) {
 			$updater->addExtensionUpdate( array( 'modifyField', 'code_prop_changes', 'cpc_attrib',
 				"$base/archives/codereview-cpc_attrib_varchar.sql", true ) );
 		}
+
+		$updater->addExtensionUpdate( array( 'addIndex', 'code_paths', 'repo_path',
+			"$base/archives/codereview-repopath.sql", true ) );
 		break;
 	case 'sqlite':
 		$updater->addNewExtension( 'CodeReview', "$base/codereview.sql" );
