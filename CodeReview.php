@@ -41,6 +41,7 @@ $wgAutoloadClasses['ApiCodeUpdate'] = $dir . 'api/ApiCodeUpdate.php';
 $wgAutoloadClasses['ApiCodeDiff'] = $dir . 'api/ApiCodeDiff.php';
 $wgAutoloadClasses['ApiRevisionUpdate'] = $dir . 'api/ApiRevisionUpdate.php';
 $wgAutoloadClasses['ApiQueryCodeComments'] = $dir . 'api/ApiQueryCodeComments.php';
+$wgAutoloadClasses['ApiQueryCodePaths'] = $dir . 'api/ApiQueryCodePaths.php';
 $wgAutoloadClasses['ApiQueryCodeRevisions'] = $dir . 'api/ApiQueryCodeRevisions.php';
 $wgAutoloadClasses['ApiQueryCodeTags'] = $dir . 'api/ApiQueryCodeTags.php';
 $wgAutoloadClasses['CodeRevisionCommitterApi'] = $dir . 'api/CodeRevisionCommitterApi.php';
@@ -96,6 +97,7 @@ $wgAPIModules['codeupdate'] = 'ApiCodeUpdate';
 $wgAPIModules['codediff'] = 'ApiCodeDiff';
 $wgAPIModules['coderevisionupdate'] ='ApiRevisionUpdate';
 $wgAPIListModules['codecomments'] = 'ApiQueryCodeComments';
+$wgAPIListModules['codepaths'] = 'ApiQueryCodePaths';
 $wgAPIListModules['coderevisions'] = 'ApiQueryCodeRevisions';
 $wgAPIListModules['codetags'] = 'ApiQueryCodeTags';
 
