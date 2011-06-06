@@ -38,7 +38,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 		}
 
 		$this->addTables( 'code_paths' );
-		$this->addFields( 'cp_path' );
+		$this->addFields( 'DISTINCT cp_path' );
 		$this->addWhere( array( 'cp_repo_id' => $repo->getId() ) );
 		$db = $this->getDB();
 
