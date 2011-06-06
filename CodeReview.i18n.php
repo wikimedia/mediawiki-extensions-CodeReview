@@ -3603,9 +3603,12 @@ $messages['es'] = array(
 	'codereview-subtitle' => 'Para $1',
 	'codereview-reply-link' => 'responder',
 	'codereview-email-subj' => '[$1 $2]: Añadido nuevo comentario',
-	'codereview-email-body' => 'El usuario «$1» envió un comentario en $3.
+	'codereview-email-body' => 'El usuario "$1" envió un comentario en $3.
 
 URL completa: $2
+Resumen de  confirmaciones:
+
+$5
 
 Comentario:
 
@@ -3614,9 +3617,11 @@ $4',
 	'codereview-email-body2' => 'El usuario "$1" ha hecho de modificaciones de seguimiento a $2.
 
 URL completa para la revisión de seguimiento: $5
+Resumen de confirmaciones:
+
+$6
 
 URL completa : $3
-
 Resumen de las confirmaciones:
 
 $4',
@@ -3624,7 +3629,12 @@ $4',
 	'codereview-email-body3' => 'El usuario "$1" modificó el estado de $2.
 
 Estado antiguo: $3
-Estado nuevo: $4',
+Estado nuevo: $4
+
+URL completa: $5
+Resumen de confirmaciones:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Nuevo comentario añadido, y cambiado el estado de la revisión',
 	'codereview-email-body4' => 'El usuario "$1" modificó el estado de $2.
 
@@ -3634,6 +3644,9 @@ Estado nuevo: $4
 El usuario "$1" ha escrito también un comentario en $2.
 
 URL completa: $5
+Resumen de confirmaciones:
+
+$7
 
 Comentario:
 
