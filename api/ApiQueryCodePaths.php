@@ -28,7 +28,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 		global $wgUser;
 		// Before doing anything at all, let's check permissions
 		if ( !$wgUser->isAllowed( 'codereview-use' ) ) {
-			$this->dieUsage( 'You don\'t have permission to view code tags', 'permissiondenied' );
+			$this->dieUsage( 'You don\'t have permission to view code paths', 'permissiondenied' );
 		}
 		$params = $this->extractRequestParams();
 
@@ -88,7 +88,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 
 	public function getPossibleErrors() {
 		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to view code comments' ),
+			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to view code paths' ),
 			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
 		) );
 	}

@@ -71,7 +71,7 @@ class ApiQueryCodeTags extends ApiQueryBase {
 
 	public function getPossibleErrors() {
 		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to view code comments' ),
+			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to view code tags' ),
 			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
 		) );
 	}
