@@ -1966,6 +1966,7 @@ $messages['bs'] = array(
 	'code-pathsearch-filter' => 'Primijenjen filter:',
 	'code-revfilter-cr_status' => 'Stanje = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
+	'code-revfilter-ct_tag' => 'Oznaka = $1',
 	'code-revfilter-clear' => 'Očisti filtere',
 	'code-rev-submit' => 'Spremi izmjene',
 	'code-rev-submit-next' => 'Spremi i prikaži slijedeći nerješeni',
