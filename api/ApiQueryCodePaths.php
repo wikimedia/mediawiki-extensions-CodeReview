@@ -43,6 +43,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 		$db = $this->getDB();
 
 		$this->addWhere( 'cp_path ' . $db->buildLike( $params['path'], $db->anyString() ) );
+		$this->addOption( 'USE INDEX', 'repo_path' );
 
 		$this->addOption( 'LIMIT', 10 );
 
