@@ -764,7 +764,9 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function signoffButtons( $signOffs ) {
 		$userSignOffs = $this->getUserSignoffs( $signOffs );
-		$strikeButton = Xml::submitButton( wfMsg( 'code-signoff-strike' ), array( 'name' => 'wpStrikeSignoffs' ) );
+		$strikeButton = count( $userSignOffs )
+			? Xml::submitButton( wfMsg( 'code-signoff-strike' ), array( 'name' => 'wpStrikeSignoffs' ) )
+			: '';
 		$signoffText = wfMsgHtml( 'code-signoff-signoff' );
 		$signoffButton = Xml::submitButton( wfMsg( 'code-signoff-submit' ), array( 'name' => 'wpSignoff' ) );
 		$checks = '';
