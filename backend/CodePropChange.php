@@ -9,14 +9,27 @@ class CodePropChange {
 	 */
 	public $rev;
 
+	/**
+	 * @param $rev CodeRevision
+	 */
 	function __construct( $rev ) {
 		$this->rev = $rev;
 	}
 
+	/**
+	 * @param $rev CodeRevision
+	 * @param $row
+	 * @return CodePropChange
+	 */
 	static function newFromRow( $rev, $row ) {
 		return self::newFromData( $rev, get_object_vars( $row ) );
 	}
 
+	/**
+	 * @param $rev CodeRevision
+	 * @param $data
+	 * @return CodePropChange
+	 */
 	static function newFromData( $rev, $data ) {
 		$change = new CodePropChange( $rev );
 		$change->attrib = $data['cpc_attrib'];

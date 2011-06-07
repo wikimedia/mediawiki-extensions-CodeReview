@@ -165,8 +165,8 @@ class CodeRevision {
 	 * confusing (e.g. in e-mails, page titles etc.).  If only one repository is
 	 * defined then this returns the same as getIdString() as there is no ambiguity.
 	 *
-	 * @param null $id
-	 * @return
+	 * @param $id int
+	 * @return string
 	 */
 	public function getIdStringUnique( $id = null ) {
 		if ( $id === null ) {
@@ -743,7 +743,7 @@ class CodeRevision {
 		return $comments;
 	}
 
-	/*
+	/**
 	 * @return int
 	 */
 	public function getCommentCount() {
@@ -813,8 +813,10 @@ class CodeRevision {
 	}
 
 	/**
-	* "Review" being revision commenters, and people who set/removed tags and changed the status
-	*/
+	 * "Review" being revision commenters, and people who set/removed tags and changed the status
+	 *
+	 * @return array
+	 */
 	public function getReviewContributingUsers() {
 		return array_merge( $this->getCommentingUsers(), $this->getPropChangeUsers() );
 	}
@@ -936,7 +938,7 @@ class CodeRevision {
 
 	/**
 	 * Get all sign-offs for this revision
-	 * @param $from DB_SLAVE or DB_MASTER
+	 * @param $from int DB_SLAVE or DB_MASTER
 	 * @return array of CodeSignoff objects
 	 */
 	public function getSignoffs( $from = DB_SLAVE ) {
@@ -1018,10 +1020,9 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $addTags
-	 * @param  $removeTags
-	 * @param null $user
-	 * @return void
+	 * @param $addTags array
+	 * @param $removeTags array
+	 * @param $user User
 	 */
 	public function changeTags( $addTags, $removeTags, $user = null ) {
 		// Get the current tags and see what changes
@@ -1258,9 +1259,8 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $status
-	 * @param  $oldStatus
-	 * @return void
+	 * @param $status string
+	 * @param $oldStatus string
 	 */
 	protected function sendStatusToUDP( $status, $oldStatus ) {
 		global $wgCodeReviewUDPAddress, $wgCodeReviewUDPPort, $wgCodeReviewUDPPrefix, $wgUser;

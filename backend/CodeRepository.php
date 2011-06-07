@@ -33,7 +33,7 @@ class CodeRepository {
 	 * @param $id Int Database id for the repo
 	 * @param $name String User-defined name for the repository
 	 * @param $path String Path to SVN
-	 * @param $viewVc String Base path to ViewVC URLs
+	 * @param $viewvc String Base path to ViewVC URLs
 	 * @param $bugzilla String Base path to Bugzilla
 	 */
 	public function  __construct( $id, $name, $path, $viewvc, $bugzilla ) {
@@ -44,6 +44,10 @@ class CodeRepository {
 		$this->bugzilla = $bugzilla;
 	}
 
+	/**
+	 * @param $name string
+	 * @return CodeRepository|null
+	 */
 	public static function newFromName( $name ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$row = $dbw->selectRow(
@@ -64,6 +68,10 @@ class CodeRepository {
 		}
 	}
 
+	/**
+	 * @param $id int
+	 * @return CodeRepository|null
+	 */
 	public static function newFromId( $id ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$row = $dbw->selectRow(
@@ -84,6 +92,10 @@ class CodeRepository {
 		}
 	}
 
+	/**
+	 * @param $row
+	 * @return CodeRepository
+	 */
 	static function newFromRow( $row ) {
 		return new CodeRepository(
 			intval( $row->repo_id ),
@@ -94,6 +106,9 @@ class CodeRepository {
 		);
 	}
 
+	/**
+	 * @return array
+	 */
 	static function getRepoList() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$options = array( 'ORDER BY' => 'repo_name' );
@@ -105,28 +120,46 @@ class CodeRepository {
 		return $repos;
 	}
 
+	/**
+	 * @return int
+	 */
 	public function getId() {
 		return intval( $this->id );
 	}
 
+	/**
+	 * @return String
+	 */
 	public function getName() {
 		return $this->name;
 	}
 
+	/**
+	 * @return String
+	 */
 	public function getPath() {
 		return $this->path;
 	}
 
+	/**
+	 * @return String
+	 */
 	public function getViewVcBase() {
 		return $this->viewVc;
 	}
 
+	/**
+	 * @return String
+	 */
 	public function getBugzillaBase() {
 		return $this->bugzilla;
 	}
 
 	/**
-	 * Return a bug URL or false.
+	 * Return a bug URL or false
+	 *
+	 * @param $bugId int|string
+	 * @return string|false.
 	 */
 	public function getBugPath( $bugId ) {
 		if ( $this->bugzilla ) {
@@ -136,6 +169,9 @@ class CodeRepository {
 		return false;
 	}
 
+	/**
+	 * @return int
+	 */
 	public function getLastStoredRev() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$row = $dbr->selectField(
@@ -147,6 +183,9 @@ class CodeRepository {
 		return intval( $row );
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getAuthorList() {
 		global $wgMemc;
 		$key = wfMemcKey( 'codereview', 'authors', $this->getId() );
@@ -173,6 +212,9 @@ class CodeRepository {
 		return $authors;
 	}
 
+	/**
+	 * @return int
+	 */
 	public function getAuthorCount() {
 		return count( $this->getAuthorList() );
 	}
@@ -208,6 +250,8 @@ class CodeRepository {
 
 	/**
 	 * Load a particular revision out of the DB
+	 * @param $id int|string
+	 * @return CodeRevision
 	 */
 	public function getRevision( $id ) {
 		if ( !$this->isValidRev( $id ) ) {
@@ -231,6 +275,9 @@ class CodeRepository {
 	/**
 	 * Returns the supplied revision ID as a string ready for output, including the
 	 * appropriate (localisable) prefix (e.g. "r123" instead of 123).
+	 *
+	 * @param $id string
+	 * @return string
 	 */
 	public function getRevIdString( $id ) {
 		return wfMsg( 'code-rev-id', $id );
@@ -244,6 +291,9 @@ class CodeRepository {
 	 * confusing (e.g. in e-mails, page titles etc.).  If only one repository is
 	 * defined then this returns the same as getRevIdString() as there
 	 * is no ambiguity.
+	 *
+	 * @param $id string
+	 * @return string
 	 */
 	public function getRevIdStringUnique( $id ) {
 		$id = wfMsg( 'code-rev-id', $id );
@@ -258,8 +308,8 @@ class CodeRepository {
 	}
 
 	/**
-	 * @param int $rev Revision ID
-	 * @param $useCache 'skipcache' to avoid caching
+	 * @param $rev int Revision ID
+	 * @param $useCache string 'skipcache' to avoid caching
 	 *                   'cached' to *only* fetch if cached
 	 * @return string|int The diff text on success, a DIFFRESULT_* constant on failure.
 	 */
@@ -471,6 +521,9 @@ class CodeRepository {
 	/**
 	 * returns a User object if $author has a wikiuser associated,
 	 * or false
+	 *
+	 * @param $author string
+	 *
 	 * @return User|bool
 	 */
 	public function authorWikiUser( $author ) {
@@ -503,6 +556,10 @@ class CodeRepository {
 	/**
 	 * returns an author name if $name wikiuser has an author associated,
 	 * or false
+	 *
+	 * @param $name string
+	 *
+	 * @return string|false
 	 */
 	public function wikiUserAuthor( $name ) {
 		if ( isset( self::$authorLinks[$name] ) )

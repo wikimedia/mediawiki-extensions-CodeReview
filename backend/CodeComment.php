@@ -3,14 +3,32 @@
 class CodeComment {
 	public $id, $text, $user, $userText, $timestamp, $review, $sortkey, $attrib, $removed, $added;
 
+	/**
+	 * @var CodeRevision
+	 */
+	public $rev;
+
+	/**
+	 * @param $rev CodeRevision
+	 */
 	function __construct( $rev ) {
 		$this->rev = $rev;
 	}
 
+	/**
+	 * @param $rev Revision
+	 * @param $row
+	 * @return CodeComment
+	 */
 	static function newFromRow( $rev, $row ) {
 		return self::newFromData( $rev, get_object_vars( $row ) );
 	}
 
+	/**
+	 * @param $rev Revision
+	 * @param $data array
+	 * @return CodeComment
+	 */
 	static function newFromData( $rev, $data ) {
 		$comment = new CodeComment( $rev );
 		$comment->id = intval( $data['cc_id'] );
@@ -23,6 +41,9 @@ class CodeComment {
 		return $comment;
 	}
 
+	/**
+	 * @return int
+	 */
 	function threadDepth() {
 		$timestamps = explode( ",", $this->sortkey );
 		return count( $timestamps );

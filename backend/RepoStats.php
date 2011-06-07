@@ -1,6 +1,10 @@
 <?php
 
 class RepoStats {
+
+	/**
+	 * @var CodeRepository
+	 */
 	private $repo;
 
 	public $time;
@@ -11,6 +15,10 @@ class RepoStats {
 		$states,
 		$fixmes;
 
+	/**
+	 * @param CodeRepository $repo
+	 * @return RepoStats
+	 */
 	public static function newFromRepo( CodeRepository $repo ) {
 		global $wgMemc, $wgCodeReviewRepoStatsCacheTime;
 
@@ -28,6 +36,9 @@ class RepoStats {
 		return $stats;
 	}
 
+	/**
+	 * @param $repo CodeRepository
+	 */
 	public function __construct( CodeRepository $repo ) {
 		$this->repo = $repo;
 		$this->time = wfTimestamp( TS_MW );

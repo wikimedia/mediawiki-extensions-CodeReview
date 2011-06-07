@@ -9,7 +9,6 @@ class CodeRevisionView extends CodeView {
 	 * @param string|CodeRepository $repo
 	 * @param string|CodeRevision $rev
 	 * @param null $replyTarget
-	 *
 	 */
 	function __construct( $repo, $rev, $replyTarget = null ) {
 		parent::__construct( $repo );
@@ -57,6 +56,10 @@ class CodeRevisionView extends CodeView {
 			$wgRequest->getIntArray( 'wpReferences', array() ) : array();
 	}
 
+	/**
+	 * @param $item string
+	 * @return int
+	 */
 	private function ltrimIntval( $item ) {
 		$item = ltrim( $item, 'r' );
 		return intval( $item );
@@ -240,6 +243,9 @@ class CodeRevisionView extends CodeView {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function canPostComments() {
 		global $wgUser;
 		return $wgUser->isAllowed( 'codereview-post-comment' ) && !$wgUser->isBlocked();
@@ -332,6 +338,10 @@ class CodeRevisionView extends CodeView {
 		return $tags;
 	}
 
+	/**
+	 * @param $tags array
+	 * @return string
+	 */
 	static function listTags( $tags ) {
 		if ( empty( $tags ) ) {
 			return "";
@@ -339,6 +349,9 @@ class CodeRevisionView extends CodeView {
 		return implode( ",", $tags );
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function statusForm() {
 		global $wgUser;
 		if ( $wgUser->isAllowed( 'codereview-set-status' ) ) {
@@ -366,7 +379,12 @@ class CodeRevisionView extends CodeView {
 		return $out;
 	}
 
-	/** Parameters are the tags to be added/removed sent with the request */
+	/**
+	 * Parameters are the tags to be added/removed sent with the request
+	 * @param $addTags array
+	 * @param $removeTags array
+	 * @return string
+	 */
 	static function addTagForm( $addTags, $removeTags ) {
 		return '<div><table><tr><td>' .
 			Xml::inputLabel( wfMsg( 'code-rev-tag-add' ), 'wpTag', 'wpTag', 20,
@@ -375,12 +393,19 @@ class CodeRevisionView extends CodeView {
 				self::listTags( $removeTags ) ) . '</td></tr></table></div>';
 	}
 
+	/**
+	 * @param $tag string
+	 * @return string
+	 */
 	protected function formatTag( $tag ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/tag/$tag" );
 		return $this->skin->link( $special, htmlspecialchars( $tag ) );
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function formatDiff() {
 		global $wgEnableAPI, $wgCodeReviewMaxDiffSize;
 
@@ -413,6 +438,9 @@ class CodeRevisionView extends CodeView {
 		}
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function formatImgDiff() {
 		global $wgCodeReviewImgRegex;
 		// Get image diffs
@@ -445,6 +473,12 @@ class CodeRevisionView extends CodeView {
 		return $html;
 	}
 
+	/**
+	 * @param $path
+	 * @param $rev
+	 * @param $message
+	 * @return string
+	 */
 	protected function formatImgCell( $path, $rev, $message ) {
 		$viewvc = $this->mRepo->getViewVcBase();
 		$safePath = wfUrlEncode( $path );
@@ -464,6 +498,9 @@ class CodeRevisionView extends CodeView {
 						'border' => '0' ) ) ) );
 	}
 
+	/**
+	 * @return bool|string
+	 */
 	protected function stubDiffLoader() {
 		global $wgOut;
 		$encRepo = Xml::encodeJsVar( $this->mRepo->getName() );
@@ -480,6 +517,7 @@ class CodeRevisionView extends CodeView {
 	
 	/**
 	 * Format the sign-offs table
+	 * @param $signOffs array
 	 * @param $showButtons bool Whether the buttons to strike and submit sign-offs should be shown
 	 * @return string HTML
 	 */
@@ -500,6 +538,9 @@ class CodeRevisionView extends CodeView {
 		return "<table border='1' class='TablePager'><tr>$header</tr>$signoffs$buttonrow</table>";
 	}
 
+	/**
+	 * @return bool|string
+	 */
 	protected function formatComments() {
 		$comments = implode( "\n",
 			array_map( array( $this, 'formatCommentInline' ), $this->mRev->getComments() )
@@ -513,6 +554,9 @@ class CodeRevisionView extends CodeView {
 		return "<div class='mw-codereview-comments'>$comments</div>";
 	}
 
+	/**
+	 * @return bool|string
+	 */
 	protected function formatPropChanges() {
 		$changes = implode( "\n",
 			array_map( array( $this, 'formatChangeInline' ), $this->mRev->getPropChanges() )
@@ -523,6 +567,11 @@ class CodeRevisionView extends CodeView {
 		return "<ul class='mw-codereview-changes'>$changes</ul>";
 	}
 
+	/**
+	 * @param $references array
+	 * @param $showButtons bool
+	 * @return string
+	 */
 	protected function formatReferences( $references, $showButtons ) {
 		$this->showButtonsFormatReference = $showButtons;
 		$refs = implode( "\n",
@@ -583,7 +632,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param  $change CodePropChange
+	 * @param $change CodePropChange
 	 * @return string
 	 */
 	protected function formatChangeInline( $change ) {
@@ -623,6 +672,10 @@ class CodeRevisionView extends CodeView {
 		return "<li>$line</li>";
 	}
 
+	/**
+	 * @param $row
+	 * @return string
+	 */
 	protected function formatReferenceInline( $row ) {
 		global $wgLang;
 		$rev = intval( $row->cr_id );
@@ -644,6 +697,10 @@ class CodeRevisionView extends CodeView {
 		return $ret;
 	}
 
+	/**
+	 * @param $commentId int
+	 * @return Title
+	 */
 	protected function commentLink( $commentId ) {
 		$repo = $this->mRepo->getName();
 		$rev = $this->mRev->getId();
@@ -652,6 +709,9 @@ class CodeRevisionView extends CodeView {
 		return $title;
 	}
 
+	/**
+	 * @return Title
+	 */
 	protected function revLink() {
 		$repo = $this->mRepo->getName();
 		$rev = $this->mRev->getId();
@@ -659,6 +719,11 @@ class CodeRevisionView extends CodeView {
 		return $title;
 	}
 
+	/**
+	 * @param $text string
+	 * @param $review int
+	 * @return string
+	 */
 	protected function previewComment( $text, $review = 0 ) {
 		$comment = $this->mRev->previewComment( $text, $review );
 		return $this->formatComment( $comment );
@@ -716,6 +781,10 @@ class CodeRevisionView extends CodeView {
 		return "margin-left: ${margin}px";
 	}
 
+	/**
+	 * @param $id int
+	 * @return string
+	 */
 	protected function commentReplyLink( $id ) {
 		if ( !$this->canPostComments() ) {
 			return '';
@@ -760,6 +829,8 @@ class CodeRevisionView extends CodeView {
 	/**
 	 * Render the bottom row of the sign-offs table containing the buttons to
 	 * strike and submit sign-offs
+	 *
+	 * @param $signOffs array
 	 * @return string HTML
 	 */
 	protected function signoffButtons( $signOffs ) {
@@ -815,6 +886,9 @@ class CodeRevisionView extends CodeView {
 			"<div class='mw-codereview-associateform'>$associateText $textbox $associateButton</div></td></tr>";
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function addActionButtons() {
 		return '<div>' .
 			Xml::submitButton( wfMsg( 'code-rev-submit' ),

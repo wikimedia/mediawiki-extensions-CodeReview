@@ -98,7 +98,7 @@ class CodeSignoff {
 	/**
 	 * Create a CodeSignoff object from a revision and a database row in array format
 	 * @param $rev CodeRevision object the signoff belongs to
-	 * @param $row array Database row with cs_* fields from code_signoffs
+	 * @param $data array Database row with cs_* fields from code_signoffs
 	 * @return CodeSignoff
 	 */
 	public static function newFromData( $rev, $data ) {
