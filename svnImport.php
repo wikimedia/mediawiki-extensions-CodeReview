@@ -33,19 +33,18 @@ class SvnImport extends Maintenance {
 			}
 		}
 
-		$startRev = null;
-		if ( $this->hasArg( 1 ) ) {
-			$startRev = $this->getArg( 1 );
-		}
-
 		$repo = $this->getArg( 0 );
 
 		if ( $repo == "all" ) {
 			$repoList = CodeRepository::getRepoList();
 			foreach ( $repoList as $repoInfo ) {
-				$this->importRepo( $repoInfo->getName(), $startRev, $cacheSize );
+				$this->importRepo( $repoInfo->getName(), null, $cacheSize );
 			}
 		} else {
+			$startRev = null;
+			if ( $this->hasArg( 1 ) ) {
+				$startRev = $this->getArg( 1 );
+			}
 			$this->importRepo( $repo, $startRev, $cacheSize );
 		}
 	}
