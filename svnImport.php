@@ -56,6 +56,7 @@ class SvnImport extends Maintenance {
 	 */
 	private function importRepo( $repoName, $start = null, $cacheSize = 0 ) {
 		global $wgCodeReviewImportBatchSize;
+		static $adaptorReported = false;
 
 		$repo = CodeRepository::newFromName( $repoName );
 
@@ -65,7 +66,12 @@ class SvnImport extends Maintenance {
 		}
 
 		$svn = SubversionAdaptor::newFromRepo( $repo->getPath() );
-		$this->output( "Using " . get_class($svn). " adaptor\n" );
+		if ( !$adaptorReported ) {
+			$this->output( "Using " . get_class($svn). " adaptor\n" );
+			$adaptorReported = true;
+		}
+
+		$this->output( "IMPORT FROM REPO: $repoName\n" );
 		$lastStoredRev = $repo->getLastStoredRev();
 		$this->output( "Last stored revision: $lastStoredRev\n" );
 
@@ -85,7 +91,7 @@ class SvnImport extends Maintenance {
 			return;
 		}
 
-		$this->output( "Syncing repo $repoName from r$start to HEAD...\n" );
+		$this->output( "Syncing from r$start to HEAD...\n" );
 
 		if ( !$svn->canConnect() ) {
 			$this->error( "Unable to connect to repository." );
