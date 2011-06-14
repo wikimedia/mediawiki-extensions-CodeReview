@@ -1755,6 +1755,7 @@ $messages['br'] = array(
 	'code-pathsearch-filter' => 'Sil arloet :',
 	'code-revfilter-cr_status' => 'Statud = $1',
 	'code-revfilter-cr_author' => 'Aozer = $1',
+	'code-revfilter-ct_tag' => 'Tikedenn = $1',
 	'code-revfilter-clear' => 'Diverkañ ar sil',
 	'code-rev-submit' => "Enrollañ ar c'hemmoù",
 	'code-rev-submit-next' => "Enrollañ & kudenn war-lerc'h",
