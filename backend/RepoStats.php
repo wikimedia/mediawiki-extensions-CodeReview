@@ -13,7 +13,8 @@ class RepoStats {
 	public $revisions,
 		$authors,
 		$states,
-		$fixmes;
+		$fixmes,
+		$new;
 
 	/**
 	 * @param CodeRepository $repo
@@ -71,10 +72,22 @@ class RepoStats {
 			$this->states[$row->cr_status] = $row->revs;
 		}
 
-		$this->fixmes = array();
+		$this->fixmes = $this->getAuthorStatusCounts( 'fixme' );
+		$this->new = $this->getAuthorStatusCounts( 'new' );
+
+		wfProfileOut( __METHOD__ );
+	}
+
+	/**
+	 * @param $status string
+	 *
+	 * @return array
+	 */
+	private function getAuthorStatusCounts( $status ) {
+		$array = array();
 		$res = $dbr->select( 'code_rev',
 			array( 'COUNT(*) AS revs', 'cr_author' ),
-			array( 'cr_repo_id' => $this->repo->getId(), 'cr_status' => 'fixme' ),
+			array( 'cr_repo_id' => $this->repo->getId(), 'cr_status' => $status ),
 			__METHOD__,
 			array(
 				'GROUP BY' => 'cr_author',
@@ -83,9 +96,8 @@ class RepoStats {
 			)
 		);
 		foreach ( $res as $row ) {
-			$this->fixmes[$row->cr_author] = $row->revs;
+			$array[$row->cr_author] = $row->revs;
 		}
-
-		wfProfileOut( __METHOD__ );
+		return $array;
 	}
 }
