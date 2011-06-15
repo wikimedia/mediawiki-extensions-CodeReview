@@ -60,7 +60,7 @@ class CodeRepoStatsView extends CodeView {
 			. '<tr><th>' . wfMsgHtml( 'code-field-author' ) . '</th><th>'
 			. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
 		$title = SpecialPage::getTitleFor( 'Code', $repoName . "/status/{$status}" );
-		foreach ( array as $user => $count ) {
+		foreach ( $array as $user => $count ) {
 			$count = htmlspecialchars( $wgLang->formatNum( $count ) );
 			$link = $this->skin->link(
 				$title,
