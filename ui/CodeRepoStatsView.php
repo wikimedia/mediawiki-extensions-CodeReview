@@ -56,7 +56,7 @@ class CodeRepoStatsView extends CodeView {
 	function writeAuthorStatusTable( $status, $array ) {
 		global $wgOut, $wgLang;
 		$repoName = $this->mRepo->getName();
-		$wgOut->wrapWikiMsg( "<h3 id=\"stats-{$status}\">$1</h3>", 'code-stats-{$status}-breakdown' );
+		$wgOut->wrapWikiMsg( "<h3 id=\"stats-{$status}\">$1</h3>", "code-stats-{$status}-breakdown" );
 		$wgOut->addHTML( '<table class="TablePager">'
 			. '<tr><th>' . wfMsgHtml( 'code-field-author' ) . '</th><th>'
 			. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
