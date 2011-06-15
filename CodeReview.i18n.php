@@ -200,6 +200,7 @@ $6',
 	'code-stats-main' => 'As of $1, the repository has $2 {{PLURAL:$2|revision|revisions}} by [[Special:Code/$3/author|$4 {{PLURAL:$4|author|authors}}]].',
 	'code-stats-status-breakdown' => 'Number of revisions per state',
 	'code-stats-fixme-breakdown' => 'Breakdown of fixmes per author',
+	'code-stats-new-breakdown' => 'Breakdown of new revisions per author',
 	'code-stats-count' => 'Number of revisions',
 
 	'repoadmin' => 'Repository Administration',

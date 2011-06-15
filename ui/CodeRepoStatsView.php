@@ -41,22 +41,36 @@ class CodeRepoStatsView extends CodeView {
 		}
 
 		if ( !empty( $stats->fixmes ) ) {
-			$wgOut->wrapWikiMsg( '<h3 id="stats-fixme">$1</h3>', 'code-stats-fixme-breakdown' );
-			$wgOut->addHTML( '<table class="TablePager">'
-				. '<tr><th>' . wfMsgHtml( 'code-field-author' ) . '</th><th>'
-				. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
-			foreach ( $stats->fixmes as $user => $count ) {
-				$count = htmlspecialchars( $wgLang->formatNum( $count ) );
-				$link = $this->skin->link(
-					SpecialPage::getTitleFor( 'Code', $repoName . '/status/fixme' ),
-					htmlspecialchars( $user ),
-					array(),
-					array( 'author' => $user )
-				);
-				$wgOut->addHTML( "<tr><td>$link</td>"
-					. "<td>$count</td></tr>" );
-			}
-			$wgOut->addHTML( '</table>' );
+			$this->writeAuthorStatusTable( 'fixme', $stats->fixmes );
 		}
+
+		if ( !empty( $stats->new ) ) {
+			$this->writeAuthorStatusTable( 'new', $stats->new );
+		}
+	}
+
+	/**
+	 * @param $status string
+	 * @param $array array
+	 */
+	function writeAuthorStatusTable( $status, $array ) {
+		global $wgOut;
+		$wgOut->wrapWikiMsg( "<h3 id=\"stats-{$status}\">$1</h3>", 'code-stats-{$status}-breakdown' );
+		$wgOut->addHTML( '<table class="TablePager">'
+			. '<tr><th>' . wfMsgHtml( 'code-field-author' ) . '</th><th>'
+			. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
+		$title = SpecialPage::getTitleFor( 'Code', $repoName . "/status/{$status}" );
+		foreach ( array as $user => $count ) {
+			$count = htmlspecialchars( $wgLang->formatNum( $count ) );
+			$link = $this->skin->link(
+				$title,
+				htmlspecialchars( $user ),
+				array(),
+				array( 'author' => $user )
+			);
+			$wgOut->addHTML( "<tr><td>$link</td>"
+				. "<td>$count</td></tr>" );
+		}
+		$wgOut->addHTML( '</table>' );
 	}
 }
