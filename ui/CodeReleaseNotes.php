@@ -99,7 +99,7 @@ class CodeReleaseNotes extends CodeView {
 		if ( preg_match( '/(^|\n) ?\*/', $summary ) ) {
 			$blurbs = explode( '*', $summary );
 		# Double newlines separate importance generally
-		} else if ( strpos( $summary, "\n\n" ) !== false ) {
+		} elseif ( strpos( $summary, "\n\n" ) !== false ) {
 			$blurbs = explode( "\n\n", $summary );
 		} else {
 			return trim( $summary );
@@ -121,7 +121,7 @@ class CodeReleaseNotes extends CodeView {
 				if ( $header && $first && count( $summary ) == 0 ) {
 					$summary[] = $this->shortenSummary( $blurb, true );
 				# Is this bit important? Does it mention a revision?
-				} else if ( $this->isRelevant( $blurb ) || preg_match( '/\br(\d+)\b/', $blurb ) ) {
+				} elseif ( $this->isRelevant( $blurb ) || preg_match( '/\br(\d+)\b/', $blurb ) ) {
 					$bit = $this->shortenSummary( $blurb, false );
 					if ( $bit ) $summary[] = $bit;
 				}

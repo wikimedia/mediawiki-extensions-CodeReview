@@ -123,12 +123,12 @@ class CodeRevisionCommitter extends CodeRevisionView {
 					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
 					$this->mRev->getStatus(), $url, $this->text, $this->mRev->getMessage()
 				);
-			} else if ( $statusChanged ) {
+			} elseif ( $statusChanged ) {
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj3', 'codereview-email-body3',
 					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
 					$this->mRev->getStatus(), $url, $this->mRev->getMessage()
 				);
-			} else if ( $commentAdded ) {
+			} elseif ( $commentAdded ) {
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj', 'codereview-email-body',
 					$wgUser->getName(), $url, $this->mRev->getIdStringUnique(), $this->text,
 					$this->mRev->getMessage()

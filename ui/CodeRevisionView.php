@@ -514,7 +514,7 @@ class CodeRevisionView extends CodeView {
 			);" );
 		return wfMsg( 'code-load-diff' );
 	}
-	
+
 	/**
 	 * Format the sign-offs table
 	 * @param $signOffs array
@@ -652,7 +652,7 @@ class CodeRevisionView extends CodeView {
 				$line .= wfMsgHtml( 'code-status-' . $change->removed );
 				$line .= $change->added ? "&#160;" : ""; // spacing
 			// Tag changes
-			} else if ( $change->attrib == 'tags' ) {
+			} elseif ( $change->attrib == 'tags' ) {
 				$line .= htmlspecialchars( $change->removed );
 				$line .= $change->added ? "&#160;" : ""; // spacing
 			}
@@ -850,7 +850,7 @@ class CodeRevisionView extends CodeView {
 				) ) .
 				' ' . Xml::label( wfMsg( "code-signoff-flag-$flag" ), "wpSignoffFlags-$flag" ) . ' ';
 		}
-		return "<tr class='mw-codereview-signoffbuttons'><td colspan='4'>$strikeButton " . 
+		return "<tr class='mw-codereview-signoffbuttons'><td colspan='4'>$strikeButton " .
 			"<div class='mw-codereview-signoffchecks'>$signoffText $checks $signoffButton</div></td></tr>";
 	}
 
