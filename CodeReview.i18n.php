@@ -7981,9 +7981,17 @@ $4',
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Eitvys200
  * @author Matasg
  */
 $messages['lt'] = array(
+	'code' => 'Kodo peržiūra',
+	'code-rev-title' => '$1 - kodo peržiura',
+	'code-comments' => 'Komentarai',
+	'code-change-removed' => 'pašalintas:',
+	'code-change-added' => 'Pridėtas:',
+	'code-old-status' => 'Senas statusas',
+	'code-new-status' => 'Naujas statusas',
 	'repoadmin-new-button' => 'Sukurti',
 	'repoadmin-edit-button' => 'Gerai',
 );
@@ -10133,7 +10141,7 @@ $messages['pt'] = array(
 	'code-status-fixme' => 'corrigir',
 	'code-status-desc-fixme' => 'Esta revisão introduz um defeito ou não funciona. Precisa de correcção.',
 	'code-status-reverted' => 'revertido',
-	'code-status-desc-reverted' => 'A revisão foi descartada por outra revisão posterior.',
+	'code-status-desc-reverted' => 'A revisão foi desfeita por outra revisão posterior.',
 	'code-status-resolved' => 'resolvido',
 	'code-status-desc-resolved' => 'A revisão tinha um problema que foi resolvido numa revisão posterior.',
 	'code-status-ok' => 'ok',
@@ -10224,8 +10232,9 @@ $6',
 	'code-stats' => 'estatísticas',
 	'code-stats-header' => 'Estatísticas do repositório $1',
 	'code-stats-main' => 'À data de $1, o repositório tinha $2 {{PLURAL:$2|revisão|revisões}} de [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autores}}]].',
-	'code-stats-status-breakdown' => 'Número de revisões por estado',
-	'code-stats-fixme-breakdown' => 'Detalhe de correcções por autor',
+	'code-stats-status-breakdown' => 'Número de revisões, por estado',
+	'code-stats-fixme-breakdown' => 'Detalhe das revisões de correcção, por autor',
+	'code-stats-new-breakdown' => 'Detalhe das novas revisões, por autor',
 	'code-stats-count' => 'Número de revisões',
 	'repoadmin' => 'Administração do Repositório',
 	'repoadmin-new-legend' => 'Criar um repositório novo',
@@ -13973,7 +13982,8 @@ $6',
 	'code-stats-header' => 'Thống kê của kho $1',
 	'code-stats-main' => 'Vào $1, kho được sửa đổi $2 lần bởi [[Special:Code/$3/author|$4 người dùng]].',
 	'code-stats-status-breakdown' => 'Số thay đổi cho mỗi trạng thái',
-	'code-stats-fixme-breakdown' => 'Chú thích cần sửa từng tác giả',
+	'code-stats-fixme-breakdown' => 'Thay đổi được đánh dấu là cần sửa từng tác giả',
+	'code-stats-new-breakdown' => 'Thay đổi mới được đánh dấu là cần sửa từng tác giả',
 	'code-stats-count' => 'Số thay đổi',
 	'repoadmin' => 'Quản lý kho dữ liệu',
 	'repoadmin-new-legend' => 'Tạo kho dữ liệu',
