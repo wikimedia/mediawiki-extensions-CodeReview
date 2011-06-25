@@ -288,14 +288,20 @@ class CodeRevisionView extends CodeView {
 		if ( $viewvc ) {
 			$rev = $this->mRev->getId();
 			$prev = $rev - 1;
-			if ( $action !== 'D' ) {
-				$link = $this->skin->makeExternalLink(
-					"$viewvc$safePath?view=markup&pathrev=$rev",
-					$path . $from );
+			if ( $action === 'd' ) {
+				if ( $rev > 1 ) {
+					$link = $this->skin->makeExternalLink( // last rev
+						"{$viewvc}{$safePath}?view=markup&pathrev=".($rev-1),
+						$path . $from );
+				} else {
+					$link = $safePath; // imported to SVN or something
+				}
 			} else {
-				$link = $safePath;
+				$link = $this->skin->makeExternalLink(
+					"{$viewvc}{$safePath}?view=markup&pathrev=$rev",
+					$path . $from );
 			}
-			if ( $action !== 'A' && $action !== 'D' ) {
+			if ( $action !== 'a' && $action !== 'd' ) {
 				$diff = ' (' .
 					$this->skin->makeExternalLink(
 						"$viewvc$safePath?&pathrev=$rev&r1=$prev&r2=$rev",
