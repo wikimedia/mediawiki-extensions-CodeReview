@@ -15,11 +15,9 @@ jQuery( function( $ ) {
 		mw.util.addPortletLink(
 				portlet,
 				'#',
-				'Overview',
+				mw.msg( 'codereview-overview-title' ),
 				'ca-scapmap',
-				'Show a graphical overview of this list.',
-				'1',
-				'' // Nextnode, needs to be defined but we actually don't care
+				mw.msg( 'codereview-overview-desc' )
 				);
 	}
 
@@ -43,9 +41,11 @@ jQuery( function( $ ) {
 		$tr.each( function( i ){
 			var status = false;
 
-			var trc = $(this).attr( 'class' ).split(' ');
-			if( !trc.length ) {
+			var trc = $(this).attr( 'class' );
+			if( !trc || !trc.length ) {
 				return;
+			} else {
+				trc = trc.split( ' ' );
 			}
 			for( var j = 0; j < trc.length; j++ ) {
 				if( trc[j].substring( 0, 21 ) == 'mw-codereview-status-' ) {
@@ -78,7 +78,6 @@ jQuery( function( $ ) {
 			if( !totals[statusname] ) {
 				totals[statusname] = 0;
 			}
-
 			totals[statusname]++;
 
 			$(this).attr( 'id', 'TablePager-row-' + rev );
@@ -86,7 +85,7 @@ jQuery( function( $ ) {
 			$td.filter( '.TablePager_col_selectforchange' )
 				.append( $( '<a href="#box-' + i + '" class="overview-backlink">^</a>' ) );
 
-			var $box = $( '<a href="#TablePager-row-' + rev + '" class="box-status-' + status + '" id="box-' + i + '"> </a>' );
+			var $box = $( '<a href="#TablePager-row-' + rev + '" class="mw-codereview-status-' + status + '" id="box-' + i + '"> </a>' );
 			$( '#overviewmap' ).append( $box );
 		});
 

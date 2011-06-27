@@ -175,7 +175,8 @@ $wgResourceModules['ext.codereview.tooltips'] = array(
 $wgResourceModules['ext.codereview.overview'] = array(
 	'scripts' => 'ext.codereview.overview.js',
 	'styles' => 'ext.codereview.overview.css',
-	'dependencies' => 'jquery.tipsy'
+	'dependencies' => 'jquery.tipsy',
+	'messages' => array( 'codereview-overview-title', 'codereview-overview-desc' ),
 ) + $commonModuleInfo;
 
 // If you are running a closed svn, fill the following two lines with the username and password

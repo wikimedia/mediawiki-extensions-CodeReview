@@ -142,6 +142,9 @@ $messages['en'] = array(
 
 	'codereview-reply-link' => 'reply',
 
+	'codereview-overview-title' => 'Overview',
+	'codereview-overview-desc' => 'Show a graphical overview of this list',
+
 	'codereview-email-subj' => '[$1 $2]: New comment added',
 	'codereview-email-body' => 'User "$1" posted a comment on $3.
 
