@@ -131,7 +131,7 @@ jQuery( function( $ ) {
 					'</span> (<span id="overviewpop-status">' + overviewPopupData[id]['status'] + '</span>)</div>' +
 					'<div>Number of notes: <span id="overviewpop-notes">' + overviewPopupData[id]['notes'] + '</span></div>' +
 					'<div>Path: <span id="overviewpop-path">' + overviewPopupData[id]['path'] + '</span></div>' +
-					'<div>Author: r<span id="overviewpop-author">' + overviewPopupData[id]['author'] + '</span></div>' +
+					'<div>Author: <span id="overviewpop-author">' + overviewPopupData[id]['author'] + '</span></div>' +
 					//'<div>Live: <span id="overviewpop-live">' + overviewPopupData[id]['live'] + '</span></div>' +
 					'</div>')
 				$el.attr( 'title', $popup.html() );
