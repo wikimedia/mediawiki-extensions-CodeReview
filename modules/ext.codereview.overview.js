@@ -41,7 +41,6 @@ jQuery( function( $ ) {
 		var vpath = $( '#path' ).val();
 		var totals = {};
 		$tr.each( function( i ){
-			var live = 'notlive';
 			var status = false;
 
 			var trc = $(this).attr( 'class' ).split(' ');
@@ -49,9 +48,6 @@ jQuery( function( $ ) {
 				return;
 			}
 			for( var j = 0; j < trc.length; j++ ) {
-				// WMF doesn't use live/not live ATM
-				// if( /mw\-codereview\-(not|)live/.test( trc[j] ) )
-				// 	live = trc[j].substring( 14 );
 				if( trc[j].substring( 0, 21 ) == 'mw-codereview-status-' ) {
 					status = trc[j].substring( 21 );
 				}
@@ -60,7 +56,7 @@ jQuery( function( $ ) {
 
 			var statusname = $td.filter( '.TablePager_col_cr_status' ).text();
 
-			if( !statusname || !status || !live ) {
+			if( !statusname || !status ) {
 				return;
 			}
 
@@ -79,15 +75,11 @@ jQuery( function( $ ) {
 			}
 			overviewPopupData[i]['path'] = path;
 
-			//overviewPopupData[i]['live'] = live;
 			if( !totals[statusname] ) {
 				totals[statusname] = 0;
 			}
-			//if( !totals[live] ) {
-			//	totals[live] = 0;
-			//}
+
 			totals[statusname]++;
-			//totals[live]++;
 
 			$(this).attr( 'id', 'TablePager-row-' + rev );
 
@@ -95,7 +87,6 @@ jQuery( function( $ ) {
 				.append( $( '<a href="#box-' + i + '" class="overview-backlink">^</a>' ) );
 
 			var $box = $( '<a href="#TablePager-row-' + rev + '" class="box-status-' + status + '" id="box-' + i + '"> </a>' );
-			// $box.append( document.createTextNode( live ) );
 			$( '#overviewmap' ).append( $box );
 		});
 
@@ -132,7 +123,6 @@ jQuery( function( $ ) {
 					'<div>Number of notes: <span id="overviewpop-notes">' + overviewPopupData[id]['notes'] + '</span></div>' +
 					'<div>Path: <span id="overviewpop-path">' + overviewPopupData[id]['path'] + '</span></div>' +
 					'<div>Author: <span id="overviewpop-author">' + overviewPopupData[id]['author'] + '</span></div>' +
-					//'<div>Live: <span id="overviewpop-live">' + overviewPopupData[id]['live'] + '</span></div>' +
 					'</div>')
 				$el.attr( 'title', $popup.html() );
 				$el.data( 'codeTooltip', true );
