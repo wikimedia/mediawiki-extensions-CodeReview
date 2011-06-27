@@ -34,7 +34,7 @@ class CodeRevisionView extends CodeView {
 		$this->mAddTags = $wgRequest->getText( 'wpTag' );
 		$this->mRemoveTags = $wgRequest->getText( 'wpRemoveTag' );
 		$this->mStatus = $wgRequest->getText( 'wpStatus' );
-		$this->jumpToNext = $wgRequest->getCheck( 'wpSaveAndNext' );
+		$this->jumpToNext = $wgRequest->getCheck( 'wpSaveAndNext' ) || $wgRequest->getCheck( 'wpNext' );
 		$this->mReplyTarget = $replyTarget ?
 			(int)$replyTarget : $wgRequest->getIntOrNull( 'wpParent' );
 		$this->text = $wgRequest->getText( "wpReply{$this->mReplyTarget}" );
@@ -904,6 +904,10 @@ class CodeRevisionView extends CodeView {
 			Xml::submitButton( wfMsg( 'code-rev-submit-next' ),
 				array( 'name' => 'wpSaveAndNext',
 					'accesskey' => wfMsg( 'code-rev-submit-next-accesskey' ) )
+			) . ' ' .
+			Xml::submitButton( wfMsg( 'code-rev-next' ),
+				array( 'name' => 'wpNext',
+					'accesskey' => wfMsg( 'code-rev-next-accesskey' ) )
 			) . ' ' .
 			Xml::submitButton( wfMsg( 'code-rev-comment-preview' ),
 				array( 'name' => 'wpPreview',

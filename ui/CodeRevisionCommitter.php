@@ -29,7 +29,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 
 		// Return to rev page
 		if ( !$redirTarget ) {
-			// Was "next & unresolved" clicked?
+			// Was "next" (or "save & next") clicked?
 			if ( $this->jumpToNext ) {
 				$next = $this->mRev->getNextUnresolved( $this->mPath );
 				if ( $next ) {

@@ -128,6 +128,8 @@ $messages['en'] = array(
 	'code-rev-submit-accesskey' => 's',
 	'code-rev-submit-next' => 'Save & next unresolved',
 	'code-rev-submit-next-accesskey' => '',
+	'code-rev-next' => 'Next unresolved',
+	'code-rev-next-accesskey' => '',
 	'code-batch-status' => 'Change status:',
 	'code-batch-tags' => 'Change tags:',
 	'codereview-batch-title' => 'Change all selected revisions',
@@ -311,6 +313,7 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-rev-submit' => 'Caption of the button used to Save changes when viewing a revision.
 {{Identical|Save changes}}',
 	'code-rev-submit-next' => 'Caption of the button used when viewing a revision to Save changes moving to next unresolved revision.',
+	'code-rev-next' => 'Caption of the button used when viewing a revision to move to the next unresolved revision.',
 	'codereview-batch-submit' => '{{Identical|Submit}}',
 	'codereview-subtitle' => '{{Identical|For $1}}
 ----
