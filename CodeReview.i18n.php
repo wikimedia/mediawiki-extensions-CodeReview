@@ -206,6 +206,9 @@ $6',
 	'code-stats-new-breakdown' => 'Breakdown of new revisions per author',
 	'code-stats-count' => 'Number of revisions',
 
+	'code-tooltip-withsummary' => 'r$1 [$2] by $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] by $3',
+
 	'repoadmin' => 'Repository Administration',
 	'repoadmin-new-legend' => 'Create a new repository',
 	'repoadmin-new-label' => 'Repository name:',
@@ -301,7 +304,7 @@ A "sign-off" is a concept in code review that means that the person doing the si
 * {{msg-mw|code-signoff-flag-inspected}}
 * {{msg-mw|code-signoff-flag-tested}}',
 	'code-signoff-field-date' => 'Table column header: timestamp of the sign-off. {{Identical|Date}}',
-	'code-signoff-struckdate' => 'This is displayed in the date column for a struck sign-off. $1 is the timestamp of the sign-off, $2 is the timestamp of when it was struck. 
+	'code-signoff-struckdate' => 'This is displayed in the date column for a struck sign-off. $1 is the timestamp of the sign-off, $2 is the timestamp of when it was struck.
 Struck is the past tense of verb strike (as in delete).',
 	'code-pathsearch-path' => '{{Identical|Path}}',
 	'code-revfilter-cr_status' => '{{Identical|Status}}',
@@ -1004,7 +1007,7 @@ $messages['ba'] = array(
 	'codereview-email-body' => '"$1" ҡулланыусыһы $3 өсөн аңлатма өҫтәне.
 
 Тулы URL: $2
-Ҡыҫҡаса тасуирлама: 
+Ҡыҫҡаса тасуирлама:
 
 $5
 
@@ -1015,7 +1018,7 @@ $4',
 	'codereview-email-body2' => '"$1" ҡатнашыусыһы $2 өлгөһөнә артабанғы үҙгәрештәр кереткән.
 
 Алдағы өлгөнөң тулы URL адресы: $5
-Ҡыҫҡаса тасуирлама: 
+Ҡыҫҡаса тасуирлама:
 
 $6
 
@@ -1814,7 +1817,7 @@ Statud nevez : $4
 Postet ez eus bet un evezhiadenn war $2 gant an implijer "$1" ivez.
 
 URL klok : $5
-Diverrañ eus ar c\'hemmoù : 
+Diverrañ eus ar c\'hemmoù :
 
 $7
 
@@ -2861,7 +2864,7 @@ $messages['diq'] = array(
 	'codereview-subtitle' => 'Qe $1',
 	'codereview-reply-link' => 'cewab bide',
 	'codereview-email-subj' => '[$1 $2]: Xulasayê newî de biyo',
-	'codereview-email-body' => 'Karberê "$1"î yew xulasa se $3 rê nuşt. 
+	'codereview-email-body' => 'Karberê "$1"î yew xulasa se $3 rê nuşt.
 
 Full URL: $2
 
@@ -2869,7 +2872,7 @@ Xulasa:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Vurnayîşan kontrol bike',
-	'codereview-email-body2' => 'Karberê "$1"î,  $2  vurna. 
+	'codereview-email-body2' => 'Karberê "$1"î,  $2  vurna.
 
 Full URL: $3
 
@@ -2877,7 +2880,7 @@ Xulasa:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Regression otomatik test keno',
-	'codereview-email-body3' => 'Qe vurnayîşê $1î otomatik test yew regression mucna. 
+	'codereview-email-body3' => 'Qe vurnayîşê $1î otomatik test yew regression mucna.
 
 Full URL: $2
 
@@ -3215,7 +3218,7 @@ $4',
 $6
 
 Πλήρες URL: $3
-Σύνοψη της καταχώρησης: 
+Σύνοψη της καταχώρησης:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Η κατάσταση της αλλαγής άλλαξε',
@@ -3237,7 +3240,7 @@ $6',
 Ο χρήστης "$1" επίσης απέστειλε σχόλιο για το $2.
 
 Πλήρες URL: $5
-Σύνοψη της καταχώρησης: 
+Σύνοψη της καταχώρησης:
 
 $7
 
@@ -4451,7 +4454,7 @@ Résumé de la modification :
 
 $4',
 	'codereview-email-subj3' => '[$1 $2] : l’état de la version a changé',
-	'codereview-email-body3' => 'L’utilisateur « $1 » a modifié l’état de $2. 
+	'codereview-email-body3' => 'L’utilisateur « $1 » a modifié l’état de $2.
 
 Ancien état : $3
 Nouvel état : $4
@@ -8440,7 +8443,7 @@ $2 എന്നതിന് ഉപയോക്താവ് "$1" ഒരു കു
 
 $7
 
-അഭിപ്രായം: 
+അഭിപ്രായം:
 
 $6',
 	'code-stats' => 'സ്ഥിതിവിവരക്കണക്കുകൾ',
@@ -13013,7 +13016,7 @@ Tabşyrma düşündirişi:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Awtomatik synag regressiýany ýüze çykardy',
-	'codereview-email-body3' => '$1 üçin üýtgeşmeler zerarly awtomatik synag bir regressiýany ýüze çykardy. 
+	'codereview-email-body3' => '$1 üçin üýtgeşmeler zerarly awtomatik synag bir regressiýany ýüze çykardy.
 
 Doly URL: $2
 
@@ -13216,7 +13219,7 @@ Bagong kalagayan: $4
 Nagpaskil din ang tagagamit na si "$1" ng isang puna sa $2.
 
 Buong URL: $5
-Buod ng pagsasagawa: 
+Buod ng pagsasagawa:
 
 $7
 

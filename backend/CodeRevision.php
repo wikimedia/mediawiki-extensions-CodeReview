@@ -240,6 +240,20 @@ class CodeRevision {
 	}
 
 	/**
+	 * @return array
+	 */
+	public static function getPossibleStateMessageKeys() {
+		return array_map( array( 'self', 'makeStateMessageKey'), self::getPossibleStates() );
+	}
+
+	/**
+	 * @param $key string
+	 * @return string
+	 */
+	private static function makeStateMessageKey( $key ) {
+		return "code-status-$key";
+	}
+	/**
 	 * List of all flags a user can mark themself as having done to a revision
 	 * @return Array
 	 */
@@ -446,7 +460,7 @@ class CodeRevision {
 					// No sense in notifying the author of this rev if they are a commenter/the author on the target rev
 					if ( $commitAuthorId == $user->getId() ) {
 						continue;
-					}	
+					}
 
 					if ( $user->canReceiveEmail() ) {
 						// Send message in receiver's language

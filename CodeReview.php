@@ -168,7 +168,8 @@ $wgResourceModules['ext.codereview.loaddiff'] = array(
 // Revision tooltips CodeRevisionView:
 $wgResourceModules['ext.codereview.tooltips'] = array(
 	'scripts' => 'ext.codereview.tooltips.js',
-	'dependencies' => 'jquery.tipsy'
+	'dependencies' => 'jquery.tipsy',
+	'messages' => array_merge( CodeRevision::getPossibleStateMessageKeys(), array( 'code-tooltip-withsummary', 'code-tooltip-withoutsummary' ) ),
 ) + $commonModuleInfo;
 
 // Revision 'scapmap':
@@ -203,7 +204,7 @@ $wgCodeReviewMaxDiffSize = 500000;
 
 /**
  * The maximum number of paths that we will perform a diff on.
- * If a revision contains more changed paths than this, we will skip getting the 
+ * If a revision contains more changed paths than this, we will skip getting the
  * diff altogether.
  * May be set to 0 to indicate no limit.
  */

@@ -12,7 +12,7 @@ var CodeTooltipsInit = function() {
 		if ( !matches ) {
 			return;
 		}
-		
+
 		function showTooltip() {
 			var $el = $( this );
 			if ( $el.data('codeTooltip') ) {
@@ -45,10 +45,19 @@ var CodeTooltipsInit = function() {
 
 					var tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">'
 						+ 'r' + matches[2]
-						+ ' [' + status + '] by '
+						+ ' [' + mw.msg( 'codereview-status-' + status ) + '] by '
 						+ author
 						+ ( rev['*'] ? ' - ' + text : '' )
 						+ '</div>';
+
+					var tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">';
+
+					if ( rev[*] ) {
+						tip += mw.msg( 'code-tooltip-withsummary', matches[2], mw.msg( 'codereview-status-' + status ), author, text );
+					} else {
+						tip += mw.msg( 'code-tooltip-withoutsummary', matches[2], mw.msg( 'codereview-status-' + status ), author );
+					}
+					tip += '</div>';
 					$el.attr( 'title', tip );
 					$el.data( 'codeTooltip', true );
 					if ( !$el.data( 'codeTooltipLeft' ) ) {
@@ -57,7 +66,7 @@ var CodeTooltipsInit = function() {
 				}
 			);
 		}
-		
+
 		// We want to avoid doing API calls just because someone accidentally moves the mouse
 		// over a link, so we only want to do an API call after the mouse has been on a link
 		// for 250ms.
@@ -80,7 +89,7 @@ var CodeTooltipsInit = function() {
 				// Clear the running timer
 				clearTimeout( timerID );
 			}
-			
+
 			if ( $el.data( 'codeTooltip' ) || !$el.data( 'codeTooltipLoading' ) ) {
 				return;
 			}
