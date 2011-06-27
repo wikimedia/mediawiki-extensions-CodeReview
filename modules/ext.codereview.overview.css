@@ -53,19 +53,15 @@
 }
 .box-status-reverted {
 	background:  #bbddee !important;
-} 
+}
 .box-status-reverted:hover {
 	background:  #66bbff !important;
 }
 .box-status-deferred {
 	background:  #dddddd !important;
-} 
+}
 .box-status-deferred:hover {
 	background:  #aaaaaa !important;
-}
-
-.box-live-live {
-	border: 1px solid #00ff00 !important;
 }
 
 table.TablePager tr:target {
