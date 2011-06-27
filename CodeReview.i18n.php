@@ -304,8 +304,7 @@ A "sign-off" is a concept in code review that means that the person doing the si
 * {{msg-mw|code-signoff-flag-inspected}}
 * {{msg-mw|code-signoff-flag-tested}}',
 	'code-signoff-field-date' => 'Table column header: timestamp of the sign-off. {{Identical|Date}}',
-	'code-signoff-struckdate' => 'This is displayed in the date column for a struck sign-off. $1 is the timestamp of the sign-off, $2 is the timestamp of when it was struck.
-Struck is the past tense of verb strike (as in delete).',
+	'code-signoff-struckdate' => 'This is displayed in the date column for a struck sign-off. $1 is the timestamp of the sign-off, $2 is the timestamp of when it was struck. Struck is the past tense of verb strike (as in delete).',
 	'code-pathsearch-path' => '{{Identical|Path}}',
 	'code-revfilter-cr_status' => '{{Identical|Status}}',
 	'code-revfilter-cr_author' => '{{Identical|Author}}',

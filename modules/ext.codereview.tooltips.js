@@ -43,13 +43,6 @@ var CodeTooltipsInit = function() {
 					var status = mw.html.escape( rev.status );
 					var author = mw.html.escape( rev.author );
 
-					var tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">'
-						+ 'r' + matches[2]
-						+ ' [' + mw.msg( 'codereview-status-' + status ) + '] by '
-						+ author
-						+ ( rev['*'] ? ' - ' + text : '' )
-						+ '</div>';
-
 					var tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">';
 
 					if ( rev[*] ) {
