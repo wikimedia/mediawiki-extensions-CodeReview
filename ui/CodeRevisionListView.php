@@ -325,6 +325,9 @@ class SvnRevTablePager extends SvnTablePager {
 		if( $this->mView->mAuthor ) {
 			$query['conds']['cr_author'] = $this->mView->mAuthor;
 		}
+		if( $this->mView->mStatus ) {
+			$query['conds']['cr_status'] = $this->mView->mStatus;
+		}
 		return $query;
 	}
 
