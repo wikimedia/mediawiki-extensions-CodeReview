@@ -45,7 +45,7 @@ var CodeTooltipsInit = function() {
 
 					var tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">';
 
-					if ( rev[*] ) {
+					if ( rev['*'] ) {
 						tip += mw.msg( 'code-tooltip-withsummary', matches[2], mw.msg( 'codereview-status-' + status ), author, text );
 					} else {
 						tip += mw.msg( 'code-tooltip-withoutsummary', matches[2], mw.msg( 'codereview-status-' + status ), author );
