@@ -1782,6 +1782,7 @@ $messages['br'] = array(
 	'code-release-endrev' => 'Aweladenn ziwezhañ :',
 	'codereview-subtitle' => 'Evit $1',
 	'codereview-reply-link' => 'respont',
+	'codereview-overview-title' => 'Brassell',
 	'codereview-email-subj' => '[$1 $2] : evezhiadenn nevez bet ouzhpennet',
 	'codereview-email-body' => 'Lakaet en deus an implijer "$1" un evezhiadenn war $3.
 
@@ -5389,7 +5390,7 @@ $messages['he'] = array(
 	'code-signoff-legend' => 'הוספת חתימה',
 	'code-signoff-submit' => 'חתימה',
 	'code-signoff-strike' => 'סימון החתימות הנבחרות בקו חוצה',
-	'code-signoff-signoff' => 'לחתום על גרסה זו ולסמנה בתור:',
+	'code-signoff-signoff' => 'לחתום על גרסה זו ולסמן שהיא:',
 	'code-signoff-flag-inspected' => 'נבחנה',
 	'code-signoff-flag-tested' => 'נבדקה',
 	'code-signoff-field-user' => 'משתמש',
