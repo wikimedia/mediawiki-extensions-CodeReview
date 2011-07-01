@@ -109,7 +109,7 @@ class CodeRevisionView extends CodeView {
 			$paths .= $this->formatPathLine( $row->cp_path, $row->cp_action );
 		}
 		if ( $paths ) {
-			$paths = "<div class='mw-codereview-paths'><ul>\n$paths</ul></div>\n";
+			$paths = "<div class='mw-codereview-paths' dir='ltr'><ul>\n$paths</ul></div>\n";
 		}
 		$comments = $this->formatComments();
 		$commentsLink = "";
@@ -216,7 +216,7 @@ class CodeRevisionView extends CodeView {
 		if ( $viewvc ) {
 			$url = htmlspecialchars( "$viewvc/?view=rev&revision=$rev" );
 			$viewvcTxt = wfMsgHtml( 'code-rev-rev-viewvc' );
-			$revText .= " (<a href=\"$url\" title=\"revision $rev\">$viewvcTxt</a>)";
+			$revText .= " (<a href=\"$url\" title=\"revision $rev\">$viewvcTxt</a>)".$wgLang->getDirMark();
 		}
 		$links[] = $revText;
 

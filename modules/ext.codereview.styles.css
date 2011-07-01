@@ -121,6 +121,9 @@ table.mw-codereview-meta td {
 }
 
 /* Diffs */
+.mw-codereview-diff {
+	/* @noflip */direction: ltr; /* Source code is always LTR */
+}
 .mw-codereview-diff ins {
 	text-decoration: none;
 	color: green;

@@ -226,7 +226,8 @@ class CodeRevisionListView extends CodeView {
 		$ret = "<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
 				'<table width="100%"><tr><td>' .
 				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55, $this->getPathsAsString() ) .
+				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55,
+					$this->getPathsAsString(), array( 'dir' => 'ltr' ) ) .
 				'&#160;' . Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
 				$pager->getHiddenFields( array( 'path' ) ) .
 				Xml::closeElement( 'form' ) .
@@ -434,7 +435,7 @@ class SvnRevTablePager extends SvnTablePager {
 				$options['status'] = $this->mView->mStatus;
 			}
 
-			return Xml::openElement( 'div', array( 'title' => (string)$value ) ) .
+			return Xml::openElement( 'div', array( 'title' => (string)$value, 'dir' => 'ltr' ) ) .
 					$this->mView->skin->link(
 						SpecialPage::getTitleFor( 'Code', $title ),
 						$wgLang->truncate( (string)$value, 50 ),
