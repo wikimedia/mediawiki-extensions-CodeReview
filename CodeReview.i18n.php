@@ -4702,7 +4702,7 @@ $6',
 	'code-stats-header' => 'Statistiques por lo dèpôt $1',
 	'code-stats-main' => 'A la dâta du $1, lo dèpôt at $2 {{PLURAL:$2|rèvision fêta|rèvisions fêtes}} per [[Special:Code/$3/author|$4 ôtor{{PLURAL:$4||s}}]].',
 	'code-stats-status-breakdown' => 'Nombro de rèvisions per ètat',
-	'code-stats-fixme-breakdown' => 'Ègzamen de les rèvisions a corregiér per ôtor',
+	'code-stats-fixme-breakdown' => 'Ventilacion de les rèvisions a corregiér per ôtor',
 	'code-stats-count' => 'Nombro de rèvisions',
 	'repoadmin' => 'Administracion des dèpôts',
 	'repoadmin-new-legend' => 'Fâre un dèpôt novél',
@@ -7777,6 +7777,8 @@ $messages['lb'] = array(
 	'code-release-endrev' => 'Lescht Versioun:',
 	'codereview-subtitle' => 'Fir $1',
 	'codereview-reply-link' => 'äntwerten',
+	'codereview-overview-title' => 'Iwwersiicht',
+	'codereview-overview-desc' => 'Eng grafesch Iwwersiicht vun dëser Lëscht wesien',
 	'codereview-email-subj' => '[$1 $2]: Nei Bemierkung derbäigesat',
 	'codereview-email-body' => 'De Benotzer "$1" huet eng Bemierkung op $3 hannerlooss.
 
