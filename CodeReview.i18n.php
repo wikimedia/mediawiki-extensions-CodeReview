@@ -8439,6 +8439,7 @@ $messages['ml'] = array(
 	'codereview-subtitle' => 'റെപ്പോസിറ്ററി $1',
 	'codereview-reply-link' => 'മറുപടി',
 	'codereview-overview-title' => 'അവലോകനം',
+	'codereview-overview-desc' => 'ഈ പട്ടികയുടെ ഗ്രാഫിക്കൽ അവലോകനം പ്രദർശിപ്പിക്കുക',
 	'codereview-email-subj' => '[$1 $2]: പുതിയ അഭിപ്രായം ചേർത്തിരിക്കുന്നു',
 	'codereview-email-body' => '$3 താളിൽ "$1" എന്ന ഉപയോക്താവ് ഒരു അഭിപ്രായം ചേർത്തിരിക്കുന്നു.
 
