@@ -216,7 +216,7 @@ class CodeRevisionView extends CodeView {
 		if ( $viewvc ) {
 			$url = htmlspecialchars( "$viewvc/?view=rev&revision=$rev" );
 			$viewvcTxt = wfMsgHtml( 'code-rev-rev-viewvc' );
-			$revText .= " (<a href=\"$url\" title=\"revision $rev\">$viewvcTxt</a>)".$wgLang->getDirMark();
+			$revText .= " (<a href=\"$url\" title=\"revision $rev\">$viewvcTxt</a>)".wfUILang()->getDirMark();
 		}
 		$links[] = $revText;
 
@@ -782,8 +782,7 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	protected function commentStyle( $comment ) {
-		global $wgLang;
-		$align = $wgLang->AlignStart();
+		$align = wfUILang()->AlignStart();
 		$depth = $comment->threadDepth();
 		$margin = ( $depth - 1 ) * 48;
 		return "margin-$align: ${margin}px";
