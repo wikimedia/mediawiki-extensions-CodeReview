@@ -109,7 +109,7 @@ class CodeRevisionView extends CodeView {
 			$paths .= $this->formatPathLine( $row->cp_path, $row->cp_action );
 		}
 		if ( $paths ) {
-			$paths = "<div class='mw-codereview-paths' dir='ltr'><ul>\n$paths</ul></div>\n";
+			$paths = "<div class='mw-codereview-paths mw-content-ltr'><ul>\n$paths</ul></div>\n";
 		}
 		$comments = $this->formatComments();
 		$commentsLink = "";
@@ -741,7 +741,7 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	protected function formatComment( $comment, $replyForm = '' ) {
-		global $wgOut, $wgLang;
+		global $wgOut, $wgLang, $wgContLang;
 
 		if ( $comment->id === 0 ) {
 			$linkId = 'cpreview';
@@ -770,7 +770,7 @@ class CodeRevisionView extends CodeView {
 			' ' .
 			$this->commentReplyLink( $comment->id ) .
 			'</div>' .
-			'<div class="mw-codereview-comment-text">' .
+			'<div class="mw-codereview-comment-text mw-content-' . $wgContLang->getDir() . '">' .
 			$wgOut->parse( $this->codeCommentLinkerWiki->link( $comment->text ) ) .
 			'</div>' .
 			$replyForm .
@@ -782,9 +782,11 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	protected function commentStyle( $comment ) {
+		global $wgLang;
+		$align = $wgLang->AlignStart();
 		$depth = $comment->threadDepth();
 		$margin = ( $depth - 1 ) * 48;
-		return "margin-left: ${margin}px";
+		return "margin-$align: ${margin}px";
 	}
 
 	/**

@@ -148,11 +148,11 @@ class RepoAdminRepoView {
 			Xml::buildForm(
 				array(
 					'repoadmin-edit-path' =>
-						Xml::input( 'wpRepoPath', 60, $repoPath ),
+						Xml::input( 'wpRepoPath', 60, $repoPath, array( 'dir' => 'ltr') ),
 					'repoadmin-edit-bug' =>
-						Xml::input( 'wpBugPath', 60, $bugPath ),
+						Xml::input( 'wpBugPath', 60, $bugPath, array( 'dir' => 'ltr') ),
 					'repoadmin-edit-view' =>
-						Xml::input( 'wpViewPath', 60, $viewPath ) ) ) .
+						Xml::input( 'wpViewPath', 60, $viewPath, array( 'dir' => 'ltr') ) ) ) .
 			Html::hidden( 'wpEditToken', $wgUser->editToken( $this->repoName ) ) .
 			Xml::submitButton( wfMsg( 'repoadmin-edit-button' ) ) .
 			'</form></fieldset>'
