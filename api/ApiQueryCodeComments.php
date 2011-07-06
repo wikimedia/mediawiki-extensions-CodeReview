@@ -152,7 +152,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=codecomments&ccrepo=MediaWiki',
-			'api.php?action=query&list=codecomments&ccrepo=MediaWiki&ccprop=timestamp|user|revision|text',
+			'api.php?action=query&list=codecomments&ccrepo=MediaWiki&ccprop=timestamp|user|status|text',
 		);
 	}
 

@@ -65,7 +65,7 @@ CREATE TABLE /*_*/code_rev (
   cr_diff mediumblob NULL,
   -- Text flags: gzip,utf-8,external
   cr_flags tinyblob NOT NULL,
-  
+
   primary key (cr_repo_id, cr_id)
 ) /*$wgDBTableOptions*/;
 
@@ -236,10 +236,10 @@ CREATE TABLE /*_*/code_signoffs (
   -- Type of signoff. Current values: 'inspected', 'tested'
   -- See CodeRevision::getPossibleFlags() (in backend/CodeRevision.php) for most up to date list
   cs_flag varchar(25) not null,
-  
+
   -- Timestamp of the sign-off
   cs_timestamp binary(14) not null default '',
- 
+
   -- Timestamp the sign-off was struck, or Block::infinity() if not struck
   cs_timestamp_struck varbinary(14) not null default 'infinity'
 ) /*$wgDBTableOptions*/;
