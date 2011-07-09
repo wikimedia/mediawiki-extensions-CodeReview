@@ -1839,6 +1839,8 @@ $6',
 	'code-stats-fixme-breakdown' => 'Dasparzh an adweladennoù da reizhañ dre aozer',
 	'code-stats-new-breakdown' => 'Dasparzh an adweladennoù nevez dre aozer',
 	'code-stats-count' => 'Niver a adweladennoù',
+	'code-tooltip-withsummary' => 'r$1 [$2] gant $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] gant $3',
 	'repoadmin' => "Melestradurezh an dastumlec'hioù",
 	'repoadmin-new-legend' => 'Krouiñ ur sanailh nevez',
 	'repoadmin-new-label' => 'Anv ar sanailh :',
@@ -2653,7 +2655,7 @@ $messages['de'] = array(
 	'code-status-new' => 'neu',
 	'code-status-desc-new' => 'Revision erwartet eine Aktion (Standardstatus).',
 	'code-status-fixme' => 'FIXME',
-	'code-status-desc-fixme' => 'Ein Gutachter markierte diese Revision als fehlerhaft oder Verursacher eines Softwarefehlers. Sie sollte korrigiert werden.',
+	'code-status-desc-fixme' => 'Diese Revision verursacht einen Softwarefehler oder ist defekt. Sie sollte korrigiert oder rückgängig gemacht werden.',
 	'code-status-reverted' => 'rückgängig gemacht',
 	'code-status-desc-reverted' => 'Revision wurde durch eine spätere Revision rückgängig gemacht.',
 	'code-status-resolved' => 'erledigt',
@@ -2683,7 +2685,7 @@ $messages['de'] = array(
 	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-revfilter-clear' => 'Filter löschen',
 	'code-rev-submit' => 'Änderungen speichern',
-	'code-rev-submit-next' => 'Speichern und weiter zur nächsten ungeprüften',
+	'code-rev-submit-next' => 'Änderungen speichern und weiter zur nächsten ungeprüften',
 	'code-rev-next' => 'Weiter zur nächsten ungeprüften',
 	'code-batch-status' => 'Änderungsstatus:',
 	'code-batch-tags' => 'Tags ändern:',
@@ -3743,6 +3745,7 @@ $messages['et'] = array(
 	'code-author-unlinksuccess' => 'Autor $1 pole enam ühendatud.',
 	'code-author-total' => 'Autorite koguarv: $1',
 	'code-author-lastcommit' => 'Viimane kehtestamiskuupäev',
+	'code-browsing-path' => "Redaktsioonide sirvimine rajal '''$1'''",
 	'code-field-id' => 'Redaktsioon',
 	'code-field-author' => 'Autor',
 	'code-field-user' => 'Kommenteerija',
@@ -3779,7 +3782,7 @@ $messages['et'] = array(
 	'code-status-new' => 'uus',
 	'code-status-desc-new' => 'Redaktsioon ootab toimingut (vaikeolek).',
 	'code-status-fixme' => 'vajab parandamist',
-	'code-status-desc-fixme' => 'Ülevaataja märkis selle redaktsiooni vigaseks. Seda tuleks parandada.',
+	'code-status-desc-fixme' => 'Redaktsiooniga kaasnes viga. See tuleks parandada või tühistada.',
 	'code-status-reverted' => 'tagasi võetud',
 	'code-status-resolved' => 'lahendatud',
 	'code-status-desc-resolved' => 'Redaktsioonil oli viga, mis parandati hilisema redaktsiooniga.',
@@ -3819,12 +3822,40 @@ $4',
 	'codereview-email-body2' => 'Kasutaja $1 tegi koodile $2 järelmuudatusi.
 
 Täielik URL järelmuudatuste juurde: $5
+Kehtestamise kokkuvõte:
+
+$6
 
 Täielik URL: $3
-
 Kehtestamise kokkuvõte:
 
 $4',
+	'codereview-email-subj3' => '[$1 $2]: Redaktsiooni olek muudetud',
+	'codereview-email-body3' => 'Kasutaja $1 muutis redaktsiooni $2 olekut.
+
+Vana olek: $3
+Uus olek: $4
+
+Täielik URL: $5
+Kehtestamise kokkuvõte:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Lisatud uus kommentaar ja redaktsiooni olek muudetud',
+	'codereview-email-body4' => 'Kasutaja $1 muutis redaktsiooni $2 olekut.
+
+Vana olek: $3
+Uus olek: $4
+
+Kasutaja $1 postitas redaktsiooni $2 kohta ka kommentaari.
+
+Täielik URL: $5
+Kehtestamise kokkuvõte:
+
+$7
+
+Kommentaar:
+
+$6',
 	'code-stats' => 'statistika',
 	'code-stats-header' => 'Hoidla $1 arvandmed',
 	'code-stats-main' => 'Seisuga $1 on hoidlas {{PLURAL:$2|üks redaktsioon|$2 redaktsiooni}} [[Special:Code/$3/author|{{PLURAL:$4|ühelt|$4}} autorilt]].',
@@ -4654,6 +4685,7 @@ $messages['frp'] = array(
 	'code-release-endrev' => 'Rèvision de fin :',
 	'codereview-subtitle' => 'Por $1',
 	'codereview-reply-link' => 'rèpondre',
+	'codereview-overview-title' => 'Apèrçu',
 	'codereview-email-subj' => '[$1 $2] : novél comentèro apondu',
 	'codereview-email-body' => 'L’utilisator « $1 » at postâ un comentèro dessus $3.
 
@@ -4709,6 +4741,8 @@ $6',
 	'code-stats-status-breakdown' => 'Nombro de rèvisions per ètat',
 	'code-stats-fixme-breakdown' => 'Ventilacion de les rèvisions a corregiér per ôtor',
 	'code-stats-count' => 'Nombro de rèvisions',
+	'code-tooltip-withsummary' => 'r$1 [$2] per $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] per $3',
 	'repoadmin' => 'Administracion des dèpôts',
 	'repoadmin-new-legend' => 'Fâre un dèpôt novél',
 	'repoadmin-new-label' => 'Nom du dèpôt :',
@@ -5381,7 +5415,7 @@ $messages['he'] = array(
 	'code-status-new' => 'חדש',
 	'code-status-desc-new' => 'הגרסה ממתינה לפעולה (מצב בררת המחדל).',
 	'code-status-fixme' => 'לתיקון',
-	'code-status-desc-fixme' => 'סוקר סימן שגרסה זו גורמת לתקלה או שאינה תקינה. יש לתקן זאת.',
+	'code-status-desc-fixme' => 'בגרסה הזאת נוצר באג או שהיא מקולקלת. יש לתקן או לבטל אותה.',
 	'code-status-reverted' => 'בוטל',
 	'code-status-desc-reverted' => 'הגרסה נדחקה הצידה על ידי גרסה עדכנית יותר.',
 	'code-status-resolved' => 'תוקן',
@@ -6214,7 +6248,7 @@ $messages['ia'] = array(
 	'code-status-new' => 'nove',
 	'code-status-desc-new' => 'Le version attende un action (stato predefinite).',
 	'code-status-fixme' => 'corrigeme',
-	'code-status-desc-fixme' => 'Un revisor marcava iste version como introductor de un error o como defectuose. Illo debe esser corrigite.',
+	'code-status-desc-fixme' => 'Iste version introduceva un error o es defectuose. Illo debe esser corrigite o revertite.',
 	'code-status-reverted' => 'revertite',
 	'code-status-desc-reverted' => 'Le version esseva jectate via per un version plus recente.',
 	'code-status-resolved' => 'resolvite',
@@ -8185,7 +8219,7 @@ $messages['mk'] = array(
 	'code-status-new' => 'нов',
 	'code-status-desc-new' => 'Ревизијата е во исчекување на дејство (статус по основно).',
 	'code-status-fixme' => 'корегирај ме',
-	'code-status-desc-fixme' => 'Прегледувач во оваа ревизија означил грешка или неисправност. Треба да се поправи.',
+	'code-status-desc-fixme' => 'Ревизијата предизвика грешка или е неисправна. Треба да се поправи или врати.',
 	'code-status-reverted' => 'вратено',
 	'code-status-desc-reverted' => 'Ревизијата е исфрлена од понова верзија.',
 	'code-status-resolved' => 'разрешено',
@@ -8944,7 +8978,7 @@ De gegevens kunnen uit een cache komen.',
 	'code-status-new' => 'nieuw',
 	'code-status-desc-new' => 'De versie wacht op een actie (standaardstatus).',
 	'code-status-fixme' => 'fixme',
-	'code-status-desc-fixme' => 'Een reviewer heeft geconstateerd dat door deze versie een bug wordt geïntroduceerd of dat deze versie stuk is. Dat moet gecorrigeerd worden.',
+	'code-status-desc-fixme' => 'Deze versie introduceerde een bug of is stuk. Dat moet gecorrigeerd worden.',
 	'code-status-reverted' => 'teruggedraaid',
 	'code-status-desc-reverted' => 'De versie is ongedaan gemaakt door een latere versie.',
 	'code-status-resolved' => 'opgelost',
@@ -9719,7 +9753,7 @@ $messages['pl'] = array(
 	'code-status-new' => 'nowy',
 	'code-status-desc-new' => 'Wersja oczekuje podjęcia jakiegoś działania (status domyślny).',
 	'code-status-fixme' => 'wymaga naprawy',
-	'code-status-desc-fixme' => 'Redaktor oznaczył te zmianę jako zawierającą błędy. Wersja wymaga poprawek.',
+	'code-status-desc-fixme' => 'Wersja jest błędna lub uszkodzona. Powinna zostać naprawiona lub wycofana.',
 	'code-status-reverted' => 'cofnięty',
 	'code-status-desc-reverted' => 'Wersja została zastąpiona późniejszą treścią.',
 	'code-status-resolved' => 'rozwiązany',
@@ -10209,7 +10243,7 @@ $messages['pt'] = array(
 	'code-status-new' => 'novo',
 	'code-status-desc-new' => 'Esta revisão está pendente (estado padrão).',
 	'code-status-fixme' => 'corrigir',
-	'code-status-desc-fixme' => 'Esta revisão introduz um defeito ou não funciona. Precisa de correcção.',
+	'code-status-desc-fixme' => 'Esta revisão introduziu um defeito ou não funciona. Precisa de ser corrigida ou revertida.',
 	'code-status-reverted' => 'revertido',
 	'code-status-desc-reverted' => 'A revisão foi desfeita por outra revisão posterior.',
 	'code-status-resolved' => 'resolvido',
@@ -10994,7 +11028,7 @@ $messages['ru'] = array(
 	'code-status-new' => 'новая',
 	'code-status-desc-new' => 'Ревизия ожидает действия (статус по умолчанию).',
 	'code-status-fixme' => 'исправить',
-	'code-status-desc-fixme' => 'Рецензент отметил в этой ревизии ошибку или неисправность. Она должна быть исправлена.',
+	'code-status-desc-fixme' => 'В этой версии появилась ошибка, или что-то не работает. Она должна быть исправлена, или возвращена к прежнему состоянию.',
 	'code-status-reverted' => 'откачена',
 	'code-status-desc-reverted' => 'Ревизия была откачена в другой ревизии.',
 	'code-status-resolved' => 'решена',
@@ -11896,7 +11930,7 @@ $messages['sl'] = array(
 	'code-status-new' => 'novo',
 	'code-status-desc-new' => 'Redakcija izvaja dejanje (privzeto stanje).',
 	'code-status-fixme' => 'popravi me',
-	'code-status-desc-fixme' => 'Pregledovalec je označil to redakcijo kot hroščato ali pokvarjeno. To je treba popraviti.',
+	'code-status-desc-fixme' => 'Redakcija je uvedla hrošč ali pa je pokvarjena. To je treba popraviti ali povrniti.',
 	'code-status-reverted' => 'vrnjeno',
 	'code-status-desc-reverted' => 'Redakcijo je zavrgla poznejša redakcija.',
 	'code-status-resolved' => 'razrešeno',
@@ -13974,7 +14008,7 @@ $messages['vi'] = array(
 	'code-status-new' => 'mới',
 	'code-status-desc-new' => 'Phiên bản đang chờ xử lý (trạng thái mặc định).',
 	'code-status-fixme' => 'cần sửa',
-	'code-status-desc-fixme' => 'Người duyệt đã đánh dấu phiên bản này là gây lỗi hoặc hư hỏng. Nó cần được sửa chữa.',
+	'code-status-desc-fixme' => 'Thay đổi đã gây lỗi hoặc bị hư hỏng. Nó cần được sửa chữa hoặc lùi lại.',
 	'code-status-reverted' => 'khôi phục',
 	'code-status-desc-reverted' => 'Phiên bản được thay thế bằng một phiên bản sau.',
 	'code-status-resolved' => 'giải quyết',
