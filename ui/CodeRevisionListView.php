@@ -221,29 +221,39 @@ class CodeRevisionListView extends CodeView {
 	 * @return string
 	 */
 	function showForm( $pager ) {
-		global $wgScript;
+		global $wgScript, $wgRequest;
 
+		$states = CodeRevision::getPossibleStates();
+		$name = $this->mRepo->getName();
+
+		$title = SpecialPage::getTitleFor( 'Code', $name );
+		$options = array(Xml::option('', $title, $wgRequest->getVal('title') == $title ) );
+
+
+		foreach ($states as $key => $state) {
+			$title = SpecialPage::getTitleFor( 'Code', $name . "/status/$state" );
+			$options[] = Xml::option( 
+				wfMsgHtml( "code-status-".$state ), 
+				$title,
+				$wgRequest->getVal('title') == $title
+			);
+		}
+		
 		$ret = "<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
 				'<table width="100%"><tr><td>' .
 				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55,
-					$this->getPathsAsString(), array( 'dir' => 'ltr' ) ) .
+					$this->getPathsAsString(), array( 'dir' => 'ltr' ) )  . '&#160;' .
+				Xml::label( wfMsg( 'code-pathsearch-filter' ), 'code-status-filter' ) . '&#160;' .
+				Xml::openElement( 'select', array( 'id' => 'code-status-filter', 'name' => 'title' ) ) .
+				"\n" .
+				implode( "\n", $options ) .
+				"\n" .
+				Xml::closeElement( 'select' ) .
 				'&#160;' . Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
-				$pager->getHiddenFields( array( 'path' ) ) .
+				$pager->getHiddenFields( array( 'path', 'title' ) ) .
 				Xml::closeElement( 'form' ) .
-				'</td>';
-
-		if ( strlen( $this->mAppliedFilter ) ) {
-			$ret .= '<td>' .
-				Xml::openElement( 'form', array( 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'get' ) ) .
-				Xml::label( wfMsg( 'code-pathsearch-filter' ), 'revFilter' ) . '&#160;<strong>' .
-				Xml::span( $this->mAppliedFilter, '' ) . '</strong>&#160;' .
-				Xml::submitButton( wfMsg( 'code-revfilter-clear' ) ) .
-				Xml::closeElement( 'form' ) .
-				'</td>';
-		}
-
-		$ret .= "</tr></table></fieldset>" ;
+				'</td></tr></table></fieldset>' ;
 
 		return $ret;
 	}

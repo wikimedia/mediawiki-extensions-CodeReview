@@ -119,7 +119,7 @@ $messages['en'] = array(
 	'code-signoff-struckdate' => '$1 (struck $2)',
 	'code-pathsearch-legend' => 'Search revisions in this repo by path',
 	'code-pathsearch-path' => 'Path:',
-	'code-pathsearch-filter' => 'Filter applied:',
+	'code-pathsearch-filter' => 'Show only:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Author = $1',
 	'code-revfilter-ct_tag' => 'Tag = $1',
