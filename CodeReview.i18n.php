@@ -2679,7 +2679,7 @@ $messages['de'] = array(
 	'code-signoff-struckdate' => '$1 (gestrichen $2)',
 	'code-pathsearch-legend' => 'Suche in diesem Repositorium per Pfad nach Revisionen',
 	'code-pathsearch-path' => 'Pfad:',
-	'code-pathsearch-filter' => 'Angewendeter Filter:',
+	'code-pathsearch-filter' => 'Nur anzeigen:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-ct_tag' => 'Tag = $1',
