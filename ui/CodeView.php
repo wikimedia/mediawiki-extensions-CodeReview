@@ -57,8 +57,7 @@ abstract class CodeView {
 
 	function formatMessage( $text ) {
 		$text = nl2br( htmlspecialchars( $text ) );
-		return Html::rawElement( 'div', array( 'class' => 'mw-codereview-message' ),
-			$this->codeCommentLinkerHtml->link( $text ) );
+		return $this->codeCommentLinkerHtml->link( $text );
 	}
 
 	function messageFragment( $value ) {

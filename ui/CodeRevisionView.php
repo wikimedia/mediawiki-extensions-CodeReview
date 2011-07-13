@@ -123,7 +123,8 @@ class CodeRevisionView extends CodeView {
 			'code-rev-author' => $this->authorLink( $this->mRev->getAuthor() ),
 			'code-rev-status' => $this->statusForm() . $commentsLink,
 			'code-rev-tags' => $this->tagForm(),
-			'code-rev-message' => $this->formatMessage( $this->mRev->getMessage() ),
+			'code-rev-message' => Html::rawElement( 'div', array( 'class' => 'mw-codereview-message' ),
+				$this->formatMessage( $this->mRev->getMessage() ) ),
 			'code-rev-paths' => $paths,
 		);
 		$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $this->mRev->getId() );
