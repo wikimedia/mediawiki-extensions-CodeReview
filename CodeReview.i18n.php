@@ -6272,7 +6272,7 @@ $messages['ia'] = array(
 	'code-signoff-struckdate' => '$1 (cancellate a $2)',
 	'code-pathsearch-legend' => 'Cercar versiones in iste deposito per cammino',
 	'code-pathsearch-path' => 'Cammino:',
-	'code-pathsearch-filter' => 'Filtro applicate:',
+	'code-pathsearch-filter' => 'Monstrar solmente:',
 	'code-revfilter-cr_status' => 'Stato = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-ct_tag' => 'Etiquetta = $1',
@@ -6738,7 +6738,7 @@ $messages['it'] = array(
 	'code-signoff-field-date' => 'Data',
 	'code-pathsearch-legend' => 'Ricerca nelle revisioni di questo repository in base al percorso',
 	'code-pathsearch-path' => 'Percorso:',
-	'code-pathsearch-filter' => 'Filtro applicato:',
+	'code-pathsearch-filter' => 'Mostra solo:',
 	'code-revfilter-cr_status' => 'Stato = $1',
 	'code-revfilter-cr_author' => 'Autore = $1',
 	'code-revfilter-clear' => 'Cancella filtro',
@@ -7800,7 +7800,7 @@ $messages['lb'] = array(
 	'code-signoff-field-date' => 'Datum',
 	'code-signoff-struckdate' => '$1 (huet $2 gestrach)',
 	'code-pathsearch-path' => 'Pad:',
-	'code-pathsearch-filter' => 'Filter dee bnotzt gouf:',
+	'code-pathsearch-filter' => 'Weis nëmmen:',
 	'code-revfilter-cr_status' => 'Statut  = $1',
 	'code-revfilter-cr_author' => 'Auteur = $1',
 	'code-revfilter-clear' => 'Filter eidel maachen',
@@ -8243,7 +8243,7 @@ $messages['mk'] = array(
 	'code-signoff-struckdate' => '$1 (поништена $2)',
 	'code-pathsearch-legend' => 'Пребарај ревизии на ова складиште по нивниот пат',
 	'code-pathsearch-path' => 'Патека:',
-	'code-pathsearch-filter' => 'Применет филтер:',
+	'code-pathsearch-filter' => 'Прикажи само:',
 	'code-revfilter-cr_status' => 'Статус = $1',
 	'code-revfilter-cr_author' => 'Автор = $1',
 	'code-revfilter-ct_tag' => 'Ознака = $1',
@@ -8579,8 +8579,10 @@ $messages['mn'] = array(
  * @author Izzudin
  */
 $messages['ms'] = array(
-	'code' => 'Semakan Kod',
-	'code-comments' => 'Ulasan',
+	'code' => 'Kajian Kod',
+	'code-rev-title' => '$1 - Kajian Kod',
+	'code-comments' => 'Komen',
+	'code-references' => 'Semakan susulan',
 	'code-change-status' => "'''status''' $1 ditukar",
 	'code-change-tags' => "'''label''' untuk $1 ditukar",
 	'code-change-removed' => 'membuang:',
@@ -8588,14 +8590,21 @@ $messages['ms'] = array(
 	'code-old-status' => 'Status lama',
 	'code-new-status' => 'Status baru',
 	'code-prop-changes' => 'Log status & label',
-	'codereview-desc' => '[[Special:Code|Alat semakan kod]] dengan [[Special:RepoAdmin|sokongan Subversion]]',
+	'codereview-desc' => '[[Special:Code|Alat mengkaji kod]] dengan [[Special:RepoAdmin|sokongan Subversion]]',
 	'code-no-repo' => 'Tiada gedung yang ditetapkan!',
-	'code-repo-not-found' => "Repositort '''$1''' tidak wujud!",
+	'code-create-repo' => 'Pergi ke [[Special:RepoAdmin|RepoAdmin]] untuk membuka Gedung',
+	'code-need-repoadmin-rights' => 'hak repoadmin (pentadbir gedung) diperlukan untuk membuka Gedung',
+	'code-need-group-with-rights' => 'Tiada kumpulan yang memegang hak repoadmin. Sila tambahkan satu kumpulan sedemikian supaya dapat membuat Gedung baru',
+	'code-repo-not-found' => "Gedung '''$1''' tidak wujud!",
 	'code-load-diff' => 'Memuat perbezaan…',
 	'code-notes' => 'komen terbaru',
+	'code-statuschanges' => 'perubahan status',
+	'code-mycommits' => 'lakuan saya',
+	'code-mycomments' => 'komen saya',
 	'code-authors' => 'pengarang',
 	'code-status' => 'status',
 	'code-tags' => 'label',
+	'code-tags-no-tags' => 'Tiada tag dalam gedung ini.',
 	'code-authors-text' => 'Yang berikut ialah senarai pengarang gedung mengikut tertib lakuan terkini. Akaun wiki tempatan ditunjukkan dalam tanda kurungan. Data mungkin dicachekan.',
 	'code-author-haslink' => 'Pengarang ini dihubungkan dengan pengguna wiki $1',
 	'code-author-orphan' => 'Pengarang ini tiada hubungan dengan sebarang akaun wiki',
@@ -8607,16 +8616,24 @@ $messages['ms'] = array(
 	'code-author-link' => 'hubungkan?',
 	'code-author-unlink' => 'putuskan?',
 	'code-author-unlinksuccess' => 'Hubungan pengarang $1 telah diputuskan',
+	'code-author-badtoken' => 'Ralat sesi ketika cuba melakukan tindakan.',
+	'code-author-total' => 'Jumlah pengarang: $1',
+	'code-author-lastcommit' => 'Tarikh lakuan terakhir',
+	'code-browsing-path' => "Menyemak seimbas semakan dalam '''$1'''",
 	'code-field-id' => 'Semakan',
 	'code-field-author' => 'Pengarang',
 	'code-field-user' => 'Pengulas',
 	'code-field-message' => 'Ringkasan lakuan',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Keterangan status',
 	'code-field-timestamp' => 'Tarikh',
 	'code-field-comments' => 'Ulasan',
 	'code-field-path' => 'Laluan',
 	'code-field-text' => 'Catatan',
 	'code-field-select' => 'Pilih',
+	'code-reference-remove' => 'Buang perkaitan terpilih',
+	'code-reference-associate' => 'Semakan susulan berkaitan:',
+	'code-reference-associate-submit' => 'Perkaitan',
 	'code-rev-author' => 'Pengarang:',
 	'code-rev-date' => 'Tarikh:',
 	'code-rev-message' => 'Ulasan:',
@@ -8639,21 +8656,45 @@ $messages['ms'] = array(
 	'code-rev-inline-preview' => 'Pralihat:',
 	'code-rev-diff' => 'Beza',
 	'code-rev-diff-link' => 'beza',
+	'code-rev-diff-too-large' => 'Perbezaan ini terlalu besar untuk dipaparkan.',
 	'code-rev-purge-link' => 'singkirkan',
+	'code-rev-total' => 'Jumlah hasil: $1',
+	'code-rev-not-found' => "Semakan '''$1''' tidak wujud!",
 	'code-status-new' => 'baru',
+	'code-status-desc-new' => 'Pindaan menunggu tindakan (status tersedia).',
 	'code-status-fixme' => 'baiki',
+	'code-status-desc-fixme' => 'Semakan membawa pepijat atau rosak, dan patut dibetulkan atau dibatalkan.',
 	'code-status-reverted' => 'dibatalkan',
+	'code-status-desc-reverted' => 'Semakan dibuat asal oleh semakan kemudian.',
 	'code-status-resolved' => 'beres',
+	'code-status-desc-resolved' => 'Semakan mengalami masalah yang diselesaikan oleh semakan kemudian.',
 	'code-status-ok' => 'ok',
+	'code-status-desc-ok' => 'Semakan dikaji sepenihnya. Pengkaji pasti bahawa ia elok sepenuhnya.',
 	'code-status-deferred' => 'tunda',
+	'code-status-desc-deferred' => 'Semakan tidak memerlukan kajian.',
+	'code-status-old' => 'lama',
+	'code-status-desc-old' => 'Semakan lama yang mungkin mengandungi pepijat tetapi tidak berbaloi dikaji.',
+	'code-signoffs' => 'Rakam keluar',
+	'code-signoff-legend' => 'Bubuh rakam keluar',
+	'code-signoff-submit' => 'Rakam keluar',
+	'code-signoff-strike' => 'Potong rakam keluar terpilih',
+	'code-signoff-signoff' => 'Rakam keluar semakan ini sebagai:',
+	'code-signoff-flag-inspected' => 'Diperiksa',
+	'code-signoff-flag-tested' => 'Diuji',
+	'code-signoff-field-user' => 'Pengguna',
+	'code-signoff-field-flag' => 'Bendera',
 	'code-signoff-field-date' => 'Tarikh',
+	'code-signoff-struckdate' => '$1 (memotong $2)',
 	'code-pathsearch-legend' => 'Cari semakan dalam gedung ini mengikut laluan',
 	'code-pathsearch-path' => 'Laluan:',
+	'code-pathsearch-filter' => 'Hanya tunjukkan:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Pengarang = $1',
 	'code-revfilter-ct_tag' => 'Tag = $1',
+	'code-revfilter-clear' => 'Kosongkan penapis',
 	'code-rev-submit' => 'Simpan perubahan',
 	'code-rev-submit-next' => 'Simpan & selesaikan yang berikutnya',
+	'code-rev-next' => 'Semakan tak terselesai yang seterusnya',
 	'code-batch-status' => 'Tukar status:',
 	'code-batch-tags' => 'Tukar label:',
 	'codereview-batch-title' => 'Tukar semua semakan yang dipilih',
@@ -8664,18 +8705,66 @@ $messages['ms'] = array(
 	'code-release-endrev' => 'Semakan terakhir:',
 	'codereview-subtitle' => 'Untuk $1',
 	'codereview-reply-link' => 'balas',
+	'codereview-overview-title' => 'Gambaran keseluruhan',
+	'codereview-overview-desc' => 'Tunjukkan gambaran keseluruhan senarai ini dalam bentuk grafik',
 	'codereview-email-subj' => '[$1] [s$2]: Ulasan baru',
 	'codereview-email-body' => 'Pengguna "$1" mengirim ulasan bagi s$3.
 
 URL penuh: $2
-Ringkasan komit:
+Ringkasan lakuan:
 
 $5
 
 Ulasan:
 
 $4',
+	'codereview-email-subj2' => '[$1 $2]: Perubahan susulan',
+	'codereview-email-body2' => 'Pengguna "$1" membuat perubahan susulan pada $2.
+
+URL penuh untuk semakan yang disusuli: $5
+Ringkasan lakuan:
+
+$6
+
+URL penuh: $3
+Ringkasan lakuan:
+
+$4',
+	'codereview-email-subj3' => '[$1 $2]: Status semakan diubah',
+	'codereview-email-body3' => 'Pengguna "$1" mengubah status $2.
+
+Status Lama: $3
+Status Baru: $4
+
+URL penuh: $5
+Ringkasan lakuan:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Komen baru ditambahkan, dan status semakan diubah',
+	'codereview-email-body4' => 'Pengguna "$1" mengubah status $2.
+
+Status Lama: $3
+Status Baru: $4
+
+Pengguna "$1" juga mencatatkan komen di $2.
+
+URL penuh: $5
+Ringkasan lakuan:
+
+$7
+
+Komen:
+
+$6',
 	'code-stats' => 'statistik',
+	'code-stats-header' => 'Statistik untuk gedung $1',
+	'code-stats-main' => 'Pada $1, gedung ini mendapat $2 semakan oleh [[Special:Code/$3/author|$4 pengarang]].',
+	'code-stats-status-breakdown' => 'Bilangan semakan per keadaan',
+	'code-stats-fixme-breakdown' => 'Penghuraian semakan dibaiki sepengarang',
+	'code-stats-new-breakdown' => 'Penghuraian semakan baru sepengarang',
+	'code-stats-count' => 'Bilangan semakan',
+	'code-tooltip-withsummary' => 'r$1 [$2] oleh $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] oleh $3',
 	'repoadmin' => 'Pentadbiran Gedung',
 	'repoadmin-new-legend' => 'Cipta gedung baru',
 	'repoadmin-new-label' => 'Nama gedung:',
@@ -8686,13 +8775,21 @@ $4',
 	'repoadmin-edit-view' => 'Laluan ViewVC:',
 	'repoadmin-edit-button' => 'OK',
 	'repoadmin-edit-sucess' => 'Gedung "[[Special:Code/$1|$1]]" telah diubahsuai.',
+	'repoadmin-nav' => 'pentadbiran gedung',
 	'right-repoadmin' => 'Mengurus gedung kod',
+	'right-codereview-use' => 'Menggunakan Special:Code',
 	'right-codereview-add-tag' => 'Menambah label pada semakan',
 	'right-codereview-remove-tag' => 'Membuang label daripada semakan',
 	'right-codereview-post-comment' => 'Menambah ulasan pada semakan',
 	'right-codereview-set-status' => 'Menukar status semakan',
+	'right-codereview-signoff' => 'Merakam keluar semakan',
 	'right-codereview-link-user' => 'Membuat pautan dari pengarang ke pengguna wiki',
+	'right-codereview-associate' => 'Mengurus perkaitan semakan',
+	'right-codereview-review-own' => 'Menandai semakan sendiri sebagai OK',
 	'specialpages-group-developer' => 'Alatan pembangun',
+	'group-svnadmins' => 'Pentadbir SVN',
+	'group-svnadmins-member' => 'Pentadbir SVN',
+	'grouppage-svnadmins' => '{{ns:project}}:Pentadbir SVN',
 );
 
 /** Erzya (Эрзянь)
@@ -9002,7 +9099,7 @@ De gegevens kunnen uit een cache komen.',
 	'code-signoff-struckdate' => '$1 (heeft $2 doorgehaald)',
 	'code-pathsearch-legend' => 'Op pad versies in deze repository zoeken',
 	'code-pathsearch-path' => 'Pad:',
-	'code-pathsearch-filter' => 'Toegepaste filter:',
+	'code-pathsearch-filter' => 'Alleen weergeven:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Auteur = $1',
 	'code-revfilter-ct_tag' => 'Label = $1',
@@ -10267,7 +10364,7 @@ $messages['pt'] = array(
 	'code-signoff-struckdate' => '$1 (anulada a $2)',
 	'code-pathsearch-legend' => 'Pesquisar revisões neste repositório por caminho',
 	'code-pathsearch-path' => 'Caminho:',
-	'code-pathsearch-filter' => 'Filtro aplicado:',
+	'code-pathsearch-filter' => 'Mostrar apenas:',
 	'code-revfilter-cr_status' => 'Estado = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-ct_tag' => 'Etiqueta = $1',
@@ -10672,7 +10769,7 @@ $messages['ro'] = array(
 	'code-signoff-field-flag' => 'Tip',
 	'code-signoff-field-date' => 'Dată',
 	'code-pathsearch-path' => 'Cale:',
-	'code-pathsearch-filter' => 'Filtru aplicat:',
+	'code-pathsearch-filter' => 'Arată doar:',
 	'code-revfilter-cr_status' => 'Stare = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-clear' => 'Curăță filtru',
@@ -11052,7 +11149,7 @@ $messages['ru'] = array(
 	'code-signoff-struckdate' => '$1 (вычеркнул $2)',
 	'code-pathsearch-legend' => 'Поиск в этом хранилище конкретных ревизий по их адресу',
 	'code-pathsearch-path' => 'Путь:',
-	'code-pathsearch-filter' => 'Применённые фильтры:',
+	'code-pathsearch-filter' => 'Показать только:',
 	'code-revfilter-cr_status' => 'Состояние = $1',
 	'code-revfilter-cr_author' => 'Автор = $1',
 	'code-revfilter-ct_tag' => 'Метка = $1',
@@ -11954,7 +12051,7 @@ $messages['sl'] = array(
 	'code-signoff-struckdate' => '$1 (udarjeno $2)',
 	'code-pathsearch-legend' => 'Iskanje redakcij v tej shrambi po poti',
 	'code-pathsearch-path' => 'Pot:',
-	'code-pathsearch-filter' => 'Uporabljen filter:',
+	'code-pathsearch-filter' => 'Prikaži samo:',
 	'code-revfilter-cr_status' => 'Stanje = $1',
 	'code-revfilter-cr_author' => 'Avtor = $1',
 	'code-revfilter-ct_tag' => 'Oznaka = $1',
@@ -12688,7 +12785,7 @@ $messages['te'] = array(
 	'code-signoff-field-flag' => 'ప్లాగ్',
 	'code-signoff-field-date' => 'తేదీ',
 	'code-signoff-struckdate' => '$1 (రద్దైనది $2)',
-	'code-pathsearch-filter' => 'ఆపాదించిన వడపోత:',
+	'code-pathsearch-filter' => 'దీనిని మాత్రమే చూపించు:',
 	'code-revfilter-cr_status' => 'స్థితి = $1',
 	'code-revfilter-cr_author' => 'రచయిత = $1',
 	'code-revfilter-clear' => 'వడపోతను ఖాళీచేయి',
