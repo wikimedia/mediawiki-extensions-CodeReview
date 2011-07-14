@@ -5439,7 +5439,7 @@ $messages['he'] = array(
 	'code-signoff-struckdate' => '$1 (סומן בקו חוצה ב־$2)',
 	'code-pathsearch-legend' => 'חיפוש גרסאות במאגר זה לפי נתיב',
 	'code-pathsearch-path' => 'נתיב:',
-	'code-pathsearch-filter' => 'מסנן הוחל:',
+	'code-pathsearch-filter' => 'להציג רק:',
 	'code-revfilter-cr_status' => 'מצב = $1',
 	'code-revfilter-cr_author' => 'מחבר = $1',
 	'code-revfilter-ct_tag' => 'תג = $1',
