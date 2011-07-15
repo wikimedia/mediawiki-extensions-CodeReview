@@ -227,7 +227,7 @@ class CodeRevisionListView extends CodeView {
 		$name = $this->mRepo->getName();
 
 		$title = SpecialPage::getTitleFor( 'Code', $name );
-		$options = array(Xml::option('', $title, $wgRequest->getVal('title') == $title ) );
+		$options = array(Xml::option('', $title, $this->mStatus == '' ) );
 
 
 		foreach ($states as $key => $state) {
@@ -235,7 +235,7 @@ class CodeRevisionListView extends CodeView {
 			$options[] = Xml::option( 
 				wfMsgHtml( "code-status-".$state ), 
 				$title,
-				$wgRequest->getVal('title') == $title
+				$this->mStatus == $state
 			);
 		}
 		
