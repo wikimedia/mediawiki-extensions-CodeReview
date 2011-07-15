@@ -75,7 +75,14 @@ table.mw-codereview-meta td {
 .mw-codereview-status-fixme:hover td a {
 	color: #ff0 !important;
 }
-
+.mw-codereview-status-resolved,
+.mw-codereview-status-resolved td {
+	background: #c0ffc0 !important;
+}
+.mw-codereview-status-resolved:hover,
+.mw-codereview-status-resolved:hover td {
+	background: #a0dfa0 !important;
+}
 .mw-codereview-status-reverted,
 .mw-codereview-status-reverted td {
 	background: #ddd !important;
