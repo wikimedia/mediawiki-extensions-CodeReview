@@ -12470,6 +12470,7 @@ $4',
  * @author Per
  * @author Rotsee
  * @author Tobulos1
+ * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'code' => 'Kodgranskning',
@@ -12572,7 +12573,7 @@ $messages['sv'] = array(
 	'code-signoff-field-date' => 'Datum',
 	'code-pathsearch-legend' => 'Sök versioner i denna repo efter sökväg',
 	'code-pathsearch-path' => 'Sökväg:',
-	'code-pathsearch-filter' => 'Använt filter:',
+	'code-pathsearch-filter' => 'Visa endast:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Författare = $1',
 	'code-revfilter-clear' => 'Rensa filter',
@@ -12588,6 +12589,7 @@ $messages['sv'] = array(
 	'code-release-endrev' => 'Senaste revision:',
 	'codereview-subtitle' => 'För $1',
 	'codereview-reply-link' => 'svara',
+	'codereview-overview-title' => 'Översikt',
 	'codereview-email-subj' => '[$1 $2]: Ny kommentar tillagd',
 	'codereview-email-body' => 'Användaren "$1" postade en kommenter på $3
 
@@ -14142,7 +14144,7 @@ $messages['vi'] = array(
 	'code-signoff-struckdate' => '$1 (đã gạch bỏ $2)',
 	'code-pathsearch-legend' => 'Tìm kiếm các thay đổi trong kho này theo đường dẫn',
 	'code-pathsearch-path' => 'Đường dẫn:',
-	'code-pathsearch-filter' => 'Áp dụng bộ lọc:',
+	'code-pathsearch-filter' => 'Chỉ hiển thị:',
 	'code-revfilter-cr_status' => 'Trạng thái = $1',
 	'code-revfilter-cr_author' => 'Tác giả = $1',
 	'code-revfilter-ct_tag' => 'Thẻ = $1',
