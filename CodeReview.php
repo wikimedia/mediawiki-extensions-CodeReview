@@ -236,7 +236,7 @@ $wgCodeReviewRepoStatsCacheTime = 6 * 60 * 60; // 6 Hours
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'efCodeReviewSchemaUpdates';
 
 /**
- * @param  $updater DatabaseUpdater
+ * @param $updater DatabaseUpdater
  * @return bool
  */
 function efCodeReviewSchemaUpdates( $updater ) {
