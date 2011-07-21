@@ -7762,6 +7762,7 @@ $messages['lb'] = array(
 	'code-field-text' => 'Notiz',
 	'code-field-select' => 'Auswielen',
 	'code-reference-remove' => 'Déi erausgesichte Verbindunge läschen',
+	'code-reference-associate' => "Mat der 'Versioun déi duerno kënnt' verbannen:",
 	'code-reference-associate-submit' => 'Associéieren',
 	'code-rev-author' => 'Auteur:',
 	'code-rev-date' => 'Datum:',
