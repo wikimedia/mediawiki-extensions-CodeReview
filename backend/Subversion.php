@@ -63,6 +63,14 @@ abstract class SubversionAdaptor {
  */
 class SubversionPecl extends SubversionAdaptor {
 
+	function __construct( $repoPath ) {
+		parent::__construct( $repoPath );
+		global $wgSubversionUser, $wgSubversionPassword;
+		if ( $wgSubversionUser ) {
+			svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_USERNAME, $wgSubversionUser );
+			svn_auth_set_parameter( SVN_AUTH_PARAM_DEFAULT_PASSWORD, $wgSubversionPassword );
+		}
+	}
 	/**
 	 * Just return true for now. svn_info() is too slow to be useful...
 	 *
