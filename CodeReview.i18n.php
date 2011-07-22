@@ -9350,6 +9350,7 @@ $4',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Event
  * @author Jon Harald Søby
  * @author Laaknor
  * @author Lokal Profil
@@ -9440,7 +9441,7 @@ $messages['no'] = array(
 	'code-status-new' => 'ny',
 	'code-status-desc-new' => 'Revisjon venter på en handling (standard status).',
 	'code-status-fixme' => 'fiksmeg',
-	'code-status-desc-fixme' => 'En anmelder markerte at denne revisjonen innførte en feil eller er ødelagt. Det bør fikses.',
+	'code-status-desc-fixme' => 'Endringen innførte en feil eller ble bare delvis gjennomført. Den må repareres eller tilbakestilles.',
 	'code-status-reverted' => 'tilbakestilt',
 	'code-status-desc-reverted' => 'Revisjonen ble kastet vekk av en senere revisjon.',
 	'code-status-resolved' => 'løst',
@@ -9464,12 +9465,14 @@ $messages['no'] = array(
 	'code-signoff-struckdate' => '$1 (strøket $2)',
 	'code-pathsearch-legend' => 'Søk revisjoner i denne repo etter sti',
 	'code-pathsearch-path' => 'Sti:',
-	'code-pathsearch-filter' => 'Benyttet filter:',
+	'code-pathsearch-filter' => 'Vis bare:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Forfatter = $1',
+	'code-revfilter-ct_tag' => 'Tagg = $1',
 	'code-revfilter-clear' => 'Fjern filter',
 	'code-rev-submit' => 'Lagre endringer',
 	'code-rev-submit-next' => 'Lagre og neste uløste',
+	'code-rev-next' => 'Neste uløste',
 	'code-batch-status' => 'Endre status:',
 	'code-batch-tags' => 'Endre merker:',
 	'codereview-batch-title' => 'Endre alle valgte versjoner',
@@ -9480,6 +9483,8 @@ $messages['no'] = array(
 	'code-release-endrev' => 'Siste revisjon:',
 	'codereview-subtitle' => 'For $1',
 	'codereview-reply-link' => 'svar',
+	'codereview-overview-title' => 'Oversikt',
+	'codereview-overview-desc' => 'Vis en grafisk oversikt over denne listen',
 	'codereview-email-subj' => '[$1 $2]: Ny kommentar lagt inn',
 	'codereview-email-body' => 'Brukeren «$1» la inn en kommentar på $3.
 
@@ -9544,8 +9549,11 @@ $6',
 	'code-stats-header' => 'Statistikk for repositoriet $1',
 	'code-stats-main' => 'Som på $1 har depoet $2 {{PLURAL:$2|revisjon|revisjoner}} av [[Special:Code/$3/author|$4 {{PLURAL:$4|forfatter|forfattere}}]]',
 	'code-stats-status-breakdown' => 'Antall revisjoner per status',
-	'code-stats-fixme-breakdown' => 'Fordeling av fiksmeg-er per forfatter',
+	'code-stats-fixme-breakdown' => 'Inndeling av fiksmeg-revisjoner per forfatter',
+	'code-stats-new-breakdown' => 'Inndeling av nye revisjoner per forfatter',
 	'code-stats-count' => 'Antall revisjoner',
+	'code-tooltip-withsummary' => 'r$1 [$2] av $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] av $3',
 	'repoadmin' => 'Databaseadministrasjon',
 	'repoadmin-new-legend' => 'Lag en ny database',
 	'repoadmin-new-label' => 'Databasenavn',
@@ -10127,7 +10135,7 @@ $messages['pms'] = array(
 	'codereview-email-body' => 'L\'utent "$1" a l\'ha spedì un coment su $3.
 
 Adrëssa dl\'aragnà completa: $2
-Manda resumé:
+Resumé dla modìfica:
 
 $5
 
@@ -10138,13 +10146,13 @@ $4',
 	'codereview-email-body2' => 'L\'utent "$1" a l\'ha fàit dij cangiament suplementar a $2.
 
 Adrëssa dl\'aragnà completa apress la revision: $5
-Manda resumé:
+Resumé dla modìfica:
 
 $6
 
 Adrëssa dl\'aragnà completa: $3
 
-Manda resumé:
+Resumé dla modìfica:
 
 $4',
 	'codereview-email-subj3' => "[$1 $2]: Lë stat ëd revision a l'é cangià",
@@ -10154,7 +10162,7 @@ Stat Vej: $3
 Stat Neuv: $4
 
 Anliura completa: $5
-Manda resumé:
+Resumé dla modìfica:
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: Giontà coment neuv, e cangià stat ëd la revision',
@@ -10166,7 +10174,7 @@ Stat Neuv: $4
 L\'utent "$1" a l\'ha ëdcò spedì un coment su $2.
 
 Anliura completa: $5
-Manda resumé:
+Resumé dla modìfica:
 
 $7
 
@@ -10199,7 +10207,7 @@ $6',
 	'right-codereview-signoff' => 'Conclud le revision',
 	'right-codereview-link-user' => 'Colega autor a utent wiki',
 	'right-codereview-associate' => "Gestì j'associassion ëd revision",
-	'right-codereview-review-own' => 'Marca toe revision com OK',
+	'right-codereview-review-own' => "Marché le pròpie revision com ch'a van bin",
 	'specialpages-group-developer' => 'Utiss dël dësvlupador',
 	'group-svnadmins' => 'Aministrator SVN',
 	'group-svnadmins-member' => 'Aministrator SVN',
