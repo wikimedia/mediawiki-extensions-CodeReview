@@ -227,14 +227,14 @@ class CodeRevisionListView extends CodeView {
 		$name = $this->mRepo->getName();
 
 		$title = SpecialPage::getTitleFor( 'Code', $name );
-		$options = array(Xml::option('', $title, $this->mStatus == '' ) );
+		$options = array( Xml::option( '', $title->getPrefixedText(), $this->mStatus == '' ) );
 
 
-		foreach ($states as $key => $state) {
+		foreach ( $states as $key => $state ) {
 			$title = SpecialPage::getTitleFor( 'Code', $name . "/status/$state" );
 			$options[] = Xml::option( 
-				wfMsgHtml( "code-status-".$state ), 
-				$title,
+				wfMsgHtml( "code-status-$state" ),
+				$title->getPrefixedText(),
 				$this->mStatus == $state
 			);
 		}
