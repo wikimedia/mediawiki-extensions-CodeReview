@@ -1,6 +1,7 @@
 <?php
 
 class CodeRevisionAuthorView extends CodeRevisionListView {
+
 	function __construct( $repo, $author ) {
 		parent::__construct( $repo );
 		$this->mAuthor = $author;
@@ -13,7 +14,7 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 
 	function linkStatus() {
 		if ( !$this->mUser ) {
-			return wfMsg( 'code-author-orphan' );
+			return wfMsg( 'code-author-orphan', $this->authorLink( $this->mAuthor ) );
 		}
 
 		return wfMsgHtml( 'code-author-haslink',
@@ -33,11 +34,11 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 				wfMsg( 'code-author-' . ( $this->mUser ? 'un':'' ) . 'link' ) ) . ')' ;
 		}
 
-		$repoLink = $wgUser->getSkin()->link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+		$repoLink = $this->skin->link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 			htmlspecialchars( $this->mRepo->getName() ) );
 		$fields = array(
 			'code-rev-repo' => $repoLink,
-			'code-rev-author' => $this->authorLink( $this->mAuthor ),
+			'code-rev-author' => $this->mAuthor,
 		);
 
 		$wgOut->addHTML( $this->formatMetaData( $fields ) . $linkInfo );
