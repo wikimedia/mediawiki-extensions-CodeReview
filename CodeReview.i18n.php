@@ -2601,7 +2601,7 @@ $messages['de'] = array(
 	'code-tags-no-tags' => 'In diesem Repositorium gibt es keine Tags.',
 	'code-authors-text' => 'Es folgt die Liste der Repositoriumsautoren, nach Namen sortiert. Lokale Wikikonten werden in runden Klammern angezeigt. Daten könnten aus dem Cache stammen.',
 	'code-author-haslink' => 'Dieser Autor ist mit dem Wiki-Benutzer $1 verlinkt',
-	'code-author-orphan' => 'Dieser Autor hat keinen Link zu einem Wiki-Benutzerkonto',
+	'code-author-orphan' => 'Autor $1 hat keinen Link zu einem Wiki-Benutzerkonto',
 	'code-author-dolink' => 'Diesen Autor zu einem Wiki-Benutzerkonto verlinken:',
 	'code-author-alterlink' => 'Die Verlinkung zu einem Wiki-Benutzerkonto für diesen Autor ändern:',
 	'code-author-orunlink' => 'Verlinkung zu dem Wiki-Benutzerkonto aufheben:',
@@ -4348,8 +4348,10 @@ Uusi tila: $4',
  * @author Grondin
  * @author IAlex
  * @author Jean-Frédéric
+ * @author Od1n
  * @author Peter17
  * @author PieRRoMaN
+ * @author Seb35
  * @author Sherbrooke
  * @author Verdy p
  * @author Zetud
@@ -4370,8 +4372,8 @@ $messages['fr'] = array(
 	'code-no-repo' => 'Pas de dépôt configuré !',
 	'code-create-repo' => 'Allez à [[Special:RepoAdmin|support de Subversion]] pour créer un dépôt',
 	'code-need-repoadmin-rights' => "Des privilèges de niveau ''repoadmin'' sont requis pour créer un dépôt",
-	'code-need-group-with-rights' => "Aucun groupe de niveau ''repoadmin'' n'existe. Veuillez en ajouter un pour être en mesure de créer un nouveau dépôt.",
-	'code-repo-not-found' => "Le dépôt '''$1''' n'existe pas !",
+	'code-need-group-with-rights' => "Aucun groupe de niveau ''repoadmin'' n’existe. Veuillez en ajouter un pour être en mesure de créer un nouveau dépôt.",
+	'code-repo-not-found' => "Le dépôt '''$1''' n’existe pas !",
 	'code-load-diff' => 'Chargement du diff en cours...',
 	'code-notes' => 'commentaires récents',
 	'code-statuschanges' => 'modifications de statut',
@@ -4421,7 +4423,7 @@ $messages['fr'] = array(
 	'code-rev-modified-r' => 'remplacé',
 	'code-rev-modified-d' => 'supprimé',
 	'code-rev-modified-m' => 'modifié',
-	'code-rev-imagediff' => "Modifications d'images",
+	'code-rev-imagediff' => 'Modifications d’images',
 	'code-rev-status' => 'État :',
 	'code-rev-status-set' => 'Changer l’état',
 	'code-rev-tags' => 'Balises :',
@@ -4439,7 +4441,7 @@ $messages['fr'] = array(
 	'code-status-new' => 'nouveau',
 	'code-status-desc-new' => 'Une action est en attente pour cette révision (état par défaut).',
 	'code-status-fixme' => 'à corriger',
-	'code-status-desc-fixme' => 'Un relecteur a marqué cette révision comme introduisant un bug ou étant erronée. Elle devrait être corrigée.',
+	'code-status-desc-fixme' => 'La révision a introduit un bug ou est erronée. Elle devrait être corrigée ou annulée.',
 	'code-status-reverted' => 'révoqué',
 	'code-status-desc-reverted' => 'La révision a été rejetée par une révision ultérieure.',
 	'code-status-resolved' => 'résolu',
@@ -4463,7 +4465,7 @@ $messages['fr'] = array(
 	'code-signoff-struckdate' => '$1 (a rayé $2)',
 	'code-pathsearch-legend' => 'Rechercher des révisions dans ce dépôt par chemin',
 	'code-pathsearch-path' => 'Chemin :',
-	'code-pathsearch-filter' => 'Filtre appliqué :',
+	'code-pathsearch-filter' => 'Montrer seulement :',
 	'code-revfilter-cr_status' => 'Statut = $1',
 	'code-revfilter-cr_author' => 'Auteur = $1',
 	'code-revfilter-ct_tag' => 'Balise = $1',
@@ -4481,8 +4483,8 @@ $messages['fr'] = array(
 	'code-release-endrev' => 'Révision de fin :',
 	'codereview-subtitle' => 'Pour $1',
 	'codereview-reply-link' => 'répondre',
-	'codereview-overview-title' => "Vue d'ensemble",
-	'codereview-overview-desc' => "Affiche une vue d'ensemble graphique de cette liste.",
+	'codereview-overview-title' => 'Vue d’ensemble',
+	'codereview-overview-desc' => 'Affiche une vue d’ensemble graphique de cette liste.',
 	'codereview-email-subj' => '[$1 $2] : nouveau commentaire ajouté',
 	'codereview-email-body' => 'L’utilisateur « $1 » a posté un commentaire sur $3.
 
@@ -7737,7 +7739,7 @@ $messages['lb'] = array(
 	'code-tags' => 'Tagen',
 	'code-authors-text' => 'Ënnendrënner ass eng Lëscht vun de Repo-Auteuren an der Reiefolleg vum Commit Numm. Lokal Wikikonte ginn tëschent Klamere gewisen. Et ka sinn datt Daten aus dem Tëschspäicher kommen.',
 	'code-author-haslink' => 'Dësen Auteur ass mam Wiki-Benotzer $1 verbonn',
-	'code-author-orphan' => 'Dëse Benotzer huet kee Link mat engem Wiki-Benotzerkont',
+	'code-author-orphan' => 'De Wiki-Benotzer $1 huet kee Link mat engem Wiki-Benotzerkont',
 	'code-author-dolink' => 'Dësen Auteur mat engem Wiki-Benotzer verbannen:',
 	'code-author-alterlink' => 'De Wiki-Benotzer de mat dësem Auteur verlinkt ass änneren:',
 	'code-author-orunlink' => 'oder dëse Benotzer net méi verlinken:',
@@ -8177,7 +8179,7 @@ $messages['mk'] = array(
 	'code-authors-text' => 'Еве список на автори на складишта подредени по име. Сметките на локалните викија се прикажани во загради.
 Податоците може да бидат кеширани.',
 	'code-author-haslink' => 'Овој автор е сврзан со корисникот $1',
-	'code-author-orphan' => 'Овој автор нема врска до вики-сметка',
+	'code-author-orphan' => 'Корисникот $1 нема врска со вики-сметка',
 	'code-author-dolink' => 'Сврзи го овој автор со корисник:',
 	'code-author-alterlink' => 'Сменете го корисникот сврзан со овој автор:',
 	'code-author-orunlink' => 'Или отстранете врска до корисникот',
@@ -9385,7 +9387,7 @@ $messages['no'] = array(
 	'code-tags-no-tags' => 'Ingen merkelapper finnes i dette repositoriet.',
 	'code-authors-text' => 'Nedenfor er en liste over repo-forfattere sortert etter bidragsnavn. Lokale wikikontoer vises i parantes. Data kan være hurtiglagret.',
 	'code-author-haslink' => 'Denne forfatteren er lenket til wikibruker $1',
-	'code-author-orphan' => 'Denne forfatteren har ingen lenke til en wiki-konto',
+	'code-author-orphan' => 'Wikibruker $1 har ingen lenke til en wikikonto',
 	'code-author-dolink' => 'Lenk denne forfatteren til en wikibruker:',
 	'code-author-alterlink' => 'Endre denne wikibrukeren til denne forfatteren:',
 	'code-author-orunlink' => 'Eller fjern lenke til denne wikibrukeren:',
@@ -9816,7 +9818,7 @@ $messages['pl'] = array(
 	'code-tags-no-tags' => 'Brak znaczników w tym repozytorium.',
 	'code-authors-text' => 'Poniżej znajduje się lista autorów repozytorium w kolejności nazwy poprawki. Lokalne konta wiki są wyświetlane w nawiasach. Dane mogą pochodzi z pamięci tymczasowej.',
 	'code-author-haslink' => 'Ten autor jest podlinkowany do konta użytkownika na wiki jako $1',
-	'code-author-orphan' => 'Ten autor nie jest podlinkowany do żadnego konta użytkownika na wiki',
+	'code-author-orphan' => 'Użytkownik wiki $1 nie jest powiązany z żadnym kontem',
 	'code-author-dolink' => 'Podlinkuj tego autora do konta użytkownika na wiki:',
 	'code-author-alterlink' => 'Zmień linkowanie tego autora do konta użytkownika na wiki:',
 	'code-author-orunlink' => 'Lub odlinkuj to konto użytkownika na wiki:',
@@ -10731,7 +10733,7 @@ $messages['ro'] = array(
 	'code-mycommits' => 'publicările mele',
 	'code-authors' => 'autori',
 	'code-tags' => 'etichete',
-	'code-author-orphan' => 'Acest autor nu are nicio legătură cu un cont wiki',
+	'code-author-orphan' => 'Utilizatorul $1 nu are nicio legătură către un cont wiki',
 	'code-author-orunlink' => 'Sau dezlegați acest utilizator:',
 	'code-author-name' => 'Introduceți un nume de utilizator:',
 	'code-author-success' => 'Autorul $1 a fost legat la utilizatorul $2',
@@ -11438,7 +11440,7 @@ $4',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN адміністраторы',
 );
 
-/** Yakut (Саха тыла)
+/** Sakha (Саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -11993,7 +11995,7 @@ $messages['sl'] = array(
 	'code-tags-no-tags' => 'V tej shrambi ne obstaja nobena oznaka.',
 	'code-authors-text' => 'Spodaj je seznam avtorjev shrambe razporejenih po prispevajočem imenu. Lokalni wikiračuni so prikazani v oklepajih. Podatki so lahko predpomnjeni.',
 	'code-author-haslink' => 'Ta avtor je povezan z wikiuporabnikom $1',
-	'code-author-orphan' => 'Ta avtor nima povezave z wikiračunom',
+	'code-author-orphan' => 'Wikiuporabnik $1 ni povezan z wikiračunom',
 	'code-author-dolink' => 'Poveži tega avtorja z wikiuporabnikom:',
 	'code-author-alterlink' => 'Spremeni wikiuporabnika, povezanega s tem avtorjem:',
 	'code-author-orunlink' => 'Ali odstrani povezavo tega wikiuporabnika:',
@@ -14075,7 +14077,7 @@ $messages['vi'] = array(
 	'code-tags-no-tags' => 'Không có thẻ nào trong kho này.',
 	'code-authors-text' => 'Đây có danh sách tác giả trong kho, xếp theo tên thay đổi. Trong dấu ngoặc có tài khoản wiki địa phương. Dữ liệu có thể được lấy từ vùng nhớ đệm.',
 	'code-author-haslink' => 'Tác giả này được liên kết đến thành viên wiki $1',
-	'code-author-orphan' => 'Tác giả này chưa được liên kết đến tài khoản wiki nào',
+	'code-author-orphan' => 'Người dùng wiki “$1” chưa được liên kết đến tài khoản wiki nào',
 	'code-author-dolink' => 'Liên kết tác giả mã nguồn này đến thành viên wiki:',
 	'code-author-alterlink' => 'Đổi thành viên wiki được liên kết đến tác giả này:',
 	'code-author-orunlink' => 'Hoặc bỏ liên kết đến thành viên wiki này:',
