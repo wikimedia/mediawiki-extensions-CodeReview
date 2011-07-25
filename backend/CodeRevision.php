@@ -282,10 +282,10 @@ class CodeRevision {
 			throw new MWException( "Tried to save invalid code revision status" );
 		}
 
-		// Don't allow the user account tied to the committer account mark their own revisions as ok
+		// Don't allow the user account tied to the committer account mark their own revisions as ok/resolved
 		// Obviously only works if user accounts are tied!
 		$wikiUser = $this->getWikiUser();
-		if ( $status == 'ok' && $wikiUser && $user->getName() == $wikiUser->getName() ) {
+		if ( ( $status == 'ok' || $status == 'resolved' ) && $wikiUser && $user->getName() == $wikiUser->getName() ) {
 			// allow the user to review their own code if required
 			if ( !$wikiUser->isAllowed( 'codereview-review-own' ) ) {
 				return false;
