@@ -232,7 +232,7 @@ $6',
 	'right-codereview-signoff' => 'Sign off on revisions',
 	'right-codereview-link-user' => 'Link authors to wiki users',
 	'right-codereview-associate' => 'Manage revision associations',
-	'right-codereview-review-own' => 'Mark your own revisions as OK',
+	'right-codereview-review-own' => 'Mark your own revisions as OK or Resolved',
 
 	'specialpages-group-developer' => 'Developer tools',
 
