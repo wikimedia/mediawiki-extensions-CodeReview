@@ -82,23 +82,23 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		$count = 0;
 		$start = 0;
 		$defaultSort = $pager->getDefaultSort();
+		$result = $this->getResult();
 		foreach ( $revisions as $row ) {
 			if ( !$revsSet && $count == $limit ) {
 				$this->setContinueEnumParameter( 'start', $start );
 				break;
 			}
 
-			$data[] = $this->formatRow( $row );
+			$data[] = $this->formatRow( $row, $repo, $result );
 			$start = $row->$defaultSort;
 			$count++;
 		}
 
-		$result = $this->getResult();
 		$result->setIndexedTagName( $data, 'revision' );
 		$result->addValue( 'query', $this->getModuleName(), $data );
 	}
 
-	private function formatRow( $row ) {
+	private function formatRow( $row, $repo, $result ) {
 		$item = array();
 		if ( isset( $this->props['revid'] ) ) {
 			$item['revid'] = intval( $row->cr_id );
@@ -120,6 +120,11 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		}
 		if ( isset( $this->props['timestamp'] ) ) {
 			$item['timestamp'] = wfTimestamp( TS_ISO_8601, $row->cr_timestamp );
+		}
+		if ( isset( $this->props['tags'] ) ) {
+			$rev = CodeRevision::newFromRow( $repo, $row );
+			$item['tags'] = $rev->getTags( );
+			$result->setIndexedTagName( $item, 'tags' );
 		}
 		return $item;
 	}
@@ -156,6 +161,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 					'path',
 					'message',
 					'author',
+					'tags',
 					'timestamp',
 				),
 			),
@@ -188,7 +194,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=coderevisions&crrepo=MediaWiki',
-			'api.php?action=query&list=coderevisions&crrepo=MediaWiki&crprop=revid|author|status|timestamp',
+			'api.php?action=query&list=coderevisions&crrepo=MediaWiki&crprop=revid|author|status|timestamp|tags',
 		);
 	}
 
