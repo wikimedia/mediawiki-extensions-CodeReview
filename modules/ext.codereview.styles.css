@@ -15,10 +15,16 @@ table.mw-codereview-meta td {
 	max-width: 20em;
 	overflow: hidden;
 }
-/* @noflip */.sitedir-ltr .TablePager_col_cr_message, .sitedir-ltr .mw-codereview-message {
+/* @noflip */
+.sitedir-ltr .TablePager_col_cr_message,
+.sitedir-ltr .TablePager_col_cc_text,
+.sitedir-ltr .mw-codereview-message {
 	direction: ltr;
 }
-/* @noflip */.sitedir-rtl .TablePager_col_cr_message, .sitedir-rtl .mw-codereview-message {
+/* @noflip */
+.sitedir-rtl .TablePager_col_cr_message,
+.sitedir-rtl .TablePager_col_cc_text,
+.sitedir-rtl .mw-codereview-message {
 	direction: rtl;
 }
 
