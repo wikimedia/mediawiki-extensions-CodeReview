@@ -125,7 +125,7 @@ table.mw-codereview-meta td {
 }
 
 /* Diffs */
-.mw-codereview-diff {
+.mw-codereview-diff pre {
 	/* @noflip */direction: ltr; /* Source code is always LTR */
 }
 .mw-codereview-diff ins {
