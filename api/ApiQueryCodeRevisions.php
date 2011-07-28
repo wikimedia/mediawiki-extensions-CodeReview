@@ -98,6 +98,12 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		$result->addValue( 'query', $this->getModuleName(), $data );
 	}
 
+	/**
+	 * @param $row
+	 * @param $repo CodeRepository
+	 * @param $result ApiResult
+	 * @return array
+	 */
 	private function formatRow( $row, $repo, $result ) {
 		$item = array();
 		if ( isset( $this->props['revid'] ) ) {
@@ -124,7 +130,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		if ( isset( $this->props['tags'] ) ) {
 			$rev = CodeRevision::newFromRow( $repo, $row );
 			$item['tags'] = $rev->getTags( );
-			$result->setIndexedTagName( $item, 'tags' );
+			$result->setIndexedTagName( $item['tags'], 'tags' );
 		}
 		return $item;
 	}
