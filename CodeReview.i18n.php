@@ -7701,11 +7701,21 @@ $6',
 
 /** Kurdish (Latin) (Kurdî (Latin))
  * @author George Animal
+ * @author Welathêja
  */
 $messages['ku-latn'] = array(
+	'code-change-added' => 'hat zêdekirin:',
+	'code-old-status' => 'Rewşa kevn',
+	'code-new-status' => 'Rewşa nû',
+	'code-mycomments' => 'şîroveyên min',
+	'code-field-id' => 'Revîzyon',
+	'code-field-timestamp' => 'Dem',
+	'code-rev-comment-preview' => 'Pêşdîtin',
+	'code-rev-inline-preview' => 'Pêşdîtin:',
 	'code-status-new' => 'nû',
 	'code-status-ok' => 'temam',
 	'code-status-old' => 'kevn',
+	'code-signoff-flag-tested' => 'Hat ceribandin',
 	'code-signoff-field-user' => 'Bikarhêner',
 	'codereview-subtitle' => 'Ji bo $1',
 	'code-stats' => 'statîstîkan',
