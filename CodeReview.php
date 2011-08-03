@@ -145,6 +145,9 @@ $wgSubversionOptions = "--non-interactive --trust-server-cert";
 // What is the default SVN import chunk size?
 $wgCodeReviewImportBatchSize = 400;
 
+// Shuffle the tag cloud
+$wgCodeReviewShuffleTagCloud = false;
+
 $commonModuleInfo = array(
 	'localBasePath' => dirname( __FILE__ ) . '/modules',
 	'remoteExtPath' => 'CodeReview/modules',

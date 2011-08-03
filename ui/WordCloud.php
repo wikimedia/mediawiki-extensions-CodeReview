@@ -85,10 +85,17 @@ class WordCloud {
 	 * @return String
 	 */
 	public function getCloudHtml() {
+		global $wgCodeReviewShuffleTagCloud;
 		if( 0 === count( $this->wordsArray ) ) {
 			return '';
 		}
-		$this->shuffleCloud();
+
+		if ( $wgCodeReviewShuffleTagCloud ) {
+			$this->shuffleCloud();
+		} else {
+			ksort( $this->wordsArray );
+		}
+
 		$max = max( $this->wordsArray );
 		if( is_array( $this->wordsArray ) ) {
 			$return = '';
