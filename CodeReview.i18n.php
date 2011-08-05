@@ -2260,6 +2260,7 @@ $messages['ckb'] = array(
 
 /** Czech (Česky)
  * @author Danny B.
+ * @author Kuvaly
  * @author Matěj Grabovský
  * @author Mormegil
  */
@@ -2389,6 +2390,7 @@ $messages['cs'] = array(
 	'code-release-endrev' => 'Poslední revize:',
 	'codereview-subtitle' => 'Pro $1',
 	'codereview-reply-link' => 'odpovědět',
+	'codereview-overview-title' => 'Přehled',
 	'codereview-email-subj' => '[$1 $2]: Přidán nový komentář',
 	'codereview-email-body' => 'Uživatel „$1“ přidal komentář k $3.
 
@@ -4599,7 +4601,7 @@ $messages['frp'] = array(
 	'code-tags' => 'balises',
 	'code-authors-text' => 'Vê-que una lista ux ôtors de dèpôts triyês per nom. Los comptos du vouiqui local sont montrâs entre-mié parentèses. Les balyês pôvont étre en cache.',
 	'code-author-haslink' => 'Cél ôtor est liyê u compto $1 de ceti vouiqui',
-	'code-author-orphan' => 'Cél ôtor at gins de lim avouéc un compto vouiqui',
+	'code-author-orphan' => 'L’utilisator SVN / ôtor est pas liyê a un compto vouiqui',
 	'code-author-dolink' => 'Associyér cél ôtor a un utilisator vouiqui local :',
 	'code-author-alterlink' => 'Changiér l’utilisator vouiqui liyê a cél ôtor :',
 	'code-author-orunlink' => 'Ou ben dèliyér ceti utilisator vouiqui :',
@@ -4767,7 +4769,7 @@ $6',
 	'right-codereview-signoff' => 'Aprovar des rèvisions',
 	'right-codereview-link-user' => 'Liyér los ôtors ux utilisators vouiqui',
 	'right-codereview-associate' => 'Administrar les associacions de rèvisions',
-	'right-codereview-review-own' => 'Marcar ses prôpres rèvisions coment OK',
+	'right-codereview-review-own' => 'Marcar ses prôpres rèvisions coment OK ou ben Solucionâ',
 	'specialpages-group-developer' => 'Outils u dèvelopor',
 	'group-svnadmins' => 'Administrators SVN',
 	'group-svnadmins-member' => 'Administrator SVN',
