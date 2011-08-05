@@ -71,6 +71,7 @@ CREATE TABLE /*_*/code_rev (
 
 CREATE INDEX /*i*/cr_repo_id ON /*_*/code_rev (cr_repo_id, cr_timestamp);
 CREATE INDEX /*i*/cr_repo_author ON /*_*/code_rev (cr_repo_id, cr_author, cr_timestamp);
+CREATE INDEX /*i*/cr_repo_status_author ON /*_*/code_rev (cr_repo_id, cr_status, cr_author);
 
 --
 -- Allow us to match up repository usernames
