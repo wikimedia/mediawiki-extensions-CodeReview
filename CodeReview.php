@@ -286,7 +286,7 @@ function efCodeReviewSchemaUpdates( $updater ) {
 		$updater->addExtensionUpdate( array( 'addIndex', 'code_paths', 'repo_path',
 			"$base/archives/codereview-repopath.sql", true ) );
 
-		$updater->addExtensionUpdate( array( 'addIndex', 'code_revs', 'cr_repo_status_author',
+		$updater->addExtensionUpdate( array( 'addIndex', 'code_rev', 'cr_repo_status_author',
 			"$base/archives/code_revs_status_author-index.sql", true ) );
 		break;
 	case 'sqlite':
