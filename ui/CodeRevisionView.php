@@ -542,7 +542,7 @@ class CodeRevisionView extends CodeView {
 		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-flag' ). '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-date' ). '</th>';
 		$buttonrow = $showButtons ? $this->signoffButtons( $signOffs ) : '';
-		return "<table border='1' class='TablePager'><tr>$header</tr>$signoffs$buttonrow</table>";
+		return "<table border='1' class='wikitable'><tr>$header</tr>$signoffs$buttonrow</table>";
 	}
 
 	/**
@@ -594,7 +594,7 @@ class CodeRevisionView extends CodeView {
 		$header .= '<th>' . wfMsgHtml( 'code-field-author' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-timestamp' ) . '</th>';
 		$buttonrow = $showButtons ? $this->referenceButtons() : '';
-		return "<table border='1' class='TablePager'><tr>{$header}</tr>{$refs}{$buttonrow}</table>";
+		return "<table border='1' class='wikitable'><tr>{$header}</tr>{$refs}{$buttonrow}</table>";
 	}
 
 	/**

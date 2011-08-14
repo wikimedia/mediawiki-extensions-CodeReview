@@ -24,7 +24,7 @@ class CodeRepoStatsView extends CodeView {
 
 		if ( !empty( $stats->states ) ) {
 			$wgOut->wrapWikiMsg( '<h3 id="stats-revisions">$1</h3>', 'code-stats-status-breakdown' );
-			$wgOut->addHTML( '<table class="TablePager">'
+			$wgOut->addHTML( '<table class="wikitable">'
 				. '<tr><th>' . wfMsgHtml( 'code-field-status' ) . '</th><th>'
 				. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
 			foreach ( CodeRevision::getPossibleStates() as $state ) {
@@ -57,7 +57,7 @@ class CodeRepoStatsView extends CodeView {
 		global $wgOut, $wgLang;
 		$repoName = $this->mRepo->getName();
 		$wgOut->wrapWikiMsg( "<h3 id=\"stats-{$status}\">$1</h3>", "code-stats-{$status}-breakdown" );
-		$wgOut->addHTML( '<table class="TablePager">'
+		$wgOut->addHTML( '<table class="wikitable">'
 			. '<tr><th>' . wfMsgHtml( 'code-field-author' ) . '</th><th>'
 			. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
 		$title = SpecialPage::getTitleFor( 'Code', $repoName . "/status/{$status}" );

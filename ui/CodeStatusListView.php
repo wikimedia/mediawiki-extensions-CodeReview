@@ -21,11 +21,11 @@ class CodeStatusListView extends CodeView {
 			$table_rows .= "<tr><td class=\"mw-codereview-status-$state\">$link</td>"
 				. "<td>" . wfMsgHtml( "code-status-desc-" . $state ) . "</td></tr>\n" ;
 		}
-		$wgOut->addHTML( '<table class="TablePager">'
+		$wgOut->addHTML( '<table class="wikitable">'
 			. '<tr><th>' . wfMsgHtml( 'code-field-status' ) . '</th>'
 			. '<th>' . wfMsgHtml( 'code-field-status-description' ) . '</th></tr>'
 			. $table_rows
-			. '</table>'   
+			. '</table>'
 		);
 	}
 }

@@ -15,7 +15,7 @@ class CodeAuthorListView extends CodeView {
 
 		$wgOut->addWikiText( $text );
 
-		$wgOut->addHTML( '<table class="TablePager">'
+		$wgOut->addHTML( '<table class="wikitable">'
 				. '<tr><th>' . wfMsgHtml( 'code-field-author' )
 				. '</th><th>' . wfMsgHtml( 'code-author-lastcommit' ) . '</th></tr>' );
 
