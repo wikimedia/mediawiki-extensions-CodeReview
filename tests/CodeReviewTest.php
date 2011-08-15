@@ -40,4 +40,28 @@ class CodeReviewTest extends PHPUnit_Framework_TestCase {
 		
 		// $this->assertEquals( '', $formatter->link( '' ) );
 	}
+
+	public function testCommentFullUrl() {
+		# Fixture:
+		$repo = $this->createRepo();
+		$cr = CodeRevision::newFromSvn( $repo, array(
+			'rev'    => 305,
+			'author' => 'hashar',
+			'date'   => '15 august 2011',
+			'msg'    => 'dumb revision message',
+			'paths'  => array( '/dev/null' ),
+			)
+		);
+
+		# Find out our revision root URL
+		$baseUrl = SpecialPage::getTitleFor( 'Code', $repo->getName().'/305' )->getFullUrl();
+
+		# Test revision URL with various comment id:
+		$this->assertEquals( $baseUrl, $cr->getFullUrl(    '' ) );
+		$this->assertEquals( $baseUrl, $cr->getFullUrl(     0 ) );
+		$this->assertEquals( $baseUrl, $cr->getFullUrl(  null ) );
+		$this->assertEquals( $baseUrl, $cr->getFullUrl(   "0" ) );
+		$this->assertEquals( $baseUrl . '#c777', $cr->getFullUrl(   777 ) );
+		$this->assertEquals( $baseUrl . '#c777', $cr->getFullUrl( "777" ) );
+	}
 }

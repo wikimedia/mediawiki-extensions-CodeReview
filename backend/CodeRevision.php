@@ -1241,10 +1241,11 @@ class CodeRevision {
 	 * @param string $commentId
 	 * @return \type
 	 */
-	public function getFullUrl( $commentId = '' ) {
+	public function getFullUrl( $commentId = 0 ) {
 		$title = SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/' . $this->id );
 
-		if ( $commentId !== '' ) {
+		# Append comment id if not null, empty string or zero
+		if ( $commentId ) {
 			$title->setFragment( "#c{$commentId}" );
 		}
 
