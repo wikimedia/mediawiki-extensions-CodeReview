@@ -28,7 +28,7 @@ abstract class CodeCommentLinker {
 	function link( $text ) {
 		# Catch links like http://www.mediawiki.org/wiki/Special:Code/MediaWiki/44245#c829
 		# Ended by space or brackets (like those pesky <br /> tags)
-		$text = preg_replace_callback( '/(^|[^\w[])(' . wfUrlProtocols() . ')(' . Parser::EXT_LINK_URL_CLASS . '+)/',
+		$text = preg_replace_callback( '/(^|[^\w[])(' . wfUrlProtocolsWithoutProtRel() . ')(' . Parser::EXT_LINK_URL_CLASS . '+)/',
 			array( $this, 'generalLink' ), $text );
 		$text = preg_replace_callback( '/\br(\d+)\b/',
 			array( $this, 'messageRevLink' ), $text );
