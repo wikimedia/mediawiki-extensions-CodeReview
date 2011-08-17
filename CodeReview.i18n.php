@@ -2789,6 +2789,13 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administratoren',
 );
 
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Kghbln
+ */
+$messages['de-formal'] = array(
+	'code-create-repo' => 'Gehen Sie zur Spezialseite [[Special:RepoAdmin|RepoAdmin]] um ein Repositorium zu erstellen',
+);
+
 /** Zazaki (Zazaki)
  * @author Xoser
  */
@@ -8997,6 +9004,7 @@ $messages['nds-nl'] = array(
 );
 
 /** Nepali (नेपाली)
+ * @author Bhawani Gautam
  * @author Bhawani Gautam Rhk
  */
 $messages['ne'] = array(
@@ -9740,7 +9748,7 @@ $messages['or'] = array(
 	'repoadmin-edit-button' => 'ଠିକ ଅଛି',
 );
 
-/** Ossetic (Иронау)
+/** Ossetic (Ирон)
  * @author Amikeco
  */
 $messages['os'] = array(
@@ -14518,8 +14526,8 @@ $3',
  * @author 阿pp
  */
 $messages['zh-hans'] = array(
-	'code' => '查看代码',
-	'code-rev-title' => '$1 - 代码复核',
+	'code' => '代码复审',
+	'code-rev-title' => '$1 - 代码复审',
 	'code-comments' => '评论',
 	'code-references' => '后续修订',
 	'code-change-status' => "改变了$1的'''状态'''",
@@ -14528,63 +14536,63 @@ $messages['zh-hans'] = array(
 	'code-change-added' => '增加：',
 	'code-old-status' => '旧状态',
 	'code-new-status' => '新状态',
-	'code-prop-changes' => '状态与标签记录',
-	'codereview-desc' => '使用[[Special:RepoAdmin|Subversion支持]]的[[Special:Code|代码检查工具]]',
-	'code-no-repo' => '储存库未被设置！',
-	'code-create-repo' => '转到[[Special:RepoAdmin|RepoAdmin]]创建Repository',
-	'code-need-repoadmin-rights' => '需要repoadmin权限来建立Repository',
-	'code-need-group-with-rights' => '不存在具有repoadmin权限的组，请添加新组以建立Repository',
-	'code-repo-not-found' => "存储库'''$1'''不存在！",
-	'code-load-diff' => '加载差异中...',
-	'code-notes' => '新近发言',
-	'code-statuschanges' => '更改状态',
+	'code-prop-changes' => '状态和标签日志',
+	'codereview-desc' => '[[Special:RepoAdmin|支持Subversion]]的[[Special:Code|代码复审工具]]',
+	'code-no-repo' => '未配置版本库！',
+	'code-create-repo' => '前往[[Special:RepoAdmin|版本库管理]]创建版本库',
+	'code-need-repoadmin-rights' => '需要版本库管理权限来创建版本库',
+	'code-need-group-with-rights' => '不存在具有版本库管理权限的用户组，请为特定组增加权限以新建版本库',
+	'code-repo-not-found' => "版本库'''$1'''不存在！",
+	'code-load-diff' => '加载差异中……',
+	'code-notes' => '最近评论',
+	'code-statuschanges' => '状态更改',
 	'code-mycommits' => '我的提交',
 	'code-mycomments' => '我的评论',
 	'code-authors' => '作者',
 	'code-status' => '状态',
 	'code-tags' => '标签',
-	'code-tags-no-tags' => '此存储库中不存在的任何标记。',
-	'code-authors-text' => '下面是提交名称的顺序进行回购协议作者的列表。本地维基帐户显示在括号中。可能缓存的数据。',
-	'code-author-haslink' => '作者与维基用户 $1 相关联',
-	'code-author-orphan' => 'SVN用户或作者$1未与wiki帐户关联',
-	'code-author-dolink' => '将作者与维基用户相关联：',
-	'code-author-alterlink' => '修改作者与维基用户之间的关联：',
-	'code-author-orunlink' => '或者取消这个维基用户的关联：',
+	'code-tags-no-tags' => '此版本库中没有任何标签。',
+	'code-authors-text' => '下面给出了按提交者名称排序的版本库作者列表。与本地Wiki对应的帐户会被括注写出。数据可能被缓存。',
+	'code-author-haslink' => '该作者和Wiki用户$1相关联',
+	'code-author-orphan' => 'SVN用户或作者$1未与Wiki帐户关联',
+	'code-author-dolink' => '将作者与Wiki用户关联：',
+	'code-author-alterlink' => '修改作者与Wiki用户的关联：',
+	'code-author-orunlink' => '或取消该Wiki用户的关联：',
 	'code-author-name' => '输入用户名：',
-	'code-author-success' => '作者 $1 已经与维基用户 $2 相关联',
-	'code-author-link' => '相关联？',
+	'code-author-success' => '作者$1已与Wiki用户$2关联',
+	'code-author-link' => '关联？',
 	'code-author-unlink' => '取消关联？',
-	'code-author-unlinksuccess' => '作者 $1 已经取消关联',
-	'code-author-badtoken' => '会话错误尝试执行的操作。',
+	'code-author-unlinksuccess' => '取消作者$1的关联',
+	'code-author-badtoken' => '试图执行操作的会话错误。',
 	'code-author-total' => '作者总数：$1',
-	'code-author-lastcommit' => '最后提交日期',
-	'code-browsing-path' => "正在浏览在'''$1'''的修改",
-	'code-field-id' => '修订版本',
+	'code-author-lastcommit' => '最近提交日期',
+	'code-browsing-path' => "正在浏览'''$1'''中的修订",
+	'code-field-id' => '修订',
 	'code-field-author' => '作者',
-	'code-field-user' => '评论员',
-	'code-field-message' => '评论汇总',
+	'code-field-user' => '评论者',
+	'code-field-message' => '提交摘要',
 	'code-field-status' => '状态',
 	'code-field-status-description' => '状态说明',
 	'code-field-timestamp' => '日期',
-	'code-field-comments' => '注释',
+	'code-field-comments' => '评论',
 	'code-field-path' => '路径',
-	'code-field-text' => '注释',
-	'code-field-select' => '选定',
-	'code-reference-remove' => '移除选定的关联',
-	'code-reference-associate' => '副学士的后续修订：',
-	'code-reference-associate-submit' => '将相关联',
+	'code-field-text' => '评论',
+	'code-field-select' => '选择',
+	'code-reference-remove' => '移除选定的关联修订',
+	'code-reference-associate' => '关联后续修订：',
+	'code-reference-associate-submit' => '关联',
 	'code-rev-author' => '作者：',
 	'code-rev-date' => '日期：',
 	'code-rev-message' => '评论：',
-	'code-rev-repo' => '储存库：',
-	'code-rev-rev' => '修订版本：',
-	'code-rev-rev-viewvc' => '在ViewVC上',
+	'code-rev-repo' => '版本库：',
+	'code-rev-rev' => '修订：',
+	'code-rev-rev-viewvc' => '在ViewVC上查看',
 	'code-rev-paths' => '修改路径：',
 	'code-rev-modified-a' => '增加',
 	'code-rev-modified-r' => '替代',
 	'code-rev-modified-d' => '删除',
 	'code-rev-modified-m' => '修改',
-	'code-rev-imagediff' => '档案更改',
+	'code-rev-imagediff' => '图像更改',
 	'code-rev-status' => '状态：',
 	'code-rev-status-set' => '更改状态',
 	'code-rev-tags' => '标签：',
@@ -14597,60 +14605,61 @@ $messages['zh-hans'] = array(
 	'code-rev-diff-link' => '差异',
 	'code-rev-diff-too-large' => '该差异太大，无法显示。',
 	'code-rev-purge-link' => '清除',
-	'code-rev-total' => '总共有$1个结果',
+	'code-rev-total' => '结果总数：$1',
 	'code-rev-not-found' => "修订'''$1'''不存在！",
 	'code-status-new' => '新',
-	'code-status-desc-new' => '修订是挂起的操作 （默认状态）。',
+	'code-status-desc-new' => '该修订正在等待操作（默认状态）。',
 	'code-status-fixme' => '修正',
-	'code-status-desc-fixme' => '修订引入了错误或已被损坏，应被修正或撤销。',
-	'code-status-reverted' => '回复',
-	'code-status-desc-reverted' => '修订被撤消的更高版本的修订。',
+	'code-status-desc-fixme' => '该修订引入了错误或已被损坏，应被修正或撤销。',
+	'code-status-reverted' => '撤销',
+	'code-status-desc-reverted' => '该修订已被更高版本的修订撤销。',
 	'code-status-resolved' => '解决',
-	'code-status-desc-resolved' => '修订了一个问题是处理的更高版本的修订。',
+	'code-status-desc-resolved' => '该修订存在的问题已被更高版本的修订处理。',
 	'code-status-ok' => '确定',
-	'code-status-desc-ok' => '修订全面审查，确保它是好在每个方法中审阅者。',
+	'code-status-desc-ok' => '该修订已被全面复查，复查者认为它无可挑剔。',
 	'code-status-deferred' => '推迟',
-	'code-status-desc-deferred' => '修订并不要求审查。',
+	'code-status-desc-deferred' => '该修订无需复查。',
 	'code-status-old' => '旧',
-	'code-status-desc-old' => '与潜在的错误，但这不值得检讨他们的努力的旧版本。',
-	'code-signoffs' => '签收',
-	'code-signoff-legend' => '添加签收',
-	'code-signoff-submit' => '批准',
-	'code-signoff-strike' => '剔除所选的签帐',
-	'code-signoff-signoff' => '此版本为注销：',
-	'code-signoff-flag-inspected' => '检查过',
-	'code-signoff-flag-tested' => '测试过了',
+	'code-status-desc-old' => '带有潜在错误的旧修订，但不值得付诸复审。',
+	'code-signoffs' => '确认',
+	'code-signoff-legend' => '添加确认',
+	'code-signoff-submit' => '确认',
+	'code-signoff-strike' => '取消选定的确认',
+	'code-signoff-signoff' => '该修订的确认状态为：',
+	'code-signoff-flag-inspected' => '已检查',
+	'code-signoff-flag-tested' => '已测试',
 	'code-signoff-field-user' => '用户',
 	'code-signoff-field-flag' => '标志',
 	'code-signoff-field-date' => '日期',
-	'code-signoff-struckdate' => '$1（打$2）',
-	'code-pathsearch-legend' => '在此进行回购协议的路径中搜索修订',
+	'code-signoff-struckdate' => '$1（取消于$2）',
+	'code-pathsearch-legend' => '在该版本库中按路径搜索修订',
 	'code-pathsearch-path' => '路径：',
 	'code-pathsearch-filter' => '仅显示：',
 	'code-revfilter-cr_status' => '状态 = $1',
 	'code-revfilter-cr_author' => '作者= $1',
 	'code-revfilter-ct_tag' => '标签 = $1',
-	'code-revfilter-clear' => '清除过滤器',
-	'code-rev-submit' => '保存修改',
+	'code-revfilter-clear' => '清除筛选器',
+	'code-rev-submit' => '保存更改',
 	'code-rev-submit-next' => '保存，并处理下一条',
 	'code-rev-next' => '下一条未解决',
 	'code-batch-status' => '更改状态：',
 	'code-batch-tags' => '更改标签：',
-	'codereview-batch-title' => '更改所有已选的版本',
+	'codereview-batch-title' => '更改所有选定的修订',
 	'codereview-batch-submit' => '提交',
-	'code-releasenotes' => '发布说明',
-	'code-release-legend' => '产发发布说明',
+	'code-releasenotes' => '发行说明',
+	'code-release-legend' => '生成发行说明',
 	'code-release-startrev' => '开始修订：',
 	'code-release-endrev' => '结束修订：',
-	'codereview-subtitle' => '$1',
+	'codereview-subtitle' => '版本库$1',
 	'codereview-reply-link' => '回复',
 	'codereview-overview-title' => '概述',
 	'codereview-overview-desc' => '显示此列表的图形概述',
-	'codereview-email-subj' => '[$1 $2]: 新的评论已添加',
-	'codereview-email-body' => '用户 "$1" 在 $3 上添加了一条评论。
+	'codereview-email-subj' => '[$1 $2]：新的评论已添加',
+	'codereview-email-body' => '用户“$1”在$3上发表了评论。
 
-完整URL地址: $2
-评论摘要：
+完整URL：$2
+提交摘要：
+
 $5
 
 评论：
@@ -14659,74 +14668,75 @@ $4',
 	'codereview-email-subj2' => '[$1 $2]：后续更改',
 	'codereview-email-body2' => '用户“$1”对$2作出了后续更改。
 
-后续修订的完整URL链接：$5
-编辑摘要：
+后续修订的完整URL：$5
+提交摘要：
 
 $6
 
-完整URL链接：$3
-编辑摘要：
+完整URL：$3
+提交摘要：
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]： 修订状态改变',
+	'codereview-email-subj3' => '[$1 $2]：修订状态改变',
 	'codereview-email-body3' => '用户“$1”更改了$2的状态。
 
 原状态：$3
 新状态：$4
 
 完整URL：$5
-编辑摘要：
+提交摘要：
 
 $6',
-	'codereview-email-subj4' => '[$1 $2]： 添加，新的注释和修订状态改变',
-	'codereview-email-body4' => '用户"$1"更改了$2的状态。
+	'codereview-email-subj4' => '[$1 $2]：新的评论已添加，修订状态改变',
+	'codereview-email-body4' => '用户“$1”更改了$2的状态。
 
-旧状态： $3
-新状态： $4
+旧状态：$3
+新状态：$4
 
-用户"$1"还张贴评论 $2。
+用户“$1”还在$2上发表了评论。
 
-完整 URL： $5
-评论摘要：
+完整URL：$5
+提交摘要：
+
 $7
 
 评论：
 
 $6',
-	'code-stats' => '统计',
-	'code-stats-header' => '$1 存储库的统计信息',
-	'code-stats-main' => '$1的存储库已$2{{PLURAL:$2|修改|修改}}的[[Special:Code/$3/author|$4{{PLURAL:$4|作者|作者}}]]。',
-	'code-stats-status-breakdown' => '每情况修订的数目',
-	'code-stats-fixme-breakdown' => '按作者的fixme修订',
-	'code-stats-new-breakdown' => '按作者的新修订',
-	'code-stats-count' => '修订的数目',
-	'code-tooltip-withsummary' => '版本$1 [$2] 作者：$3 - $4',
-	'code-tooltip-withoutsummary' => '版本$1 [$2] 作者：$3',
-	'repoadmin' => '储存库管理',
-	'repoadmin-new-legend' => '建立新的储存库',
-	'repoadmin-new-label' => '储存库名称：',
+	'code-stats' => '统计信息',
+	'code-stats-header' => '版本库$1的统计信息',
+	'code-stats-main' => '截至$1，该版本库共有$2次{{PLURAL:$2|修订|修订}}和[[Special:Code/$3/author|$4名{{PLURAL:$4|作者|作者}}]]。',
+	'code-stats-status-breakdown' => '按状态划分的修订统计',
+	'code-stats-fixme-breakdown' => '按作者待修正修订的分项统计',
+	'code-stats-new-breakdown' => '按作者新修订的分项统计',
+	'code-stats-count' => '修订数',
+	'code-tooltip-withsummary' => 'r$1 [$2] $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] $3',
+	'repoadmin' => '版本库管理',
+	'repoadmin-new-legend' => '新建版本库',
+	'repoadmin-new-label' => '版本库名称：',
 	'repoadmin-new-button' => '创建',
-	'repoadmin-edit-legend' => '修改储存库"$1"',
-	'repoadmin-edit-path' => '储存库路径：',
+	'repoadmin-edit-legend' => '修改版本库“$1”',
+	'repoadmin-edit-path' => '版本库路径：',
 	'repoadmin-edit-bug' => 'Bugzilla路径：',
 	'repoadmin-edit-view' => 'ViewVC路径：',
 	'repoadmin-edit-button' => '确定',
-	'repoadmin-edit-sucess' => '储存库"[[Special:Code/$1|$1]]"已被成功修改。',
-	'repoadmin-nav' => '存储库管理',
-	'right-repoadmin' => '管理代码储存库',
+	'repoadmin-edit-sucess' => '版本库“[[Special:Code/$1|$1]]”已被成功修改。',
+	'repoadmin-nav' => '版本库管理',
+	'right-repoadmin' => '管理代码版本库',
 	'right-codereview-use' => '使用Special:Code',
-	'right-codereview-add-tag' => '添加新标签到修订',
-	'right-codereview-remove-tag' => '自修订移除标签',
-	'right-codereview-post-comment' => '添加评论到修订',
+	'right-codereview-add-tag' => '给修订添加新标签',
+	'right-codereview-remove-tag' => '移除修订的标签',
+	'right-codereview-post-comment' => '向修订发表评论',
 	'right-codereview-set-status' => '修改修订状态',
-	'right-codereview-signoff' => '登录修订',
-	'right-codereview-link-user' => '将作者链接到维基用户',
-	'right-codereview-associate' => '管理版本关联',
-	'right-codereview-review-own' => '将您自己的修订标记为确定或已解决',
+	'right-codereview-signoff' => '确认修订',
+	'right-codereview-link-user' => '将作者与Wiki用户关联',
+	'right-codereview-associate' => '管理修订关联',
+	'right-codereview-review-own' => '将自己的修订标记为确定或解决',
 	'specialpages-group-developer' => '开发者工具',
-	'group-svnadmins' => 'SVN 管理员',
-	'group-svnadmins-member' => 'SVN 管理员',
-	'grouppage-svnadmins' => '{{ns:project}}:SVN 管理员',
+	'group-svnadmins' => 'SVN管理员',
+	'group-svnadmins-member' => 'SVN管理员',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN管理员',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
