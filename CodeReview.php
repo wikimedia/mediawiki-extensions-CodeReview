@@ -311,6 +311,7 @@ $wgHooks['UnitTestsList'][] = 'efCodeReviewUnitTests';
 
 function efCodeReviewUnitTests( &$files ) {
 	$files[] = dirname( __FILE__ ) . '/tests/CodeReviewTest.php';
+	$files[] = dirname( __FILE__ ) . '/tests/DiffHighlighterTest.php';
 	return true;
 }
 

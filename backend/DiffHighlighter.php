@@ -65,4 +65,36 @@ class CodeDiffHighlighter {
 		}
 	}
 
+	/**
+	 * Parse unified diff change chunk header.
+	 *
+	 * The format represents two ranges for the left (prefixed with -) and right
+	 * file (prefixed with +).
+	 * The format looks like:
+	 * @@ -l,s +l,s @@
+	 *
+	 * Where:
+	 *  - l is the starting line number
+	 *  - s is the number of lines the change hunk applies to
+	 *
+	 * NOTE: visibility is 'public' since the function covered by tests.
+	 *
+	 * @param $chunk string a one line chunk as described above
+	 * @return array with the four values above as an array
+	 */
+	static function parseChunkDelimiter( $chunkHeader ) {
+		# regex snippet to capture a number
+		$n = "(\d+)";
+
+		$matches = preg_match( "/^@@ -$n,$n \+$n,$n @@$/", $chunkHeader, $m );
+		array_shift( $m );
+
+		if( $matches !== 1 ) {
+			# We really really should have matched something!
+			throw new MWException(
+				__METHOD__ . " given an invalid chunk header \n"
+			);
+		}
+		return $m;
+	}
 }
