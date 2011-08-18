@@ -12,9 +12,9 @@ class CodeDiffHighlighter {
 	 * @return string
 	 */
 	function render( $text ) {
-		return '<pre class="mw-codereview-diff">' .
+		return '<table class="mw-codereview-diff">' .
 			$this->splitLines( $text ) .
-			"</pre>\n";
+			"</table>\n";
 	}
 
 	/**
@@ -41,7 +41,7 @@ class CodeDiffHighlighter {
 			return ""; // don't create bogus spans
 		}
 		list( $element, $attribs ) = $this->tagForLine( $line );
-		return Xml::element( $element, $attribs, $line );
+		return "<tr>".Xml::element( $element, $attribs, $line )."</tr>";
 	}
 
 	/**
@@ -50,12 +50,12 @@ class CodeDiffHighlighter {
 	 * @return array
 	 */
 	function tagForLine( $line ) {
-		static $default = array( 'span', array() );
+		static $default = array( 'td', array() );
 		static $tags = array(
-			'-' => array( 'del', array() ),
-			'+' => array( 'ins', array() ),
-			'@' => array( 'span', array( 'class' => 'meta' ) ),
-			' ' => array( 'span', array() ),
+			'-' => array( 'td', array( 'class' => 'del' ) ),
+			'+' => array( 'td', array( 'class' => 'ins' ) ),
+			'@' => array( 'td', array( 'class' => 'meta' ) ),
+			' ' => array( 'td', array() ),
 			);
 		$first = substr( $line, 0, 1 );
 		if ( isset( $tags[$first] ) ) {
