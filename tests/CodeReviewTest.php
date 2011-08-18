@@ -1,6 +1,6 @@
 <?php
 
-class CodeReviewTest extends PHPUnit_Framework_TestCase {
+class CodeReviewTest extends MediaWikiTestCase {
 	private function createRepo() {
 		$row = new stdClass();
 		$row->repo_id = 1;
