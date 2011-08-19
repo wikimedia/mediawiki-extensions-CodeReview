@@ -134,39 +134,41 @@ table.mw-codereview-meta td {
 .mw-codereview-diff table {
 	/* @noflip */direction: ltr; /* Source code is always LTR */
 
-	/* mimic MediaWiki <pre> style */
 	font-family: monospace, "Courer New";
 	line-height: 1.3em;
 	background-color: #F9F9F9;
-	border: 1px dashed #2F6FAB;
+	border: 1px solid #CCC;
 	color: black;
 
-	/* fix up space between <tr> */
+	/* fix up space between cells (cellspacing) */
 	border-collapse: collapse;
 }
-.mw-codereview-diff td {
-	margin:0;
 
-	/* keep padding on left and right just like <pre>
-	 * top bottom paddings are defined below for first/last childs
-	 */
-	padding:0 1em;
+.mw-codereview-diff tr.patchedfile {
+	background-color: #EEE;
+	color: black;
+}
+.mw-codereview-diff tr.patchedfile td {
+	padding: 1em;
+	border: 1px solid #CCC;
+}
+
+.mw-codereview-diff td {
+	border: 1px #CCC;
+	border-style: none solid;
 
 	/* respect white spaces just like <pre> */
 	white-space: pre;
 }
 
-/* "table border-collapse: collapse;" overrides padding
- * The two next rules mimic <pre> padding by applying one to the first
- * and last childs
- */
-.mw-codereview-diff tr:first-child td {
-	padding-top: 1em;
+.mw-codereview-diff td.linenumbers{
+	background-color: #EEE;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
-.mw-codereview-diff tr:last-child td {
-	padding-bottom: 1em;
-}
-
 .mw-codereview-diff td.ins {
 	text-decoration: none;
 	color: green;
@@ -174,6 +176,10 @@ table.mw-codereview-meta td {
 .mw-codereview-diff td.del {
 	text-decoration: none;
 	color: red;
+}
+.mw-codereview-diff td.chunkdelimiter {
+	background-color: #EDEDFF;
+	color: black;
 }
 
 .mw-codereview-diff .meta {
