@@ -11795,6 +11795,7 @@ $messages['si'] = array(
  * @author Helix84
  * @author Jkjk
  * @author Mormegil
+ * @author Pitr2311
  */
 $messages['sk'] = array(
 	'code' => 'Kontrola kódu',
@@ -11825,7 +11826,7 @@ $messages['sk'] = array(
 	'code-tags-no-tags' => 'V tomto úložisku neexistujú žiadne značky.',
 	'code-authors-text' => 'Toto je zoznam autorov v úložisku v poradí podľa posledných začlenení. V zátvorkách sú zobrazené lokálne účty wiki. Dáta môžu pochádzať z vyrovnávacej pamäte.',
 	'code-author-haslink' => 'Tento autor je zviazaný s používateľom wiki $1',
-	'code-author-orphan' => 'Tento autor nie je zviazaný s používateľom wiki',
+	'code-author-orphan' => 'Autor $1 nie je prepojený so žiadnym účtom wiki',
 	'code-author-dolink' => 'Zviazať tohto autora s používateľom wiki:',
 	'code-author-alterlink' => 'Zmeniť používateľa wiki viazaného s týmto autorom:',
 	'code-author-orunlink' => 'Alebo zrušiť väzbu tohto používateľa wiki:',
@@ -11881,7 +11882,7 @@ $messages['sk'] = array(
 	'code-status-new' => 'nový',
 	'code-status-desc-new' => 'Revízia čaká na vykonanie operácie (štandardný stav).',
 	'code-status-fixme' => 'fixme',
-	'code-status-desc-fixme' => 'Kontrolór označil, že táto revízia zanáša chybu alebo je chybná. mala by byť napravená.',
+	'code-status-desc-fixme' => 'Táto revízia bola označená za chybnú alebo nefunkčnú, preto by mala byť opravená.',
 	'code-status-reverted' => 'vrátené',
 	'code-status-desc-reverted' => 'Revízia bola odstránená neskoršou revíziou.',
 	'code-status-resolved' => 'vyriešené',
@@ -11905,7 +11906,7 @@ $messages['sk'] = array(
 	'code-signoff-struckdate' => '$1 (vyškrtnuté $2)',
 	'code-pathsearch-legend' => 'Hľadať revízie v tomto úložisku podľa cesty',
 	'code-pathsearch-path' => 'Cesta:',
-	'code-pathsearch-filter' => 'Použitý filter:',
+	'code-pathsearch-filter' => 'Zobraziť len:',
 	'code-revfilter-cr_status' => 'Stav = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-clear' => 'Vyčistiť filter',
