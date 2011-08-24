@@ -183,6 +183,14 @@ class CodeRevision {
 	}
 
 	/**
+	 * @return CodeRepository
+	 */
+	public function getRepo() {
+		return $this->repo;
+	}
+
+
+	/**
 	 * @return String
 	 */
 	public function getAuthor() {
