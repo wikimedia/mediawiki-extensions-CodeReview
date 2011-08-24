@@ -607,15 +607,16 @@ class CodeRevision {
 	 * @param  $text
 	 * @param  $review
 	 * @param null $parent
+	 * @param int $patchLine (default: null)
 	 * @return int
 	 */
-	public function saveComment( $text, $review, $parent = null ) {
+	public function saveComment( $text, $review, $parent = null, $patchLine = null ) {
 		$text = rtrim( $text );
 		if ( !strlen( $text ) ) {
 			return 0;
 		}
 		$dbw = wfGetDB( DB_MASTER );
-		$data = $this->commentData( $text, $review, $parent );
+		$data = $this->commentData( $text, $review, $parent, $patchLine );
 
 		$dbw->begin();
 		$data['cc_id'] = $dbw->nextSequenceValue( 'code_comment_cc_id' );
@@ -685,9 +686,10 @@ class CodeRevision {
 	 * @param  $text
 	 * @param  $review
 	 * @param null $parent
+	 * @param int $patchLine (default: null)
 	 * @return array
 	 */
-	protected function commentData( $text, $review, $parent = null ) {
+	protected function commentData( $text, $review, $parent = null, $patchLine = null ) {
 		global $wgUser;
 		$dbw = wfGetDB( DB_MASTER );
 		$ts = wfTimestamp( TS_MW );
@@ -697,6 +699,7 @@ class CodeRevision {
 			'cc_rev_id' => $this->id,
 			'cc_text' => $text,
 			'cc_parent' => $parent,
+			'cc_patch_line' => $patchLine,
 			'cc_user' => $wgUser->getId(),
 			'cc_user_text' => $wgUser->getName(),
 			'cc_timestamp' => $dbw->timestamp( $ts ),
@@ -731,9 +734,17 @@ class CodeRevision {
 	}
 
 	/**
+	 * @param $attached boolean Fetch comment attached to a line of code (default: false)
 	 * @return array
 	 */
-	public function getComments() {
+	public function getComments( $attached = false ) {
+		$conditions = array(
+			'cc_repo_id' => $this->repoId,
+			'cc_rev_id' => $this->id );
+
+		if( $attached ) { $conditions['cc_patch_line!'] = null; }
+		else {            $conditions['cc_patch_line']  = null; }
+
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( 'code_comment',
 			array(
@@ -741,12 +752,11 @@ class CodeRevision {
 				'cc_text',
 				'cc_user',
 				'cc_user_text',
+				'cc_patch_line',
 				'cc_timestamp',
 				'cc_review',
 				'cc_sortkey' ),
-			array(
-				'cc_repo_id' => $this->repoId,
-				'cc_rev_id' => $this->id ),
+			$conditions,
 			__METHOD__,
 			array(
 				'ORDER BY' => 'cc_sortkey' )

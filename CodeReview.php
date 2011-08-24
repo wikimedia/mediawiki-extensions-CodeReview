@@ -288,6 +288,8 @@ function efCodeReviewSchemaUpdates( $updater ) {
 
 		$updater->addExtensionUpdate( array( 'addIndex', 'code_rev', 'cr_repo_status_author',
 			"$base/archives/code_revs_status_author-index.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addField', 'code_comment', 'cc_patch_line',
+			"$base/archives/code_comment_patch_line.sql", true ) );
 		break;
 	case 'sqlite':
 		$updater->addExtensionUpdate( array( 'addTable', 'code_rev', "$base/codereview.sql", true ) );
@@ -298,6 +300,8 @@ function efCodeReviewSchemaUpdates( $updater ) {
 			"$base/archives/code_signoffs_timestamp_struck.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addIndex', 'code_paths', 'repo_path',
 			"$base/archives/codereview-repopath.sql", true ) );
+		$updater->addExtensionUpdate( array( 'addField', 'code_comment', 'cc_patch_line',
+			"$base/archives/code_comment_patch_line.sql", true ) );
 		break;
 	case 'postgres':
 		// TODO

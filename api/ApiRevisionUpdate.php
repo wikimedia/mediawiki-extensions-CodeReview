@@ -53,7 +53,10 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['removeflags'],
 			$params['addreferences'],
 			$params['removereferences'],
-			$params['comment']
+			$params['comment'],
+			null,  // parent
+			0,     // review
+			$params['patchline']
 		);
 
 		$r = array( 'result' => 'Success' );
@@ -115,6 +118,10 @@ class ApiRevisionUpdate extends ApiBase {
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
 			),
+			'patchline' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_MIN => 1,
+			),
 		);
 	}
 
@@ -130,6 +137,7 @@ class ApiRevisionUpdate extends ApiBase {
 			'removeflags' => 'Code Signoff flags to strike from the revision by the current user',
 			'addreferences' => 'Add references to this revision',
 			'removereferences' => 'Remove references from this revision',
+			'patchline' => 'Diff line to attach the comment to (optional)',
 		);
 	}
 

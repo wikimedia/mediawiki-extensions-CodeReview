@@ -1,7 +1,7 @@
 <?php
 
 class CodeComment {
-	public $id, $text, $user, $userText, $timestamp, $review, $sortkey, $attrib, $removed, $added;
+	public $id, $text, $user, $userText, $timestamp, $review, $sortkey, $attrib, $removed, $added, $patchLine;
 
 	/**
 	 * @var CodeRevision
@@ -36,6 +36,7 @@ class CodeComment {
 		$comment->user = $data['cc_user'];
 		$comment->userText = $data['cc_user_text'];
 		$comment->timestamp = wfTimestamp( TS_MW, $data['cc_timestamp'] );
+		$comment->patchLine = $data['cc_patch_line'];
 		$comment->review = $data['cc_review'];
 		$comment->sortkey = $data['cc_sortkey'];
 		return $comment;
