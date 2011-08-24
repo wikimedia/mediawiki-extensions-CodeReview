@@ -898,7 +898,7 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	protected function addActionButtons() {
-		return '<div>' .
+		return '<div id="mw-codereview-comment-buttons">' .
 			Xml::submitButton( wfMsg( 'code-rev-submit' ),
 				array( 'name' => 'wpSave',
 					'accesskey' => wfMsg( 'code-rev-submit-accesskey' ) )
