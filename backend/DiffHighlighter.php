@@ -4,9 +4,14 @@
  * Highlight a SVN diff for easier readibility
  */
 class CodeDiffHighlighter {
+	/* chunk line count for the original file */
 	private $left  = 0;
+	/* chunk line count for the changed file */
 	private $right = 0;
+	/* number of chunks */
 	private $chunk = 0;
+	/* line number inside patch */
+	private $lineNumber = 0;
 
 	/**
 	 * Main entry point. Given a diff text, highlight it
@@ -40,6 +45,8 @@ class CodeDiffHighlighter {
 	 * @return string HTML table line (with <tr></tr>)
 	 */
 	function parseLine( $line ) {
+		$this->lineNumber++;
+
 		if( $line === '' ) { return ""; } // do not create bogus lines
 
 		# Dispatch diff lines to the proper handler
@@ -82,8 +89,9 @@ class CodeDiffHighlighter {
 			. "<td class=\"linenumbers\">%s</td>"
 			;
 
+		$idAttr = $this->getLineIdAttr();
 		if( is_null($class) ) {
-			return sprintf( "<tr>{$formatLN}<td>%s</td></tr>\n",
+			return sprintf( "<tr {$idAttr}>{$formatLN}<td>%s</td></tr>\n",
 				$this->left,
 				$this->right,
 				$content
@@ -113,7 +121,7 @@ class CodeDiffHighlighter {
 		}
 
 		$classAttr = is_null($class) ? '' : " class=\"$class\"";
-		return sprintf( "<tr>{$formatLN}<td%s>%s</td></tr>\n",
+		return sprintf( "<tr {$idAttr}>{$formatLN}<td%s>%s</td></tr>\n",
 			$left, $right,
 			$classAttr, $content
 		);
@@ -150,9 +158,15 @@ class CodeDiffHighlighter {
 	}
 
 	function handleLineFile( $line ) {
-		return "<tr class=\"patchedfile\"><td colspan=\"3\">$line</td></tr>";
+		$this->chunk = 0;
+		$idAttr = $this->getLineIdAttr();
+		return "<tr $idAttr class=\"patchedfile\"><td colspan=\"3\">$line</td></tr>";
 	}
 	#### END OF LINES HANDLERS #########################################
+
+	function getLineIdAttr() {
+		return "id=\"line-{$this->lineNumber}\"";
+	}
 
 	/**
 	 * Turn a diff line into a properly formatted string suitable
