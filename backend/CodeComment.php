@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Represents a comment made to a revision.
+ */
 class CodeComment {
 	public $id, $text, $user, $userText, $timestamp, $review, $sortkey, $attrib, $removed, $added, $patchLine;
 
