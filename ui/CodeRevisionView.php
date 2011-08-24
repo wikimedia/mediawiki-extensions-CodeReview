@@ -741,7 +741,7 @@ class CodeRevisionView extends CodeView {
 	 * @param string $replyForm
 	 * @return string
 	 */
-	protected function formatComment( $comment, $replyForm = '' ) {
+	public function formatComment( $comment, $replyForm = '' ) {
 		global $wgOut, $wgLang, $wgContLang;
 
 		if ( $comment->id === 0 ) {
