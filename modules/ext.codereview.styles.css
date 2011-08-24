@@ -187,6 +187,7 @@ table.mw-codereview-meta td {
 }
 
 /* WordCloud for tag list view */
+/* FIXME: move that to another CSS file */
 
 div.mw-wordcloud {
 	width: 100%;
