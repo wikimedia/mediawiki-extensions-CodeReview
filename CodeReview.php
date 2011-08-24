@@ -168,6 +168,10 @@ $wgResourceModules['ext.codereview.loaddiff'] = array(
 	'scripts' => 'ext.codereview.loaddiff.js'
 ) + $commonModuleInfo;
 
+$wgResourceModules['ext.codereview.linecomment'] = array(
+	'scripts' => 'ext.codereview.linecomment.js'
+) + $commonModuleInfo;
+
 // Revision tooltips CodeRevisionView:
 $wgResourceModules['ext.codereview.tooltips'] = array(
 	'scripts' => 'ext.codereview.tooltips.js',

@@ -59,10 +59,16 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['patchline']
 		);
 
+		// Forge a response object
 		$r = array( 'result' => 'Success' );
-
 		if ( $commentID !== 0 ) {
+			// id inserted
 			$r['commentid'] = intval($commentID);
+			// HTML Formatted comment
+			$view = new CodeRevisionView( $repo, $rev);
+			$comment = CodeComment::newFromID( $commentID, $rev );
+			$r['HTML'] = $view->formatComment( $comment );
+			//$r['HTML'] = print_r( $comment, true );
 		}
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $r );

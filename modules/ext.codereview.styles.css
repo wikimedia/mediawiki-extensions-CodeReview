@@ -58,6 +58,15 @@ table.mw-codereview-meta td {
 	padding: 16px 16px 16px 48px;
 }
 
+/** list containers to insert comments inside the diff table */
+.mw-codereview-inlineComment ul {
+	list-style-image: none; /* override Vector default */
+	list-style-type: none;
+	padding:0;
+	padding-left: 2em;
+	margin-bottom: 8px;
+}
+
 .mw-codereview-status-new,
 .mw-codereview-status-new td {
 	background: #ffffc0 !important;

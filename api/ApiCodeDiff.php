@@ -47,6 +47,7 @@ class ApiCodeDiff extends ApiBase {
 			$html = 'Diff too large.';
 		} else {
 			$hilite = new CodeDiffHighlighter();
+			# Fetch diff rendered without inline comments
 			$html = $hilite->render( $diff );
 		}
 
