@@ -5,18 +5,18 @@
  */
 class CodeDiffHighlighter {
 	/* chunk line count for the original file */
-	private $left  = 0;
+	protected $left  = 0;
 	/* chunk line count for the changed file */
-	private $right = 0;
+	protected $right = 0;
 	/* number of chunks */
-	private $chunk = 0;
+	protected $chunk = 0;
 	/* line number inside patch */
-	private $lineNumber = 0;
+	protected $lineNumber = 0;
 
 	/* CodeRepository: The repository for this revision */
-	private $repo = null;
+	protected $repo = null;
 	/* CodeRevision: revision the diff comes from */
-	private $rev  = null;
+	protected $rev  = null;
 
 	/**
 	 * Comments inside the diff.
