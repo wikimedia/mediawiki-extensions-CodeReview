@@ -7529,7 +7529,7 @@ $messages['ksh'] = array(
 	'code-need-group-with-rights' => 'Et jitt kein Jropp met däm Rääsch <code lang="en">repoadmin</code>.
 Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum aanzelääje.',
 	'code-repo-not-found' => "E Repositorijum '''$1''' jidd_et heh nit!",
-	'code-load-diff' => 'Ben de Ungerscheide aam Lade&nbsp;…',
+	'code-load-diff' => 'Ben de Ungerscheide aam Lade&#160;…',
 	'code-notes' => 'De neuste Bemerkunge',
 	'code-statuschanges' => 'Änderunge aam Stattus',
 	'code-mycommits' => 'ming Beidrääsch',
@@ -7620,7 +7620,7 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'code-signoff-struckdate' => '$1 (fottjeschmeße: $2)',
 	'code-pathsearch-legend' => 'Söhk en däm Repositorijum noh Versione, övver dänne iere Pahdt',
 	'code-pathsearch-path' => 'Pahdt:',
-	'code-pathsearch-filter' => 'Ußsöhke noh:&nbsp;',
+	'code-pathsearch-filter' => 'Ußsöhke noh:&#160;',
 	'code-revfilter-cr_status' => 'Stattus = $1',
 	'code-revfilter-cr_author' => 'Schriever = $1',
 	'code-revfilter-ct_tag' => 'Makeerong = $1',

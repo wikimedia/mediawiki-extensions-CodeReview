@@ -167,7 +167,7 @@ class CodeDiffHighlighter {
 		}
 
 		# Skip line number when they do not apply
-		$left = $right = '&nbsp;';
+		$left = $right = '&#160;';
 
 		switch( $class ) {
 		case 'chunkdelimiter':
