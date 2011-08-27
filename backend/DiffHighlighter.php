@@ -188,6 +188,7 @@ class CodeDiffHighlighter {
 			# Rely on $left, $right initialization above
 		}
 
+		$content = htmlspecialchars( $content );
 		$classAttr = is_null($class) ? '' : " class=\"$class\"";
 		return sprintf( "<tr class=\"commentable\" {$idAttr}>{$formatLN}<td%s>%s</td></tr>\n",
 			$left, $right,
