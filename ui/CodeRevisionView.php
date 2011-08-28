@@ -291,6 +291,10 @@ class CodeRevisionView extends CodeView {
 		$path = preg_replace( '/ \([^\)]+\)$/', '', $path );
 		$viewvc = $this->mRepo->getViewVcBase();
 		$diff = '';
+		$hist = $this->skin->link(
+			SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+			wfMsg( 'code-rev-history-link' ), array(), array( 'path' => $path )
+		);
 		$safePath = wfUrlEncode( $path );
 		if ( $viewvc ) {
 			$rev = $this->mRev->getId();
@@ -318,7 +322,7 @@ class CodeRevisionView extends CodeView {
 		} else {
 			$link = $safePath;
 		}
-		return "<li><b>$link</b> ($desc)$diff</li>\n";
+		return "<li><b>$link</b> ($desc) ($hist)$diff</li>\n";
 	}
 
 	protected function tagForm() {

@@ -92,6 +92,7 @@ $messages['en'] = array(
 	'code-rev-purge-link' => 'purge',
 	'code-rev-total' => 'Total number of results: $1',
 	'code-rev-not-found' => "Revision '''$1''' does not exist!",
+	'code-rev-history-link' => 'history',
 	'code-status-new' => 'new',
 	'code-status-desc-new' => 'Revision is pending an action (default status).',
 	'code-status-fixme' => 'fixme',
