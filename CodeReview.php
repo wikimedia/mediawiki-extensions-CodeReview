@@ -239,6 +239,39 @@ $wgCodeReviewUDPPrefix = '';
  */
 $wgCodeReviewRepoStatsCacheTime = 6 * 60 * 60; // 6 Hours
 
+/**
+ * Possible states a revision can be in
+ *
+ * A system message will still needed to be added as code-status-<state>
+ */
+$wgCodeReviewStates = array(
+	'new',
+	'fixme',
+	'reverted',
+	'resolved',
+	'ok',
+	'deferred',
+	'old',
+);
+
+/**
+ * Revisions states that a user cannot change to on their own revision
+ */
+$wgProtectedStates = array(
+	'ok',
+	'resolved',
+);
+
+/**
+ * List of all flags a user can mark themself as having done to a revision
+ *
+ * A system message will still needed to be added as code-signoff-flag-<flag>
+ */
+$wgCodeReviewFlags = array(
+	'inspected',
+	'tested',
+);
+
 # Schema changes
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'efCodeReviewSchemaUpdates';
 

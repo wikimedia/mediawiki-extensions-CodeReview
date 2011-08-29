@@ -244,7 +244,17 @@ class CodeRevision {
 	 * @return Array
 	 */
 	public static function getPossibleStates() {
-		return array( 'new', 'fixme', 'reverted', 'resolved', 'ok', 'deferred', 'old' );
+		global $wgCodeReviewStates;
+		return $wgCodeReviewStates;
+	}
+
+	/**
+	 * List of all states that a user cannot set on their own revision
+	 * @return Array
+	 */
+	public static function getProtectedStates() {
+		global $wgProtectedStates;
+		return $wgProtectedStates;
 	}
 
 	/**
@@ -267,7 +277,8 @@ class CodeRevision {
 	 * @return Array
 	 */
 	public static function getPossibleFlags() {
-		return array( 'inspected', 'tested' );
+		global $wgCodeReviewFlags;
+		return $wgCodeReviewFlags;
 	}
 
 	/**
@@ -277,6 +288,15 @@ class CodeRevision {
 	 */
 	public static function isValidStatus( $status ) {
 		return in_array( $status, self::getPossibleStates(), true );
+	}
+
+	/**
+	 * Returns whether the provided status is protected
+	 * @param String $status
+	 * @return bool
+	 */
+	public static function isProtectedStatus( $status ) {
+		return in_array( $status, self::getProtectedStates(), true );
 	}
 
 	/**
@@ -293,7 +313,7 @@ class CodeRevision {
 		// Don't allow the user account tied to the committer account mark their own revisions as ok/resolved
 		// Obviously only works if user accounts are tied!
 		$wikiUser = $this->getWikiUser();
-		if ( ( $status == 'ok' || $status == 'resolved' ) && $wikiUser && $user->getName() == $wikiUser->getName() ) {
+		if ( self::isProtectedStatus( $status ) && $wikiUser && $user->getName() == $wikiUser->getName() ) {
 			// allow the user to review their own code if required
 			if ( !$wikiUser->isAllowed( 'codereview-review-own' ) ) {
 				return false;
