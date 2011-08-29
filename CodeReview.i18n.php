@@ -292,6 +292,7 @@ See also: {{msg-mw|Code-references}}',
 	'code-rev-tags' => '{{Identical|Tag}}',
 	'code-rev-comment-preview' => '{{Identical|Preview}} Caption of the button used to preview a comment.',
 	'code-rev-inline-preview' => '{{Identical|Preview}} Text "Preview" shown before the comment which is currently being previewed.',
+	'code-rev-history-link' => '{{Identical|History}}',
 	'code-status-new' => '{{Identical|New}}',
 	'code-status-reverted' => '{{Identical|Revert}}',
 	'code-status-ok' => '{{Identical|OK}}',
@@ -1234,6 +1235,7 @@ $messages['be-tarask'] = array(
 	'code-rev-purge-link' => 'ачысьціць кэш',
 	'code-rev-total' => 'Агульная колькасьць вынікаў: $1',
 	'code-rev-not-found' => "Вэрсія '''$1''' не існуе!",
+	'code-rev-history-link' => 'гісторыя',
 	'code-status-new' => 'новая',
 	'code-status-desc-new' => 'Вэрсія чакае дзеяньня (статус па змоўчваньні).',
 	'code-status-fixme' => 'выправіць',
@@ -2657,6 +2659,7 @@ $messages['de'] = array(
 	'code-rev-purge-link' => 'Cache löschen',
 	'code-rev-total' => 'Anzahl der Ergebnisse: $1',
 	'code-rev-not-found' => "Revision '''$1''' ist nicht vorhanden!",
+	'code-rev-history-link' => 'Versionen',
 	'code-status-new' => 'neu',
 	'code-status-desc-new' => 'Revision erwartet eine Aktion (Standardstatus).',
 	'code-status-fixme' => 'FIXME',
@@ -4376,6 +4379,7 @@ Uusi tila: $4',
  * @author Crochet.david
  * @author Dereckson
  * @author Grondin
+ * @author Hashar
  * @author IAlex
  * @author Jean-Frédéric
  * @author Od1n
@@ -4468,6 +4472,7 @@ $messages['fr'] = array(
 	'code-rev-purge-link' => 'purger',
 	'code-rev-total' => 'Nombre total de résultats : $1',
 	'code-rev-not-found' => "La révision '''$1''' n’existe pas !",
+	'code-rev-history-link' => 'historique',
 	'code-status-new' => 'nouveau',
 	'code-status-desc-new' => 'Une action est en attente pour cette révision (état par défaut).',
 	'code-status-fixme' => 'à corriger',
@@ -4913,6 +4918,7 @@ $messages['gl'] = array(
 	'code-rev-purge-link' => 'purgar',
 	'code-rev-total' => 'Número total de resultados: $1',
 	'code-rev-not-found' => "A revisión '''$1''' non existe!",
+	'code-rev-history-link' => 'historial',
 	'code-status-new' => 'novo',
 	'code-status-desc-new' => 'Esta revisión está á espera dunha acción (estado por defecto).',
 	'code-status-fixme' => 'arránxeme',
@@ -5447,6 +5453,7 @@ $messages['he'] = array(
 	'code-rev-purge-link' => 'ניקוי מטמון',
 	'code-rev-total' => 'סך כל התוצאות: $1',
 	'code-rev-not-found' => "הגרסה '''$1''' אינה קיימת!",
+	'code-rev-history-link' => 'היסטוריה',
 	'code-status-new' => 'חדש',
 	'code-status-desc-new' => 'הגרסה ממתינה לפעולה (מצב בררת המחדל).',
 	'code-status-fixme' => 'לתיקון',
@@ -8274,6 +8281,7 @@ $messages['mk'] = array(
 	'code-rev-purge-link' => 'исчисти',
 	'code-rev-total' => 'Вкупно резултати: $1',
 	'code-rev-not-found' => "Ревизијата '''$1''' не постои!",
+	'code-rev-history-link' => 'историја',
 	'code-status-new' => 'нов',
 	'code-status-desc-new' => 'Ревизијата е во исчекување на дејство (статус по основно).',
 	'code-status-fixme' => 'корегирај ме',
@@ -9131,6 +9139,7 @@ De gegevens kunnen uit een cache komen.',
 	'code-rev-purge-link' => 'verversen',
 	'code-rev-total' => 'Totaal aantal resultaten: $1',
 	'code-rev-not-found' => "Versie '''$1''' bestaat niet.",
+	'code-rev-history-link' => 'geschiedenis',
 	'code-status-new' => 'nieuw',
 	'code-status-desc-new' => 'De versie wacht op een actie (standaardstatus).',
 	'code-status-fixme' => 'fixme',
@@ -9831,6 +9840,7 @@ $messages['pfl'] = array(
  * @author Leinad
  * @author Marcin Łukasz Kiejzik
  * @author Sp5uhe
+ * @author Woytecr
  */
 $messages['pl'] = array(
 	'code' => 'Podgląd kodu',
@@ -9914,6 +9924,7 @@ $messages['pl'] = array(
 	'code-rev-purge-link' => 'odśwież',
 	'code-rev-total' => 'Łączna liczba wyników – $1',
 	'code-rev-not-found' => "Wersja '''$1''' nie istnieje!",
+	'code-rev-history-link' => 'historia',
 	'code-status-new' => 'nowy',
 	'code-status-desc-new' => 'Wersja oczekuje podjęcia jakiegoś działania (status domyślny).',
 	'code-status-fixme' => 'wymaga naprawy',
@@ -11191,6 +11202,7 @@ $messages['ru'] = array(
 	'code-rev-purge-link' => 'очистить кеш',
 	'code-rev-total' => 'Общее количество результатов: $1',
 	'code-rev-not-found' => "Ревизии '''$1''' не существует!",
+	'code-rev-history-link' => 'история',
 	'code-status-new' => 'новая',
 	'code-status-desc-new' => 'Ревизия ожидает действия (статус по умолчанию).',
 	'code-status-fixme' => 'исправить',
@@ -12094,6 +12106,7 @@ $messages['sl'] = array(
 	'code-rev-purge-link' => 'počisti',
 	'code-rev-total' => 'Skupno število rezultatov: $1',
 	'code-rev-not-found' => "Redakcija '''$1''' ne obstaja!",
+	'code-rev-history-link' => 'zgodovina',
 	'code-status-new' => 'novo',
 	'code-status-desc-new' => 'Redakcija izvaja dejanje (privzeto stanje).',
 	'code-status-fixme' => 'popravi me',
