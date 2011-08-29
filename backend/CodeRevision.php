@@ -253,8 +253,8 @@ class CodeRevision {
 	 * @return Array
 	 */
 	public static function getProtectedStates() {
-		global $wgProtectedStates;
-		return $wgProtectedStates;
+		global $wgCodeReviewProtectedStates;
+		return $wgCodeReviewProtectedStates;
 	}
 
 	/**

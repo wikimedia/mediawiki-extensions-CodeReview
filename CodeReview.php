@@ -257,7 +257,7 @@ $wgCodeReviewStates = array(
 /**
  * Revisions states that a user cannot change to on their own revision
  */
-$wgProtectedStates = array(
+$wgCodeReviewProtectedStates = array(
 	'ok',
 	'resolved',
 );
