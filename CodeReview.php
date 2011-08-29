@@ -176,7 +176,6 @@ $wgResourceModules['ext.codereview.linecomment'] = array(
 $wgResourceModules['ext.codereview.tooltips'] = array(
 	'scripts' => 'ext.codereview.tooltips.js',
 	'dependencies' => 'jquery.tipsy',
-	'messages' => array_merge( CodeRevision::getPossibleStateMessageKeys(), array( 'code-tooltip-withsummary', 'code-tooltip-withoutsummary' ) ),
 ) + $commonModuleInfo;
 
 // Revision 'scapmap':
@@ -369,4 +368,15 @@ function efCodeReviewResourceLoaderGlobals( &$values ){
 		}
 	}
 	return true;
+}
+
+# Add state messages to RL
+$wgExtensionFunctions[] = 'efCodeReviewAddTooltipMessages';
+
+function efCodeReviewAddTooltipMessages() {
+	global $wgResourceModules;
+
+	$wgResourceModules['ext.codereview.tooltips']['messages'] = array_merge(
+		CodeRevision::getPossibleStateMessageKeys(),
+		array( 'code-tooltip-withsummary', 'code-tooltip-withoutsummary' ) );
 }
