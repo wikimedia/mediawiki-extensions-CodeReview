@@ -17,9 +17,11 @@ window.CodeReview = $.extend( window.CodeReview, {
 	 * @param lineCode jQuery object
 	 */
 	lcShowForm: function( lineCode ) {
+		var htmlId = 'comment-for-' + lineCode.attr('id');
+
 		lineCode.unbind( 'click' );
 		lineCode.click( function () {
-			$( '#lineComment' ).fadeOut( 200 ).remove();
+			$( '#'+htmlId ).fadeOut( 200 ).remove();
 
 			lineCode.unbind( 'click' );
 			lineCode.click( function() {
@@ -28,7 +30,7 @@ window.CodeReview = $.extend( window.CodeReview, {
 		});
 
 		var lineComment =
-		$('<tr id="lineComment"><td colspan="3">'
+		$('<tr id="' + htmlId + '"><td colspan="3">'
 		+'<textarea id="lineCommentContent" rows="5"></textarea><br/>'
 		+'<input id="lineCommentSend" type="button" value="Send">'
 		+'</td></tr>');
