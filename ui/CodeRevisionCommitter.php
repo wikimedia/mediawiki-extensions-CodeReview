@@ -118,7 +118,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		$dbw->commit();
 
 		if ( $statusChanged || $commentAdded ) {
-			$url = $this->mRev->getFullUrl( $commentId );
+			$url = $this->mRev->getCanonicalUrl( $commentId );
 			if ( $statusChanged && $commentAdded ) {
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj4', 'codereview-email-body4',
 					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
