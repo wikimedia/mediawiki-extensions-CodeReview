@@ -598,9 +598,9 @@ $messages['ar'] = array(
 	'code-authors' => 'مؤلفون',
 	'code-status' => 'الحالات',
 	'code-tags' => 'وسوم',
-	'code-authors-text' => 'بالأسفل قائمة بمؤلفي المستودع حسب تاريخ عمليات الكوميت. حسابات الويكي المحلية معروضة بين أقواس.',
+	'code-authors-text' => 'بالأسفل قائمة بمؤلفي المستودع حسب تاريخ عمليات الكوميت. حسابات الويكي المحلية معروضة بين أقواس. البيانات ربما تكون مخزنة.',
 	'code-author-haslink' => 'هذا المؤلف موصول بمستخدم الويكي $1',
-	'code-author-orphan' => 'هذا المؤلف ليس له وصلة لحساب ويكي',
+	'code-author-orphan' => 'مستخدم SVN/المؤلف $1 ليست له وصلة بحساب ويكي',
 	'code-author-dolink' => 'صل هذا المؤلف بمستخدم ويكي :',
 	'code-author-alterlink' => 'غير مستخدم الويكي الموصول لهذا المؤلف:',
 	'code-author-orunlink' => 'أو أزل وصل مستخدم الويكي هذا:',
@@ -616,7 +616,7 @@ $messages['ar'] = array(
 	'code-field-message' => 'ملخص الكوميت',
 	'code-field-status' => 'حالة',
 	'code-field-timestamp' => 'تاريخ',
-	'code-field-comments' => 'ملاحظات',
+	'code-field-comments' => 'تعليقات',
 	'code-field-path' => 'مسار',
 	'code-field-text' => 'ملاحظة',
 	'code-field-select' => 'اختر',
@@ -670,26 +670,36 @@ $messages['ar'] = array(
 	'codereview-email-body' => 'المستخدم "$1" كتب تعليقا على $3.
 
 المسار الكامل: $2
+ملخص الكوميت:
+
+$5
 
 التعليق:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: تغييرات ملحقة',
-	'codereview-email-body2' => 'المستخدم "$1" قام بتغييرات ملحقة بن$2.
+	'codereview-email-body2' => 'المستخدم "$1" قام بتغييرات ملحقة ب$2.
+
+المسار الكامل للمراجعة الملحقة: $5
+ملخص الكوميت:
+
+$6
 
 المسار الكامل: $3
 
-ملخص الارتكاب:
-
-$4',
-	'codereview-email-subj3' => '[$1] [ن$2]: الاختبار الأوتوماتيكي أظهر ريجريشن',
-	'codereview-email-body3' => 'الاختبار الأوتوماتيكي أظهر ريجريشن نتيجة للتغييرات في ن$1.
-
-المسار الكامل: $2
-
 ملخص الكوميت:
 
-$3',
+$4',
+	'codereview-email-subj3' => '[$1 $2]: حالة المراجعة تغيرت',
+	'codereview-email-body3' => 'المستخدم "$1" غير حالة $2.
+
+الحالة القديمة: $3
+الحالة الجديدة: $4
+
+المسار الكامل: $5
+ملخص الكوميت:
+
+$6',
 	'code-stats' => 'إحصاءات',
 	'repoadmin' => 'إدارة المستودع',
 	'repoadmin-new-legend' => 'إنشاء مستودع جديد',
@@ -3343,7 +3353,7 @@ $messages['eo'] = array(
 	'code-tags-no-tags' => 'Neniuj etikedoj en ĉi tiu deponujo.',
 	'code-authors-text' => 'Jen listo de dosierujaj aŭtoroj ordigitaj laŭ sendita nomo. Loka vikikontoj estas montrataj en parentezoj. Datenoj eble estas en kaŝmemoro.',
 	'code-author-haslink' => 'Ĉi tiu aŭtoro estas ligita al la vikiuzanto $1',
-	'code-author-orphan' => 'La aŭtoro ne havas ligilon kun vikia konto',
+	'code-author-orphan' => 'SVN-uzulo/Aŭtoro $1 ne havas ligilon kun vikia konto',
 	'code-author-dolink' => 'Ligi ĉi tiun autoron al vikiuzanto:',
 	'code-author-alterlink' => 'Ŝanĝi la vikian uzanton ligitan al ĉi tiu aŭtoro:',
 	'code-author-orunlink' => 'Aŭ malligi ĉi tiun vikian uzanton:',
@@ -3423,7 +3433,7 @@ $messages['eo'] = array(
 	'code-signoff-struckdate' => '$1 (forstrekita $2)',
 	'code-pathsearch-legend' => 'Serĉi versiojn en ĉi tiu kodujo laŭ vojo',
 	'code-pathsearch-path' => 'Vojo:',
-	'code-pathsearch-filter' => 'Filtrilo uzata:',
+	'code-pathsearch-filter' => 'Montri nur:',
 	'code-revfilter-cr_status' => 'Statuso = $1',
 	'code-revfilter-cr_author' => 'Aŭtoro = $1',
 	'code-revfilter-clear' => 'Forigi filtrilon',
@@ -3492,7 +3502,7 @@ $6',
 	'code-stats-header' => 'Statistiko por deponejo $1',
 	'code-stats-main' => 'Ekde $1, la deponejo havas $2 {{PLURAL:$2|revizion|reviziojn}} de [[Special:Code/$3/author|$4 {{PLURAL:$4|aŭtoro|aŭtoroj}}]].',
 	'code-stats-status-breakdown' => 'Numero de revizioj por stato',
-	'code-stats-fixme-breakdown' => 'Ekzameno po riparindaĵoj por aŭtoro',
+	'code-stats-fixme-breakdown' => 'Ekzameno po petrevizioj por aŭtoro',
 	'code-stats-count' => 'Nombro de revizioj',
 	'repoadmin' => 'Administrado de Kodujo',
 	'repoadmin-new-legend' => 'Krei novan kodujon',
