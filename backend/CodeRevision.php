@@ -770,8 +770,11 @@ class CodeRevision {
 			'cc_repo_id' => $this->repoId,
 			'cc_rev_id' => $this->id );
 
-		if( $attached ) { $conditions['cc_patch_line!'] = null; }
-		else {            $conditions['cc_patch_line']  = null; }
+		if( $attached ) {
+			$conditions['cc_patch_line!'] = null;
+		} else {
+			$conditions['cc_patch_line']  = null;
+		}
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( 'code_comment',
