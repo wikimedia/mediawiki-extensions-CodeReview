@@ -341,14 +341,17 @@ class CodeRevisionView extends CodeView {
 				array_map(
 					array( $this, 'formatTag' ),
 					$tags )
-			) . '&#160;';
+			) . '<br/>';
 		}
 		if ( $wgUser->isAllowed( 'codereview-add-tag' ) ) {
+			$list .= Xml::inputLabel( wfMsg( 'code-rev-tag-add' ), 'wpTag', 'wpTag', 20,
+				self::listTags( $this->mAddTags ) );
 			$list .= Xml::Element( 'span', array(
 					'id' => "codereview-add-tag",
 					'title' => wfMsg( 'code-rev-tag-addtag-tooltip' ),
 				), '+' );  // TODO: replace '+' with a message
-			$list .= $this->addTagForm( $this->mAddTags, $this->mRemoveTags );
+			//old tag form:
+			//$list .= $this->addTagForm( $this->mAddTags, $this->mRemoveTags );
 		}
 		return $list;
 	}
