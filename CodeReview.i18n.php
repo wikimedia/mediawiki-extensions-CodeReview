@@ -258,6 +258,7 @@ $6',
  * @author Nike
  * @author Purodha
  * @author Raymond
+ * @author SPQRobin
  * @author Siebrand
  * @author Sp5uhe
  * @author Umherirrender
@@ -274,6 +275,7 @@ $messages['qqq'] = array(
 	'code-author-lastcommit' => 'This is a column title in the list of contributors. An example can be found at http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author',
 	'code-field-id' => '{{Identical|Revision}}',
 	'code-field-author' => '{{Identical|Author}}',
+	'code-field-user' => 'Column title (used in a table).',
 	'code-field-message' => 'This is probably a noun instead of verb, a column header.',
 	'code-field-status' => '{{Identical|Status}}',
 	'code-field-timestamp' => '{{Identical|Date}}',
@@ -1241,6 +1243,7 @@ $messages['be'] = array(
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
+ * @author Renessaince
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
@@ -1316,6 +1319,8 @@ $messages['be-tarask'] = array(
 	'code-rev-tags' => 'Тэгі:',
 	'code-rev-tag-add' => 'Дадаць тэгі:',
 	'code-rev-tag-remove' => 'Выдаліць тэгі:',
+	'code-rev-tag-addtag-tooltip' => 'Дадаваньне новых цэтлікаў да гэтай рэвізіі',
+	'code-rev-tag-removetag-tooltip' => 'Націсьніце, каб выдаліць цэтлік «$1»',
 	'code-rev-comment-by' => 'Камэнтар $1',
 	'code-rev-comment-preview' => 'Папярэдні прагляд',
 	'code-rev-inline-preview' => 'Папярэдні прагляд:',
@@ -2569,6 +2574,7 @@ $6',
 
 /** Danish (Dansk)
  * @author Byrial
+ * @author Peter Alberti
  */
 $messages['da'] = array(
 	'code' => 'Kodegennemgang',
@@ -2607,8 +2613,9 @@ $messages['da'] = array(
 	'code-field-message' => 'Bidragsbeskrivelse',
 	'code-field-status' => 'Status',
 	'code-field-timestamp' => 'Dato',
-	'code-field-comments' => 'Bemærkninger',
+	'code-field-comments' => 'Kommentarer',
 	'code-field-path' => 'Sti',
+	'code-field-select' => 'Vælg',
 	'code-rev-author' => 'Forfatter:',
 	'code-rev-date' => 'Dato:',
 	'code-rev-message' => 'Kommentar:',
@@ -2740,6 +2747,8 @@ $messages['de'] = array(
 	'code-rev-tags' => 'Tags:',
 	'code-rev-tag-add' => 'Ergänze Tags:',
 	'code-rev-tag-remove' => 'Entferne Tags:',
+	'code-rev-tag-addtag-tooltip' => 'Neue Tags zu dieser Revision hinzufügen',
+	'code-rev-tag-removetag-tooltip' => 'Klicken um Tag „$1“ zu entfernen',
 	'code-rev-comment-by' => 'Kommentar von $1',
 	'code-rev-comment-preview' => 'Vorschau',
 	'code-rev-inline-preview' => 'Vorschau:',
@@ -3224,7 +3233,9 @@ $messages['el'] = array(
 	'code-prop-changes' => 'Αρχείο καταγραφής κατάστασης και προσθήκης ετικετών',
 	'codereview-desc' => '[[Special:Code|Εργαλείο ανασκόπησης κώδικα]] με [[Special:RepoAdmin|υποστήριξη Subversion]]',
 	'code-no-repo' => 'Κανένα αποθηκευτήριο δεν έχει διαμορφωθεί!',
+	'code-create-repo' => 'Πηγαίνετε στο [[Special:RepoAdmin|RepoAdmin]] για να δημιουργήσετε ένα Αποθετήριο',
 	'code-need-repoadmin-rights' => 'Δικαιώματα διαχείρισης αποθηκευτηρίου απαιτούνται για τη δημιουργία αποθηκευτηρίου.',
+	'code-need-group-with-rights' => 'Δεν υπάρχει ομάδα με δικαιώματα repoadmin. Παρακαλώ προσθέστε μια έτσι ώστε να είναι εφικτή η προσθήκη ενός νέου Αποθετήριου',
 	'code-repo-not-found' => "Το αποθετήριο '''$1''' δεν υπάρχει!",
 	'code-load-diff' => 'Φόρτωση διαφ...',
 	'code-notes' => 'πρόσφατα σχόλια',
@@ -3248,6 +3259,7 @@ $messages['el'] = array(
 	'code-author-unlinksuccess' => 'Ο συγγραφέας $1 έχει αποδιασυνδεθεί',
 	'code-author-total' => 'Συνολικός αριθμός συγγραφέων: $1',
 	'code-author-lastcommit' => 'Τελευταία ημερομηνία μιας καταχώρησης:',
+	'code-browsing-path' => "Περιήγηση αναθεωρήσεων στο '''$1'''",
 	'code-field-id' => 'Αναθεώρηση',
 	'code-field-author' => 'Συγγραφέας',
 	'code-field-user' => 'Σχολιαστής',
@@ -3259,6 +3271,7 @@ $messages['el'] = array(
 	'code-field-path' => 'Διαδρομή',
 	'code-field-text' => 'Σημείωμα',
 	'code-field-select' => 'Επιλογή',
+	'code-reference-associate-submit' => 'Συσχέτιση',
 	'code-rev-author' => 'Συγγραφέας:',
 	'code-rev-date' => 'Ημερομηνία:',
 	'code-rev-message' => 'Σχόλιο:',
@@ -3496,10 +3509,11 @@ $messages['eo'] = array(
 	'code-rev-purge-link' => 'forviŝi',
 	'code-rev-total' => 'Suma nombro de rezultoj: $1',
 	'code-rev-not-found' => "Revizio '''$1''' ne ekzistas!",
+	'code-rev-history-link' => 'historio',
 	'code-status-new' => 'nova',
 	'code-status-desc-new' => 'Revizio atendas agon (defaŭlta statuso).',
 	'code-status-fixme' => 'riparu-min',
-	'code-status-desc-fixme' => 'Kontrolanto markis ĉi tiun revizion ke ĝi aldonis cimon aŭ estas trompita. Ĝi devas esti korektigita.',
+	'code-status-desc-fixme' => 'Revizio aldonis cimon aŭ estas trompita. Ĝi devas esti korektigita aŭ malfarita.',
 	'code-status-reverted' => 'malfarita',
 	'code-status-desc-reverted' => 'Revizio estis forĵetita de posta revizio.',
 	'code-status-resolved' => 'farita',
@@ -3540,6 +3554,7 @@ $messages['eo'] = array(
 	'code-release-endrev' => 'Lasta revizio:',
 	'codereview-subtitle' => 'Por $1',
 	'codereview-reply-link' => 'respondo',
+	'codereview-overview-title' => 'Superrigardo',
 	'codereview-email-subj' => '[$1 $2]: Nova komento estis aldonita',
 	'codereview-email-body' => 'Uzanto "$1" afiŝis komenton en $3.
 
@@ -3595,6 +3610,8 @@ $6',
 	'code-stats-status-breakdown' => 'Numero de revizioj por stato',
 	'code-stats-fixme-breakdown' => 'Ekzameno po petrevizioj por aŭtoro',
 	'code-stats-count' => 'Nombro de revizioj',
+	'code-tooltip-withsummary' => 'r$1 [$2] de $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] de $3',
 	'repoadmin' => 'Administrado de Kodujo',
 	'repoadmin-new-legend' => 'Krei novan kodujon',
 	'repoadmin-new-label' => 'Nomo de dosierujo:',
@@ -4139,7 +4156,9 @@ $messages['fa'] = array(
 	'code-prop-changes' => 'سیاههٔ وضعیت و برچسب‌دهی',
 	'codereview-desc' => '[[Special:Code|ابزار بازبینی کد]] با [[Special:RepoAdmin|پشتیبانی از Subversion]]',
 	'code-no-repo' => 'هیچ مخزنی تنظیم نشده‌است!',
-	'code-create-repo' => 'برای ایجاد یک مخزن به [[Special:RepoAdmin|مدیر مخرن]] بروید',
+	'code-create-repo' => 'برای ایجاد یک مخزن به [[Special:RepoAdmin|مدیر مخزن]] بروید',
+	'code-need-repoadmin-rights' => 'برای قادر بودن به ایجاد یک مخزن، دسترسی مدیر مخرن نیاز است',
+	'code-need-group-with-rights' => 'هیچ گروهی با دسترسی repoadmin وجود ندارد. لطفاً برای قادر بودن به اضافه کردن مخزنی جدید، یکی اضافه کنید.',
 	'code-repo-not-found' => "منبع ذخیره داده‌های '''$1''' وجود ندارد!",
 	'code-load-diff' => 'در حال بارگیری تفاوت...',
 	'code-notes' => 'توضیحات تازه',
@@ -4194,6 +4213,7 @@ $messages['fa'] = array(
 	'code-rev-tags' => 'برچسب‌ها:',
 	'code-rev-tag-add' => 'افزودن برچسب‌ها:',
 	'code-rev-tag-remove' => 'برداشته برچسب‌ها:',
+	'code-rev-tag-removetag-tooltip' => 'برای حذف برچسب «$1» کلیک کنید',
 	'code-rev-comment-by' => 'توضیحات توسط $1',
 	'code-rev-comment-preview' => 'پیش‌نمایش',
 	'code-rev-inline-preview' => 'پیش‌نمایش:',
@@ -4210,11 +4230,14 @@ $messages['fa'] = array(
 	'code-status-reverted' => 'واگردانی شده',
 	'code-status-resolved' => 'حل شده',
 	'code-status-ok' => 'مورد تأیید',
+	'code-status-desc-ok' => 'نسخه کاملاً بازبینی شده و فرد بازبین از همه نظر مطمئن است که این خوب است.',
 	'code-status-deferred' => 'معوق',
+	'code-status-desc-deferred' => 'نسخه نیاز به بازبینی ندارد.',
 	'code-status-old' => 'قدیمی',
 	'code-signoffs' => 'ثبات‌ها',
 	'code-signoff-legend' => 'افزودن ثبات',
 	'code-signoff-submit' => 'تثبیت کردن',
+	'code-signoff-strike' => 'حذف اثبات‌های انتخاب شده',
 	'code-signoff-signoff' => 'تثبیت کردن این نسخه به عنوان:',
 	'code-signoff-flag-inspected' => 'بازرسی‌شده',
 	'code-signoff-flag-tested' => 'آزمایش شد',
@@ -4243,6 +4266,7 @@ $messages['fa'] = array(
 	'codereview-subtitle' => 'برای $1',
 	'codereview-reply-link' => 'پاسخ',
 	'codereview-overview-title' => 'چشم‌انداز',
+	'codereview-overview-desc' => 'نمایش یک نمای‌کلی گرافیکی از این فهرست',
 	'codereview-email-subj' => '[$1 $2]: نظر جدید اضافه شد',
 	'codereview-email-body' => 'کاربر «$1» یک نظر برای $3 ارسال کرد.
 
@@ -4301,6 +4325,7 @@ $6',
 	'code-stats-main' => 'از تاریخ $1، انبار دارای $2 نسخه توسط [[Special:Code/$3/author|$4 نویسنده]] است.',
 	'code-stats-status-breakdown' => 'تعداد بازبینی‌ها در هر وضعیت',
 	'code-stats-fixme-breakdown' => 'تفکیک از متعادل‌سازی نسخه‌ها توسط مؤلف',
+	'code-stats-new-breakdown' => 'تفکیک نسخه‌های جدید بر اساس هر مؤلف',
 	'code-stats-count' => 'تعداد بازبینی‌ها',
 	'code-tooltip-withsummary' => 'r$1 [$2] توسط $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] توسط $3',
@@ -4321,6 +4346,7 @@ $6',
 	'right-codereview-remove-tag' => 'برداشتن برچسب از نسخه‌ها',
 	'right-codereview-post-comment' => 'افزودن توضیحات به نسخه‌ها',
 	'right-codereview-set-status' => 'تغییر وضعیت نسخه‌ها',
+	'right-codereview-signoff' => 'تثبیت نسخه‌ها',
 	'right-codereview-link-user' => 'پیوند کردن نویسندگان به کاربران ویکی',
 	'right-codereview-associate' => 'مدیریت انجمن‌های نسخه‌ها',
 	'right-codereview-review-own' => 'نسخه‌های خود را به عنوان صحیح یا حل شده علامت گذاری کنید',
@@ -4745,6 +4771,9 @@ $messages['frp'] = array(
 	'code-prop-changes' => 'Jornal des ètats et du balisâjo',
 	'codereview-desc' => '[[Special:Code|Outils de rèvision du code]] avouéc l’[[Special:RepoAdmin|assistance de Subversion]].',
 	'code-no-repo' => 'Gins de dèpôt configurâ !',
+	'code-create-repo' => 'Alâd a [[Special:RepoAdmin|RepoAdmin]] por fâre un dèpôt',
+	'code-need-repoadmin-rights' => "Des privilèjos de nivél ''repoadmin'' sont nècèssèros por fâre un dèpôt",
+	'code-need-group-with-rights' => "Niona tropa de nivél ''repoadmin'' ègziste. Nen volyéd apondre yona por étre en mesera de fâre un dèpôt novél.",
 	'code-repo-not-found' => "Lo dèpôt '''$1''' ègziste pas !",
 	'code-load-diff' => 'Chargement du dif en cors...',
 	'code-notes' => 'novéls comentèros',
@@ -4754,6 +4783,7 @@ $messages['frp'] = array(
 	'code-authors' => 'ôtors',
 	'code-status' => 'ètats',
 	'code-tags' => 'balises',
+	'code-tags-no-tags' => 'Niona balisa ègziste dens cél dèpôt.',
 	'code-authors-text' => 'Vê-que una lista ux ôtors de dèpôts triyês per nom. Los comptos du vouiqui local sont montrâs entre-mié parentèses. Les balyês pôvont étre en cache.',
 	'code-author-haslink' => 'Cél ôtor est liyê u compto $1 de ceti vouiqui',
 	'code-author-orphan' => 'L’utilisator SVN / ôtor est pas liyê a un compto vouiqui',
@@ -4800,6 +4830,8 @@ $messages['frp'] = array(
 	'code-rev-tags' => 'Balises :',
 	'code-rev-tag-add' => 'Apondre les balises :',
 	'code-rev-tag-remove' => 'Enlevar les balises :',
+	'code-rev-tag-addtag-tooltip' => 'Apondre de balises novèles a ceta rèvision',
+	'code-rev-tag-removetag-tooltip' => 'Clicar por enlevar la balisa « $1 »',
 	'code-rev-comment-by' => 'Comentèro per $1',
 	'code-rev-comment-preview' => 'Prèvisualisacion',
 	'code-rev-inline-preview' => 'Prèvisualisacion :',
@@ -4811,12 +4843,19 @@ $messages['frp'] = array(
 	'code-rev-not-found' => "La vèrsion '''$1''' ègziste pas !",
 	'code-rev-history-link' => 'historico',
 	'code-status-new' => 'novél',
+	'code-status-desc-new' => 'Una accion est en atenta por cela rèvision (ètat per dèfôt).',
 	'code-status-fixme' => 'a corregiér',
+	'code-status-desc-fixme' => 'La rèvision at entroduit una cofierie ou ben est fôssa. Devrêt étre corregiê ou ben anulâ.',
 	'code-status-reverted' => 'rèvocâ',
+	'code-status-desc-reverted' => 'La rèvision at étâ refusâ per una rèvision futura.',
 	'code-status-resolved' => 'solucionâ',
+	'code-status-desc-resolved' => 'La rèvision aportâve un problèmo qu’at étâ corregiê per una rèvision futura.',
 	'code-status-ok' => 'd’acôrd',
+	'code-status-desc-ok' => 'La rèvision at étâ complètament revua et pués lo rèvisor est de sûr que convint a tot côp d’uely.',
 	'code-status-deferred' => 'retardâ',
+	'code-status-desc-deferred' => 'La rèvision at pas fôta de rèvision.',
 	'code-status-old' => 'viely',
+	'code-status-desc-old' => 'Una vielye rèvision avouéc des cofieries potencièles mas que vâlt pas l’èfôrt d’étre revua.',
 	'code-signoffs' => 'Aprobacions',
 	'code-signoff-legend' => 'Apondre una aprobacion',
 	'code-signoff-submit' => 'Aprovar',
@@ -4849,6 +4888,7 @@ $messages['frp'] = array(
 	'codereview-subtitle' => 'Por $1',
 	'codereview-reply-link' => 'rèpondre',
 	'codereview-overview-title' => 'Apèrçu',
+	'codereview-overview-desc' => 'Montre un apèrçu grafico de cela lista.',
 	'codereview-email-subj' => '[$1 $2] : novél comentèro apondu',
 	'codereview-email-body' => 'L’utilisator « $1 » at postâ un comentèro dessus $3.
 
@@ -4903,6 +4943,7 @@ $6',
 	'code-stats-main' => 'A la dâta du $1, lo dèpôt at $2 {{PLURAL:$2|rèvision fêta|rèvisions fêtes}} per [[Special:Code/$3/author|$4 ôtor{{PLURAL:$4||s}}]].',
 	'code-stats-status-breakdown' => 'Nombro de rèvisions per ètat',
 	'code-stats-fixme-breakdown' => 'Ventilacion de les rèvisions a corregiér per ôtor',
+	'code-stats-new-breakdown' => 'Ventilacion de les novèles rèvisions per ôtor',
 	'code-stats-count' => 'Nombro de rèvisions',
 	'code-tooltip-withsummary' => 'r$1 [$2] per $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] per $3',
@@ -6411,6 +6452,7 @@ $messages['ia'] = array(
 	'code-rev-purge-link' => 'purgar',
 	'code-rev-total' => 'Numero total de resultatos: $1',
 	'code-rev-not-found' => "Le version '''$1''' non existe!",
+	'code-rev-history-link' => 'historia',
 	'code-status-new' => 'nove',
 	'code-status-desc-new' => 'Le version attende un action (stato predefinite).',
 	'code-status-fixme' => 'corrigeme',
@@ -8452,6 +8494,8 @@ $messages['mk'] = array(
 	'code-rev-tags' => 'Ознаки:',
 	'code-rev-tag-add' => 'Додај ознаки:',
 	'code-rev-tag-remove' => 'Избриши ги ознаките:',
+	'code-rev-tag-addtag-tooltip' => 'Додавање нови ознаки кон ревизијава',
+	'code-rev-tag-removetag-tooltip' => 'Стиснете да ја отстраните ознаката „$1“',
 	'code-rev-comment-by' => 'Забелешка од $1',
 	'code-rev-comment-preview' => 'Преглед',
 	'code-rev-inline-preview' => 'Преглед:',
@@ -8897,6 +8941,8 @@ $messages['ms'] = array(
 	'code-rev-tags' => 'Label:',
 	'code-rev-tag-add' => 'Tambah label:',
 	'code-rev-tag-remove' => 'Buang label:',
+	'code-rev-tag-addtag-tooltip' => 'Tambahkan label baru pada semakan ini',
+	'code-rev-tag-removetag-tooltip' => 'Klik untuk buang label "$1"',
 	'code-rev-comment-by' => 'Ulasan oleh $1',
 	'code-rev-comment-preview' => 'Pratonton',
 	'code-rev-inline-preview' => 'Pralihat:',
@@ -9282,7 +9328,7 @@ De gegevens kunnen uit een cache komen.',
 	'code-browsing-path' => "Versies in '''$1''' aan het bekijken",
 	'code-field-id' => 'Versie',
 	'code-field-author' => 'Auteur',
-	'code-field-user' => 'Opmerking door:',
+	'code-field-user' => 'Opmerking door',
 	'code-field-message' => 'Toelichting bij commit',
 	'code-field-status' => 'Status',
 	'code-field-status-description' => 'Statusbeschrijving',
@@ -9311,6 +9357,8 @@ De gegevens kunnen uit een cache komen.',
 	'code-rev-tags' => 'Labels:',
 	'code-rev-tag-add' => 'Labels toevoegen:',
 	'code-rev-tag-remove' => 'Labels verwijderen:',
+	'code-rev-tag-addtag-tooltip' => 'Nieuwe labels toevoegen aan deze versie',
+	'code-rev-tag-removetag-tooltip' => 'Klik om label "$1" te verwijderen',
 	'code-rev-comment-by' => 'Opmerking van $1',
 	'code-rev-comment-preview' => 'Voorvertoning',
 	'code-rev-inline-preview' => 'Voorvertoning:',
@@ -10734,6 +10782,7 @@ $6',
  * @author Giro720
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author MetalBrasil
  */
 $messages['pt-br'] = array(
 	'code' => 'Revisão de Código',
@@ -10764,7 +10813,7 @@ $messages['pt-br'] = array(
 	'code-tags-no-tags' => 'Nenhuma etiqueta existente neste repositório.',
 	'code-authors-text' => 'Abaixo encontra-se uma lista de autores do repositório, ordenados por nome de efetivação. Contas da wiki local são mostradas entre parênteses. Os dados podem provir da cache.',
 	'code-author-haslink' => 'Este autor está ligado ao usuário wiki $1',
-	'code-author-orphan' => 'Este autor não tem ligação com uma conta wiki',
+	'code-author-orphan' => 'O autor/utilizador do SVN, $1, não está associado a nenhuma conta da wiki',
 	'code-author-dolink' => 'Ligar este autor a um usuário wiki:',
 	'code-author-alterlink' => 'Alterar o usuário wiki ligado a este autor:',
 	'code-author-orunlink' => 'Ou desligar este usuário wiki:',
@@ -10817,10 +10866,11 @@ $messages['pt-br'] = array(
 	'code-rev-purge-link' => 'purgar',
 	'code-rev-total' => 'Número total de resultados: $1',
 	'code-rev-not-found' => "A revisão '''$1''' não existe!",
+	'code-rev-history-link' => 'Histórico',
 	'code-status-new' => 'novo',
 	'code-status-desc-new' => 'Esta revisão está pendente (estado padrão).',
 	'code-status-fixme' => 'corrigir',
-	'code-status-desc-fixme' => 'Esta revisão introduz um bug ou não funciona. Ela precisa ser corrigida.',
+	'code-status-desc-fixme' => 'Esta revisão introduziu um defeito ou não funciona. É necessária uma correção ou reversão.',
 	'code-status-reverted' => 'revertido',
 	'code-status-desc-reverted' => 'A revisão foi descartada por outra revisão posterior.',
 	'code-status-resolved' => 'resolvido',
@@ -10844,13 +10894,14 @@ $messages['pt-br'] = array(
 	'code-signoff-struckdate' => '$1 (anulada a $2)',
 	'code-pathsearch-legend' => 'Pesquisar revisões neste repositório por caminho',
 	'code-pathsearch-path' => 'Caminho:',
-	'code-pathsearch-filter' => 'Filtro aplicado:',
+	'code-pathsearch-filter' => 'Mostrar somente:',
 	'code-revfilter-cr_status' => 'Estado = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-ct_tag' => 'Etiqueta = $1',
 	'code-revfilter-clear' => 'Remover filtro',
 	'code-rev-submit' => 'Salvar alterações',
 	'code-rev-submit-next' => 'Gravar & próximo por resolver',
+	'code-rev-next' => 'Próximo de resolução pendente',
 	'code-batch-status' => 'Estado da modificação:',
 	'code-batch-tags' => 'Etiquetas da modificação:',
 	'codereview-batch-title' => 'Alterar todas as revisões selecionadas',
@@ -10861,6 +10912,8 @@ $messages['pt-br'] = array(
 	'code-release-endrev' => 'Última rev:',
 	'codereview-subtitle' => 'Para $1',
 	'codereview-reply-link' => 'responder',
+	'codereview-overview-title' => 'Vista geral',
+	'codereview-overview-desc' => 'Mostrar um resumo em gráfico desta lista',
 	'codereview-email-subj' => '[$1 $2]: Novo comentário adicionado',
 	'codereview-email-body' => 'O usuário "$1" postou um comentário em $3.
 
@@ -10914,8 +10967,11 @@ $6',
 	'code-stats-header' => 'Estatísticas do repositório $1',
 	'code-stats-main' => 'À data de $1, o repositório tinha $2 {{PLURAL:$2|revisão|revisões}} de [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autores}}]].',
 	'code-stats-status-breakdown' => 'Número de revisões por estado',
-	'code-stats-fixme-breakdown' => 'Detalhe de correções por autor',
+	'code-stats-fixme-breakdown' => 'Detalhe das revisões de correcção, por autor',
+	'code-stats-new-breakdown' => 'Detalhe de revisões novas, por autor',
 	'code-stats-count' => 'Número de revisões',
+	'code-tooltip-withsummary' => 'r$1 [$2] por $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] por $3',
 	'repoadmin' => 'Administração de Repositório',
 	'repoadmin-new-legend' => 'Criar um novo repositório',
 	'repoadmin-new-label' => 'Nome do repositório:',
@@ -10936,7 +10992,7 @@ $6',
 	'right-codereview-signoff' => 'Aprovação de revisões',
 	'right-codereview-link-user' => 'Associar autores a utilizadores de wiki',
 	'right-codereview-associate' => 'Administrar a associação de revisões',
-	'right-codereview-review-own' => 'Marcar as suas próprias revisões como OK',
+	'right-codereview-review-own' => 'Marcar suas próprias revisões como OK ou Resolvido',
 	'specialpages-group-developer' => 'Ferramentas de desenvolvimento',
 	'group-svnadmins' => 'Administradores do SVN',
 	'group-svnadmins-member' => 'Administrador do SVN',
@@ -11105,7 +11161,7 @@ URL complet: $3
 Rezumatul modificării:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: Starea reviziei a fost schimbat',
+	'codereview-email-subj3' => '[$1 $2]: Starea reviziei a fost schimbată',
 	'codereview-email-body3' => 'Utilizatorul „$1” a schimbat starea reviziei $2.
 
 Stare veche: $3
@@ -11603,18 +11659,23 @@ $messages['rue'] = array(
 	'code-prop-changes' => 'Лоґ змін статус і значок',
 	'codereview-desc' => '[[Special:Code|Інштрумент про овірїня коду]] з [[Special:RepoAdmin|podporou Subversion]]',
 	'code-no-repo' => 'Не было наставлене жадне усховище!',
+	'code-create-repo' => 'Про створїня усховіща ідьте до [[Special:RepoAdmin|RepoAdmin]]',
+	'code-need-repoadmin-rights' => 'про створїня усховіща треба права repoadmin',
+	'code-need-group-with-rights' => 'Не є ґрупа з правами repoadmin. Просиме придайте єдну, жебы сьте могли створити нове усховіща.',
 	'code-repo-not-found' => "Усховище '''$1''' не єствує!",
 	'code-load-diff' => 'Начітаваня різницї ...',
 	'code-notes' => 'остатнї коментарї',
 	'code-statuschanges' => 'зміны статусу',
 	'code-mycommits' => 'мої дїї',
+	'code-mycomments' => 'мої коментарї',
 	'code-authors' => 'авторы',
 	'code-status' => 'статусы',
 	'code-tags' => 'значкы',
+	'code-tags-no-tags' => 'У тім усховіщу не суть жадны значкы.',
 	'code-authors-text' => 'Тото є список авторів в усховищу сортованый подля імена. В заперках суть хосновательскы імена на той вікі.
 Дата можуть походжати з кеш.',
 	'code-author-haslink' => 'Тот автор є повязаный з хоснователём $1',
-	'code-author-orphan' => 'Тот автор не є звязаный із жадным хоснователём',
+	'code-author-orphan' => 'SVN хоснователь/автор $1 не мать жаден одказ про вікі хоснователя',
 	'code-author-dolink' => 'Звязати того автора з вікі-хоснователём:',
 	'code-author-alterlink' => 'Змінити вікі-хоснователя звязаного з тым автором:',
 	'code-author-orunlink' => 'Або розорвати звязок з вікі-хоснователём',
@@ -11632,11 +11693,15 @@ $messages['rue'] = array(
 	'code-field-user' => 'Автор коментаря',
 	'code-field-message' => 'Опис змін',
 	'code-field-status' => 'Став',
+	'code-field-status-description' => 'Опис статусу',
 	'code-field-timestamp' => 'Датум',
 	'code-field-comments' => 'Коментарї',
 	'code-field-path' => 'Стежка',
 	'code-field-text' => 'Позначка',
 	'code-field-select' => 'Выбрати',
+	'code-reference-remove' => 'Вылучіти выбраны асоціації',
+	'code-reference-associate' => 'Повязати наступну ревізію:',
+	'code-reference-associate-submit' => 'Повязати',
 	'code-rev-author' => 'Автор:',
 	'code-rev-date' => 'Датум:',
 	'code-rev-message' => 'Коментарь:',
@@ -11654,6 +11719,8 @@ $messages['rue'] = array(
 	'code-rev-tags' => 'Значкы:',
 	'code-rev-tag-add' => 'Придати значкы:',
 	'code-rev-tag-remove' => 'Одстранити значкы:',
+	'code-rev-tag-addtag-tooltip' => 'Додати новы значкы то той ревізії',
+	'code-rev-tag-removetag-tooltip' => 'Кликнути про одстранїня значкы "$1"',
 	'code-rev-comment-by' => 'Коментарь од $1',
 	'code-rev-comment-preview' => 'Нагляд',
 	'code-rev-inline-preview' => 'Нагляд:',
@@ -11663,10 +11730,11 @@ $messages['rue'] = array(
 	'code-rev-purge-link' => 'очістити кеш',
 	'code-rev-total' => 'Цалкове чісло резултатів: $1',
 	'code-rev-not-found' => "Ревізія '''$1''' не єствує!",
+	'code-rev-history-link' => 'історія',
 	'code-status-new' => 'нове',
 	'code-status-desc-new' => 'Ревізія чекать на означіня (початочный статус).',
 	'code-status-fixme' => 'оправити',
-	'code-status-desc-fixme' => 'Рецензент тоту ревізію означів як хыбну або нефункчну. Мала бы быти справена.',
+	'code-status-desc-fixme' => 'У тій ревізії ся обявила хыба. Мала бы быти справена або вернута до опереднёго статусу.',
 	'code-status-reverted' => 'вернуто назад',
 	'code-status-desc-reverted' => 'Попередня ревізія была одшмарена нескоршов.',
 	'code-status-resolved' => 'вырїшено',
@@ -11677,18 +11745,27 @@ $messages['rue'] = array(
 	'code-status-desc-deferred' => 'Ревізія не потребує рецензованя',
 	'code-status-old' => 'стара',
 	'code-status-desc-old' => 'Стара ревізія, котра може обсяговати хыбы, але не стоїть за то, жебы была перевірена.',
+	'code-signoffs' => 'Схвалїня',
+	'code-signoff-legend' => 'Додати схвалїня',
+	'code-signoff-submit' => 'Схвалити',
+	'code-signoff-strike' => 'Перечаркнути выбраны схвалїня',
+	'code-signoff-signoff' => 'Схвалити тоту ревізію як:',
 	'code-signoff-flag-inspected' => 'Перевірене',
+	'code-signoff-flag-tested' => 'Отестовано',
 	'code-signoff-field-user' => 'Хоснователь',
 	'code-signoff-field-flag' => 'Прапорок',
 	'code-signoff-field-date' => 'Датум',
+	'code-signoff-struckdate' => '$1 (перечаркнуто $2)',
 	'code-pathsearch-legend' => 'Глядати ревізії у тім усховищу подля стежкы',
 	'code-pathsearch-path' => 'Стежка:',
-	'code-pathsearch-filter' => 'Хоснованый філтер:',
+	'code-pathsearch-filter' => 'Указати лем:',
 	'code-revfilter-cr_status' => 'Став = $1',
 	'code-revfilter-cr_author' => 'Автор = $1',
+	'code-revfilter-ct_tag' => 'Значка = $1',
 	'code-revfilter-clear' => 'Зняти філтер',
 	'code-rev-submit' => 'Вказати зміны',
 	'code-rev-submit-next' => 'Уложыти & далшы невырїшены',
+	'code-rev-next' => 'Наступна невырїшена',
 	'code-batch-status' => 'Змінити став:',
 	'code-batch-tags' => 'Змінити значкы:',
 	'codereview-batch-title' => 'Зміна вшыткых выбраных верзій',
@@ -11699,10 +11776,15 @@ $messages['rue'] = array(
 	'code-release-endrev' => 'Послїня ревізія:',
 	'codereview-subtitle' => 'Про $1',
 	'codereview-reply-link' => 'одповісти',
+	'codereview-overview-title' => 'Перегляд',
+	'codereview-overview-desc' => 'Указати ґрафічный перегляд того списку',
 	'codereview-email-subj' => '[$1 $2]: Приданый новый коментарь',
 	'codereview-email-body' => 'Хоснователь „$1“ придав коментарь ку $3.
 
 Повне URL: $2
+Коментарь ку змінї:
+
+$5
 
 Коментарь:
 
@@ -11710,19 +11792,51 @@ $4',
 	'codereview-email-subj2' => '[$1 $2]: Реаґуюча зміна',
 	'codereview-email-body2' => 'Хоснователь „$1“ своёв змінов реаґовав на $2.
 
-Повне URL про ревізію перед тов: $5
+Повне URL оріґіналной ревізії: $5
+Коментарь ку змінї:
+
+$6
 
 Повне URL: $3
 
-Коментарь про зміну:
+Коментарь ку змінї:
 
 $4',
+	'codereview-email-subj3' => '[$1 $2]: Статус ревізії зміненый',
+	'codereview-email-body3' => 'Хоснователь „$1“ змінив статус $2.
+
+Опереднїй статус: $3
+Новый статус: $4
+
+Повне URL: $5
+Коментарь ку змінї:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Доданый новый коментарь і змінив ся статус ревізії',
+	'codereview-email-body4' => 'Хоснователь „$1“ змінив статус $2.
+
+Опереднїй статус: $3
+Новый статус: $4
+
+Хоснователь „$1“ тыж придав ку $2 коментарь.
+
+Повне URL: $5
+Коментарь ку змінї:
+
+$7
+
+Коментарь:
+
+$6',
 	'code-stats' => 'штатістіка',
 	'code-stats-header' => 'Штатістіка про усховища $1',
 	'code-stats-main' => 'Ку $1 обсяговало усховище $2 {{PLURAL:$2|ревізію|ревізії|ревізій}} од [[Special:Code/$3/author|$4 {{PLURAL:$4|автора|авторів}}]].',
 	'code-stats-status-breakdown' => 'Чісло ревізій на статус',
-	'code-stats-fixme-breakdown' => 'Роздїлїня потрібных оправ подля автора',
+	'code-stats-fixme-breakdown' => 'Дефект ревізій про корекції подля автора',
+	'code-stats-new-breakdown' => 'Дефект новых ревізій подля автора',
 	'code-stats-count' => 'Чісло ревізій',
+	'code-tooltip-withsummary' => 'р$1 [$2] by $3 - $4',
+	'code-tooltip-withoutsummary' => 'р$1 [$2]  $3',
 	'repoadmin' => 'Адміністрація усховищ',
 	'repoadmin-new-legend' => 'Створити нове усховище',
 	'repoadmin-new-label' => 'Назва усховища:',
@@ -11740,7 +11854,10 @@ $4',
 	'right-codereview-remove-tag' => 'Одобераня значок із ревізій',
 	'right-codereview-post-comment' => 'Придаваня коментарїв до ревізій',
 	'right-codereview-set-status' => 'Зміна статусу ревізій',
+	'right-codereview-signoff' => 'Схвалёваня ревізій',
 	'right-codereview-link-user' => 'Звязок авторів з вікі-хоснователями',
+	'right-codereview-associate' => 'Адміністрація одношінь міджі ревізіями',
+	'right-codereview-review-own' => 'Означіти властны ревізії як ОК або Вырїшены',
 	'specialpages-group-developer' => 'Інштрументы вывоя',
 	'group-svnadmins' => 'SVN адміністраторы',
 	'group-svnadmins-member' => 'SVN адміністратор',
@@ -12347,6 +12464,8 @@ $messages['sl'] = array(
 	'code-rev-tags' => 'Oznake:',
 	'code-rev-tag-add' => 'Dodaj oznake:',
 	'code-rev-tag-remove' => 'Odstrani oznake:',
+	'code-rev-tag-addtag-tooltip' => 'Redakciji dodaj nove oznake',
+	'code-rev-tag-removetag-tooltip' => 'Kliknite za odstranitev oznake »$1«',
 	'code-rev-comment-by' => 'Pripomba $1',
 	'code-rev-comment-preview' => 'Predogled',
 	'code-rev-inline-preview' => 'Predogled:',
@@ -13995,6 +14114,7 @@ $messages['uk'] = array(
 	'code-no-repo' => 'Відсутнє налаштоване сховище!',
 	'code-create-repo' => 'Перейти до [[Special:RepoAdmin|RepoAdmin]], щоб створити сховище',
 	'code-need-repoadmin-rights' => 'для створення сховища необхідні repoadmin права',
+	'code-need-group-with-rights' => 'Не існує групи із правами repoadmin. Будь ласка, створіть таку, щоб мати можливість додавання нового сховища',
 	'code-repo-not-found' => "Сховища '''$1''' не існує!",
 	'code-load-diff' => 'Завантаження різниці версій…',
 	'code-notes' => 'останні коментарі',
@@ -14051,6 +14171,8 @@ $messages['uk'] = array(
 	'code-rev-tags' => 'Мітки:',
 	'code-rev-tag-add' => 'Додати мітки:',
 	'code-rev-tag-remove' => 'Вилучити мітки:',
+	'code-rev-tag-addtag-tooltip' => 'Додати теги до цієї редакції',
+	'code-rev-tag-removetag-tooltip' => 'Натисніть, щоб вилучити тег "$1"',
 	'code-rev-comment-by' => 'Коментар від $1',
 	'code-rev-comment-preview' => 'Попередній перегляд',
 	'code-rev-inline-preview' => 'Попередній перегляд:',
@@ -14078,6 +14200,7 @@ $messages['uk'] = array(
 	'code-signoffs' => 'Підтвердження',
 	'code-signoff-legend' => 'Додати підтвердження',
 	'code-signoff-submit' => 'Підтвердження',
+	'code-signoff-strike' => 'Викреслити відмічені підтвердження',
 	'code-signoff-signoff' => 'Закінчити на цій редакції, як:',
 	'code-signoff-flag-inspected' => 'Перевірено',
 	'code-signoff-flag-tested' => 'Випробувано',
@@ -14119,13 +14242,17 @@ $5
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Подальші зміни',
-	'codereview-email-body2' => 'Користувач "$1" вніс подальші зміни відносно $2.
+	'codereview-email-body2' => 'Користувач "$1" вніс зміни до $2.
 
-Повне URL: $3
+Повна адреса попередньої версії: $5
+Опис змін:
 
-Опис змін: $4
+$6
 
-Адреса для подальшого перегляду $5',
+Повна адреса: $3
+Опис змін:
+
+$4',
 	'codereview-email-subj3' => '[$1 $2]: Статус редакції змінено',
 	'codereview-email-body3' => 'Користувач "$1" змінив статус $2.
 
@@ -14927,6 +15054,7 @@ $messages['zh-hans'] = array(
 	'code-rev-purge-link' => '清除',
 	'code-rev-total' => '结果总数：$1',
 	'code-rev-not-found' => "修订'''$1'''不存在！",
+	'code-rev-history-link' => '历史',
 	'code-status-new' => '新',
 	'code-status-desc-new' => '该修订正在等待操作（默认状态）。',
 	'code-status-fixme' => '修正',
