@@ -32,6 +32,11 @@ class ApiRevisionUpdate extends ApiBase {
 
 		$params = $this->extractRequestParams();
 
+		if( $params['comment']
+			&& !$wgUser->isAllowed( 'codereview-post-comment' ) ) {
+			$this->dieUsage( 'You do not have permission to post comment', 'permissiondenied' );
+		}
+
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
 			$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );

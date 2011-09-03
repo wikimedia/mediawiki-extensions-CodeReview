@@ -68,9 +68,15 @@ window.CodeReview = $.extend( window.CodeReview, {
 			dataType: 'json',
 			type: 'POST',
 			success: function( data ) {
-				// FIXME
-				console.log( data.coderevisionupdate );
-				//data.coderevisionupdate.commentid;
+				// our API return usage error as a success!
+				if( data.error !== undefined ) {
+					console.log( lineComment.find( 'input' ) );
+					lineComment.find( 'input' ).after(
+						$('<span class="errorbox"></span>')
+						.text( data.error.info )
+					);
+					return;
+				}
 
 				var text = data.coderevisionupdate.HTML
 				lineComment.fadeOut( 200 ).remove();
