@@ -1,31 +1,36 @@
-/* Scap roadmap viewer, version [0.0.7]
- * Originally from: http://www.mediawiki.org/wiki/User:Splarka/scapmap.js
+/**
+ * Revision overview widget for the MediaWiki CodeReview extension
+ * Based on http://www.mediawiki.org/wiki/User:Splarka/scapmap.js
  *
+ * Adds an "Overview" portlet link on pages with a revision table on SpecialCode.
+ * When triggered the overview slides out with boxes, each representing a revision.
+ * The boxes links take you to that relevant row in the table, and a backlink is created
+ * in the id column.
  *
- * Loads on, for example: http://www.mediawiki.org/wiki/Special:Code/MediaWiki
- * Click [overview] to generate map.
- * Text in the "path" input box is stripped from the path line in the summary.
- * Clicking a colored box takes you to that relevant line, and a backlink is created in the id column on focus.
- * Hovering over a colored box pops up a little info packet box.
+ * Hovering over a colored box shows a tooltip containg info from the table row.
  */
 jQuery( function( $ ) {
-	// check if we're on a page with a useful list of revisions
-	if( $( '#path' ).size() && $('table.TablePager').size() ) {
-		var portlet = $( '#p-namespaces' ).size() ? 'p-namespaces' : 'p-cactions';
-		mw.util.addPortletLink(
-				portlet,
-				'#',
-				mw.msg( 'codereview-overview-title' ),
-				'ca-scapmap',
-				mw.msg( 'codereview-overview-desc' )
-				);
+
+	// Return early if this page doesn't qualify 
+	if ( !$( '#path' ).length || !$( 'table.TablePager' ).length ) {
+		return;
 	}
 
-	$('#ca-scapmap').click( function () {
+	var	portletLink = mw.util.addPortletLink(
+			$( '#p-namespaces' ).length ? 'p-namespaces' : 'p-cactions',
+			'#',
+			mw.msg( 'codereview-overview-title' ),
+			'ca-scapmap',
+			mw.msg( 'codereview-overview-desc' )
+		),
+		// Cache since we'll be using this a few times
+		$portletLink = $( portletLink );
+
+	$portletLink.click( function() {
 		var $tr = $('table.TablePager tr');
-		if( $tr.size() < 2 ){
+		if ( $tr.length < 2 ){
 			return;
-		} else if( $('#overviewmap').size() ) {
+		} else if ( $('#overviewmap').length ) {
 			// We've already created it; maybe they just want to toggle it on and off
 			$('#overviewmap').slideToggle();
 			return;
@@ -42,13 +47,13 @@ jQuery( function( $ ) {
 			var status = false;
 
 			var trc = $(this).attr( 'class' );
-			if( !trc || !trc.length ) {
+			if ( !trc || !trc.length ) {
 				return;
 			} else {
 				trc = trc.split( ' ' );
 			}
-			for( var j = 0; j < trc.length; j++ ) {
-				if( trc[j].substring( 0, 21 ) == 'mw-codereview-status-' ) {
+			for ( var j = 0; j < trc.length; j++ ) {
+				if ( trc[j].substring( 0, 21 ) == 'mw-codereview-status-' ) {
 					status = trc[j].substring( 21 );
 				}
 			}
@@ -56,7 +61,7 @@ jQuery( function( $ ) {
 
 			var statusname = $td.filter( '.TablePager_col_cr_status' ).text();
 
-			if( !statusname || !status ) {
+			if ( !statusname || !status ) {
 				return;
 			}
 
@@ -70,12 +75,12 @@ jQuery( function( $ ) {
 			};
 
 			var path = $td.filter( '.TablePager_col_cr_path' ).text();
-			if( path && path.indexOf( vpath ) == 0 && path != vpath && vpath != '' ) {
+			if ( path && path.indexOf( vpath ) == 0 && path != vpath && vpath != '' ) {
 				path = '\u2026' + path.substring( vpath.length );
 			}
 			overviewPopupData[i]['path'] = path;
 
-			if( !totals[statusname] ) {
+			if ( !totals[statusname] ) {
 				totals[statusname] = 0;
 			}
 			totals[statusname]++;
@@ -90,24 +95,24 @@ jQuery( function( $ ) {
 		});
 
 		var sumtext = [];
-		for( var i in totals ) {
-			if( typeof i != 'string' || typeof totals[i] != 'number' ) {
+		for ( var i in totals ) {
+			if ( typeof i != 'string' || typeof totals[i] != 'number' ) {
 				continue;
 			}
 			sumtext.push( i + ': ' + totals[i] );
 		}
 		sumtext.sort();
 		var $summary = $( '<div class="summary">' )
-			.text( 'Total revisions: ' + ( $tr.size() - 1 ) + '. [' + sumtext.join(', ') + ']' );
+			.text( 'Total revisions: ' + ( $tr.length - 1 ) + '. [' + sumtext.join(', ') + ']' );
 
 		$( '#overviewmap' )
 			.append( $summary )
-			.css( 'max-width', Math.floor( Math.sqrt( $tr.size() ) ) * 30 )
+			.css( 'max-width', Math.floor( Math.sqrt( $tr.length ) ) * 30 )
 			.slideDown();
 
 		// Add the hover popup
 		$( '#overviewmap > a' )
-			.mouseenter( function () {
+			.mouseenter( function() {
 
 			var $el = $( this );
 				if ( $el.data('overviewPopup') ) {
