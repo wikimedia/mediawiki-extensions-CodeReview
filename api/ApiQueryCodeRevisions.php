@@ -127,10 +127,30 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		if ( isset( $this->props['timestamp'] ) ) {
 			$item['timestamp'] = wfTimestamp( TS_ISO_8601, $row->cr_timestamp );
 		}
+		$rev = null;
 		if ( isset( $this->props['tags'] ) ) {
 			$rev = CodeRevision::newFromRow( $repo, $row );
-			$item['tags'] = $rev->getTags( );
+			$item['tags'] = $rev->getTags();
 			$result->setIndexedTagName( $item['tags'], 'tags' );
+		}
+		if ( isset( $this->props['followups'] ) ) {
+			if ( $rev === null ) {
+				$rev = CodeRevision::newFromRow( $repo, $row );
+			}
+			$item['followups'] = array();
+			foreach ( $rev->getReferences() as $ref ) {
+				$refItem = array(
+					'revid' => $ref->cr_id,
+					'status' => $ref->cr_status,
+					'timestamp' => wfTimestamp( TS_ISO_8601, $ref->cr_timestamp ),
+					'author' => $ref->cr_author ,
+				);
+				ApiResult::setContent( $refItem, $row->cr_message );
+
+				$item['followups'][] = $refItem;
+			}
+
+			$result->setIndexedTagName( $item['followups'], 'followups' );
 		}
 		return $item;
 	}
@@ -169,6 +189,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 					'author',
 					'tags',
 					'timestamp',
+					'followups',
 				),
 			),
 		);
