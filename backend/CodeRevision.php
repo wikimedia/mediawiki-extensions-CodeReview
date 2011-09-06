@@ -80,6 +80,16 @@ class CodeRevision {
 				}
 			}
 		}
+
+		global $wgCodeReviewAutoTagPath;
+		if ( isset( $wgCodeReviewAutoTagPath[ $repo->getName() ] ) ) {
+			foreach ( $wgCodeReviewAutoTagPath[ $repo->getName() ] as $path => $tags ) {
+				if ( preg_match( $path, $rev->commonPath ) ) {
+					$rev->changeTags( $tags, array() );
+					break;
+				}
+			}
+		}
 		return $rev;
 	}
 

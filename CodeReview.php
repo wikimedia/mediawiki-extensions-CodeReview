@@ -232,6 +232,15 @@ $wgCodeReviewMaxDiffPaths = 20;
 $wgCodeReviewDeferredPaths = array();
 
 /**
+ * Key is repository name. Value is an array of key value pairs of the path and then tags
+ *
+ * An array (or string, for 1 tag) of tags to add to a revision upon commit
+ *
+ * $wgCodeReviewAutoTagPath = array( 'RepoName' => array( '%^/path/to/use%' => 'sometag', '%^/another/path/to/use%' => array( 'tag1', 'tag2' ) ) )
+ */
+$wgCodeReviewAutoTagPath = array();
+
+/**
  * UDP comment and status changes notification
  */
 $wgCodeReviewUDPAddress = false;
