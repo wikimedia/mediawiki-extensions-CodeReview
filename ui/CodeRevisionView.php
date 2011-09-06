@@ -573,17 +573,21 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function formatSignoffs( $signOffs, $showButtons ) {
 		$this->showButtonsFormatSignoffs = $showButtons;
-		$signoffs = implode( "\n",
-			array_map( array( $this, 'formatSignoffInline' ), $signOffs )
-		);
 
 		$header = '';
-		if ( $showButtons ) {
-			$header = '<th></th>';
+		if ( count( $signOffs ) ) {
+			if ( $showButtons ) {
+				$header = '<th></th>';
+			}
+			$signoffs = implode( "\n",
+				array_map( array( $this, 'formatSignoffInline' ), $signOffs )
+			);
+			$header .= '<th>' . wfMsgHtml( 'code-signoff-field-user' ) . '</th>';
+			$header .= '<th>' . wfMsgHtml( 'code-signoff-field-flag' ). '</th>';
+			$header .= '<th>' . wfMsgHtml( 'code-signoff-field-date' ). '</th>';
+		} else {
+			$signoffs = '';
 		}
-		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-user' ) . '</th>';
-		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-flag' ). '</th>';
-		$header .= '<th>' . wfMsgHtml( 'code-signoff-field-date' ). '</th>';
 		$buttonrow = $showButtons ? $this->signoffButtons( $signOffs ) : '';
 		return "<table border='1' class='wikitable'><tr>$header</tr>$signoffs$buttonrow</table>";
 	}
