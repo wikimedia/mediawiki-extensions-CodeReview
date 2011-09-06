@@ -52,7 +52,7 @@ class CodeRepoStatsView extends CodeView {
 			$wgOut->wrapWikiMsg( "<h3 id=\"stats-fixme-path\">$1</h3>", 'code-stats-fixme-breakdown-path' );
 
 			foreach ( $stats->fixmesPerPath as $path => $fixmes ) {
-				$wgOut->wrapWikiMsg( "<h4 id=\"stats-fixme-path\">$1</h4>", 'code-stats-fixme-path', $path );
+				$wgOut->wrapWikiMsg( "<h4 id=\"stats-fixme-path\">$1</h4>", array( 'code-stats-fixme-path', $path ) );
 				$this->writeAuthorTable( 'fixme', $fixmes, array( 'path' => $path ) );
 			}
 		}
