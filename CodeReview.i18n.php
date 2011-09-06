@@ -329,6 +329,7 @@ A "sign-off" is a concept in code review that means that the person doing the si
 ----
 $1 = Repository name',
 	'codereview-reply-link' => '{{Identical|Reply}}',
+	'codereview-overview-title' => '{{Identical|Overview}}',
 	'codereview-email-subj2' => 'Subject of an e-mail sent to a user whose revision has been followed upon.
 * <code>$1</code> – Repository name
 * <code>$2</code> – Number of the original revision (which has been followed upon)',
@@ -394,6 +395,7 @@ $messages['af'] = array(
 	'code-notes' => 'onlangse kommentaar',
 	'code-statuschanges' => 'status veranderings',
 	'code-mycommits' => 'my indienings',
+	'code-mycomments' => 'my kommentaar',
 	'code-authors' => 'outeurs',
 	'code-status' => 'statusse',
 	'code-tags' => 'etikette',
@@ -430,6 +432,8 @@ $messages['af'] = array(
 	'code-rev-diff' => 'Veranderinge',
 	'code-rev-diff-link' => 'veranderinge',
 	'code-rev-diff-too-large' => 'Die verskil is te groot om te vertoon.',
+	'code-rev-purge-link' => 'verfris',
+	'code-rev-total' => 'Totale aantal resultate: $1',
 	'code-rev-not-found' => "Weergawe '''$1''' bestaan nie!",
 	'code-rev-history-link' => 'geskiedenis',
 	'code-status-new' => 'nuut',
@@ -438,17 +442,31 @@ $messages['af'] = array(
 	'code-status-resolved' => 'opgelos',
 	'code-status-ok' => 'ok',
 	'code-status-old' => 'oud',
+	'code-signoff-flag-inspected' => 'Geïnspekteer',
 	'code-signoff-flag-tested' => 'Getoets',
 	'code-signoff-field-user' => 'Gebruiker',
 	'code-signoff-field-date' => 'Datum',
+	'code-signoff-struckdate' => '$1 (het $2 deurgehaal)',
 	'code-pathsearch-path' => 'Pad:',
+	'code-pathsearch-filter' => 'Wys net:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Outeur = $1',
+	'code-revfilter-ct_tag' => 'Etiket = $1',
+	'code-rev-submit' => 'Stoor wysigings',
+	'code-rev-next' => 'Volgende onopgeloste',
+	'code-batch-status' => 'Wysigingsstatus:',
 	'codereview-batch-submit' => 'Dien in',
+	'code-releasenotes' => 'Vrystellingsnotas',
+	'code-release-startrev' => 'Eerste weergawe:',
+	'code-release-endrev' => 'Laaste weergawe:',
 	'codereview-subtitle' => 'Vir $1',
 	'codereview-reply-link' => 'antwoord',
 	'codereview-overview-title' => 'Oorsig',
 	'code-stats' => 'statistieke',
+	'code-stats-status-breakdown' => 'Aantal hersienings per status',
+	'code-stats-count' => 'Aantal weergawes',
+	'code-tooltip-withsummary' => 'r$1 [$2] deur $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] deur $3',
 	'repoadmin-new-button' => 'Skep',
 	'repoadmin-edit-bug' => 'Bugzilla-pad:',
 	'repoadmin-edit-view' => 'ViewVC-pad:',
@@ -2902,6 +2920,8 @@ $6',
 	'code-stats-main' => 'Mit Stand $1 wurden von [[Special:Code/$3/author|$4 {{PLURAL:$4|Autor|Autoren}}]] $2 {{PLURAL:$2|Revision|Revisionen}} im Repositorium durchgeführt.',
 	'code-stats-status-breakdown' => 'Anzahl der Revisionen pro Status',
 	'code-stats-fixme-breakdown' => 'Aufschlüsselung der Revisionen mit FIXMEs pro Autor',
+	'code-stats-fixme-breakdown-path' => 'Aufschlüsselung der Revisionen mit FIXMEs pro Pfad',
+	'code-stats-fixme-path' => 'Revisionen mit FIXMEs für Pfad: $1',
 	'code-stats-new-breakdown' => 'Aufschlüsselung der neuen Revisionen pro Autor',
 	'code-stats-count' => 'Anzahl der Revisionen',
 	'code-tooltip-withsummary' => 'r$1 [$2] von $3 - $4',
@@ -3702,6 +3722,7 @@ $6',
  * @author Imre
  * @author Locos epraix
  * @author McDutchie
+ * @author MetalBrasil
  * @author Omnipaedista
  * @author Pertile
  * @author Remember the dot
@@ -3778,6 +3799,8 @@ $messages['es'] = array(
 	'code-rev-tags' => 'Etiquetas:',
 	'code-rev-tag-add' => 'Añadir etiquetas:',
 	'code-rev-tag-remove' => 'Quitar etiquetas:',
+	'code-rev-tag-addtag-tooltip' => 'Añadir nuevas etiquetas para esta revisión',
+	'code-rev-tag-removetag-tooltip' => 'Haga clic para quitar la etiqueta " $1 "',
 	'code-rev-comment-by' => 'Comentario de $1',
 	'code-rev-comment-preview' => 'Previsualización',
 	'code-rev-inline-preview' => 'Previsualización:',
@@ -3787,6 +3810,7 @@ $messages['es'] = array(
 	'code-rev-purge-link' => 'purgar',
 	'code-rev-total' => 'Número total de resultados: $1',
 	'code-rev-not-found' => "¡La revisión '''$1''' no existe!",
+	'code-rev-history-link' => 'historial',
 	'code-status-new' => 'nuevo',
 	'code-status-desc-new' => 'Esta revisión está pendiente de una acción (estado predeterminado).',
 	'code-status-fixme' => 'arréglame',
@@ -3801,19 +3825,27 @@ $messages['es'] = array(
 	'code-status-desc-deferred' => 'La revisión no requiere revisión.',
 	'code-status-old' => 'antiguo',
 	'code-status-desc-old' => 'Revisión antigua que puede contener defectos, pero cuya verificación no se justifica.',
+	'code-signoffs' => 'Aprobaciones',
+	'code-signoff-legend' => 'Agregar firma',
+	'code-signoff-submit' => 'Salir',
+	'code-signoff-strike' => 'Huelga aprobaciones seleccionados',
+	'code-signoff-signoff' => 'Firmar esta revisión:',
 	'code-signoff-flag-inspected' => 'Inspeccionado',
 	'code-signoff-flag-tested' => 'Probado',
 	'code-signoff-field-user' => 'Usuario',
 	'code-signoff-field-flag' => 'Marcar',
 	'code-signoff-field-date' => 'Fecha',
+	'code-signoff-struckdate' => '$1 (golpeado $2 )',
 	'code-pathsearch-legend' => 'Buscar revisiones en este repositorio por ruta',
 	'code-pathsearch-path' => 'Ruta:',
 	'code-pathsearch-filter' => 'Mostrar solamente:',
 	'code-revfilter-cr_status' => 'Status= $1',
 	'code-revfilter-cr_author' => 'Autor= $1',
+	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-revfilter-clear' => 'Limpiar filtro',
 	'code-rev-submit' => 'Guardar cambios',
 	'code-rev-submit-next' => 'Guardar y siguiente sin resolver',
+	'code-rev-next' => 'Siguiente sin resolver',
 	'code-batch-status' => 'Cambiar estado:',
 	'code-batch-tags' => 'Cambiar marcas:',
 	'codereview-batch-title' => 'Cambiar todas las revisiones seleccionadas',
@@ -3824,6 +3856,8 @@ $messages['es'] = array(
 	'code-release-endrev' => 'Última rev:',
 	'codereview-subtitle' => 'Para $1',
 	'codereview-reply-link' => 'responder',
+	'codereview-overview-title' => 'Visión general',
+	'codereview-overview-desc' => 'Mostrar un resumen gráfico de esta lista',
 	'codereview-email-subj' => '[$1 $2]: Añadido nuevo comentario',
 	'codereview-email-body' => 'El usuario "$1" envió un comentario en $3.
 
@@ -3878,7 +3912,10 @@ $6',
 	'code-stats-main' => ' A la fecha de $1, el repositorio tiene $2 {{PLURAL:$2|revisión|revisiones}} hechas por [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autores}}]].',
 	'code-stats-status-breakdown' => 'Número de revisiones por estado',
 	'code-stats-fixme-breakdown' => 'Desglose de las revisiones fixme por autor',
+	'code-stats-new-breakdown' => 'Desglose de las revisiones fixme por autor',
 	'code-stats-count' => 'Número de revisiones',
+	'code-tooltip-withsummary' => 'r $1 [ $2 ] por $3 - $4',
+	'code-tooltip-withoutsummary' => 'r $1 [ $2 ] por $3',
 	'repoadmin' => 'Administración de repositorio',
 	'repoadmin-new-legend' => 'Crear nuevo repositorio',
 	'repoadmin-new-label' => 'Nombre de repositorio:',
@@ -3896,8 +3933,15 @@ $6',
 	'right-codereview-remove-tag' => 'Quitar etiquetas de las revisiones',
 	'right-codereview-post-comment' => 'Añadir comentarios a las revisiones',
 	'right-codereview-set-status' => 'Cambiar el estado de las revisiones',
+	'right-codereview-signoff' => 'Firmar las revisiones',
 	'right-codereview-link-user' => 'Enlazar autores con usuarios',
+	'right-codereview-associate' => 'Administrar las asociaciones de revisión',
+	'right-codereview-review-own' => 'Marque sus propias revisiones como OK o resueltos',
 	'specialpages-group-developer' => 'Herramientas para desarrolladores',
+	'group-svnadmins' => 'Administradores de SVN',
+	'group-svnadmins-member' => 'SVN admin',
+	'grouppage-svnadmins' => '
+{{ns:project}}: administradores de SVN',
 );
 
 /** Estonian (Eesti)
@@ -5033,6 +5077,8 @@ $6',
 	'code-stats-main' => 'A la dâta du $1, lo dèpôt at $2 {{PLURAL:$2|rèvision fêta|rèvisions fêtes}} per [[Special:Code/$3/author|$4 ôtor{{PLURAL:$4||s}}]].',
 	'code-stats-status-breakdown' => 'Nombro de rèvisions per ètat',
 	'code-stats-fixme-breakdown' => 'Ventilacion de les rèvisions a corregiér per ôtor',
+	'code-stats-fixme-breakdown-path' => 'Ventilacion de les rèvisions a corregiér per chemin',
+	'code-stats-fixme-path' => 'Rèvisions a corregiér por lo chemin : $1',
 	'code-stats-new-breakdown' => 'Ventilacion de les novèles rèvisions per ôtor',
 	'code-stats-count' => 'Nombro de rèvisions',
 	'code-tooltip-withsummary' => 'r$1 [$2] per $3 - $4',
@@ -8821,6 +8867,7 @@ $messages['ml'] = array(
 	'code-rev-purge-link' => 'ശുദ്ധമാക്കുക',
 	'code-rev-total' => 'ആകെ ഫലങ്ങളുടെ എണ്ണം: $1',
 	'code-rev-not-found' => "നാൾപ്പതിപ്പ് '''$1''' നിലവിലില്ല!",
+	'code-rev-history-link' => 'നാൾവഴി',
 	'code-status-new' => 'പുതിയത്',
 	'code-status-desc-new' => 'നാൾപ്പതിപ്പിന് ഒരു പ്രവൃത്തി അവശേഷിക്കുന്നു (സ്വതേയുള്ള സ്ഥിതി).',
 	'code-status-fixme' => 'ഈ പ്രശ്നം പരിഹരിക്കുക',
@@ -9103,7 +9150,7 @@ $messages['ms'] = array(
 	'codereview-email-body' => 'Pengguna "$1" mengirim ulasan bagi s$3.
 
 URL penuh: $2
-Ringkasan lakuan:
+Ringkasan:
 
 $5
 
@@ -9119,7 +9166,7 @@ Ringkasan lakuan:
 $6
 
 URL penuh: $3
-Ringkasan lakuan:
+Ringkasan:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Status semakan diubah',
@@ -9129,7 +9176,7 @@ Status Lama: $3
 Status Baru: $4
 
 URL penuh: $5
-Ringkasan lakuan:
+Ringkasan:
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: Komen baru ditambahkan, dan status semakan diubah',
@@ -9141,7 +9188,7 @@ Status Baru: $4
 Pengguna "$1" juga mencatatkan komen di $2.
 
 URL penuh: $5
-Ringkasan lakuan:
+Ringkasan:
 
 $7
 
@@ -9584,6 +9631,8 @@ $6',
 	'code-stats-main' => 'Per $1 heeft de repository $2 {{PLURAL:$2|versie|versies}} door [[Special:Code/$3/author|$4 {{PLURAL:$4|auteur|auteurs}}]].',
 	'code-stats-status-breakdown' => 'Aantal versies per status',
 	'code-stats-fixme-breakdown' => 'Verdeling van de versies gemarkeerd als fixme per auteur',
+	'code-stats-fixme-breakdown-path' => 'Verdeling van de versies gemarkeerd als fixme per pad',
+	'code-stats-fixme-path' => 'Versies gemarkeerd als fixme voor pad: $1',
 	'code-stats-new-breakdown' => 'Verdeling van nieuwe versies per auteur',
 	'code-stats-count' => 'Aantal versies',
 	'code-tooltip-withsummary' => 'r$1 [$2] door $3 - $4',
@@ -10596,6 +10645,8 @@ $6',
 	'code-stats-main' => "Ai $1, ël depòsit a l'ha $2  {{PLURAL:$2|revision|revision}} për [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autor}}]].",
 	'code-stats-status-breakdown' => 'Nùmer ëd revision për stat',
 	'code-stats-fixme-breakdown' => 'Partagi ëd le revision da corege për autor',
+	'code-stats-fixme-breakdown-path' => 'Partagi ëd le revision da corege për përcors',
+	'code-stats-fixme-path' => 'Revision da corege për përcors: $1',
 	'code-stats-new-breakdown' => 'Dìvision ëd le revision neuve për autor',
 	'code-stats-count' => 'Nùmer ëd revision',
 	'code-tooltip-withsummary' => 'r$1 [$2] da $3 - $4',
@@ -11436,6 +11487,7 @@ $messages['roa-tara'] = array(
 	'code-rev-purge-link' => 'sdevache',
 	'code-rev-total' => 'Numere totale de le resultate: $1',
 	'code-rev-not-found' => "'A revisione '''$1''' non ge esiste!",
+	'code-rev-history-link' => 'cunde',
 	'code-status-new' => 'nueve',
 	'code-status-fixme' => 'aggiusteme',
 	'code-status-reverted' => 'annullate',
@@ -11461,9 +11513,11 @@ $messages['roa-tara'] = array(
 	'code-pathsearch-filter' => 'Fa vedè sulamende::',
 	'code-revfilter-cr_status' => 'State = $1',
 	'code-revfilter-cr_author' => 'Autore = $1',
+	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-revfilter-clear' => "Pulizze 'u filtre",
 	'code-rev-submit' => 'Reggistre le cangiaminde',
 	'code-rev-submit-next' => 'Salve & prossime irresolte',
+	'code-rev-next' => 'Prosseme irrisolte',
 	'code-batch-status' => "Cange 'u state:",
 	'code-batch-tags' => 'Cange le tag:',
 	'codereview-batch-title' => 'Cange totte le revisione selezionate',
@@ -11474,6 +11528,7 @@ $messages['roa-tara'] = array(
 	'code-release-endrev' => 'Urteme rev:',
 	'codereview-subtitle' => 'Pe $1',
 	'codereview-reply-link' => 'respunne',
+	'codereview-overview-title' => 'Panorameche',
 	'codereview-email-subj' => '[$1 $2]: Nuève commende aggiunde',
 	'codereview-email-body' => 'L\'utende "$1" ha postate \'nu commende sus a $3.
 
@@ -11528,6 +11583,7 @@ $6',
 	'code-stats-count' => 'Numere de le revisiune',
 	'code-tooltip-withsummary' => 'r$1 [$2] da $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] da $3',
+	'repoadmin' => "Amministrazione de l'Archivije",
 	'repoadmin-new-legend' => "Ccreje 'n'archivije nuève",
 	'repoadmin-new-label' => "Nome de l'archivije:",
 	'repoadmin-new-button' => 'Ccreje',
@@ -11535,6 +11591,7 @@ $6',
 	'repoadmin-edit-bug' => 'Percorse de Bugzilla:',
 	'repoadmin-edit-view' => "Percorse d'u ViewVC:",
 	'repoadmin-edit-button' => 'OK',
+	'repoadmin-edit-sucess' => 'L\'archivije "[[Special:Code/$1|$1]]" ha state cangiate cu successe.',
 	'repoadmin-nav' => "amministrazione de l'archivije",
 	'right-codereview-use' => 'Ause de speciale:Codece',
 	'right-codereview-add-tag' => 'Aggiunge nuève etichette pè le revsione',
@@ -14790,6 +14847,8 @@ $messages['vi'] = array(
 	'code-rev-tags' => 'Các thẻ:',
 	'code-rev-tag-add' => 'Thêm thẻ:',
 	'code-rev-tag-remove' => 'Dời thẻ:',
+	'code-rev-tag-addtag-tooltip' => 'Thêm thẻ mới vào phiên bản này',
+	'code-rev-tag-removetag-tooltip' => 'Nhấn để gỡ thẻ “$1”',
 	'code-rev-comment-by' => '$1 ghi chú',
 	'code-rev-comment-preview' => 'Xem trước',
 	'code-rev-inline-preview' => 'Xem trước:',
@@ -14901,6 +14960,8 @@ $6',
 	'code-stats-main' => 'Vào $1, kho được sửa đổi $2 lần bởi [[Special:Code/$3/author|$4 người dùng]].',
 	'code-stats-status-breakdown' => 'Số thay đổi cho mỗi trạng thái',
 	'code-stats-fixme-breakdown' => 'Thay đổi được đánh dấu là cần sửa từng tác giả',
+	'code-stats-fixme-breakdown-path' => 'Các phiên bản cần sửa theo đường dẫn',
+	'code-stats-fixme-path' => 'Phiên bản cần sửa tại đường dẫn: $1',
 	'code-stats-new-breakdown' => 'Thay đổi mới được đánh dấu là cần sửa từng tác giả',
 	'code-stats-count' => 'Số thay đổi',
 	'code-tooltip-withsummary' => 'r$1 [$2] bởi $3 – $4',
@@ -15160,6 +15221,7 @@ $3',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Anakmalaysia
  * @author Chenzw
  * @author Gaoxuewei
  * @author Hydra
@@ -15243,6 +15305,8 @@ $messages['zh-hans'] = array(
 	'code-rev-tags' => '标签：',
 	'code-rev-tag-add' => '添加标签：',
 	'code-rev-tag-remove' => '移除标签：',
+	'code-rev-tag-addtag-tooltip' => '将此修订添加新标签',
+	'code-rev-tag-removetag-tooltip' => '单击以删除"$1"标记',
 	'code-rev-comment-by' => '$1的评论',
 	'code-rev-comment-preview' => '预览',
 	'code-rev-inline-preview' => '预览：',
@@ -15386,6 +15450,7 @@ $6',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Anakmalaysia
  * @author FireJackey
  * @author Horacewai2
  * @author Liangent
@@ -15407,6 +15472,9 @@ $messages['zh-hant'] = array(
 	'code-prop-changes' => '狀態或標籤日誌',
 	'codereview-desc' => '[[Special:Code|程式碼預覽工具]] with [[Special:RepoAdmin|子版本支援]]',
 	'code-no-repo' => '沒有存放配置！',
+	'code-create-repo' => '前往[[Special:RepoAdmin|版本庫管理]]創建版本庫',
+	'code-need-repoadmin-rights' => '需要版本庫管理權限來創建版本庫',
+	'code-need-group-with-rights' => '沒有任何具有版本庫管理權限的用戶組，請為特定組增加權限以新建版本庫',
 	'code-repo-not-found' => "儲存庫'''$1'''不存在！",
 	'code-load-diff' => '載入差異 ...',
 	'code-notes' => '新近發言',
@@ -15417,9 +15485,9 @@ $messages['zh-hant'] = array(
 	'code-status' => '狀態',
 	'code-tags' => '標籤',
 	'code-tags-no-tags' => '此儲存庫中不存在的任何標記。',
-	'code-authors-text' => '以下是回購作者的最近承諾。',
+	'code-authors-text' => '下面給出了按提交者名稱排序的版本庫作者列表。與本地維基項目對應的帳戶會被括注寫出。數據可能被緩存',
 	'code-author-haslink' => '此作者與維基用戶$1連結',
-	'code-author-orphan' => '此作者沒有與任何維基用戶連結',
+	'code-author-orphan' => 'SVN用戶或作者$1未與維基項目帳戶關聯',
 	'code-author-dolink' => '連結此作者至維基用戶：',
 	'code-author-alterlink' => '改變此作者與維基用戶連結：',
 	'code-author-orunlink' => '或者取消這個維基用戶的關聯：',
@@ -15439,11 +15507,12 @@ $messages['zh-hant'] = array(
 	'code-field-status' => '狀態',
 	'code-field-status-description' => '狀態說明',
 	'code-field-timestamp' => '日期',
-	'code-field-comments' => '註釋',
+	'code-field-comments' => '評論',
 	'code-field-path' => '路徑',
 	'code-field-text' => '註釋',
 	'code-field-select' => '選定',
 	'code-reference-remove' => '移除選定的關聯',
+	'code-reference-associate' => '關聯後續修訂：',
 	'code-reference-associate-submit' => '將相關聯',
 	'code-rev-author' => '作者：',
 	'code-rev-date' => '日期：',
@@ -15462,6 +15531,8 @@ $messages['zh-hant'] = array(
 	'code-rev-tags' => '標籤：',
 	'code-rev-tag-add' => '新增標籤：',
 	'code-rev-tag-remove' => '移除標籤：',
+	'code-rev-tag-addtag-tooltip' => '將此修訂添加新標籤',
+	'code-rev-tag-removetag-tooltip' => '單擊以刪除"$1"標記',
 	'code-rev-comment-by' => '$1 的評論',
 	'code-rev-comment-preview' => '預覽',
 	'code-rev-inline-preview' => '預覽：',
@@ -15471,12 +15542,15 @@ $messages['zh-hant'] = array(
 	'code-rev-purge-link' => '清除',
 	'code-rev-total' => '總共有$1個結果',
 	'code-rev-not-found' => "修訂'''$1'''不存在！",
+	'code-rev-history-link' => '歷史',
 	'code-status-new' => '新',
 	'code-status-desc-new' => '修訂是掛起的操作 （預設狀態）。',
 	'code-status-fixme' => '修正',
-	'code-status-desc-fixme' => '審閱者標記此版本引入一個錯誤或已損壞。它應該得到糾正。',
+	'code-status-desc-fixme' => '該修訂引入了錯誤或已被損壞，應被修正或撤銷。',
 	'code-status-reverted' => '回復',
+	'code-status-desc-reverted' => '該修訂已被更高版本的修訂撤銷。',
 	'code-status-resolved' => '解決',
+	'code-status-desc-resolved' => '該修訂存在的問題已被更高版本的修訂處理。',
 	'code-status-ok' => '確定',
 	'code-status-desc-ok' => '修訂全面審查，確保它是好在每個方法中審閱者。',
 	'code-status-deferred' => '推遲',
@@ -15486,6 +15560,8 @@ $messages['zh-hant'] = array(
 	'code-signoffs' => '簽收',
 	'code-signoff-legend' => '新增簽收',
 	'code-signoff-submit' => '批准',
+	'code-signoff-strike' => '取消選定的確認',
+	'code-signoff-signoff' => '該修訂的確認狀態為：',
 	'code-signoff-flag-inspected' => '檢查過',
 	'code-signoff-flag-tested' => '測試過了',
 	'code-signoff-field-user' => '用戶',
@@ -15494,12 +15570,14 @@ $messages['zh-hant'] = array(
 	'code-signoff-struckdate' => '$1（打$2）',
 	'code-pathsearch-legend' => '在此進行回購協議的路徑中搜尋修訂',
 	'code-pathsearch-path' => '路徑：',
-	'code-pathsearch-filter' => '過濾器適用於：',
+	'code-pathsearch-filter' => '只顯示：',
 	'code-revfilter-cr_status' => '狀態 = $1',
 	'code-revfilter-cr_author' => '作者= $1',
+	'code-revfilter-ct_tag' => '標籤 = $1',
 	'code-revfilter-clear' => '清除過濾器',
 	'code-rev-submit' => '儲存修改',
 	'code-rev-submit-next' => '保存，並處理下一條',
+	'code-rev-next' => '下一條未解決',
 	'code-batch-status' => '更改狀態：',
 	'code-batch-tags' => '更改標籤：',
 	'codereview-batch-title' => '更改所有已選的版本',
@@ -15510,39 +15588,68 @@ $messages['zh-hant'] = array(
 	'code-release-endrev' => '結束修訂：',
 	'codereview-subtitle' => '對$1',
 	'codereview-reply-link' => '回覆',
+	'codereview-overview-title' => '概述',
+	'codereview-overview-desc' => '顯示此列表的圖形概述',
 	'codereview-email-subj' => '[$1 $2]: 新的評論已添加',
-	'codereview-email-body' => '用戶 "$1" 在 $3 上添加了一條評論。
+	'codereview-email-body' => '用戶“$1”在$3上發表了評論。
 
-完成URL地址: $2
+完整URL：$2
+提交摘要：
 
-評論:
+$5
+
+評論：
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]：後續更改',
-	'codereview-email-body2' => '用戶「$1」對$2作出了後續更改。
+	'codereview-email-body2' => '用戶“$1”對$2作出了後續更改。
 
-後續修訂的URL連結：$5
+後續修訂的完整URL：$5
+提交摘要：
 
-URL連結：$3
+$6
 
+完整URL：$3
 提交摘要：
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]：自動測試發現已知錯誤',
-	'codereview-email-body3' => '自動測試發現$1導致了已知的錯誤。
+	'codereview-email-subj3' => '[$1 $2]：修訂狀態改變',
+	'codereview-email-body3' => '用戶“$1”更改了$2的狀態。
 
-URL連結：$2
+原狀態：$3
+新狀態：$4
 
+完整URL：$5
 提交摘要：
 
-$3',
+$6',
 	'codereview-email-subj4' => '[$1 $2]： 新增，新的註釋和修訂狀態改變',
+	'codereview-email-body4' => '用戶“$1”更改了$2的狀態。
+
+舊狀態：$3
+新狀態：$4
+
+用戶“$1”還在$2上發表了評論。
+
+完整URL：$5
+提交摘要：
+
+$7
+
+評論：
+
+$6',
 	'code-stats' => '統計',
 	'code-stats-header' => '$1 儲存庫的統計資訊',
 	'code-stats-main' => '$1的儲存庫已$2{{PLURAL:$2|修改|修改}}的[[Special:Code/$3/author|$4{{PLURAL:$4|作者|作者}}]]。',
 	'code-stats-status-breakdown' => '每情況修訂的數目',
-	'code-stats-fixme-breakdown' => '每個作者 fixmes 的分項數字',
+	'code-stats-fixme-breakdown' => '按作者修正修訂的分項統計',
+	'code-stats-fixme-breakdown-path' => '按路徑修正修訂的分項統計',
+	'code-stats-fixme-path' => '$1路徑的修正修訂',
+	'code-stats-new-breakdown' => '按作者新修訂的分項統計',
 	'code-stats-count' => '修訂的數目',
+	'code-tooltip-withsummary' => 'r$1 [$2] $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] $3',
 	'repoadmin' => '儲存庫管理',
 	'repoadmin-new-legend' => '建立新的儲存庫',
 	'repoadmin-new-label' => '儲存庫名稱：',
@@ -15562,6 +15669,11 @@ $3',
 	'right-codereview-set-status' => '修改修訂狀態',
 	'right-codereview-signoff' => '登入修訂',
 	'right-codereview-link-user' => '將作者連結到維基用戶',
+	'right-codereview-associate' => '管理修訂關聯',
+	'right-codereview-review-own' => '將自己的修訂標記為確定或解決',
 	'specialpages-group-developer' => '開發者工具',
+	'group-svnadmins' => 'SVN管理員',
+	'group-svnadmins-member' => 'SVN管理員',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN管理員',
 );
 
