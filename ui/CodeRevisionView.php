@@ -49,7 +49,7 @@ class CodeRevisionView extends CodeView {
 			$this->mSelectedSignoffs : array();
 
 		$this->mAddReference = $wgRequest->getCheck( 'wpAddReferenceSubmit' )
-				? array_map( array( $this, 'ltrimIntval' ), $wgRequest->getArray( 'wpAddReference', array() ) )
+				? $this->stringToRevList( $wgRequest->getText( 'wpAddReference' ) )
 				: array();
 
 		$this->mRemoveReferences = $wgRequest->getCheck( 'wpRemoveReferences' ) ?
@@ -61,8 +61,16 @@ class CodeRevisionView extends CodeView {
 	 * @return int
 	 */
 	private function ltrimIntval( $item ) {
-		$item = ltrim( $item, 'r' );
+		$item = ltrim( trim( $item ), 'r' );
 		return intval( $item );
+	}
+
+	/**
+	 * @param $input string
+	 * @return array
+	 */
+	private function stringToRevList( $input ) {
+		return array_map( array( $this, 'ltrimIntval' ), explode( ',', $input ) );
 	}
 
 	function execute() {
@@ -356,8 +364,14 @@ class CodeRevisionView extends CodeView {
 		return $list;
 	}
 
+	/**
+	 * @param $input string
+	 * @return array|null
+	 */
 	protected function splitTags( $input ) {
-		if ( !$this->mRev ) return array();
+		if ( !$this->mRev ) {
+			return array();
+		}
 		$tags = array_map( 'trim', explode( ",", $input ) );
 		foreach ( $tags as $key => $tag ) {
 			$normal = $this->mRev->normalizeTag( $tag );
