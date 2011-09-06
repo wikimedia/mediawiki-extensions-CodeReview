@@ -241,6 +241,13 @@ $wgCodeReviewDeferredPaths = array();
 $wgCodeReviewAutoTagPath = array();
 
 /**
+ * Key is repository name. Value is an array of key value pairs of the paths to get fixme list for
+ *
+ * $wgCodeReviewFixmePerPath = array( 'RepoName' => array( '%^/path/to/use%', '%^/another/path/to/use%' ) )
+ */
+$wgCodeReviewFixmePerPath = array();
+
+/**
  * UDP comment and status changes notification
  */
 $wgCodeReviewUDPAddress = false;

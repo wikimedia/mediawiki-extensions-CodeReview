@@ -47,6 +47,15 @@ class CodeRepoStatsView extends CodeView {
 		if ( !empty( $stats->new ) ) {
 			$this->writeAuthorStatusTable( 'new', $stats->new );
 		}
+
+		if ( !empty( $stats->fixmesPerPath ) ) {
+			$wgOut->wrapWikiMsg( "<h3 id=\"stats-fixme-path\">$1</h3>", 'code-stats-fixme-breakdown-path' );
+
+			foreach ( $stats->fixmesPerPath as $path => $fixmes ) {
+				$wgOut->wrapWikiMsg( "<h4 id=\"stats-fixme-path\">$1</h4>", 'code-stats-fixme-path', $path );
+				$this->writeAuthorTable( 'fixme', $fixmes, array( 'path' => $path ) );
+			}
+		}
 	}
 
 	/**
@@ -54,20 +63,32 @@ class CodeRepoStatsView extends CodeView {
 	 * @param $array array
 	 */
 	function writeAuthorStatusTable( $status, $array ) {
-		global $wgOut, $wgLang;
-		$repoName = $this->mRepo->getName();
+		global $wgOut;
 		$wgOut->wrapWikiMsg( "<h3 id=\"stats-{$status}\">$1</h3>", "code-stats-{$status}-breakdown" );
+		$this->writeAuthorTable( $status, $array );
+	}
+
+	/**
+	 * @param $status string
+	 * @param $array array
+	 * @param $options array
+	 */
+	function writeAuthorTable( $status, $array, $options = array() ) {
+		global $wgOut, $wgLang;
+
+		$repoName = $this->mRepo->getName();
 		$wgOut->addHTML( '<table class="wikitable">'
 			. '<tr><th>' . wfMsgHtml( 'code-field-author' ) . '</th><th>'
 			. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
 		$title = SpecialPage::getTitleFor( 'Code', $repoName . "/status/{$status}" );
+
 		foreach ( $array as $user => $count ) {
 			$count = htmlspecialchars( $wgLang->formatNum( $count ) );
 			$link = $this->skin->link(
 				$title,
 				htmlspecialchars( $user ),
 				array(),
-				array( 'author' => $user )
+				array_merge( $options, array( 'author' => $user ) )
 			);
 			$wgOut->addHTML( "<tr><td>$link</td>"
 				. "<td>$count</td></tr>" );
