@@ -299,7 +299,7 @@ class CodeDiffHighlighter {
 		if( $matches !== 1 ) {
 			# We really really should have matched something!
 			throw new MWException(
-				__METHOD__ . " given an invalid chunk header \n"
+				__METHOD__ . " given an invalid chunk header: '$chunkHeader'\n"
 			);
 		}
 		return $m;

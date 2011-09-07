@@ -22,6 +22,10 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 				array( 76, 17, 76, 21 ),
 				'@@ -76,17 +76,21 @@'
 			),
+			array(
+				array( 1, 63, 0, 0 ),
+				'@@ -1,63 +0,0 @@'
+			),
 		);
 	}
 
