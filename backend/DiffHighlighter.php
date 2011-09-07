@@ -35,7 +35,7 @@ class CodeDiffHighlighter {
 	 * @return string
 	 */
 	function render( $text, CodeRepository $repo = null, CodeRevision $rev = null ) {
-		if( $repo xor $rev ) {
+		if( $repo ^ $rev ) {
 			throw new MWException( __METHOD__ . " must have both repository and revision or none of them\n" );
 		} elseif( $repo && $rev ) {
 			$this->repo = $repo;
