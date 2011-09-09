@@ -268,6 +268,7 @@ $6',
  * @author Yekrats
  */
 $messages['qqq'] = array(
+	'code-rev-title' => 'Title of code review page. "$1" is the name of the project being coded followed by a revision number.',
 	'code-comments' => '{{Identical|Comments}}',
 	'code-change-added' => '{{Identical|Added}}',
 	'codereview-desc' => '{{desc}}',
@@ -1001,6 +1002,7 @@ $messages['az'] = array(
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Müəllif = $1',
 	'code-rev-submit' => 'Dəyişiklikləri yadda saxla',
+	'codereview-batch-submit' => 'Təsdiq et',
 	'codereview-subtitle' => '$1 üçün',
 	'code-stats' => 'statistikalar',
 	'repoadmin-edit-button' => 'OK',
@@ -1525,8 +1527,9 @@ $messages['bg'] = array(
 	'code-authors' => 'автори',
 	'code-status' => 'състояния',
 	'code-tags' => 'етикети',
+	'code-tags-no-tags' => 'Няма етикети в това хранилище.',
 	'code-author-haslink' => 'Този автор е свързан с уики потребителя $1',
-	'code-author-orphan' => 'Този автор не е свързан с името на уики потребител',
+	'code-author-orphan' => 'SVN потребител/автор $1 не е свързан с уики потребител',
 	'code-author-dolink' => 'Свържете този автор с уики потребител:',
 	'code-author-alterlink' => 'Променете името на уики потребителя, свързан с този автор:',
 	'code-author-orunlink' => 'Или премахнете връзката към този уики потребител:',
@@ -1535,6 +1538,7 @@ $messages['bg'] = array(
 	'code-author-link' => 'да се сложи ли връзка?',
 	'code-author-unlink' => 'да се премахне ли връзката?',
 	'code-author-unlinksuccess' => 'Премахната връзката към автора $1',
+	'code-author-badtoken' => 'Възникна сесийна грешка при опита да се изпълни това действие.',
 	'code-author-total' => 'Общ брой автори: $1',
 	'code-browsing-path' => "Преглед на редакциите на '''$1'''",
 	'code-field-id' => 'Версия',
@@ -1568,12 +1572,18 @@ $messages['bg'] = array(
 	'code-rev-inline-preview' => 'Преглед:',
 	'code-rev-diff' => 'Разлика',
 	'code-rev-diff-link' => 'разлика',
+	'code-rev-diff-too-large' => 'Разликовата препратка е твърде дълга, за да бъде показана.',
 	'code-rev-purge-link' => 'изчистване',
+	'code-rev-total' => 'Общ брой резултати: $1',
 	'code-rev-not-found' => "Версия '''$1''' не съществува!",
+	'code-rev-history-link' => 'история',
 	'code-status-new' => 'ново',
 	'code-status-fixme' => 'за поправка',
 	'code-status-reverted' => 'върнато',
+	'code-status-desc-reverted' => 'Редакцията е отменена в по-късна версия.',
 	'code-status-resolved' => 'разрешено',
+	'code-status-desc-resolved' => 'Редакцията съдържа проблем, който е поправен в по-късна версия.',
+	'code-status-ok' => 'OK',
 	'code-status-deferred' => 'отложено',
 	'code-signoff-field-user' => 'Потребител',
 	'code-signoff-field-date' => 'Дата',
@@ -1600,6 +1610,8 @@ $messages['bg'] = array(
 $4',
 	'code-stats' => 'статистика',
 	'code-stats-header' => 'Статистики за хранилище $1',
+	'code-stats-main' => 'Считано към $1, базата данни съдържа $2 {{PLURAL:$2|версия|версии}}, направени от [[Special:Code/$3/author|$4 {{PLURAL:$4|автор|автора}}]].',
+	'code-stats-status-breakdown' => 'Брой версии на състояние',
 	'code-stats-count' => 'Брой версии',
 	'repoadmin' => 'Администриране на хранилището',
 	'repoadmin-new-legend' => 'Създаване на ново хранилище',
@@ -1609,6 +1621,7 @@ $4',
 	'repoadmin-edit-path' => 'Път към хранилището:',
 	'repoadmin-edit-bug' => 'Път до Bugzilla:',
 	'repoadmin-edit-view' => 'Път до ViewVC:',
+	'repoadmin-edit-button' => 'OK',
 	'repoadmin-edit-sucess' => 'Хранилището „[[Special:Code/$1|$1]]“ беше променено успешно.',
 	'repoadmin-nav' => 'администриране на хранилището',
 	'right-repoadmin' => 'Управление на хранилищата с код',
@@ -6524,7 +6537,7 @@ $3',
  */
 $messages['ia'] = array(
 	'code' => 'Revision de codice',
-	'code-rev-title' => 'v$1 - Revision de codice',
+	'code-rev-title' => '$1 - Revision de codice',
 	'code-comments' => 'Commentos',
 	'code-references' => 'Versiones de sequimento',
 	'code-change-status' => "cambiava le '''stato''' de v$1",
@@ -7838,11 +7851,12 @@ $3',
 );
 
 /** Colognian (Ripoarisch)
+ * @author McDutchie
  * @author Purodha
  */
 $messages['ksh'] = array(
 	'code' => 'Projramm-Änderunge verwallde',
-	'code-rev-title' => 'Version $1 - Programm-Änderunge nohloore',
+	'code-rev-title' => '$1 - Programm-Änderunge nohloore',
 	'code-comments' => 'Kommäntaare',
 	'code-references' => 'De Versione donoh',
 	'code-change-status' => "hät der '''Shtattus''' vun de Version $1 verändert",
@@ -11648,12 +11662,13 @@ $6',
  * @author Kaganer
  * @author Lockal
  * @author MaxSem
+ * @author McDutchie
  * @author Putnik
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'code' => 'Рецензирование кода',
-	'code-rev-title' => 'r$1 — рецензирование кода',
+	'code-rev-title' => '$1 — рецензирование кода',
 	'code-comments' => 'Комментарии',
 	'code-references' => 'Последующие ревизии',
 	'code-change-status' => "изменил '''состояние''' r$1",
