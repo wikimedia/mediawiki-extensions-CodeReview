@@ -192,6 +192,12 @@ $specialPageAliases['mt'] = array(
 	'Code' => array( 'Kodiċi' ),
 );
 
+/** Nedersaksisch (Nedersaksisch) */
+$specialPageAliases['nds-nl'] = array(
+	'Code' => array( 'Kode_naokieken' ),
+	'RepoAdmin' => array( 'Repobeheer' ),
+);
+
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
 	'Code' => array( 'Codecontrole' ),
@@ -224,6 +230,11 @@ $specialPageAliases['sa'] = array(
 $specialPageAliases['sk'] = array(
 	'Code' => array( 'Kód', 'KontrolaKódu' ),
 	'RepoAdmin' => array( 'SprávcaÚložiska' ),
+);
+
+/** Swedish (Svenska) */
+$specialPageAliases['sv'] = array(
+	'Code' => array( 'Kod', 'Kodgranskning' ),
 );
 
 /** Swahili (Kiswahili) */
@@ -268,6 +279,7 @@ $specialPageAliases['zh-hans'] = array(
 /** Traditional Chinese (‪中文(繁體)‬) */
 $specialPageAliases['zh-hant'] = array(
 	'Code' => array( '代碼' ),
+	'RepoAdmin' => array( '信息庫管理' ),
 );
 
 /**
