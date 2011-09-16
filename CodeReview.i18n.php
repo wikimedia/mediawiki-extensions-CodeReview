@@ -2405,6 +2405,13 @@ $messages['ckb'] = array(
 	'codereview-batch-submit' => 'ناردن',
 );
 
+/** Corsican (Corsu) */
+$messages['co'] = array(
+	'code-field-author' => 'Autore',
+	'code-rev-author' => 'Autore:',
+	'code-rev-history-link' => 'cronolugia',
+);
+
 /** Czech (Česky)
  * @author Danny B.
  * @author Kuvaly
