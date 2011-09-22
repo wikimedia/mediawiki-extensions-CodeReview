@@ -781,9 +781,9 @@ class CodeRevision {
 			'cc_rev_id' => $this->id );
 
 		if( $attached ) {
-			$conditions['cc_patch_line!'] = null;
+			$conditions['cc_patch_line'] = '!= null';
 		} else {
-			$conditions['cc_patch_line']  = null;
+			$conditions['cc_patch_line'] = null;
 		}
 
 		$dbr = wfGetDB( DB_SLAVE );
