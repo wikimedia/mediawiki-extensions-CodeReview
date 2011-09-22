@@ -778,10 +778,11 @@ class CodeRevision {
 	public function getComments( $attached = false ) {
 		$conditions = array(
 			'cc_repo_id' => $this->repoId,
-			'cc_rev_id' => $this->id );
+			'cc_rev_id' => $this->id
+		);
 
 		if( $attached ) {
-			$conditions['cc_patch_line'] = '!= null';
+			$conditions[] = 'cc_patch_line != null';
 		} else {
 			$conditions['cc_patch_line'] = null;
 		}

@@ -13,9 +13,14 @@ class CodeDiffHighlighter {
 	/* line number inside patch */
 	protected $lineNumber = 0;
 
-	/* CodeRepository: The repository for this revision */
+	/**
+	 * @var CodeRepositor The repository for this revision
+	 */
 	protected $repo = null;
-	/* CodeRevision: revision the diff comes from */
+
+	/**
+	 * @var CodeRevision revision the diff comes from
+	 */
 	protected $rev  = null;
 
 	/**
