@@ -5753,13 +5753,13 @@ $messages['he'] = array(
 	'code-author-alterlink' => 'שינוי משתמש הוויקי המקושר לכותב זה:',
 	'code-author-orunlink' => 'או ביטול הקישור למשתמש זה בוויקי:',
 	'code-author-name' => 'הקלידו שם משתמש:',
-	'code-author-success' => 'הכותב $1 קוּשר בהצלחה למשתמש הוויקי $2',
+	'code-author-success' => 'הכותב $1 קוּשָּׁר בהצלחה למשתמש הוויקי $2',
 	'code-author-link' => 'לקשר?',
 	'code-author-unlink' => 'לבטל קישור?',
 	'code-author-unlinksuccess' => 'הקישור של הכותב $1 בוטל',
 	'code-author-badtoken' => 'שגיאת התחברות בעת הניסיון לביצוע פעולה זו.',
 	'code-author-total' => 'מספר סך כל הכותבים: $1',
-	'code-author-lastcommit' => 'תאריך המסירה האחרון',
+	'code-author-lastcommit' => 'תאריך השינוי האחרון',
 	'code-browsing-path' => "עיון בגרסאות תחת '''$1'''",
 	'code-field-id' => 'גרסה',
 	'code-field-author' => 'כותב',
@@ -5785,7 +5785,7 @@ $messages['he'] = array(
 	'code-rev-modified-a' => 'נוסף',
 	'code-rev-modified-r' => 'הוחלף',
 	'code-rev-modified-d' => 'נמחק',
-	'code-rev-modified-m' => 'שונה',
+	'code-rev-modified-m' => 'שוּנָּה',
 	'code-rev-imagediff' => 'שינויים בתמונות',
 	'code-rev-status' => 'מצב:',
 	'code-rev-status-set' => 'שינוי מצב',
@@ -5855,7 +5855,7 @@ $messages['he'] = array(
 	'codereview-email-body' => 'המשתמש "$1" פרסם הערה ב{{GRAMMAR:תחילית|$3}}.
 
 הכתובת המלאה: $2
-תקציר השמירה:
+תקציר השינוי:
 
 $5
 
@@ -5866,12 +5866,12 @@ $4',
 	'codereview-email-body2' => 'המשתמש "$1" הוסיף גרסאות המשך לגרסה $2.
 
 הכתובת המלאה לגרסת ההמשך: $5.
-תקציר השמירה:
+תקציר השינוי:
 
 $6
 
 הכתובת המלאה: $3
-תקציר השמירה:
+תקציר השינוי:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: מצב הגרסה השתנה',
@@ -5881,7 +5881,7 @@ $4',
 מצב חדש: $4
 
 כתובת מלאה: $5
-תקציר שמירה:
+תקציר השינוי:
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: נוספה הערה חדשה ומצב הגרסה השתנה',
@@ -5893,7 +5893,7 @@ $6',
 המשתמש "$1" גם הגיב על $2.
 
 הכתובת המלאה: $5
-תקציר השמירה:
+תקציר השינוי:
 
 $7
 
