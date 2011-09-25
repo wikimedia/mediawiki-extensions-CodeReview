@@ -375,9 +375,11 @@ $1 = Repository name',
 	'right-codereview-remove-tag' => '{{doc-right}}',
 	'right-codereview-post-comment' => '{{doc-right}}',
 	'right-codereview-set-status' => '{{doc-right}}',
-	'right-codereview-signoff' => 'A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
+	'right-codereview-signoff' => '{{doc-right|codereview-signoff}}
+A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
 	'right-codereview-link-user' => '{{doc-right}}',
 	'right-codereview-associate' => '{{doc-right|codereview-associate}}',
+	'right-codereview-review-own' => '{{doc-right|codereview-review-own}}',
 );
 
 /** Afrikaans (Afrikaans)
