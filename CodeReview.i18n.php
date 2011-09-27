@@ -10250,11 +10250,12 @@ $3',
 );
 
 /** Oriya (ଓଡ଼ିଆ)
+ * @author Ansumang
  * @author Odisha1
  */
 $messages['or'] = array(
 	'code-status-ok' => 'ଠିକ ଅଛି',
-	'code-signoff-field-user' => 'ବ୍ୟବାହାରକାରୀ',
+	'code-signoff-field-user' => 'ବ୍ୟବହାରକାରୀ',
 	'repoadmin-new-button' => 'ତିଆରି',
 	'repoadmin-edit-button' => 'ଠିକ ଅଛି',
 );
