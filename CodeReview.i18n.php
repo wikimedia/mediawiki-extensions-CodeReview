@@ -9524,6 +9524,7 @@ $messages['ne'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Krinkle
  * @author Mihxil
  * @author SPQRobin
  * @author Siebrand
@@ -9531,7 +9532,7 @@ $messages['ne'] = array(
 $messages['nl'] = array(
 	'code' => 'Codecontrole',
 	'code-rev-title' => '$1 - Programmacodecontrole',
-	'code-comments' => 'Opmerkingen bij beoordeling',
+	'code-comments' => 'Opmerkingen',
 	'code-references' => 'Versies met correcties',
 	'code-change-status' => "heeft de '''status''' voor versie $1 gewijzigd",
 	'code-change-tags' => "heeft de '''labels''' voor versie $1 gewijzigd",
@@ -9623,9 +9624,9 @@ De gegevens kunnen uit een cache komen.',
 	'code-status-desc-reverted' => 'De versie is ongedaan gemaakt door een latere versie.',
 	'code-status-resolved' => 'opgelost',
 	'code-status-desc-resolved' => 'Er was een probleem met de versie dat opgelost is in een latere versie.',
-	'code-status-ok' => 'OK',
+	'code-status-ok' => 'ok',
 	'code-status-desc-ok' => 'Review van de versie is afgerond en de reviewer is ervan overtuigd dat alles in orde is.',
-	'code-status-deferred' => 'aangehouden',
+	'code-status-deferred' => 'uitgesteld',
 	'code-status-desc-deferred' => 'De versie heeft geen review nodig.',
 	'code-status-old' => 'oud',
 	'code-status-desc-old' => 'Oude versie die mogelijk bugs bevat maar het niet waard is om nog review te krijgen.',
