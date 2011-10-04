@@ -5738,8 +5738,8 @@ $messages['hak'] = array(
  * @author YaronSh
  */
 $messages['he'] = array(
-	'code' => 'בדיקת הקוד',
-	'code-rev-title' => 'גרסה $1 – בדיקת הקוד',
+	'code' => 'סקירת קוד',
+	'code-rev-title' => 'גרסה $1 – סקירת קוד',
 	'code-comments' => 'הערות',
 	'code-references' => 'גרסאות המשך',
 	'code-change-status' => "שינה את ה'''מצב''' של גרסה $1",
@@ -5749,7 +5749,7 @@ $messages['he'] = array(
 	'code-old-status' => 'המצב הישן',
 	'code-new-status' => 'המצב החדש',
 	'code-prop-changes' => 'יומן מצב ותיוג',
-	'codereview-desc' => '[[Special:Code|כלי בדיקת קוד]] עם [[Special:RepoAdmin|תמיכה ב־Subversion]]',
+	'codereview-desc' => '[[Special:Code|כלי סקירת קוד]] עם [[Special:RepoAdmin|תמיכה ב־Subversion]]',
 	'code-no-repo' => 'לא הוגדר מאגר!',
 	'code-create-repo' => 'לכו לדף [[Special:RepoAdmin|RepoAdmin]] ליצירת מאגר',
 	'code-need-repoadmin-rights' => 'נחוצה הרשאת "מנהל מאגר" כדי ליצור מאגר',
@@ -5835,7 +5835,7 @@ $messages['he'] = array(
 	'code-status-deferred' => 'נדחה',
 	'code-status-desc-deferred' => 'אין צורך לסקור את הגרסה.',
 	'code-status-old' => 'ישנה',
-	'code-status-desc-old' => 'גרסה ישנה עם אפשרות להופעת תקלות שאינן שוות את המאמץ בסקירתן.',
+	'code-status-desc-old' => 'גרסה ישנה שאולי יש בה תקלות שלא שווה את המאמץ לסקור אותן.',
 	'code-signoffs' => 'חתימות',
 	'code-signoff-legend' => 'הוספת חתימה',
 	'code-signoff-submit' => 'חתימה',
@@ -5870,7 +5870,7 @@ $messages['he'] = array(
 	'codereview-overview-title' => 'סקירה כללית',
 	'codereview-overview-desc' => 'הצגת סקירה כללית גרפית של הרשימה הזאת',
 	'codereview-email-subj' => '[$1] [גרסה $2]: נוספה הערה חדשה',
-	'codereview-email-body' => 'המשתמש "$1" פרסם הערה ב{{GRAMMAR:תחילית|$3}}.
+	'codereview-email-body' => 'המשתמש "$1" פרסם הערה בשינוי $3.
 
 הכתובת המלאה: $2
 תקציר השינוי:
