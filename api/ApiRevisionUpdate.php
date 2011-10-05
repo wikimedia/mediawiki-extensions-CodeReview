@@ -37,6 +37,11 @@ class ApiRevisionUpdate extends ApiBase {
 			$this->dieUsage( 'You do not have permission to post comment', 'permissiondenied' );
 		}
 
+		global $wgCodeReviewInlineComments;
+		if( !$wgCodeReviewInlineComments ) {
+			$params['patchline'] = null;
+		}
+
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
 			$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
@@ -89,7 +94,7 @@ class ApiRevisionUpdate extends ApiBase {
 
 	public function getAllowedParams() {
 		$flags = CodeRevision::getPossibleFlags();
-		return array(
+		$params = array(
 			'repo' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
@@ -129,11 +134,15 @@ class ApiRevisionUpdate extends ApiBase {
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
 			),
-			'patchline' => array(
+		);
+		global $wgCodeReviewInlineComments;
+		if( $wgCodeReviewInlineComments ) {
+			$params['patchline'] = array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_MIN => 1,
-			),
-		);
+			);
+		}
+		return $params;
 	}
 
 	public function getParamDescription() {

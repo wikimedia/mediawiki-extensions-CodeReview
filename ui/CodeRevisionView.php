@@ -75,6 +75,7 @@ class CodeRevisionView extends CodeView {
 
 	function execute() {
 		global $wgOut, $wgLang;
+		global $wgCodeReviewInlineComments;
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();
@@ -204,10 +205,12 @@ class CodeRevisionView extends CodeView {
 		// Encode revision id for our modules
 		$encRev = Xml::encodeJsVar( $this->mRev->getId() );
 
-		$wgOut->addModules( 'ext.codereview.linecomment' );
-		$wgOut->addInLineScript(
-			"CodeReview.lcInit( $encRev );"
-		);
+		if( $wgCodeReviewInlineComments ) {
+			$wgOut->addModules( 'ext.codereview.linecomment' );
+			$wgOut->addInLineScript(
+				"CodeReview.lcInit( $encRev );"
+			);
+		}
 
 		$wgOut->addModules( 'ext.codereview.tags' );
 		$wgOut->addInlineScript(
