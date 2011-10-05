@@ -38,8 +38,11 @@ class ApiRevisionUpdate extends ApiBase {
 		}
 
 		global $wgCodeReviewInlineComments;
-		if( !$wgCodeReviewInlineComments ) {
-			$params['patchline'] = null;
+		if(
+			!$wgCodeReviewInlineComments
+			&& isset( $params['patchline'] )
+		) {
+			$this->dieUsage( "Can not attach a comment to a diff when inline commenting is disabled (\$wgCodeReviewInlineComments is false)." );
 		}
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
@@ -94,7 +97,7 @@ class ApiRevisionUpdate extends ApiBase {
 
 	public function getAllowedParams() {
 		$flags = CodeRevision::getPossibleFlags();
-		$params = array(
+		return array(
 			'repo' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
@@ -134,15 +137,11 @@ class ApiRevisionUpdate extends ApiBase {
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
 			),
-		);
-		global $wgCodeReviewInlineComments;
-		if( $wgCodeReviewInlineComments ) {
-			$params['patchline'] = array(
+			'patchline' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_MIN => 1,
-			);
-		}
-		return $params;
+			),
+		);
 	}
 
 	public function getParamDescription() {
