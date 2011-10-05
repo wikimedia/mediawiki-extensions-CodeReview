@@ -247,6 +247,7 @@ $6',
 );
 
 /** Message documentation (Message documentation)
+ * @author Amire80
  * @author Aotake
  * @author Beta16
  * @author Dalibor Bosits
@@ -333,6 +334,13 @@ A "sign-off" is a concept in code review that means that the person doing the si
 $1 = Repository name',
 	'codereview-reply-link' => '{{Identical|Reply}}',
 	'codereview-overview-title' => '{{Identical|Overview}}',
+	'codereview-email-body' => 'Email body for notification about a comment on a revision.
+
+* $1 - username
+* $2 - URL
+* $3 - product name and revision number
+* $4 - comment text
+* $5 - commit summary',
 	'codereview-email-subj2' => 'Subject of an e-mail sent to a user whose revision has been followed upon.
 * <code>$1</code> – Repository name
 * <code>$2</code> – Number of the original revision (which has been followed upon)',
@@ -5870,7 +5878,7 @@ $messages['he'] = array(
 	'codereview-overview-title' => 'סקירה כללית',
 	'codereview-overview-desc' => 'הצגת סקירה כללית גרפית של הרשימה הזאת',
 	'codereview-email-subj' => '[$1] [גרסה $2]: נוספה הערה חדשה',
-	'codereview-email-body' => 'המשתמש "$1" פרסם הערה בשינוי $3.
+	'codereview-email-body' => 'המשתמש "$1" פרסם הערה בגרסה $3.
 
 הכתובת המלאה: $2
 תקציר השינוי:
@@ -5893,7 +5901,7 @@ $6
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: מצב הגרסה השתנה',
-	'codereview-email-body3' => 'המשתמש "$1" שינה את המצב של $2.
+	'codereview-email-body3' => 'המשתמש "$1" שינה את המצב של גרסה $2.
 
 מצב קודם: $3
 מצב חדש: $4
@@ -5903,7 +5911,7 @@ $4',
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: נוספה הערה חדשה ומצב הגרסה השתנה',
-	'codereview-email-body4' => 'המשתמש "$1" החליף את המצב של $2.
+	'codereview-email-body4' => 'המשתמש "$1" החליף את המצב של גרסה $2.
 
 המצב הישן: $3
 המצב החדש: $4
@@ -11362,6 +11370,8 @@ $messages['ro'] = array(
 	'code-rev-tags' => 'Etichete:',
 	'code-rev-tag-add' => 'Adaugă etichete:',
 	'code-rev-tag-remove' => 'Elimină etichetele:',
+	'code-rev-tag-addtag-tooltip' => 'Adaugă noi etichete acestei revizii',
+	'code-rev-tag-removetag-tooltip' => 'Clic pentru a înlătura eticheta „$1”',
 	'code-rev-comment-by' => 'Comentariu de $1',
 	'code-rev-comment-preview' => 'Previzualizare',
 	'code-rev-inline-preview' => 'Previzualizare:',
