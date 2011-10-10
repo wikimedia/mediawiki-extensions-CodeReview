@@ -242,7 +242,7 @@ $6',
 	'specialpages-group-developer' => 'Developer tools',
 
 	'group-svnadmins' => 'SVN admins',
-	'group-svnadmins-member' => 'SVN admin',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN admin}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN admins',
 );
 
