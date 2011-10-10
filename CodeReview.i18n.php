@@ -3016,7 +3016,7 @@ $6',
 	'right-codereview-review-own' => 'Eigene Revisionen als OK oder erledigt markieren',
 	'specialpages-group-developer' => 'Entwicklerwerkzeuge',
 	'group-svnadmins' => 'SVN-Administratoren',
-	'group-svnadmins-member' => 'SVN-Administrator',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-Administrator|SVN-Administratorin}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administratoren',
 );
 
@@ -4956,7 +4956,7 @@ $6',
 	'right-codereview-review-own' => 'Marquer ses propres révisions comme OK ou Résolu',
 	'specialpages-group-developer' => 'Outils du développeur',
 	'group-svnadmins' => 'Administrateurs SVN',
-	'group-svnadmins-member' => 'administrateur SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|administrateur SVN|administratrice SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Administrateurs SVN',
 );
 
@@ -5425,7 +5425,7 @@ $6',
 	'right-codereview-review-own' => 'Marcar as revisións propias como "de acordo" ou "resolto"',
 	'specialpages-group-developer' => 'Ferramentas dos desenvolvedores',
 	'group-svnadmins' => 'Administradores do SVN',
-	'group-svnadmins-member' => 'Administrador do SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|administrador|administradora}} do SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
@@ -5963,7 +5963,7 @@ $6',
 	'right-codereview-review-own' => 'לסמן את הגרסאות שלך כמאושרות או מתוקנות',
 	'specialpages-group-developer' => 'כלי פיתוח',
 	'group-svnadmins' => 'מנהלי שרת SVN',
-	'group-svnadmins-member' => 'מנהל שרת SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|מנהל|מנהלת}} שרת SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:מנהלי שרת SVN',
 );
 
@@ -10555,7 +10555,7 @@ $6',
 	'right-codereview-review-own' => 'Oznaczanie moich zmian jako „OK” lub załatwionych',
 	'specialpages-group-developer' => 'Narzędzia dewelopera',
 	'group-svnadmins' => 'Administratorzy SVN',
-	'group-svnadmins-member' => 'Administrator SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|administrator SVN|administratorka SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Administratorzy SVN',
 );
 
