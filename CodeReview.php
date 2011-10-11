@@ -311,32 +311,31 @@ function efCodeReviewSchemaUpdates( $updater ) {
 	$base = dirname( __FILE__ );
 	switch ( $updater->getDB()->getType() ) {
 	case 'mysql':
-		$updater->addExtensionUpdate( array( 'addTable', 'code_rev',
-			"$base/codereview.sql", true ) ); // Initial install tables
-		$updater->addExtensionUpdate( array( 'addField', 'code_rev', 'cr_diff',
-			"$base/archives/codereview-cr_diff.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addIndex', 'code_relations', 'repo_to_from',
-			"$base/archives/code_relations_index.sql", true ) );
+		$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" ); // Initial install tables
+		$updater->addExtensionField( 'code_rev', 'cr_diff',
+			"$base/archives/codereview-cr_diff.sql" );
+		$updater->addExtensionIndex( 'code_relations', 'repo_to_from',
+			"$base/archives/code_relations_index.sql" );
 
 		if ( !$updater->updateRowExists( 'make cr_status varchar' ) ) {
 			$updater->addExtensionUpdate( array( 'modifyField', 'code_rev', 'cr_status',
 				"$base/archives/codereview-cr_status_varchar.sql", true ) );
 		}
 
-		$updater->addExtensionUpdate( array( 'addTable', 'code_bugs', "$base/archives/code_bugs.sql", true ) );
+		$updater->addExtensionTable( 'code_bugs', "$base/archives/code_bugs.sql" );
 
-		$updater->addExtensionUpdate( array( 'addTable', 'code_signoffs', "$base/archives/code_signoffs.sql", true ) );
+		$updater->addExtensionTable( 'code_signoffs', "$base/archives/code_signoffs.sql" );
 
-		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_user',
-			"$base/archives/code_signoffs_userid.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_timestamp_struck',
-			"$base/archives/code_signoffs_timestamp_struck.sql", true ) );
+		$updater->addExtensionField( 'code_signoffs', 'cs_user',
+			"$base/archives/code_signoffs_userid.sql" );
+		$updater->addExtensionField( 'code_signoffs', 'cs_timestamp_struck',
+			"$base/archives/code_signoffs_timestamp_struck.sql" );
 
-		$updater->addExtensionUpdate( array( 'addIndex', 'code_comment', 'cc_author',
-			"$base/archives/code_comment_author-index.sql", true ) );
+		$updater->addExtensionIndex( 'code_comment', 'cc_author',
+			"$base/archives/code_comment_author-index.sql" );
 
-		$updater->addExtensionUpdate( array( 'addIndex', 'code_prop_changes', 'cpc_author',
-			"$base/archives/code_prop_changes_author-index.sql", true ) );
+		$updater->addExtensionIndex( 'code_prop_changes', 'cpc_author',
+			"$base/archives/code_prop_changes_author-index.sql" );
 
 		if ( !$updater->updateRowExists( 'make cp_action char' ) ) {
 			$updater->addExtensionUpdate( array( 'modifyField', 'code_paths', 'cp_action',
@@ -348,17 +347,17 @@ function efCodeReviewSchemaUpdates( $updater ) {
 				"$base/archives/codereview-cpc_attrib_varchar.sql", true ) );
 		}
 
-		$updater->addExtensionUpdate( array( 'addIndex', 'code_paths', 'repo_path',
-			"$base/archives/codereview-repopath.sql", true ) );
+		$updater->addExtensionIndex( 'code_paths', 'repo_path',
+			"$base/archives/codereview-repopath.sql" );
 
-		$updater->addExtensionUpdate( array( 'addIndex', 'code_rev', 'cr_repo_status_author',
-			"$base/archives/code_revs_status_author-index.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addField', 'code_comment', 'cc_patch_line',
-			"$base/archives/code_comment_patch_line.sql", true ) );
+		$updater->addExtensionIndex( 'code_rev', 'cr_repo_status_author',
+			"$base/archives/code_revs_status_author-index.sql" );
+		$updater->addExtensionField( 'code_comment', 'cc_patch_line',
+			"$base/archives/code_comment_patch_line.sql" );
 		break;
 	case 'sqlite':
-		$updater->addExtensionUpdate( array( 'addTable', 'code_rev', "$base/codereview.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addTable', 'code_signoffs', "$base/archives/code_signoffs.sql", true ) );
+		$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" );
+		$updater->addExtensionTable( 'code_signoffs', "$base/archives/code_signoffs.sql" );
 		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_user',
 			"$base/archives/code_signoffs_userid-sqlite.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addField', 'code_signoffs', 'cs_timestamp_struck',
