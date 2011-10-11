@@ -5178,7 +5178,7 @@ $6',
 	'right-codereview-review-own' => 'Marcar ses prôpres rèvisions coment OK ou ben Solucionâ',
 	'specialpages-group-developer' => 'Outils u dèvelopor',
 	'group-svnadmins' => 'Administrators SVN',
-	'group-svnadmins-member' => 'Administrator SVN',
+	'group-svnadmins-member' => 'administrat{{GENDER:$1|or|rice}} SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Administrators SVN',
 );
 
@@ -8875,7 +8875,7 @@ $6',
 	'right-codereview-review-own' => 'Означете ги своите ревизии како „ОК“ или „Решена“',
 	'specialpages-group-developer' => 'Развојни алатки',
 	'group-svnadmins' => 'Администратори на SVN',
-	'group-svnadmins-member' => 'Администратор на SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|Администратор на SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Администратори на SVN',
 );
 
@@ -9328,7 +9328,7 @@ $6',
 	'right-codereview-review-own' => 'Menandai semakan sendiri sebagai OK atau Selesai',
 	'specialpages-group-developer' => 'Alatan pembangun',
 	'group-svnadmins' => 'Pentadbir SVN',
-	'group-svnadmins-member' => 'Pentadbir SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|pentadbir SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Pentadbir SVN',
 );
 
@@ -11515,7 +11515,7 @@ $6',
 	'right-codereview-review-own' => 'Marchează propria revizie ca OK sau Rezolvată',
 	'specialpages-group-developer' => 'Unelte pentru dezvolatori',
 	'group-svnadmins' => 'Administratori SVN',
-	'group-svnadmins-member' => 'Administrator SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|administrator SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Administratori SVN',
 );
 
@@ -12928,7 +12928,7 @@ $6',
 	'right-codereview-review-own' => 'Označite svoje redakcije kot v redu ali razrešene',
 	'specialpages-group-developer' => 'Razvijalska orodja',
 	'group-svnadmins' => 'Skrbniki SVN',
-	'group-svnadmins-member' => 'Skrbnik SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|skrbnik|skrbnica}} SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Skrbniki SVN',
 );
 
