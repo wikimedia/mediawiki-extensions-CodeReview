@@ -5212,7 +5212,7 @@ $4',
 $messages['gl'] = array(
 	'code' => 'Revisión do código',
 	'code-rev-title' => '$1 - Revisión do código',
-	'code-comments' => 'Notas da revisión',
+	'code-comments' => 'Comentarios',
 	'code-references' => 'Seguir as revisións',
 	'code-change-status' => "cambiou o '''estado''' da versión $1",
 	'code-change-tags' => "cambiou as '''etiquetas''' da versión $1",
@@ -6801,7 +6801,7 @@ $6',
 	'right-codereview-review-own' => 'Marcar le proprie revisiones como OK o Resolvite',
 	'specialpages-group-developer' => 'Instrumentos pro disveloppatores',
 	'group-svnadmins' => 'Administratores SVN',
-	'group-svnadmins-member' => 'Administrator SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|administrator|administratrice}} SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Administratores SVN',
 );
 
@@ -9762,7 +9762,7 @@ $6',
 	'right-codereview-review-own' => 'Eigen commits als OK of opgelost markeren',
 	'specialpages-group-developer' => 'Hulpmiddelen voor ontwikkelaars',
 	'group-svnadmins' => 'SVN-beheerders',
-	'group-svnadmins-member' => 'SVN-beheerder',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-beheerder}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-beheerders',
 );
 
@@ -15124,7 +15124,7 @@ $6',
 	'right-codereview-review-own' => 'Đánh dấu các sửa đổi của riêng bạn là Được hoặc Đã giải',
 	'specialpages-group-developer' => 'Công cụ dành cho lập trình viên',
 	'group-svnadmins' => 'Người quản lý SVN',
-	'group-svnadmins-member' => 'người quản lý SVN',
+	'group-svnadmins-member' => '{{GENDER:$1}}người quản lý SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Người quản lý SVN',
 );
 
