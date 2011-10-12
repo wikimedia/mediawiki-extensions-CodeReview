@@ -377,6 +377,10 @@ function efCodeReviewSchemaUpdates( $updater ) {
 # Unit tests
 $wgHooks['UnitTestsList'][] = 'efCodeReviewUnitTests';
 
+/**
+ * @param $files array
+ * @return bool
+ */
 function efCodeReviewUnitTests( &$files ) {
 	$files[] = dirname( __FILE__ ) . '/tests/CodeReviewApiTest.php';
 	$files[] = dirname( __FILE__ ) . '/tests/CodeReviewTest.php';
@@ -387,6 +391,10 @@ function efCodeReviewUnitTests( &$files ) {
 # Add global JS vars
 $wgHooks['MakeGlobalVariablesScript'][] = 'efCodeReviewResourceLoaderGlobals';
 
+/**
+ * @param $values array
+ * @return bool
+ */
 function efCodeReviewResourceLoaderGlobals( &$values ){
 	# Bleugh, this is horrible
 	global $wgTitle;
