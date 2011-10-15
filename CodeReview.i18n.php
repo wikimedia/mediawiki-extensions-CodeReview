@@ -1511,7 +1511,7 @@ $6',
 	'right-codereview-review-own' => 'Пазначыць ўласныя вэрсіі як слушныя ці вырашаныя',
 	'specialpages-group-developer' => 'Інструмэнты распрацоўшчыка',
 	'group-svnadmins' => 'Адміністратары SVN',
-	'group-svnadmins-member' => 'Адміністратар SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|Адміністратар SVN|Адміністратарка SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Адміністратары SVN',
 );
 
@@ -11733,6 +11733,7 @@ $6',
 /** Russian (Русский)
  * @author Dim Grits
  * @author Eleferen
+ * @author Engineering
  * @author Ferrer
  * @author JenVan
  * @author Kaganer
@@ -11958,7 +11959,7 @@ $6',
 	'right-codereview-review-own' => 'Отметить ваши собственные ревизии как «ОК» или «Решёные»',
 	'specialpages-group-developer' => 'Инструменты разработчика',
 	'group-svnadmins' => 'Администраторы SVN',
-	'group-svnadmins-member' => 'Администратор SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|Администратор SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Администраторы SVN',
 );
 
