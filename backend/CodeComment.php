@@ -19,7 +19,7 @@ class CodeComment {
 	}
 
 	/**
-	 * @param $rev Revision
+	 * @param $rev CodeRevision
 	 * @param $row
 	 * @return CodeComment
 	 */
@@ -58,7 +58,7 @@ class CodeComment {
 	}
 
 	/**
-	 * @param $rev Revision
+	 * @param $rev CodeRevision
 	 * @param $data array
 	 * @return CodeComment
 	 */

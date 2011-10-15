@@ -496,6 +496,11 @@ class CodeRevision {
 
 				//Notify commenters and revision author of followup revision
 				foreach ( $users as $user ) {
+
+					/**
+					 * @var $user User
+					 */
+
 					// No sense in notifying the author of this rev if they are a commenter/the author on the target rev
 					if ( $commitAuthorId == $user->getId() ) {
 						continue;
@@ -519,6 +524,12 @@ class CodeRevision {
 		$dbw->commit();
 	}
 
+	/**
+	 * @param $dbw DatabaseBase
+	 * @param $paths array
+	 * @param $repoId int
+	 * @param $revId int
+	 */
 	public static function insertPaths( $dbw, $paths, $repoId, $revId ) {
 		$data = array();
 		foreach ( $paths as $path ) {
@@ -1043,7 +1054,7 @@ class CodeRevision {
 				'cs_user_text' => $user->getName(),
 				'cs_flag' => $flag,
 				'cs_timestamp' => $dbw->timestamp(),
-				'cs_timestamp_struck' => Block::infinity()
+				'cs_timestamp_struck' => wfGetDB( DB_SLAVE )->getInfinity()
 			);
 		}
 		$dbw->insert( 'code_signoffs', $rows, __METHOD__, array( 'IGNORE' ) );
@@ -1292,8 +1303,8 @@ class CodeRevision {
 	/**
 	 * Get the canonical URL of a revision. Constructs a Title for this revision
 	 * along the lines of [[Special:Code/RepoName/12345#c678]] and calls getCanonicalUrl().
-	 * @param string $commentId
-	 * @return \type
+	 * @param $commentId string|int
+	 * @return string
 	 */
 	public function getCanonicalUrl( $commentId = 0 ) {
 		$title = SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/' . $this->id );
