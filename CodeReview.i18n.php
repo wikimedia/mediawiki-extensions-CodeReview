@@ -2788,7 +2788,7 @@ $messages['da'] = array(
 	'right-codereview-link-user' => 'Knytte forfattere til wikibrugere',
 	'specialpages-group-developer' => 'Udviklerværktøjer',
 	'group-svnadmins' => 'SVN-administratorer',
-	'group-svnadmins-member' => 'SVN-administrator',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-administrator}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-administratorer',
 );
 
@@ -4115,6 +4115,8 @@ $messages['et'] = array(
 	'code-revfilter-ct_tag' => 'Märgis = $1',
 	'code-revfilter-clear' => 'Eemalda filter',
 	'code-rev-submit' => 'Salvesta muudatused',
+	'code-rev-submit-next' => 'Salvesta ja liigu järgmise lahendamata redaktsiooni juurde',
+	'code-rev-next' => 'Järgmine lahendamata redaktsioon',
 	'code-batch-status' => 'Muudatuse olek:',
 	'code-batch-tags' => 'Muudatusmärgised:',
 	'codereview-batch-title' => 'Kõikide valitud redaktsioonide muutmine',
@@ -4124,6 +4126,8 @@ $messages['et'] = array(
 	'code-release-endrev' => 'Viimane redaktsioon:',
 	'codereview-subtitle' => 'Hoidla $1 jaoks',
 	'codereview-reply-link' => 'vasta',
+	'codereview-overview-title' => 'Ülevaade',
+	'codereview-overview-desc' => 'Näita selle loendi graafilist ülevaadet',
 	'codereview-email-subj' => '[$1 $2]: Lisatud uus kommentaar',
 	'codereview-email-body' => 'Kasutaja $1 kommenteeris koodi $3.
 
@@ -5533,6 +5537,7 @@ $4',
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Chlämens
  * @author Als-Holder
  */
 $messages['gsw'] = array(
@@ -5564,7 +5569,7 @@ $messages['gsw'] = array(
 	'code-tags-no-tags' => 'S git kei Tag in däm Repositorium.',
 	'code-authors-text' => 'Des isch d Lischt vu dr Autore, sortiert no Nämme. Lokali Wikikonte wäre in runde Chlammere ufgfiert. Date chennte us em Cache stamme.',
 	'code-author-haslink' => 'Dää Autor isch zum Wiki-Benutzer $1 vergleicht',
-	'code-author-orphan' => 'Dää Autor het kei Gleich zue me Wiki-Benutzerkonto',
+	'code-author-orphan' => 'Dää SVN-Benutzer/Autor $1 het kei Gleich zue me Wiki-Benutzerkonto',
 	'code-author-dolink' => 'Dää Autor zue me Wiki-Benutzerkonto vergleiche:',
 	'code-author-alterlink' => 'D Vergleichig zue me Wiki-Benutzerkonto fir dää Autor ändere:',
 	'code-author-orunlink' => 'Vergleichig zum Wiki-Benutzerkonto ufhebe:',
@@ -5608,6 +5613,8 @@ $messages['gsw'] = array(
 	'code-rev-tags' => 'Tag:',
 	'code-rev-tag-add' => 'Ergänz Tag:',
 	'code-rev-tag-remove' => 'Nimm Tag use:',
+	'code-rev-tag-addtag-tooltip' => 'Neiji Markierig zue dr Version zuefiege',
+	'code-rev-tag-removetag-tooltip' => 'Drugge, zume de Tag „$1“ usseznee',
 	'code-rev-comment-by' => 'Kommentar vu $1',
 	'code-rev-comment-preview' => 'Vorschau',
 	'code-rev-inline-preview' => 'Vorschau:',
@@ -5617,10 +5624,11 @@ $messages['gsw'] = array(
 	'code-rev-purge-link' => 'Cache lesche',
 	'code-rev-total' => 'Gsamtergebniszahl: $1',
 	'code-rev-not-found' => "Version '''$1''' git s nit!",
+	'code-rev-history-link' => 'Versionsgschicht',
 	'code-status-new' => 'nej',
 	'code-status-desc-new' => 'D Version wartet uf e Aktion (Standardstatus).',
 	'code-status-fixme' => 'fixme',
-	'code-status-desc-fixme' => 'E Guetachter het die Version as kaputt oder as Verursacher vun eme Bug markiert. Si sott korrigiert wäre.',
+	'code-status-desc-fixme' => 'Die Bearbeitig verursacht en Softwarefääler oder isch defekt. Si sött entweder korrigiert oder ruggängig gmacht werde.',
 	'code-status-reverted' => 'ruckgängig gmacht',
 	'code-status-desc-reverted' => 'D Version isch dur e speteri Version ruckgängig gmacht wore.',
 	'code-status-resolved' => 'gmacht',
@@ -5644,12 +5652,14 @@ $messages['gsw'] = array(
 	'code-signoff-struckdate' => '$1 (gstriche $2)',
 	'code-pathsearch-legend' => 'Suech no Revisione in däm Depot per Pfad',
 	'code-pathsearch-path' => 'Pfad:',
-	'code-pathsearch-filter' => 'Filter aagwändet:',
+	'code-pathsearch-filter' => 'Numme aazeige:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
+	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-revfilter-clear' => 'Filter ufruume',
 	'code-rev-submit' => 'Änderige spychere',
 	'code-rev-submit-next' => 'Spychere un zum nächschte wu nonig prieft isch',
+	'code-rev-next' => 'Wyter zum näggste unerledigte',
 	'code-batch-status' => 'Status ändere:',
 	'code-batch-tags' => 'Tag ändere:',
 	'codereview-batch-title' => 'Alli usgwehlte Versione ändere',
@@ -5660,10 +5670,16 @@ $messages['gsw'] = array(
 	'code-release-endrev' => 'Letschti Priefig:',
 	'codereview-subtitle' => 'Fir $1',
 	'codereview-reply-link' => 'Antwort gee',
+	'codereview-overview-title' => 'Übersicht',
+	'codereview-overview-desc' => 'E grafischi Übersicht vo derre Lischt aazeige',
 	'codereview-email-subj' => '[$1 $2]: Neije Kommentar zuegfiegt',
 	'codereview-email-body' => 'Benutzer „$1“ het $3 kommentiert:
 
 Vollständigi URL: $2
+
+Zämmefassig:
+
+$5
 
 Kommentar:
 
@@ -5672,6 +5688,9 @@ $4',
 	'codereview-email-body2' => 'Benutzer „$1“ het zue $2 Änderige wu derno chemme gmacht.
 
 Volli URL fir Änderige wu derno chemme: $5
+Zämmefassig:
+
+$6
 
 Volli URL: $3
 
@@ -5684,7 +5703,11 @@ $4',
 Alte Status: $3
 Neje Status: $4
 
-Vollständigi URL: $5',
+Vollständigi URL: $5
+
+Zämmefassig:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Neje Kommentar zuegfiegt un dr Versionsstatus gänderet',
 	'codereview-email-body4' => 'Benutzer „$1“ het dr Status vu $2 gänderet.
 
@@ -5695,6 +5718,10 @@ Benutzer „$1“ het au ne Kommentar zue $2 zuegfiegt.
 
 Vollständigi URL: $5
 
+Zämmefassig:
+
+$7
+
 Kommentar:
 
 $6',
@@ -5702,8 +5729,13 @@ $6',
 	'code-stats-header' => 'Statistik vum Repositorium „$1“',
 	'code-stats-main' => 'Mit em Stand $1 {{PLURAL:$2|isch|sin}} vu [[Special:Code/$3/author|$4 {{PLURAL:$4|Autor|Autore}}]] $2 {{PLURAL:$2|Revision|Revisione}} im Repositorium durgfiert wore.',
 	'code-stats-status-breakdown' => 'Aazahl vu dr Revisione je Staat',
-	'code-stats-fixme-breakdown' => 'Ufschlisselig vu dr FIXME je Autor',
+	'code-stats-fixme-breakdown' => 'Uffschlisselig vu dr Revisione mit FIXME je Autor',
+	'code-stats-fixme-breakdown-path' => 'Uffschlisselig vu dr Revisione mit FIXME je Pfad',
+	'code-stats-fixme-path' => 'Revisione mit FIXMEs für Pfad: $1',
+	'code-stats-new-breakdown' => 'Uffschlisselig vu dr neije Revisione je Autor',
 	'code-stats-count' => 'Aazahl vu dr Revisione',
+	'code-tooltip-withsummary' => 'r$1 [$2] vo $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] vo $3',
 	'repoadmin' => 'Adminischtration vum Depot',
 	'repoadmin-new-legend' => 'Nej Depot aalege',
 	'repoadmin-new-label' => 'Name vum Depot:',
@@ -5724,9 +5756,10 @@ $6',
 	'right-codereview-signoff' => 'Änderige frejgee',
 	'right-codereview-link-user' => 'Autore uf Wiki-Benutzer vergleiche',
 	'right-codereview-associate' => 'Verchnipfig zuefiege/uuseneh',
+	'right-codereview-review-own' => 'Eigeni Revisione als in Ordnig oder erledigt markiere',
 	'specialpages-group-developer' => 'Entwicklerwärchzyyg',
 	'group-svnadmins' => 'SVN-Adminischtratore',
-	'group-svnadmins-member' => 'SVN-Adminischtrator',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-Ammann|SVN-Amtsfrou}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Adminischtratore',
 );
 
@@ -8355,7 +8388,7 @@ $6',
 	'right-codereview-review-own' => 'Markéiert Är eege Versiounen als OK oder geléist',
 	'specialpages-group-developer' => 'Handwierksgeschir fir Entwéckler (Programméierer)',
 	'group-svnadmins' => 'SVN-Administrateuren',
-	'group-svnadmins-member' => 'SVN-Administrateur',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-Administrateur|SVN-Administratrice}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administrateuren',
 );
 
@@ -11726,7 +11759,7 @@ $6',
 	'right-codereview-review-own' => 'Marche le revisiune tune cumme OK o Resolte',
 	'specialpages-group-developer' => 'Struminde pe le sviluppature',
 	'group-svnadmins' => 'Amministrature de SVN',
-	'group-svnadmins-member' => 'Amministratore de SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|amministratore de SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Amministrature de SVN',
 );
 
