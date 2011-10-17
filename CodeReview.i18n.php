@@ -619,6 +619,7 @@ $4',
 
 /** Arabic (العربية)
  * @author ;Hiba;1
+ * @author AwamerT
  * @author Meno25
  * @author OsamaK
  * @author زكريا
@@ -696,6 +697,8 @@ $messages['ar'] = array(
 	'code-rev-tags' => 'وسوم:',
 	'code-rev-tag-add' => 'إضافة وسوم:',
 	'code-rev-tag-remove' => 'أزل الوسوم:',
+	'code-rev-tag-addtag-tooltip' => 'أضف وسوم جديدة لهذه النسخة',
+	'code-rev-tag-removetag-tooltip' => 'انقر لإزالة وسم " $1 "',
 	'code-rev-comment-by' => 'تعليق بواسطة $1',
 	'code-rev-comment-preview' => 'عاين',
 	'code-rev-inline-preview' => 'معاينة:',
@@ -808,6 +811,8 @@ $6',
 	'code-stats-main' => 'في $1، بالمستودع $2 {{PLURAL:$2|مراجعة|مراجعةً}} من [[Special:Code/$3/author|$4 {{PLURAL:$4|مؤلف|مؤلفا}}]].',
 	'code-stats-status-breakdown' => 'عدد المراجعات حسب الحالة',
 	'code-stats-fixme-breakdown' => 'تصنيف المراجعات المستصلحة بحسب المؤلف',
+	'code-stats-fixme-breakdown-path' => 'تصنيف المراجعات المستصلحة بحسب المؤلف',
+	'code-stats-fixme-path' => 'المراجعات المستصلحة للؤلف: $1',
 	'code-stats-new-breakdown' => 'تصنيف المراجعات الجديدة بحسب المؤلف',
 	'code-stats-count' => 'عدد المراجعات',
 	'code-tooltip-withsummary' => 'r$1 [$2] من $3 - $4',
