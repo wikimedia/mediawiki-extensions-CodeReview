@@ -26,7 +26,7 @@ jQuery( function( $ ) {
 							good = false;
 						}
 					}
-					if( good && tags[i].indexOf( lastTag ) != -1 ){
+					if( good && ('' + tags[i]).indexOf( lastTag ) != -1 ){
 						suggestions.push( doneTags + tags[i] );
 					}
 				}
