@@ -430,7 +430,7 @@ class SvnRevTablePager extends SvnTablePager {
 			if ( $value ) {
 				$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() } );
 				$special->setFragment( '#code-comments' );
-				return $this->mView->skin->link( $special, htmlspecialchars( $value ) );
+				return $this->mView->skin->link( $special, $wgLang->formatNum( htmlspecialchars( $value ) ) );
 			} else {
 				return '-';
 			}
