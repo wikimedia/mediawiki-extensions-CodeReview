@@ -42,7 +42,7 @@ class ApiRevisionUpdate extends ApiBase {
 			!$wgCodeReviewInlineComments
 			&& isset( $params['patchline'] )
 		) {
-			$this->dieUsage( "Can not attach a comment to a diff when inline commenting is disabled (\$wgCodeReviewInlineComments is false)." );
+			$this->dieUsageMsg( "Can not attach a comment to a diff when inline commenting is disabled (\$wgCodeReviewInlineComments is false)." );
 		}
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
