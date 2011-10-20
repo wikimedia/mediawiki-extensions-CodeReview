@@ -9130,7 +9130,7 @@ $6',
 	'right-codereview-review-own' => 'താങ്കൾ സ്വയം സൃഷ്ടിച്ച നാൾപ്പതിപ്പുകൾ ശരിയാണെന്നോ പരിഹരിക്കപ്പെട്ടവയെന്നോ അടയാളപ്പെടുത്തുക',
 	'specialpages-group-developer' => 'വികസന ഉപകരണങ്ങൾ',
 	'group-svnadmins' => 'എസ്.വി.എൻ. കാര്യനിർവ്വഹകർ',
-	'group-svnadmins-member' => 'എസ്.വി.എൻ. കാര്യനിർവ്വാഹക(ൻ)',
+	'group-svnadmins-member' => '{{GENDER:$1|എസ്.വി.എൻ. കാര്യനിർവാഹകൻ|എസ്.വി.എൻ. കാര്യനിർവാഹക}}',
 	'grouppage-svnadmins' => '{{ns:project}}:എസ്.വി.എൻ. കാര്യനിർവാഹകർ',
 );
 
