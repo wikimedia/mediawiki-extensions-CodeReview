@@ -233,7 +233,7 @@ class CodeRevisionView extends CodeView {
 		if ( $prev ) {
 			$prevTarget = SpecialPage::getTitleFor( 'Code', "$repo/$prev" );
 			$links[] = '&lt;&#160;' . $this->skin->link( $prevTarget, $this->mRev->getIdString( $prev ),
-				array(), array( 'path' => $this->mPath ) );
+				array(), array( 'path' => $this->mPath ) ).wfUILang()->getDirMark();
 		}
 
 		$revText = "<b>" . $this->mRev->getIdString( $rev ) . "</b>";
