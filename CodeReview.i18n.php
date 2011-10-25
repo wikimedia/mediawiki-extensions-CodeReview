@@ -151,57 +151,57 @@ $messages['en'] = array(
 	'codereview-overview-desc' => 'Show a graphical overview of this list',
 
 	'codereview-email-subj' => '[$1 $2]: New comment added',
-	'codereview-email-body' => 'User "$1" posted a comment on $3.
+	'codereview-email-body' => '"$1" posted a comment on $3.
+URL: $2
 
-Full URL: $2
-Commit summary:
+Commit summary for $3:
 
 $5
 
-Comment:
+$1\'s comment:
 
 $4',
 
 	'codereview-email-subj2' => '[$1 $2]: Follow-up changes',
-	'codereview-email-body2' => 'User "$1" made follow-up changes to $2.
+	'codereview-email-body2' => '"$1" made follow-up changes to $2.
+URL: $5
 
-Full URL for followed up revision: $5
-Commit summary:
+Commit summary for followed-up $2:
 
 $6
 
-Full URL: $3
-Commit summary:
+Follow-up URL: $3
+Follow-up summary by "$1":
 
 $4',
 
 	'codereview-email-subj3' => '[$1 $2]: Revision status changed',
-	'codereview-email-body3' => 'User "$1" changed the status of $2.
+	'codereview-email-body3' => '"$1" changed the status of $2 to "$4"
+URL: $5
 
-Old Status: $3
-New Status: $4
+Old status:  $3
+> New status: $4
 
-Full URL: $5
-Commit summary:
+Commit summary for $2:
 
 $6',
 
 	'codereview-email-subj4' => '[$1 $2]: New comment added, and revision status changed',
-	'codereview-email-body4' => 'User "$1" changed the status of $2.
+	'codereview-email-body4' => '"$1" changed the status of $2 to "$4" and commented it.
+URL: $5
 
 Old Status: $3
-New Status: $4
+> New Status: $4
 
-User "$1" also posted a comment on $2.
-
-Full URL: $5
-Commit summary:
+Commit summary for $2:
 
 $7
 
-Comment:
+$1\'s comment:
 
-$6',
+$6
+
+',
 
 	'code-stats' => 'statistics',
 	'code-stats-header' => 'Statistics for repository $1',
