@@ -8271,6 +8271,7 @@ $messages['lb'] = array(
 	'code-rev-tags' => 'Tagen:',
 	'code-rev-tag-add' => 'Tagen derbäisetzen:',
 	'code-rev-tag-remove' => 'Tagen ewechhuelen:',
+	'code-rev-tag-removetag-tooltip' => 'Klickt fir den Tag "$1" ewechzehuelen',
 	'code-rev-comment-by' => 'Bemierkung vum $1',
 	'code-rev-comment-preview' => 'Kucken ouni ze späicheren',
 	'code-rev-inline-preview' => 'Kucken ouni ze späicheren:',
