@@ -43,7 +43,7 @@ class WordCloud {
 		7 => 20, 8 => 10, 9 => 5
 	);
 
-	/*
+	/**
 	 * Constructor
 	 *
 	 * @param $words Array of word => rank pairs

@@ -79,7 +79,7 @@ abstract class CodeView {
 
 	    return $truncated;
 	}
-	/*
+	/**
 	 * Formatted HTML array for properties display
 	 * @param array fields : 'propname' => HTML data
 	 */
