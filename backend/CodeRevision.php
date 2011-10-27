@@ -752,7 +752,6 @@ class CodeRevision {
 			'cc_user' => $wgUser->getId(),
 			'cc_user_text' => $wgUser->getName(),
 			'cc_timestamp' => $dbw->timestamp( $ts ),
-			'cc_review' => $review,
 			'cc_sortkey' => $sortkey );
 	}
 
@@ -807,7 +806,6 @@ class CodeRevision {
 				'cc_user_text',
 				'cc_patch_line',
 				'cc_timestamp',
-				'cc_review',
 				'cc_sortkey' ),
 			$conditions,
 			__METHOD__,

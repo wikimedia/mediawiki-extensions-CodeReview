@@ -4,7 +4,7 @@
  * Represents a comment made to a revision.
  */
 class CodeComment {
-	public $id, $text, $user, $userText, $timestamp, $review, $sortkey, $attrib, $removed, $added, $patchLine;
+	public $id, $text, $user, $userText, $timestamp, $sortkey, $attrib, $removed, $added, $patchLine;
 
 	/**
 	 * @var CodeRevision
@@ -48,7 +48,6 @@ class CodeComment {
 				'cc_user_text',
 				'cc_patch_line',
 				'cc_timestamp',
-				'cc_review',
 				'cc_sortkey'
 			),
 			array( 'cc_id' => (int) $cc_id ),
@@ -70,7 +69,6 @@ class CodeComment {
 		$comment->userText = $data['cc_user_text'];
 		$comment->timestamp = wfTimestamp( TS_MW, $data['cc_timestamp'] );
 		$comment->patchLine = $data['cc_patch_line'];
-		$comment->review = $data['cc_review'];
 		$comment->sortkey = $data['cc_sortkey'];
 		return $comment;
 	}
