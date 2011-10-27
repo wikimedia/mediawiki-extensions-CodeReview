@@ -354,6 +354,11 @@ function efCodeReviewSchemaUpdates( $updater ) {
 			"$base/archives/code_revs_status_author-index.sql" );
 		$updater->addExtensionField( 'code_comment', 'cc_patch_line',
 			"$base/archives/code_comment_patch_line.sql" );
+
+		$updater->addExtensionUpdate( array( 'dropField', 'code_comment', 'cc_review',
+			"$base/archives/code_drop_cc_review.sql", true ) );
+
+		$updater->addExtensionUpdate( array( 'dropTable', 'code_test_suite', "$base/archives/code_drop_test.sql", true ) );
 		break;
 	case 'sqlite':
 		$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" );
