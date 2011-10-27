@@ -27,6 +27,13 @@ class SvnRevTagTablePager extends SvnRevTablePager {
 
 	function getQueryInfo() {
 		$info = parent::getQueryInfo();
+
+		if ( $this->mView->mPath ) {
+			array_unshift( $info['tables'], 'code_paths' );
+			$info['conds'][] = 'cr_repo_id=cp_repo_id';
+			$info['conds'][] = 'cr_id=cp_rev_id';
+			$info['conds']['cp_path'] = $this->mView->mPath;
+		}
 		//Don't change table order, see http://www.mediawiki.org/wiki/Special:Code/MediaWiki/77733
 		//Bug in mysql 4 allowed incorrect table ordering joins to work
 		array_unshift( $info['tables'], 'code_tags' );
