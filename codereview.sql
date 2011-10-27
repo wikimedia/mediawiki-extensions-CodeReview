@@ -190,11 +190,7 @@ CREATE TABLE /*_*/code_comment (
   --
   -- Allows 17 levels of nesting before we hit the length limit.
   -- Could redo more compactly to get 31 or 63 levels.
-  cc_sortkey varbinary(255),
-
-  -- Does this comment confer a review sum?
-  -- 0, +1, -1
-  cc_review int
+  cc_sortkey varbinary(255)
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/cc_repo_id ON /*_*/code_comment (cc_repo_id,cc_rev_id,cc_sortkey);
