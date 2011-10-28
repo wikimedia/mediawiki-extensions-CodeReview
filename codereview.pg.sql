@@ -32,7 +32,7 @@ CREATE TABLE code_rev (
   cr_diff TEXT NULL,
 
   cr_flags TEXT NOT NULL DEFAULT '',
-  
+
   PRIMARY KEY (cr_repo_id, cr_id)
 );
 
@@ -112,8 +112,6 @@ CREATE TABLE code_comment (
   cc_timestamp TIMESTAMPTZ NOT NULL,
 
   cc_sortkey TEXT,
-
-  cc_review INTEGER,
 
   primary key (cc_id)
 );
