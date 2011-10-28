@@ -7643,6 +7643,7 @@ $messages['ka'] = array(
 	'code-rev-purge-link' => 'ქეშის გაწმენდა',
 	'code-rev-total' => 'რეზულტატების რაოდენობა:$1',
 	'code-rev-not-found' => "ვერსია '''$1''' არ არსებობს!",
+	'code-rev-history-link' => 'ისტორია',
 	'code-status-new' => 'ახალი',
 	'code-status-fixme' => 'შემოწმება',
 	'code-status-reverted' => 'გაუქმებულია',
