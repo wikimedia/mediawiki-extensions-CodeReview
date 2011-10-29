@@ -2727,12 +2727,14 @@ $messages['da'] = array(
 	'code-rev-tags' => 'Tags:',
 	'code-rev-tag-add' => 'Tilføj tags:',
 	'code-rev-tag-remove' => 'Fjern tags:',
+	'code-rev-tag-addtag-tooltip' => 'Tilføj nye tags til denne version',
 	'code-rev-tag-removetag-tooltip' => 'Klik for at fjerne tagget "$1"',
 	'code-rev-comment-by' => 'Kommentar af $1',
 	'code-rev-comment-preview' => 'Forhåndsvisning',
 	'code-rev-inline-preview' => 'Forhåndsvisning:',
 	'code-rev-diff' => 'Forskel',
 	'code-rev-diff-link' => 'forskel',
+	'code-rev-diff-too-large' => 'Versionsforskellen er for stor til at vise.',
 	'code-rev-purge-link' => 'opfrisk',
 	'code-rev-total' => 'Samlet antal resultater: $1',
 	'code-rev-not-found' => "Revisionen '''$1''' findes ikke!",
@@ -2755,6 +2757,7 @@ $messages['da'] = array(
 	'code-pathsearch-filter' => 'Vis kun:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Forfatter = $1',
+	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-revfilter-clear' => 'Ryd filter',
 	'code-rev-submit' => 'Gem ændringer',
 	'code-rev-submit-next' => 'Gem og gå til næste uløste',
@@ -2772,6 +2775,7 @@ $messages['da'] = array(
 	'codereview-overview-title' => 'Oversigt',
 	'codereview-email-subj' => '[$1 $2]: Ny Kommentar tilføjet',
 	'code-stats' => 'statistik',
+	'code-stats-status-breakdown' => 'Antallet af revisioner med hver status',
 	'code-stats-count' => 'Antallet af revisioner',
 	'code-tooltip-withsummary' => 'r$1 [$2] af $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] af $3',
@@ -6305,6 +6309,7 @@ $messages['hsb'] = array(
 	'code-rev-purge-link' => 'Pufrowak wuprózdnić',
 	'code-rev-total' => 'Cyłkowna ličba wuslědkow: $1',
 	'code-rev-not-found' => "Wersija '''$1''' njeeksistuje!",
+	'code-rev-history-link' => 'stawizny',
 	'code-status-new' => 'nowy',
 	'code-status-desc-new' => 'Wersija akciju wočakuje (standardny status)',
 	'code-status-fixme' => 'porjedźić',
@@ -15268,6 +15273,14 @@ $messages['yi'] = array(
 	'codereview-subtitle' => 'פֿאַר $1',
 	'code-stats' => 'סטאַטיסטיק',
 	'repoadmin-new-button' => 'שאַפֿן',
+);
+
+/** Yoruba (Yorùbá)
+ * @author Demmy
+ */
+$messages['yo'] = array(
+	'code-stats' => 'àwọn statistiki:',
+	'repoadmin-edit-button' => 'OK',
 );
 
 /** Cantonese (粵語) */
