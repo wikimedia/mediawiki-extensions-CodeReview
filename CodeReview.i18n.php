@@ -2037,7 +2037,7 @@ $6',
 	'right-codereview-review-own' => "Merkañ ar gwiriadennoù graet ganeoc'h evel Mat pe Diskoulmet",
 	'specialpages-group-developer' => 'Ostilhoù diorren',
 	'group-svnadmins' => 'Merourien SVN',
-	'group-svnadmins-member' => 'Merour SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|merour SVN|merourez SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Merourien SVN',
 );
 
@@ -9636,7 +9636,7 @@ De gegevens kunnen uit een cache komen.',
 	'code-browsing-path' => "Versies in '''$1''' aan het bekijken",
 	'code-field-id' => 'Versie',
 	'code-field-author' => 'Auteur',
-	'code-field-user' => 'Opmerking door',
+	'code-field-user' => 'Opmerking van',
 	'code-field-message' => 'Toelichting bij commit',
 	'code-field-status' => 'Status',
 	'code-field-status-description' => 'Statusbeschrijving',
@@ -9711,7 +9711,7 @@ De gegevens kunnen uit een cache komen.',
 	'code-revfilter-clear' => 'Filter verwijderen',
 	'code-rev-submit' => 'Wijzigingen opslaan',
 	'code-rev-submit-next' => 'Opslaan en volgende ongecontroleerde',
-	'code-rev-next' => 'Volgende onopgeloste',
+	'code-rev-next' => 'Volgende ongecontroleerde',
 	'code-batch-status' => 'Status wijzigen:',
 	'code-batch-tags' => 'Labels wijzigen:',
 	'codereview-batch-title' => 'Alle geselecteerde versies wijzigen',
@@ -9723,55 +9723,53 @@ De gegevens kunnen uit een cache komen.',
 	'codereview-subtitle' => 'Voor $1',
 	'codereview-reply-link' => 'antwoorden',
 	'codereview-overview-title' => 'Overzicht',
-	'codereview-overview-desc' => 'Een grafisch overzicht van deze lijst tonen',
-	'codereview-email-subj' => '[$1 $2]: Nieuwe opmerking toegevoegd',
-	'codereview-email-body' => 'Gebruiker "$1" heeft een opmerking toegevoegd aan $3:
+	'codereview-overview-desc' => 'Een grafisch overzicht van deze lijst weergeven',
+	'codereview-email-subj' => '[$1 $2]: nieuwe opmerking toegevoegd',
+	'codereview-email-body' => ' "$1" heeft een opmerking toegevoegd aan $3:
 
-Volledige URL: $2
-Commitsamenvatting:
+URL: $2
+
+Commitsamenvatting voor $3:
 
 $5
 
-Opmerking:
+Opmerking van $1:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: wijzigingen met correcties',
-	'codereview-email-body2' => 'Gebruiker "$1" heeft wijzigingen met correcties voor $2 gemaakt.
+	'codereview-email-body2' => '"$1" heeft wijzigingen met correcties voor $2 gemaakt.
+URL: $5
 
-Volledige URL naar de gecorrigeerde versie: $5
-Commitsamenvatting:
+Commitsamenvatting voor originele versie $2:
 
 $6
 
-Volledige URL: $3
-
-Commitsamenvatting:
+URL voor gecorrigeerde versie: $3
+Commitsamenvatting gecorrigeerde versie door "$1":
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: Versiestatus gewijzigd',
-	'codereview-email-body3' => 'Gebruiker "$1" heeft de status van versie $2 gewijzigd.
+	'codereview-email-subj3' => '[$1 $2]: versiestatus gewijzigd',
+	'codereview-email-body3' => '"$1" heeft de status van versie $2 gewijzigd naar "$4".
+URL: $5
 
 Oude status: $3
-Nieuwe status: $4
+> Nieuwe status: $4
 
-Volledige URL: $5
-Commitsamenvatting:
+Commitsamenvatting voor $2:
 
 $6',
-	'codereview-email-subj4' => '[$1 $2]: Nieuwe opmerking toegevoegd en versiestatus gewijzigd',
-	'codereview-email-body4' => 'Gebruiker "$1" heeft de status van $2 gewijzigd.
+	'codereview-email-subj4' => '[$1 $2]: nieuwe opmerking toegevoegd en versiestatus gewijzigd',
+	'codereview-email-body4' => '"$1" heeft de status van $2 gewijzigd naar "$4" en een opmerking toevoegd.
+URL $5
 
 Oude status: $3
-Nieuwe status: $4
+> Nieuwe status: $4
 
-Gebruiker "$1" heeft ook een opmerking toegevoegd aan $2.
-
-Volledige URL: $5
-Commitsamenvatting:
+Commitsamenvatting voor $2:
 
 $7
 
-Opmerking:
+Opmerking van $1:
 
 $6',
 	'code-stats' => 'statistieken',
@@ -10825,7 +10823,7 @@ $6',
 	'right-codereview-review-own' => "Marché toe pròpie revision com Arzolvùe o ch'a van bin",
 	'specialpages-group-developer' => 'Utiss dël dësvlupador',
 	'group-svnadmins' => 'Aministrator SVN',
-	'group-svnadmins-member' => 'Aministrator SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|Aministrator SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Aministrator SVN',
 );
 
