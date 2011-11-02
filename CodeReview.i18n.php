@@ -3206,7 +3206,7 @@ $messages['dsb'] = array(
 	'code-tags' => 'toflicki',
 	'code-authors-text' => 'To jo lisćina awtorow repozitoriuma sortěrowanych pó mjenjach. Lokalne wikikonta pokazuju se w spinkach. Daty mógu z pufrowaka byś.',
 	'code-author-haslink' => 'Awtor jo z wikijowym wužywarjom $1 zwězany',
-	'code-author-orphan' => 'Toś ten awtor njama wótkaz k wikijowemu kontoju',
+	'code-author-orphan' => 'SVN-wužywaŕ|Awtor $1 njejo z wikikontom zwězany',
 	'code-author-dolink' => 'Toś togo awtora z wikijowym wužywarjom zwězaś:',
 	'code-author-alterlink' => 'Wikijowego wužywarja změniś, kótaryž jo z toś tym awtorom zwězany:',
 	'code-author-orunlink' => 'Abo toś togo wikijowego wužywarja rozwězaś:',
@@ -3267,7 +3267,7 @@ $messages['dsb'] = array(
 	'code-signoff-field-date' => 'Datum',
 	'code-pathsearch-legend' => 'Wersije w toś tom repozitoriumje pó sćažce pytaś',
 	'code-pathsearch-path' => 'Sćažka:',
-	'code-pathsearch-filter' => 'Nałožony filter:',
+	'code-pathsearch-filter' => 'Jano pokazaś:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Awtor = $1',
 	'code-revfilter-clear' => 'Filter lašowaś',
@@ -3285,35 +3285,43 @@ $messages['dsb'] = array(
 	'codereview-reply-link' => 'wótegroniś',
 	'codereview-email-subj' => '[$1 $2]: Nowy komentar pśidany',
 	'codereview-email-body' => 'Wužywaŕ "$1" jo komentar wó $3 pósłał.
+URL: $2
 
-Dopołny URL: $2
+Zespominanje za $3:
 
-Komentar:
+$5
+
+Komentar wužywarja $1:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Naslědne změny',
 	'codereview-email-body2' => 'Wužywaŕ "$1" su naslědne změny k $2 cynił.
+URL: $5
 
-Dopołny URL za naslědnu wersiju: $5
+Zespominanje za naslědnu wersiju $2:
 
-Dopołny URL: $3
+$6
 
-Zespominanje pśenjasenja:
+Naslědny URL: $3
+Naslědne zespominanje wót "$1":
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Status wersije jo se změnił',
-	'codereview-email-body3' => 'Wužywaŕ "$1" jo změnił status wersije  $2.
+	'codereview-email-body3' => 'Wužywaŕ "$1" jo změnił status wersije  $2 do "$4"
+URL $5
 
 Stary status: $3
-Nowy status: $4
+> Nowy status: $4
 
-Dopołny URL: $5',
+Zespominanje za $2:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Nowy komentar pśidany a status wersije změnjony',
 	'code-stats' => 'statistiki',
 	'code-stats-header' => 'Repozitoriumowa statistika za $1',
 	'code-stats-main' => 'Wót $1 repozitorium ma $2 {{PLURAL:$2|wersiju|wersiji|wersije|wersijow}} wót [[Special:Code/$3/author|$4 {{PLURAL:$4|awtora|awtorowu|awtorow|awtorow}}]].',
 	'code-stats-status-breakdown' => 'Licba wersijow na status',
-	'code-stats-fixme-breakdown' => 'Rozdźělenje korekturow na awtora',
+	'code-stats-fixme-breakdown' => 'Rozklucenje wersijow z FIXME na awtora',
 	'code-stats-count' => 'Licba wersijow',
 	'repoadmin' => 'Administracija repozitoriuma',
 	'repoadmin-new-legend' => 'Nowy repozitorium napóraś',
@@ -3334,7 +3342,7 @@ Dopołny URL: $5',
 	'right-codereview-link-user' => 'Awtorow z wikijowymi wužywarjami zwězaś',
 	'specialpages-group-developer' => 'Rědy wuwiwarjow',
 	'group-svnadmins' => 'SVN-administratory',
-	'group-svnadmins-member' => 'SVN-administrator',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-administrator|SVN-administratorka}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-administratory',
 );
 
@@ -6256,7 +6264,7 @@ $messages['hsb'] = array(
 	'code-tags-no-tags' => 'W tutym repozitoriju žane taflički njejsu.',
 	'code-authors-text' => 'To je lisćina awtorow repozitorija sortěrowanych po mjenach. Lokalne wikikonta pokazuja so w spinkach. Daty móžeja z pufrowaka być.',
 	'code-author-haslink' => 'Tutón awtor ma wotkaz na wikijoweho wužiwarja $1',
-	'code-author-orphan' => 'SVN-wužiwar/Awtor $1 nima wotkaz k tutomu wikikontu',
+	'code-author-orphan' => 'SVN-wužiwar/Awtor $1 njeje z wikikontom zwjazany',
 	'code-author-dolink' => 'Tutoho awtora z wikijowym wužiwarjom zwjazać:',
 	'code-author-alterlink' => 'Wikijoweho wužiwarja změnić, kotryž ma wotkaz k tutomu awtorej:',
 	'code-author-orunlink' => 'Abo tutoho wikijoweho wužiwarja wotwjazać:',
