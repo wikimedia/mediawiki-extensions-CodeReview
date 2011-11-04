@@ -6946,6 +6946,7 @@ $messages['id'] = array(
 	'code-rev-purge-link' => 'pembersihan',
 	'code-rev-total' => 'Jumlah hasil: $1',
 	'code-rev-not-found' => "Revisi '''$1''' tidak ditemukan!",
+	'code-rev-history-link' => 'versi',
 	'code-status-new' => 'baru',
 	'code-status-desc-new' => 'Revisi masih menunggu tindakan (status bawaan).',
 	'code-status-fixme' => 'perbaiki',
