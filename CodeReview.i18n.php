@@ -8007,7 +8007,7 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'code-tags-no-tags' => 'Mer han kein Makeerunge en dämm Repositorijum.',
 	'code-authors-text' => 'Hee kütt en Leß met dä Schriever aan dämm Repositorijum, zotteet noh dänne iehre Name doh. De Name als Metmaacher hee em Wiki sen en Klammere met dobei, woh et se jitt. Di Leß künnt uss_em Zwescheshpeicher kumme un nit janz om neuste Shtand sin.',
 	'code-author-haslink' => 'Dä Schriiver es em Wiki mem Metmaacher $1 verlengk',
-	'code-author-orphan' => 'Dä Schriiver es nit met enem Metmaacher em Wiki verlengk',
+	'code-author-orphan' => 'Dä Schriiver $1 vum <i lang="en">SVN</i>es nit met enem Metmaacher em Wiki verlengk',
 	'code-author-dolink' => 'Donn dä Schriiver hee met enem Metmaacher em Wiki verlengke:',
 	'code-author-alterlink' => 'Donn dä Lengk för dä Schriiver hee met enem Metmaacher em Wiki verändere:',
 	'code-author-orunlink' => 'Donn dä Lengk fö dä Schriiver hee met enem Metmaacher em Wiki ophävve:',
