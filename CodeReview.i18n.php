@@ -3816,6 +3816,7 @@ $6',
  * @author Remember the dot
  * @author Sanbec
  * @author Translationista
+ * @author Vivaelcelta
  */
 $messages['es'] = array(
 	'code' => 'Revisión de código',
@@ -3927,7 +3928,7 @@ $messages['es'] = array(
 	'code-pathsearch-legend' => 'Buscar revisiones en este repositorio por ruta',
 	'code-pathsearch-path' => 'Ruta:',
 	'code-pathsearch-filter' => 'Mostrar solamente:',
-	'code-revfilter-cr_status' => 'Status= $1',
+	'code-revfilter-cr_status' => 'Estado = $1',
 	'code-revfilter-cr_author' => 'Autor= $1',
 	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-revfilter-clear' => 'Limpiar filtro',
@@ -13291,7 +13292,7 @@ $messages['stq'] = array(
 	'code-rev-tag-add' => 'Föigje tou Tags:',
 	'code-rev-tag-remove' => 'Hoal wäch Tags:',
 	'code-rev-comment-by' => 'Kommentoar fon $1',
-	'code-rev-comment-preview' => 'Foarschau',
+	'code-rev-comment-preview' => 'Foarbekiek',
 	'code-rev-diff' => 'Diff',
 	'code-rev-diff-link' => 'Diff',
 	'code-rev-purge-link' => 'Cache läskje',
