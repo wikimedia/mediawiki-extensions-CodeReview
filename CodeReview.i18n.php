@@ -3861,7 +3861,7 @@ $messages['es'] = array(
 	'code-field-author' => 'Autor',
 	'code-field-user' => 'Comentarista',
 	'code-field-message' => 'Comentario',
-	'code-field-status' => 'Estatus',
+	'code-field-status' => 'Estado',
 	'code-field-status-description' => 'Descripción del estado',
 	'code-field-timestamp' => 'Fecha',
 	'code-field-comments' => 'Comentarios',
@@ -6459,6 +6459,7 @@ $messages['ht'] = array(
 /** Hungarian (Magyar)
  * @author BáthoryPéter
  * @author Dani
+ * @author Dj
  * @author Glanthor Reviol
  * @author Misibacsi
  */
@@ -6491,7 +6492,7 @@ $messages['hu'] = array(
 	'code-tags-no-tags' => 'Nincs egyetlen címke sem ebben a tárolóban.',
 	'code-authors-text' => 'Alább a tárhelyen műveleteket végző szerzők láthatóak a commitok neve szerint rendezve. A helyi, wikis fiókok zárójelben szerepelnek. Lehetséges, hogy az adatok a gyorsítótárból származnak.',
 	'code-author-haslink' => 'Ez a szerző megegyezi a wiki $1 nevű szerkesztőjével',
-	'code-author-orphan' => 'Ez a szerkesztő nem rendelkezik felhasználói fiókkal ezen a wikin',
+	'code-author-orphan' => '$1 nevű SVN felhasználó/szerző nem rendelkezik felhasználói fiókkal ezen a wikin',
 	'code-author-dolink' => 'Szerző összekapcsolása a wiki egyik szerkesztőjével:',
 	'code-author-alterlink' => 'A szerzőhöz kapcsolt felhasználói fiók megváltoztatása:',
 	'code-author-orunlink' => 'A szerkesztő leválasztása a szerzőről:',
@@ -6515,6 +6516,7 @@ $messages['hu'] = array(
 	'code-field-path' => 'Elérési út',
 	'code-field-text' => 'Megjegyzés',
 	'code-field-select' => 'Kiválaszt',
+	'code-reference-remove' => 'Kijelölt kapcsolatok eltávolítása',
 	'code-reference-associate' => 'Kapcsolódó későbbi változat:',
 	'code-reference-associate-submit' => 'Kapcsolódó',
 	'code-rev-author' => 'Szerző:',
@@ -6543,10 +6545,11 @@ $messages['hu'] = array(
 	'code-rev-purge-link' => 'frissítés',
 	'code-rev-total' => 'Találatok száma összesen: $1',
 	'code-rev-not-found' => "A következő változat nem létezik: '''$1'''",
+	'code-rev-history-link' => 'történet',
 	'code-status-new' => 'új',
 	'code-status-desc-new' => 'A változat felülvizsgálatra vár (alapértelmezett állapot).',
 	'code-status-fixme' => 'javítandó',
-	'code-status-desc-fixme' => 'Az ellenőrzést végző személy szerint a változatban új hiba van, vagy nem működik. Javításra szorul.',
+	'code-status-desc-fixme' => 'Az ellenőrzés szerint a változatban új hiba van, vagy nem működik. Javításra szorul.',
 	'code-status-reverted' => 'visszaállítva',
 	'code-status-desc-reverted' => 'A változatot eldobták egy későbbi változatban.',
 	'code-status-resolved' => 'javítva',
@@ -6559,6 +6562,7 @@ $messages['hu'] = array(
 	'code-status-desc-old' => 'Olyan régi változat, ami tartalmazhat hibákat, de nem éri meg a fáradozást az ellenőrzésük.',
 	'code-signoffs' => 'Aláírások',
 	'code-signoff-legend' => 'Aláírás hozzáadása',
+	'code-signoff-submit' => 'Kijelentkezés',
 	'code-signoff-strike' => 'A kiválasztott aláírások áthúzása',
 	'code-signoff-signoff' => 'Változat aláírása mint:',
 	'code-signoff-flag-inspected' => 'megvizsgálva',
@@ -6568,12 +6572,14 @@ $messages['hu'] = array(
 	'code-signoff-field-date' => 'Dátum',
 	'code-pathsearch-legend' => 'Változatok keresése elérési út alapján',
 	'code-pathsearch-path' => 'Elérési út:',
-	'code-pathsearch-filter' => 'Szűrő alkalmazva:',
+	'code-pathsearch-filter' => 'Csak ezek:',
 	'code-revfilter-cr_status' => 'Állapot = $1',
 	'code-revfilter-cr_author' => 'Szerző = $1',
+	'code-revfilter-ct_tag' => 'Tag = $1',
 	'code-revfilter-clear' => 'Szűrő törlése',
 	'code-rev-submit' => 'Változások elmentése',
 	'code-rev-submit-next' => 'Mentés & ugrás a következőre',
+	'code-rev-next' => 'Következő megoldatlan',
 	'code-batch-status' => 'Állapot módosítása:',
 	'code-batch-tags' => 'Tagek megváltoztatása:',
 	'codereview-batch-title' => 'Az összes kiválasztott változat módosítása',
@@ -6584,32 +6590,41 @@ $messages['hu'] = array(
 	'code-release-endrev' => 'Utolsó változat:',
 	'codereview-subtitle' => '$1 részére',
 	'codereview-reply-link' => 'válasz',
+	'codereview-overview-title' => 'Áttekintés',
+	'codereview-overview-desc' => 'A lista grafikus megjelenítése',
 	'codereview-email-subj' => '[$1 $2]: Új hozzászólás',
 	'codereview-email-body' => '„$1” új hozzászólást fűzött az $3 változathoz.
+URL: $2
 
-Teljes cím: $2
+Hozzászólás összefoglalója:
 
-Hozzászólás:
+$5
+
+$1 hozzászólása:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: rákövetkező változtatások',
-	'codereview-email-body2' => '„$1” szerkesztő utólagos változtatásokat végzett a(z) $2 verzión.
+	'codereview-email-body2' => '„$1” utólagos változtatásokat végzett a(z) $2 verzión.
+URL: $5
 
-Teljes URL az adott változathoz: $5
+Változás összefoglalója:
 
-Teljes URL: $3
+$6
 
-Commit összefoglaló:
+Az új verzióra mutató URL: $3
+„$1” összefoglalója:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: az automatikus tesztelés regressziót talált',
-	'codereview-email-body3' => 'Az automatikus tesztelés felfedett egy regressziót, amit a(z) $1-ben történt változások okoztak.
+	'codereview-email-subj3' => '[$1 $2]: a jelölési állapot változott',
+	'codereview-email-body3' => '"$1" megváltoztatta $2 státuszát erre: "$4"
+URL: $5
 
-Teljes URL: $2
+Régi státusz: $3
+> Új státusz: $4
 
-Commit összefoglaló:
+Összefoglaló:
 
-$3',
+$6',
 	'code-stats' => 'statisztika',
 	'code-stats-header' => 'A(z) $1-tárhely statisztikái',
 	'code-stats-main' => '$1-i állapot szerint a tárhelyen {{PLURAL:$2|egy|$2}} változat van tárolva, amiket [[Special:Code/$3/author|{{PLURAL:$4|egy|$4}} szerző]] tett közzé.',
