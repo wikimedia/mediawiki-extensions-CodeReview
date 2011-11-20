@@ -7985,7 +7985,7 @@ $3',
 	'right-codereview-link-user' => '만든이를 위키 사용자로 링크',
 	'specialpages-group-developer' => '개발자 도구',
 	'group-svnadmins' => 'SVN 관리자',
-	'group-svnadmins-member' => 'SVN 관리자',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN 관리자}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN 관리자',
 );
 
