@@ -2659,7 +2659,7 @@ $6',
 	'right-codereview-review-own' => 'Označování vlastních revizí jako OK nebo vyřešená',
 	'specialpages-group-developer' => 'Vývojářské nástroje',
 	'group-svnadmins' => 'Správci SVN',
-	'group-svnadmins-member' => 'správce SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|správce|správkyně|správce}} SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Správci SVN',
 );
 
