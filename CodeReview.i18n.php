@@ -6023,7 +6023,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:מנהלי שרת SVN',
 );
 
-/** Fiji Hindi (Latin) (Fiji Hindi (Latin))
+/** Fiji Hindi (Latin script) (Fiji Hindi)
  * @author Thakurji
  */
 $messages['hif-latn'] = array(
@@ -8213,7 +8213,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Verwallder vum SVN',
 );
 
-/** Kurdish (Latin) (Kurdî (Latin))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
  * @author Welathêja
  */
@@ -12554,7 +12554,7 @@ $4',
 	'specialpages-group-developer' => 'Stigghi dû sviluppaturi',
 );
 
-/** Serbo-Croatian (Srpskohrvatski / Српскохрватски)
+/** Serbo-Croatian (Srpskohrvatski)
  * @author OC Ripper
  */
 $messages['sh'] = array(
@@ -13820,7 +13820,7 @@ $messages['tet'] = array(
 	'repoadmin-edit-button' => 'OK',
 );
 
-/** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
+/** Tajik (Cyrillic script) (Тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -13915,7 +13915,7 @@ $4',
 	'specialpages-group-developer' => 'Абзорҳои тавсиядиҳандагон',
 );
 
-/** Tajik (Latin) (Тоҷикӣ (Latin))
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -14530,7 +14530,7 @@ $3',
 	'specialpages-group-developer' => 'Geliştirici araçları',
 );
 
-/** ئۇيغۇرچە (ئۇيغۇرچە)
+/** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Alfredie
  */
 $messages['ug-arab'] = array(
@@ -14538,7 +14538,7 @@ $messages['ug-arab'] = array(
 	'repoadmin-edit-button' => 'ماقۇل',
 );
 
-/** Uighur (Latin) (ئۇيغۇرچە / Uyghurche‎ (Latin))
+/** Uyghur (Latin script) (Uyghurche‎)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
