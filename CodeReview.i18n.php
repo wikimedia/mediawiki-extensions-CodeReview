@@ -199,9 +199,7 @@ $7
 
 $1\'s comment:
 
-$6
-
-',
+$6',
 
 	'code-stats' => 'statistics',
 	'code-stats-header' => 'Statistics for repository $1',
