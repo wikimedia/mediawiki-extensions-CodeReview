@@ -5017,12 +5017,12 @@ $messages['frp'] = array(
 	'code-tags-no-tags' => 'Niona balisa ègziste dens cél dèpôt.',
 	'code-authors-text' => 'Vê-que una lista ux ôtors de dèpôts triyês per nom. Los comptos du vouiqui local sont montrâs entre-mié parentèses. Les balyês pôvont étre en cache.',
 	'code-author-haslink' => 'Cél ôtor est liyê u compto $1 de ceti vouiqui',
-	'code-author-orphan' => 'L’utilisator SVN / ôtor est pas liyê a un compto vouiqui',
-	'code-author-dolink' => 'Associyér cél ôtor a un utilisator vouiqui local :',
-	'code-author-alterlink' => 'Changiér l’utilisator vouiqui liyê a cél ôtor :',
-	'code-author-orunlink' => 'Ou ben dèliyér ceti utilisator vouiqui :',
+	'code-author-orphan' => 'L’usanciér SVN / ôtor $1 est pas liyê a un compto vouiqui',
+	'code-author-dolink' => 'Associyér ceti ôtor a un usanciér vouiqui local :',
+	'code-author-alterlink' => 'Changiér l’usanciér vouiqui liyê a ceti ôtor :',
+	'code-author-orunlink' => 'Ou ben dèliyér ceti usanciér vouiqui :',
 	'code-author-name' => 'Buchiéd un nom d’utilisator :',
-	'code-author-success' => 'L’ôtor $1 at étâ liyê a l’utilisator vouiqui $2',
+	'code-author-success' => 'L’ôtor $1 at étâ liyê a l’usanciér vouiqui $2',
 	'code-author-link' => 'liyér ?',
 	'code-author-unlink' => 'dèliyér ?',
 	'code-author-unlinksuccess' => 'L’ôtor $1 at étâ dèliyê',
@@ -5094,7 +5094,7 @@ $messages['frp'] = array(
 	'code-signoff-signoff' => 'Aprovar cela rèvision coment :',
 	'code-signoff-flag-inspected' => 'Controlâ',
 	'code-signoff-flag-tested' => 'Èprovâ',
-	'code-signoff-field-user' => 'Utilisator',
+	'code-signoff-field-user' => 'Usanciér',
 	'code-signoff-field-flag' => 'Endiquior',
 	'code-signoff-field-date' => 'Dâta',
 	'code-signoff-struckdate' => '$1 (at traciê $2)',
@@ -5121,9 +5121,9 @@ $messages['frp'] = array(
 	'codereview-overview-title' => 'Apèrçu',
 	'codereview-overview-desc' => 'Montre un apèrçu grafico de cela lista.',
 	'codereview-email-subj' => '[$1 $2] : novél comentèro apondu',
-	'codereview-email-body' => 'L’utilisator « $1 » at postâ un comentèro dessus $3.
-
+	'codereview-email-body' => 'L’usanciér « $1 » at postâ un comentèro dessus $3.
 URL complèta : $2
+
 Rèsumâ de changement :
 
 $5
@@ -5132,24 +5132,24 @@ Comentèro :
 
 $4',
 	'codereview-email-subj2' => '[$1 $2] : survelyence du changement',
-	'codereview-email-body2' => 'L’utilisator « $1 » at fêt des changements de ples sur $2.
+	'codereview-email-body2' => 'L’usanciér « $1 » at fêt des changements de ples sur $2.
+URL complèta : $5
 
-URL complèta de la vèrsion siuvua : $5
 Rèsumâ de changement :
 
 $6
 
-URL complèta : $3
+URL complèta de la vèrsion siuvua : $3
 Rèsumâ de changement :
 
 $4',
 	'codereview-email-subj3' => '[$1 $2] : l’ètat de la vèrsion at changiê',
-	'codereview-email-body3' => 'L’utilisator « $1 » at changiê l’ètat de $2.
+	'codereview-email-body3' => 'L’usanciér « $1 » at changiê l’ètat de $2 a « $4 ».
+URL complèta : $5
 
 Viely ètat : $3
-Novél ètat : $4
+> Novél ètat : $4
 
-URL complèta : $5
 Rèsumâ de changement :
 
 $6',
@@ -13018,6 +13018,7 @@ $messages['sq'] = array(
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author Nikola Smolenski
  * @author Rancher
  * @author Јованвб
  * @author Жељко Тодоровић
@@ -13034,7 +13035,7 @@ $messages['sr-ec'] = array(
 	'code-prop-changes' => 'Историја статуса и ознака',
 	'code-load-diff' => 'Учитавам разлику…',
 	'code-notes' => 'скорашњи коментари',
-	'code-statuschanges' => 'промене статуса',
+	'code-statuschanges' => 'промене стања',
 	'code-authors' => 'аутори',
 	'code-status' => 'стања',
 	'code-tags' => 'ознаке',
