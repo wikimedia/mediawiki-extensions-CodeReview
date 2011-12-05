@@ -180,7 +180,7 @@ $4',
 URL: $5
 
 Old status:  $3
-> New status: $4
+New status: $4
 
 Commit summary for $2:
 
@@ -191,7 +191,7 @@ $6',
 URL: $5
 
 Old Status: $3
-> New Status: $4
+New Status: $4
 
 Commit summary for $2:
 
@@ -1291,7 +1291,7 @@ $messages['be'] = array(
 	'code-stats' => 'статыстыка',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -3029,7 +3029,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administratoren',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form))
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -8211,7 +8211,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Verwallder vum SVN',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî))
  * @author George Animal
  * @author Welathêja
  */
@@ -9837,7 +9837,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-beheerders',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (Norsk (nynorsk))
  * @author Gunnernett
  * @author Harald Khan
  * @author Nghtwlkr
@@ -9967,7 +9967,7 @@ $4',
 	'specialpages-group-developer' => 'Utviklarverkty',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian (bokmål) (Norsk (bokmål))
  * @author Event
  * @author Jon Harald Søby
  * @author Laaknor
@@ -13017,7 +13017,7 @@ $messages['sq'] = array(
 	'grouppage-svnadmins' => '{{ns:project}}:Administruesit SVN',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (Српски (ћирилица))
  * @author Nikola Smolenski
  * @author Rancher
  * @author Јованвб
@@ -13162,7 +13162,7 @@ $messages['sr-ec'] = array(
 	'specialpages-group-developer' => 'Програмерски алати',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (Srpski (latinica))
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
@@ -15440,7 +15440,7 @@ $3',
 	'specialpages-group-developer' => '開發者工具',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (中文(简体))
  * @author Anakmalaysia
  * @author Chenzw
  * @author Gaoxuewei
@@ -15671,7 +15671,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN管理员',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (中文(繁體))
  * @author Anakmalaysia
  * @author FireJackey
  * @author Horacewai2
