@@ -3310,7 +3310,7 @@ $4',
 URL $5
 
 Stary status: $3
-> Nowy status: $4
+Nowy status: $4
 
 Zespominanje za $2:
 
@@ -5148,7 +5148,7 @@ $4',
 URL complèta : $5
 
 Viely ètat : $3
-> Novél ètat : $4
+Novél ètat : $4
 
 Rèsumâ de changement :
 
@@ -6618,7 +6618,7 @@ $4',
 URL: $5
 
 Régi státusz: $3
-> Új státusz: $4
+Új státusz: $4
 
 Összefoglaló:
 
@@ -9780,7 +9780,7 @@ $4',
 URL: $5
 
 Oude status: $3
-> Nieuwe status: $4
+Nieuwe status: $4
 
 Commitsamenvatting voor $2:
 
@@ -9790,7 +9790,7 @@ $6',
 URL $5
 
 Oude status: $3
-> Nieuwe status: $4
+Nieuwe status: $4
 
 Commitsamenvatting voor $2:
 
