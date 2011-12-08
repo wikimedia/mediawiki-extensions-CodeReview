@@ -212,11 +212,6 @@ class CodeRevisionView extends CodeView {
 			);
 		}
 
-		$wgOut->addModules( 'ext.codereview.tags' );
-		$wgOut->addInlineScript(
-			"CodeReview.tagInit( $encRev );"
-	);
-
 		$wgOut->addHTML( $html );
 	}
 
@@ -352,17 +347,10 @@ class CodeRevisionView extends CodeView {
 				array_map(
 					array( $this, 'formatTag' ),
 					$tags )
-			) . '<br/>';
+			) . '&#160;';
 		}
 		if ( $wgUser->isAllowed( 'codereview-add-tag' ) ) {
-			$list .= Xml::inputLabel( wfMsg( 'code-rev-tag-add' ), 'wpTag', 'wpTag', 20,
-				self::listTags( $this->mAddTags ) );
-			$list .= Xml::Element( 'span', array(
-					'id' => "codereview-add-tag",
-					'title' => wfMsg( 'code-rev-tag-addtag-tooltip' ),
-				), '+' );  // TODO: replace '+' with a message
-			//old tag form:
-			//$list .= $this->addTagForm( $this->mAddTags, $this->mRemoveTags );
+			$list .= $this->addTagForm( $this->mAddTags, $this->mRemoveTags );
 		}
 		return $list;
 	}
@@ -446,27 +434,9 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	protected function formatTag( $tag ) {
-		global $wgUser;
-
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/tag/$tag" );
-		$link = $this->skin->link(
-			$special,
-			htmlspecialchars( $tag ),
-			array( 'class' => 'mw-codereview-tag' )
-		);
-
-		# Let allowed users to remove tags using JS
-		if( $wgUser->isAllowed( 'codereview-add-tag' ) ) {
-			$link .= '&#160;'.
-			Xml::Element( 'span', array(
-				'id'    => "codereview-remove-tag-{$tag}",
-				'class' => 'codereview-remove-tag',
-				'title' => wfMsg( 'code-rev-tag-removetag-tooltip', $tag ),
-			), '⌫' ); // TODO: replace '⌫' with a message
-		}
-
-		return $link;
+		return $this->skin->link( $special, htmlspecialchars( $tag ) );
 	}
 
 	/**
