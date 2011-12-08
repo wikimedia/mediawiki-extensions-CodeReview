@@ -157,17 +157,13 @@ class CodeDiffHighlighter {
 	}
 
 	function formatLine( $content, $class = null ) {
-		$formatLN =
-			  "<td class=\"linenumbers\">%s</td>"
-			. "<td class=\"linenumbers\">%s</td>"
-			;
 
-		$idAttr = $this->getLineIdAttr();
 		if( is_null($class) ) {
-			return sprintf( "<tr class=\"commentable\" {$idAttr}>{$formatLN}<td>%s</td></tr>\n",
-				$this->left,
-				$this->right,
-				$content
+			return Html::rawElement( 'tr',
+				array_merge( $this->getLineIdAttr(), array( 'class' => 'commentable' ) ),
+					  Html::Element( 'td', array( 'class'=>'linenumbers' ), $this->left  )
+					. Html::Element( 'td', array( 'class'=>'linenumbers' ), $this->right )
+					. Html::Element( 'td', array() , $content )
 			);
 		}
 
@@ -193,11 +189,12 @@ class CodeDiffHighlighter {
 			# Rely on $left, $right initialization above
 		}
 
-		$content = htmlspecialchars( $content );
-		$classAttr = is_null($class) ? '' : " class=\"$class\"";
-		return sprintf( "<tr class=\"commentable\" {$idAttr}>{$formatLN}<td%s>%s</td></tr>\n",
-			$left, $right,
-			$classAttr, $content
+		$classAttr = is_null($class) ? array() : array( 'class' => $class );
+		return Html::rawElement( 'tr',
+			array_merge( $this->getLineIdAttr(), array( 'class' => 'commentable' ) ),
+				  Html::rawElement( 'td', array( 'class'=>'linenumbers' ), $left  )
+				. Html::rawElement( 'td', array( 'class'=>'linenumbers' ), $right )
+				. Html::Element( 'td', $classAttr, $content )
 		);
 	}
 
@@ -233,13 +230,15 @@ class CodeDiffHighlighter {
 
 	function handleLineFile( $line ) {
 		$this->chunk = 0;
-		$idAttr = $this->getLineIdAttr();
-		return "<tr $idAttr class=\"patchedfile\"><td colspan=\"3\">$line</td></tr>";
+		return Html::rawElement( 'tr',
+			array_merge( $this->getLineIdAttr(), array( 'class' => 'patchedfile' ) ),
+			Html::Element( 'td', array('colspan'=>3), $line )
+		);
 	}
 	#### END OF LINES HANDLERS #########################################
 
 	function getLineIdAttr() {
-		return "id=\"line-{$this->lineNumber}\"";
+		return array( 'id' => $this->lineNumber );
 	}
 
 	/**
