@@ -693,8 +693,6 @@ $messages['ar'] = array(
 	'code-rev-tags' => 'وسوم:',
 	'code-rev-tag-add' => 'إضافة وسوم:',
 	'code-rev-tag-remove' => 'أزل الوسوم:',
-	'code-rev-tag-addtag-tooltip' => 'أضف وسوم جديدة لهذه النسخة',
-	'code-rev-tag-removetag-tooltip' => 'انقر لإزالة وسم " $1 "',
 	'code-rev-comment-by' => 'تعليق بواسطة $1',
 	'code-rev-comment-preview' => 'عاين',
 	'code-rev-inline-preview' => 'معاينة:',
@@ -1289,7 +1287,7 @@ $messages['be'] = array(
 	'code-stats' => 'статыстыка',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -1369,8 +1367,6 @@ $messages['be-tarask'] = array(
 	'code-rev-tags' => 'Тэгі:',
 	'code-rev-tag-add' => 'Дадаць тэгі:',
 	'code-rev-tag-remove' => 'Выдаліць тэгі:',
-	'code-rev-tag-addtag-tooltip' => 'Дадаваньне новых тэгаў да гэтай вэрсіі',
-	'code-rev-tag-removetag-tooltip' => 'Націсьніце, каб выдаліць тэг «$1»',
 	'code-rev-comment-by' => 'Камэнтар $1',
 	'code-rev-comment-preview' => 'Папярэдні прагляд',
 	'code-rev-inline-preview' => 'Папярэдні прагляд:',
@@ -1892,8 +1888,6 @@ $messages['br'] = array(
 	'code-rev-tags' => 'Balizennoù :',
 	'code-rev-tag-add' => 'Ouzhpennañ balizennoù :',
 	'code-rev-tag-remove' => 'Dilemel balizennoù :',
-	'code-rev-tag-addtag-tooltip' => "Ouzhpennañ tikedennoù nevez d'an adweladenn-mañ",
-	'code-rev-tag-removetag-tooltip' => 'Klikañ da lemel an dikedenn "$1" kuit',
 	'code-rev-comment-by' => 'Evezhiadenn gant $1',
 	'code-rev-comment-preview' => 'Rakwelet',
 	'code-rev-inline-preview' => 'Rakwelet :',
@@ -2512,8 +2506,6 @@ $messages['cs'] = array(
 	'code-rev-tags' => 'Značky:',
 	'code-rev-tag-add' => 'Přidat značku:',
 	'code-rev-tag-remove' => 'Odstranit značky:',
-	'code-rev-tag-addtag-tooltip' => 'Přidat k této revizi nové značky',
-	'code-rev-tag-removetag-tooltip' => 'Kliknutím odstraníte značku „$1“',
 	'code-rev-comment-by' => 'Komentář od $1',
 	'code-rev-comment-preview' => 'Náhled',
 	'code-rev-inline-preview' => 'Náhled:',
@@ -2724,8 +2716,6 @@ $messages['da'] = array(
 	'code-rev-tags' => 'Tags:',
 	'code-rev-tag-add' => 'Tilføj tags:',
 	'code-rev-tag-remove' => 'Fjern tags:',
-	'code-rev-tag-addtag-tooltip' => 'Tilføj nye tags til denne version',
-	'code-rev-tag-removetag-tooltip' => 'Klik for at fjerne tagget "$1"',
 	'code-rev-comment-by' => 'Kommentar af $1',
 	'code-rev-comment-preview' => 'Forhåndsvisning',
 	'code-rev-inline-preview' => 'Forhåndsvisning:',
@@ -2880,8 +2870,6 @@ $messages['de'] = array(
 	'code-rev-tags' => 'Tags:',
 	'code-rev-tag-add' => 'Ergänze Tags:',
 	'code-rev-tag-remove' => 'Entferne Tags:',
-	'code-rev-tag-addtag-tooltip' => 'Neue Tags zu dieser Revision hinzufügen',
-	'code-rev-tag-removetag-tooltip' => 'Klicken um Tag „$1“ zu entfernen',
 	'code-rev-comment-by' => 'Kommentar von $1',
 	'code-rev-comment-preview' => 'Vorschau',
 	'code-rev-inline-preview' => 'Vorschau:',
@@ -3027,7 +3015,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administratoren',
 );
 
-/** German (formal address) (Deutsch (Sie-Form))
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -3434,8 +3422,6 @@ $messages['el'] = array(
 	'code-rev-tags' => 'Ετικέτες:',
 	'code-rev-tag-add' => 'Προσθήκη ετικετών:',
 	'code-rev-tag-remove' => 'Αφαίρεση ετικετών:',
-	'code-rev-tag-addtag-tooltip' => 'Προσθήκη νέων ετικετών σε αυτήν την αναθεώρηση',
-	'code-rev-tag-removetag-tooltip' => 'Κάντε κλικ για να αφαιρέσετε την ετικέτα " $1 "',
 	'code-rev-comment-by' => 'Σχόλιο από τον $1',
 	'code-rev-comment-preview' => 'Προεπισκόπηση',
 	'code-rev-inline-preview' => 'Προεπισκόπηση:',
@@ -3652,8 +3638,6 @@ $messages['eo'] = array(
 	'code-rev-tags' => 'Etikedoj:',
 	'code-rev-tag-add' => 'Aldoni etikedojn:',
 	'code-rev-tag-remove' => 'Forigi etikedojn:',
-	'code-rev-tag-addtag-tooltip' => 'Aldoni novajn etikedojn al ĉi tiu revizio',
-	'code-rev-tag-removetag-tooltip' => 'Klaku por forigi etikedon "$1"',
 	'code-rev-comment-by' => 'Komento de $1',
 	'code-rev-comment-preview' => 'Antaŭrigardi',
 	'code-rev-inline-preview' => 'Antaŭvido:',
@@ -3884,8 +3868,6 @@ $messages['es'] = array(
 	'code-rev-tags' => 'Etiquetas:',
 	'code-rev-tag-add' => 'Añadir etiquetas:',
 	'code-rev-tag-remove' => 'Quitar etiquetas:',
-	'code-rev-tag-addtag-tooltip' => 'Añadir nuevas etiquetas para esta revisión',
-	'code-rev-tag-removetag-tooltip' => 'Haga clic para quitar la etiqueta " $1 "',
 	'code-rev-comment-by' => 'Comentario de $1',
 	'code-rev-comment-preview' => 'Previsualización',
 	'code-rev-inline-preview' => 'Previsualización:',
@@ -4404,8 +4386,6 @@ $messages['fa'] = array(
 	'code-rev-tags' => 'برچسب‌ها:',
 	'code-rev-tag-add' => 'افزودن برچسب‌ها:',
 	'code-rev-tag-remove' => 'برداشته برچسب‌ها:',
-	'code-rev-tag-addtag-tooltip' => 'افزودن برچسب‌های جدید به این نسخه',
-	'code-rev-tag-removetag-tooltip' => 'برای حذف برچسب «$1» کلیک کنید',
 	'code-rev-comment-by' => 'توضیحات $1',
 	'code-rev-comment-preview' => 'پیش‌نمایش',
 	'code-rev-inline-preview' => 'پیش‌نمایش:',
@@ -4634,8 +4614,6 @@ $messages['fi'] = array(
 	'code-rev-tags' => 'Merkinnät:',
 	'code-rev-tag-add' => 'Lisää merkintöjä:',
 	'code-rev-tag-remove' => 'Poista merkintöjä:',
-	'code-rev-tag-addtag-tooltip' => 'Lisää uusia avainsanoja tähän versioon',
-	'code-rev-tag-removetag-tooltip' => 'Napsauta poistaaksesi avainsanan "$1"',
 	'code-rev-comment-by' => 'Käyttäjän $1 kommentti',
 	'code-rev-comment-preview' => 'Esikatselu',
 	'code-rev-inline-preview' => 'Esikatselu:',
@@ -4836,8 +4814,6 @@ $messages['fr'] = array(
 	'code-rev-tags' => 'Balises :',
 	'code-rev-tag-add' => 'Ajouter les balises :',
 	'code-rev-tag-remove' => 'Enlever les balises :',
-	'code-rev-tag-addtag-tooltip' => 'Ajouter de nouvelles balises à cette révision',
-	'code-rev-tag-removetag-tooltip' => 'Cliquer pour supprimer la balise "$1"',
 	'code-rev-comment-by' => 'Commentaire par $1',
 	'code-rev-comment-preview' => 'Prévisualiser',
 	'code-rev-inline-preview' => 'Prévisualisation :',
@@ -5059,8 +5035,6 @@ $messages['frp'] = array(
 	'code-rev-tags' => 'Balises :',
 	'code-rev-tag-add' => 'Apondre les balises :',
 	'code-rev-tag-remove' => 'Enlevar les balises :',
-	'code-rev-tag-addtag-tooltip' => 'Apondre de balises novèles a ceta rèvision',
-	'code-rev-tag-removetag-tooltip' => 'Clicar por enlevar la balisa « $1 »',
 	'code-rev-comment-by' => 'Comentèro per $1',
 	'code-rev-comment-preview' => 'Prèvisualisacion',
 	'code-rev-inline-preview' => 'Prèvisualisacion :',
@@ -5305,8 +5279,6 @@ $messages['gl'] = array(
 	'code-rev-tags' => 'Etiquetas:',
 	'code-rev-tag-add' => 'Engadir as etiquetas:',
 	'code-rev-tag-remove' => 'Eliminar as etiquetas:',
-	'code-rev-tag-addtag-tooltip' => 'Engadir etiquetas novas a esta revisión',
-	'code-rev-tag-removetag-tooltip' => 'Prema para eliminar a etiqueta "$1"',
 	'code-rev-comment-by' => 'Comentario de $1',
 	'code-rev-comment-preview' => 'Vista previa',
 	'code-rev-inline-preview' => 'Vista previa:',
@@ -5632,8 +5604,6 @@ $messages['gsw'] = array(
 	'code-rev-tags' => 'Tag:',
 	'code-rev-tag-add' => 'Ergänz Tag:',
 	'code-rev-tag-remove' => 'Nimm Tag use:',
-	'code-rev-tag-addtag-tooltip' => 'Neiji Markierig zue dr Version zuefiege',
-	'code-rev-tag-removetag-tooltip' => 'Drugge, zume de Tag „$1“ usseznee',
 	'code-rev-comment-by' => 'Kommentar vu $1',
 	'code-rev-comment-preview' => 'Vorschau',
 	'code-rev-inline-preview' => 'Vorschau:',
@@ -5873,8 +5843,6 @@ $messages['he'] = array(
 	'code-rev-tags' => 'תגים:',
 	'code-rev-tag-add' => 'הוספת תגים:',
 	'code-rev-tag-remove' => 'הסרת תגים:',
-	'code-rev-tag-addtag-tooltip' => 'הוספת תגים חדשים לגרסה הזאת',
-	'code-rev-tag-removetag-tooltip' => 'הסרת התג "$1"',
 	'code-rev-comment-by' => 'הערה של $1',
 	'code-rev-comment-preview' => 'תצוגה מקדימה',
 	'code-rev-inline-preview' => 'תצוגה מקדימה:',
@@ -6727,8 +6695,6 @@ $messages['ia'] = array(
 	'code-rev-tags' => 'Etiquettas:',
 	'code-rev-tag-add' => 'Adder etiquettas:',
 	'code-rev-tag-remove' => 'Remover etiquettas:',
-	'code-rev-tag-addtag-tooltip' => 'Adder nove etiquettas a iste version',
-	'code-rev-tag-removetag-tooltip' => 'Clicca pro remover le etiquetta "$1"',
 	'code-rev-comment-by' => 'Commento per $1',
 	'code-rev-comment-preview' => 'Previsualisation',
 	'code-rev-inline-preview' => 'Previsualisation:',
@@ -7372,8 +7338,6 @@ $messages['ja'] = array(
 	'code-rev-tags' => 'タグ:',
 	'code-rev-tag-add' => 'タグを追加:',
 	'code-rev-tag-remove' => 'タグを除去:',
-	'code-rev-tag-addtag-tooltip' => 'このリビジョンに新しいタグを追加',
-	'code-rev-tag-removetag-tooltip' => 'タグ「 $1 」を削除するためには、クリック',
 	'code-rev-comment-by' => '$1 によるコメント',
 	'code-rev-comment-preview' => 'プレビュー',
 	'code-rev-inline-preview' => 'プレビュー:',
@@ -8209,7 +8173,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Verwallder vum SVN',
 );
 
-/** Kurdish (Latin script) (Kurdî (latînî))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
  * @author Welathêja
  */
@@ -8302,7 +8266,6 @@ $messages['lb'] = array(
 	'code-rev-tags' => 'Tagen:',
 	'code-rev-tag-add' => 'Tagen derbäisetzen:',
 	'code-rev-tag-remove' => 'Tagen ewechhuelen:',
-	'code-rev-tag-removetag-tooltip' => 'Klickt fir den Tag "$1" ewechzehuelen',
 	'code-rev-comment-by' => 'Bemierkung vum $1',
 	'code-rev-comment-preview' => 'Kucken ouni ze späicheren',
 	'code-rev-inline-preview' => 'Kucken ouni ze späicheren:',
@@ -8805,8 +8768,6 @@ $messages['mk'] = array(
 	'code-rev-tags' => 'Ознаки:',
 	'code-rev-tag-add' => 'Додај ознаки:',
 	'code-rev-tag-remove' => 'Избриши ги ознаките:',
-	'code-rev-tag-addtag-tooltip' => 'Додавање нови ознаки кон ревизијава',
-	'code-rev-tag-removetag-tooltip' => 'Стиснете да ја отстраните ознаката „$1“',
 	'code-rev-comment-by' => 'Забелешка од $1',
 	'code-rev-comment-preview' => 'Преглед',
 	'code-rev-inline-preview' => 'Преглед:',
@@ -9026,8 +8987,6 @@ $messages['ml'] = array(
 	'code-rev-tags' => 'റ്റാഗുകൾ:',
 	'code-rev-tag-add' => 'റ്റാഗുകൾ ചേർക്കുക:',
 	'code-rev-tag-remove' => 'റ്റാഗുകൾ നീക്കം ചെയ്യുക:',
-	'code-rev-tag-addtag-tooltip' => 'ഈ നാൾപ്പതിപ്പിന് പുതിയ റ്റാഗുകൾ ചേർക്കുക',
-	'code-rev-tag-removetag-tooltip' => '"$1" എന്ന റ്റാഗ് നീക്കം ചെയ്യാൻ ഞെക്കുക',
 	'code-rev-comment-by' => '$1 ഇട്ട അഭിപ്രായം',
 	'code-rev-comment-preview' => 'എങ്ങനെയുണ്ടെന്ന് കാണുക',
 	'code-rev-inline-preview' => 'എങ്ങനെയുണ്ടെന്നു കാണുക:',
@@ -9257,8 +9216,6 @@ $messages['ms'] = array(
 	'code-rev-tags' => 'Label:',
 	'code-rev-tag-add' => 'Tambah label:',
 	'code-rev-tag-remove' => 'Buang label:',
-	'code-rev-tag-addtag-tooltip' => 'Tambahkan label baru pada semakan ini',
-	'code-rev-tag-removetag-tooltip' => 'Klik untuk buang label "$1"',
 	'code-rev-comment-by' => 'Ulasan oleh $1',
 	'code-rev-comment-preview' => 'Pralihat',
 	'code-rev-inline-preview' => 'Pralihat:',
@@ -9690,8 +9647,6 @@ De gegevens kunnen uit een cache komen.',
 	'code-rev-tags' => 'Labels:',
 	'code-rev-tag-add' => 'Labels toevoegen:',
 	'code-rev-tag-remove' => 'Labels verwijderen:',
-	'code-rev-tag-addtag-tooltip' => 'Nieuwe labels toevoegen aan deze versie',
-	'code-rev-tag-removetag-tooltip' => 'Klik om label "$1" te verwijderen',
 	'code-rev-comment-by' => 'Opmerking van $1',
 	'code-rev-comment-preview' => 'Voorvertoning',
 	'code-rev-inline-preview' => 'Voorvertoning:',
@@ -9835,10 +9790,11 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-beheerders',
 );
 
-/** Norwegian Nynorsk (Norsk (nynorsk))
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Gunnernett
  * @author Harald Khan
  * @author Nghtwlkr
+ * @author Njardarlogar
  */
 $messages['nn'] = array(
 	'code' => 'Kodesaumfaring',
@@ -9965,7 +9921,7 @@ $4',
 	'specialpages-group-developer' => 'Utviklarverkty',
 );
 
-/** Norwegian (bokmål) (Norsk (bokmål))
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Event
  * @author Jon Harald Søby
  * @author Laaknor
@@ -10045,8 +10001,6 @@ $messages['no'] = array(
 	'code-rev-tags' => 'Tagger:',
 	'code-rev-tag-add' => 'Legg til tagger:',
 	'code-rev-tag-remove' => 'Fjern tagger:',
-	'code-rev-tag-addtag-tooltip' => 'Legg nye merkelapper til denne revisjonen',
-	'code-rev-tag-removetag-tooltip' => 'Klikk for å fjerne merkelapp «$1»',
 	'code-rev-comment-by' => 'Kommentar av $1',
 	'code-rev-comment-preview' => 'Forhåndsvisning',
 	'code-rev-inline-preview' => 'Forhåndsvisning:',
@@ -10484,8 +10438,6 @@ $messages['pl'] = array(
 	'code-rev-tags' => 'Znaczniki:',
 	'code-rev-tag-add' => 'Dodaj znaczniki:',
 	'code-rev-tag-remove' => 'Usuń znaczniki:',
-	'code-rev-tag-addtag-tooltip' => 'Dodaj nowe znaczniki do tej wersji',
-	'code-rev-tag-removetag-tooltip' => 'Kliknij, aby usunąć znacznik „$1“',
 	'code-rev-comment-by' => 'Skomentowane przez $1',
 	'code-rev-comment-preview' => 'Podgląd',
 	'code-rev-inline-preview' => 'Podgląd:',
@@ -10708,8 +10660,6 @@ $messages['pms'] = array(
 	'code-rev-tags' => 'Tichëtte:',
 	'code-rev-tag-add' => 'Gionté le tichëtte:',
 	'code-rev-tag-remove' => 'Gavé le tichëtte:',
-	'code-rev-tag-addtag-tooltip' => 'Gionté dle neuve tichëtte a sta revision-sì',
-	'code-rev-tag-removetag-tooltip' => 'Sgnaca për gavé la tichëtta "$1"',
 	'code-rev-comment-by' => 'Coment ëd $1',
 	'code-rev-comment-preview' => 'Preuva',
 	'code-rev-inline-preview' => 'Preuva:',
@@ -10996,8 +10946,6 @@ $messages['pt'] = array(
 	'code-rev-tags' => 'Etiquetas:',
 	'code-rev-tag-add' => 'Adicionar etiquetas:',
 	'code-rev-tag-remove' => 'Remover etiquetas:',
-	'code-rev-tag-addtag-tooltip' => 'Adicionar novas etiquetas para esta revisão.',
-	'code-rev-tag-removetag-tooltip' => 'Clique para remover a etiqueta "$1"',
 	'code-rev-comment-by' => 'Comentário de $1',
 	'code-rev-comment-preview' => 'Antevisão',
 	'code-rev-inline-preview' => 'Antevisão:',
@@ -11221,8 +11169,6 @@ $messages['pt-br'] = array(
 	'code-rev-tags' => 'Etiquetas:',
 	'code-rev-tag-add' => 'Adicionar etiquetas:',
 	'code-rev-tag-remove' => 'Remover etiquetas:',
-	'code-rev-tag-addtag-tooltip' => 'Adicionar novas tags a esta revisão',
-	'code-rev-tag-removetag-tooltip' => 'Clique para remover a marca "$1"',
 	'code-rev-comment-by' => 'Comentário de $1',
 	'code-rev-comment-preview' => 'Pré-visualização',
 	'code-rev-inline-preview' => 'Pré-visualização:',
@@ -11445,8 +11391,6 @@ $messages['ro'] = array(
 	'code-rev-tags' => 'Etichete:',
 	'code-rev-tag-add' => 'Adaugă etichete:',
 	'code-rev-tag-remove' => 'Elimină etichetele:',
-	'code-rev-tag-addtag-tooltip' => 'Adaugă noi etichete acestei revizii',
-	'code-rev-tag-removetag-tooltip' => 'Clic pentru a înlătura eticheta „$1”',
 	'code-rev-comment-by' => 'Comentariu de $1',
 	'code-rev-comment-preview' => 'Previzualizare',
 	'code-rev-inline-preview' => 'Previzualizare:',
@@ -11663,8 +11607,6 @@ $messages['roa-tara'] = array(
 	'code-rev-tags' => 'Tag:',
 	'code-rev-tag-add' => 'Aggiunge le tag:',
 	'code-rev-tag-remove' => 'Scangille le tag:',
-	'code-rev-tag-addtag-tooltip' => 'Aggiunge tag nuève a sta revisione',
-	'code-rev-tag-removetag-tooltip' => 'Cazze pe luà \'u tag "$1"',
 	'code-rev-comment-by' => 'Commende de $1',
 	'code-rev-comment-preview' => 'Andeprime',
 	'code-rev-inline-preview' => 'Andeprime:',
@@ -11888,8 +11830,6 @@ $messages['ru'] = array(
 	'code-rev-tags' => 'Метки:',
 	'code-rev-tag-add' => 'Добавить метки:',
 	'code-rev-tag-remove' => 'Удалить метки:',
-	'code-rev-tag-addtag-tooltip' => 'Добавление меток к данной ревизии',
-	'code-rev-tag-removetag-tooltip' => 'Нажмите, чтобы удалить тег "$1"',
 	'code-rev-comment-by' => 'Комментарий от $1',
 	'code-rev-comment-preview' => 'Предпросмотр',
 	'code-rev-inline-preview' => 'Предпросмотр:',
@@ -12112,8 +12052,6 @@ $messages['rue'] = array(
 	'code-rev-tags' => 'Значкы:',
 	'code-rev-tag-add' => 'Придати значкы:',
 	'code-rev-tag-remove' => 'Одстранити значкы:',
-	'code-rev-tag-addtag-tooltip' => 'Додати новы значкы то той ревізії',
-	'code-rev-tag-removetag-tooltip' => 'Кликнути про одстранїня значкы "$1"',
 	'code-rev-comment-by' => 'Коментарь од $1',
 	'code-rev-comment-preview' => 'Нагляд',
 	'code-rev-inline-preview' => 'Нагляд:',
@@ -12859,8 +12797,6 @@ $messages['sl'] = array(
 	'code-rev-tags' => 'Oznake:',
 	'code-rev-tag-add' => 'Dodaj oznake:',
 	'code-rev-tag-remove' => 'Odstrani oznake:',
-	'code-rev-tag-addtag-tooltip' => 'Redakciji dodaj nove oznake',
-	'code-rev-tag-removetag-tooltip' => 'Kliknite za odstranitev oznake »$1«',
 	'code-rev-comment-by' => 'Pripomba $1',
 	'code-rev-comment-preview' => 'Predogled',
 	'code-rev-inline-preview' => 'Predogled:',
@@ -13015,7 +12951,7 @@ $messages['sq'] = array(
 	'grouppage-svnadmins' => '{{ns:project}}:Administruesit SVN',
 );
 
-/** Serbian (Cyrillic script) (Српски (ћирилица))
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Nikola Smolenski
  * @author Rancher
  * @author Јованвб
@@ -13080,8 +13016,6 @@ $messages['sr-ec'] = array(
 	'code-rev-tags' => 'Ознаке:',
 	'code-rev-tag-add' => 'Додај ознаке:',
 	'code-rev-tag-remove' => 'Уклони ознаке:',
-	'code-rev-tag-addtag-tooltip' => 'Додај нове ознаке на ову измену',
-	'code-rev-tag-removetag-tooltip' => 'Кликните да уклоните ознаку „$1“',
 	'code-rev-comment-by' => 'Прокоментарисао/-ла $1',
 	'code-rev-comment-preview' => 'Прикажи',
 	'code-rev-inline-preview' => 'Преглед:',
@@ -13160,7 +13094,7 @@ $messages['sr-ec'] = array(
 	'specialpages-group-developer' => 'Програмерски алати',
 );
 
-/** Serbian (Latin script) (Srpski (latinica))
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
@@ -13432,8 +13366,6 @@ $messages['sv'] = array(
 	'code-rev-tags' => 'Taggar:',
 	'code-rev-tag-add' => 'Lägg till taggar:',
 	'code-rev-tag-remove' => 'Ta bort taggar:',
-	'code-rev-tag-addtag-tooltip' => 'Lägga till nya taggar till denna version',
-	'code-rev-tag-removetag-tooltip' => 'Klicka för att ta bort taggen "$1"',
 	'code-rev-comment-by' => 'Kommentar av $1',
 	'code-rev-comment-preview' => 'Förhandsgranska',
 	'code-rev-inline-preview' => 'Förhandsgranska:',
@@ -14627,8 +14559,6 @@ $messages['uk'] = array(
 	'code-rev-tags' => 'Мітки:',
 	'code-rev-tag-add' => 'Додати мітки:',
 	'code-rev-tag-remove' => 'Вилучити мітки:',
-	'code-rev-tag-addtag-tooltip' => 'Додати теги до цієї редакції',
-	'code-rev-tag-removetag-tooltip' => 'Натисніть, щоб вилучити тег "$1"',
 	'code-rev-comment-by' => 'Коментар від $1',
 	'code-rev-comment-preview' => 'Попередній перегляд',
 	'code-rev-inline-preview' => 'Попередній перегляд:',
@@ -15057,8 +14987,6 @@ $messages['vi'] = array(
 	'code-rev-tags' => 'Các thẻ:',
 	'code-rev-tag-add' => 'Thêm thẻ:',
 	'code-rev-tag-remove' => 'Dời thẻ:',
-	'code-rev-tag-addtag-tooltip' => 'Thêm thẻ mới vào phiên bản này',
-	'code-rev-tag-removetag-tooltip' => 'Nhấn để gỡ thẻ “$1”',
 	'code-rev-comment-by' => '$1 ghi chú',
 	'code-rev-comment-preview' => 'Xem trước',
 	'code-rev-inline-preview' => 'Xem trước:',
@@ -15438,7 +15366,7 @@ $3',
 	'specialpages-group-developer' => '開發者工具',
 );
 
-/** Simplified Chinese (中文(简体))
+/** Simplified Chinese (‪中文(简体)‬)
  * @author Anakmalaysia
  * @author Chenzw
  * @author Gaoxuewei
@@ -15523,8 +15451,6 @@ $messages['zh-hans'] = array(
 	'code-rev-tags' => '标签：',
 	'code-rev-tag-add' => '添加标签：',
 	'code-rev-tag-remove' => '移除标签：',
-	'code-rev-tag-addtag-tooltip' => '将此修订添加新标签',
-	'code-rev-tag-removetag-tooltip' => '单击以删除"$1"标记',
 	'code-rev-comment-by' => '$1的评论',
 	'code-rev-comment-preview' => '预览',
 	'code-rev-inline-preview' => '预览：',
@@ -15669,7 +15595,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN管理员',
 );
 
-/** Traditional Chinese (中文(繁體))
+/** Traditional Chinese (‪中文(繁體)‬)
  * @author Anakmalaysia
  * @author FireJackey
  * @author Horacewai2
@@ -15751,8 +15677,6 @@ $messages['zh-hant'] = array(
 	'code-rev-tags' => '標籤：',
 	'code-rev-tag-add' => '新增標籤：',
 	'code-rev-tag-remove' => '移除標籤：',
-	'code-rev-tag-addtag-tooltip' => '將此修訂添加新標籤',
-	'code-rev-tag-removetag-tooltip' => '單擊以刪除"$1"標記',
 	'code-rev-comment-by' => '$1 的評論',
 	'code-rev-comment-preview' => '預覽',
 	'code-rev-inline-preview' => '預覽：',
