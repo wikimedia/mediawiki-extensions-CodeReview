@@ -248,6 +248,13 @@ $wgCodeReviewAutoTagPath = array();
 $wgCodeReviewFixmePerPath = array();
 
 /**
+ * Key is repository name. Value is an array of key value pairs of the paths to get new list for
+ *
+ * $wgCodeReviewnewPerPath = array( 'RepoName' => array( '/path/to/use', '/another/path/to/use' ) )
+ */
+$wgCodeReviewnewPerPath = array();
+
+/**
  * UDP comment and status changes notification
  */
 $wgCodeReviewUDPAddress = false;
