@@ -88,9 +88,9 @@ class RepoStats {
 		}
 
 		$this->newPerPath = array();
-		global $wgCodeRevieNewPerPath;
-		if ( isset( $wgCodeRevieNewPerPath[ $repoName ] ) ) {
-			foreach( $wgCodeRevieNewPerPath[ $repoName ] as $path ) {
+		global $wgCodeReviewNewPerPath;
+		if ( isset( $wgCodeReviewNewPerPath[ $repoName ] ) ) {
+			foreach( $wgCodeReviewNewPerPath[ $repoName ] as $path ) {
 				$this->newPerPath[$path] = $this->getPathNews( $path );
 			}
 		}
