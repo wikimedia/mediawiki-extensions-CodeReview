@@ -16,7 +16,7 @@ class RepoStats {
 		$fixmes,
 		$new;
 
-	public $fixmesPerPath;
+	public $fixmesPerPath, $newPerPath;
 
 	/**
 	 * @param CodeRepository $repo
@@ -74,13 +74,24 @@ class RepoStats {
 			$this->states[$row->cr_status] = $row->revs;
 		}
 
+		$repoName = $this->repo->getName();
+
 		$this->fixmes = $this->getAuthorStatusCounts( 'fixme' );
 		$this->new = $this->getAuthorStatusCounts( 'new' );
+
 		$this->fixmesPerPath = array();
 		global $wgCodeReviewFixmePerPath;
-		if ( isset( $wgCodeReviewFixmePerPath[ $this->repo->getName() ] ) ) {
-			foreach( $wgCodeReviewFixmePerPath[ $this->repo->getName() ] as $path ) {
+		if ( isset( $wgCodeReviewFixmePerPath[ $repoName ] ) ) {
+			foreach( $wgCodeReviewFixmePerPath[ $repoName ] as $path ) {
 				$this->fixmesPerPath[$path] = $this->getPathFixmes( $path );
+			}
+		}
+
+		$this->newPerPath = array();
+		global $wgCodeRevieNewPerPath;
+		if ( isset( $wgCodeRevieNewPerPath[ $repoName ] ) ) {
+			foreach( $wgCodeRevieNewPerPath[ $repoName ] as $path ) {
+				$this->newPerPath[$path] = $this->getPathNews( $path );
 			}
 		}
 		wfProfileOut( __METHOD__ );
@@ -111,10 +122,27 @@ class RepoStats {
 	}
 
 	/**
-	 * @param $path path to get fixmes for
+	 * @param $path array|string path to get fixmes for
 	 * @return array
 	 */
 	private function getPathFixmes( $path ) {
+		return $this->getStatusPath( $path, 'fixme' );
+	}
+
+	/**
+	 * @param $path array|string path to get fixmes for
+	 * @return array
+	 */
+	private function getPathNews( $path ) {
+		return $this->getStatusPath( $path, 'new' );
+	}
+
+	/**
+	 * @param $path array|string
+	 * @param $status string
+	 * @return array
+	 */
+	private function getStatusPath( $path, $status ) {
 		$array = array();
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
@@ -123,7 +151,7 @@ class RepoStats {
 			array(
 				'cr_repo_id' => $this->repo->getId(),
 				'cp_path' => $path,
-				'cr_status' => 'fixme',
+				'cr_status' => $status,
 			),
 			__METHOD__,
 			array(

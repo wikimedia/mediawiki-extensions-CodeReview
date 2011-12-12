@@ -207,6 +207,8 @@ $6',
 	'code-stats-fixme-breakdown-path' => 'Breakdown of fixme revisions per path',
 	'code-stats-fixme-path' => 'Fixme revisions for path: $1',
 	'code-stats-new-breakdown' => 'Breakdown of new revisions per author',
+	'code-stats-new-breakdown-path' => 'Breakdown of new revisions per path',
+	'code-stats-new-path' => 'New revisions for path: $1',
 	'code-stats-count' => 'Number of revisions',
 
 	'code-tooltip-withsummary' => 'r$1 [$2] by $3 - $4',

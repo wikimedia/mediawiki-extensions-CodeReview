@@ -56,6 +56,15 @@ class CodeRepoStatsView extends CodeView {
 				$this->writeAuthorTable( 'fixme', $fixmes, array( 'path' => $path ) );
 			}
 		}
+
+		if ( !empty( $stats->newPerPath ) ) {
+			$wgOut->wrapWikiMsg( "<h3 id=\"stats-new-path\">$1</h3>", 'code-stats-new-breakdown-path' );
+
+			foreach ( $stats->newPerPath as $path => $news ) {
+				$wgOut->wrapWikiMsg( "<h4 id=\"stats-new-path\">$1</h4>", array( 'code-stats-new-path', $path ) );
+				$this->writeAuthorTable( 'fixme', $news, array( 'path' => $path ) );
+			}
+		}
 	}
 
 	/**
