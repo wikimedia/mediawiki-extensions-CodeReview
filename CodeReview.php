@@ -228,6 +228,8 @@ $wgCodeReviewMaxDiffPaths = 20;
  * Any base paths matching regular expressions in these arrays will have their
  * default status set to deferred instead of new. Helpful if you've got a part
  * of the repository you don't care about.
+ *
+ * $wgCodeReviewDeferredPaths = array( 'RepoName' => array( '/path/to/use', '/another/path/to/use' ) )
  */
 $wgCodeReviewDeferredPaths = array();
 

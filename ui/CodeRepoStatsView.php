@@ -30,7 +30,7 @@ class CodeRepoStatsView extends CodeView {
 			foreach ( CodeRevision::getPossibleStates() as $state ) {
 				$count = isset( $stats->states[$state] ) ? $stats->states[$state] : 0;
 				$count = htmlspecialchars( $wgLang->formatNum( $count ) );
-				$link = $this->skin->link(
+				$link = Linker::link(
 					SpecialPage::getTitleFor( 'Code', $repoName . '/status/' . $state ),
 					htmlspecialchars( $this->statusDesc( $state ) )
 				);
@@ -49,21 +49,26 @@ class CodeRepoStatsView extends CodeView {
 		}
 
 		if ( !empty( $stats->fixmesPerPath ) ) {
-			$wgOut->wrapWikiMsg( "<h3 id=\"stats-fixme-path\">$1</h3>", 'code-stats-fixme-breakdown-path' );
-
-			foreach ( $stats->fixmesPerPath as $path => $fixmes ) {
-				$wgOut->wrapWikiMsg( "<h4 id=\"stats-fixme-path\">$1</h4>", array( 'code-stats-fixme-path', $path ) );
-				$this->writeAuthorTable( 'fixme', $fixmes, array( 'path' => $path ) );
-			}
+			$this->writeStatusPathTable( 'fixme', $stats->fixmesPerPath );
 		}
 
 		if ( !empty( $stats->newPerPath ) ) {
-			$wgOut->wrapWikiMsg( "<h3 id=\"stats-new-path\">$1</h3>", 'code-stats-new-breakdown-path' );
+			$this->writeStatusPathTable( 'new', $stats->newPerPath );
+		}
+	}
 
-			foreach ( $stats->newPerPath as $path => $news ) {
-				$wgOut->wrapWikiMsg( "<h4 id=\"stats-new-path\">$1</h4>", array( 'code-stats-new-path', $path ) );
-				$this->writeAuthorTable( 'fixme', $news, array( 'path' => $path ) );
-			}
+	/**
+	 * @param $status string
+	 * @param $array array
+	 */
+	function writeStatusPathTable( $status, $array ) {
+		global $wgOut;
+
+		$wgOut->wrapWikiMsg( "<h3 id=\"stats-$status-path\">$1</h3>", "code-stats-$status-breakdown-path" );
+
+		foreach ( $array as $path => $news ) {
+			$wgOut->wrapWikiMsg( "<h4 id=\"stats-$status-path\">$1</h4>", array( "code-stats-$status-path", $path ) );
+			$this->writeAuthorTable( $status, $news, array( 'path' => $path ) );
 		}
 	}
 
@@ -93,7 +98,7 @@ class CodeRepoStatsView extends CodeView {
 
 		foreach ( $array as $user => $count ) {
 			$count = htmlspecialchars( $wgLang->formatNum( $count ) );
-			$link = $this->skin->link(
+			$link = Linker::link(
 				$title,
 				htmlspecialchars( $user ),
 				array(),
