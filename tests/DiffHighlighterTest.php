@@ -2,6 +2,26 @@
 
 class CodeDiffHighlighterTest extends MediaWikiTestCase {
 
+	function testParseChunksFromWindowsDiff() {
+		try {
+			CodeDiffHighlighter::parseChunkDelimiter(
+				"@@ -1,3 +1,4 @@\r\n"
+			);
+		} catch( Exception $e ) {
+			$this->fail( "parseChunkDelimiter() could not parse a chunk finishing with '\\r\\n' This is happening on Windows" );
+		}
+	}
+
+	function testParseChunksFromUnixDiff() {
+		try {
+			CodeDiffHighlighter::parseChunkDelimiter(
+				"@@ -1,3 +1,4 @@\n"
+			);
+		} catch( Exception $e ) {
+			$this->fail( "parseChunkDelimiter() could not parse a chunk finishing with '\\n' This is happening on Unix systems" );
+		}
+	}
+
 	/**
 	 * @dataProvider provideUnifiedDiffChunksDelimiters
 	 */

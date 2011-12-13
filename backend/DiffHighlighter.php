@@ -294,6 +294,8 @@ class CodeDiffHighlighter {
 	 * @return array with the four values above as an array
 	 */
 	static function parseChunkDelimiter( $chunkHeader ) {
+		$chunkHeader = rtrim( $chunkHeader );
+
 		# regex snippet to capture a number
 		$n = "(\d+)";
 
