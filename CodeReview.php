@@ -102,7 +102,7 @@ $wgAPIListModules['coderevisions'] = 'ApiQueryCodeRevisions';
 $wgAPIListModules['codetags'] = 'ApiQueryCodeTags';
 
 $wgExtensionMessagesFiles['CodeReview'] = $dir . 'CodeReview.i18n.php';
-$wgExtensionAliasesFiles['CodeReview'] = $dir . 'CodeReview.alias.php';
+$wgExtensionMessagesFiles['CodeReviewAliases'] = $dir . 'CodeReview.alias.php';
 
 $wgAvailableRights[] = 'repoadmin';
 $wgAvailableRights[] = 'codereview-use';
