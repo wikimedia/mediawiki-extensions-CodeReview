@@ -17,7 +17,10 @@ window.CodeReview = $.extend( window.CodeReview, {
 	 * @param lineCode jQuery object
 	 */
 	lcShowForm: function( lineCode ) {
-		var htmlId = 'comment-for-' + lineCode.attr('id');
+		// Make sure the line id is an integer:
+		var lineNumber = parseInt( lineCode.attr('id') ) + 0;
+		// Forge the line comment HTML id:
+		var htmlId = 'comment-for-' + lineNumber;
 
 		lineCode.unbind( 'click' );
 		lineCode.click( function () {
