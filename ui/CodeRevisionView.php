@@ -207,7 +207,7 @@ class CodeRevisionView extends CodeView {
 
 		if( $wgCodeReviewInlineComments ) {
 			$wgOut->addModules( 'ext.codereview.linecomment' );
-			$wgOut->addInLineScript(
+			$wgOut->addInlineScript(
 				"CodeReview.lcInit( $encRev );"
 			);
 		}
