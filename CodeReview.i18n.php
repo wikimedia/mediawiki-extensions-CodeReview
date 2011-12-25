@@ -9955,7 +9955,7 @@ $4',
  * @author Lokal Profil
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'code' => 'Kodegjennomgang',
 	'code-rev-title' => '$1 - Kodegjennomgang',
 	'code-comments' => 'Kommentarer',
