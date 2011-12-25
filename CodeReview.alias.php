@@ -192,6 +192,11 @@ $specialPageAliases['mt'] = array(
 	'Code' => array( 'Kodiċi' ),
 );
 
+/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+$specialPageAliases['nb'] = array(
+	'Code' => array( 'Kode' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $specialPageAliases['nds-nl'] = array(
 	'Code' => array( 'Kode_naokieken' ),
@@ -209,18 +214,13 @@ $specialPageAliases['nn'] = array(
 	'Code' => array( 'Kode' ),
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
-$specialPageAliases['nb'] = array(
-	'Code' => array( 'Kode' ),
-);
-
 /** Polish (Polski) */
 $specialPageAliases['pl'] = array(
 	'Code' => array( 'Kod' ),
 	'RepoAdmin' => array( 'Administrowanie_repozytorium' ),
 );
 
-/** Sanskrit (संस्कृत) */
+/** Sanskrit (संस्कृतम्) */
 $specialPageAliases['sa'] = array(
 	'Code' => array( 'संकूटसङ्केतावलोकन' ),
 	'RepoAdmin' => array( 'रेपोप्रचालक' ),
@@ -260,7 +260,7 @@ $specialPageAliases['vec'] = array(
 	'Code' => array( 'Còdese' ),
 );
 
-/** Veps (Vepsan kel') */
+/** Veps (Vepsän kel') */
 $specialPageAliases['vep'] = array(
 	'Code' => array( 'Kod' ),
 );
@@ -281,8 +281,3 @@ $specialPageAliases['zh-hant'] = array(
 	'Code' => array( '代碼' ),
 	'RepoAdmin' => array( '信息庫管理' ),
 );
-
-/**
- * For backwards compatibility with MediaWiki 1.15 and earlier.
- */
-$aliases =& $specialPageAliases;
