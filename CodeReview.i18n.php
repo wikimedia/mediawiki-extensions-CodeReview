@@ -4741,6 +4741,8 @@ $6',
 	'code-stats-fixme-breakdown' => 'FIXME-ongelmien määrä per tekijä',
 	'code-stats-fixme-breakdown-path' => 'FIXME-muutosten erittely per polku',
 	'code-stats-fixme-path' => 'FIXME-muutokset polulle: $1',
+	'code-stats-new-breakdown' => 'Uusien versioiden käyttäjäkohtainen erittely',
+	'code-stats-new-breakdown-path' => 'Uusien versioiden polkukohtainen erittely',
 	'code-stats-new-path' => 'Uudet versiot polulle: $1',
 	'code-stats-count' => 'Muokkausten määrä',
 	'code-tooltip-withsummary' => 'v$1 [$2] käyttäjältä $3 - $4',
@@ -7184,20 +7186,21 @@ $messages['it'] = array(
 	'code-prop-changes' => 'Registro dello stato e dei tag',
 	'codereview-desc' => '[[Special:Code|Strumento per la revisione del codice]] con [[Special:RepoAdmin|supporto per Subversion]]',
 	'code-no-repo' => 'Nessun repository configurato.',
-	'code-create-repo' => 'Vai a [[Special:RepoAdmin|RepoAdmin]] per creare un Repository',
+	'code-create-repo' => 'Vai a [[Special:RepoAdmin|RepoAdmin]] per creare un repository',
+	'code-need-repoadmin-rights' => 'i diritti di repoadmin sono necessari per poter creare un repository',
 	'code-repo-not-found' => "Repository '''$1''' non esiste!",
 	'code-load-diff' => 'Caricamento diff in corso…',
 	'code-notes' => 'commenti più recenti',
 	'code-statuschanges' => 'cambiamenti di stato',
-	'code-mycommits' => 'i miei commit',
-	'code-mycomments' => 'i miei commenti',
+	'code-mycommits' => 'miei commit',
+	'code-mycomments' => 'miei commenti',
 	'code-authors' => 'autori',
 	'code-status' => 'descrizione stati',
 	'code-tags' => 'tag',
 	'code-tags-no-tags' => 'Nessun tag è presente in questo repository.',
 	'code-authors-text' => 'Di seguito viene presentata una lista di autori relativi al repository, in ordine cronologico per i commit recenti. Gli account wiki locali sono mostrati fra parentesi.',
 	'code-author-haslink' => "Questo autore è collegato all'utente wiki $1",
-	'code-author-orphan' => "L'utente SVN\\autore $1 non è collegato ad un account wiki",
+	'code-author-orphan' => "L'utente SVN/autore $1 non è collegato a un account wiki",
 	'code-author-dolink' => 'Collegare questo autore a un utente wiki:',
 	'code-author-alterlink' => "Cambiare l'utente wiki collegato a questo autore:",
 	'code-author-orunlink' => 'O rimuovere il collegamento con questo utente wiki:',
@@ -7310,11 +7313,34 @@ Commento di $1:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Stato della revisione cambiato',
+	'codereview-email-body3' => '"$1" ha cambiato lo stato di $2 a "$4"
+URL: $5
+
+Precedente stato:  $3
+Nuovo stato: $4
+
+Sommario del commit $2:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Un nuovo commento e lo stato della revisione è cambiato',
+	'codereview-email-body4' => '"$1" ha cambiato lo stato di $2 a "$4" e ha inserito un commento.
+URL: $5
+
+Precedente stato: $3
+Nuovo stato: $4
+
+Sommario del commit $2:
+
+$7
+
+Commento di $1:
+
+$6',
 	'code-stats' => 'statistiche',
 	'code-stats-header' => 'Statistiche per il repository $1',
 	'code-stats-main' => 'Alla data del $1, il repository contiene $2 {{PLURAL:$2|revisione|revisioni}} da parte di [[Special:Code/$3/author|$4 {{PLURAL:$4|autore|autori}}]].',
 	'code-stats-status-breakdown' => 'Numero di revisioni per stato',
+	'code-stats-fixme-path' => 'Revisioni Fixme per il percorso: $1',
 	'code-stats-new-path' => 'Nuove revisioni per il percorso: $1',
 	'code-stats-count' => 'Numero di revisioni',
 	'code-tooltip-withsummary' => 'r$1 [$2] di $3 - $4',
@@ -10411,6 +10437,7 @@ $3',
 
 /** Oriya (ଓଡ଼ିଆ)
  * @author Ansumang
+ * @author Jnanaranjan Sahu
  * @author Odisha1
  * @author Psubhashish
  */
@@ -10419,6 +10446,7 @@ $messages['or'] = array(
 	'code-change-added' => 'ଯୋଡ଼ାଗଲା:',
 	'code-old-status' => 'ପୁରୁଣା ସ୍ଥିତି',
 	'code-new-status' => 'ନୂଆ ସ୍ଥିତି',
+	'code-notes' => 'ଏବେକାର ମନ୍ତବ୍ୟ ଗୁଡିକ',
 	'code-authors' => 'ଲେଖକ',
 	'code-status' => 'ସ୍ଥିତି',
 	'code-author-name' => 'ଇଉଜର ନାମଟିଏ ଦିଅନ୍ତୁ:',
@@ -10946,6 +10974,8 @@ $6',
 	'code-stats-fixme-breakdown-path' => 'Partagi ëd le revision da corege për përcors',
 	'code-stats-fixme-path' => 'Revision da corege për përcors: $1',
 	'code-stats-new-breakdown' => 'Dìvision ëd le revision neuve për autor',
+	'code-stats-new-breakdown-path' => 'Partagi ëd le revision neuve për përcors',
+	'code-stats-new-path' => 'Revision neuve për përcors: $1',
 	'code-stats-count' => 'Nùmer ëd revision',
 	'code-tooltip-withsummary' => 'r$1 [$2] da $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] da $3',
@@ -12567,6 +12597,7 @@ $6',
 );
 
 /** Sicilian (Sicilianu)
+ * @author Aushulz
  * @author Gmelfi
  * @author Santu
  */
@@ -12630,8 +12661,10 @@ $messages['scn'] = array(
 	'code-status-resolved' => 'risortu',
 	'code-status-ok' => 'ok',
 	'code-status-deferred' => 'rimannatu',
+	'code-signoff-field-user' => 'Utenti',
 	'code-pathsearch-legend' => 'Cerca li rivisioni nti stu dipòsitu classificati pî pircursa',
 	'code-pathsearch-path' => 'Pircursu:',
+	'code-revfilter-clear' => 'Pulizzia firtru',
 	'code-rev-submit' => 'Canci di assignazzioni',
 	'code-rev-submit-next' => 'Assignazzioni & pròssimi nun risurvuti',
 	'codereview-reply-link' => 'Arrispunni',
@@ -14928,7 +14961,7 @@ $6',
 	'right-codereview-review-own' => 'Відзначити власні зміни як «Вирішені»',
 	'specialpages-group-developer' => 'Інструменти розробника',
 	'group-svnadmins' => 'Адміністратори SVN',
-	'group-svnadmins-member' => 'Адміністратор SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|Адміністратор SVN|Адміністраторка SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}: Адміністратори SVN',
 );
 
@@ -15439,6 +15472,7 @@ $messages['yi'] = array(
 	'code-change-added' => 'צוגעלייגט:',
 	'code-authors' => 'שרייבערס',
 	'code-field-author' => 'שרייבער',
+	'code-field-timestamp' => 'דאַטע',
 	'code-rev-date' => 'דאַטע:',
 	'code-rev-modified-a' => 'צוגעלייגט',
 	'code-rev-modified-d' => 'אויסגעמעקט',
@@ -15796,6 +15830,8 @@ $6',
 	'code-stats-fixme-breakdown-path' => '按路径修正修订的分项统计',
 	'code-stats-fixme-path' => '$1路径的修正修订',
 	'code-stats-new-breakdown' => '按作者新修订的分项统计',
+	'code-stats-new-breakdown-path' => '按路径新修订的分项统计',
+	'code-stats-new-path' => '$1路径的新修订',
 	'code-stats-count' => '修订数',
 	'code-tooltip-withsummary' => 'r$1 [$2] $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] $3',
