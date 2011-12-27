@@ -3791,7 +3791,7 @@ $6',
 	'right-codereview-review-own' => 'Marki viajn proprajn reviziojn kiel OK aŭ Riparita',
 	'specialpages-group-developer' => 'Disvolvistaj iloj',
 	'group-svnadmins' => 'SVN-administrantoj',
-	'group-svnadmins-member' => 'SVN-administranto',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-administranto|SVN-administrantino}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-administrantoj',
 );
 
@@ -6042,6 +6042,58 @@ $6',
 	'group-svnadmins' => 'מנהלי שרת SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|מנהל|מנהלת}} שרת SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:מנהלי שרת SVN',
+);
+
+/** Hindi (हिन्दी)
+ * @author Ansumang
+ */
+$messages['hi'] = array(
+	'code-comments' => 'टिप्पणियाँ',
+	'code-old-status' => 'पुरानी स्थिति',
+	'code-new-status' => 'नई स्थिति',
+	'code-notes' => 'हालही की टिप्पणियाँ',
+	'code-statuschanges' => 'स्थिति परिवर्तन',
+	'code-mycommits' => 'मेरी सच्चा प्रयास',
+	'code-mycomments' => 'मेरी टिप्पणियाँ',
+	'code-authors' => 'लेखक',
+	'code-tags' => 'टैग',
+	'code-author-name' => 'सदस्य के नाम दर्ज करें:',
+	'code-author-link' => 'लिंक?',
+	'code-author-unlink' => 'अनलिंक ?',
+	'code-field-id' => 'संशोधन',
+	'code-field-author' => 'लेखक',
+	'code-field-user' => 'टिप्पणीकार',
+	'code-field-message' => 'सारांश कमिट',
+	'code-field-status' => 'स्थिति',
+	'code-field-status-description' => 'स्थिति का वर्णन',
+	'code-field-timestamp' => 'दिनांक',
+	'code-field-comments' => 'टिप्पणियाँ',
+	'code-field-path' => 'मार्ग',
+	'code-field-text' => 'नोट',
+	'code-field-select' => 'चयन करें',
+	'code-reference-associate-submit' => 'सहयोगी',
+	'code-rev-author' => 'लेखक:',
+	'code-rev-date' => 'दिनांक:',
+	'code-rev-message' => 'टिप्पणी:',
+	'code-rev-repo' => 'भंडार:',
+	'code-rev-rev' => 'संशोधन:',
+	'code-rev-modified-a' => 'जोड़ा गया',
+	'code-rev-modified-d' => 'हटाया गया',
+	'code-rev-modified-m' => 'संशोधित',
+	'code-rev-status' => 'स्थिति:',
+	'code-rev-status-set' => 'स्थिति परिवर्तन',
+	'code-rev-tags' => 'टैग:',
+	'code-rev-tag-add' => 'टैग जोड़ें:',
+	'code-rev-tag-remove' => 'टैग निकालें:',
+	'code-rev-comment-by' => 'द्वारा टिप्पणी $1',
+	'code-rev-comment-preview' => 'पूर्वावलोकन',
+	'code-rev-inline-preview' => 'पूर्वावलोकन:',
+	'code-rev-purge-link' => 'पर्ज करें',
+	'code-rev-history-link' => 'इतिहास',
+	'code-status-new' => 'नई',
+	'code-status-ok' => 'ठीक है',
+	'code-signoff-field-user' => 'सदस्य',
+	'repoadmin-edit-button' => 'ठीक है',
 );
 
 /** Fiji Hindi (Latin script) (Fiji Hindi)
@@ -10561,6 +10613,7 @@ $messages['pfl'] = array(
  * @author Equadus
  * @author Leinad
  * @author Marcin Łukasz Kiejzik
+ * @author Olgak85
  * @author Sp5uhe
  * @author Woytecr
  */
@@ -10752,6 +10805,8 @@ $6',
 	'code-stats-fixme-breakdown-path' => 'Zestawienie zmian wymagających sprawdzenia posortowane ze względu na ścieżkę',
 	'code-stats-fixme-path' => 'Zmiany wymagające sprawdzenia posortowane ze względu na ścieżkę: $1',
 	'code-stats-new-breakdown' => 'Zestawienie nowych zmian posortowane ze względu na autora',
+	'code-stats-new-breakdown-path' => 'Zestawienie zmian posortowane ze względu na ścieżkę',
+	'code-stats-new-path' => 'Nowe poprawki dla ścieżki:$1',
 	'code-stats-count' => 'Liczba poprawek',
 	'code-tooltip-withsummary' => 'r$1 [$2] przez $3 – $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] przez $3',
@@ -11017,10 +11072,18 @@ $messages['pnt'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
+	'code' => 'د کوډ مخکتنه',
 	'code-comments' => 'تبصرې',
+	'code-change-added' => 'ګډ شوی:',
+	'code-old-status' => 'پخوانی دريځ',
 	'code-new-status' => 'نوی دريځ',
+	'code-notes' => 'تازه تبصرې',
+	'code-statuschanges' => 'د دريځ بدلونونه',
+	'code-mycomments' => 'زما تبصرې',
 	'code-authors' => 'ليکوالان',
+	'code-author-link' => 'تړنه؟',
 	'code-field-author' => 'ليکوال',
+	'code-field-user' => 'مبصر',
 	'code-field-status' => 'دريځ',
 	'code-field-timestamp' => 'نېټه',
 	'code-field-comments' => 'تبصرې',
@@ -11030,13 +11093,16 @@ $messages['ps'] = array(
 	'code-rev-date' => 'نېټه:',
 	'code-rev-message' => 'تبصره:',
 	'code-rev-modified-a' => 'ورګډ شو',
+	'code-rev-modified-r' => 'ځايناستی شوی',
 	'code-rev-modified-d' => 'ړنګ شو',
 	'code-rev-imagediff' => 'د انځور بدلونونه',
 	'code-rev-status' => 'دريځ:',
+	'code-rev-status-set' => 'دريځ بدلول',
 	'code-rev-comment-preview' => 'مخليدنه',
 	'code-rev-inline-preview' => 'مخليدنه:',
 	'code-rev-diff' => 'توپير',
 	'code-rev-diff-link' => 'توپير',
+	'code-rev-purge-link' => 'سپينول',
 	'code-rev-history-link' => 'پېښليک',
 	'code-status-new' => 'نوی',
 	'code-status-ok' => 'ښه',
@@ -11048,8 +11114,10 @@ $messages['ps'] = array(
 	'code-revfilter-cr_status' => 'دريځ = $1',
 	'code-revfilter-cr_author' => 'ليکوال = $1',
 	'code-rev-submit' => 'بدلونونه خوندي کول',
+	'code-batch-status' => 'دريځ بدلول:',
 	'codereview-batch-submit' => 'سپارل',
 	'codereview-reply-link' => 'ځوابول',
+	'codereview-overview-title' => 'مخليدنه',
 	'codereview-email-body' => 'د "$1" کارن په $3 يوه تبصره کړې.
 
 بشپړه پته: $2
@@ -11063,6 +11131,7 @@ $4',
 	'code-stats' => 'شمارنې',
 	'repoadmin-new-button' => 'جوړول',
 	'repoadmin-edit-button' => 'ښه',
+	'group-svnadmins' => 'د SVN پازوالان',
 );
 
 /** Portuguese (Português)
@@ -12703,11 +12772,13 @@ $messages['sh'] = array(
 );
 
 /** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
  * @author බිඟුවා
  */
 $messages['si'] = array(
 	'code-comments' => 'පරිකථන',
 	'code-field-author' => 'කතෘ',
+	'code-field-status' => 'තත්වය',
 	'code-field-timestamp' => 'දිනය',
 	'code-rev-message' => 'පරිකථනය:',
 	'code-rev-comment-preview' => 'පෙර දසුන',
@@ -14577,6 +14648,7 @@ $6',
 );
 
 /** Turkish (Türkçe)
+ * @author Cekli829
  * @author Joseph
  * @author Srhat
  */
@@ -14659,6 +14731,9 @@ $messages['tr'] = array(
 	'code-status-ok' => 'tamam',
 	'code-status-deferred' => 'ertelendi',
 	'code-status-old' => 'eskimiş',
+	'code-signoff-field-user' => 'Kullanıcı',
+	'code-signoff-field-flag' => 'Bayrak',
+	'code-signoff-field-date' => 'Tarih',
 	'code-pathsearch-legend' => 'Bu depodaki revizyonları yola göre ara',
 	'code-pathsearch-path' => 'Yol:',
 	'code-pathsearch-filter' => 'Uygulanan filtre:',
@@ -14701,6 +14776,7 @@ Tam URL: $2
 Teslimat özeti:
 
 $3',
+	'code-stats' => 'istatistikler',
 	'repoadmin' => 'Depo Yönetimi',
 	'repoadmin-new-legend' => 'Yeni bir depo oluştur',
 	'repoadmin-new-label' => 'Depo adı:',
@@ -15464,6 +15540,7 @@ $messages['vo'] = array(
 );
 
 /** Yiddish (ייִדיש)
+ * @author Imre
  * @author פוילישער
  */
 $messages['yi'] = array(
@@ -15493,6 +15570,7 @@ $messages['yi'] = array(
 	'codereview-subtitle' => 'פֿאַר $1',
 	'code-stats' => 'סטאַטיסטיק',
 	'repoadmin-new-button' => 'שאַפֿן',
+	'repoadmin-edit-button' => 'אויספֿירן',
 );
 
 /** Yoruba (Yorùbá)
@@ -16058,6 +16136,8 @@ $6',
 	'code-stats-fixme-breakdown-path' => '按路徑修正修訂的分項統計',
 	'code-stats-fixme-path' => '$1路徑的修正修訂',
 	'code-stats-new-breakdown' => '按作者新修訂的分項統計',
+	'code-stats-new-breakdown-path' => '按路徑新修訂的分項統計',
+	'code-stats-new-path' => '$1路徑的新修訂',
 	'code-stats-count' => '修訂的數目',
 	'code-tooltip-withsummary' => 'r$1 [$2] $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] $3',
