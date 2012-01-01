@@ -3575,6 +3575,7 @@ $6',
 );
 
 /** Esperanto (Esperanto)
+ * @author Blahma
  * @author Castelobranco
  * @author Yekrats
  */
@@ -3765,6 +3766,8 @@ $6',
 	'code-stats-fixme-breakdown-path' => 'Ekzameno po petrevizioj por vojo',
 	'code-stats-fixme-path' => 'Petrevizioj por vojo: $1',
 	'code-stats-new-breakdown' => 'Ekzameno po novaj revizioj por aŭtoro',
+	'code-stats-new-breakdown-path' => 'Disdivido de novaj revizioj laŭ vojo',
+	'code-stats-new-path' => 'Novaj revizioj por vojo: $1',
 	'code-stats-count' => 'Nombro de revizioj',
 	'code-tooltip-withsummary' => 'r$1 [$2] de $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] de $3',
@@ -4591,7 +4594,7 @@ $messages['fi'] = array(
 	'code-tags-no-tags' => 'Tällä säilytyspaikalla ei ole avainsanoja.',
 	'code-authors-text' => 'Alla on lista versionhallinnassa olevista tekijöistä käyttäjätunnuksen mukaan. Paikalliset wikitilit näytetään suluissa. Tiedot saattavat tulla välimuistista.',
 	'code-author-haslink' => 'Tämä tekijä on kytketty wikikäyttäjään $1',
-	'code-author-orphan' => 'SVN-käyttäjällä/tekijällä $1 ei ole linkkiä wikitunnuksen kanssa',
+	'code-author-orphan' => 'SVN-tunnusta $1 ei ole liitetty wikitunnukseen',
 	'code-author-dolink' => 'Kytke tämä tekijä wiki-käyttäjään:',
 	'code-author-alterlink' => 'Vaihda tähän tekijään kytketty wiki-käyttäjä:',
 	'code-author-orunlink' => 'Tai irrota tämä wiki-käyttäjä:',
@@ -4746,8 +4749,8 @@ $6',
 	'code-stats-fixme-breakdown' => 'FIXME-koodimuutosten määrä tekijöittäin',
 	'code-stats-fixme-breakdown-path' => 'FIXME-koodimuutosten määrä poluittain',
 	'code-stats-fixme-path' => 'FIXME-muutokset polulla: $1',
-	'code-stats-new-breakdown' => 'Uusien versioiden käyttäjäkohtainen erittely',
-	'code-stats-new-breakdown-path' => 'Uusien versioiden polkukohtainen erittely',
+	'code-stats-new-breakdown' => 'Uudet koodimuutokset käyttäjittäin',
+	'code-stats-new-breakdown-path' => 'Uudet koodimuutokset poluittain',
 	'code-stats-new-path' => 'Uudet versiot polulla: $1',
 	'code-stats-count' => 'Muokkausten määrä',
 	'code-tooltip-withsummary' => 'v$1 [$2] käyttäjältä $3 - $4',
@@ -5053,7 +5056,7 @@ $messages['frp'] = array(
 	'code-author-dolink' => 'Associyér ceti ôtor a un usanciér vouiqui local :',
 	'code-author-alterlink' => 'Changiér l’usanciér vouiqui liyê a ceti ôtor :',
 	'code-author-orunlink' => 'Ou ben dèliyér ceti usanciér vouiqui :',
-	'code-author-name' => 'Buchiéd un nom d’utilisator :',
+	'code-author-name' => 'Buchiéd un nom d’usanciér :',
 	'code-author-success' => 'L’ôtor $1 at étâ liyê a l’usanciér vouiqui $2',
 	'code-author-link' => 'liyér ?',
 	'code-author-unlink' => 'dèliyér ?',
@@ -5184,14 +5187,14 @@ Rèsumâ de changement :
 
 $6',
 	'codereview-email-subj4' => '[$1 $2] : novél comentèro apondu et pués ètat de la vèrsion changiê',
-	'codereview-email-body4' => 'L’utilisator « $1 » at changiê l’ètat de $2.
+	'codereview-email-body4' => 'L’usanciér « $1 » at changiê l’ètat de $2.
+Adrèce URL complèta : $5
 
 Viely ètat : $3
 Novél ètat : $4
 
-L’utilisator « $1 » at asse-ben pôstâ un comentèro sur $2.
+L’usanciér « $1 » at asse-ben pôstâ un comentèro sur $2.
 
-Adrèce URL complèta : $5
 Rèsumâ du changement :
 
 $7
@@ -5207,6 +5210,8 @@ $6',
 	'code-stats-fixme-breakdown-path' => 'Ventilacion de les rèvisions a corregiér per chemin',
 	'code-stats-fixme-path' => 'Rèvisions a corregiér por lo chemin : $1',
 	'code-stats-new-breakdown' => 'Ventilacion de les novèles rèvisions per ôtor',
+	'code-stats-new-breakdown-path' => 'Ventilacion de les novèles rèvisions per chemin',
+	'code-stats-new-path' => 'Novèles rèvisions por lo chemin : $1',
 	'code-stats-count' => 'Nombro de rèvisions',
 	'code-tooltip-withsummary' => 'r$1 [$2] per $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] per $3',
@@ -5228,7 +5233,7 @@ $6',
 	'right-codereview-post-comment' => 'Apondre des comentèros a les rèvisions',
 	'right-codereview-set-status' => 'Changiér l’ètat de les rèvisions',
 	'right-codereview-signoff' => 'Aprovar des rèvisions',
-	'right-codereview-link-user' => 'Liyér los ôtors ux utilisators vouiqui',
+	'right-codereview-link-user' => 'Liyér los ôtors ux usanciérs vouiqui',
 	'right-codereview-associate' => 'Administrar les associacions de rèvisions',
 	'right-codereview-review-own' => 'Marcar ses prôpres rèvisions coment OK ou ben Solucionâ',
 	'specialpages-group-developer' => 'Outils u dèvelopor',
@@ -6065,6 +6070,7 @@ $messages['hi'] = array(
 	'code-new-status' => 'नई स्थिति',
 	'code-prop-changes' => 'स्थिति और लॉग टैगिंग',
 	'codereview-desc' => '[[Special:Code|कोड़ समीक्षा उपकरण]] सहित [[Special:रेपोप्रबन्धक|उपसंस्करण समर्थन]]',
+	'code-repo-not-found' => "भंडार '''$1''' मौजूद नहीं है!",
 	'code-notes' => 'हालही की टिप्पणियाँ',
 	'code-statuschanges' => 'स्थिति परिवर्तन',
 	'code-mycommits' => 'मेरी सच्चा प्रयास',
@@ -6079,6 +6085,7 @@ $messages['hi'] = array(
 	'code-author-unlinksuccess' => 'लेखक  $1 को उनलिंक करागया',
 	'code-author-total' => 'लेखकों की कुल संख्या: $1',
 	'code-author-lastcommit' => 'अंतिम प्रतिबद्ध तारीख',
+	'code-browsing-path' => "संशोधित ब्राउज़िंग '''$1''' में",
 	'code-field-id' => 'संशोधन',
 	'code-field-author' => 'लेखक',
 	'code-field-user' => 'टिप्पणीकार',
@@ -6097,6 +6104,7 @@ $messages['hi'] = array(
 	'code-rev-repo' => 'भंडार:',
 	'code-rev-rev' => 'संशोधन:',
 	'code-rev-modified-a' => 'जोड़ा गया',
+	'code-rev-modified-r' => 'बदला गया',
 	'code-rev-modified-d' => 'हटाया गया',
 	'code-rev-modified-m' => 'संशोधित',
 	'code-rev-imagediff' => 'छवि बदलाव',
@@ -6111,6 +6119,7 @@ $messages['hi'] = array(
 	'code-rev-diff' => 'अन्तर',
 	'code-rev-diff-link' => 'अन्तर',
 	'code-rev-purge-link' => 'पर्ज करें',
+	'code-rev-total' => 'परिणामों की कुल संख्या: $1',
 	'code-rev-history-link' => 'इतिहास',
 	'code-status-new' => 'नई',
 	'code-status-reverted' => 'पूर्ववत करा गया',
@@ -6184,6 +6193,8 @@ $6',
 	'right-codereview-add-tag' => 'संशोधन में नया टैग जोड़ें',
 	'right-codereview-remove-tag' => 'संशोधन से टैग हटाएँ',
 	'right-codereview-post-comment' => 'संशोधन पे टिप्पणी जोड़ें',
+	'right-codereview-set-status' => 'संशोधन की स्थिति परिवर्तित करें',
+	'right-codereview-link-user' => 'लेखकों को विकि सदस्यों से लिंक करें',
 	'specialpages-group-developer' => 'डेवलपर उपकरण',
 	'group-svnadmins' => 'SVN प्रबन्धकगण',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN प्रबन्धक}}',
@@ -6520,9 +6531,11 @@ $messages['hsb'] = array(
 	'code-pathsearch-filter' => 'Jenož pokazać:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Awtor = $1',
+	'code-revfilter-ct_tag' => 'Značka = $1',
 	'code-revfilter-clear' => 'Filter zhašeć',
 	'code-rev-submit' => 'Změny składować',
 	'code-rev-submit-next' => 'Składować & přichodny njekontrolowany',
+	'code-rev-next' => 'Přichodny njesčinjeny',
 	'code-batch-status' => 'Status změnić:',
 	'code-batch-tags' => 'Taflički změnić:',
 	'codereview-batch-title' => 'Wšě wubrane wersije změnić',
@@ -6533,6 +6546,8 @@ $messages['hsb'] = array(
 	'code-release-endrev' => 'Poslednja wersija:',
 	'codereview-subtitle' => 'Za $1',
 	'codereview-reply-link' => 'wotmołwić',
+	'codereview-overview-title' => 'Přehlad',
+	'codereview-overview-desc' => 'Grafiski přehlad tuteje lisćiny pokazać',
 	'codereview-email-subj' => '[$1 $2]: Nowy komentar přidaty',
 	'codereview-email-body' => 'Wužiwar "$1" je komentar wo $3 pósłał.
 
@@ -6589,7 +6604,14 @@ $6',
 	'code-stats-main' => 'Wot $1 repozitorij ma $2 {{PLURAL:$2|wersiju|wersiji|wersije|wersijow}} wot [[Special:Code/$3/author|$4 {{PLURAL:$4|awtora|awtorow|awtorow|awtorow}}]].',
 	'code-stats-status-breakdown' => 'Ličba wersijow na status',
 	'code-stats-fixme-breakdown' => 'Zwobraznjenje korekturowych wersijow na awtora',
+	'code-stats-fixme-breakdown-path' => 'Rozrjadowanje wersijow z FIXME na pućik',
+	'code-stats-fixme-path' => 'Wersije z FIXME za pućik: $1',
+	'code-stats-new-breakdown' => 'Rozrjadowanje nowych wersijow na awtora',
+	'code-stats-new-breakdown-path' => 'Rozrjadowanje nowych wersijow na pućik',
+	'code-stats-new-path' => 'Nowe wersije za pućik: $1',
 	'code-stats-count' => 'Ličba wersijow',
+	'code-tooltip-withsummary' => 'r$1 [$2] wot $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] wot $3',
 	'repoadmin' => 'Administracija repozitorija',
 	'repoadmin-new-legend' => 'Nowy repozitorij wutworić',
 	'repoadmin-new-label' => 'Mjeno repozitorija:',
@@ -6610,6 +6632,7 @@ $6',
 	'right-codereview-signoff' => 'Wersije dopušćić',
 	'right-codereview-link-user' => 'Awtorow z wikijowymi wužiwarjemi zwjazać',
 	'right-codereview-associate' => '´Wersijowy zwisk přidać/wotstronić',
+	'right-codereview-review-own' => 'Swójske wersije jako W porjadku abo sčinjene markěrować',
 	'specialpages-group-developer' => 'Nastroje wuwiwarjow',
 	'group-svnadmins' => 'SVN-administratorojo',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN-administrator|SVN-administratorka}}',
@@ -8854,7 +8877,29 @@ Toelichting bie toevoging:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: versiesjtatus gewiezig',
+	'codereview-email-body3' => '"$1" haet de sjtatus van versie $2 verangerd nao "$4".
+URL: $5
+
+Auwe sjtatus: $3
+Nuje sjtatus: $4
+
+Commitsamevatting veur $2:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: nuuj opmirking toegeveug en versiesjtatus gewiezig',
+	'codereview-email-body4' => '"$1" haet de sjtatus van $2 verangerd nao "$4" en \'n opmirking toeveug.
+URL $5
+
+Auwe sjtatus: $3
+Nuje sjtatus: $4
+
+Commitsamevatting veur $2:
+
+$7
+
+Opmirking van $1:
+
+$6',
 	'code-stats' => 'statistieke',
 	'code-stats-header' => 'Repositorystatistieke veur $1',
 	'code-stats-main' => 'Per $1 haet de repository $2 {{PLURAL:$2|versie|versies}} door [[Special:Code/$3/author|$4 {{PLURAL:$4|outäör|outäörs}}]].',
@@ -8867,6 +8912,7 @@ $4',
 	'code-stats-new-path' => 'Nuuj versies veur paad: $1',
 	'code-stats-count' => 'Aantal versies',
 	'code-tooltip-withsummary' => 'r$1 [$2] door $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] door $3',
 	'repoadmin' => 'Repositoirbehieër',
 	'repoadmin-new-legend' => 'Maak nuuj repositoir',
 	'repoadmin-new-label' => 'Repositoirnaam:',
@@ -8877,14 +8923,21 @@ $4',
 	'repoadmin-edit-view' => 'ViewVCpaad:',
 	'repoadmin-edit-button' => 'Gaon',
 	'repoadmin-edit-sucess' => 'De repositoir "[[Special:Code/$1|$1]]" is aangepas.',
+	'repoadmin-nav' => 'repositorybehier',
 	'right-repoadmin' => 'Coderepositoire behieëre',
 	'right-codereview-use' => 'Gebroek ven Special:Code',
 	'right-codereview-add-tag' => 'Voeg labels toe aan versies',
 	'right-codereview-remove-tag' => 'Wösj labels ven versies',
 	'right-codereview-post-comment' => 'Ópmèrkinger toevoege aan versies',
 	'right-codereview-set-status' => 'Anger versiestaat',
+	'right-codereview-signoff' => 'Versies goodkäöre',
 	'right-codereview-link-user' => 'Koppel sjrievers aan wikigebroekers',
+	'right-codereview-associate' => 'Koppeling toeveuge/ewegsjaffe',
+	'right-codereview-review-own' => 'Eige commits es OK of opgelos markere',
 	'specialpages-group-developer' => 'Hölpmiddele veur óntwikkeleers',
+	'group-svnadmins' => 'SVN-behierdes',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-behierder}}',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-behierders',
 );
 
 /** Lithuanian (Lietuvių)
@@ -13069,9 +13122,11 @@ $messages['si'] = array(
 	'code-change-added' => 'එක් කෙරූ:',
 	'code-old-status' => 'පැරණි තත්වය',
 	'code-new-status' => 'නව තත්වය',
+	'code-prop-changes' => 'තත්ත්ව සහ ටැගීකරණයෙහි ලඝු සටහන',
 	'codereview-desc' => '[[Special:Code|කේත නිරීක්ෂණ මෙවලම]] සමඟ [[Special:RepoAdmin|විප්ලවීය සහය]]',
 	'code-no-repo' => 'කෝෂ්ඨාගාර කිසිවක් වින්‍යාසගතකොට නැත!',
 	'code-repo-not-found' => "'''$1''' කෝෂ්ඨාගාරය නොපවතියි!",
+	'code-load-diff' => 'වෙනස පූරණය කරමින්...',
 	'code-notes' => 'මෑත පරිකථනයන්',
 	'code-statuschanges' => 'තත්ත්ව වෙනස්කම්',
 	'code-mycommits' => 'මගේ බැඳීම්',
@@ -13079,6 +13134,7 @@ $messages['si'] = array(
 	'code-authors' => 'කතෘන්',
 	'code-status' => 'තත්වය',
 	'code-tags' => 'ටැගයන්',
+	'code-tags-no-tags' => 'කෝෂ්ඨාගාරය තුල ටැගයන් කිසිවක් නොපවතියි.',
 	'code-author-haslink' => 'මෙම කතුවරයා විකි පරිශීලක $1 වෙත සම්බන්ධ කරන ලදී',
 	'code-author-dolink' => 'විකි පරිශීලකයෙකු වෙත මෙම කතුවරයා සම්බන්ධ කරන්න:',
 	'code-author-alterlink' => 'මෙම කතුවරයා වෙත සම්බන්ධ කර ඇති විකි පරිශීලකයා වෙනස් කරන්න:',
@@ -13123,12 +13179,17 @@ $messages['si'] = array(
 	'code-rev-comment-by' => '$1 ගෙන් පරිකථනය',
 	'code-rev-comment-preview' => 'පෙර දසුන',
 	'code-rev-inline-preview' => 'පෙරදසුන:',
+	'code-rev-diff' => 'වෙනස',
+	'code-rev-diff-link' => 'වෙනස',
+	'code-rev-diff-too-large' => 'පෙන්වීම සඳහා වෙනස විශාල වැඩියි.',
 	'code-rev-purge-link' => 'විමෝචනය',
 	'code-rev-total' => 'මුළු ප්‍රථිපල ගණන: $1',
 	'code-rev-not-found' => "සංශෝධනය '''$1''' නොපවතියි!",
 	'code-rev-history-link' => 'ඉතිහාසය',
 	'code-status-new' => 'නව',
+	'code-status-fixme' => 'මාවසකසන්න',
 	'code-status-reverted' => 'ප්‍රතිවර්තනය කෙරූ',
+	'code-status-desc-reverted' => 'පසු අනුවාදයක් මඟින් සංශෝධනය අහෝසි කරන ලදී.',
 	'code-status-resolved' => 'තීරණය කරන ලද',
 	'code-status-ok' => 'හරි',
 	'code-status-deferred' => 'ප්‍රමාද වූ',
@@ -13142,14 +13203,20 @@ $messages['si'] = array(
 	'code-pathsearch-filter' => 'පමණක් පෙන්වන්න:',
 	'code-revfilter-cr_status' => 'තත්වය = $1',
 	'code-revfilter-cr_author' => 'කතෘ = $1',
+	'code-revfilter-ct_tag' => 'ටැගය = $1',
 	'code-revfilter-clear' => 'පෙරහන පිරිසිදු කරන්න',
 	'code-rev-submit' => 'වෙනස්කම් සුරකින්න',
 	'code-batch-status' => 'තත්වය වෙනස් කරන්න:',
 	'code-batch-tags' => 'ටැගයන් වෙනස් කරන්න:',
+	'codereview-batch-title' => 'තෝරාගත් සංශෝධන සියල්ලම වෙනස් කරන්න',
 	'codereview-batch-submit' => 'යොමන්න',
 	'code-releasenotes' => 'නිකුතු සටහන්',
+	'code-release-legend' => 'නිකුතු සටහන් ජනිත කරන්න',
+	'codereview-subtitle' => '$1 සඳහා',
 	'codereview-reply-link' => 'පිළිතුරු',
 	'codereview-overview-title' => 'දළ විශ්ලේෂණය',
+	'codereview-overview-desc' => 'මෙම ලයිස්තුවේ ග්‍රාපිකරූපී දල විශ්ලේෂණය පෙන්වන්න',
+	'codereview-email-subj' => '[$1 $2]: නව පරිකථනයක් එක්කරන ලදී',
 	'code-stats' => 'සංඛ්‍යාන දත්ත',
 	'code-stats-header' => '$1 කෝෂ්ඨාගාරය සඳහා සංඛ්‍යා ලේඛන',
 	'code-stats-new-path' => 'පථය සඳහා නව සංශෝධන: $1',
