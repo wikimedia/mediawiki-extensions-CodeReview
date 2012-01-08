@@ -199,13 +199,6 @@ $wgCodeReviewCommentWatcherName = "CodeReview comments list";
 $wgCodeReviewImgRegex = '/\.(png|jpg|jpeg|gif)$/i';
 
 /**
- * Whether to enable the experimental inline commenting feature. This
- * let you add comments inside the diff output. The feature is highly
- * experimental and has bugs so the default is false.
- */
-$wgCodeReviewInlineComments = false;
-
-/**
  * Maximum size of diff text before it is omitted from the revision view
  */
 $wgCodeReviewMaxDiffSize = 500000;
