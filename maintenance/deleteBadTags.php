@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = dirname( __FILE__ ) . '/../../..';
 }
-require "$IP/maintenance/commandLine.inc";
+require_once( "$IP/maintenance/commandLine.inc" );
 
 echo "Usage: php deleteBadTags.php [commit]\n";
 
