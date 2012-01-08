@@ -95,9 +95,6 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		if ( isset( $this->props['text'] ) ) {
 			ApiResult::setContent( $item, $row->cc_text );
 		}
-		if ( isset( $this->props['patchline'] ) ) {
-			$item['patchline'] = $row->cc_patch_line;
-		}
 		return $item;
 	}
 
@@ -125,7 +122,6 @@ class ApiQueryCodeComments extends ApiQueryBase {
 					'user',
 					'status',
 					'text',
-					'patchline',
 					'revid',
 					'revision',
 				),

@@ -202,16 +202,6 @@ class CodeRevisionView extends CodeView {
 		}
 		$html .= xml::closeElement( 'form' );
 
-		// Encode revision id for our modules
-		$encRev = Xml::encodeJsVar( $this->mRev->getId() );
-
-		if( $wgCodeReviewInlineComments ) {
-			$wgOut->addModules( 'ext.codereview.linecomment' );
-			$wgOut->addInlineScript(
-				"$(document).ready( CodeReview.lcInit( $encRev ) );"
-			);
-		}
-
 		$wgOut->addHTML( $html );
 	}
 
@@ -470,8 +460,7 @@ class CodeRevisionView extends CodeView {
 			return htmlspecialchars( wfMsg( 'code-rev-diff-too-large' ) );
 		} else {
 			$hilite = new CodeDiffHighlighter();
-			# Diff rendered with inline comments
-			return $hilite->render( $diff, $this->mRepo, $this->mRev );
+			return $hilite->render( $diff );
 		}
 	}
 

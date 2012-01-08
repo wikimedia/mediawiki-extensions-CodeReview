@@ -58,12 +58,11 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @param string $commentText Comment to add to the revision
 	 * @param null|int $parent What the parent comment is (if a subcomment)
 	 * @param int $review (unused)
-	 * @param int $patchLine Patch line number to which the comment will be attached (default: null).
 	 * @return int Comment ID if added, else 0
 	 */
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
 						$addReferences, $removeReferences, $commentText,
-						$parent = null, $review = 0, $patchLine = null) {
+						$parent = null, $review = 0 ) {
 		if ( !$this->mRev ) {
 			return false;
 		}
@@ -111,7 +110,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		$commentId = 0;
 		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment' ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
-			$commentId = $this->mRev->saveComment( $commentText, $review, $parent, $patchLine );
+			$commentId = $this->mRev->saveComment( $commentText, $review, $parent );
 
 			$commentAdded = ($commentId !== 0);
 		}

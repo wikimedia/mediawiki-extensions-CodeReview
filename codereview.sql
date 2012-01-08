@@ -173,9 +173,6 @@ CREATE TABLE /*_*/code_comment (
   -- cc_id of parent comment if a threaded child, otherwise NULL
   cc_parent int,
 
-  -- patch line the comment eventually applies to or NULL
-  cc_patch_line int default null,
-
   -- User id/name of the commenter
   cc_user int not null,
   cc_user_text varchar(255) not null,

@@ -68,7 +68,6 @@ class CodeReviewApiTest extends ApiTestCase {
 		$data = $this->doApiRequest( array(
 			'action' => 'coderevisionupdate',
 			'rev' => 777,
-			'patchline' => 51,
 			'comment' => 'Awesome comment',
 
 		) + $this->commonApiData );

@@ -167,10 +167,6 @@ $wgResourceModules['ext.codereview.loaddiff'] = array(
 	'scripts' => 'ext.codereview.loaddiff.js'
 ) + $commonModuleInfo;
 
-$wgResourceModules['ext.codereview.linecomment'] = array(
-	'scripts' => 'ext.codereview.linecomment.js'
-) + $commonModuleInfo;
-
 // Revision tooltips CodeRevisionView:
 $wgResourceModules['ext.codereview.tooltips'] = array(
 	'scripts' => 'ext.codereview.tooltips.js',
@@ -354,8 +350,6 @@ function efCodeReviewSchemaUpdates( $updater ) {
 
 		$updater->addExtensionIndex( 'code_rev', 'cr_repo_status_author',
 			"$base/archives/code_revs_status_author-index.sql" );
-		$updater->addExtensionField( 'code_comment', 'cc_patch_line',
-			"$base/archives/code_comment_patch_line.sql" );
 
 		$updater->addExtensionUpdate( array( 'dropField', 'code_comment', 'cc_review',
 			"$base/archives/code_drop_cc_review.sql", true ) );
@@ -371,8 +365,6 @@ function efCodeReviewSchemaUpdates( $updater ) {
 			"$base/archives/code_signoffs_timestamp_struck.sql", true ) );
 		$updater->addExtensionUpdate( array( 'addIndex', 'code_paths', 'repo_path',
 			"$base/archives/codereview-repopath.sql", true ) );
-		$updater->addExtensionUpdate( array( 'addField', 'code_comment', 'cc_patch_line',
-			"$base/archives/code_comment_patch_line.sql", true ) );
 		break;
 	case 'postgres':
 		// TODO

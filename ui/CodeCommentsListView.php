@@ -57,8 +57,6 @@ class CodeCommentsTablePager extends SvnTablePager {
 			'cr_status' => wfMsg( 'code-field-status' ),
 			'cr_message' => wfMsg( 'code-field-message' ),
 			'cc_text' => wfMsg( 'code-field-text' ),
-			# patch line is only used for API call. No need for an i18n message
-			'cc_patch_line' => null,
 		);
 	}
 
