@@ -66,7 +66,9 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['removeflags'],
 			$params['addreferences'],
 			$params['removereferences'],
-			$params['comment']
+			$params['comment'],
+			$params['addreferenced'],
+			$params['removereferenced']
 		);
 
 		// Forge a response object
@@ -134,6 +136,14 @@ class ApiRevisionUpdate extends ApiBase {
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
 			),
+			'addreferenced' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_ISMULTI => true,
+			),
+			'removereferenced' => array(
+				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_ISMULTI => true,
+			),
 		);
 	}
 
@@ -149,6 +159,8 @@ class ApiRevisionUpdate extends ApiBase {
 			'removeflags' => 'Code Signoff flags to strike from the revision by the current user',
 			'addreferences' => 'Add references to this revision',
 			'removereferences' => 'Remove references from this revision',
+			'addreferenced' => 'Add referenced revisions from this revision',
+			'removereferenced' => 'Remove referenced revisions from this revision',
 		);
 	}
 

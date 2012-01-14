@@ -54,7 +54,14 @@ class CodeRevisionView extends CodeView {
 				: array();
 
 		$this->mRemoveReferences = $wgRequest->getCheck( 'wpRemoveReferences' ) ?
-			$wgRequest->getIntArray( 'wpReferences', array() ) : array();
+			$wgRequest->getIntArray( 'wpReferenced', array() ) : array();
+
+		$this->mAddReferenced = $wgRequest->getCheck( 'wpAddReferencedSubmit' )
+				? $this->stringToRevList( $wgRequest->getText( 'wpAddReferenced' ) )
+				: array();
+
+		$this->mRemoveReferenced = $wgRequest->getCheck( 'wpRemoveReferenced' ) ?
+				$wgRequest->getIntArray( 'wpReferenced', array() ) : array();
 	}
 
 	/**
@@ -189,7 +196,7 @@ class CodeRevisionView extends CodeView {
 		$referenced = $this->mRev->getFollowedUpRevisions();
 		if ( count( $referenced ) || $userCanAssociate ) {
 			$html .= "<h2 id='code-referenced'>" . wfMsgHtml( 'code-referenced' ) .
-					"</h2>\n" . $this->formatReferences( $referenced, /*$userCanAssociate*/false, 'Referenced' );
+					"</h2>\n" . $this->formatReferences( $referenced, $userCanAssociate, 'Referenced' );
 		}
 
 		# Add revision comments

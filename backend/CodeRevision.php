@@ -1027,6 +1027,21 @@ class CodeRevision {
 	}
 
 	/**
+	 * Remove references to the specified revisions from this revision.
+	 *
+	 * @param $revs array of revision IDs
+	 */
+	public function removeReferencesTo( $revs ) {
+		$dbw = wfGetDB( DB_MASTER );
+		$dbw->delete( 'code_relations', array(
+				'cf_repo_id' => $this->getRepoId(),
+				'cf_from' => $this->getId(),
+				'cf_to' => $revs
+			), __METHOD__
+		);
+	}
+
+	/**
 	 * Get all sign-offs for this revision
 	 * @param $from int DB_SLAVE or DB_MASTER
 	 * @return array of CodeSignoff objects

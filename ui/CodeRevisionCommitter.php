@@ -15,9 +15,10 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		}
 
 		$commentId = $this->revisionUpdate( $this->mStatus, $this->mAddTags, $this->mRemoveTags,
-			$this->mSignoffFlags, $this->mStrikeSignoffs, $this->mAddReferences, $this->mRemoveReferences,
-			$this->text, $wgRequest->getIntOrNull( 'wpParent' ),
-			$wgRequest->getInt( 'wpReview' )
+			$this->mSignoffFlags, $this->mStrikeSignoffs,
+			$this->mAddReferences, $this->mRemoveReferences,
+			$this->text, $wgRequest->getIntOrNull( 'wpParent' ), $wgRequest->getInt( 'wpReview' ),
+			$this->mAddReferenced, $this->mRemoveReferenced
 		);
 
 		$redirTarget = null;
@@ -62,7 +63,9 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 */
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
 						$addReferences, $removeReferences, $commentText,
-						$parent = null, $review = 0 ) {
+						$parent = null, $review = 0,
+						$addReferenced, $removeReferenced
+					) {
 		if ( !$this->mRev ) {
 			return false;
 		}
@@ -103,6 +106,14 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		// Remove references if requested
 		if ( count( $removeReferences ) && $this->validPost( 'codereview-associate' ) ) {
 			$this->mRev->removeReferencesFrom( $removeReferences );
+		}
+		// Add reference if requested
+		if ( count( $addReferenced ) && $this->validPost( 'codereview-associate' ) ) {
+			$this->mRev->addReferencesTo( $addReferenced );
+		}
+		// Remove references if requested
+		if ( count( $removeReferenced ) && $this->validPost( 'codereview-associate' ) ) {
+			$this->mRev->removeReferencesFrom( $removeReferenced );
 		}
 
 		// Add any comments
