@@ -15,7 +15,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		}
 
 		$commentId = $this->revisionUpdate( $this->mStatus, $this->mAddTags, $this->mRemoveTags,
-			$this->mSignoffFlags, $this->mStrikeSignoffs, $this->mAddReference, $this->mRemoveReferences,
+			$this->mSignoffFlags, $this->mStrikeSignoffs, $this->mAddReferences, $this->mRemoveReferences,
 			$this->text, $wgRequest->getIntOrNull( 'wpParent' ),
 			$wgRequest->getInt( 'wpReview' )
 		);

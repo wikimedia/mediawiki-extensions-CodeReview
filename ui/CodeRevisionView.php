@@ -4,6 +4,7 @@
 class CodeRevisionView extends CodeView {
 
 	protected $showButtonsFormatReference = false, $showButtonsFormatSignoffs = false;
+	protected $referenceInputName = '';
 
 	/**
 	 * @param string|CodeRepository $repo
@@ -48,8 +49,8 @@ class CodeRevisionView extends CodeView {
 		$this->mStrikeSignoffs = $wgRequest->getCheck( 'wpStrikeSignoffs' ) ?
 			$this->mSelectedSignoffs : array();
 
-		$this->mAddReference = $wgRequest->getCheck( 'wpAddReferenceSubmit' )
-				? $this->stringToRevList( $wgRequest->getText( 'wpAddReference' ) )
+		$this->mAddReferences = $wgRequest->getCheck( 'wpAddReferencesSubmit' )
+				? $this->stringToRevList( $wgRequest->getText( 'wpAddReferences' ) )
 				: array();
 
 		$this->mRemoveReferences = $wgRequest->getCheck( 'wpRemoveReferences' ) ?
@@ -75,7 +76,6 @@ class CodeRevisionView extends CodeView {
 
 	function execute() {
 		global $wgOut, $wgLang;
-		global $wgCodeReviewInlineComments;
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();
@@ -183,13 +183,13 @@ class CodeRevisionView extends CodeView {
 		$references = $this->mRev->getFollowupRevisions();
 		if ( count( $references ) || $userCanAssociate ) {
 			$html .= "<h2 id='code-references'>" . wfMsgHtml( 'code-references' ) .
-				"</h2>\n" . $this->formatReferences( $references, $userCanAssociate );
+				"</h2>\n" . $this->formatReferences( $references, $userCanAssociate, 'References' );
 		}
 
 		$referenced = $this->mRev->getFollowedUpRevisions();
-		if ( count( $referenced ) ) {
-			$html .= "<h2 id='code-references'>" . wfMsgHtml( 'code-referenced' ) .
-					"</h2>\n" . $this->formatReferences( $referenced, false );
+		if ( count( $referenced ) || $userCanAssociate ) {
+			$html .= "<h2 id='code-referenced'>" . wfMsgHtml( 'code-referenced' ) .
+					"</h2>\n" . $this->formatReferences( $referenced, /*$userCanAssociate*/false, 'Referenced' );
 		}
 
 		# Add revision comments
@@ -608,8 +608,9 @@ class CodeRevisionView extends CodeView {
 	 * @param $showButtons bool
 	 * @return string
 	 */
-	protected function formatReferences( $references, $showButtons ) {
+	protected function formatReferences( $references, $showButtons, $inputName ) {
 		$this->showButtonsFormatReference = $showButtons;
+		$this->referenceInputName = $inputName;
 		$refs = implode( "\n",
 			array_map( array( $this, 'formatReferenceInline' ), $references )
 		);
@@ -622,7 +623,7 @@ class CodeRevisionView extends CodeView {
 		$header .= '<th>' . wfMsgHtml( 'code-field-message' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-author' ) . '</th>';
 		$header .= '<th>' . wfMsgHtml( 'code-field-timestamp' ) . '</th>';
-		$buttonrow = $showButtons ? $this->referenceButtons() : '';
+		$buttonrow = $showButtons ? $this->referenceButtons( $inputName ) : '';
 		return "<table border='1' class='wikitable'><tr>{$header}</tr>{$refs}{$buttonrow}</table>";
 	}
 
@@ -726,7 +727,7 @@ class CodeRevisionView extends CodeView {
 
 		$ret = "<tr class='$css'>";
 		if ( $this->showButtonsFormatReference ) {
-			$checkbox = Html::input( 'wpReferences[]', $rev, 'checkbox' );
+			$checkbox = Html::input( "wp{$this->referenceInputName}[]", $rev, 'checkbox' );
 			$ret .= "<td>$checkbox</td>";
 		}
 		$ret .= "<td>$revLink</td><td>$summary</td><td>$author</td><td>$date</td></tr>";
@@ -911,14 +912,15 @@ class CodeRevisionView extends CodeView {
 	/**
 	 * Render the bottom row of the follow-up revisions table containing the buttons and
 	 * textbox to add and remove follow-up associations
+	 * @param $inputName string
 	 * @return string HTML
 	 */
-	protected function referenceButtons() {
-		$removeButton = Xml::submitButton( wfMsg( 'code-reference-remove' ), array( 'name' => 'wpRemoveReferences' ) );
+	protected function referenceButtons( $inputName ) {
+		$removeButton = Xml::submitButton( wfMsg( 'code-reference-remove' ), array( 'name' => "wpRemove{$inputName}" ) );
 		$associateText = wfMsgHtml( 'code-reference-associate' );
 		$associateButton = Xml::submitButton( wfMsg( 'code-reference-associate-submit' ),
-			array( 'name' => 'wpAddReferenceSubmit' ) );
-		$textbox = Html::input( 'wpAddReference' );
+			array( 'name' => "wpAdd{$inputName}Submit" ) );
+		$textbox = Html::input( "wpAdd{$inputName}" );
 		return "<tr class='mw-codereview-associatebuttons'><td colspan='5'>$removeButton " .
 			"<div class='mw-codereview-associateform'>$associateText $textbox $associateButton</div></td></tr>";
 	}
