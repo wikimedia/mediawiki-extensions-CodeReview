@@ -954,7 +954,7 @@ class CodeRevision {
 			__METHOD__
 		);
 		foreach( $res as $row ) {
-			if ( $this->id < intval( $row->cr_id ) ) {
+			if ( $this->id > intval( $row->cr_id ) ) {
 				$refs[] = $row;
 			}
 		}

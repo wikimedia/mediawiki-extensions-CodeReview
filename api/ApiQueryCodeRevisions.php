@@ -137,22 +137,37 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			if ( $rev === null ) {
 				$rev = CodeRevision::newFromRow( $repo, $row );
 			}
-			$item['followups'] = array();
-			foreach ( $rev->getFollowupRevisions() as $ref ) {
-				$refItem = array(
-					'revid' => $ref->cr_id,
-					'status' => $ref->cr_status,
-					'timestamp' => wfTimestamp( TS_ISO_8601, $ref->cr_timestamp ),
-					'author' => $ref->cr_author ,
-				);
-				ApiResult::setContent( $refItem, $row->cr_message );
+			$item['followsup'] = $this->addReferenced( $rev );
+			$result->setIndexedTagName( $item['followsup'], 'followsup' );
+		}
 
-				$item['followups'][] = $refItem;
+		if ( isset( $this->props['followedup'] ) ) {
+			if ( $rev === null ) {
+				$rev = CodeRevision::newFromRow( $repo, $row );
 			}
-
-			$result->setIndexedTagName( $item['followups'], 'followups' );
+			$item['followedup'] = $this->addReferenced( $rev );
+			$result->setIndexedTagName( $item['followedup'], 'followedup' );
 		}
 		return $item;
+	}
+
+	/**
+	 * @param $rev CodeRevision
+	 */
+	protected function addReferenced( $rev ) {
+		$items = array();
+		foreach ( $rev->getFollowedUpRevisions() as $ref ) {
+			$refItem = array(
+				'revid' => $ref->cr_id,
+				'status' => $ref->cr_status,
+				'timestamp' => wfTimestamp( TS_ISO_8601, $ref->cr_timestamp ),
+				'author' => $ref->cr_author ,
+			);
+			ApiResult::setContent( $refItem, $ref->cr_message );
+
+			$items[] = $refItem;
+		}
+		return $items;
 	}
 
 	public function getAllowedParams() {
@@ -190,6 +205,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 					'tags',
 					'timestamp',
 					'followups',
+					'followedup',
 				),
 			),
 		);
