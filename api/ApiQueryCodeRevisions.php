@@ -138,7 +138,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 				$rev = CodeRevision::newFromRow( $repo, $row );
 			}
 			$item['followups'] = array();
-			foreach ( $rev->getReferences() as $ref ) {
+			foreach ( $rev->getFollowupRevisions() as $ref ) {
 				$refItem = array(
 					'revid' => $ref->cr_id,
 					'status' => $ref->cr_status,

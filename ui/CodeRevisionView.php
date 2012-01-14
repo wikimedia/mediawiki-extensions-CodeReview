@@ -180,7 +180,7 @@ class CodeRevisionView extends CodeView {
 
 		# Show code relations
 		$userCanAssociate = $this->canAssociate();
-		$references = $this->mRev->getReferences();
+		$references = $this->mRev->getFollowupRevisions();
 		if ( count( $references ) || $userCanAssociate ) {
 			$html .= "<h2 id='code-references'>" . wfMsgHtml( 'code-references' ) .
 				"</h2>\n" . $this->formatReferences( $references, $userCanAssociate );

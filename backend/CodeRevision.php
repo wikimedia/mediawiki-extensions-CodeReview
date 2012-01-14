@@ -909,9 +909,10 @@ class CodeRevision {
 	 *
 	 * Any references from a revision to itself or from a revision to a revision in its past
 	 * (i.e. with a lower revision ID) are silently dropped.
+	 *
 	 * @return array of code_rev database row objects
 	 */
-	public function getReferences() {
+	public function getFollowupRevisions() {
 		$refs = array();
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
@@ -922,6 +923,33 @@ class CodeRevision {
 				'cf_to' => $this->id,
 				'cr_repo_id = cf_repo_id',
 				'cr_id = cf_from'
+			),
+			__METHOD__
+		);
+		foreach( $res as $row ) {
+			if ( $this->id < intval( $row->cr_id ) ) {
+				$refs[] = $row;
+			}
+		}
+		return $refs;
+	}
+
+	/**
+	 * Get all revisions this revision follows up
+	 *
+	 * @return array of code_rev database row objects
+	 */
+	public function getFollowedUpRevisions()  {
+		$refs = array();
+		$dbr = wfGetDB( DB_SLAVE );
+		$res = $dbr->select(
+			array( 'code_relations', 'code_rev' ),
+			array( 'cr_id', 'cr_status', 'cr_timestamp', 'cr_author', 'cr_message' ),
+			array(
+				'cf_repo_id' => $this->repoId,
+				'cf_from' => $this->id,
+				'cr_repo_id = cf_repo_id',
+				'cr_id = cf_to'
 			),
 			__METHOD__
 		);
