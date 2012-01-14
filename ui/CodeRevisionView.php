@@ -186,6 +186,12 @@ class CodeRevisionView extends CodeView {
 				"</h2>\n" . $this->formatReferences( $references, $userCanAssociate );
 		}
 
+		$referenced = $this->mRev->getFollowedUpRevisions();
+		if ( count( $referenced ) ) {
+			$html .= "<h2 id='code-references'>" . wfMsgHtml( 'code-referenced' ) .
+					"</h2>\n" . $this->formatReferences( $referenced, false );
+		}
+
 		# Add revision comments
 		if ( $comments ) {
 			$html .= "<h2 id='code-comments'>" . wfMsgHtml( 'code-comments' ) .

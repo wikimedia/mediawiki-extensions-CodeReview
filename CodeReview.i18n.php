@@ -14,6 +14,7 @@ $messages['en'] = array(
 	'code-rev-title' => '$1 - Code Review',
 	'code-comments' => 'Comments',
 	'code-references' => 'Follow-up revisions',
+	'code-referenced' => 'Followed-up revisions',
 	'code-change-status' => "changed the '''status''' of $1",
 	'code-change-tags' => "changed the '''tags''' for $1",
 	'code-change-removed' => 'removed:',
