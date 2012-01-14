@@ -54,7 +54,7 @@ class CodeRevisionView extends CodeView {
 				: array();
 
 		$this->mRemoveReferences = $wgRequest->getCheck( 'wpRemoveReferences' ) ?
-			$wgRequest->getIntArray( 'wpReferenced', array() ) : array();
+			$wgRequest->getIntArray( 'wpReferences', array() ) : array();
 
 		$this->mAddReferenced = $wgRequest->getCheck( 'wpAddReferencedSubmit' )
 				? $this->stringToRevList( $wgRequest->getText( 'wpAddReferenced' ) )
