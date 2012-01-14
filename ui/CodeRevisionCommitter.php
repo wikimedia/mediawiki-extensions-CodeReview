@@ -113,7 +113,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		}
 		// Remove references if requested
 		if ( count( $removeReferenced ) && $this->validPost( 'codereview-associate' ) ) {
-			$this->mRev->removeReferencesFrom( $removeReferenced );
+			$this->mRev->removeReferencesTo( $removeReferenced );
 		}
 
 		// Add any comments
