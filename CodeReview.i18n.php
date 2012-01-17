@@ -270,6 +270,8 @@ $6',
 $messages['qqq'] = array(
 	'code-rev-title' => 'Title of code review page. "$1" is the name of the project being coded followed by a revision number.',
 	'code-comments' => '{{Identical|Comments}}',
+	'code-references' => 'A follow-up revision is a (newer) revision that follows up a previous (older followed-up) revision.',
+	'code-referenced' => 'A followed-up revision is a (older) revision that has been followed up by a (newer) revision.',
 	'code-change-added' => '{{Identical|Added}}',
 	'codereview-desc' => '{{desc}}',
 	'code-need-group-with-rights' => 'Do not translate the word <code>repoadmin</code>.',
@@ -1357,6 +1359,7 @@ $messages['be-tarask'] = array(
 	'code-rev-title' => '$1 - Рэцэнзаваньне коду',
 	'code-comments' => 'Камэнтары',
 	'code-references' => 'Наступныя вэрсіі',
+	'code-referenced' => 'Папярэднія вэрсіі',
 	'code-change-status' => "зьменены '''статус''' вэрсіі $1",
 	'code-change-tags' => "зьмененыя '''тэгі''' вэрсіі $1",
 	'code-change-removed' => 'выдалена:',
@@ -6922,7 +6925,8 @@ $messages['ia'] = array(
 	'code' => 'Revision de codice',
 	'code-rev-title' => '$1 - Revision de codice',
 	'code-comments' => 'Commentos',
-	'code-references' => 'Versiones de sequimento',
+	'code-references' => 'Versiones subsequente',
+	'code-referenced' => 'Versiones subsequite',
 	'code-change-status' => "cambiava le '''stato''' de v$1",
 	'code-change-tags' => "cambiava le '''etiquettas''' de v$1",
 	'code-change-removed' => 'removite:',
@@ -6972,7 +6976,7 @@ $messages['ia'] = array(
 	'code-field-text' => 'Nota',
 	'code-field-select' => 'Seliger',
 	'code-reference-remove' => 'Remover le associationes seligite',
-	'code-reference-associate' => 'Associar un version de sequimento:',
+	'code-reference-associate' => 'Associar un version subsequente:',
 	'code-reference-associate-submit' => 'Associar',
 	'code-rev-author' => 'Autor:',
 	'code-rev-date' => 'Data:',
@@ -8455,6 +8459,7 @@ $messages['ko'] = array(
 	'code-rev-diff-too-large' => '이 비교는 너무 커 출력하지 못합니다',
 	'code-rev-purge-link' => '새로 고침',
 	'code-rev-total' => '결과의 총 개수: $1',
+	'code-rev-history-link' => '역사',
 	'code-status-new' => '신규',
 	'code-status-fixme' => '수정 필요',
 	'code-status-reverted' => '되돌려짐',
@@ -8463,6 +8468,7 @@ $messages['ko'] = array(
 	'code-status-deferred' => '보류됨',
 	'code-status-old' => '오래됨',
 	'code-signoff-field-user' => '사용자',
+	'code-signoff-field-date' => '날짜',
 	'code-pathsearch-legend' => '이 보관소(repo)에서 있었던 수정 사항을 경로로 검색하기',
 	'code-pathsearch-path' => '경로:',
 	'code-pathsearch-filter' => '필터 적용됨:',
@@ -8485,8 +8491,11 @@ $messages['ko'] = array(
 	'codereview-overview-title' => '둘러보기',
 	'codereview-email-subj' => '[$1] [$2판]: 새 의견이 추가되었습니다.',
 	'codereview-email-body' => '"$1" 사용자가 $3판에 대해 의견을 올렸습니다.
+URL: $2
 
-전체 URL: $2
+$3판에 대한 요약:
+
+$5
 
 내용:
 
@@ -8499,14 +8508,16 @@ $4',
 변경 요약:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: 자동 회귀 테스트를 감지',
-	'codereview-email-body3' => '자동 테스트 과정에서 $1의 변경 사항으로 인한 회귀 버그를 발견했습니다.
+	'codereview-email-subj3' => '[$1 $2]: 버전 상태가 바뀌었습니다',
+	'codereview-email-body3' => '"$1" 사용자가 $2판의 상태를 "$4"로 바꾸었습니다.
+URL: $5
 
-전체 URL: $2
+이전 상태: $3
+바뀐 상태: $4
 
-커밋 요약:
+$2판에 대한 커밋 요약:
 
-$3',
+$6',
 	'code-stats' => '통계',
 	'code-stats-header' => '$1 저장소 통계',
 	'code-stats-main' => '$6 $5 기준으로, 이 저장소에는 [[Special:Code/$3/author|$4명의 저자]]가 작성한 $2개의 판이 있습니다.',
