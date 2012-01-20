@@ -1593,6 +1593,7 @@ $messages['bg'] = array(
 	'codereview-desc' => '[[Special:Code|Инструмент за преглеждане на код]] с [[Special:RepoAdmin|поддръжка на Subversion]]',
 	'code-no-repo' => 'Не е конфигурирано хранилище!',
 	'code-need-repoadmin-rights' => 'За създаване на хранилище са необходими права на repoadmin',
+	'code-repo-not-found' => "Хранилището '''$1''' не съществува!",
 	'code-load-diff' => 'Зареждане на разлики...',
 	'code-notes' => 'скорошни коментари',
 	'code-statuschanges' => 'промени на състоянието',
@@ -1706,7 +1707,7 @@ $4',
 	'right-codereview-link-user' => 'Свързване на имената на авторите с имена на уики потребители',
 	'specialpages-group-developer' => 'Инструменти за разработчици',
 	'group-svnadmins' => 'SVN администратори',
-	'group-svnadmins-member' => 'SVN администратор',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN администратор}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN администратори',
 );
 
