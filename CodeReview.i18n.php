@@ -16614,6 +16614,7 @@ $messages['zh-hans'] = array(
 	'code-rev-title' => '$1 - 代码复审',
 	'code-comments' => '评论',
 	'code-references' => '后续修订',
+	'code-referenced' => '随访的修订',
 	'code-change-status' => "改变了$1的'''状态'''",
 	'code-change-tags' => "改变了$1的'''标签'''",
 	'code-change-removed' => '移除：',
