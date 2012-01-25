@@ -1885,6 +1885,7 @@ $messages['br'] = array(
 	'code-rev-title' => '$1 - Adweladenn god',
 	'code-comments' => 'Evezhiadennoù',
 	'code-references' => 'Daveoù davet an adweladennoù',
+	'code-referenced' => 'Adweladennoù heuliet',
 	'code-change-status' => "en deus kemmet '''statud''' $1",
 	'code-change-tags' => "en deus kemmet ar '''balizennoù''' evit $1",
 	'code-change-removed' => 'dilamet :',
