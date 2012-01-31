@@ -10493,8 +10493,10 @@ $messages['nds-nl'] = array(
 /** Nepali (नेपाली)
  * @author Bhawani Gautam
  * @author Bhawani Gautam Rhk
+ * @author RajeshPandey
  */
 $messages['ne'] = array(
+	'code-comments' => 'टिप्पणीहरु',
 	'code-authors' => 'लेखकहरु',
 	'code-author-link' => 'लिङ्क गर्ने?',
 	'code-author-unlink' => 'लिङ्क तोड़ने',
@@ -10502,6 +10504,7 @@ $messages['ne'] = array(
 	'code-field-path' => 'पथ',
 	'code-field-text' => 'सूचना',
 	'code-field-select' => 'चुन्ने',
+	'code-rev-message' => 'टिप्पणी :',
 	'code-status-new' => 'नयाँ',
 	'code-status-ok' => 'हुन्छ',
 	'code-signoff-field-user' => 'प्रयोगकर्ता',
@@ -10518,6 +10521,7 @@ $messages['nl'] = array(
 	'code-rev-title' => '$1 - Programmacodecontrole',
 	'code-comments' => 'Opmerkingen',
 	'code-references' => 'Versies met correcties',
+	'code-referenced' => 'Corrigerende versies',
 	'code-change-status' => "heeft de '''status''' voor versie $1 gewijzigd",
 	'code-change-tags' => "heeft de '''labels''' voor versie $1 gewijzigd",
 	'code-change-removed' => 'verwijderd:',
