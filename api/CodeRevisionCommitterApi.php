@@ -2,7 +2,7 @@
 
 /**
  * Variation of CodeRevisionCommiter for use in the API. Removes the post and token checking from validPost
- * API can/will do the POST checking (and token?)
+ * API can/will do both the POST and token
  */
 class CodeRevisionCommitterApi extends CodeRevisionCommitter {
 	/**

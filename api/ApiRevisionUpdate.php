@@ -94,6 +94,14 @@ class ApiRevisionUpdate extends ApiBase {
 		return true;
 	}
 
+	public function needsToken() {
+		return true;
+	}
+
+	public function getTokenSalt() {
+		return '';
+	}
+
 	public function getAllowedParams() {
 		$flags = CodeRevision::getPossibleFlags();
 		return array(
@@ -144,6 +152,7 @@ class ApiRevisionUpdate extends ApiBase {
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
 			),
+			'token' => null,
 		);
 	}
 
@@ -161,6 +170,7 @@ class ApiRevisionUpdate extends ApiBase {
 			'removereferences' => 'Remove references from this revision',
 			'addreferenced' => 'Add referenced revisions from this revision',
 			'removereferenced' => 'Remove referenced revisions from this revision',
+			'token' => 'Edit token. You can get one of these through prop=info.' ,
 		);
 	}
 
