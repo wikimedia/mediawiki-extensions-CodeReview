@@ -6726,6 +6726,7 @@ $messages['ht'] = array(
 );
 
 /** Hungarian (Magyar)
+ * @author Bináris
  * @author BáthoryPéter
  * @author Dani
  * @author Dj
@@ -6760,7 +6761,7 @@ $messages['hu'] = array(
 	'code-tags' => 'címkék',
 	'code-tags-no-tags' => 'Nincs egyetlen címke sem ebben a tárolóban.',
 	'code-authors-text' => 'Alább a tárhelyen műveleteket végző szerzők láthatóak a commitok neve szerint rendezve. A helyi, wikis fiókok zárójelben szerepelnek. Lehetséges, hogy az adatok a gyorsítótárból származnak.',
-	'code-author-haslink' => 'Ez a szerző megegyezi a wiki $1 nevű szerkesztőjével',
+	'code-author-haslink' => 'Ez a szerző megegyezik a wiki $1 nevű szerkesztőjével',
 	'code-author-orphan' => '$1 nevű SVN felhasználó/szerző nem rendelkezik felhasználói fiókkal ezen a wikin',
 	'code-author-dolink' => 'Szerző összekapcsolása a wiki egyik szerkesztőjével:',
 	'code-author-alterlink' => 'A szerzőhöz kapcsolt felhasználói fiók megváltoztatása:',
