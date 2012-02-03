@@ -3051,7 +3051,7 @@ Kommentar:
 $6',
 	'code-stats' => 'Statistiken',
 	'code-stats-header' => 'Statistik des Repositoriums „$1“',
-	'code-stats-main' => 'Mit Stand $1 wurden von [[Special:Code/$3/author|$4 {{PLURAL:$4|Autor|Autoren}}]] $2 {{PLURAL:$2|Revision|Revisionen}} im Repositorium durchgeführt.',
+	'code-stats-main' => 'Mit Stand $5, $6 Uhr wurden von [[Special:Code/$3/author|$4 {{PLURAL:$4|Autor|Autoren}}]] $2 {{PLURAL:$2|Revision|Revisionen}} im Repositorium durchgeführt.',
 	'code-stats-status-breakdown' => 'Anzahl der Revisionen pro Status',
 	'code-stats-fixme-breakdown' => 'Aufschlüsselung der Revisionen mit FIXMEs pro Autor',
 	'code-stats-fixme-breakdown-path' => 'Aufschlüsselung der Revisionen mit FIXMEs pro Pfad',
@@ -3860,6 +3860,7 @@ $6',
 );
 
 /** Spanish (Español)
+ * @author Armando-Martin
  * @author Crazymadlover
  * @author Danke7
  * @author Dferg
@@ -3881,6 +3882,7 @@ $messages['es'] = array(
 	'code-rev-title' => '$1 - Revisión de Código',
 	'code-comments' => 'Comentarios',
 	'code-references' => 'Revisiones de seguimiento',
+	'code-referenced' => 'Revisiones de seguimiento',
 	'code-change-status' => "cambiado el '''status''' de $1",
 	'code-change-tags' => "cambiadas las '''etiquetas''' de $1",
 	'code-change-removed' => 'quitados:',
@@ -3890,6 +3892,9 @@ $messages['es'] = array(
 	'code-prop-changes' => 'Registro de estatus y etiquetado',
 	'codereview-desc' => "[[Special:Code|Herramienta de revisión de código]] con [[Special:RepoAdmin|apoyo de ''Subversion'']]",
 	'code-no-repo' => '¡No está configurado el repositorio!',
+	'code-create-repo' => 'Ir a [[Special:RepoAdmin|RepoAdmin]] para crear un repositorio',
+	'code-need-repoadmin-rights' => 'Son necesarios derechos como "RepoAdmin" para poder crear un repositorio',
+	'code-need-group-with-rights' => 'No existe ningún grupo con derechos de "repoadmin". Agregue uno para poder agregar un nuevo repositorio',
 	'code-repo-not-found' => "Repositorio '''$1''' no existe!",
 	'code-load-diff' => 'Cargando diferencias...',
 	'code-notes' => 'comentarios recientes',
@@ -4061,6 +4066,7 @@ $6',
 	'code-stats-fixme-path' => 'Revisiones a arreglar en la ruta: $1',
 	'code-stats-new-breakdown' => 'Desglose de las revisiones fixme por autor',
 	'code-stats-new-breakdown-path' => 'Desglose de nuevas revisiones por ruta',
+	'code-stats-new-path' => 'Nuevas revisiones para la ruta de acceso: $1',
 	'code-stats-count' => 'Número de revisiones',
 	'code-tooltip-withsummary' => 'r $1 [ $2 ] por $3 - $4',
 	'code-tooltip-withoutsummary' => 'r $1 [ $2 ] por $3',
