@@ -11241,6 +11241,7 @@ $messages['pdc'] = array(
 	'code-status-old' => 'ald',
 	'code-signoff-field-user' => 'Yuuser',
 	'code-revfilter-cr_author' => 'Schreiwer = $1',
+	'code-rev-submit' => 'Enneringe beilege',
 	'codereview-subtitle' => 'Fer $1',
 	'code-stats' => 'Nummere',
 	'repoadmin-new-button' => 'Schtaerte',
