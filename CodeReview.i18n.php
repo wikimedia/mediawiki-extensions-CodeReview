@@ -238,6 +238,17 @@ $6',
 	'right-codereview-associate' => 'Manage revision associations',
 	'right-codereview-review-own' => 'Mark your own revisions as OK or Resolved',
 
+	'action-repoadmin' => 'manage code repositories',
+	'action-codereview-use' => 'use of Special:Code',
+	'action-codereview-add-tag' => 'add new tags to revisions',
+	'action-codereview-remove-tag' => 'remove tags from revisions',
+	'action-codereview-post-comment' => 'add comments on revisions',
+	'action-codereview-set-status' => 'change revisions status',
+	'action-codereview-signoff' => 'sign off on revisions',
+	'action-codereview-link-user' => 'link authors to wiki users',
+	'action-codereview-associate' => 'manage revision associations',
+	'action-codereview-review-own' => 'mark your own revisions as OK or Resolved',
+
 	'specialpages-group-developer' => 'Developer tools',
 
 	'group-svnadmins' => 'SVN admins',
