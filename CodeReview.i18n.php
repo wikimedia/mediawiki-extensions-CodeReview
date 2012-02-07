@@ -236,7 +236,7 @@ $6',
 	'right-codereview-signoff' => 'Sign off on revisions',
 	'right-codereview-link-user' => 'Link authors to wiki users',
 	'right-codereview-associate' => 'Manage revision associations',
-	'right-codereview-review-own' => 'Mark your own revisions as "{{int:code-status-ok}} or "{{int:code-status-resolved}}"',
+	'right-codereview-review-own' => 'Mark your own revisions as "{{int:code-status-ok}}" or "{{int:code-status-resolved}}"',
 
 	'action-repoadmin' => 'manage code repositories',
 	'action-codereview-use' => 'use of Special:Code',
