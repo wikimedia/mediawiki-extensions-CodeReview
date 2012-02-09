@@ -11394,6 +11394,7 @@ $messages['pfl'] = array(
 );
 
 /** Polish (Polski)
+ * @author BeginaFelicysym
  * @author Derbeth
  * @author Equadus
  * @author Leinad
@@ -11615,7 +11616,7 @@ $6',
 	'right-codereview-signoff' => 'Autorytarnie zaakceptuj wersje',
 	'right-codereview-link-user' => 'Linkowanie autorów do ich kont na wiki',
 	'right-codereview-associate' => 'Zarządzanie powiązaniem wersji',
-	'right-codereview-review-own' => 'Oznaczanie moich zmian jako „OK” lub załatwionych',
+	'right-codereview-review-own' => 'Oznaczanie własnych zmian jako "{{int:code-status-ok}}" lub "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Narzędzia dewelopera',
 	'group-svnadmins' => 'Administratorzy SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|administrator SVN|administratorka SVN}}',
