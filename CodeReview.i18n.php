@@ -16995,6 +16995,7 @@ $6',
  * @author Horacewai2
  * @author Liangent
  * @author Mark85296341
+ * @author Oapbtommy
  * @author Skjackey tse
  * @author Waihorace
  */
@@ -17005,7 +17006,7 @@ $messages['zh-hant'] = array(
 	'code-references' => '後續修訂',
 	'code-change-status' => "改變了$1的'''狀態'''",
 	'code-change-tags' => "改變了$1的'''標籤'''",
-	'code-change-removed' => '移除：',
+	'code-change-removed' => '已被移除：',
 	'code-change-added' => '增加：',
 	'code-old-status' => '舊狀態',
 	'code-new-status' => '新狀態',
