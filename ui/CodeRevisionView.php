@@ -231,7 +231,7 @@ class CodeRevisionView extends CodeView {
 		if ( $prev ) {
 			$prevTarget = SpecialPage::getTitleFor( 'Code', "$repo/$prev" );
 			$links[] = '&lt;&#160;' . $this->skin->link( $prevTarget, $this->mRev->getIdString( $prev ),
-				array(), array( 'path' => $this->mPath ) ).wfUILang()->getDirMark();
+				array(), array( 'path' => $this->mPath ) ).$wgLang->getDirMark();
 		}
 
 		$revText = "<b>" . $this->mRev->getIdString( $rev ) . "</b>";
@@ -239,7 +239,7 @@ class CodeRevisionView extends CodeView {
 		if ( $viewvc ) {
 			$url = htmlspecialchars( "$viewvc/?view=rev&revision=$rev" );
 			$viewvcTxt = wfMsgHtml( 'code-rev-rev-viewvc' );
-			$revText .= " (<a href=\"$url\" title=\"revision $rev\">$viewvcTxt</a>)".wfUILang()->getDirMark();
+			$revText .= " (<a href=\"$url\" title=\"revision $rev\">$viewvcTxt</a>)".$wgLang->getDirMark();
 		}
 		$links[] = $revText;
 
@@ -820,7 +820,8 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	protected function commentStyle( $comment ) {
-		$align = wfUILang()->AlignStart();
+		global $wgLang;
+		$align = $wgLang->AlignStart();
 		$depth = $comment->threadDepth();
 		$margin = ( $depth - 1 ) * 48;
 		return "margin-$align: ${margin}px";
