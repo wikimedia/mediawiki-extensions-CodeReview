@@ -247,7 +247,7 @@ $6',
 	'action-codereview-signoff' => 'sign off on revisions',
 	'action-codereview-link-user' => 'link authors to wiki users',
 	'action-codereview-associate' => 'manage revision associations',
-	'action-codereview-review-own' => 'mark your own revisions as "{{int:code-status-ok}} or "{{int:code-status-resolved}}"',
+	'action-codereview-review-own' => 'mark your own revisions as "{{int:code-status-ok}}" or "{{int:code-status-resolved}}"',
 
 	'specialpages-group-developer' => 'Developer tools',
 
