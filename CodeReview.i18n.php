@@ -283,7 +283,9 @@ $messages['qqq'] = array(
 	'code-rev-title' => 'Title of code review page. "$1" is the name of the project being coded followed by a revision number.',
 	'code-comments' => '{{Identical|Comments}}',
 	'code-references' => 'A follow-up revision is a (newer) revision that follows up a previous (older followed-up) revision.',
-	'code-referenced' => 'A followed-up revision is a (older) revision that has been followed up by a (newer) revision.',
+	'code-referenced' => 'This is a header of a list of revisions which the currently showed revision follows up.
+
+A followed-up revision is a (older) revision that has been followed up by a (newer) revision.',
 	'code-change-added' => '{{Identical|Added}}',
 	'codereview-desc' => '{{desc}}',
 	'code-need-group-with-rights' => 'Do not translate the word <code>repoadmin</code>.',
@@ -5992,7 +5994,7 @@ $messages['he'] = array(
 	'code-rev-title' => 'גרסה $1 – סקירת קוד',
 	'code-comments' => 'הערות',
 	'code-references' => 'גרסאות המשך',
-	'code-referenced' => 'גרסאות בעלות גרסאות עוקבות',
+	'code-referenced' => 'רשימת גרסאות שגרסה זו ממשיכה',
 	'code-change-status' => "שינה את ה'''מצב''' של גרסה $1",
 	'code-change-tags' => "שינה את ה'''תגים''' של גרסה $1",
 	'code-change-removed' => 'הוסר:',
@@ -6042,7 +6044,7 @@ $messages['he'] = array(
 	'code-field-text' => 'הערה',
 	'code-field-select' => 'בחירה',
 	'code-reference-remove' => 'הסרת השיוכים הנבחרים',
-	'code-reference-associate' => 'שיוך גרסה עוקבת:',
+	'code-reference-associate' => 'שיוך גרסת המשך:',
 	'code-reference-associate-submit' => 'שיוך',
 	'code-rev-author' => 'כותב:',
 	'code-rev-date' => 'תאריך:',
@@ -6131,14 +6133,14 @@ $5
 $4',
 	'codereview-email-subj2' => '[$1] [גרסה $2]: גרסאות המשך',
 	'codereview-email-body2' => 'המשתמש "$1" הוסיף גרסאות המשך לגרסה $2.
+כתובת: $5.
 
-הכתובת המלאה לגרסת ההמשך: $5.
-תקציר השינוי:
+תקציר השינוי לגרסה הקודמת $2:
 
 $6
 
-הכתובת המלאה: $3
-תקציר השינוי:
+כתובת גרסת המשך: $3
+תקציר השינוי מאת "$1":
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: מצב הגרסה השתנה',
