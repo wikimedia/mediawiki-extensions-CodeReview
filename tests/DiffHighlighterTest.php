@@ -7,6 +7,7 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 			CodeDiffHighlighter::parseChunkDelimiter(
 				"@@ -1,3 +1,4 @@\r\n"
 			);
+			$this->assertTrue( true, 'Managed to parse a chunk with \r\n' );
 		} catch( Exception $e ) {
 			$this->fail( "parseChunkDelimiter() could not parse a chunk finishing with '\\r\\n' This is happening on Windows" );
 		}
@@ -17,6 +18,7 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 			CodeDiffHighlighter::parseChunkDelimiter(
 				"@@ -1,3 +1,4 @@\n"
 			);
+			$this->assertTrue( true, 'Managed to parse a chunk with \n' );
 		} catch( Exception $e ) {
 			$this->fail( "parseChunkDelimiter() could not parse a chunk finishing with '\\n' This is happening on Unix systems" );
 		}
