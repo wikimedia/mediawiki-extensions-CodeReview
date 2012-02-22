@@ -214,6 +214,14 @@ class CodeDiffHighlighter {
 	 *  - l is the starting line number
 	 *  - s is the number of lines the change hunk applies to
 	 *
+	 * 's', for the number of lines, is optional and default to 1.
+	 * When omitted, the previous comma will be skipped as well. So all
+	 * following lines are valid too:
+	 *
+	 * @@ -l,s +l @@
+	 * @@ -l +l,s @@
+	 * @@ -l +l @@
+	 *
 	 * NOTE: visibility is 'public' since the function covered by tests.
 	 *
 	 * @param $chunk string a one line chunk as described above
@@ -224,16 +232,33 @@ class CodeDiffHighlighter {
 
 		# regex snippet to capture a number
 		$n = "(\d+)";
-
-		$matches = preg_match( "/^@@ -$n,$n \+$n,$n @@$/", $chunkHeader, $m );
-		array_shift( $m );
-
-		if( $matches !== 1 ) {
-			# We really really should have matched something!
-			throw new MWException(
-				__METHOD__ . " given an invalid chunk header: '$chunkHeader'\n"
-			);
+		$s = "(?:,(\d+))";
+		$matches = preg_match( "/^@@ -$n$s \+$n$s @@$/", $chunkHeader, $m );
+		if( $matches === 1 ) {
+			array_shift( $m );
+			return $m;
 		}
-		return $m;
+
+		$s_default_value = 1;
+
+		$matches = preg_match( "/^@@ -$n$s \+$n @@$/", $chunkHeader, $m );
+		if( $matches === 1 ) {
+			return array( $m[1], $m[2], $m[3], $s_default_value );
+		}
+
+		$matches = preg_match( "/^@@ -$n \+$n$s @@$/", $chunkHeader, $m );
+		if( $matches === 1 ) {
+			return array( $m[1], $s_default_value, $m[2], $m[3] );
+		}
+
+		$matches = preg_match( "/^@@ -$n \+$n @@$/", $chunkHeader, $m );
+		if( $matches === 1 ) {
+			return array( $m[1], $s_default_value, $m[2], $s_default_value );
+		}
+
+		# We really really should have matched something!
+		throw new MWException(
+			__METHOD__ . " given an invalid chunk header: '$chunkHeader'\n"
+		);
 	}
 }
