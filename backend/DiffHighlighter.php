@@ -95,12 +95,12 @@ class CodeDiffHighlighter {
 		}
 
 		# Skip line number when they do not apply
-		$left = $right = '&#160;';
+		$left = $right = ' '; // non-breaking space
 		$inlineWrapEl = 'span';
 
 		switch ( $class ) {
 		case 'chunkdelimiter':
-			$left = $right = '&mdash;';
+			$left = $right = '—'; // &mdash;
 			break;
 		case 'unchanged':
 			$left  = $this->left;
