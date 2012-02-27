@@ -192,12 +192,12 @@ table.mw-codereview-meta td {
 
 .mw-codereview-diff td.ins ins {
 	background: #EDFFED;
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .mw-codereview-diff td.del del {
 	background: #FFEDED;
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .mw-codereview-diff td.chunkdelimiter {
