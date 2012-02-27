@@ -86,18 +86,19 @@ class CodeDiffHighlighter {
 
 	function formatLine( $content, $class = null ) {
 
-		if( is_null($class) ) {
+		if ( $class === null ) {
 			return Html::rawElement( 'tr', $this->getLineIdAttr(),
-					  Html::Element( 'td', array( 'class'=>'linenumbers' ), $this->left  )
-					. Html::Element( 'td', array( 'class'=>'linenumbers' ), $this->right )
-					. Html::Element( 'td', array() , $content )
+					  Html::element( 'td', array( 'class' => 'linenumbers' ), $this->left  )
+					. Html::element( 'td', array( 'class' => 'linenumbers' ), $this->right )
+					. Html::rawElement( 'td', array() , Html::element( 'span', array() , $content ) )
 			);
 		}
 
 		# Skip line number when they do not apply
 		$left = $right = '&#160;';
+		$inlineWrapEl = 'span';
 
-		switch( $class ) {
+		switch ( $class ) {
 		case 'chunkdelimiter':
 			$left = $right = '&mdash;';
 			break;
@@ -107,20 +108,22 @@ class CodeDiffHighlighter {
 			break;
 		case 'del':
 			$left  = $this->left;
+			$inlineWrapEl = 'del';
 			break;
 		case 'ins':
 			$right = $this->right;
+			$inlineWrapEl = 'ins';
 			break;
 
 		default:
 			# Rely on $left, $right initialization above
 		}
 
-		$classAttr = is_null($class) ? array() : array( 'class' => $class );
+		$classAttr = is_null( $class ) ? array() : array( 'class' => $class );
 		return Html::rawElement( 'tr', $this->getLineIdAttr(),
-				  Html::rawElement( 'td', array( 'class'=>'linenumbers' ), $left  )
-				. Html::rawElement( 'td', array( 'class'=>'linenumbers' ), $right )
-				. Html::Element( 'td', $classAttr, $content )
+				  Html::element( 'td', array( 'class' => 'linenumbers' ), $left  )
+				. Html::element( 'td', array( 'class' => 'linenumbers' ), $right )
+				. Html::rawElement( 'td', $classAttr , Html::element( $inlineWrapEl, array() , $content ) )
 		);
 	}
 
