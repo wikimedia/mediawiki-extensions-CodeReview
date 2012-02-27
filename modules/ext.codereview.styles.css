@@ -11,16 +11,19 @@ table.mw-codereview-meta td {
 .TablePager_col_comments {
 	text-align: center;
 }
+
 .TablePager_col_cr_message {
 	max-width: 20em;
 	overflow: hidden;
 }
+
 /* @noflip */
 .sitedir-ltr .TablePager_col_cr_message,
 .sitedir-ltr .TablePager_col_cc_text,
 .sitedir-ltr .mw-codereview-message {
 	direction: ltr;
 }
+
 /* @noflip */
 .sitedir-rtl .TablePager_col_cr_message,
 .sitedir-rtl .TablePager_col_cc_text,
@@ -72,34 +75,41 @@ table.mw-codereview-meta td {
 .mw-codereview-status-fixme td {
 	background: #ff9999 !important;
 }
+
 .mw-codereview-status-fixme:hover,
 .mw-codereview-status-fixme:hover td {
 	background: #df0000 !important;
 	color: white;
 }
+
 .mw-codereview-status-fixme:hover a,
 .mw-codereview-status-fixme:hover td a {
 	color: #ff0 !important;
 }
+
 .mw-codereview-status-resolved,
 .mw-codereview-status-resolved td {
 	background: #c0ffc0 !important;
 }
+
 .mw-codereview-status-resolved:hover,
 .mw-codereview-status-resolved:hover td {
 	background: #a0dfa0 !important;
 }
+
 .mw-codereview-status-reverted,
 .mw-codereview-status-reverted td {
 	background: #ddd !important;
 	color: #666 !important;
 	text-decoration: line-through !important;
 }
+
 .mw-codereview-status-reverted:hover,
 .mw-codereview-status-reverted:hover td {
 	background: #aaa !important;
 	text-decoration: line-through !important;
 }
+
 .mw-codereview-status-deferred,
 .mw-codereview-status-deferred td {
 	color: #666;
@@ -126,6 +136,7 @@ table.mw-codereview-meta td {
 .mw-codereview-success {
 	color: #1a2;
 }
+
 .mw-codereview-fail {
 	color: #d21;
 }
@@ -148,6 +159,7 @@ table.mw-codereview-meta td {
 	background-color: #EEE;
 	color: black;
 }
+
 .mw-codereview-diff tr.patchedfile td {
 	padding: 1em;
 	border: 1px solid #CCC;
@@ -169,14 +181,17 @@ table.mw-codereview-meta td {
 	-o-user-select: none;
 	user-select: none;
 }
+
 .mw-codereview-diff td.ins {
 	text-decoration: none;
 	color: green;
 }
+
 .mw-codereview-diff td.del {
 	text-decoration: none;
 	color: red;
 }
+
 .mw-codereview-diff td.chunkdelimiter {
 	background-color: #EDEDFF;
 	color: black;
@@ -193,11 +208,16 @@ div.mw-wordcloud {
 	width: 100%;
 }
 
-.mw-wordcloud-size-1, .mw-wordcloud-size-2,
-.mw-wordcloud-size-3, .mw-wordcloud-size-4,
-.mw-wordcloud-size-5, .mw-wordcloud-size-6,
-.mw-wordcloud-size-7, .mw-wordcloud-size-8,
-.mw-wordcloud-size-9, .mw-wordcloud-size-0 {
+.mw-wordcloud-size-1,
+.mw-wordcloud-size-2,
+.mw-wordcloud-size-3,
+.mw-wordcloud-size-4,
+.mw-wordcloud-size-5,
+.mw-wordcloud-size-6,
+.mw-wordcloud-size-7,
+.mw-wordcloud-size-8,
+.mw-wordcloud-size-9,
+.mw-wordcloud-size-0 {
 	padding: 4px;
 	letter-spacing: 0.1em;
 }
@@ -206,38 +226,47 @@ a.mw-wordcloud-size-1 {
 	color: #222;
 	font-size: 240%;
 }
+
 a.mw-wordcloud-size-2 {
 	color: #333;
 	font-size:220%;
 }
+
 a.mw-wordcloud-size-3 {
 	color: #444;
 	font-size: 200%;
 }
+
 a.mw-wordcloud-size-4 {
 	color: #555;
 	font-size: 180%;
 }
+
 a.mw-wordcloud-size-5 {
 	color: #666;
 	font-size: 160%;
 }
+
 a.mw-wordcloud-size-6 {
 	color: #777;
 	font-size: 140%;
 }
+
 a.mw-wordcloud-size-7 {
 	color: #888;
 	font-size: 120%;
 }
+
 a.mw-wordcloud-size-8 {
 	color: #999;
 	font-size: 100%;
 }
+
 a.mw-wordcloud-size-9 {
 	color: #aaa;
 	font-size: 90%;
 }
+
 a.mw-wordcloud-size-10,
 a.mw-wordcloud-size-0 {
 	color: #bbb;
