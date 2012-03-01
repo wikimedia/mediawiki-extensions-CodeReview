@@ -12850,6 +12850,7 @@ $6',
  * @author Eleferen
  * @author Engineering
  * @author Eugrus
+ * @author Express2000
  * @author Ferrer
  * @author JenVan
  * @author Kaganer
@@ -13074,6 +13075,15 @@ $6',
 	'right-codereview-link-user' => 'Связь авторов с учётными записями вики-проекта',
 	'right-codereview-associate' => 'управление ассоциациями ревизий',
 	'right-codereview-review-own' => 'Отметить собственные ревизии как «{{int:code-status-ok}}» или «{{int:code-status-resolved}}»',
+	'action-repoadmin' => 'управление репозиторием кода',
+	'action-codereview-use' => 'использование Special:Code',
+	'action-codereview-add-tag' => 'добавление новых меток к ревизиям',
+	'action-codereview-remove-tag' => 'удаление меток с ревизий',
+	'action-codereview-post-comment' => 'добавление комментариев к ревизиям',
+	'action-codereview-set-status' => 'смену статуса ревизий',
+	'action-codereview-signoff' => 'подписание ревизий',
+	'action-codereview-link-user' => 'связывание авторов с вики-пользователями',
+	'action-codereview-associate' => 'управление ассоциациями ревизий',
 	'action-codereview-review-own' => 'пометка собственных ревизий как «{{int:code-status-ok}}» или «{{int:code-status-resolved}}»',
 	'specialpages-group-developer' => 'Инструменты разработчика',
 	'group-svnadmins' => 'Администраторы SVN',
