@@ -15727,6 +15727,7 @@ $6',
  * @author Cekli829
  * @author Joseph
  * @author Srhat
+ * @author Suelnur
  */
 $messages['tr'] = array(
 	'code' => 'Kod Gözden Geçirmesi',
@@ -15812,7 +15813,7 @@ $messages['tr'] = array(
 	'code-signoff-field-date' => 'Tarih',
 	'code-pathsearch-legend' => 'Bu depodaki revizyonları yola göre ara',
 	'code-pathsearch-path' => 'Yol:',
-	'code-pathsearch-filter' => 'Uygulanan filtre:',
+	'code-pathsearch-filter' => 'Sadece göster:',
 	'code-revfilter-cr_status' => 'Durum = $1',
 	'code-revfilter-cr_author' => 'Yazar = $1',
 	'code-revfilter-clear' => 'Filtreyi temizle',
@@ -16405,8 +16406,8 @@ $messages['vi'] = array(
 	'code-rev-comment-by' => '$1 ghi chú',
 	'code-rev-comment-preview' => 'Xem trước',
 	'code-rev-inline-preview' => 'Xem trước:',
-	'code-rev-diff' => 'So sánh',
-	'code-rev-diff-link' => 'so sánh',
+	'code-rev-diff' => 'Khác biệt',
+	'code-rev-diff-link' => 'khác',
 	'code-rev-diff-too-large' => 'Bản so sánh quá lớn để hiển thị.',
 	'code-rev-purge-link' => 'làm mới',
 	'code-rev-total' => 'Tổng số kết quả: $1',
