@@ -6231,6 +6231,7 @@ $6',
 
 /** Hindi (हिन्दी)
  * @author Ansumang
+ * @author Siddhartha Ghai
  */
 $messages['hi'] = array(
 	'code' => 'कोड़ समीक्षा',
@@ -6304,7 +6305,7 @@ $messages['hi'] = array(
 	'code-rev-purge-link' => 'पर्ज करें',
 	'code-rev-total' => 'परिणामों की कुल संख्या: $1',
 	'code-rev-history-link' => 'इतिहास',
-	'code-status-new' => 'नई',
+	'code-status-new' => 'नया',
 	'code-status-reverted' => 'पूर्ववत करा गया',
 	'code-status-resolved' => 'संशोधित हुई',
 	'code-status-ok' => 'ठीक है',
