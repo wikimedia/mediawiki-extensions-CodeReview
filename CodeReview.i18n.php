@@ -8399,11 +8399,14 @@ $messages['ka'] = array(
 	'codereview-reply-link' => 'პასუხი',
 	'codereview-overview-title' => 'გადახედვა',
 	'codereview-email-subj' => '[$1 $2]: დაემატა ახალი კომენტარი',
-	'codereview-email-body' => 'მომხმარებელმა "$1" დადო კომენტარი $3-ზე.
+	'codereview-email-body' => 'მომხმარებელმა "$1" დატოვა კომენტარი $3-ზე.
+URL: $2
 
-ბმული: $2
+მოკლე აღწერა $3:
 
-კომენტარი:
+$5
+
+$1-ის კომენტარი:
 
 $4',
 	'codereview-email-body3' => 'მომხმარებელმა „$1“ შეცვალა $2-ის სტატუსი.
@@ -8412,6 +8415,8 @@ $4',
 
 ახალი სტატუსი: $4',
 	'code-stats' => 'სტატისტიკა',
+	'code-tooltip-withsummary' => 'r$1 [$2] $3 — $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] $3',
 	'repoadmin-new-button' => 'შექმნა',
 	'repoadmin-edit-button' => 'კარგი',
 	'repoadmin-edit-sucess' => 'საცავი «[[Special:Code/$1|$1]]» წარმატებით შეიცვალა',
