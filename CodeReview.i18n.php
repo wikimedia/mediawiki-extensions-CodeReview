@@ -8409,12 +8409,30 @@ $5
 $1-ის კომენტარი:
 
 $4',
-	'codereview-email-body3' => 'მომხმარებელმა „$1“ შეცვალა $2-ის სტატუსი.
+	'codereview-email-body3' => 'მომხმარებელმა "$1" შეცვალა $2-ის სტატუსი "$4"-ზე
+URL: $5
+
+ძველი სტატუსი:  $3
+ახალი სტატუსი: $4
+
+რეზიუმეს ფიქსირება $2-თვის:
+
+$6',
+	'codereview-email-body4' => 'მომხმარებელმა "$1" შეცვალა $2-ის სტატუსი "$4"-ზე და დატოვა კომენტარი.
+URL: $5
 
 ძველი სტატუსი: $3
+ახალი სტატუსი: $4
 
-ახალი სტატუსი: $4',
+რეზიუმეს ფიქსაცია $2-თვის:
+
+$7
+
+$1-ის კომენტარი:
+
+$6',
 	'code-stats' => 'სტატისტიკა',
+	'code-stats-count' => 'ვერსიების რაოდენობა',
 	'code-tooltip-withsummary' => 'r$1 [$2] $3 — $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] $3',
 	'repoadmin-new-button' => 'შექმნა',
@@ -8427,6 +8445,7 @@ $4',
 	'right-codereview-post-comment' => 'რედაქციისთვის კომენტარის ჩამატება',
 	'right-codereview-set-status' => 'რედაქციის სტატუსის ცვლილება',
 	'right-codereview-link-user' => 'ვიკიპროექტელებისა და რედაქციების კავშირი',
+	'action-codereview-use' => 'Special:Code-ის გამოყენება',
 	'specialpages-group-developer' => 'შემქმნელის ხელსაწყოები',
 	'group-svnadmins' => 'SVN ადმინისტრატორები',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN ადმინისტრატორი}}',
@@ -14895,6 +14914,7 @@ $messages['sw'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Aswn
  * @author Shanmugamp7
  * @author TRYPPN
  * @author செல்வா
@@ -14984,6 +15004,7 @@ $messages['ta'] = array(
 	'codereview-email-subj' => '[ $1  $2 ]:  புதிய கருத்துரை சேர்க்கப்பட்டது.',
 	'codereview-email-subj2' => '[ $1  $2 ]: தொடர்செயல் மாற்றங்கள்',
 	'code-stats' => 'புள்ளிவிவரங்கள்',
+	'code-stats-count' => 'திருத்தங்களின் எண்ணிக்கை',
 	'repoadmin-new-button' => 'உருவாக்கவும்',
 	'repoadmin-edit-button' => 'ஆம்',
 	'right-codereview-add-tag' => 'புதிய குறிச்சொற்களை பரிசீலனைகளில் சேர்',
