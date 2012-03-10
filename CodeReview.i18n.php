@@ -254,6 +254,9 @@ $6',
 	'group-svnadmins' => 'SVN admins',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN admin}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN admins',
+
+	'group-svnadmins.css' => '/* CSS placed here will affect SVN admins only */', # only translate this message to other languages if you have to change it
+	'group-svnadmins.js' => '/* JS placed here will affect SVN admins only */', # only translate this message to other languages if you have to change it
 );
 
 /** Message documentation (Message documentation)
