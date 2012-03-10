@@ -421,6 +421,8 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'group-svnadmins' => '{{doc-group|svnadmins}}',
 	'group-svnadmins-member' => '{{doc-group|svnadmins|member}}',
 	'grouppage-svnadmins' => '{{doc-group|svnadmins|page}}',
+	'group-svnadmins.css' => '{{doc-group|svnadmins|css}}',
+	'group-svnadmins.js' => '{{doc-group|svnadmins|js}}',
 );
 
 /** Afrikaans (Afrikaans)
