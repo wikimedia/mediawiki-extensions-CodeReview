@@ -440,9 +440,9 @@ class CodeRevision {
 			$this->addReferencesTo( $affectedRevs );
 		}
 
-		global $wgEnableEmail;
+		global $wgEnableEmail, $wgCodeReviewDisableFollowUpNotification;
 		// Email the authors of revisions that this follows up on
-		if ( $wgEnableEmail && $newRevision && count( $affectedRevs ) > 0 ) {
+		if ( $wgEnableEmail && !$wgCodeReviewDisableFollowUpNotification && $newRevision && count( $affectedRevs ) > 0 ) {
 			// Get committer wiki user name, or repo name at least
 			$commitAuthor = $this->getWikiUser();
 

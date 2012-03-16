@@ -173,6 +173,15 @@ $wgCodeReviewCommentWatcherEmail = false;
 // Name to use in the To: header of e-mails to the list. Ignored if $wgCodeReviewCommentWatcherEmail isn't set
 $wgCodeReviewCommentWatcherName = "CodeReview comments list";
 
+// Set this flag to true if you want to disable the automatic notifications to all
+// watchers of a specific revision, when a follow-up to that revision is committed.
+// Useful for small repos when everyone is reading the commit e-mails anyway,
+// or if you have multiple repositories which refer to one another, which result
+// in an unreasonable level of false positives.
+// Note that the new revision will still be marked as a follow-up - this setting
+// just stops the e-mail being sent.
+$wgCodeReviewDisableFollowUpNotification = false;
+
 // What images can be used for client-side side-by-side comparisons?
 $wgCodeReviewImgRegex = '/\.(png|jpg|jpeg|gif)$/i';
 
