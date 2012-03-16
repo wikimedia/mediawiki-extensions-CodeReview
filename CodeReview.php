@@ -27,6 +27,8 @@ http://pecl.php.net/package/svn
 
 */
 
+/******** EXTENSION CREDITS ********/
+
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'CodeReview',
@@ -34,6 +36,8 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author' => array( 'Brion Vibber', 'Aaron Schulz', 'Alexandre Emsenhuber', 'Chad Horohoe', 'Sam Reed', 'Roan Kattouw' ),
 	'descriptionmsg' => 'codereview-desc',
 );
+
+/******** CLASS DEFINITIONS ********/
 
 $dir = dirname( __FILE__ ) . '/';
 
@@ -88,10 +92,14 @@ $wgAutoloadClasses['SvnRevStatusTablePager'] = $dir . 'ui/CodeRevisionStatusView
 $wgAutoloadClasses['SvnRevTagTablePager'] = $dir . 'ui/CodeRevisionTagView.php';
 $wgAutoloadClasses['CodeStatusChangeTablePager'] = $dir . 'ui/CodeRevisionStatusView.php';
 
+/******** SPECIAL PAGE SETUP ********/
+
 $wgSpecialPages['Code'] = 'SpecialCode';
 $wgSpecialPageGroups['Code'] = 'developer';
 $wgSpecialPages['RepoAdmin'] = 'SpecialRepoAdmin';
 $wgSpecialPageGroups['RepoAdmin'] = 'developer';
+
+/******** API SETUP ********/
 
 $wgAPIModules['codeupdate'] = 'ApiCodeUpdate';
 $wgAPIModules['codediff'] = 'ApiCodeDiff';
@@ -101,8 +109,12 @@ $wgAPIListModules['codepaths'] = 'ApiQueryCodePaths';
 $wgAPIListModules['coderevisions'] = 'ApiQueryCodeRevisions';
 $wgAPIListModules['codetags'] = 'ApiQueryCodeTags';
 
+/******** I18N MESSAGES ********/
+
 $wgExtensionMessagesFiles['CodeReview'] = $dir . 'CodeReview.i18n.php';
 $wgExtensionMessagesFiles['CodeReviewAliases'] = $dir . 'CodeReview.alias.php';
+
+/******** NEW USER RIGHTS ********/
 
 $wgAvailableRights[] = 'repoadmin';
 $wgAvailableRights[] = 'codereview-use';
@@ -127,6 +139,8 @@ $wgGroupPermissions['user']['codereview-associate'] = true;
 
 $wgGroupPermissions['svnadmins']['repoadmin'] = true;
 
+/******** CONFIGURATION SETTINGS ********/
+
 // Constants returned from CodeRepository::getDiff() when no diff can be calculated.
 
 // If you can't directly access the remote SVN repo, you can set this
@@ -146,40 +160,6 @@ $wgCodeReviewImportBatchSize = 400;
 
 // Shuffle the tag cloud
 $wgCodeReviewShuffleTagCloud = false;
-
-$commonModuleInfo = array(
-	'localBasePath' => dirname( __FILE__ ) . '/modules',
-	'remoteExtPath' => 'CodeReview/modules',
-);
-
-// Styles and any code common to all Special:Code subviews:
-$wgResourceModules['ext.codereview'] = array(
-	'scripts' => 'ext.codereview.js',
-	'dependencies' => 'jquery.suggestions',
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.codereview.styles'] = array(
-	'styles' => 'ext.codereview.styles.css',
-) + $commonModuleInfo;
-
-// On-demand diff loader for CodeRevisionView:
-$wgResourceModules['ext.codereview.loaddiff'] = array(
-	'scripts' => 'ext.codereview.loaddiff.js'
-) + $commonModuleInfo;
-
-// Revision tooltips CodeRevisionView:
-$wgResourceModules['ext.codereview.tooltips'] = array(
-	'scripts' => 'ext.codereview.tooltips.js',
-	'dependencies' => 'jquery.tipsy',
-) + $commonModuleInfo;
-
-// Revision 'scapmap':
-$wgResourceModules['ext.codereview.overview'] = array(
-	'scripts' => 'ext.codereview.overview.js',
-	'styles' => 'ext.codereview.overview.css',
-	'dependencies' => 'jquery.tipsy',
-	'messages' => array( 'codereview-overview-title', 'codereview-overview-desc' ),
-) + $commonModuleInfo;
 
 // If you are running a closed svn, fill the following two lines with the username and password
 // of a user allowed to access it. Otherwise, leave it false.
@@ -291,6 +271,74 @@ $wgCodeReviewFlags = array(
 	'tested',
 );
 
+/******** RESOURCE CONFIGURATION ********/
+
+$commonModuleInfo = array(
+	'localBasePath' => dirname( __FILE__ ) . '/modules',
+	'remoteExtPath' => 'CodeReview/modules',
+);
+
+// Styles and any code common to all Special:Code subviews:
+$wgResourceModules['ext.codereview'] = array(
+	'scripts' => 'ext.codereview.js',
+	'dependencies' => 'jquery.suggestions',
+) + $commonModuleInfo;
+
+$wgResourceModules['ext.codereview.styles'] = array(
+	'styles' => 'ext.codereview.styles.css',
+) + $commonModuleInfo;
+
+// On-demand diff loader for CodeRevisionView:
+$wgResourceModules['ext.codereview.loaddiff'] = array(
+	'scripts' => 'ext.codereview.loaddiff.js'
+) + $commonModuleInfo;
+
+// Revision tooltips CodeRevisionView:
+$wgResourceModules['ext.codereview.tooltips'] = array(
+	'scripts' => 'ext.codereview.tooltips.js',
+	'dependencies' => 'jquery.tipsy',
+) + $commonModuleInfo;
+
+// Revision 'scapmap':
+$wgResourceModules['ext.codereview.overview'] = array(
+	'scripts' => 'ext.codereview.overview.js',
+	'styles' => 'ext.codereview.overview.css',
+	'dependencies' => 'jquery.tipsy',
+	'messages' => array( 'codereview-overview-title', 'codereview-overview-desc' ),
+) + $commonModuleInfo;
+
+# Add global JS vars
+$wgHooks['MakeGlobalVariablesScript'][] = 'efCodeReviewResourceLoaderGlobals';
+
+/**
+ * @param $values array
+ * @return bool
+ */
+function efCodeReviewResourceLoaderGlobals( &$values ){
+	# Bleugh, this is horrible
+	global $wgTitle;
+	if( $wgTitle->isSpecial( 'Code' ) ){
+		$bits = explode( '/', $wgTitle->getText() );
+		if( isset( $bits[1] ) ){
+			$values['wgCodeReviewRepository'] = $bits[1];
+		}
+	}
+	return true;
+}
+
+# Add state messages to RL
+$wgExtensionFunctions[] = 'efCodeReviewAddTooltipMessages';
+
+function efCodeReviewAddTooltipMessages() {
+	global $wgResourceModules;
+
+	$wgResourceModules['ext.codereview.tooltips']['messages'] = array_merge(
+		CodeRevision::getPossibleStateMessageKeys(),
+		array( 'code-tooltip-withsummary', 'code-tooltip-withoutsummary' ) );
+}
+
+/******** DB UPDATING ********/
+
 # Schema changes
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'efCodeReviewSchemaUpdates';
 
@@ -366,7 +414,8 @@ function efCodeReviewSchemaUpdates( $updater ) {
 	return true;
 }
 
-# Unit tests
+/******** UNIT TESTS ********/
+
 $wgHooks['UnitTestsList'][] = 'efCodeReviewUnitTests';
 
 /**
@@ -378,34 +427,4 @@ function efCodeReviewUnitTests( &$files ) {
 	$files[] = dirname( __FILE__ ) . '/tests/CodeReviewTest.php';
 	$files[] = dirname( __FILE__ ) . '/tests/DiffHighlighterTest.php';
 	return true;
-}
-
-# Add global JS vars
-$wgHooks['MakeGlobalVariablesScript'][] = 'efCodeReviewResourceLoaderGlobals';
-
-/**
- * @param $values array
- * @return bool
- */
-function efCodeReviewResourceLoaderGlobals( &$values ){
-	# Bleugh, this is horrible
-	global $wgTitle;
-	if( $wgTitle->isSpecial( 'Code' ) ){
-		$bits = explode( '/', $wgTitle->getText() );
-		if( isset( $bits[1] ) ){
-			$values['wgCodeReviewRepository'] = $bits[1];
-		}
-	}
-	return true;
-}
-
-# Add state messages to RL
-$wgExtensionFunctions[] = 'efCodeReviewAddTooltipMessages';
-
-function efCodeReviewAddTooltipMessages() {
-	global $wgResourceModules;
-
-	$wgResourceModules['ext.codereview.tooltips']['messages'] = array_merge(
-		CodeRevision::getPossibleStateMessageKeys(),
-		array( 'code-tooltip-withsummary', 'code-tooltip-withoutsummary' ) );
 }
