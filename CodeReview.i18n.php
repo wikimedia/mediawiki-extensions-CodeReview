@@ -16858,6 +16858,7 @@ $3',
  * @author PhiLiP
  * @author Wmr89502270
  * @author Xiaomingyan
+ * @author Yfdyh000
  * @author 阿pp
  */
 $messages['zh-hans'] = array(
@@ -17074,6 +17075,13 @@ $6',
 	'right-codereview-link-user' => '将作者与Wiki用户关联',
 	'right-codereview-associate' => '管理修订关联',
 	'right-codereview-review-own' => '将自己的修订标记为确定或解决',
+	'action-repoadmin' => '管理代码库',
+	'action-codereview-use' => 'Special:Code的使用',
+	'action-codereview-add-tag' => '给修订添加新标签',
+	'action-codereview-remove-tag' => '移除修订的标签',
+	'action-codereview-post-comment' => '向修订添加注释',
+	'action-codereview-set-status' => '修改修订状态',
+	'action-codereview-signoff' => '确认修订',
 	'specialpages-group-developer' => '开发者工具',
 	'group-svnadmins' => 'SVN管理员',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN管理员}}',
