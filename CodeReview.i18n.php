@@ -7994,6 +7994,7 @@ $6',
  * @author Naohiro19
  * @author Ohgi
  * @author Schu
+ * @author Shirayuki
  * @author Whym
  * @author 青子守歌
  */
@@ -8210,7 +8211,7 @@ $6',
 	'right-codereview-review-own' => 'OK または解決済みとして自身のリビジョンをマーク',
 	'specialpages-group-developer' => '開発者用ツール',
 	'group-svnadmins' => 'SVN管理者',
-	'group-svnadmins-member' => 'SVN管理者',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN 管理者}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN管理者',
 );
 
