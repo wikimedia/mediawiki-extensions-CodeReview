@@ -8121,7 +8121,7 @@ $messages['ja'] = array(
 	'codereview-batch-title' => '選択したリビジョンをすべて変更',
 	'codereview-batch-submit' => '送信',
 	'code-releasenotes' => 'リリースノート',
-	'code-release-legend' => 'リリースノートの生成',
+	'code-release-legend' => 'リリースノートを生成',
 	'code-release-startrev' => '開始リビジョン:',
 	'code-release-endrev' => '最終リビジョン:',
 	'codereview-subtitle' => '$1',
@@ -8129,7 +8129,7 @@ $messages['ja'] = array(
 	'codereview-overview-title' => '概要',
 	'codereview-overview-desc' => 'このリストのグラフィカルな概要を表示',
 	'codereview-email-subj' => '[$1 $2]: 新規コメント追加',
-	'codereview-email-body' => '利用者「$1」が $3 にコメントをつけました。
+	'codereview-email-body' => '利用者「$1」が $3 にコメントを付けました。
 
 URL: $2
 要約:
