@@ -3157,6 +3157,7 @@ $messages['de-formal'] = array(
 );
 
 /** Zazaki (Zazaki)
+ * @author Erdemaslancan
  * @author Xoser
  */
 $messages['diq'] = array(
@@ -3236,6 +3237,7 @@ $messages['diq'] = array(
 	'code-status-ok' => 'temam',
 	'code-status-deferred' => 'defer biyo',
 	'code-status-old' => 'kihan',
+	'code-signoff-field-user' => 'Karber',
 	'code-pathsearch-legend' => 'Pê raherî zerrê ena repo de vurnayîşan bigêre',
 	'code-pathsearch-path' => 'Raher:',
 	'code-pathsearch-filter' => 'Filitre hewitiyena',
@@ -3278,6 +3280,7 @@ Full URL: $2
 Xulasa:
 
 $3',
+	'code-stats' => 'İstatistiki',
 	'repoadmin' => 'Îdarê Kerdîşê Arşîvî',
 	'repoadmin-new-legend' => 'Yew arşîvê newî viraze',
 	'repoadmin-new-label' => 'Nameyê arşîvî:',
