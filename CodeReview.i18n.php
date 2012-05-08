@@ -3158,6 +3158,7 @@ $messages['de-formal'] = array(
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Mirzali
  * @author Xoser
  */
 $messages['diq'] = array(
@@ -3280,7 +3281,7 @@ Full URL: $2
 Xulasa:
 
 $3',
-	'code-stats' => 'İstatistiki',
+	'code-stats' => 'istatistiki',
 	'repoadmin' => 'Îdarê Kerdîşê Arşîvî',
 	'repoadmin-new-legend' => 'Yew arşîvê newî viraze',
 	'repoadmin-new-label' => 'Nameyê arşîvî:',
