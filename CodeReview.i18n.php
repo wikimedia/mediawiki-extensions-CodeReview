@@ -9832,6 +9832,8 @@ $6',
 	'group-svnadmins' => 'Администратори на SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|Администратор на SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Администратори на SVN',
+	'group-svnadmins.css' => '/* Тука поставениот CSS ќе се применува само врз администратори на SVN */',
+	'group-svnadmins.js' => '/* Тука поставениот JS ќе се применува само врз администратори на SVN */',
 );
 
 /** Malayalam (മലയാളം)
@@ -11487,10 +11489,18 @@ $messages['pdc'] = array(
 );
 
 /** Pälzisch (Pälzisch)
+ * @author Manuae
  * @author Xqt
  */
 $messages['pfl'] = array(
-	'code-stats' => 'Schdadischdike',
+	'code-field-comments' => 'Kommenda',
+	'code-field-path' => 'Weesch',
+	'code-rev-modified-d' => 'geleschd',
+	'code-rev-modified-m' => 'geänad',
+	'code-status-new' => 'nai',
+	'code-status-old' => 'ald',
+	'code-pathsearch-path' => 'Weesch:',
+	'code-stats' => 'Schdadischdige',
 );
 
 /** Polish (Polski)
@@ -12911,7 +12921,8 @@ $6',
 	'right-codereview-signoff' => 'Smarche sus le revisiune',
 	'right-codereview-link-user' => 'Culleghe le autore a le utinde uicchi',
 	'right-codereview-associate' => "Gestisce le associaziune 'mbrà revisiune",
-	'right-codereview-review-own' => 'Marche le revisiune tune cumme OK o Resolte',
+	'right-codereview-review-own' => 'Signe le revisiune tune cumme "{{int:code-status-ok}}" o "{{int:code-status-resolved}}"',
+	'action-codereview-post-comment' => "aggiunge commende sus 'a revisione",
 	'specialpages-group-developer' => 'Struminde pe le sviluppature',
 	'group-svnadmins' => 'Amministrature de SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|amministratore de SVN}}',
@@ -14287,14 +14298,22 @@ $6',
 	'right-repoadmin' => 'Upravljanje shramb kode',
 	'right-codereview-use' => 'Uporaba Special:Code',
 	'right-codereview-add-tag' => 'Dodajanje novih oznak redakcijam',
-	'right-codereview-remove-tag' => 'Odstranjevanje novih oznak redakcijam',
+	'right-codereview-remove-tag' => 'Odstranjevanje oznak redakcijam',
 	'right-codereview-post-comment' => 'Dodajanje pripomb na redakcije',
 	'right-codereview-set-status' => 'Spreminjanje stanj redakcij',
 	'right-codereview-signoff' => 'Odobritev redakcij',
 	'right-codereview-link-user' => 'Povezovanje avtorjev z wikiuporabniki',
 	'right-codereview-associate' => 'Upravljanje združitev redakcij',
 	'right-codereview-review-own' => 'Označite svoje redakcije kot »{{int:code-status-ok}}« ali »{{int:code-status-resolved}}«',
+	'action-repoadmin' => 'upravljanje shramb kode',
 	'action-codereview-use' => 'uporabo Special:Code',
+	'action-codereview-add-tag' => 'dodajanje novih oznak redakcijam',
+	'action-codereview-remove-tag' => 'odstranjevanje oznak redakcijam',
+	'action-codereview-post-comment' => 'dodajanje pripomb na redakcije',
+	'action-codereview-set-status' => 'spreminjanje stanja redakcij',
+	'action-codereview-signoff' => 'sprejemanje redakcij',
+	'action-codereview-link-user' => 'povezovanje avtorjev z wikiuporabniki',
+	'action-codereview-associate' => 'upravljanje združitev redakcij',
 	'action-codereview-review-own' => 'označevanje svojih redakcij kot »{{int:code-status-ok}}« ali »{{int:code-status-resolved}}«',
 	'specialpages-group-developer' => 'Razvijalska orodja',
 	'group-svnadmins' => 'Skrbniki SVN',
@@ -15328,7 +15347,7 @@ $4',
 	'specialpages-group-developer' => 'Абзорҳои тавсиядиҳандагон',
 );
 
-/** Tajik (Latin script) (tojikī)
+/** Tajik (Latin script) (Tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -15876,6 +15895,7 @@ $messages['tr'] = array(
 	'code-rev-diff-too-large' => 'Fark görüntülenemeyecek kadar büyük.',
 	'code-rev-purge-link' => 'temizle',
 	'code-rev-total' => 'Toplam sonuç sayısı: $1',
+	'code-rev-history-link' => 'geçmiş',
 	'code-status-new' => 'yeni',
 	'code-status-fixme' => 'benidüzelt',
 	'code-status-reverted' => 'eski haline döndürüldü',
@@ -15929,6 +15949,7 @@ Teslimat özeti:
 
 $3',
 	'code-stats' => 'istatistikler',
+	'code-stats-count' => 'Sürümlerin sayısı',
 	'repoadmin' => 'Depo Yönetimi',
 	'repoadmin-new-legend' => 'Yeni bir depo oluştur',
 	'repoadmin-new-label' => 'Depo adı:',
@@ -15957,7 +15978,7 @@ $messages['ug-arab'] = array(
 	'repoadmin-edit-button' => 'ماقۇل',
 );
 
-/** Uyghur (Latin script) (Uyghurche‎)
+/** Uyghur (Latin script) (Uyghurche)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
@@ -16354,7 +16375,7 @@ Stato novo: $4',
 	'specialpages-group-developer' => "Strumenti pa' i svilupadori",
 );
 
-/** Veps (Vepsan kel')
+/** Veps (Vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
