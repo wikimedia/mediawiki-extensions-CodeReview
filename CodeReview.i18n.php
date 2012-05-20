@@ -1377,7 +1377,7 @@ $messages['be'] = array(
 	'code-stats' => 'статыстыка',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -2923,7 +2923,7 @@ $messages['de'] = array(
 	'code-rev-title' => '$1 – Codeprüfung',
 	'code-comments' => 'Kommentare',
 	'code-references' => 'Nachfolgende Revisionen',
-	'code-referenced' => 'Vorangegangene Revisionen',
+	'code-referenced' => 'Dieser Revision vorangegangene Revisionen',
 	'code-change-status' => "änderte den '''Status''' von Revision $1",
 	'code-change-tags' => "änderte die '''Tags''' für Revision $1",
 	'code-change-removed' => 'entfernt:',
@@ -3171,7 +3171,7 @@ $messages['diq'] = array(
 	'code-change-removed' => 'wedariya:',
 	'code-change-added' => 'de biyo:',
 	'code-old-status' => 'Statuyê kihanî',
-	'code-new-status' => 'Statuyê newî',
+	'code-new-status' => 'Weziyeto newe',
 	'code-prop-changes' => 'Logê statuyî & etîketî',
 	'codereview-desc' => '[[Special:Code|Xacetan ke qe kontralê kodî]] pê [[Special:RepoAdmin|Yardimê subversionî]]',
 	'code-no-repo' => 'Yew arşîv cinfigure nebiyo!',
@@ -3239,6 +3239,8 @@ $messages['diq'] = array(
 	'code-status-deferred' => 'defer biyo',
 	'code-status-old' => 'kihan',
 	'code-signoff-field-user' => 'Karber',
+	'code-signoff-field-flag' => 'Desmal',
+	'code-signoff-field-date' => 'Deme',
 	'code-pathsearch-legend' => 'Pê raherî zerrê ena repo de vurnayîşan bigêre',
 	'code-pathsearch-path' => 'Raher:',
 	'code-pathsearch-filter' => 'Filitre hewitiyena',
@@ -3300,6 +3302,9 @@ $3',
 	'right-codereview-set-status' => 'Statuyê revîzyonî vurneno',
 	'right-codereview-link-user' => 'Nuştekarî, karberanê wîkî rê link keno',
 	'specialpages-group-developer' => 'Xacetanê raverberdoğî',
+	'group-svnadmins' => 'SVN admini',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN admin}}',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN admini',
 );
 
 /** Lower Sorbian (Dolnoserbski)
@@ -3310,6 +3315,7 @@ $messages['dsb'] = array(
 	'code-rev-title' => '$1 - Pśeglědanje koda',
 	'code-comments' => 'Komentary',
 	'code-references' => 'Naslědne wersije',
+	'code-referenced' => 'Pjerwjejšne wersije, kótarymž toś ta slědujo',
 	'code-change-status' => "jo '''status''' wersije $1 změnił",
 	'code-change-tags' => "jo '''toflicki''' za wersiju $1 změnił",
 	'code-change-removed' => 'wótpórany:',
@@ -3965,7 +3971,7 @@ $messages['es'] = array(
 	'code-rev-title' => '$1 - Revisión de Código',
 	'code-comments' => 'Comentarios',
 	'code-references' => 'Revisiones de seguimiento',
-	'code-referenced' => 'Revisiones de seguimiento',
+	'code-referenced' => 'Revisiones pasadas que esto ha seguido',
 	'code-change-status' => "cambiado el '''status''' de $1",
 	'code-change-tags' => "cambiadas las '''etiquetas''' de $1",
 	'code-change-removed' => 'quitados:',
@@ -4966,7 +4972,7 @@ $messages['fr'] = array(
 	'code-rev-title' => '$1 - Révision du code',
 	'code-comments' => 'Commentaires',
 	'code-references' => 'Références vers les révisions',
-	'code-referenced' => 'Révisions suivies',
+	'code-referenced' => 'Révisions passées qui sont suivies',
 	'code-change-status' => "a modifié l’'''état''' de $1",
 	'code-change-tags' => "a modifié les '''balises''' de $1",
 	'code-change-removed' => 'retiré :',
@@ -5446,7 +5452,7 @@ $messages['gl'] = array(
 	'code-rev-title' => '$1 - Revisión do código',
 	'code-comments' => 'Comentarios',
 	'code-references' => 'Seguir as revisións',
-	'code-referenced' => 'Revisións seguidas',
+	'code-referenced' => 'Revisións pasadas que son seguidas',
 	'code-change-status' => "cambiou o '''estado''' da versión $1",
 	'code-change-tags' => "cambiou as '''etiquetas''' da versión $1",
 	'code-change-removed' => 'eliminado:',
@@ -6036,7 +6042,7 @@ $messages['he'] = array(
 	'code-rev-title' => 'גרסה $1 – סקירת קוד',
 	'code-comments' => 'הערות',
 	'code-references' => 'גרסאות המשך',
-	'code-referenced' => 'רשימת גרסאות שגרסה זו ממשיכה',
+	'code-referenced' => 'גרסאות קודמות שגרסה זו ממשיכה',
 	'code-change-status' => "שינה את ה'''מצב''' של גרסה $1",
 	'code-change-tags' => "שינה את ה'''תגים''' של גרסה $1",
 	'code-change-removed' => 'הוסר:',
@@ -6645,7 +6651,7 @@ $messages['hsb'] = array(
 	'code-rev-title' => '$1 - Přepruwowanje koda',
 	'code-comments' => 'Komentary',
 	'code-references' => 'Naslědne wersije',
-	'code-referenced' => 'Slědowane wersije',
+	'code-referenced' => 'Předchadne wersije, kotrymž tuta slěduje',
 	'code-change-status' => "změni '''status''' wersije $1",
 	'code-change-tags' => "změni '''taflički''' za wersiju $1",
 	'code-change-removed' => 'wotstronjeny:',
@@ -7807,6 +7813,7 @@ $messages['io'] = array(
  * @author Nemo bis
  * @author Santu
  * @author Stefano-c
+ * @author Ximo17
  */
 $messages['it'] = array(
 	'code' => 'Revisione del codice',
@@ -7825,6 +7832,7 @@ $messages['it'] = array(
 	'code-no-repo' => 'Nessun repository configurato.',
 	'code-create-repo' => 'Vai a [[Special:RepoAdmin|RepoAdmin]] per creare un repository',
 	'code-need-repoadmin-rights' => 'i diritti di repoadmin sono necessari per poter creare un repository',
+	'code-need-group-with-rights' => "Non esiste alcun gruppo con diritti di ''repoadmin''. Creane uno per poter aggiungere un nuovo Repository",
 	'code-repo-not-found' => "Repository '''$1''' non esiste!",
 	'code-load-diff' => 'Caricamento diff in corso…',
 	'code-notes' => 'commenti più recenti',
@@ -7835,7 +7843,7 @@ $messages['it'] = array(
 	'code-status' => 'descrizione stati',
 	'code-tags' => 'tag',
 	'code-tags-no-tags' => 'Nessun tag è presente in questo repository.',
-	'code-authors-text' => 'Di seguito viene presentata una lista di autori relativi al repository, in ordine cronologico per i commit recenti. Gli account wiki locali sono mostrati fra parentesi.',
+	'code-authors-text' => 'Di seguito viene presentata una lista di autori relativi al repository, in ordine per nome di commit. Gli account wiki locali sono mostrati fra parentesi. I dati potrebbero essere recuperati dalla cache.',
 	'code-author-haslink' => "Questo autore è collegato all'utente wiki $1",
 	'code-author-orphan' => "L'utente SVN/autore $1 non è collegato a un account wiki",
 	'code-author-dolink' => 'Collegare questo autore a un utente wiki:',
@@ -7862,6 +7870,7 @@ $messages['it'] = array(
 	'code-field-text' => 'Nota',
 	'code-field-select' => 'Seleziona',
 	'code-reference-remove' => 'Rimuovi le associazioni selezionate',
+	'code-reference-associate' => 'Revisioni seguenti associate:',
 	'code-reference-associate-submit' => 'Associa',
 	'code-rev-author' => 'Autore:',
 	'code-rev-date' => 'Data:',
@@ -7977,7 +7986,11 @@ $6',
 	'code-stats-header' => 'Statistiche per il repository $1',
 	'code-stats-main' => 'Alla data del $1, il repository contiene $2 {{PLURAL:$2|revisione|revisioni}} da parte di [[Special:Code/$3/author|$4 {{PLURAL:$4|autore|autori}}]].',
 	'code-stats-status-breakdown' => 'Numero di revisioni per stato',
+	'code-stats-fixme-breakdown' => 'Ripartizione delle revisioni fixme per autore',
+	'code-stats-fixme-breakdown-path' => 'Ripartizione delle revisioni fixme per percorso',
 	'code-stats-fixme-path' => 'Revisioni Fixme per il percorso: $1',
+	'code-stats-new-breakdown' => 'Ripartizione delle nuove revisioni per autore',
+	'code-stats-new-breakdown-path' => 'Ripartizione delle nuove revisioni per percorso',
 	'code-stats-new-path' => 'Nuove revisioni per il percorso: $1',
 	'code-stats-count' => 'Numero di revisioni',
 	'code-tooltip-withsummary' => 'r$1 [$2] di $3 - $4',
@@ -8003,6 +8016,15 @@ $6',
 	'right-codereview-link-user' => 'Collega gli autori agli utenti del sito wiki',
 	'right-codereview-associate' => 'Gestisce le associazioni fra revisioni',
 	'right-codereview-review-own' => 'Segna le proprie revisioni come "{{int:code-status-ok}}" o "{{int:code-status-resolved}}"',
+	'action-repoadmin' => 'gestire la repository del codice',
+	'action-codereview-use' => 'usare Special:Code',
+	'action-codereview-add-tag' => 'aggiungere nuove etichette alle modifiche',
+	'action-codereview-remove-tag' => 'rimuovere le etichette dalle modifiche',
+	'action-codereview-post-comment' => 'aggiungere commenti alle revisioni',
+	'action-codereview-set-status' => 'modificare lo stato delle revisioni',
+	'action-codereview-signoff' => 'effettuate il sign-off di revisioni',
+	'action-codereview-link-user' => 'collegare gli autori agli utenti del sito wiki',
+	'action-codereview-associate' => 'gestire le associazioni fra revisioni',
 	'action-codereview-review-own' => 'contrassegnare le proprie revisioni come "{{int:code-status-ok}}" o "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Tool di sviluppo',
 	'group-svnadmins' => 'Amministratori SVN',
@@ -9609,7 +9631,7 @@ $messages['mk'] = array(
 	'code-rev-title' => '$1 - Проверка на кодот',
 	'code-comments' => 'Забелешки',
 	'code-references' => 'Понатамошни ревизии',
-	'code-referenced' => 'Понатамошни ревизии',
+	'code-referenced' => 'Ревизиите што ѝ претходат на оваа ревизија',
 	'code-change-status' => "го измени '''статусот''' на $1",
 	'code-change-tags' => "ги измени '''ознаките''' за $1",
 	'code-change-removed' => 'избришано:',
@@ -10074,7 +10096,7 @@ $messages['ms'] = array(
 	'code-rev-title' => '$1 - Kajian Kod',
 	'code-comments' => 'Komen',
 	'code-references' => 'Semakan susulan',
-	'code-referenced' => 'Semakan yang dilakukan',
+	'code-referenced' => 'Semakan terdahulu yang diikuti oleh ini',
 	'code-change-status' => "'''status''' $1 ditukar",
 	'code-change-tags' => "'''label''' untuk $1 ditukar",
 	'code-change-removed' => 'membuang:',
@@ -10752,7 +10774,7 @@ $messages['nl'] = array(
 	'code-rev-title' => '$1 - Programmacodecontrole',
 	'code-comments' => 'Opmerkingen',
 	'code-references' => 'Versies met correcties',
-	'code-referenced' => 'Corrigerende versies',
+	'code-referenced' => 'Versies voorafgaand aan deze versie',
 	'code-change-status' => "heeft de '''status''' voor versie $1 gewijzigd",
 	'code-change-tags' => "heeft de '''labels''' voor versie $1 gewijzigd",
 	'code-change-removed' => 'verwijderd:',
@@ -14096,7 +14118,7 @@ $messages['sl'] = array(
 	'code-rev-title' => '$1 – Pregled kode',
 	'code-comments' => 'Pripombe',
 	'code-references' => 'Nadaljnje redakcije',
-	'code-referenced' => 'Sledeče redakcije',
+	'code-referenced' => 'Pretekle redakcije, ki jih to nasledi',
 	'code-change-status' => "je spremenil(-a) '''stanje''' $1",
 	'code-change-tags' => "je spremenil(-a) '''oznake''' $1",
 	'code-change-removed' => 'odstranjeno:',
@@ -14331,7 +14353,7 @@ $messages['sq'] = array(
 	'grouppage-svnadmins' => '{{ns:project}}:Administruesit SVN',
 );
 
-/** Serbian (Cyrillic script) (Српски (ћирилица))
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Nikola Smolenski
  * @author Rancher
  * @author Јованвб
@@ -14396,7 +14418,7 @@ $messages['sr-ec'] = array(
 	'code-rev-author' => 'Аутор:',
 	'code-rev-date' => 'Датум:',
 	'code-rev-message' => 'Коментар:',
-	'code-rev-repo' => 'Остава:',
+	'code-rev-repo' => 'Ризница:',
 	'code-rev-rev' => 'Измена:',
 	'code-rev-rev-viewvc' => 'на ViewVC',
 	'code-rev-paths' => 'Измењене путање:',
@@ -14488,7 +14510,7 @@ $messages['sr-ec'] = array(
 	'specialpages-group-developer' => 'Програмерски алати',
 );
 
-/** Serbian (Latin script) (Srpski (latinica))
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
@@ -14537,7 +14559,7 @@ $messages['sr-el'] = array(
 	'code-rev-author' => 'Autor:',
 	'code-rev-date' => 'Datum:',
 	'code-rev-message' => 'Komentar:',
-	'code-rev-repo' => 'Ostava:',
+	'code-rev-repo' => 'Riznica:',
 	'code-rev-rev' => 'Izmena:',
 	'code-rev-rev-viewvc' => 'na ViewVC',
 	'code-rev-paths' => 'Izmenjene putanje:',
@@ -16430,7 +16452,7 @@ $messages['vi'] = array(
 	'code-rev-title' => '$1 – Duyệt mã',
 	'code-comments' => 'Ghi chú',
 	'code-references' => 'Các phiên bản tiếp theo',
-	'code-referenced' => 'Các phiên bản được tiếp theo',
+	'code-referenced' => 'Các phiên bản về trước được tiếp theo',
 	'code-change-status' => "đã đổi '''trạng thái''' của phiên bản r$1",
 	'code-change-tags' => "đã đổi các '''thẻ''' của phiên bản r$1",
 	'code-change-removed' => 'đã dời:',
@@ -16906,7 +16928,7 @@ $3',
 	'specialpages-group-developer' => '開發者工具',
 );
 
-/** Simplified Chinese (中文(简体))
+/** Simplified Chinese (‪中文(简体)‬)
  * @author Anakmalaysia
  * @author Chenzw
  * @author Gaoxuewei
