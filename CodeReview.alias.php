@@ -26,6 +26,11 @@ $specialPageAliases['arz'] = array(
 	'RepoAdmin' => array( 'ادارة_المستودع' ),
 );
 
+/** Banjar (Bahasa Banjar) */
+$specialPageAliases['bjn'] = array(
+	'Code' => array( 'Kode' ),
+);
+
 /** Breton (Brezhoneg) */
 $specialPageAliases['br'] = array(
 	'Code' => array( 'Kod' ),
@@ -39,7 +44,8 @@ $specialPageAliases['bs'] = array(
 
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
-	'Code' => array( 'Quelltext' ),
+	'Code' => array( 'Quelltext', 'Quelltextprüfung' ),
+	'RepoAdmin' => array( 'Repositoriumsverwaltung' ),
 );
 
 /** Lower Sorbian (Dolnoserbski) */
@@ -220,6 +226,11 @@ $specialPageAliases['pl'] = array(
 	'RepoAdmin' => array( 'Administrowanie_repozytorium' ),
 );
 
+/** Russian (Русский) */
+$specialPageAliases['ru'] = array(
+	'Code' => array( 'Код' ),
+);
+
 /** Sanskrit (संस्कृतम्) */
 $specialPageAliases['sa'] = array(
 	'Code' => array( 'संकूटसङ्केतावलोकन' ),
@@ -260,7 +271,7 @@ $specialPageAliases['vec'] = array(
 	'Code' => array( 'Còdese' ),
 );
 
-/** Veps (Vepsän kel') */
+/** Veps (Vepsän kel’) */
 $specialPageAliases['vep'] = array(
 	'Code' => array( 'Kod' ),
 );
@@ -268,6 +279,7 @@ $specialPageAliases['vep'] = array(
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'Code' => array( 'Mã_nguồn', 'Mã', 'Duyệt_mã' ),
+	'RepoAdmin' => array( 'Quản_lý_kho' ),
 );
 
 /** Simplified Chinese (‪中文(简体)‬) */
