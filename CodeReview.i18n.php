@@ -2556,7 +2556,7 @@ $messages['cs'] = array(
 	'code-rev-title' => '$1 – Kontrola kódu',
 	'code-comments' => 'Komentáře',
 	'code-references' => 'Odkazy na tuto revizi',
-	'code-referenced' => 'Odkazované revize',
+	'code-referenced' => 'Starší revize, na které tato odkazuje',
 	'code-change-status' => "změnil '''stav''' revize $1",
 	'code-change-tags' => "změnil '''značky''' revize $1",
 	'code-change-removed' => 'odebráno:',
@@ -7820,7 +7820,7 @@ $messages['it'] = array(
 	'code-rev-title' => '$1 - Revisione del codice',
 	'code-comments' => 'Commenti',
 	'code-references' => 'Revisioni seguenti',
-	'code-referenced' => 'Revisioni precedenti',
+	'code-referenced' => 'Revisioni passate a cui segue questa',
 	'code-change-status' => "ha modificato lo '''stato''' di $1",
 	'code-change-tags' => "ha modificato i '''tag''' di $1",
 	'code-change-removed' => 'rimosso:',
@@ -7956,6 +7956,18 @@ Sommario del commit $3:
 $5
 
 Commento di $1:
+
+$4',
+	'codereview-email-subj2' => '[$1 $2]: modifiche successive',
+	'codereview-email-body2' => '"$1" ha apportato modifiche successive a $2.
+URL: $5
+
+Oggetto del commit per la revisione $2:
+
+$6
+
+URL delle modifica successiva:  $3 
+Oggetto del commit da "$1" per la modifica successiva:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: Stato della revisione cambiato',
