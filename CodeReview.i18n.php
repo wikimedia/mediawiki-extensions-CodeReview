@@ -8641,6 +8641,7 @@ $messages['kn'] = array(
  * @author Klutzy
  * @author Kwj2772
  * @author Yknok29
+ * @author 아라
  */
 $messages['ko'] = array(
 	'code' => '코드 검토',
@@ -8725,17 +8726,21 @@ $messages['ko'] = array(
 	'code-status-ok' => '문제없음',
 	'code-status-deferred' => '보류됨',
 	'code-status-old' => '오래됨',
+	'code-signoff-flag-tested' => '테스트됨',
 	'code-signoff-field-user' => '사용자',
+	'code-signoff-field-flag' => '플래그',
 	'code-signoff-field-date' => '날짜',
+	'code-signoff-struckdate' => '$1 ($2 공격)',
 	'code-pathsearch-legend' => '이 보관소(repo)에서 있었던 수정 사항을 경로로 검색하기',
 	'code-pathsearch-path' => '경로:',
-	'code-pathsearch-filter' => '필터 적용됨:',
+	'code-pathsearch-filter' => '항목만 보기:',
 	'code-revfilter-cr_status' => '상태 = $1',
 	'code-revfilter-cr_author' => '프로그래머 = $1',
 	'code-revfilter-ct_tag' => '태그 = $1',
 	'code-revfilter-clear' => '클리어 필터',
 	'code-rev-submit' => '저장',
 	'code-rev-submit-next' => '저장 및 다음 미해결된 문서로 이동',
+	'code-rev-next' => '다음 해결되지 않음',
 	'code-batch-status' => '상태 변경:',
 	'code-batch-tags' => '태그 변경:',
 	'codereview-batch-title' => '모든 선택된 판을 수정',
@@ -8759,11 +8764,15 @@ $5
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: 추적된 변경 사항',
-	'codereview-email-body2' => '사용자 "$1"이/가 $2에 추적변경을 만들었습니다.
+	'codereview-email-body2' => '"$1" 사용자가 $2에 추적 변경을 만들었습니다.
+URL: $5
 
-전체 URL: $3
+추적에 대한 요약: $2
 
-변경 요약:
+$6
+
+추적 URL: $3
+"$1" 사용자에 의한 추적 요약:
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: 버전 상태가 바뀌었습니다',
@@ -8777,7 +8786,7 @@ $2판에 대한 커밋 요약:
 
 $6',
 	'code-stats' => '통계',
-	'code-stats-header' => '$1 저장소 통계',
+	'code-stats-header' => '$1 저장소에 대한 통계',
 	'code-stats-main' => '$6 $5 기준으로, 이 저장소에는 [[Special:Code/$3/author|$4명의 저자]]가 작성한 $2개의 판이 있습니다.',
 	'code-stats-status-breakdown' => '상태별 판의 개수',
 	'code-stats-fixme-breakdown' => '저자별 수정이 필요한 판의 개수',
@@ -8804,6 +8813,7 @@ $6',
 	'right-codereview-post-comment' => '바뀐 코드에 대한 의견을 추가',
 	'right-codereview-set-status' => '판의 상태를 변경',
 	'right-codereview-link-user' => '만든이를 위키 사용자로 링크',
+	'action-codereview-use' => 'Special:Code 사용',
 	'specialpages-group-developer' => '개발자 도구',
 	'group-svnadmins' => 'SVN 관리자',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN 관리자}}',
