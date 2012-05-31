@@ -3254,7 +3254,7 @@ $messages['diq'] = array(
 	'code-pathsearch-legend' => 'Pê raherî zerrê ena repo de vurnayîşan bigêre',
 	'code-pathsearch-path' => 'Raher:',
 	'code-pathsearch-filter' => 'Filitre hewitiyena',
-	'code-revfilter-cr_status' => 'Statu = $1',
+	'code-revfilter-cr_status' => 'Weziyet = $1',
 	'code-revfilter-cr_author' => 'Nustekar = $1',
 	'code-revfilter-clear' => 'Filtre wedarne',
 	'code-rev-submit' => 'Vuranayîşan qeyd bike',
