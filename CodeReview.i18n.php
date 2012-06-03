@@ -1110,6 +1110,7 @@ $messages['az'] = array(
 /** Bashkir (Башҡортса)
  * @author Assele
  * @author Haqmar
+ * @author ҒатаУлла
  */
 $messages['ba'] = array(
 	'code' => 'Кодты тикшереү',
@@ -1193,6 +1194,7 @@ $messages['ba'] = array(
 	'code-rev-purge-link' => 'таҙартырға',
 	'code-rev-total' => 'Һөҙөмтәләрҙең дөйөм һаны: $1',
 	'code-rev-not-found' => "'''$1''' өлгөһө юҡ!",
+	'code-rev-history-link' => 'тарих',
 	'code-status-new' => 'яңы',
 	'code-status-desc-new' => 'Өлгө ғәмәлде көтә (ғәҙәттәге торош).',
 	'code-status-fixme' => 'төҙәтергә кәрәк',
@@ -1223,6 +1225,7 @@ $messages['ba'] = array(
 	'code-pathsearch-filter' => 'Ҡулланылған фильтр:',
 	'code-revfilter-cr_status' => 'Торош = $1',
 	'code-revfilter-cr_author' => 'Автор = $1',
+	'code-revfilter-ct_tag' => 'Тамға = $1',
 	'code-revfilter-clear' => 'Фильтрҙы таҙаларға',
 	'code-rev-submit' => 'Үҙгәрештәрҙе һаҡларға',
 	'code-rev-submit-next' => 'Һаҡларға һәм киләһе төҙәтелмәгәнде асырға',
@@ -3043,7 +3046,7 @@ $messages['de'] = array(
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-ct_tag' => 'Tag = $1',
-	'code-revfilter-clear' => 'Filter löschen',
+	'code-revfilter-clear' => 'Filter aufheben',
 	'code-rev-submit' => 'Änderungen speichern',
 	'code-rev-submit-next' => 'Änderungen speichern und weiter zur nächsten ungeprüften',
 	'code-rev-next' => 'Weiter zur nächsten ungeprüften',
@@ -8780,7 +8783,7 @@ $6
 "$1" 사용자에 의한 추적 요약:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: 버전 상태가 바뀌었습니다',
+	'codereview-email-subj3' => '[$1 $2]: 개정판 상태가 바뀌었습니다',
 	'codereview-email-body3' => '"$1" 사용자가 $2판의 상태를 "$4"로 바꾸었습니다.
 URL: $5
 
@@ -9278,6 +9281,7 @@ $6',
 	'right-codereview-signoff' => 'Ännerunge fräiginn',
 	'right-codereview-link-user' => 'Auteure mat Wiki-Benotzer verbannen (verlinken)',
 	'right-codereview-review-own' => 'Markéiert Är eege Versiounen als "{{int:code-status-ok}}" oder "{{int:code-status-resolved}}"',
+	'action-codereview-use' => 'Special:Code gëtt benotze',
 	'action-codereview-link-user' => 'Auteure mat Wiki-Benotzer verbannen (verlinken)',
 	'specialpages-group-developer' => 'Handwierksgeschir fir Entwéckler (Programméierer)',
 	'group-svnadmins' => 'SVN-Administrateuren',
