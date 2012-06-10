@@ -3247,7 +3247,7 @@ $messages['diq'] = array(
 	'code-status-new' => 'newe',
 	'code-status-fixme' => 'fixme',
 	'code-status-reverted' => 'revert biye',
-	'code-status-resolved' => 'resolve biye',
+	'code-status-resolved' => 'Agoziya',
 	'code-status-ok' => 'temam',
 	'code-status-deferred' => 'defer biyo',
 	'code-status-old' => 'kihan',
@@ -8087,7 +8087,7 @@ $messages['ja'] = array(
 	'code-no-repo' => '設定されたリポジトリはありません！',
 	'code-create-repo' => '[[Special:RepoAdmin|リポジトリ管理]]でリポジトリを作成',
 	'code-need-repoadmin-rights' => 'リポジトリを作成するには、リポジトリ管理権限が必要です',
-	'code-need-group-with-rights' => 'リポジトリ管理権限をもつ利用者グループがありません。新規リポジトリを追加できる利用者グループを追加してください。',
+	'code-need-group-with-rights' => 'リポジトリ管理権限がある利用者グループがありません。新規リポジトリを追加できる利用者グループを追加してください。',
 	'code-repo-not-found' => "リポジトリ '''$1''' は存在しません！",
 	'code-load-diff' => '差分を読み込み中…',
 	'code-notes' => '最近のコメント',
@@ -8140,7 +8140,7 @@ $messages['ja'] = array(
 	'code-rev-modified-m' => '変更',
 	'code-rev-imagediff' => '画像の変更',
 	'code-rev-status' => '状態:',
-	'code-rev-status-set' => '状態を変更する',
+	'code-rev-status-set' => '状態を変更',
 	'code-rev-tags' => 'タグ:',
 	'code-rev-tag-add' => 'タグを追加:',
 	'code-rev-tag-remove' => 'タグを除去:',
@@ -8149,7 +8149,7 @@ $messages['ja'] = array(
 	'code-rev-inline-preview' => 'プレビュー:',
 	'code-rev-diff' => '差分',
 	'code-rev-diff-link' => '差分',
-	'code-rev-diff-too-large' => '差分が大きすぎて表示出来ません。',
+	'code-rev-diff-too-large' => '差分が大きすぎるため表示できません。',
 	'code-rev-purge-link' => 'キャッシュを削除',
 	'code-rev-total' => '結果の合計数: $1',
 	'code-rev-not-found' => "リビジョン '''$1''' は存在しません！",
@@ -8203,51 +8203,49 @@ $messages['ja'] = array(
 	'codereview-overview-desc' => 'このリストのグラフィカルな概要を表示',
 	'codereview-email-subj' => '[$1 $2]: 新規コメント追加',
 	'codereview-email-body' => '利用者「$1」が $3 にコメントを付けました。
+URL：$2
 
-URL: $2
-要約:
+$3の要約：
 
 $5
 
-コメント:
+$1によるコメント：
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: 追補の変更',
-	'codereview-email-body2' => '利用者「$1」が$2に追補の変更を加えました。
+	'codereview-email-body2' => '「$1」が$2に追補の変更を加えました。
+URL：$5
 
-追補版のURL：$5
-要約:
+$2への追補の要約：
 
 $6
 
-URL：$3
-要約：
+追補のURL：$3
+「$1」による追補の要約：
 
 $4',
 	'codereview-email-subj3' => '[$1 $2]: リビジョンの状態が変更されました',
-	'codereview-email-body3' => '利用者「$1」が、$2の状態を変更しました。
+	'codereview-email-body3' => '「$1」が、$2の状態を「$4」に変更しました。
+URL：$5
 
-もとの状態: $3
-新しい状態: $4
+元の状態：$3
+新しい状態：$4
 
-URL: $5
-要約:
+$2の要約：
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: 新しいコメントが追加され、リビジョンの状態が変更されました',
-	'codereview-email-body4' => '利用者「$1」が、$2の状態を変更しました。
+	'codereview-email-body4' => '「$1」が、$2の状態を「$4」に変更してコメントを付けました。
+URL：$5
 
-もとの状態：$3
+元の状態：$3
 新しい状態：$4
 
-利用者「$1」は$2にコメントも投稿しました。
-
-URL：$5
-要約:
+$2の要約：
 
 $7
 
-コメント：
+$1によるコメント：
 
 $6',
 	'code-stats' => '統計',
@@ -8263,12 +8261,12 @@ $6',
 	'code-tooltip-withoutsummary' => '$3 により r$1 [$2]',
 	'repoadmin' => 'リポジトリ管理',
 	'repoadmin-new-legend' => '新規リポジトリを作成',
-	'repoadmin-new-label' => 'リポジトリ名:',
+	'repoadmin-new-label' => 'リポジトリ名：',
 	'repoadmin-new-button' => '作成',
 	'repoadmin-edit-legend' => 'リポジトリ "$1" の変更',
-	'repoadmin-edit-path' => 'リポジトリのパス:',
-	'repoadmin-edit-bug' => 'Bugzilla パス:',
-	'repoadmin-edit-view' => 'ViewVC パス:',
+	'repoadmin-edit-path' => 'リポジトリのパス：',
+	'repoadmin-edit-bug' => 'Bugzilla パス：',
+	'repoadmin-edit-view' => 'ViewVC パス：',
 	'repoadmin-edit-button' => 'OK',
 	'repoadmin-edit-sucess' => 'リポジトリ "[[Special:Code/$1|$1]]" の変更に成功しました。',
 	'repoadmin-nav' => 'リポジトリ管理',
@@ -8281,7 +8279,7 @@ $6',
 	'right-codereview-signoff' => 'リビジョンでサインオフ',
 	'right-codereview-link-user' => '作者とウィキ利用者をリンク',
 	'right-codereview-associate' => '版のつながりを管理',
-	'right-codereview-review-own' => '自分のリビジョンに"{{int:code-status-ok}}"または"{{int:code-status-resolved}}"の印をする',
+	'right-codereview-review-own' => '自分のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける',
 	'action-repoadmin' => 'コードリポジトリを管理',
 	'action-codereview-use' => 'Special:Code の使用',
 	'action-codereview-add-tag' => 'リビジョンに新しいタグを追加',
@@ -8291,7 +8289,7 @@ $6',
 	'action-codereview-signoff' => 'リビジョンでサインオフ',
 	'action-codereview-link-user' => '作者とウィキ利用者をリンク',
 	'action-codereview-associate' => '版のつながりを管理',
-	'action-codereview-review-own' => '自分のリビジョンに"{{int:code-status-ok}}"または"{{int:code-status-resolved}}"の印をする',
+	'action-codereview-review-own' => '自分のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける',
 	'specialpages-group-developer' => '開発者用ツール',
 	'group-svnadmins' => 'SVN管理者',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN 管理者}}',
