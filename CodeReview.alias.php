@@ -31,12 +31,12 @@ $specialPageAliases['bjn'] = array(
 	'Code' => array( 'Kode' ),
 );
 
-/** Breton (Brezhoneg) */
+/** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'Code' => array( 'Kod' ),
 );
 
-/** Bosnian (Bosanski) */
+/** Bosnian (bosanski) */
 $specialPageAliases['bs'] = array(
 	'Code' => array( 'Kod', 'PregledKoda' ),
 	'RepoAdmin' => array( 'RepoAdministracija' ),
@@ -46,6 +46,12 @@ $specialPageAliases['bs'] = array(
 $specialPageAliases['de'] = array(
 	'Code' => array( 'Quelltext', 'Quelltextprüfung' ),
 	'RepoAdmin' => array( 'Repositoriumsverwaltung' ),
+);
+
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'Code' => array( 'Kode' ),
+	'RepoAdmin' => array( 'XizmetkarêRepoy' ),
 );
 
 /** Lower Sorbian (Dolnoserbski) */
@@ -58,12 +64,12 @@ $specialPageAliases['eo'] = array(
 	'Code' => array( 'Kodo' ),
 );
 
-/** Spanish (Español) */
+/** Spanish (español) */
 $specialPageAliases['es'] = array(
 	'Code' => array( 'Código', 'RevisarCódigo' ),
 );
 
-/** Basque (Euskara) */
+/** Basque (euskara) */
 $specialPageAliases['eu'] = array(
 	'Code' => array( 'Kodea' ),
 );
@@ -74,7 +80,7 @@ $specialPageAliases['fa'] = array(
 	'RepoAdmin' => array( 'مدیر_مخزن' ),
 );
 
-/** Finnish (Suomi) */
+/** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
 	'Code' => array( 'Koodin_katselmointi' ),
 );
@@ -99,7 +105,7 @@ $specialPageAliases['gu'] = array(
 	'Code' => array( 'સંજ્ઞા', 'સંજ્ઞાપરીક્ષણ' ),
 );
 
-/** Croatian (Hrvatski) */
+/** Croatian (hrvatski) */
 $specialPageAliases['hr'] = array(
 	'Code' => array( 'Kod' ),
 	'RepoAdmin' => array( 'Admin_repozitorija' ),
@@ -121,12 +127,12 @@ $specialPageAliases['ht'] = array(
 	'RepoAdmin' => array( 'DepoAdmin' ),
 );
 
-/** Hungarian (Magyar) */
+/** Hungarian (magyar) */
 $specialPageAliases['hu'] = array(
 	'Code' => array( 'Kód' ),
 );
 
-/** Interlingua (Interlingua) */
+/** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'Code' => array( 'Codice', 'Recension_de_codice' ),
 	'RepoAdmin' => array( 'Admin_deposito' ),
@@ -155,7 +161,7 @@ $specialPageAliases['km'] = array(
 
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
-	'Code' => array( '코드검토' ),
+	'Code' => array( '코드검토', '코드' ),
 	'RepoAdmin' => array( '저장소관리' ),
 );
 
@@ -176,7 +182,7 @@ $specialPageAliases['lb'] = array(
 	'Code' => array( 'Quelltext' ),
 );
 
-/** Macedonian (Македонски) */
+/** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'Code' => array( 'ПрограмскиКод', 'Код', 'ПрегледНаКод' ),
 	'RepoAdmin' => array( 'АдминНаСкладиштето' ),
@@ -198,7 +204,7 @@ $specialPageAliases['mt'] = array(
 	'Code' => array( 'Kodiċi' ),
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+/** Norwegian Bokmål (‪norsk (bokmål)‬) */
 $specialPageAliases['nb'] = array(
 	'Code' => array( 'Kode' ),
 );
@@ -215,18 +221,18 @@ $specialPageAliases['nl'] = array(
 	'RepoAdmin' => array( 'Repobeheer' ),
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬) */
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬) */
 $specialPageAliases['nn'] = array(
 	'Code' => array( 'Kode' ),
 );
 
-/** Polish (Polski) */
+/** Polish (polski) */
 $specialPageAliases['pl'] = array(
 	'Code' => array( 'Kod' ),
 	'RepoAdmin' => array( 'Administrowanie_repozytorium' ),
 );
 
-/** Russian (Русский) */
+/** Russian (русский) */
 $specialPageAliases['ru'] = array(
 	'Code' => array( 'Код' ),
 );
@@ -237,13 +243,13 @@ $specialPageAliases['sa'] = array(
 	'RepoAdmin' => array( 'रेपोप्रचालक' ),
 );
 
-/** Slovak (Slovenčina) */
+/** Slovak (slovenčina) */
 $specialPageAliases['sk'] = array(
 	'Code' => array( 'Kód', 'KontrolaKódu' ),
 	'RepoAdmin' => array( 'SprávcaÚložiska' ),
 );
 
-/** Swedish (Svenska) */
+/** Swedish (svenska) */
 $specialPageAliases['sv'] = array(
 	'Code' => array( 'Kod', 'Kodgranskning' ),
 );
@@ -266,7 +272,7 @@ $specialPageAliases['tr'] = array(
 	'RepoAdmin' => array( 'RepoHizmetli', 'RepoYönetici' ),
 );
 
-/** Vèneto (Vèneto) */
+/** vèneto (vèneto) */
 $specialPageAliases['vec'] = array(
 	'Code' => array( 'Còdese' ),
 );
@@ -282,13 +288,13 @@ $specialPageAliases['vi'] = array(
 	'RepoAdmin' => array( 'Quản_lý_kho' ),
 );
 
-/** Simplified Chinese (‪中文(简体)‬) */
+/** Simplified Chinese (‪中文（简体）‬) */
 $specialPageAliases['zh-hans'] = array(
 	'Code' => array( '代码' ),
 	'RepoAdmin' => array( '信息库管理' ),
 );
 
-/** Traditional Chinese (‪中文(繁體)‬) */
+/** Traditional Chinese (‪中文（繁體）‬) */
 $specialPageAliases['zh-hant'] = array(
 	'Code' => array( '代碼' ),
 	'RepoAdmin' => array( '信息庫管理' ),
