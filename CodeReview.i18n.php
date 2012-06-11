@@ -8412,6 +8412,7 @@ $messages['ka'] = array(
 	'code-statuschanges' => 'სტატუსის შეცვლა',
 	'code-mycomments' => 'ჩემი კომენტარები',
 	'code-authors' => 'ავტორები',
+	'code-status' => 'სტატუსი',
 	'code-tags' => 'აღნიშვნები',
 	'code-author-orphan' => 'SVN მომხმარებელი/ავტორი $1 არ არის ვიკი-ანგარიშთან დაკავშირებული',
 	'code-author-name' => 'მომხმარებლის სახელის შეტანა:',
@@ -12157,7 +12158,7 @@ $4',
 	'group-svnadmins' => 'د SVN پازوالان',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Crazymadlover
  * @author Giro720
  * @author Hamilton Abreu
@@ -12268,8 +12269,8 @@ $messages['pt'] = array(
 	'code-signoff-submit' => 'Aprovar',
 	'code-signoff-strike' => 'Anular as aprovações seleccionadas',
 	'code-signoff-signoff' => 'Aprovar esta revisão como:',
-	'code-signoff-flag-inspected' => 'Inspeccionado',
-	'code-signoff-flag-tested' => 'Testado',
+	'code-signoff-flag-inspected' => 'Inspeccionada',
+	'code-signoff-flag-tested' => 'Testada',
 	'code-signoff-field-user' => 'Utilizador',
 	'code-signoff-field-flag' => 'Estado',
 	'code-signoff-field-date' => 'Data',
@@ -13523,7 +13524,7 @@ $messages['sa'] = array(
 	'code-signoff-field-date' => 'दिनाङ्क',
 );
 
-/** Sakha (Саха тыла)
+/** Sakha (саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -13538,7 +13539,7 @@ $messages['sah'] = array(
 	'code-old-status' => 'Урукку туруга',
 	'code-new-status' => 'Саҥа туруга',
 	'code-prop-changes' => 'Статус уонна бэлиэлэр сурунааллара',
-	'codereview-desc' => '[[Special:RepoAdmin|Subversion]] өйүүр [[Special:Code|куоду көрдөрөр үнүстүрүмүөн]]',
+	'codereview-desc' => '[[Special:RepoAdmin|Subversion]] өйүүр [[Special:Code|куоду көрдөрөр тэрил]]',
 	'code-no-repo' => 'Анаан оҥоһуллубут ыскылаат суох',
 	'code-repo-not-found' => "'''$1''' репозиторий суох!",
 	'code-load-diff' => 'Тэҥнээһин...',
