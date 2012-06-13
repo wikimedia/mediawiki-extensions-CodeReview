@@ -9099,8 +9099,9 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Verwallder vum SVN',
 );
 
-/** Kurdish (Latin script) (Kurdî (latînî))
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
  * @author George Animal
+ * @author Ghybu
  * @author Welathêja
  */
 $messages['ku-latn'] = array(
@@ -9110,6 +9111,8 @@ $messages['ku-latn'] = array(
 	'code-mycomments' => 'şîroveyên min',
 	'code-field-id' => 'Revîzyon',
 	'code-field-timestamp' => 'Dem',
+	'code-rev-date' => 'Dîrok:',
+	'code-rev-message' => 'Şîrove:',
 	'code-rev-comment-preview' => 'Pêşdîtin',
 	'code-rev-inline-preview' => 'Pêşdîtin:',
 	'code-status-new' => 'nû',
