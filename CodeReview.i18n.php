@@ -1067,7 +1067,7 @@ $4',
 	'specialpages-group-developer' => 'أدوات المطورين',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  * @author Vago
  */
@@ -1370,7 +1370,7 @@ $messages['bcc'] = array(
 	'specialpages-group-developer' => 'وسایل پیشبروک',
 );
 
-/** Belarusian (Беларуская)
+/** Belarusian (беларуская)
  * @author Тест
  */
 $messages['be'] = array(
@@ -1618,7 +1618,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Адміністратары SVN',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  * @author Spiritia
  * @author Turin
@@ -2153,7 +2153,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Merourien SVN',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  * @author Smooth O
  */
@@ -2371,7 +2371,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN administratori',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Aleator
  * @author El libre
  * @author Loupeter
@@ -2536,19 +2536,19 @@ $messages['ce'] = array(
 	'codereview-reply-link' => 'жоп ло',
 );
 
-/** Sorani (کوردی) */
+/** Sorani Kurdish (کوردی) */
 $messages['ckb'] = array(
 	'codereview-batch-submit' => 'ناردن',
 );
 
-/** Corsican (Corsu) */
+/** Corsican (corsu) */
 $messages['co'] = array(
 	'code-field-author' => 'Autore',
 	'code-rev-author' => 'Autore:',
 	'code-rev-history-link' => 'cronolugia',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Danny B.
  * @author Kuvaly
  * @author Matěj Grabovský
@@ -2785,7 +2785,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Správci SVN',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Byrial
  * @author Peter Alberti
  */
@@ -3162,7 +3162,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administratoren',
 );
 
-/** German (formal address) (Deutsch (Sie-Form))
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -3507,7 +3507,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-administratory',
 );
 
-/** Ewe (Eʋegbe)
+/** Ewe (eʋegbe)
  * @author Natsubee
  */
 $messages['ee'] = array(
@@ -3961,7 +3961,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-administrantoj',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  * @author Crazymadlover
  * @author Danke7
@@ -4209,7 +4209,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}: administradores de SVN',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Avjoska
  * @author Pikne
  */
@@ -4409,7 +4409,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-administraatorid',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author An13sa
  * @author Kobazulo
  * @author Theklan
@@ -4735,7 +4735,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:مدیران اس‌وی‌ان',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Cimon Avaro
  * @author Crt
  * @author Nedergard
@@ -4962,7 +4962,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-ylläpitäjät',
 );
 
-/** French (Français)
+/** French (français)
  * @author Aadri
  * @author Cedric31
  * @author Crochet.david
@@ -5211,7 +5211,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Administrateurs SVN',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -5433,7 +5433,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Administrators SVN',
 );
 
-/** Friulian (Furlan)
+/** Friulian (furlan)
  * @author Klenje
  */
 $messages['fur'] = array(
@@ -6451,7 +6451,7 @@ $messages['hif-latn'] = array(
 	'repoadmin-new-button' => 'Banao',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author CERminator
  * @author Dalibor Bosits
  * @author Ex13
@@ -6898,7 +6898,7 @@ $messages['ht'] = array(
 	'code-status-desc-reverted' => 'Revizyon sa te defè pa yon lòt revizyon ki te fèt pi ta',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Bináris
  * @author BáthoryPéter
  * @author Dani
@@ -7098,7 +7098,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-adminisztrátorok',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -7815,7 +7815,7 @@ $messages['io'] = array(
 	'repoadmin-edit-button' => 'O.K.',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Aushulz
  * @author Beta16
  * @author BrokenArrow
@@ -9569,7 +9569,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-behierders',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Matasg
  */
@@ -9645,14 +9645,14 @@ $messages['lt'] = array(
 	'group-svnadmins' => 'SVN administratoriai',
 );
 
-/** Latgalian (Latgaļu)
+/** Latgalian (latgaļu)
  * @author Dark Eagle
  */
 $messages['ltg'] = array(
 	'code-signoff-field-user' => 'Lītuotuojs',
 );
 
-/** Latvian (Latviešu)
+/** Latvian (latviešu)
  * @author GreenZeb
  * @author Papuass
  */
@@ -9713,7 +9713,7 @@ $messages['mhr'] = array(
 	'repoadmin-edit-button' => 'Йӧра',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
  */
@@ -10165,7 +10165,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:എസ്.വി.എൻ. കാര്യനിർവാഹകർ',
 );
 
-/** Mongolian (Монгол)
+/** Mongolian (монгол)
  * @author Chinneeb
  */
 $messages['mn'] = array(
@@ -11091,7 +11091,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-beheerders',
 );
 
-/** Norwegian Nynorsk (Norsk (nynorsk))
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Gunnernett
  * @author Harald Khan
  * @author Nghtwlkr
@@ -11223,7 +11223,7 @@ $4',
 	'specialpages-group-developer' => 'Utviklarverkty',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  * @author McDutchie
  */
@@ -11616,7 +11616,7 @@ $messages['pfl'] = array(
 	'code-stats' => 'Schdadischdige',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  * @author Derbeth
  * @author Equadus
@@ -12385,7 +12385,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author 555
  * @author Eduardo.mps
  * @author Giro720
@@ -12608,7 +12608,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
@@ -12832,7 +12832,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Administratori SVN',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  * @author Reder
  */
@@ -13042,7 +13042,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Amministrature de SVN',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Dim Grits
  * @author Eleferen
  * @author Engineering
@@ -13722,7 +13722,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN дьаһабыллара',
 );
 
-/** Sicilian (Sicilianu)
+/** Sicilian (sicilianu)
  * @author Aushulz
  * @author Gmelfi
  * @author Santu
@@ -13821,7 +13821,7 @@ $4',
 	'specialpages-group-developer' => 'Stigghi dû sviluppaturi',
 );
 
-/** Serbo-Croatian (Srpskohrvatski)
+/** Serbo-Croatian (srpskohrvatski / српскохрватски)
  * @author OC Ripper
  */
 $messages['sh'] = array(
@@ -13987,7 +13987,7 @@ $messages['si'] = array(
 	'grouppage-svnadmins' => '{{ns:project}}:SVN පරිපාලකවරු',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  * @author Jkjk
  * @author Mormegil
@@ -14201,7 +14201,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Správcovia SVN',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  */
 $messages['sl'] = array(
@@ -14434,7 +14434,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Skrbniki SVN',
 );
 
-/** Albanian (Shqip)
+/** Albanian (shqip)
  * @author Mikullovci11
  * @author Olsi
  */
@@ -14444,7 +14444,7 @@ $messages['sq'] = array(
 	'grouppage-svnadmins' => '{{ns:project}}:Administruesit SVN',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Nikola Smolenski
  * @author Rancher
  * @author Јованвб
@@ -14601,7 +14601,7 @@ $messages['sr-ec'] = array(
 	'specialpages-group-developer' => 'Програмерски алати',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
@@ -14842,7 +14842,7 @@ $4',
 	'specialpages-group-developer' => 'Äntwiklerreewen',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Boivie
  * @author Cohan
  * @author Dafer45
@@ -15342,7 +15342,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN నిర్వాహకులు',
 );
 
-/** Tetum (Tetun)
+/** Tetum (tetun)
  * @author MF-Warburg
  */
 $messages['tet'] = array(
@@ -15365,7 +15365,7 @@ $messages['tet'] = array(
 	'repoadmin-edit-button' => 'OK',
 );
 
-/** Tajik (Cyrillic script) (Тоҷикӣ)
+/** Tajik (Cyrillic script) (тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -15460,7 +15460,7 @@ $4',
 	'specialpages-group-developer' => 'Абзорҳои тавсиядиҳандагон',
 );
 
-/** Tajik (Latin script) (Tojikī)
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -16099,7 +16099,7 @@ $messages['ug-latn'] = array(
 	'repoadmin-edit-button' => 'Maqul',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author AS
  * @author Ahonc
  * @author Aleksandrit
@@ -16327,7 +16327,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}: Адміністратори SVN',
 );
 
-/** Vèneto (Vèneto)
+/** vèneto (vèneto)
  * @author Candalua
  */
 $messages['vec'] = array(
@@ -17019,7 +17019,7 @@ $3',
 	'specialpages-group-developer' => '開發者工具',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Anakmalaysia
  * @author Chenzw
  * @author Gaoxuewei
@@ -17259,7 +17259,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN管理员',
 );
 
-/** Traditional Chinese (中文(繁體))
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Anakmalaysia
  * @author FireJackey
  * @author Horacewai2
