@@ -8825,7 +8825,7 @@ $1 사용자의 덧글:
 $6',
 	'code-stats' => '통계',
 	'code-stats-header' => '$1 저장소에 대한 통계',
-	'code-stats-main' => '$6 $5 기준으로, 이 저장소에는 [[Special:Code/$3/author|$4명의 저자]]가 작성한 $2개의 판이 있습니다.',
+	'code-stats-main' => '$6 $5 기준으로, 이 저장소에는 [[Special:Code/$3/author|저자 $4명]]이 작성한 판 $2개가 있습니다.',
 	'code-stats-status-breakdown' => '상태별 판의 개수',
 	'code-stats-fixme-breakdown' => '저자별 수정이 필요한 판의 개수',
 	'code-stats-fixme-breakdown-path' => '경로별 수정이 필요한 판의 개수',
