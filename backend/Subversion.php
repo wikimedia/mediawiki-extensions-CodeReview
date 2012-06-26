@@ -23,7 +23,7 @@ abstract class SubversionAdaptor {
 	}
 
 	/**
-	 * @param $repo String Path to SVN Repo
+	 * @param $repoPath String Path to SVN Repo
 	 */
 	function __construct( $repoPath ) {
 		$this->mRepoPath = $repoPath;

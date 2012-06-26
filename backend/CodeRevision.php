@@ -646,8 +646,8 @@ class CodeRevision {
 	 * @param null $parent
 	 * @return CodeComment
 	 */
-	public function previewComment( $text, $review, $parent = null ) {
-		$data = $this->commentData( rtrim( $text ), $review, $parent );
+	public function previewComment( $text, $parent = null ) {
+		$data = $this->commentData( rtrim( $text ), $parent );
 		$data['cc_id'] = null;
 		return CodeComment::newFromData( $this, $data );
 	}
@@ -731,12 +731,11 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $text
-	 * @param  $review
-	 * @param null $parent
+	 * @param $text string
+	 * @param $parent null|
 	 * @return array
 	 */
-	protected function commentData( $text, $review, $parent = null ) {
+	protected function commentData( $text, $parent = null ) {
 		global $wgUser;
 		$dbw = wfGetDB( DB_MASTER );
 		$ts = wfTimestamp( TS_MW );

@@ -159,7 +159,7 @@ class CodeRepository {
 	 * Return a bug URL or false
 	 *
 	 * @param $bugId int|string
-	 * @return string|false.
+	 * @return string|bool
 	 */
 	public function getBugPath( $bugId ) {
 		if ( $this->bugzilla ) {
@@ -251,6 +251,7 @@ class CodeRepository {
 	/**
 	 * Load a particular revision out of the DB
 	 * @param $id int|string
+	 * @throws MWException
 	 * @return CodeRevision
 	 */
 	public function getRevision( $id ) {
@@ -559,7 +560,7 @@ class CodeRepository {
 	 *
 	 * @param $name string
 	 *
-	 * @return string|false
+	 * @return string|bool
 	 */
 	public function wikiUserAuthor( $name ) {
 		if ( isset( self::$authorLinks[$name] ) )

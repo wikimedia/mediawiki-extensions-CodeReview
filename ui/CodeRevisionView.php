@@ -112,7 +112,7 @@ class CodeRevisionView extends CodeView {
 		$wgOut->setPageTitle( wfMsgHtml( 'code-rev-title', $pageTitle ) );
 		$wgOut->setHTMLTitle( wfMsgHtml( 'code-rev-title', $htmlTitle ) );
 
-		$repoLink = $this->skin->link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+		$repoLink = Linker::link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 			htmlspecialchars( $this->mRepo->getName() ) );
 		$revText = $this->navigationLinks();
 		$paths = '';
@@ -149,7 +149,7 @@ class CodeRevisionView extends CodeView {
 		if ( $this->mPath != '' ) {
 			$links = array();
 			foreach( explode( '|', $this->mPath ) as $path ) {
-				$links[] = $this->skin->link(
+				$links[] = Linker::link(
 					SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 					$path,
 					array(),
@@ -171,7 +171,7 @@ class CodeRevisionView extends CodeView {
 			$diffHtml = $this->formatDiff();
 			$html .=
 				"<h2>" . wfMsgHtml( 'code-rev-diff' ) .
-				' <small>[' . $this->skin->makeLinkObj( $special,
+				' <small>[' . Linker::makeLinkObj( $special,
 					wfMsgHtml( 'code-rev-purge-link' ), 'action=purge' ) . ']</small></h2>' .
 				"<div class='mw-codereview-diff' id='mw-codereview-diff'>" . $diffHtml . "</div>\n";
 			$html .= $this->formatImgDiff();
@@ -230,7 +230,7 @@ class CodeRevisionView extends CodeView {
 
 		if ( $prev ) {
 			$prevTarget = SpecialPage::getTitleFor( 'Code', "$repo/$prev" );
-			$links[] = '&lt;&#160;' . $this->skin->link( $prevTarget, $this->mRev->getIdString( $prev ),
+			$links[] = '&lt;&#160;' . Linker::link( $prevTarget, $this->mRev->getIdString( $prev ),
 				array(), array( 'path' => $this->mPath ) ).$wgLang->getDirMark();
 		}
 
@@ -245,7 +245,7 @@ class CodeRevisionView extends CodeView {
 
 		if ( $next ) {
 			$nextTarget = SpecialPage::getTitleFor( 'Code', "$repo/$next" );
-			$links[] = $this->skin->link( $nextTarget, $this->mRev->getIdString( $next ),
+			$links[] = Linker::link( $nextTarget, $this->mRev->getIdString( $next ),
 				array(), array( 'path' => $this->mPath ) ) . '&#160;&gt;';
 		}
 
@@ -307,7 +307,7 @@ class CodeRevisionView extends CodeView {
 		$path = preg_replace( '/ \([^\)]+\)$/', '', $path );
 		$viewvc = $this->mRepo->getViewVcBase();
 		$diff = '';
-		$hist = $this->skin->link(
+		$hist = Linker::link(
 			SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 			wfMsg( 'code-rev-history-link' ), array(), array( 'path' => $path )
 		);
@@ -317,20 +317,20 @@ class CodeRevisionView extends CodeView {
 			$prev = $rev - 1;
 			if ( $action === 'd' ) {
 				if ( $rev > 1 ) {
-					$link = $this->skin->makeExternalLink( // last rev
+					$link = Linker::makeExternalLink( // last rev
 						"{$viewvc}{$safePath}?view=markup&pathrev=".($rev-1),
 						$path . $from );
 				} else {
 					$link = $safePath; // imported to SVN or something
 				}
 			} else {
-				$link = $this->skin->makeExternalLink(
+				$link = Linker::makeExternalLink(
 					"{$viewvc}{$safePath}?view=markup&pathrev=$rev",
 					$path . $from );
 			}
 			if ( $action !== 'a' && $action !== 'd' ) {
 				$diff = ' (' .
-					$this->skin->makeExternalLink(
+					Linker::makeExternalLink(
 						"$viewvc$safePath?&pathrev=$rev&r1=$prev&r2=$rev",
 						wfMsg( 'code-rev-diff-link' ) ) .
 					')';
@@ -439,7 +439,7 @@ class CodeRevisionView extends CodeView {
 	protected function formatTag( $tag ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/tag/$tag" );
-		return $this->skin->link( $special, htmlspecialchars( $tag ) );
+		return Linker::link( $special, htmlspecialchars( $tag ) );
 	}
 
 	/**
@@ -641,7 +641,7 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function formatSignoffInline( $signoff ) {
 		global $wgLang;
-		$user = $this->skin->userLink( $signoff->user, $signoff->userText );
+		$user = Linker::userLink( $signoff->user, $signoff->userText );
 		$flag = htmlspecialchars( $signoff->flag );
 		$signoffDate = $wgLang->timeanddate( $signoff->timestamp, true );
 		$class = "mw-codereview-signoff-flag-$flag";
@@ -683,8 +683,8 @@ class CodeRevisionView extends CodeView {
 		global $wgLang;
 		$revId = $change->rev->getIdString();
 		$line = $wgLang->timeanddate( $change->timestamp, true );
-		$line .= '&#160;' . $this->skin->userLink( $change->user, $change->userText );
-		$line .= $this->skin->userToolLinks( $change->user, $change->userText );
+		$line .= '&#160;' . Linker::userLink( $change->user, $change->userText );
+		$line .= Linker::userToolLinks( $change->user, $change->userText );
 		// Uses messages 'code-change-status', 'code-change-tags'
 		$line .= '&#160;' . wfMsgExt( "code-change-{$change->attrib}", 'parseinline', $revId );
 		$line .= " <i>[";
@@ -728,7 +728,7 @@ class CodeRevisionView extends CodeView {
 		$css = 'mw-codereview-status-' . htmlspecialchars( $row->cr_status );
 		$date = $wgLang->timeanddate( $row->cr_timestamp, true );
 		$title = SpecialPage::getTitleFor( 'Code', "$repo/$rev" );
-		$revLink = $this->skin->link( $title, $this->mRev->getIdString( $rev ) );
+		$revLink = Linker::link( $title, $this->mRev->getIdString( $rev ) );
 		$summary = $this->messageFragment( $row->cr_message );
 		$author = $this->authorLink( $row->cr_author );
 
@@ -768,8 +768,8 @@ class CodeRevisionView extends CodeView {
 	 * @param $review int
 	 * @return string
 	 */
-	protected function previewComment( $text, $review = 0 ) {
-		$comment = $this->mRev->previewComment( $text, $review );
+	protected function previewComment( $text ) {
+		$comment = $this->mRev->previewComment( $text );
 		return $this->formatComment( $comment );
 	}
 
@@ -786,7 +786,7 @@ class CodeRevisionView extends CodeView {
 			$permaLink = '<strong>' . wfMsgHtml( 'code-rev-inline-preview' ) . '</strong> ';
 		} else {
 			$linkId = 'c' . intval( $comment->id );
-			$permaLink = $this->skin->link( $this->commentLink( $comment->id ), "#" );
+			$permaLink = Linker::link( $this->commentLink( $comment->id ), "#" );
 		}
 
 		$popts = $wgOut->parserOptions();
@@ -801,8 +801,8 @@ class CodeRevisionView extends CodeView {
 			'<div class="mw-codereview-comment-meta">' .
 			$permaLink .
 			wfMsgHtml( 'code-rev-comment-by',
-				$this->skin->userLink( $comment->user, $comment->userText ) .
-				$this->skin->userToolLinks( $comment->user, $comment->userText ) ) .
+				Linker::userLink( $comment->user, $comment->userText ) .
+					Linker::userToolLinks( $comment->user, $comment->userText ) ) .
 			' &#160; ' .
 			$wgLang->timeanddate( $comment->timestamp, true ) .
 			' ' .
@@ -839,7 +839,7 @@ class CodeRevisionView extends CodeView {
 		$rev = $this->mRev->getId();
 		$self = SpecialPage::getTitleFor( 'Code', "$repo/$rev/reply/$id" );
 		$self->setFragment( "#c$id" );
-		return '[' . $this->skin->link( $self, wfMsg( 'codereview-reply-link' ) ) . ']';
+		return '[' . Linker::link( $self, wfMsg( 'codereview-reply-link' ) ) . ']';
 	}
 
 	protected function postCommentForm( $parent = null ) {

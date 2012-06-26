@@ -47,6 +47,7 @@ class WordCloud {
 	 * Constructor
 	 *
 	 * @param $words Array of word => rank pairs
+	 * @param $callback Callback|null
 	 */
 	public function __construct( Array $words = array(), $callback = null ) {
 		foreach( $words as $word => $rank ) {

@@ -32,6 +32,7 @@ class CodeComment {
 	 * @param int $cc_id Comment ID in the database
 	 * @param CodeRevision $rev A revision object to which the comment is
 	 * attached
+	 * @return CodeComment
 	 */
 	static function newFromID( $cc_id, CodeRevision $rev ) {
 		$dbr = wfGetDB( DB_SLAVE );

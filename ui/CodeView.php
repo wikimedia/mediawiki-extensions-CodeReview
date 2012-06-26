@@ -10,11 +10,6 @@ abstract class CodeView {
 	var $mRepo;
 
 	/**
-	 * @var Skin
-	 */
-	var $skin;
-
-	/**
 	 * @var CodeCommentLinkerHtml
 	 */
 	var $codeCommentLinkerHtml;
@@ -28,9 +23,6 @@ abstract class CodeView {
 		$this->mRepo = ( $repo instanceof CodeRepository )
 			? $repo
 			: CodeRepository::newFromName( $repo );
-
-		global $wgUser;
-		$this->skin = $wgUser->getSkin();
 
 		$this->codeCommentLinkerHtml = new CodeCommentLinkerHtml( $this->mRepo );
 		$this->codeCommentLinkerWiki = new CodeCommentLinkerWiki( $this->mRepo );
@@ -48,7 +40,7 @@ abstract class CodeView {
 	function authorLink( $author, $extraParams = array() ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/author/$author" );
-		return $this->skin->link( $special, htmlspecialchars( $author ), array(), $extraParams );
+		return Linker::link( $special, htmlspecialchars( $author ), array(), $extraParams );
 	}
 
 	function statusDesc( $status ) {
@@ -77,11 +69,12 @@ abstract class CodeView {
 			}
 		}
 
-	    return $truncated;
+		return $truncated;
 	}
+
 	/**
 	 * Formatted HTML array for properties display
-	 * @param array fields : 'propname' => HTML data
+	 * @param $fields array 'propname' => HTML data
 	 */
 	function formatMetaData( $fields ) {
 		$html = '<table class="mw-codereview-meta">';
@@ -91,6 +84,9 @@ abstract class CodeView {
 		return $html . "</table>\n";
 	}
 
+	/**
+	 * @return bool|CodeRepository
+	 */
 	function getRepo() {
 		if ( $this->mRepo ) {
 			return $this->mRepo;

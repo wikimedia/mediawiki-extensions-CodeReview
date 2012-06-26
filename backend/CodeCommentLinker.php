@@ -1,12 +1,6 @@
 <?php
 
 abstract class CodeCommentLinker {
-
-	/**
-	 * @var Skin
-	 */
-	protected $skin;
-
 	/**
 	 * @var CodeRepository
 	 */
@@ -16,8 +10,6 @@ abstract class CodeCommentLinker {
 	 * @param $repo CodeRepository
 	 */
 	function __construct( $repo ) {
-		global $wgUser;
-		$this->skin = $wgUser->getSkin();
 		$this->mRepo = $repo;
 	}
 
@@ -64,6 +56,7 @@ abstract class CodeCommentLinker {
 
 	/**
 	 * @param $matches array
+	 * @return string
 	 */
 	function messageRevLink( $matches ) {
 		$text = $matches[0];
@@ -82,6 +75,12 @@ abstract class CodeCommentLinker {
 	 */
 	abstract function makeExternalLink( $url, $text );
 
+	/**
+	 * @abstract
+	 * @param $title Title
+	 * @param $text string
+	 * @return string
+	 */
 	abstract function makeInternalLink( $title, $text );
 }
 
@@ -93,7 +92,7 @@ class CodeCommentLinkerHtml extends CodeCommentLinker {
 	 * @return string
 	 */
 	function makeExternalLink( $url, $text ) {
-		return $this->skin->makeExternalLink( $url, $text );
+		return Linker::makeExternalLink( $url, $text );
 	}
 
 	/**
@@ -102,7 +101,7 @@ class CodeCommentLinkerHtml extends CodeCommentLinker {
 	 * @return  string
 	 */
 	function makeInternalLink( $title, $text ) {
-		return $this->skin->link( $title, $text );
+		return Linker::link( $title, $text );
 	}
 }
 

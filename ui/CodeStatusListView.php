@@ -14,7 +14,7 @@ class CodeStatusListView extends CodeView {
 
 		$table_rows = '';
 		foreach ( $states as $state ) {
-			$link = $this->skin->link(
+			$link = Linker::link(
 				SpecialPage::getTitleFor( 'Code', $name . "/status/$state" ),
 				wfMsgHtml( "code-status-".$state )
 			);

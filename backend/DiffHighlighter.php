@@ -54,13 +54,13 @@ class CodeDiffHighlighter {
 		switch( substr( $line, 0, 1 ) ) {
 		case '-':
 			if( substr( $line, 0, 3 ) === '---' ) {
-				return;
+				return '';
 			}
 			$r = $this->handleLineDeletion( $line );
 			break;
 		case '+':
 			if( substr( $line, 0, 3 ) === '+++' ) {
-				return;
+				return '';
 			}
 			$r = $this->handleLineAddition( $line );
 			break;
@@ -73,7 +73,7 @@ class CodeDiffHighlighter {
 
 		# Patch lines that will be skipped:
 		case '=':
-			return;
+			return '';
 
 		# Remaining case should be the file name
 		default:
@@ -84,6 +84,11 @@ class CodeDiffHighlighter {
 		return $r;
 	}
 
+	/**
+	 * @param $content string
+	 * @param $class string
+	 * @return string
+	 */
 	function formatLine( $content, $class = null ) {
 
 		if ( $class === null ) {
@@ -227,7 +232,8 @@ class CodeDiffHighlighter {
 	 *
 	 * NOTE: visibility is 'public' since the function covered by tests.
 	 *
-	 * @param $chunk string a one line chunk as described above
+	 * @param $chunkHeader string a one line chunk as described above
+	 * @throws MWException
 	 * @return array with the four values above as an array
 	 */
 	static function parseChunkDelimiter( $chunkHeader ) {

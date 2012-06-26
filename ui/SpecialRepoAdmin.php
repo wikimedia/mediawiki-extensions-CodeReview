@@ -7,6 +7,9 @@ class SpecialRepoAdmin extends SpecialPage {
 		parent::__construct( 'RepoAdmin', 'repoadmin' );
 	}
 
+	/**
+	 * @param $subpage string
+	 */
 	public function execute( $subpage ) {
 		global $wgRequest, $wgUser;
 
@@ -97,9 +100,8 @@ class RepoAdminRepoView {
 	private $repo;
 
 	/**
-	 * @
-	 * @param $page Title Special page title (with repo subpage)
-	 * @param $repo
+	 * @param $t Title Special page title (with repo subpage)
+	 * @param $repo string
 	 */
 	public function __construct( Title $t, $repo ) {
 		$this->title = $t;
@@ -153,7 +155,7 @@ class RepoAdminRepoView {
 						Xml::input( 'wpBugPath', 60, $bugPath, array( 'dir' => 'ltr') ),
 					'repoadmin-edit-view' =>
 						Xml::input( 'wpViewPath', 60, $viewPath, array( 'dir' => 'ltr') ) ) ) .
-			Html::hidden( 'wpEditToken', $wgUser->editToken( $this->repoName ) ) .
+			Html::hidden( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) ) .
 			Xml::submitButton( wfMsg( 'repoadmin-edit-button' ) ) .
 			'</form></fieldset>'
 		);

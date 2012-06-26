@@ -18,8 +18,8 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 		}
 
 		return wfMsgHtml( 'code-author-haslink',
-			$this->skin->userLink( $this->mUser->getId(), $this->mUser->getName() ) .
-			$this->skin->userToolLinks(
+			Linker::userLink( $this->mUser->getId(), $this->mUser->getName() ) .
+			Linker::userToolLinks(
 				$this->mUser->getId(),
 				$this->mUser->getName(),
 				false, /* default for redContribsWhenNoEdits */
@@ -35,11 +35,11 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 		if ( $wgUser->isAllowed( 'codereview-link-user' ) ) {
 			$repo = $this->mRepo->getName();
 			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor/link" );
-			$linkInfo .= ' (' . $this->skin->link( $page,
+			$linkInfo .= ' (' . Linker::link( $page,
 				wfMsg( 'code-author-' . ( $this->mUser ? 'un':'' ) . 'link' ) ) . ')' ;
 		}
 
-		$repoLink = $this->skin->link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+		$repoLink = Linker::link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 			htmlspecialchars( $this->mRepo->getName() ) );
 		$fields = array(
 			'code-rev-repo' => $repoLink,

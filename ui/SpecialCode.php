@@ -8,6 +8,9 @@ class SpecialCode extends SpecialPage {
 		parent::__construct( 'Code' , 'codereview-use' );
 	}
 
+	/**
+	 * @param $subpage string
+	 */
 	public function execute( $subpage ) {
 		global $wgOut, $wgUser;
 
@@ -45,11 +48,10 @@ class SpecialCode extends SpecialPage {
 
 	/**
 	 * Get a view object from a sub page path.
-	 * @return CodeView object or null if no valid action could be found
+	 * @param $subpage string
+	 * @return CodeView|null - Null if no valid action could be found
 	 */
 	private function getViewFrom( $subpage ) {
-		global $wgRequest;
-
 		// Defines the classes to use for each view type.
 		// The first class name is used if no additional parameters are provided.
 		// The second, if defined, is used if there is an additional parameter.  If
@@ -66,6 +68,7 @@ class SpecialCode extends SpecialPage {
 				'stats' => array( "CodeRepoStatsView" ),
 			);
 
+		$request = $this->getRequest();
 		# Remove stray slashes
 		$subpage = preg_replace( '/\/$/', '', $subpage );
 		if ( $subpage == '' ) {
@@ -96,7 +99,7 @@ class SpecialCode extends SpecialPage {
 					} else {
 						$view = new $row[0]( $repo );
 					}
-				} elseif ( $wgRequest->wasPosted() && !$wgRequest->getCheck( 'wpPreview' ) ) {
+				} elseif ( $request->wasPosted() && !$request->getCheck( 'wpPreview' ) ) {
 					# This is not really a view, but we return it nonetheless.
 					# Add any tags, Set status, Adds comments
 					$view = new CodeRevisionCommitter( $repo, $params[1] );
