@@ -26,6 +26,11 @@ $specialPageAliases['arz'] = array(
 	'RepoAdmin' => array( 'ادارة_المستودع' ),
 );
 
+/** Assamese (অসমীয়া) */
+$specialPageAliases['as'] = array(
+	'Code' => array( 'কোড', 'কোডৰিভিউ' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'Code' => array( 'Kode' ),
@@ -54,7 +59,7 @@ $specialPageAliases['diq'] = array(
 	'RepoAdmin' => array( 'XizmetkarêRepoy' ),
 );
 
-/** Lower Sorbian (Dolnoserbski) */
+/** Lower Sorbian (dolnoserbski) */
 $specialPageAliases['dsb'] = array(
 	'Code' => array( 'Žrědłowy_tekst' ),
 );
@@ -90,7 +95,7 @@ $specialPageAliases['gag'] = array(
 	'Code' => array( 'Kod' ),
 );
 
-/** Galician (Galego) */
+/** Galician (galego) */
 $specialPageAliases['gl'] = array(
 	'Code' => array( 'Código' ),
 );
@@ -111,7 +116,7 @@ $specialPageAliases['hr'] = array(
 	'RepoAdmin' => array( 'Admin_repozitorija' ),
 );
 
-/** Upper Sorbian (Hornjoserbsce) */
+/** Upper Sorbian (hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
 	'Code' => array( 'Žórłowy_tekst' ),
 );
@@ -162,7 +167,7 @@ $specialPageAliases['km'] = array(
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'Code' => array( '코드검토', '코드' ),
-	'RepoAdmin' => array( '저장소관리' ),
+	'RepoAdmin' => array( '저장소관리자' ),
 );
 
 /** Colognian (Ripoarisch) */
