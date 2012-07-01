@@ -633,7 +633,7 @@ $messages['am'] = array(
 	'repoadmin-edit-button' => 'እሺ',
 );
 
-/** Aragonese (Aragonés)
+/** Aragonese (aragonés)
  * @author Juanpabl
  */
 $messages['an'] = array(
@@ -1380,7 +1380,7 @@ $messages['be'] = array(
 	'code-stats' => 'статыстыка',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -3320,7 +3320,7 @@ $3',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN admini',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -5457,7 +5457,7 @@ $4',
 	'repoadmin-new-button' => 'Cruthaigh',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -6656,7 +6656,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN administratori',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -13288,7 +13288,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Администраторы SVN',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
