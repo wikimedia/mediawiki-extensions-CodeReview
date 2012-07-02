@@ -97,7 +97,7 @@ $specialPageAliases['gag'] = array(
 
 /** Galician (galego) */
 $specialPageAliases['gl'] = array(
-	'Code' => array( 'Código' ),
+	'Code' => array( 'Código', 'Revisión_do_código' ),
 );
 
 /** Swiss German (Alemannisch) */
