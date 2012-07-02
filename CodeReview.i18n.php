@@ -9120,8 +9120,9 @@ $messages['ku-latn'] = array(
 	'code-status-old' => 'kevn',
 	'code-signoff-flag-tested' => 'Hat ceribandin',
 	'code-signoff-field-user' => 'Bikarhêner',
+	'codereview-batch-submit' => 'Tomar bike',
 	'codereview-subtitle' => 'Ji bo $1',
-	'code-stats' => 'statîstîkan',
+	'code-stats' => 'statîstîk',
 	'repoadmin-edit-button' => 'Temam',
 );
 
