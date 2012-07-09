@@ -267,8 +267,8 @@ $specialPageAliases['sw'] = array(
 
 /** Tagalog (Tagalog) */
 $specialPageAliases['tl'] = array(
-	'Code' => array( 'Kodigo', 'Pagsusuri ng kodigo' ),
-	'RepoAdmin' => array( 'Tagapangasiwa ng repositoryo' ),
+	'Code' => array( 'Kodigo', 'Pagsusuri_ng_kodigo' ),
+	'RepoAdmin' => array( 'Tagapangasiwa_ng_repositoryo' ),
 );
 
 /** Turkish (Türkçe) */
