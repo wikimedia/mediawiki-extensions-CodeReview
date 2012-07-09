@@ -392,7 +392,7 @@ class SvnRevTablePager extends SvnTablePager {
 			$sort = $this->getDefaultSort();
 			return Xml::check( "wpRevisionSelected[]", false, array( 'value' => $row->$sort ) );
 		case 'cr_id':
-			return $this->mView->skin->link(
+			return Linker::link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value ),
 				htmlspecialchars( $value ),
 				array(),
@@ -404,7 +404,7 @@ class SvnRevTablePager extends SvnTablePager {
 				$options['author'] = $this->mView->mAuthor;
 			}
 			$options['status'] = $value;
-			return $this->mView->skin->link(
+			return Linker::link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 				htmlspecialchars( $this->mView->statusDesc( $value ) ),
 				array(),
@@ -416,7 +416,7 @@ class SvnRevTablePager extends SvnTablePager {
 				$options['status'] = $this->mView->mStatus;
 			}
 			$options['author'] = $value;
-			return $this->mView->skin->link(
+			return Linker::link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 				htmlspecialchars( $value ),
 				array(),
@@ -430,7 +430,7 @@ class SvnRevTablePager extends SvnTablePager {
 			if ( $value ) {
 				$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() } );
 				$special->setFragment( '#code-comments' );
-				return $this->mView->skin->link( $special, $wgLang->formatNum( htmlspecialchars( $value ) ) );
+				return Linker::link( $special, $wgLang->formatNum( htmlspecialchars( $value ) ) );
 			} else {
 				return '-';
 			}
@@ -446,7 +446,7 @@ class SvnRevTablePager extends SvnTablePager {
 			}
 
 			return Xml::openElement( 'div', array( 'title' => (string)$value, 'dir' => 'ltr' ) ) .
-					$this->mView->skin->link(
+					Linker::link(
 						SpecialPage::getTitleFor( 'Code', $title ),
 						$wgLang->truncate( (string)$value, 50 ),
 						array( 'title' => (string)$value ),

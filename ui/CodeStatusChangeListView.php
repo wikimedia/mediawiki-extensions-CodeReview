@@ -61,7 +61,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 	function formatValue( $name, $value ) {
 		switch( $name ) {
 		case 'cpc_rev_id':
-			return $this->mView->skin->link(
+			return Linker::link(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-changes' ),
 				htmlspecialchars( $value ) );
 		case 'cr_author':
@@ -69,12 +69,12 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cr_status':
-			return $this->mView->skin->link(
+			return Linker::link(
 				SpecialPage::getTitleFor( 'Code',
 					$this->mRepo->getName() . '/status/' . $value ),
 				htmlspecialchars( $this->mView->statusDesc( $value ) ) );
 		case 'cpc_user_text':
-			return $this->mView->skin->userLink( - 1, $value );
+			return Linker::userLink( - 1, $value );
 		case 'cpc_removed':
 			return wfMsgHtml( $value ? "code-status-$value" : "code-status-new" );
 		case 'cpc_added':

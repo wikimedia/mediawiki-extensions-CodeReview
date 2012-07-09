@@ -63,16 +63,16 @@ class CodeCommentsTablePager extends SvnTablePager {
 	function formatValue( $name, $value ) {
 		switch( $name ) {
 		case 'cc_rev_id':
-			return $this->mView->skin->link(
+			return Linker::link(
 				SpecialPage::getSafeTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-comments' ),
 				htmlspecialchars( $value ) );
 		case 'cr_status':
-			return $this->mView->skin->link(
+			return Linker::link(
 				SpecialPage::getTitleFor( 'Code',
 					$this->mRepo->getName() . '/status/' . $value ),
 				htmlspecialchars( $this->mView->statusDesc( $value ) ) );
 		case 'cc_user_text':
-			return $this->mView->skin->userLink( - 1, $value );
+			return Linker::userLink( - 1, $value );
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cc_text':
