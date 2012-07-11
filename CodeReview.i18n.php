@@ -1107,7 +1107,7 @@ $messages['az'] = array(
 	'repoadmin-edit-button' => 'OK',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  * @author Haqmar
  * @author ҒатаУлла
@@ -2529,7 +2529,7 @@ $4',
 	'grouppage-svnadmins' => '{{ns:project}}:Administradors SVN',
 );
 
-/** Chechen (Нохчийн)
+/** Chechen (нохчийн)
  * @author Sasan700
  */
 $messages['ce'] = array(
@@ -9349,7 +9349,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administrateuren',
 );
 
-/** Lezghian (Лезги)
+/** Lezghian (лезги)
  * @author Namik
  */
 $messages['lez'] = array(
@@ -9730,7 +9730,7 @@ $messages['mg'] = array(
 	'code-change-added' => 'nanampy :',
 );
 
-/** Eastern Mari (Олык Марий)
+/** Eastern Mari (олык марий)
  * @author Сай
  */
 $messages['mhr'] = array(
@@ -10451,7 +10451,7 @@ $messages['mt'] = array(
 	'code-field-status' => 'Stat',
 );
 
-/** Erzya (Эрзянь)
+/** Erzya (эрзянь)
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
@@ -10495,9 +10495,8 @@ $messages['nah'] = array(
 	'code-status-ok' => 'quēmah',
 );
 
-/** Norwegian (bokmål) (Norsk (bokmål))
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Event
- * @author Jon Harald Søby
  * @author Laaknor
  * @author Lokal Profil
  * @author Nghtwlkr
@@ -10697,7 +10696,11 @@ $6',
 	'code-stats-main' => 'Som på $1 har depoet $2 {{PLURAL:$2|revisjon|revisjoner}} av [[Special:Code/$3/author|$4 {{PLURAL:$4|forfatter|forfattere}}]]',
 	'code-stats-status-breakdown' => 'Antall revisjoner per status',
 	'code-stats-fixme-breakdown' => 'Inndeling av fiksmeg-revisjoner per forfatter',
+	'code-stats-fixme-breakdown-path' => 'Fordeling av FIXME-revisjoner per sti',
+	'code-stats-fixme-path' => 'FIXME-revisjoner for stien: $1',
 	'code-stats-new-breakdown' => 'Inndeling av nye revisjoner per forfatter',
+	'code-stats-new-breakdown-path' => 'Fordeling av nye revisjoner per sti',
+	'code-stats-new-path' => 'Nye revisjoner for stien: $1',
 	'code-stats-count' => 'Antall revisjoner',
 	'code-tooltip-withsummary' => 'r$1 [$2] av $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] av $3',
@@ -10724,7 +10727,7 @@ $6',
 	'right-codereview-review-own' => 'Merk dine egne endringer som OK eller Løst',
 	'specialpages-group-developer' => 'Utviklerverktøy',
 	'group-svnadmins' => 'SVN administratorer',
-	'group-svnadmins-member' => 'SVN administrator',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN-administrator}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN administratorer',
 );
 
@@ -16513,7 +16516,7 @@ Stato novo: $4',
 	'specialpages-group-developer' => "Strumenti pa' i svilupadori",
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(

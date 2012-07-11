@@ -282,7 +282,7 @@ $specialPageAliases['vec'] = array(
 	'Code' => array( 'Còdese' ),
 );
 
-/** Veps (Vepsän kel’) */
+/** Veps (vepsän kel’) */
 $specialPageAliases['vep'] = array(
 	'Code' => array( 'Kod' ),
 );
