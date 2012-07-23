@@ -1067,6 +1067,29 @@ $4',
 	'specialpages-group-developer' => 'أدوات المطورين',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
+ */
+$messages['as'] = array(
+	'code-authors' => 'লেখকসকল',
+	'code-field-timestamp' => 'তাৰিখ',
+	'code-field-comments' => 'মন্তব্যসমূহ',
+	'code-field-text' => 'টোকা',
+	'code-rev-author' => 'লেখক',
+	'code-rev-date' => 'তাৰিখ',
+	'code-rev-comment-preview' => 'খচৰা চাওক',
+	'code-rev-inline-preview' => 'খচৰা চাওক',
+	'code-rev-diff' => 'পাৰ্থক্য',
+	'code-rev-diff-link' => 'পাৰ্থক্য',
+	'code-rev-history-link' => 'ইতিহাস',
+	'code-status-ok' => 'সঠিক',
+	'code-signoff-field-user' => 'সদস্য',
+	'code-signoff-field-date' => 'তাৰিখ',
+	'codereview-batch-submit' => 'দাখিল কৰক',
+	'repoadmin-new-button' => 'সৃষ্টি কৰক',
+	'repoadmin-edit-button' => 'ঠিক আছে',
+);
+
 /** Azerbaijani (azərbaycanca)
  * @author Cekli829
  * @author Vago
@@ -3221,7 +3244,7 @@ $messages['diq'] = array(
 	'code-field-select' => 'Weçine',
 	'code-rev-author' => 'Nuştekar:',
 	'code-rev-date' => 'Deme:',
-	'code-rev-message' => 'Xulasa:',
+	'code-rev-message' => 'Mışewre:',
 	'code-rev-repo' => 'Arşîv:',
 	'code-rev-rev' => 'Revizyon:',
 	'code-rev-rev-viewvc' => 'ser ViewVC',
@@ -8716,7 +8739,7 @@ $messages['ko'] = array(
 	'code-rev-repo' => '저장소:',
 	'code-rev-rev' => '버전:',
 	'code-rev-rev-viewvc' => 'ViewVC에서 보기',
-	'code-rev-paths' => '변경된 파일의 경로:',
+	'code-rev-paths' => '수정된 파일의 경로:',
 	'code-rev-modified-a' => '추가됨',
 	'code-rev-modified-r' => '대체됨',
 	'code-rev-modified-d' => '삭제됨',
@@ -8796,7 +8819,7 @@ $5
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: 추적된 바뀜 사항',
-	'codereview-email-body2' => '"$1" 사용자가 $2에 추적 변경을 만들었습니다.
+	'codereview-email-body2' => '"$1" 사용자가 $2에 추적 바뀜을 만들었습니다.
 URL: $5
 
 추적에 대한 요약: $2
@@ -8853,7 +8876,7 @@ $6',
 	'repoadmin-edit-bug' => '버그질라 경로:',
 	'repoadmin-edit-view' => 'ViewVC 경로:',
 	'repoadmin-edit-button' => '확인',
-	'repoadmin-edit-sucess' => '저장소 "[[Special:Code/$1|$1]]"이 성공적으로 변경되었습니다.',
+	'repoadmin-edit-sucess' => '저장소 "[[Special:Code/$1|$1]]"이 성공적으로 바뀌었습니다.',
 	'repoadmin-nav' => '저장소 관리',
 	'right-repoadmin' => '코드 저장소 관리',
 	'right-codereview-use' => 'Special:Code 사용',
@@ -11572,9 +11595,9 @@ $6',
 	'right-codereview-associate' => 'ସଂସ୍କରଣ ସହଯୋଗୀ ସବୁ ପରିଚାଳନା କରିବେ',
 	'right-codereview-review-own' => 'ଆପଣା ସଂସ୍କରଣକୁ ଠିକ ବା ସୁଧରାଯାଇଛି ବୋଲି ଚିହ୍ନିତ କରନ୍ତୁ',
 	'specialpages-group-developer' => 'ଡେଭେଲପର ଟୁଲ',
-	'group-svnadmins' => 'SVN ପରିଛାଗଣ',
-	'group-svnadmins-member' => '{{GENDER:$1|SVN ପରିଛା}}',
-	'grouppage-svnadmins' => '{{ns:project}}:SVN ପରିଛାଗଣ',
+	'group-svnadmins' => 'SVN ପରିଚାଳକଗଣ',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN ପରିଚାଳକ}}',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN ପରିଚାଳକଗଣ',
 );
 
 /** Ossetic (Ирон)
