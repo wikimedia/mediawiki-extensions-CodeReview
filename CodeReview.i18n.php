@@ -275,6 +275,7 @@ $6',
  * @author Nike
  * @author Purodha
  * @author Raymond
+ * @author Reedy
  * @author SPQRobin
  * @author Siebrand
  * @author Sp5uhe
@@ -394,6 +395,15 @@ $1 = Repository name',
 * $5 - same as $1, but time only (optional)
 * $6 - same as $1, but date only (optional)',
 	'code-stats-status-breakdown' => 'Table header for column containing the number of revisions (commits) having some state (new, ok, reverted etc.)',
+	'code-tooltip-withsummary' => 'Used as the content of the code revision popups on the CodeReview interface.
+* $1 - Revision number
+* $2 - Revision status (ok, fixme, resolved, old, deferred)
+* $3 - The author of the revision
+* $4 - The commit summary of the revision',
+	'code-tooltip-withoutsummary' => 'Used as the content of the code revision popups on the CodeReview interface.
+* $1 - Revision number
+* $2 - Revision status (ok, fixme, resolved, old, deferred)
+* $3 - The author of the revision',
 	'repoadmin-new-button' => '{{Identical|Create}}',
 	'repoadmin-edit-button' => '{{Identical|OK}}',
 	'right-repoadmin' => '{{doc-right|repoadmin}}',
@@ -3216,12 +3226,13 @@ $messages['diq'] = array(
 	'code-notes' => 'xulasay peyenî',
 	'code-statuschanges' => 'vurnayîşanê statuyan',
 	'code-mycommits' => 'gureyanê mi',
+	'code-mycomments' => 'vatışê mı',
 	'code-authors' => 'nuştekaran',
 	'code-status' => 'merheleyan',
 	'code-tags' => 'Etîketan',
-	'code-authors-text' => 'Bin de yew listeyê repo nuştekaran esto. Wîkîyanê lokalî îtaya de benate parantez de mucnayo.',
+	'code-authors-text' => 'Bin de yew listeyê depo nuştekaran esto. Wîkîyanê herunan dê tiyayan parantez zere dı mocneyayo.Data belki verhafızadeyo.',
 	'code-author-haslink' => 'Nuştekar, karberê $1î ra link biyo',
-	'code-author-orphan' => 'Ena karber yew hesabê wîkî rê lînk nibiyo',
+	'code-author-orphan' => 'SVN karber/Nuskar $1 yew hesabê wîkî rê gre nêbiyo',
 	'code-author-dolink' => 'Ena karber yew hesabê wîkî rê lînk bike:',
 	'code-author-alterlink' => 'Karberê wîkîyî ke ena nuştekar rê lînk bike, înan bivurne:',
 	'code-author-orunlink' => 'Ya zi ena karberê wîkîyî unlink bike:',
@@ -3238,13 +3249,13 @@ $messages['diq'] = array(
 	'code-field-message' => 'Xulasayê commitî',
 	'code-field-status' => 'Weziyet',
 	'code-field-timestamp' => 'Deme',
-	'code-field-comments' => 'Notan',
+	'code-field-comments' => 'Vatışi',
 	'code-field-path' => 'Raher',
 	'code-field-text' => 'Not',
 	'code-field-select' => 'Weçine',
 	'code-rev-author' => 'Nuştekar:',
 	'code-rev-date' => 'Deme:',
-	'code-rev-message' => 'Mışewre:',
+	'code-rev-message' => 'Vatış:',
 	'code-rev-repo' => 'Arşîv:',
 	'code-rev-rev' => 'Revizyon:',
 	'code-rev-rev-viewvc' => 'ser ViewVC',
@@ -3262,7 +3273,7 @@ $messages['diq'] = array(
 	'code-rev-comment-by' => 'Xulasayê $1î',
 	'code-rev-comment-preview' => 'Ver qeyd',
 	'code-rev-inline-preview' => 'Ver qeyd:',
-	'code-rev-diff' => 'Diff',
+	'code-rev-diff' => 'Ferq',
 	'code-rev-diff-link' => 'diff',
 	'code-rev-diff-too-large' => 'Ena diff zaf girda.',
 	'code-rev-purge-link' => 'purge bike',
@@ -3279,7 +3290,7 @@ $messages['diq'] = array(
 	'code-signoff-field-date' => 'Deme',
 	'code-pathsearch-legend' => 'Pê raherî zerrê ena repo de vurnayîşan bigêre',
 	'code-pathsearch-path' => 'Raher:',
-	'code-pathsearch-filter' => 'Filitre hewitiyena',
+	'code-pathsearch-filter' => 'Ho ke bımocne:',
 	'code-revfilter-cr_status' => 'Weziyet = $1',
 	'code-revfilter-cr_author' => 'Nustekar = $1',
 	'code-revfilter-clear' => 'Filtre wedarne',
@@ -3296,34 +3307,42 @@ $messages['diq'] = array(
 	'codereview-subtitle' => 'Qe $1',
 	'codereview-reply-link' => 'cewab bide',
 	'codereview-email-subj' => '[$1 $2]: Xulasayê newî de biyo',
-	'codereview-email-body' => 'Karberê "$1"î yew xulasa se $3 rê nuşt.
+	'codereview-email-body' => 'Rıştış dê "$1" sera vatışê $3\'i.
+GRE: $2
 
-Full URL: $2
+Xulasay komiti $3:
 
-Xulasa:
+$5
+
+Vatışê $1\'i:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: Vurnayîşan kontrol bike',
-	'codereview-email-body2' => 'Karberê "$1"î,  $2  vurna.
+	'codereview-email-body2' => '"$1" ra eleqeyın $2 vurnayış vıciya.
+GRE: $5
 
-Full URL: $3
+Xulasaya ke şıma yê pa $2:
 
-Xulasa:
+$6
+
+Grey şıma: $3
+Xulasay şıma "$1":
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: Regression otomatik test keno',
-	'codereview-email-body3' => 'Qe vurnayîşê $1î otomatik test yew regression mucna.
+	'codereview-email-subj3' => '[$1 sera $2]: Revizyon dı peyşiyayış tesbit kerd.',
+	'codereview-email-body3' => 'Poxta vurnayîşan dê $1\'i dı $2 sera "$4" xırabin vıciyê.
 
-Full URL: $2
+Weziyeto kehan:  $3
+Wziyeto newe: $4
 
-Xulasa:
+Xulasay $2:
 
-$3',
+$6',
 	'code-stats' => 'istatistiki',
 	'repoadmin' => 'Îdarê Kerdîşê Arşîvî',
 	'repoadmin-new-legend' => 'Yew arşîvê newî viraze',
 	'repoadmin-new-label' => 'Nameyê arşîvî:',
-	'repoadmin-new-button' => 'Biviraz',
+	'repoadmin-new-button' => 'Vıraze',
 	'repoadmin-edit-legend' => 'Arşîvê $1î mofifiye kerdişî',
 	'repoadmin-edit-path' => 'Patikayê arşîvî:',
 	'repoadmin-edit-bug' => 'Patikayê bugzillayî:',
@@ -5720,6 +5739,8 @@ $6',
 	'group-svnadmins' => 'Administradores do SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|administrador|administradora}} do SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
+	'group-svnadmins.css' => '/* O CSS que se coloque aquí afectará soamente aos administradores do SVN */',
+	'group-svnadmins.js' => '/* O JS que se coloque aquí afectará soamente aos administradores do SVN */',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -8791,7 +8812,7 @@ $messages['ko'] = array(
 	'code-revfilter-cr_status' => '상태 = $1',
 	'code-revfilter-cr_author' => '프로그래머 = $1',
 	'code-revfilter-ct_tag' => '태그 = $1',
-	'code-revfilter-clear' => '클리어 필터',
+	'code-revfilter-clear' => '필터 지움',
 	'code-rev-submit' => '저장',
 	'code-rev-submit-next' => '저장 및 다음 미해결된 문서로 이동',
 	'code-rev-next' => '다음 해결되지 않음',
@@ -10206,7 +10227,8 @@ $6',
 	'right-codereview-signoff' => 'നാൾപ്പതിപ്പുകൾ അവസാനിപ്പിച്ചിറങ്ങുക',
 	'right-codereview-link-user' => 'രചയിതാക്കളെ വിക്കി ഉപയോക്താക്കളുമായി കണ്ണി ചേർക്കുക',
 	'right-codereview-associate' => 'നാൾപ്പതിപ്പ് ബന്ധങ്ങളുടെ കൈകാര്യം',
-	'right-codereview-review-own' => 'താങ്കൾ സ്വയം സൃഷ്ടിച്ച നാൾപ്പതിപ്പുകൾ ശരിയാണെന്നോ പരിഹരിക്കപ്പെട്ടവയെന്നോ അടയാളപ്പെടുത്തുക',
+	'right-codereview-review-own' => 'താങ്കളുടെ സ്വന്തം പതിപ്പുകൾ "{{int:code-status-ok}}" എന്നോ "{{int:code-status-resolved}}" എന്നോ അടയാളപ്പെടുത്തുക',
+	'action-codereview-review-own' => 'താങ്കളുടെ സ്വന്തം പതിപ്പുകൾ "{{int:code-status-ok}}" എന്നോ "{{int:code-status-resolved}}" എന്നോ അടയാളപ്പെടുത്തുക',
 	'specialpages-group-developer' => 'വികസന ഉപകരണങ്ങൾ',
 	'group-svnadmins' => 'എസ്.വി.എൻ. കാര്യനിർവ്വഹകർ',
 	'group-svnadmins-member' => '{{GENDER:$1|എസ്.വി.എൻ. കാര്യനിർവാഹകൻ|എസ്.വി.എൻ. കാര്യനിർവാഹക}}',
@@ -15779,6 +15801,7 @@ $messages['tl'] = array(
 	'code-rev-title' => '$1 - Pagsusuri ng Kodigo',
 	'code-comments' => 'Mga puna',
 	'code-references' => 'Tugaygayan ang mga pagbabago',
+	'code-referenced' => 'Nakaraang mga rebisyon na sinusundan nito',
 	'code-change-status' => "binago ang '''kalagayan''' ng $1",
 	'code-change-tags' => "binago ang '''mga tatak''' para sa $1",
 	'code-change-removed' => 'tinanggal:',
@@ -15803,7 +15826,7 @@ $messages['tl'] = array(
 	'code-tags-no-tags' => 'Walang umiiral na mga tatak sa loob ng taguang ito.',
 	'code-authors-text' => 'Nasa ibaba ang isang talaan ng mga may-akda ng repositoryo ayon sa pagkakasunud-sunod ng pangalan ng paglalagak.  Ipinapakita sa loob ng mga saklong ang mga akawnt ng panglokal na wiki.  Dapat na nakatago ang dato.',
 	'code-author-haslink' => 'Nakakawing ang may-akdang ito sa tagagamit ng wiking si $1',
-	'code-author-orphan' => 'Ang may-akdang ito ay walang kawing sa isang kuwenta/akawnt ng wiki',
+	'code-author-orphan' => 'Ang tagagamit/May-akda ng SVN na si $1 ay walang kawing sa isang akawnt ng wiki',
 	'code-author-dolink' => 'Ikawing ang may-akdang ito sa isang tagagamit ng wiki:',
 	'code-author-alterlink' => 'Baguhin ang tagagamit na wiking nakakawing sa may-akdang ito:',
 	'code-author-orunlink' => 'O kaya tanggalin ang pagkakakawing ng tagagamit ng wiking ito:',
@@ -15856,10 +15879,11 @@ $messages['tl'] = array(
 	'code-rev-purge-link' => 'purgahin',
 	'code-rev-total' => 'Kabuuang bilang ng mga resulta: $1',
 	'code-rev-not-found' => "Hindi umiiral ang rebisyong '''$1'''!",
+	'code-rev-history-link' => 'kasaysayan',
 	'code-status-new' => 'bago',
 	'code-status-desc-new' => 'Ang rebisyon ay naghihintay ng isang galaw (likas na nakatakdang katayuan).',
 	'code-status-fixme' => 'ayusinako',
-	'code-status-desc-fixme' => 'Isang tagapagsuri ang nagmarka sa rebisyong ito na magpakilala ng depekto o kaya sira.  Dapat itong itama.',
+	'code-status-desc-fixme' => 'Nagpakilala ang rebisyon ng isang depekto o kaya ay sira. Dapat itong kumpunihin o panauliin.',
 	'code-status-reverted' => 'ibinalik',
 	'code-status-desc-reverted' => 'Itinapon papalayo ang rebisyon ng isang isang mas huling rebisyon.',
 	'code-status-resolved' => 'nalutas na',
@@ -15883,12 +15907,14 @@ $messages['tl'] = array(
 	'code-signoff-struckdate' => '$1 (pinatamaan ang $2)',
 	'code-pathsearch-legend' => 'Maghanap ng mga pagbabago sa repositoryong ito sa pamamagitan ng daanan',
 	'code-pathsearch-path' => 'Daanan:',
-	'code-pathsearch-filter' => 'Ginamit na pansala:',
+	'code-pathsearch-filter' => 'Ipakita lamang ang:',
 	'code-revfilter-cr_status' => 'Katayuan = $1',
 	'code-revfilter-cr_author' => 'May-akda = $1',
+	'code-revfilter-ct_tag' => 'Tatak = $1',
 	'code-revfilter-clear' => 'Dalisayin ang pansala',
 	'code-rev-submit' => 'Sagipin ang mga pagbabago',
 	'code-rev-submit-next' => 'Sagipin at susunod na hindi pa nalulutas',
+	'code-rev-next' => 'Susunod na hindi pa nalulutas',
 	'code-batch-status' => 'Baguhin ang kalagayan:',
 	'code-batch-tags' => 'Baguhin ang mga tatak:',
 	'codereview-batch-title' => 'Baguhin ang lahat ng napiling mga rebisyon',
@@ -15899,6 +15925,8 @@ $messages['tl'] = array(
 	'code-release-endrev' => 'Huling pagbabago:',
 	'codereview-subtitle' => 'Para kay $1',
 	'codereview-reply-link' => 'tugon',
+	'codereview-overview-title' => 'Malawakang pagtalakay',
+	'codereview-overview-desc' => 'Magpakita ng isang grapikong malawakang pagtalakay ng listahang ito',
 	'codereview-email-subj' => '[$1 $2]: Nagdagdag ng bagong puna/kumento',
 	'codereview-email-body' => 'Nagpaskil ang tagagamit na si "$1" ng isang puna sa $3.
 
@@ -15952,8 +15980,15 @@ $6',
 	'code-stats-header' => 'Estadistika para sa repositoryong $1',
 	'code-stats-main' => 'Magmula noong $1, ang repositoryo ay may $2 {{PLURAL:$2|rebisyon|mga rebisyon}} ng [[Special:Code/$3/author|$4 {{PLURAL:$4|may-akda|mga may-akda}}]].',
 	'code-stats-status-breakdown' => 'Bilang ng mga rebisyon sa bawat kalagayan',
-	'code-stats-fixme-breakdown' => 'Paglilista ng mga pag-aayos ng bawat may-akda',
+	'code-stats-fixme-breakdown' => 'Paglilista ng mga rebisyong ayusin-ako ng bawat may-akda',
+	'code-stats-fixme-breakdown-path' => 'Paglilista ng mga rebisyong ayusin-ako ayon sa bawat landas',
+	'code-stats-fixme-path' => 'Mga rebisyong ayusin-ako para sa landas na: $1',
+	'code-stats-new-breakdown' => 'Paglilista ng bagong mga rebisyon ayon sa bawat may-akda',
+	'code-stats-new-breakdown-path' => 'Paglilista ng bagong mga rebisyon ayon sa bawat landas',
+	'code-stats-new-path' => 'Bagong mga rebisyong ayusin-ako para sa landas na: $1',
 	'code-stats-count' => 'Bilang ng mga rebisyon',
+	'code-tooltip-withsummary' => 'r$1 [$2] ni $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] ni $3',
 	'repoadmin' => 'Pamamahala ng Repositoryo',
 	'repoadmin-new-legend' => 'Lumikha ng isang bagong repositoryo',
 	'repoadmin-new-label' => 'Pangalan ng repositoryo:',
@@ -15968,17 +16003,29 @@ $6',
 	'right-repoadmin' => 'Pamahalaan ang mga repositoryong may kodigo',
 	'right-codereview-use' => 'Paggamit ng Natatangi:Kodigo',
 	'right-codereview-add-tag' => 'Magdagdag ng bagong tatak sa mga pagbabago',
-	'right-codereview-remove-tag' => 'Tanggalin an mga tatak mula sa mga pagbabago',
+	'right-codereview-remove-tag' => 'Tanggalin ang mga tatak mula sa mga pagbabago',
 	'right-codereview-post-comment' => 'Magdagdag ng mga kumento sa mga pagbabago',
 	'right-codereview-set-status' => 'Baguhin ang kalagayan ng mga pagbabago',
 	'right-codereview-signoff' => 'Lumagdang patapos sa mga rebisyon',
 	'right-codereview-link-user' => 'Ikawing ang mga may-akda sa mga tagagamit ng wiki',
 	'right-codereview-associate' => 'Pangasiwaan ang mga ugnayan ng rebisyon',
-	'right-codereview-review-own' => 'Markahan ang sarili mong mga rebisyon bilang OK',
+	'right-codereview-review-own' => 'Markahan ang sarili mong mga rebisyon bilang "{{int:code-status-ok}}" o "{{int:code-status-resolved}}"',
+	'action-repoadmin' => 'mamahala ng mga repositoryong may kodigo',
+	'action-codereview-use' => 'paggamit ng Natatangi:Kodigo',
+	'action-codereview-add-tag' => 'Magdagdag ng bagong mga tatak sa mga rebisyon',
+	'action-codereview-remove-tag' => 'tanggalin ang mga tatak mula sa mga rebisyon',
+	'action-codereview-post-comment' => 'magdagdag ng mga puna sa mga rebisyon',
+	'action-codereview-set-status' => 'baguhin ang kalagayan ng mga pagbabago',
+	'action-codereview-signoff' => 'lumagdang patapos sa mga rebisyon',
+	'action-codereview-link-user' => 'ikawing ang mga may-akda sa mga tagagamit ng wiki',
+	'action-codereview-associate' => 'pangasiwaan ang mga kaugnayan ng rebisyon',
+	'action-codereview-review-own' => 'markahan ang sarili mong mga rebisyon bilang "{{int:code-status-ok}}" o "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Mga kasangkapan ng tagapagpaunlad',
 	'group-svnadmins' => 'Mga tagapangasiwa ng SVN',
-	'group-svnadmins-member' => 'Tagapangasiwa ng SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|tagapangasiwa ng SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Mga tagapangasiwa ng SVN',
+	'group-svnadmins.css' => '/* Ang Mga Pilas ng Estilong Lumalagaslas (Cascading Style Sheets o CSS) na inilagay dito ay makakaapekto lamang sa mga tagapangasiwa ng SVN */',
+	'group-svnadmins.js' => '/* Ang JavaScript na inilagay dito ay makakaapekto lamang sa mga tagapangasiwa ng SVN */',
 );
 
 /** Turkish (Türkçe)
