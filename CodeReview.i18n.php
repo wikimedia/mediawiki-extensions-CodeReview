@@ -16028,6 +16028,14 @@ $6',
 	'group-svnadmins.js' => '/* Ang JavaScript na inilagay dito ay makakaapekto lamang sa mga tagapangasiwa ng SVN */',
 );
 
+/** толышә зывон (толышә зывон)
+ * @author Erdemaslancan
+ */
+$messages['tly'] = array(
+	'code-comments' => 'Мындәриҹот',
+	'code-field-comments' => 'Мындәриҹот',
+);
+
 /** Turkish (Türkçe)
  * @author Cekli829
  * @author Joseph
