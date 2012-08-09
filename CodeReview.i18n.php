@@ -1425,7 +1425,7 @@ $messages['be-tarask'] = array(
 	'code-rev-title' => '$1 - Рэцэнзаваньне коду',
 	'code-comments' => 'Камэнтары',
 	'code-references' => 'Наступныя вэрсіі',
-	'code-referenced' => 'Папярэднія вэрсіі',
+	'code-referenced' => 'Папярэднія вэрсіі, зь якіх бягучая вынікае',
 	'code-change-status' => "зьменены '''статус''' вэрсіі $1",
 	'code-change-tags' => "зьмененыя '''тэгі''' вэрсіі $1",
 	'code-change-removed' => 'выдалена:',
@@ -3330,7 +3330,8 @@ Xulasay şıma "$1":
 
 $4',
 	'codereview-email-subj3' => '[$1 sera $2]: Revizyon dı peyşiyayış tesbit kerd.',
-	'codereview-email-body3' => 'Poxta vurnayîşan dê $1\'i dı $2 sera "$4" xırabin vıciyê.
+	'codereview-email-body3' => '$1 dı poxta vurnayiş dê $2 sera "$4" xırabin vıciyê.
+URL: $5
 
 Weziyeto kehan:  $3
 Wziyeto newe: $4
@@ -3338,7 +3339,23 @@ Wziyeto newe: $4
 Xulasay $2:
 
 $6',
+	'codereview-email-body4' => '$1 dı poxta vurnayiş dê $2 sera "$4" xırabin vıciyê.
+URL: $5
+
+Weziyeto kehan:  $3
+Wziyeto newe: $4
+
+Xulasay $2:
+
+$7 
+
+Vatışe $1:
+
+$6',
 	'code-stats' => 'istatistiki',
+	'code-stats-count' => 'Amariya rewizyonan',
+	'code-tooltip-withsummary' => 'r$1 [$2] kerwa $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] kerwa $3',
 	'repoadmin' => 'Îdarê Kerdîşê Arşîvî',
 	'repoadmin-new-legend' => 'Yew arşîvê newî viraze',
 	'repoadmin-new-label' => 'Nameyê arşîvî:',
@@ -3775,7 +3792,7 @@ $6',
 	'right-codereview-associate' => 'Διαχειριστείτε τους συνδέσμους αναθεώρησης',
 	'specialpages-group-developer' => 'Εργαλεία προγραμματιστών',
 	'group-svnadmins' => 'διαχειριστές SVN',
-	'group-svnadmins-member' => 'Διαχειριστής SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|διαχειριστής SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Διαχειριστές SVN',
 );
 
