@@ -3216,7 +3216,7 @@ $messages['diq'] = array(
 	'code-change-tags' => "'''etîketan''' qe $1 vurne",
 	'code-change-removed' => 'wedariya:',
 	'code-change-added' => 'de biyo:',
-	'code-old-status' => 'Weziyeto Kehan',
+	'code-old-status' => 'Weziyeto kehan',
 	'code-new-status' => 'Weziyeto newe',
 	'code-prop-changes' => 'Logê statuyî & etîketî',
 	'codereview-desc' => '[[Special:Code|Xacetan ke qe kontralê kodî]] pê [[Special:RepoAdmin|Yardimê subversionî]]',
@@ -4362,6 +4362,7 @@ $messages['et'] = array(
 	'code-status-desc-deferred' => 'Redaktsiooni pole tarvis üle vaadata.',
 	'code-status-old' => 'vana',
 	'code-status-desc-old' => 'Vana redaktsioon, milles võib vigu olla, aga mida pole mõtet üle vaadata.',
+	'code-signoff-flag-tested' => 'Katsetatud',
 	'code-signoff-field-user' => 'Kasutaja',
 	'code-signoff-field-date' => 'Kuupäev',
 	'code-pathsearch-legend' => 'Raja järgi hoidlast redaktsioonide otsimine',
@@ -4377,6 +4378,7 @@ $messages['et'] = array(
 	'code-batch-status' => 'Muudatuse olek:',
 	'code-batch-tags' => 'Muudatusmärgised:',
 	'codereview-batch-title' => 'Kõikide valitud redaktsioonide muutmine',
+	'codereview-batch-submit' => 'Esita',
 	'code-releasenotes' => 'redaktsioonimärkmed',
 	'code-release-legend' => 'Redaktsioonimärkmete loomine',
 	'code-release-startrev' => 'Esimene redaktsioon:',
@@ -4461,6 +4463,12 @@ $6',
 	'right-codereview-link-user' => 'Siduda autoreid vikikasutajatega',
 	'right-codereview-associate' => 'Hallata redaktsioonide seostusi',
 	'right-codereview-review-own' => 'Märkida enda redaktsioonide olekuks "{{int:code-status-ok}}" või "{{int:code-status-resolved}}"',
+	'action-repoadmin' => 'koodihoidlaid hallata',
+	'action-codereview-add-tag' => 'redaktsioonidele uusi märgiseid lisada',
+	'action-codereview-remove-tag' => 'redaktsioonidelt märgiseid eemaldada',
+	'action-codereview-post-comment' => 'redaktsioonidele kommentaare lisada',
+	'action-codereview-set-status' => 'redaktsioonide olekut muuta',
+	'action-codereview-link-user' => 'autoreid vikikasutajatega siduda',
 	'action-codereview-review-own' => 'märkida enda redaktsioonide olekuks "{{int:code-status-ok}}" ega "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Arendusriistad',
 	'group-svnadmins' => 'SVN-administraatorid',
@@ -13593,7 +13601,7 @@ $6',
 	'right-codereview-signoff' => 'Схвалёваня ревізій',
 	'right-codereview-link-user' => 'Звязок авторів з вікі-хоснователями',
 	'right-codereview-associate' => 'Адміністрація одношінь міджі ревізіями',
-	'right-codereview-review-own' => 'Означіти властны ревізії як ОК або Вырїшены',
+	'right-codereview-review-own' => 'Означованя властных ревізій як „{{int:code-status-ok}}“ або „{{int:code-status-resolved}}“',
 	'specialpages-group-developer' => 'Інштрументы вывоя',
 	'group-svnadmins' => 'SVN адміністраторы',
 	'group-svnadmins-member' => 'SVN адміністратор',
@@ -15180,6 +15188,7 @@ $messages['sw'] = array(
 
 /** Tamil (தமிழ்)
  * @author Aswn
+ * @author Karthi.dr
  * @author Shanmugamp7
  * @author TRYPPN
  * @author செல்வா
@@ -15243,9 +15252,11 @@ $messages['ta'] = array(
 	'code-rev-history-link' => 'வரலாறு',
 	'code-status-new' => 'புதிய',
 	'code-status-desc-new' => 'பரிசீலனை நிலுவையில் உள்ளது ஒரு செயல் (இயல்பு நிலை) .',
+	'code-status-fixme' => 'சரிசெய்',
 	'code-status-reverted' => 'முன்நிலையாக்கப்பட்டது',
 	'code-status-resolved' => 'தீர்வு காணப்பட்டது',
 	'code-status-ok' => 'ஆம்',
+	'code-status-deferred' => 'ஒத்திவைக்கப்பட்டது',
 	'code-status-old' => 'பழைய',
 	'code-signoff-flag-tested' => 'சோதனை செய்யப்பட்டது',
 	'code-signoff-field-user' => 'பயனர்',
@@ -15277,6 +15288,7 @@ $messages['ta'] = array(
 	'right-codereview-post-comment' => 'பரிசீலனைகளுக்கு கருத்துரைகளை சேர்',
 	'right-codereview-set-status' => 'பரிசீலனைகளுக்காண நிலைமையை மாற்று',
 	'right-codereview-link-user' => 'எழுத்தாளர்களை விக்கி பயனர்களுடன் இணை',
+	'specialpages-group-developer' => 'உருவாக்குநர் கருவிகள்',
 );
 
 /** Telugu (తెలుగు)
