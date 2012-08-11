@@ -9028,7 +9028,7 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'code-rev-imagediff' => 'Änderunge aam Beld',
 	'code-rev-status' => 'Shtattus:',
 	'code-rev-status-set' => 'Shtattus ändere',
-	'code-rev-tags' => 'Makeerunge:',
+	'code-rev-tags' => 'Makeeronge:',
 	'code-rev-tag-add' => 'Makeerunge dobei donn:',
 	'code-rev-tag-remove' => 'Makeerunge fott nämme:',
 	'code-rev-comment-by' => 'Kommentaa vum „$1“',
@@ -9158,7 +9158,7 @@ $6',
 	'repoadmin' => 'Repositorijums-Verwalldung',
 	'repoadmin-new-legend' => 'E neu Repositorijum aanlääje',
 	'repoadmin-new-label' => 'Däm Repositorijum singe Name:',
-	'repoadmin-new-button' => 'Aanläje',
+	'repoadmin-new-button' => 'Aanlääje',
 	'repoadmin-edit-legend' => 'Dat Repositorijum „$1“ ändere',
 	'repoadmin-edit-path' => 'Däm Repositorijum singe Pahdt:',
 	'repoadmin-edit-bug' => '<i lang="en">Bugzilla</i> Pahdt:',
@@ -9190,6 +9190,8 @@ $6',
 	'group-svnadmins' => 'Verwallder vum SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|Verwallder|Verwallderėn|Verwallder|Verwallderėn|Verwallder}} vum SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Verwallder vum SVN',
+	'group-svnadmins.css' => '/* Dat CSS heh aan dä Stell wirrek nur op de SVN-Bedeener */',
+	'group-svnadmins.js' => '/* Dat JavaSkrep heh aan dä Stell wirrek nur op de SVN-Bedeener */',
 );
 
 /** Kurdish (Latin script) (‪Kurdî (latînî)‬)
@@ -12924,6 +12926,10 @@ $6',
 	'right-codereview-link-user' => 'Leagă autori de utilizatori wiki',
 	'right-codereview-associate' => 'Gestionează asocierile reviziilor',
 	'right-codereview-review-own' => 'Marchează propria revizie ca „{{int:code-status-ok}}” sau „{{int:code-status-resolved}}”',
+	'action-codereview-add-tag' => 'adaugă etichete noi la revizii',
+	'action-codereview-remove-tag' => 'elimină etichete de la revizii',
+	'action-codereview-post-comment' => 'adaugă comentarii pe revizii',
+	'action-codereview-set-status' => 'schimbați starea reviziilor',
 	'specialpages-group-developer' => 'Unelte pentru dezvolatori',
 	'group-svnadmins' => 'Administratori SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|administrator SVN}}',
@@ -13141,6 +13147,7 @@ $6',
 );
 
 /** Russian (русский)
+ * @author DCamer
  * @author Dim Grits
  * @author Eleferen
  * @author Engineering
@@ -13160,7 +13167,7 @@ $messages['ru'] = array(
 	'code-rev-title' => '$1 — рецензирование кода',
 	'code-comments' => 'Комментарии',
 	'code-references' => 'Последующие ревизии',
-	'code-referenced' => 'Дальнейшие ревизии',
+	'code-referenced' => 'Последняя ревизия заменена следующей',
 	'code-change-status' => "изменил '''состояние''' r$1",
 	'code-change-tags' => "изменил '''метки''' для r$1",
 	'code-change-removed' => 'удалено:',
