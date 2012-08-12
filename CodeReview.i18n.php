@@ -10055,7 +10055,7 @@ $messages['ml'] = array(
 	'code-rev-title' => '$1 - കോഡ് സംശോധനം',
 	'code-comments' => 'അഭിപ്രായങ്ങൾ',
 	'code-references' => 'പിന്തുടർച്ചയായുണ്ടായിട്ടുള്ള നാൾപ്പതിപ്പുകൾ',
-	'code-referenced' => 'പിന്തുടർച്ചയായുണ്ടായിട്ടുള്ള നാൾപ്പതിപ്പുകൾ',
+	'code-referenced' => 'ഈ പിന്തുടർച്ച ഉണ്ടാകാനിടയാക്കിയ പഴയ നാൾപ്പതിപ്പുകൾ',
 	'code-change-status' => "$1-ന്റെ '''സ്ഥിതി''' മാറ്റിയിരിക്കുന്നു",
 	'code-change-tags' => "$1-ന്റെ '''റ്റാഗുകൾ''' മാറ്റിയിരിക്കുന്നു",
 	'code-change-removed' => 'നീക്കം ചെയ്തു:',
@@ -10257,6 +10257,15 @@ $6',
 	'right-codereview-link-user' => 'രചയിതാക്കളെ വിക്കി ഉപയോക്താക്കളുമായി കണ്ണി ചേർക്കുക',
 	'right-codereview-associate' => 'നാൾപ്പതിപ്പ് ബന്ധങ്ങളുടെ കൈകാര്യം',
 	'right-codereview-review-own' => 'താങ്കളുടെ സ്വന്തം പതിപ്പുകൾ "{{int:code-status-ok}}" എന്നോ "{{int:code-status-resolved}}" എന്നോ അടയാളപ്പെടുത്തുക',
+	'action-repoadmin' => 'കോഡ് റെപ്പോസിറ്ററി പരിപാലിക്കുക',
+	'action-codereview-use' => 'Special:Code താളിന്റെ ഉപയോഗം',
+	'action-codereview-add-tag' => 'നാൾപ്പതിപ്പുകൾക്ക് പുതിയ റ്റാഗുകൾ ചേർക്കുക',
+	'action-codereview-remove-tag' => 'നാൾപ്പതിപ്പുകളിൽ നിന്നും റ്റാഗുകൾ നീക്കുക',
+	'action-codereview-post-comment' => 'നാൾപ്പതിപ്പുകളിൽ അഭിപ്രായങ്ങൾ ചേർക്കുക',
+	'action-codereview-set-status' => 'നാൾപ്പതിപ്പുകളുടെ സ്ഥിതിയിൽ മാറ്റം വരുത്തുക',
+	'action-codereview-signoff' => 'നാൾപ്പതിപ്പുകൾ അവസാനിപ്പിച്ചിറങ്ങുക',
+	'action-codereview-link-user' => 'രചയിതാക്കളെ വിക്കി ഉപയോക്താക്കളുമായി കണ്ണി ചേർക്കുക',
+	'action-codereview-associate' => 'നാൾപ്പതിപ്പ് ബന്ധങ്ങൾ പരിപാലിക്കുക',
 	'action-codereview-review-own' => 'താങ്കളുടെ സ്വന്തം പതിപ്പുകൾ "{{int:code-status-ok}}" എന്നോ "{{int:code-status-resolved}}" എന്നോ അടയാളപ്പെടുത്തുക',
 	'specialpages-group-developer' => 'വികസന ഉപകരണങ്ങൾ',
 	'group-svnadmins' => 'എസ്.വി.എൻ. കാര്യനിർവ്വഹകർ',
@@ -15201,6 +15210,7 @@ $messages['sw'] = array(
  * @author Shanmugamp7
  * @author TRYPPN
  * @author செல்வா
+ * @author மதனாஹரன்
  */
 $messages['ta'] = array(
 	'code-comments' => 'கருத்துரைகள்',
@@ -15272,6 +15282,7 @@ $messages['ta'] = array(
 	'code-signoff-field-flag' => 'கொடி',
 	'code-signoff-field-date' => 'தேதி',
 	'code-pathsearch-path' => 'வழி:',
+	'code-revfilter-cr_status' => 'நிலை = $1',
 	'code-revfilter-clear' => 'வடிப்பான்களை துடை',
 	'code-rev-submit' => 'மாற்றங்களை சேமி',
 	'code-rev-submit-next' => 'சேமி & அடுத்த தீர்க்கப்படாதது',
