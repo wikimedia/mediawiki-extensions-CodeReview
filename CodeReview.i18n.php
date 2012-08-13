@@ -2408,6 +2408,7 @@ $6',
 
 /** Catalan (català)
  * @author Aleator
+ * @author Arnaugir
  * @author El libre
  * @author Loupeter
  * @author Paucabot
@@ -2490,6 +2491,7 @@ $messages['ca'] = array(
 	'code-rev-purge-link' => 'Purga',
 	'code-rev-total' => 'Nombre total de resultats: $1',
 	'code-rev-not-found' => "La revisió '''$1''' no existeix!",
+	'code-rev-history-link' => 'historial',
 	'code-status-new' => 'nou',
 	'code-status-fixme' => "arregla'm",
 	'code-status-reverted' => 'Revertit',
@@ -2513,6 +2515,7 @@ $messages['ca'] = array(
 	'code-pathsearch-filter' => 'Filtre aplicat:',
 	'code-revfilter-cr_status' => 'Estat = $1',
 	'code-revfilter-cr_author' => 'Autor/a = $1',
+	'code-revfilter-ct_tag' => 'Etiqueta = $1',
 	'code-revfilter-clear' => 'Neteja filtre',
 	'code-rev-submit' => 'Desar canvis',
 	'code-rev-submit-next' => 'Guarda i vés al següent sense resoldre',
@@ -2544,6 +2547,7 @@ $4',
 	'code-stats-count' => 'Nombre de revisions',
 	'repoadmin' => 'Administració del Repositori',
 	'repoadmin-new-legend' => 'Crea nou repositori',
+	'repoadmin-new-label' => 'Nom del repositori:',
 	'repoadmin-new-button' => 'Crear',
 	'repoadmin-edit-legend' => 'Modificació del repositori "$1"',
 	'repoadmin-edit-path' => 'Ruta del repositori:',
@@ -4015,7 +4019,7 @@ $6',
 	'right-codereview-signoff' => 'Aprobi reviziojn',
 	'right-codereview-link-user' => 'Ligi aŭtorojn al viki-uzantoj',
 	'right-codereview-associate' => 'Trakti asociojn de revizioj',
-	'right-codereview-review-own' => 'Marki viajn proprajn reviziojn kiel OK aŭ Riparita',
+	'right-codereview-review-own' => 'Marki viajn proprajn reviziojn kiel "{{int:code-status-ok}}" aŭ "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Disvolvistaj iloj',
 	'group-svnadmins' => 'SVN-administrantoj',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN-administranto|SVN-administrantino}}',
@@ -6522,11 +6526,15 @@ $6',
 );
 
 /** Fiji Hindi (Latin script) (Fiji Hindi)
+ * @author Karthi.dr
  * @author Thakurji
  */
 $messages['hif-latn'] = array(
 	'code-change-removed' => 'hatae dewa gais hai',
 	'code-change-added' => 'jorr dewa gais hai:',
+	'code-rev-comment-preview' => 'Jhalak',
+	'code-rev-inline-preview' => 'Jhalak:',
+	'code-status-new' => 'nawaa',
 	'repoadmin-new-button' => 'Banao',
 );
 
@@ -7622,7 +7630,7 @@ $6',
 	'right-codereview-review-own' => 'Tandai suntingan Anda sendiri sebagai OK',
 	'specialpages-group-developer' => 'Alat Pengembang',
 	'group-svnadmins' => 'Pengurus SVN',
-	'group-svnadmins-member' => 'Pengurus SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|Pengurus SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Pengurus SVN',
 );
 
@@ -8752,13 +8760,13 @@ $messages['ko'] = array(
 	'code-status' => '상태',
 	'code-tags' => '태그',
 	'code-tags-no-tags' => '저장소에 태그가 있지 않습니다.',
-	'code-authors-text' => '다음은 커밋 이름 순으로 정렬한 저장소의 저자 목록입니다. 이 위키에서의 계정 이름은 괄호 안에 있습니다. 데이터는 캐시될 수 있습니다.',
+	'code-authors-text' => '다음은 커밋 이름 순으로 정렬한 저장소의 저자 목록입니다. 이 위키에서의 계정은 괄호 안에 있습니다. 데이터는 캐시될 수 있습니다.',
 	'code-author-haslink' => '이 만든이는 위키 사용자 $1로 연결되어 있습니다.',
 	'code-author-orphan' => 'SVN의 $1 기여자가 위키 계정과 연결되어 있지 않습니다.',
 	'code-author-dolink' => '이 저자를 위키 사용자로 연결하세요:',
 	'code-author-alterlink' => '해당 기여자에 연결된 위키 계정을 바꾸기:',
 	'code-author-orunlink' => '이 위키 사용자로의 링크를 제거하세요:',
-	'code-author-name' => '사용자 이름을 입력하세요:',
+	'code-author-name' => '사용자 이름 입력:',
 	'code-author-success' => '제작자 $1은(는) 위키 사용자 $2(으)로 연결되었습니다.',
 	'code-author-link' => '링크하시겠습니까?',
 	'code-author-unlink' => '링크를 해제하시겠습니까?',
@@ -10522,8 +10530,10 @@ $6',
 
 /** Maltese (Malti)
  * @author Chrisportelli
+ * @author පසිඳු කාවින්ද
  */
 $messages['mt'] = array(
+	'code-comments' => 'Kummenti',
 	'code-author-total' => "Numru totali ta' awturi: $1",
 	'code-author-lastcommit' => "Data tal-aħħar ''commit''",
 	'code-browsing-path' => "Esplora r-reviżjonijiet f''''$1'''",
@@ -10532,6 +10542,47 @@ $messages['mt'] = array(
 	'code-field-user' => 'Awtur tal-kumment',
 	'code-field-message' => "Taqsira tal-''commit''",
 	'code-field-status' => 'Stat',
+	'code-field-timestamp' => 'Data',
+	'code-field-comments' => 'Kummenti',
+	'code-field-path' => 'Mogħdija',
+	'code-field-text' => 'Nota',
+	'code-field-select' => 'Agħżel',
+	'code-reference-remove' => 'Neħħi l-assoċjazzjonijiet magħżula',
+	'code-reference-associate-submit' => 'Assoċja',
+	'code-rev-author' => 'Awtur:',
+	'code-rev-date' => 'Data:',
+	'code-rev-message' => 'Kumment:',
+	'code-rev-repo' => 'Repożitorju:',
+	'code-rev-rev' => 'Reviżjoni:',
+	'code-rev-rev-viewvc' => 'fuq ViewVC',
+	'code-rev-paths' => 'Mogħdijiet modifikati:',
+	'code-rev-modified-a' => 'miżjud',
+	'code-rev-modified-r' => 'sostitwit',
+	'code-rev-modified-d' => 'imħassar',
+	'code-rev-modified-m' => 'modifikat',
+	'code-rev-imagediff' => 'Tibdil fl-istampa',
+	'code-rev-status' => 'Stat:',
+	'code-rev-status-set' => 'Biddel l-istat',
+	'code-rev-tags' => 'Tikketti:',
+	'code-rev-tag-add' => 'Żid tikketti:',
+	'code-rev-tag-remove' => 'Neħħi tikketti:',
+	'code-rev-comment-by' => 'Kumment minn $1',
+	'code-rev-comment-preview' => 'Dehra proviżorja',
+	'code-rev-inline-preview' => 'Dehra proviżorja:',
+	'code-rev-diff' => 'Diff',
+	'code-rev-diff-link' => 'diff',
+	'code-rev-diff-too-large' => 'Id-diff hija wisq kbira biex tiġi murija.',
+	'code-rev-purge-link' => "erġa' ġedded",
+	'code-rev-total' => "Numru totali ta' riżultati: $1",
+	'code-rev-not-found' => "Ir-reviżjoni '''$1''' ma teżistix!",
+	'code-rev-history-link' => 'kronoloġija',
+	'code-status-new' => 'ġdid',
+	'code-status-ok' => 'ok',
+	'code-signoff-field-user' => 'Utent',
+	'code-signoff-field-date' => 'Data',
+	'codereview-batch-submit' => 'Ibgħat',
+	'repoadmin-new-button' => 'Oħloq',
+	'repoadmin-edit-button' => 'OK',
 );
 
 /** Erzya (эрзянь)
@@ -14097,6 +14148,7 @@ $messages['si'] = array(
 	'right-codereview-signoff' => 'සංශෝධන වලින් නික්මෙන්න',
 	'right-codereview-link-user' => 'විකි පරිශීලකයන් වෙත කතුවරුන් සම්බන්ධ කරන්න',
 	'right-codereview-associate' => 'සංශෝධන ආශ්‍රයන් කළමනාකරණය කරන්න',
+	'action-repoadmin' => 'කේත කෝෂ්ඨාගාරයන් කළමනාකරණය කරන්න',
 	'specialpages-group-developer' => 'සංවර්ධක මෙවලම්',
 	'group-svnadmins' => 'පරිපාලකවරු',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN පරිපාලක}}',
