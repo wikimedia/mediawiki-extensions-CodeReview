@@ -8540,13 +8540,31 @@ $messages['jv'] = array(
 	'codereview-overview-title' => 'Sawangan',
 	'codereview-overview-desc' => 'Tuduhaké sawangan grapis saka daptar iki',
 	'codereview-email-subj' => '[$1 $2]: Komentar anyar ditambahaké',
-	'codereview-email-body' => 'Panganggo "$1" awèh komentar ing $3.
+	'codereview-email-body' => '"$1" ngirim tanggepan nèng $3.
+URL: $2
 
-URL jangkep: $2
+Ringkesan komit $3:
 
-Komentar:
+$5
+
+Tanggepan $1:
 
 $4',
+	'codereview-email-subj2' => '[$1 $2]: Owahan tindhak lanjut',
+	'code-stats' => 'statistik',
+	'code-stats-header' => 'Statistik kanggo panyimpenan $1',
+	'code-stats-main' => 'Nèng $1, panyimpenan nduwé $2 {{PLURAL:$2|benahan|benahan}} déning [[Special:Code/$3/author|$4 {{PLURAL:$4|panganggit|panganggit}}]].
+Summary:',
+	'code-stats-status-breakdown' => 'Cacahé benahan per kahanan',
+	'code-stats-fixme-breakdown' => 'Karusakan benahan fixme per panganggit',
+	'code-stats-fixme-breakdown-path' => 'Karusakan benahan fixme per alur',
+	'code-stats-fixme-path' => 'Benahan fixme kanggo alur: $1',
+	'code-stats-new-breakdown' => 'Karusakan benahan anyar per panganggit',
+	'code-stats-new-breakdown-path' => 'Karusakan benahan anyar per alur',
+	'code-stats-new-path' => 'Benahan anyar kanggo alur: $1',
+	'code-stats-count' => 'Cacahé benahan',
+	'code-tooltip-withsummary' => 'r$1 [$2] déning $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] déning $3',
 	'repoadmin' => "Administrasi Panyimpenan (''repository'')",
 	'repoadmin-new-legend' => "Gawé panyimpenan (''repository'') anyar",
 	'repoadmin-new-label' => "Jeneng panyimpenan (''repository''):",
@@ -8557,13 +8575,31 @@ $4',
 	'repoadmin-edit-view' => "Jalur ''ViewVC'':",
 	'repoadmin-edit-button' => 'OK',
 	'repoadmin-edit-sucess' => 'Panyimpenan (\'\'repository\'\') "[[Special:Code/$1|$1]]" wis kasil dimodhifikasi.',
+	'repoadmin-nav' => 'administrasi panyimpenan',
 	'right-repoadmin' => 'Tata kodhe panyimpenan',
+	'right-codereview-use' => 'Panganggoan Kusus:Kodhé',
 	'right-codereview-add-tag' => 'Tambahaké tandha anyar ing révisi',
 	'right-codereview-remove-tag' => 'Busak tandha saka révisi',
 	'right-codereview-post-comment' => 'Tambahaké komentar ing révisi',
 	'right-codereview-set-status' => 'Owahi status révisi',
+	'right-codereview-signoff' => 'Spakati benahan',
 	'right-codereview-link-user' => 'Hubungaké pangarang menyang panganggo wiki',
+	'right-codereview-associate' => 'Tata asosiasi benahan',
+	'right-codereview-review-own' => 'Tandhai benahan Sampéyan dhéwé minangka "{{int:code-status-ok}}" utawa "{{int:code-status-resolved}}"',
+	'action-repoadmin' => 'tata panyimpenyan kodhé',
+	'action-codereview-use' => 'panganggoan Kusus:Kodhé',
+	'action-codereview-add-tag' => 'tambahaké tandha anyar nèng benahan',
+	'action-codereview-remove-tag' => 'busak tandha saka benahan',
+	'action-codereview-post-comment' => 'tambah tanggepan nèng benahan',
+	'action-codereview-set-status' => 'ganti status benahan',
+	'action-codereview-signoff' => 'spakati benahan',
+	'action-codereview-link-user' => 'hubungaké panganggit karo panganggo wiki',
+	'action-codereview-associate' => 'tata asosiasi benahan',
+	'action-codereview-review-own' => 'tandhai benahan Sampéyan dhéwé minangka "{{int:code-status-ok}}" utawa "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Piranti déveloper',
+	'group-svnadmins' => 'Pangurus SVN',
+	'group-svnadmins-member' => '{{GENDER:$1|Pangurus SVN}}',
+	'grouppage-svnadmins' => '{{ns:project}}:Pangurus SVN',
 );
 
 /** Georgian (ქართული)
@@ -10643,17 +10679,23 @@ $messages['mt'] = array(
 	'code-change-added' => 'miżjud:',
 	'code-old-status' => 'Stat qadim',
 	'code-new-status' => 'Stat ġdid',
+	'code-prop-changes' => "Reġistru tal-istat u tat-''tagging''",
 	'codereview-desc' => "[[Special:Code|Għodda għar-reviżjoni tal-kodiċi]] bis-[[Special:RepoAdmin|sosten għas-''Subversion'']]",
 	'code-no-repo' => 'L-ebda repożitorju ma ġie konfigurat!',
+	'code-create-repo' => 'Mur fir-[[Special:RepoAdmin|RepoAdmin]] sabiex toħloq repożitorju',
+	'code-need-repoadmin-rights' => "drittijiet ta' ''repoadmin'' huma neċessarji sabiex iżżid repożitorju",
+	'code-need-group-with-rights' => "L-ebda grupp ma jeżisti bid-drittijiet ta' ''repoadmin''. Jekk jogħġbok żid wieħed sabiex tkun tista' żżid repożitorju ġdid.",
 	'code-repo-not-found' => "Ir-repożitorju '''$1''' ma jeżistix!",
 	'code-load-diff' => "Id-diff tiela'…",
 	'code-notes' => 'kummenti riċenti',
 	'code-statuschanges' => 'bdil fl-istat',
+	'code-mycommits' => 'il-pubblikazzjonijiet tiegħi',
 	'code-mycomments' => 'il-kummenti tiegħi',
 	'code-authors' => 'awturi',
 	'code-status' => 'stati',
 	'code-tags' => 'tikketti',
 	'code-tags-no-tags' => "L-ebda tikketta ma teżisti f'dan ir-repożitorju.",
+	'code-authors-text' => "Hawn taħt hija lista ta' awturi tar-repożitorju ordnati skotn l-isem tal-pubblikazzjoni. Il-kontijiet tal-wiki lokali huma murija fil-parentesi. Id-dejta tista tkun fil-cache.",
 	'code-author-haslink' => 'L-awtur huwa marbut mal-utent tal-wiki $1',
 	'code-author-orphan' => "L-utent SVN/awtur $1 mhuwiex marbut ma' kont tal-wiki",
 	'code-author-dolink' => "Orbot dan l-awtur ma' utent tal-wiki:",
@@ -10710,6 +10752,7 @@ $messages['mt'] = array(
 	'code-rev-not-found' => "Ir-reviżjoni '''$1''' ma teżistix!",
 	'code-rev-history-link' => 'kronoloġija',
 	'code-status-new' => 'ġdid',
+	'code-status-desc-new' => "Ir-reviżjoni qiegħdha tistenna azzjoni (stat ''default'').",
 	'code-status-fixme' => 'fixme',
 	'code-status-desc-fixme' => 'Ir-reviżjoni introduċiet problema jew ma taħdimx. Din għandha tiġi kkoreġuta.',
 	'code-status-reverted' => 'annullat',
@@ -10725,11 +10768,14 @@ $messages['mt'] = array(
 	'code-signoffs' => 'Approvazzjonijiet',
 	'code-signoff-legend' => 'Żid approvazzjoni',
 	'code-signoff-submit' => 'Approva',
+	'code-signoff-strike' => "Aqta' l-approvazzjonijiet magħżula",
+	'code-signoff-signoff' => 'Approva din ir-reviżjoni bħala:',
 	'code-signoff-flag-inspected' => 'Spezzjonat',
 	'code-signoff-flag-tested' => 'Ittestjat',
 	'code-signoff-field-user' => 'Utent',
 	'code-signoff-field-flag' => 'Marka',
 	'code-signoff-field-date' => 'Data',
+	'code-signoff-struckdate' => '$1 (maqtugħa nhar il-$2)',
 	'code-pathsearch-legend' => "Fittex fir-reviżjonijiet ta' dan ir-repożitorju abbażi tal-mogħdija",
 	'code-pathsearch-path' => 'Mogħdija:',
 	'code-pathsearch-filter' => 'Uri biss:',
@@ -10752,9 +10798,52 @@ $messages['mt'] = array(
 	'codereview-overview-title' => 'Ħarsa ġenerali',
 	'codereview-overview-desc' => "Uri ħarsa ġenerali grafika ta' dan il-lista",
 	'codereview-email-subj' => '[$1 $2]: Kumment ġdid miżjud',
+	'codereview-email-body' => 'L-utent "$1" bagħat kumment fuq $3.
+URL: $2
+
+Taqsira tal-pubblikazzjoni $3:
+
+$5
+
+Kumment ta\' $1:
+
+$4',
 	'codereview-email-subj2' => '[$1 $2]: modifiki suċċessivi',
+	'codereview-email-body2' => '"$1" għamel modifiki suċċessivi lil $2.
+URL: $5
+
+Taqsira tal-pubblikazzjoni għar-reviżjoni $2:
+
+$6
+
+URL tal-modifika suċċessiva: $3
+Taqsira tal-modifika suċċessiva mingħand "$1":
+
+$4',
 	'codereview-email-subj3' => '[$1 $2]: L-istat tar-reviżjoni ġie mibdul',
+	'codereview-email-body3' => '"$1" biddel l-istat ta\' $2 għal "$4"
+URL: $5
+
+Stat il-qadim:  $3
+Stat il-ġdid: $4
+
+Taqsira tal-pubblikazzjoni $2:
+
+$6',
 	'codereview-email-subj4' => '[$1 $2]: Kumment ġdid miżjud, u l-istat tar-reviżjoni nbidel',
+	'codereview-email-body4' => '"$1" biddel l-istat ta\' $2 għal "$4" u daħħal kumment.
+URL: $5
+
+Stat il-qadim: $3
+Stat il-ġdid: $4
+
+Taqsira tal-pubblikazzjoni $2:
+
+$7
+
+Kumment ta\' $1:
+
+$6',
 	'code-stats' => 'statistika',
 	'code-stats-header' => 'Statistika għar-repożitorju $1',
 	'code-stats-main' => 'Sal-$1, ir-repożitorju għandu {{PLURAL:$2|reviżjoni waħda|$2 reviżjonijiet}} minn [[Special:Code/$3/author|{{PLURAL:$4|awtur wieħed|$4 awturi}}]].',
@@ -16777,6 +16866,29 @@ $6',
 	'group-svnadmins' => 'Адміністратори SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|Адміністратор SVN|Адміністраторка SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}: Адміністратори SVN',
+);
+
+/** Urdu (اردو)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ur'] = array(
+	'code-comments' => 'تبصرے',
+	'code-field-author' => 'مصنف',
+	'code-field-timestamp' => 'تاریخ',
+	'code-field-comments' => 'تبصرے',
+	'code-field-text' => 'نوٹ',
+	'code-field-select' => 'منتخب کریں',
+	'code-rev-author' => 'مصنف:',
+	'code-rev-date' => 'تاریخ:',
+	'code-rev-message' => 'تبصرہ:',
+	'code-rev-comment-preview' => 'پیش نظارہ',
+	'code-status-new' => 'نئے',
+	'code-signoff-field-user' => 'صارف',
+	'code-signoff-field-date' => 'تاریخ',
+	'codereview-batch-submit' => 'جمع کرائیں',
+	'codereview-reply-link' => 'جواب دیں',
+	'repoadmin-new-button' => 'تخلیق کریں',
+	'repoadmin-edit-button' => 'ٹھیک ہے',
 );
 
 /** vèneto (vèneto)
