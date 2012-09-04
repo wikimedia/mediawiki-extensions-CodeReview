@@ -3285,6 +3285,7 @@ $messages['diq'] = array(
 	'code-rev-diff-too-large' => 'Ena diff zaf girda.',
 	'code-rev-purge-link' => 'purge bike',
 	'code-rev-total' => 'Amarê neticeyanê hemi: $1',
+	'code-rev-history-link' => 'werenayış',
 	'code-status-new' => 'newe',
 	'code-status-fixme' => 'fixme',
 	'code-status-reverted' => 'revert biye',
@@ -3292,6 +3293,7 @@ $messages['diq'] = array(
 	'code-status-ok' => 'temam',
 	'code-status-deferred' => 'defer biyo',
 	'code-status-old' => 'kihan',
+	'code-signoff-flag-tested' => 'Test biyo',
 	'code-signoff-field-user' => 'Karber',
 	'code-signoff-field-flag' => 'Desmal',
 	'code-signoff-field-date' => 'Deme',
@@ -3300,6 +3302,7 @@ $messages['diq'] = array(
 	'code-pathsearch-filter' => 'Ho ke bımocne:',
 	'code-revfilter-cr_status' => 'Weziyet = $1',
 	'code-revfilter-cr_author' => 'Nustekar = $1',
+	'code-revfilter-ct_tag' => 'Etiket = $1',
 	'code-revfilter-clear' => 'Filtre wedarne',
 	'code-rev-submit' => 'Vuranayîşan qeyd bike',
 	'code-rev-submit-next' => 'Keyd ke & neresolve binî',
@@ -3313,6 +3316,7 @@ $messages['diq'] = array(
 	'code-release-endrev' => 'Revizyonê penî:',
 	'codereview-subtitle' => 'Qe $1',
 	'codereview-reply-link' => 'cewab bide',
+	'codereview-overview-title' => 'Hera weynayis',
 	'codereview-email-subj' => '[$1 $2]: Xulasayê newî de biyo',
 	'codereview-email-body' => 'Rıştış dê "$1" sera vatışê $3\'i.
 GRE: $2
