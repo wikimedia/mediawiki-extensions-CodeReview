@@ -8226,8 +8226,8 @@ $messages['ja'] = array(
 	'code-author-orunlink' => 'このウィキ利用者とのリンクを解除:',
 	'code-author-name' => '利用者名の入力:',
 	'code-author-success' => '作者 $1 はウィキ利用者 $2 とリンクされています',
-	'code-author-link' => 'リンクをしますか？',
-	'code-author-unlink' => 'リンクを解除しますか？',
+	'code-author-link' => 'リンクしますか?',
+	'code-author-unlink' => 'リンクを解除しますか?',
 	'code-author-unlinksuccess' => '作者 $1 のリンクは解除されました',
 	'code-author-badtoken' => '当該操作を実行しようとしたところ、セッションエラーが発生しました。',
 	'code-author-total' => '総作者数: $1',
@@ -8416,6 +8416,8 @@ $6',
 	'group-svnadmins' => 'SVN管理者',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN 管理者}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN管理者',
+	'group-svnadmins.css' => '/* ここに記述したCSSはSVN管理者のみに影響します */',
+	'group-svnadmins.js' => '/* ここに記述したJSはSVN管理者のみに影響します */',
 );
 
 /** Javanese (Basa Jawa)
