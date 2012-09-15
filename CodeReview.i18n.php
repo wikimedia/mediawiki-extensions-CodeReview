@@ -9166,7 +9166,7 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'code-field-timestamp' => 'Zick un Dattum',
 	'code-field-comments' => 'Aanmärkunge',
 	'code-field-path' => 'Pad',
-	'code-field-text' => 'Notiz',
+	'code-field-text' => 'Notez',
 	'code-field-select' => 'Ußsöhke',
 	'code-reference-remove' => 'Ußjewählte Zosammehäng oplühse',
 	'code-reference-associate' => 'Opfoljer-Version faßlääje:',
