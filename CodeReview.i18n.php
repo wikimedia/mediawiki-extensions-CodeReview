@@ -10953,6 +10953,7 @@ $messages['nah'] = array(
 );
 
 /** Norwegian Bokmål (‪norsk (bokmål)‬)
+ * @author Danmichaelo
  * @author Event
  * @author Laaknor
  * @author Lokal Profil
@@ -11181,7 +11182,7 @@ $6',
 	'right-codereview-signoff' => 'Skriv under på revisjoner',
 	'right-codereview-link-user' => 'Lenke forfattere til wikibrukere',
 	'right-codereview-associate' => 'Behandle revisjonsmerker',
-	'right-codereview-review-own' => 'Merk dine egne endringer som OK eller Løst',
+	'right-codereview-review-own' => 'Merk dine egne revisjoner som «{{int:code-status-ok}}» eller «{{int:code-status-resolved}}»',
 	'specialpages-group-developer' => 'Utviklerverktøy',
 	'group-svnadmins' => 'SVN administratorer',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN-administrator}}',
