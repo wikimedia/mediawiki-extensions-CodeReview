@@ -2,7 +2,7 @@
 
 class CodeReleaseNotes extends CodeView {
 	function __construct( $repo ) {
-		global $wgRequest, $IP;
+		global $wgRequest;
 		parent::__construct( $repo );
 		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
 		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
@@ -32,15 +32,18 @@ class CodeReleaseNotes extends CodeView {
 		$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/releasenotes' );
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-			"<fieldset><legend>" . wfMsgHtml( 'code-release-legend' ) . "</legend>" .
+			"<fieldset><legend>" . wfMessage( 'code-release-legend' )->escaped() . "</legend>" .
 				Html::hidden( 'title', $special->getPrefixedDBKey() ) . '<b>' .
-				Xml::inputlabel( wfMsg( "code-release-startrev" ), 'startrev', 'startrev', 10, $this->mStartRev ) .
+				Xml::inputlabel( wfMessage( "code-release-startrev" )->text(), 'startrev', 'startrev',
+					10, $this->mStartRev ) .
 				'</b>&#160;' .
-				Xml::inputlabel( wfMsg( "code-release-endrev" ), 'endrev', 'endrev', 10, $this->mEndRev ) .
+				Xml::inputlabel( wfMessage( "code-release-endrev" )->text(), 'endrev', 'endrev', 10,
+					$this->mEndRev ) .
 				'&#160;' .
-				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 45, $this->mPath ) .
+				Xml::inputlabel( wfMessage( "code-pathsearch-path" )->text(), 'path', 'path', 45,
+		$this->mPath ) .
 				'&#160;' .
-				Xml::submitButton( wfMsg( 'allpagessubmit' ) ) . "\n" .
+				Xml::submitButton( wfMessage( 'allpagessubmit' )->text() ) . "\n" .
 			"</fieldset>" . Xml::closeElement( 'form' )
 		);
 	}

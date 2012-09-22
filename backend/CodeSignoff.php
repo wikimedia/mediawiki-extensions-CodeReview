@@ -44,7 +44,7 @@ class CodeSignoff {
 	 * @return bool Whether this sign-off has been struck
 	 */
 	public function isStruck() {
-		return $this->timestampStruck !== Block::infinity();
+		return $this->timestampStruck !== wfGetDB( DB_SLAVE )->getInfinity();
 	}
 
 	/**

@@ -9,7 +9,6 @@ class CodeCommentsListView extends CodeRevisionListView {
 
 // Pager for CodeCommentsListView
 class CodeCommentsTablePager extends SvnTablePager {
-
 	function isFieldSortable( $field ) {
 		return $field == 'cr_timestamp';
 	}
@@ -51,12 +50,12 @@ class CodeCommentsTablePager extends SvnTablePager {
 
 	function getFieldNames() {
 		return array(
-			'cc_timestamp' => wfMsg( 'code-field-timestamp' ),
-			'cc_user_text' => wfMsg( 'code-field-user' ),
-			'cc_rev_id' => wfMsg( 'code-field-id' ),
-			'cr_status' => wfMsg( 'code-field-status' ),
-			'cr_message' => wfMsg( 'code-field-message' ),
-			'cc_text' => wfMsg( 'code-field-text' ),
+			'cc_timestamp' => $this->msg( 'code-field-timestamp' )->text(),
+			'cc_user_text' => $this->msg( 'code-field-user' )->text(),
+			'cc_rev_id' => $this->msg( 'code-field-id' )->text(),
+			'cr_status' => $this->msg( 'code-field-status' )->text(),
+			'cr_message' => $this->msg( 'code-field-message' )->text(),
+			'cc_text' => $this->msg( 'code-field-text' )->text()
 		);
 	}
 
@@ -78,9 +77,10 @@ class CodeCommentsTablePager extends SvnTablePager {
 		case 'cc_text':
 			return $this->mView->messageFragment( $value );
 		case 'cc_timestamp':
-			global $wgLang;
-			return $wgLang->timeanddate( $value, true );
+			return $this->getLanguage()->timeanddate( $value, true );
 		}
+
+		throw new MWException( '$name is invalid input.');
 	}
 
 	function getTitle() {

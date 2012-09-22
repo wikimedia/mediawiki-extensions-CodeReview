@@ -65,13 +65,11 @@ class CodeReviewApiTest extends ApiTestCase {
 	 * $wgOut->parse() backtrace :b
 	 */
 	function testAddInlineComment() {
-		$data = $this->doApiRequest( array(
+		$this->doApiRequest( array(
 			'action' => 'coderevisionupdate',
 			'rev' => 777,
 			'comment' => 'Awesome comment',
 
 		) + $this->commonApiData );
-
-		//$this->assertArrayHasKey( 'key', $data );
 	}
 }

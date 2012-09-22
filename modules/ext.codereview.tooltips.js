@@ -36,14 +36,15 @@ var CodeTooltipsInit = function() {
 					if ( !data || !data.query || !data.query.coderevisions ) {
 						return;
 					}
-					var rev = data.query.coderevisions[0];
-					var text = rev['*'].length > 82 ? rev['*'].substr(0,80) + '...' : rev['*'];
+					var rev = data.query.coderevisions[0],
+						text = rev['*'].length > 82 ? rev['*'].substr(0,80) + '...' : rev['*'];
+
 					text = mw.html.escape( text );
 					text = text.replace( /\n/g, '<br/>' );
-					var status = mw.html.escape( rev.status );
-					var author = mw.html.escape( rev.author );
 
-					var tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">';
+					var status = mw.html.escape( rev.status ),
+						author = mw.html.escape( rev.author ),
+						tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">';
 
 					if ( rev['*'] ) {
 						tip += mw.msg( 'code-tooltip-withsummary', matches[2], mw.msg( 'code-status-' + status ), author, text );
@@ -64,9 +65,10 @@ var CodeTooltipsInit = function() {
 		// over a link, so we only want to do an API call after the mouse has been on a link
 		// for 250ms.
 		$( this ).mouseenter( function( e ) {
-			var that = this;
-			var timerID = $( this ).data( 'codeTooltipTimer' );
-			if ( typeof timerID != 'undefined' ) {
+			var that = this,
+				timerID = $( this ).data( 'codeTooltipTimer' );
+
+			if ( typeof timerID !== 'undefined' ) {
 				// Clear the running timer
 				clearTimeout( timerID );
 			}
@@ -76,9 +78,10 @@ var CodeTooltipsInit = function() {
 		// take care of cases when louse leaves our link while we load stuff from API.
 		// We shouldn't display the tooltip in such case.
 		$( this ).mouseleave( function( e ) {
-			var $el = $( this );
-			var timerID = $el.data( 'codeTooltipTimer' );
-			if ( typeof timerID != 'undefined' ) {
+			var $el = $( this ),
+				timerID = $el.data( 'codeTooltipTimer' );
+
+			if ( typeof timerID !== 'undefined' ) {
 				// Clear the running timer
 				clearTimeout( timerID );
 			}

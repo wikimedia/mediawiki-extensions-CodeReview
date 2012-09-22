@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Repository administration
  */
@@ -54,11 +55,11 @@ class RepoAdminListView {
 	 */
 	private function getForm() {
 		global $wgScript;
-		return Xml::fieldset( wfMsg( 'repoadmin-new-legend' ) ) .
+		return Xml::fieldset( wfMessage( 'repoadmin-new-legend' )->text() ) .
 			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) ) .
 			Html::hidden( 'title', $this->title->getPrefixedDBKey() ) .
-			Xml::inputLabel( wfMsg( 'repoadmin-new-label' ), 'repo', 'repo' ) .
-			Xml::submitButton( wfMsg( 'repoadmin-new-button' ) ) .
+			Xml::inputLabel( wfMessage( 'repoadmin-new-label' )->text(), 'repo', 'repo' ) .
+			Xml::submitButton( wfMessage( 'repoadmin-new-button' )->text() ) .
 			'</form></fieldset>';
 	}
 
@@ -145,7 +146,7 @@ class RepoAdminRepoView {
 			return;
 		}
 		$wgOut->addHTML(
-			Xml::fieldset( wfMsg( 'repoadmin-edit-legend', $this->repoName ) ) .
+			Xml::fieldset( wfMessage( 'repoadmin-edit-legend', $this->repoName )->text() ) .
 			Xml::openElement( 'form', array( 'method' => 'post', 'action' => $this->title->getLocalURL() ) ) .
 			Xml::buildForm(
 				array(
@@ -156,7 +157,7 @@ class RepoAdminRepoView {
 					'repoadmin-edit-view' =>
 						Xml::input( 'wpViewPath', 60, $viewPath, array( 'dir' => 'ltr') ) ) ) .
 			Html::hidden( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) ) .
-			Xml::submitButton( wfMsg( 'repoadmin-edit-button' ) ) .
+			Xml::submitButton( wfMessage( 'repoadmin-edit-button' )->text() ) .
 			'</form></fieldset>'
 		);
 	}

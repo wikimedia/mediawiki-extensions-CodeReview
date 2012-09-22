@@ -16,11 +16,11 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	}
 
 	function execute() {
-		global $wgOut, $wgRequest, $wgUser;
+		global $wgRequest, $wgUser;
 		if ( !$wgUser->isAllowed( 'codereview-link-user' ) ) {
-			$wgOut->permissionRequired( 'codereview-link-user' );
-			return;
+			throw new PermissionsError( 'codereview-link-user' );
 		}
+
 		if ( $wgRequest->wasPosted() ) {
 			$this->doSubmit();
 		} else {
@@ -34,23 +34,24 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 			'action' => $this->getTitle()->getLocalUrl(),
 			'name' => 'uluser', 'id' => 'mw-codeauthor-form1' ) );
 
-		$form .= Html::hidden( 'linktoken', $wgUser->editToken( 'link' ) );
+		$form .= Html::hidden( 'linktoken', $wgUser->getEditToken( 'link' ) );
 		$form .= Xml::openElement( 'fieldset' );
 
 		$additional = '';
 		// Is there already a user linked to this author?
 		if ( $this->mUser ) {
-			$form .= Xml::element( 'legend', array(), wfMsg( 'code-author-alterlink' ) );
+			$form .= Xml::element( 'legend', array(), wfMessage( 'code-author-alterlink' )->text() );
 			$additional = Xml::openElement( 'fieldset' ) .
-				Xml::element( 'legend', array(), wfMsg( 'code-author-orunlink' ) ) .
-				Xml::submitButton( wfMsg( 'code-author-unlink' ), array( 'name' => 'unlink' ) ) .
+				Xml::element( 'legend', array(), wfMessage( 'code-author-orunlink' )->text() ) .
+				Xml::submitButton( wfMessage( 'code-author-unlink' )->text(), array( 'name' => 'unlink' ) ) .
 				Xml::closeElement( 'fieldset' );
 		} else {
-			$form .= Xml::element( 'legend', array(), wfMsg( 'code-author-dolink' ) );
+			$form .= Xml::element( 'legend', array(), wfMessage( 'code-author-dolink' )->text() );
 		}
 
-		$form .= Xml::inputLabel( wfMsg( 'code-author-name' ), 'linktouser', 'username', 30, '' ) . ' ' .
-				Xml::submitButton( wfMsg( 'ok' ), array( 'name' => 'newname' ) ) .
+		$form .= Xml::inputLabel( wfMessage( 'code-author-name' )->text(),
+			'linktouser', 'username', 30, '' ) . ' ' .
+				Xml::submitButton( wfMessage( 'ok' )->text(), array( 'name' => 'newname' ) ) .
 				Xml::closeElement( 'fieldset' ) .
 				$additional .
 				Xml::closeElement( 'form' ) . "\n";
@@ -77,19 +78,23 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 			$userlink = Linker::userLink( $user->getId(), $user->getName() );
 			$wgOut->addHTML(
 				'<div class="successbox">' .
-				wfMsgHtml( 'code-author-success', $this->authorLink( $this->mAuthor ), $userlink ) .
+					wfMessage( 'code-author-success' )
+						->rawParams( $this->authorLink( $this->mAuthor ), $userlink )->escaped() .
 				'</div>'
 			);
 		// Unlink an author to a wiki users
 		} elseif ( $wgRequest->getVal( 'unlink' ) ) {
 			if ( !$this->mUser ) {
-				$wgOut->addHTML( wfMsg( 'code-author-orphan', $this->authorLink( $this->mAuthor ) ) );
+				$wgOut->addHTML( wfMessage( 'code-author-orphan' )
+					->rawParams( $this->authorLink( $this->mAuthor ) )->escaped()
+				);
 				return;
 			}
 			$this->mRepo->unlinkUser( $this->mAuthor );
-			$wgOut->addHTML(
-				'<div class="successbox">' .
-				wfMsgHtml( 'code-author-unlinksuccess', $this->authorLink( $this->mAuthor ) ) .
+			$wgOut->addHTML( '<div class="successbox">' .
+					wfMessage( 'code-author-unlinksuccess' )
+						->rawParams( $this->authorLink( $this->mAuthor ) )
+						->escaped() .
 				'</div>'
 			);
 		}

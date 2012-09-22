@@ -16,14 +16,14 @@ class CodeStatusListView extends CodeView {
 		foreach ( $states as $state ) {
 			$link = Linker::link(
 				SpecialPage::getTitleFor( 'Code', $name . "/status/$state" ),
-				wfMsgHtml( "code-status-".$state )
+				wfMessage( "code-status-".$state )->escaped()
 			);
 			$table_rows .= "<tr><td class=\"mw-codereview-status-$state\">$link</td>"
-				. "<td>" . wfMsgHtml( "code-status-desc-" . $state ) . "</td></tr>\n" ;
+				. "<td>" . wfMessage( "code-status-desc-" . $state )->escaped() . "</td></tr>\n" ;
 		}
 		$wgOut->addHTML( '<table class="wikitable">'
-			. '<tr><th>' . wfMsgHtml( 'code-field-status' ) . '</th>'
-			. '<th>' . wfMsgHtml( 'code-field-status-description' ) . '</th></tr>'
+			. '<tr><th>' . wfMessage( 'code-field-status' )->escaped() . '</th>'
+			. '<th>' . wfMessage( 'code-field-status-description' )->escaped() . '</th></tr>'
 			. $table_rows
 			. '</table>'
 		);

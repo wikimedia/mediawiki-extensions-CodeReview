@@ -39,29 +39,31 @@ class CodeRepoListView {
 		$name = $repo->getName();
 
 		$code = SpecialPage::getTitleFor( 'Code', $name );
-		$links[] = "[[$code/comments|" . wfMsgHtml( 'code-notes' ) . "]]";
-		$links[] = "[[$code/statuschanges|" . wfMsgHtml( 'code-statuschanges' ) . "]]";
+		$links[] = "[[$code/comments|" . wfMessage( 'code-notes' )->escaped() . "]]";
+		$links[] = "[[$code/statuschanges|" . wfMessage( 'code-statuschanges' )->escaped() . "]]";
 		if ( $wgUser->getId() ) {
 			$author = $repo->wikiUserAuthor( $wgUser->getName() );
 			if ( $author !== false ) {
-				$links[] = "[[$code/author/$author|" . wfMsgHtml( 'code-mycommits' ) . "]]";
+				$links[] = "[[$code/author/$author|" . wfMessage( 'code-mycommits' )->escaped() . "]]";
 			}
 		}
 
 		if ( $wgUser->isAllowed( 'codereview-post-comment' ) ) {
 			$userName = $wgUser->getName();
-			$links[] = "[[$code/comments/author/$userName|" . wfMsgHtml( 'code-mycomments' ) . "]]";
+			$links[] = "[[$code/comments/author/$userName|" . wfMessage( 'code-mycomments' )->escaped() .
+				"]]";
 		}
 
-		$links[] = "[[$code/tag|" . wfMsgHtml( 'code-tags' ) . "]]";
-		$links[] = "[[$code/author|" . wfMsgHtml( 'code-authors' ) . "]]";
-		$links[] = "[[$code/status|" . wfMsgHtml( 'code-status' ) . "]]";
-		$links[] = "[[$code/releasenotes|" . wfMsgHtml( 'code-releasenotes' ) . "]]";
-		$links[] = "[[$code/stats|" . wfMsgHtml( 'code-stats' ) . "]]";
+		$links[] = "[[$code/tag|" . wfMessage( 'code-tags' )->escaped() . "]]";
+		$links[] = "[[$code/author|" . wfMessage( 'code-authors' )->escaped() . "]]";
+		$links[] = "[[$code/status|" . wfMessage( 'code-status' )->escaped() . "]]";
+		$links[] = "[[$code/releasenotes|" . wfMessage( 'code-releasenotes' )->escaped() . "]]";
+		$links[] = "[[$code/stats|" . wfMessage( 'code-stats' )->escaped() . "]]";
 		if( $wgUser->isAllowed( 'repoadmin' ) ) {
-			$links[] = "[[Special:RepoAdmin/$name|" . wfMsgHtml( 'repoadmin-nav' ) . "]]";
+			$links[] = "[[Special:RepoAdmin/$name|" . wfMessage( 'repoadmin-nav' )->escaped() . "]]";
 		}
-		$text = "'''[[$code|$name]]''' " . wfMsg( 'parentheses', $wgLang->pipeList( $links ) );
+		$text = "'''[[$code|$name]]''' " .
+			wfMessage( 'parentheses', $wgLang->pipeList( $links ) )->text();
 		return $text;
 	}
 }

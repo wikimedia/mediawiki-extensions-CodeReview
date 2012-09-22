@@ -1,7 +1,6 @@
 <?php
 
 class CodeRevision {
-
 	/**
 	 * Regex to match bug mentions in comments, commit summaries, etc
 	 *
@@ -275,14 +274,6 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $key string
-	 * @return string
-	 */
-	private static function makeStateMessageKey( $key ) {
-		return "code-status-$key";
-	}
-
-	/**
 	 * List of all flags a user can mark themself as having done to a revision
 	 * @return Array
 	 */
@@ -508,14 +499,14 @@ class CodeRevision {
 
 					if ( $user->canReceiveEmail() ) {
 						// Send message in receiver's language
-						$lang = array( 'language' => $user->getOption( 'language' ) );
+						$lang = $user->getOption( 'language' );
 						$user->sendMail(
-							wfMsgExt( 'codereview-email-subj2', $lang, $this->repo->getName(),
-								$this->getIdString( $row->cr_id ) ),
-							wfMsgExt( 'codereview-email-body2', $lang, $committer,
+							wfMessage( 'codereview-email-subj2', $this->repo->getName(),
+								$this->getIdString( $row->cr_id ) )->inLanguage( $lang )->text(),
+							wfMessage( 'codereview-email-body2', $committer,
 								$this->getIdStringUnique( $row->cr_id ),
 								$url, $this->message,
-								$rowUrl, $revisionCommitSummary )
+								$rowUrl, $revisionCommitSummary )->inLanguage( $lang )->text()
 						);
 					}
 				}
@@ -642,7 +633,6 @@ class CodeRevision {
 
 	/**
 	 * @param  $text
-	 * @param  $review
 	 * @param null $parent
 	 * @return CodeComment
 	 */
@@ -720,10 +710,11 @@ class CodeRevision {
 			// This is ugly
 			if ( $id == 0 || $user->canReceiveEmail() ) {
 				// Send message in receiver's language
-				$lang = array( 'language' => $user->getOption( 'language' ) );
+				$lang = $user->getOption( 'language' );
 
-				$localSubject = wfMsgExt( $subject, $lang, $this->repo->getName(), $this->getIdString() );
-				$localBody = call_user_func_array( 'wfMsgExt', array_merge( array( $body, $lang ), $args ) );
+				$localSubject = wfMessage( $subject, $this->repo->getName(), $this->getIdString() )
+					->inLanguage( $lang )->text();
+				$localBody = wfMessage( $body, $args )->inLanguage( $lang )->text();
 
 				$user->sendMail( $localSubject, $localBody );
 			}
@@ -1357,7 +1348,7 @@ class CodeRevision {
 				$url = $this->getCanonicalUrl( $commentId );
 			}
 
-			$line = wfMsg( 'code-rev-message' ) . " \00314(" . $this->repo->getName() .
+			$line = wfMessage( 'code-rev-message' )->text() . " \00314(" . $this->repo->getName() .
 					")\003 \0037" . $this->getIdString() . "\003 \00303" . RecentChange::cleanupForIRC( $wgUser->getName() ) .
 					"\003: \00310" . RecentChange::cleanupForIRC( $wgLang->truncate( $text, 100 ) ) . "\003 " . $url;
 
@@ -1375,12 +1366,18 @@ class CodeRevision {
 		if( $wgCodeReviewUDPAddress ) {
 			$url = $this->getCanonicalUrl();
 
-			$line = wfMsg( 'code-rev-status' ) . " \00314(" . $this->repo->getName() .
-					")\00303 " . RecentChange::cleanupForIRC( $wgUser->getName() ) . "\003 " .
-					/* Remove three apostrophes as they are intended for the parser  */
-					str_replace( "'''", '', wfMsg( 'code-change-status', "\0037" . $this->getIdString() . "\003" ) ) .
-					": \00315" . wfMsg( 'code-status-' . $oldStatus ) . "\003 -> \00310" .
-					wfMsg( 'code-status-' . $status ) . "\003 " . $url;
+			$line = wfMessage( 'code-rev-status' )->text() . " \00314(" . $this->repo->getName() .
+				")\00303 " . RecentChange::cleanupForIRC( $wgUser->getName() ) . "\003 " .
+				/* Remove three apostrophes as they are intended for the parser  */
+				str_replace(
+					"'''",
+					'',
+					wfMessage(
+						'code-change-status',
+						"\0037" . $this->getIdString() . "\003"
+					)->text() ) .
+					": \00315" . wfMessage( 'code-status-' . $oldStatus )->text() . "\003 -> \00310" .
+				wfMessage( 'code-status-' . $status )->text() . "\003 " . $url;
 
 			RecentChange::sendToUDP( $line, $wgCodeReviewUDPAddress, $wgCodeReviewUDPPrefix, $wgCodeReviewUDPPort );
 		}

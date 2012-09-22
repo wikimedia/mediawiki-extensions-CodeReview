@@ -1,4 +1,5 @@
 ( function( $ ) {
+	"use strict";
 // Create or extend the object
 window.CodeReview = $.extend( window.CodeReview, {
 
@@ -22,7 +23,7 @@ window.CodeReview = $.extend( window.CodeReview, {
 			});
 		} catch ( e ) {
 			removeSpinner( 'codereview-diff' );
-			if ( window.location.hostname == 'localhost' ) {
+			if ( window.location.hostname === 'localhost' ) {
 				alert( 'Your browser blocks XMLHttpRequest to "localhost", try using a real hostname for development/testing.' );
 			}
 			CodeReview.setDiff( 'Diff load failed!' );

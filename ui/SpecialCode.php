@@ -12,25 +12,24 @@ class SpecialCode extends SpecialPage {
 	 * @param $subpage string
 	 */
 	public function execute( $subpage ) {
-		global $wgOut, $wgUser;
-
-		if ( !$this->userCanExecute( $wgUser ) ) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
 
 		$this->setHeaders();
 		// Base styles used for all code review UI actions.
-		$wgOut->addModules( 'ext.codereview' );
-		$wgOut->addModules( 'ext.codereview.tooltips' );
-		$wgOut->addModuleStyles( 'ext.codereview.styles' );
+		$out = $this->getOutput();
+		$out->addModules( 'ext.codereview' );
+		$out->addModules( 'ext.codereview.tooltips' );
+		$out->addModuleStyles( 'ext.codereview.styles' );
 
 		$view = $this->getViewFrom( $subpage );
 		if( $view ) {
 			$view->execute();
 		} else {
-			$wgOut->addWikiMsg( 'nosuchactiontext' );
-			$wgOut->returnToMain( null, $this->getTitle() );
+			$out->addWikiMsg( 'nosuchactiontext' );
+			$out->returnToMain( null, $this->getTitle() );
 			return;
 		}
 
@@ -39,8 +38,11 @@ class SpecialCode extends SpecialPage {
 			$repo = $view->getRepo();
 
 			if ( $repo ) {
-				$wgOut->setSubtitle(
-					wfMsgExt( 'codereview-subtitle', 'parse', CodeRepoListView::getNavItem( $repo ) )
+				$out->setSubtitle(
+					$this->msg(
+						'codereview-subtitle',
+						CodeRepoListView::getNavItem( $repo )
+					)->parseAsBlock()
 				);
 			}
 		}
@@ -81,8 +83,7 @@ class SpecialCode extends SpecialPage {
 			// repository list with an appropriate message.
 			if ( !$repo ) {
 				$view = new CodeRepoListView();
-				global $wgOut;
-				$wgOut->addWikiMsg( 'code-repo-not-found', wfEscapeWikiText( $params[0] ) );
+				$this->getOutput()->addWikiMsg( 'code-repo-not-found', wfEscapeWikiText( $params[0] ) );
 				return $view;
 			}
 
@@ -120,6 +121,7 @@ class SpecialCode extends SpecialPage {
 					$view = new CodeStatusChangeAuthorListView( $repo, $params[3] );
 					break;
 				}
+				// @todo FIXME: Fall through or not?
 			default:
 				if ( $params[2] == 'reply' ) {
 					$view = new CodeRevisionView( $repo, $params[1], $params[3] );
@@ -131,4 +133,3 @@ class SpecialCode extends SpecialPage {
 		return $view;
 	}
 }
-

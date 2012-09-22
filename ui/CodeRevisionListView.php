@@ -32,10 +32,10 @@ class CodeRevisionListView extends CodeView {
 		$this->mStatus = $wgRequest->getText( 'status' );
 
 		if ( $this->mAuthor ) {
-			$this->filters[] = wfMsg( 'code-revfilter-cr_author', $this->mAuthor );
+			$this->filters[] = wfMessage( 'code-revfilter-cr_author', $this->mAuthor )->text();
 		}
 		if ( $this->mStatus ) {
-			$this->filters[] = wfMsg( 'code-revfilter-cr_status', $this->mStatus );
+			$this->filters[] = wfMessage( 'code-revfilter-cr_status', $this->mStatus )->text();
 		}
 
 		if ( count( $this->filters ) ) {
@@ -112,7 +112,8 @@ class CodeRevisionListView extends CodeView {
 		);
 		if ( $revCount !== -1 ) {
 			$wgOut->addHTML(
-				'<td>&#160;<strong>' . wfMsgHtml( 'code-rev-total', $wgLang->formatNum( $revCount ) ) . '</strong></td>'
+				'<td>&#160;<strong>' . wfMessage( 'code-rev-total' )->numParams( $revCount )->escaped() .
+					'</strong></td>'
 			);
 		}
 
@@ -206,11 +207,11 @@ class CodeRevisionListView extends CodeView {
 			return ''; // nothing to do here
 		}
 
-		$changeInterface = Xml::fieldset( wfMsg( 'codereview-batch-title' ),
+		$changeInterface = Xml::fieldset( $pager->msg( 'codereview-batch-title' )->text(),
 				Xml::buildForm( $changeFields, 'codereview-batch-submit' ) );
 
 		$changeInterface .= $pager->getHiddenFields();
-		$changeInterface .= Html::hidden( 'wpBatchChangeEditToken', $wgUser->editToken() );
+		$changeInterface .= Html::hidden( 'wpBatchChangeEditToken', $wgUser->getEditToken() );
 
 		return $changeInterface;
 	}
@@ -221,7 +222,7 @@ class CodeRevisionListView extends CodeView {
 	 * @return string
 	 */
 	function showForm( $pager ) {
-		global $wgScript, $wgRequest;
+		global $wgScript;
 
 		$states = CodeRevision::getPossibleStates();
 		$name = $this->mRepo->getName();
@@ -233,24 +234,25 @@ class CodeRevisionListView extends CodeView {
 		foreach ( $states as $key => $state ) {
 			$title = SpecialPage::getTitleFor( 'Code', $name . "/status/$state" );
 			$options[] = Xml::option(
-				wfMsgHtml( "code-status-$state" ),
+				$pager->msg( "code-status-$state" )->text(),
 				$title->getPrefixedText(),
 				$this->mStatus == $state
 			);
 		}
 
-		$ret = "<fieldset><legend>" . wfMsgHtml( 'code-pathsearch-legend' ) . "</legend>" .
+		$ret = "<fieldset><legend>" . wfMessage( 'code-pathsearch-legend' )->escaped() . "</legend>" .
 				'<table width="100%"><tr><td>' .
 				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-				Xml::inputlabel( wfMsg( "code-pathsearch-path" ), 'path', 'path', 55,
+				Xml::inputlabel( wfMessage( "code-pathsearch-path" )->text(), 'path', 'path', 55,
 					$this->getPathsAsString(), array( 'dir' => 'ltr' ) )  . '&#160;' .
-				Xml::label( wfMsg( 'code-pathsearch-filter' ), 'code-status-filter' ) . '&#160;' .
+				Xml::label( wfMessage( 'code-pathsearch-filter' )->text(), 'code-status-filter' ) .
+			'&#160;' .
 				Xml::openElement( 'select', array( 'id' => 'code-status-filter', 'name' => 'title' ) ) .
 				"\n" .
 				implode( "\n", $options ) .
 				"\n" .
 				Xml::closeElement( 'select' ) .
-				'&#160;' . Xml::submitButton( wfMsg( 'allpagessubmit' ) ) .
+				'&#160;' . Xml::submitButton( wfMessage( 'allpagessubmit' )->text() ) .
 				$pager->getHiddenFields( array( 'path', 'title' ) ) .
 				Xml::closeElement( 'form' ) .
 				'</td></tr></table></fieldset>' ;
@@ -295,7 +297,6 @@ class CodeRevisionListView extends CodeView {
 
 // Pager for CodeRevisionListView
 class SvnRevTablePager extends SvnTablePager {
-
 	function getSVNPath() {
 		return $this->mView->mPath;
 	}
@@ -333,9 +334,11 @@ class SvnRevTablePager extends SvnTablePager {
 				)
 			);
 		}
+
 		if( $this->mView->mAuthor ) {
 			$query['conds']['cr_author'] = $this->mView->mAuthor;
 		}
+
 		if( $this->mView->mStatus ) {
 			$query['conds']['cr_status'] = $this->mView->mStatus;
 		}
@@ -366,17 +369,17 @@ class SvnRevTablePager extends SvnTablePager {
 
 	function getFieldNames() {
 		$fields = array(
-			'cr_id' => wfMsg( 'code-field-id' ),
-			'cr_status' => wfMsg( 'code-field-status' ),
-			'comments' => wfMsg( 'code-field-comments' ),
-			'cr_path' => wfMsg( 'code-field-path' ),
-			'cr_message' => wfMsg( 'code-field-message' ),
-			'cr_author' => wfMsg( 'code-field-author' ),
-			'cr_timestamp' => wfMsg( 'code-field-timestamp' ),
+			'cr_id' => $this->msg( 'code-field-id' )->text(),
+			'cr_status' => $this->msg( 'code-field-status' )->text(),
+			'comments' => $this->msg( 'code-field-comments' )->text(),
+			'cr_path' => $this->msg( 'code-field-path' )->text(),
+			'cr_message' => $this->msg( 'code-field-message' )->text(),
+			'cr_author' => $this->msg( 'code-field-author' )->text(),
+			'cr_timestamp' => $this->msg( 'code-field-timestamp' )->text()
 		);
 		# Only show checkboxen as needed
 		if ( $this->mView->batchForm ) {
-			$fields = array( 'selectforchange' => wfMsg( 'code-field-select' ) ) + $fields;
+			$fields = array( 'selectforchange' => $this->msg( 'code-field-select' )->text() ) + $fields;
 		}
 		return $fields;
 	}
@@ -384,7 +387,6 @@ class SvnRevTablePager extends SvnTablePager {
 	function formatValue( $name, $value ) { } // unused
 
 	function formatRevValue( $name, $value, $row ) {
-		global $wgLang;
 		$pathQuery = count( $this->mView->mPath ) ? array( 'path' => $this->mView->getPathsAsString() ) : array();
 
 		switch( $name ) {
@@ -425,7 +427,7 @@ class SvnRevTablePager extends SvnTablePager {
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cr_timestamp':
-			return $wgLang->timeanddate( $value, true );
+			return $this->getLanguage()->timeanddate( $value, true );
 		case 'comments':
 			if ( $value ) {
 				$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() } );
@@ -453,6 +455,8 @@ class SvnRevTablePager extends SvnTablePager {
 						$options
 					) . "</div>";
 		}
+
+		return '';
 	}
 
 	/**
