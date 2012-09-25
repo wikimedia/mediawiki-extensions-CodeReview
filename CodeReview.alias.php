@@ -209,7 +209,7 @@ $specialPageAliases['mt'] = array(
 	'Code' => array( 'Kodiċi' ),
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬) */
+/** Norwegian Bokmål (norsk (bokmål)‎) */
 $specialPageAliases['nb'] = array(
 	'Code' => array( 'Kode' ),
 );
@@ -226,7 +226,7 @@ $specialPageAliases['nl'] = array(
 	'RepoAdmin' => array( 'Repobeheer' ),
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬) */
+/** Norwegian Nynorsk (norsk (nynorsk)‎) */
 $specialPageAliases['nn'] = array(
 	'Code' => array( 'Kode' ),
 );
@@ -293,13 +293,13 @@ $specialPageAliases['vi'] = array(
 	'RepoAdmin' => array( 'Quản_lý_kho' ),
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Code' => array( '代码' ),
 	'RepoAdmin' => array( '信息库管理' ),
 );
 
-/** Traditional Chinese (‪中文（繁體）‬) */
+/** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'Code' => array( '代碼' ),
 	'RepoAdmin' => array( '信息庫管理' ),
