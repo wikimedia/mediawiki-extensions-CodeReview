@@ -5041,7 +5041,7 @@ $6',
 	'repoadmin-edit-button' => 'OK',
 	'repoadmin-edit-sucess' => 'Muutokset varastoon [[Special:Code/$1|$1]] on tehty.',
 	'repoadmin-nav' => 'versionhallinnan ylläpito',
-	'right-repoadmin' => 'Hallita koodivarastoja',
+	'right-repoadmin' => 'Hallinnoida koodivarastoja',
 	'right-codereview-use' => 'Käyttää toimintosivua Special:Code',
 	'right-codereview-add-tag' => 'Lisätä uusia merkintöjä versioihin',
 	'right-codereview-remove-tag' => 'Poistaa merkintöjä versioista',
@@ -5051,6 +5051,8 @@ $6',
 	'right-codereview-link-user' => 'Liittää tekijöitä wiki-käyttäjiin',
 	'right-codereview-associate' => 'Hallita koodimuutosten risiviittauksia',
 	'right-codereview-review-own' => 'Merkitä omat koodimuutokset hyväksytyiksi tai korjatuiksi',
+	'action-repoadmin' => 'hallinnoida koodivarastoja',
+	'action-codereview-use' => 'käyttää toimintosivua Special:Code',
 	'action-codereview-add-tag' => 'lisätä uusia merkintöjä koodimuutoksiin',
 	'action-codereview-remove-tag' => 'poistaa merkintöjä koodimuutoksista',
 	'action-codereview-post-comment' => 'lisätä kommentteja koodimuutoksiin',
@@ -15105,13 +15107,16 @@ $messages['sr-ec'] = array(
 	'specialpages-group-developer' => 'Програмерски алати',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
  * @author Rancher
  * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
+	'code' => 'Pregled koda',
+	'code-rev-title' => '$1 – pregled koda',
 	'code-comments' => 'Komentari',
+	'code-references' => 'Naknadne izmene',
 	'code-change-status' => "promenio '''status''' za $1",
 	'code-change-tags' => "promenio '''tagove''' za $1",
 	'code-change-removed' => 'uklonjeno:',
@@ -15119,12 +15124,21 @@ $messages['sr-el'] = array(
 	'code-old-status' => 'Stari status',
 	'code-new-status' => 'Novi status',
 	'code-prop-changes' => 'Istorija statusa i tagovanja',
+	'codereview-desc' => '[[Special:Code|Alatka za pregled koda]] s [[Special:RepoAdmin|podrškom za Subverziju]]',
+	'code-no-repo' => 'Riznica nije podešena.',
+	'code-create-repo' => 'Idite na [[Special:RepoAdmin|RepoAdmin]] da napravite riznicu',
+	'code-need-repoadmin-rights' => 'da biste napravili riznicu, potrebna su vam administratorska prava',
+	'code-need-group-with-rights' => 'Ne postoje grupe s administratorskim pravima. Napravite takvu grupu da biste mogli da dodate novu riznicu',
+	'code-repo-not-found' => "Riznica '''$1''' ne postoji.",
 	'code-load-diff' => 'Učitavanje difa…',
 	'code-notes' => 'skorašnji komentari',
 	'code-statuschanges' => 'promene statusa',
+	'code-mycommits' => 'moji doprinosi',
+	'code-mycomments' => 'moji komentari',
 	'code-authors' => 'autori',
 	'code-status' => 'stanja',
 	'code-tags' => 'tagovi',
+	'code-tags-no-tags' => 'U ovoj riznici nema oznaka.',
 	'code-author-haslink' => 'Ovaj autor je povezan sa Viki-korisnikom $1',
 	'code-author-orphan' => 'SVN {{GENDER:$1|korisnik ($1) nije povezan|korisnica ($1) nije povezana|korisnik ($1) nije povezan}} s viki nalogom',
 	'code-author-dolink' => 'Povežite ovog autora sa Viki-korisnikom:',
@@ -15135,8 +15149,10 @@ $messages['sr-el'] = array(
 	'code-author-link' => 'linkovati?',
 	'code-author-unlink' => 'delinkovati?',
 	'code-author-unlinksuccess' => 'Autor $1 je bio delinkovan',
+	'code-author-badtoken' => 'Došlo je do greške u sesiji pri izvršavanju radnje.',
 	'code-author-total' => 'Ukupan broj autora: $1',
 	'code-author-lastcommit' => 'Datum poslednjeg slanja',
+	'code-browsing-path' => "Pregledanje izmena u '''$1'''",
 	'code-field-id' => 'Izmena',
 	'code-field-author' => 'Autor',
 	'code-field-user' => 'Komentator',
@@ -17875,7 +17891,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN管理员',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
  * @author FireJackey
  * @author Horacewai2
@@ -17890,6 +17906,7 @@ $messages['zh-hant'] = array(
 	'code-rev-title' => '$1 - 代碼複核',
 	'code-comments' => '附註',
 	'code-references' => '後續修訂',
+	'code-referenced' => '本修訂隨訪以下以前修訂',
 	'code-change-status' => "改變了$1的'''狀態'''",
 	'code-change-tags' => "改變了$1的'''標籤'''",
 	'code-change-removed' => '已被移除：',
@@ -18098,6 +18115,13 @@ $6',
 	'right-codereview-link-user' => '將作者連結到維基用戶',
 	'right-codereview-associate' => '管理修訂關聯',
 	'right-codereview-review-own' => '將自己的修訂標記為{{int:code-status-ok}}或{{int:code-status-resolved}}',
+	'action-repoadmin' => '管理代碼庫',
+	'action-codereview-use' => 'Special:Code的使用',
+	'action-codereview-add-tag' => '給修訂添加新標籤',
+	'action-codereview-remove-tag' => '移除修訂的標籤',
+	'action-codereview-post-comment' => '向修訂添加註釋',
+	'action-codereview-set-status' => '修改修訂狀態',
+	'action-codereview-signoff' => '確認修訂',
 	'specialpages-group-developer' => '開發者工具',
 	'group-svnadmins' => 'SVN管理員',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN管理員}}',
