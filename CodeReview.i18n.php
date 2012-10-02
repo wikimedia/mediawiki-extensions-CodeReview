@@ -1416,7 +1416,7 @@ $messages['be'] = array(
 	'code-stats' => 'статыстыка',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Red Winged Duck
@@ -3202,7 +3202,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Administratoren',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -6150,7 +6150,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Adminischtratore',
 );
 
-/** Hausa (هَوُسَ) */
+/** Hausa (Hausa) */
 $messages['ha'] = array(
 	'code-rev-message' => 'Bahasi:',
 	'repoadmin-new-button' => 'Ƙirƙira',
@@ -9353,7 +9353,7 @@ $6',
 	'group-svnadmins.js' => '/* Dat JavaSkrep heh aan dä Stell wirrek nur op de SVN-Bedeener */',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  * @author Ghybu
  * @author Welathêja
@@ -10954,7 +10954,7 @@ $messages['nah'] = array(
 	'code-status-ok' => 'quēmah',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Danmichaelo
  * @author Event
  * @author Laaknor
@@ -11579,7 +11579,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-beheerders',
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Gunnernett
  * @author Harald Khan
  * @author Nghtwlkr
@@ -14950,7 +14950,7 @@ $messages['sq'] = array(
 	'grouppage-svnadmins' => '{{ns:project}}:Administruesit SVN',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Nikola Smolenski
  * @author Rancher
  * @author Јованвб
@@ -17651,7 +17651,7 @@ $3',
 	'specialpages-group-developer' => '開發者工具',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  * @author Chenzw
  * @author Gaoxuewei
