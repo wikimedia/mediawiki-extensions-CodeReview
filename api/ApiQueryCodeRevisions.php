@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Created on July 06, 2010
  *
@@ -30,10 +29,9 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	}
 
 	public function execute() {
-		global $wgUser;
 		$this->getMain()->setCacheMode( 'anon-public-user-private' );
 		// Before doing anything at all, let's check permissions
-		if ( !$wgUser->isAllowed( 'codereview-use' ) ) {
+		if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
 			$this->dieUsage( 'You don\'t have permission to view code revisions', 'permissiondenied' );
 		}
 		$params = $this->extractRequestParams();
@@ -71,6 +69,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			if ( !is_null( $params['start'] ) ) {
 				$pager->setOffset( $params['start'] );
 			}
+
 			$limit = $params['limit'];
 			$pager->setLimit( $limit );
 
@@ -83,6 +82,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		$start = 0;
 		$defaultSort = $pager->getDefaultSort();
 		$result = $this->getResult();
+
 		foreach ( $revisions as $row ) {
 			if ( !$revsSet && $count == $limit ) {
 				$this->setContinueEnumParameter( 'start', $start );
@@ -153,6 +153,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 
 	/**
 	 * @param $rev CodeRevision
+	 * @return array
 	 */
 	protected function addReferenced( $rev ) {
 		$items = array();

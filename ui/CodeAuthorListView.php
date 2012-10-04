@@ -10,14 +10,15 @@ class CodeAuthorListView extends CodeView {
 		global $wgOut, $wgLang;
 		$authors = $this->mRepo->getAuthorList();
 		$repo = $this->mRepo->getName();
-		$text = wfMsg( 'code-authors-text' ) . "\n\n";
-		$text .= '<strong>' . wfMsg( 'code-author-total', $wgLang->formatNum( $this->mRepo->getAuthorCount() ) )  . "</strong>\n";
+		$text = wfMessage( 'code-authors-text' )->text() . "\n\n";
+		$text .= '<strong>' . wfMessage( 'code-author-total' )
+			->numParams( $this->mRepo->getAuthorCount() )->text() . "</strong>\n";
 
 		$wgOut->addWikiText( $text );
 
 		$wgOut->addHTML( '<table class="wikitable">'
-				. '<tr><th>' . wfMsgHtml( 'code-field-author' )
-				. '</th><th>' . wfMsgHtml( 'code-author-lastcommit' ) . '</th></tr>' );
+				. '<tr><th>' . wfMessage( 'code-field-author' )->escaped()
+				. '</th><th>' . wfMessage( 'code-author-lastcommit' )->escaped() . '</th></tr>' );
 
 		foreach ( $authors as $committer ) {
 			if ( $committer ) {

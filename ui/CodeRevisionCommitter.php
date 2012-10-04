@@ -5,7 +5,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		global $wgRequest, $wgOut, $wgUser;
 
 		if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
-			$wgOut->addHTML( '<strong>' . wfMsg( 'sessionfailure' ) . '</strong>' );
+			$wgOut->addHTML( '<strong>' . wfMessage( 'sessionfailure' )->text() . '</strong>' );
 			parent::execute();
 			return;
 		}
@@ -59,6 +59,8 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @param string $commentText Comment to add to the revision
 	 * @param null|int $parent What the parent comment is (if a subcomment)
 	 * @param int $review (unused)
+	 * @param $addReferenced
+	 * @param $removeReferenced
 	 * @return int Comment ID if added, else 0
 	 */
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,

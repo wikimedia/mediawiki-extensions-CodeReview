@@ -2,7 +2,6 @@
 
 // Special:Code/MediaWiki/stats
 class CodeRepoStatsView extends CodeView {
-
 	function __construct( $repo ) {
 		parent::__construct( $repo );
 	}
@@ -25,8 +24,8 @@ class CodeRepoStatsView extends CodeView {
 		if ( !empty( $stats->states ) ) {
 			$wgOut->wrapWikiMsg( '<h3 id="stats-revisions">$1</h3>', 'code-stats-status-breakdown' );
 			$wgOut->addHTML( '<table class="wikitable">'
-				. '<tr><th>' . wfMsgHtml( 'code-field-status' ) . '</th><th>'
-				. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
+				. '<tr><th>' . wfMessage( 'code-field-status' )->escaped() . '</th><th>'
+				. wfMessage( 'code-stats-count' )->escaped() . '</th></tr>' );
 			foreach ( CodeRevision::getPossibleStates() as $state ) {
 				$count = isset( $stats->states[$state] ) ? $stats->states[$state] : 0;
 				$count = htmlspecialchars( $wgLang->formatNum( $count ) );
@@ -92,8 +91,8 @@ class CodeRepoStatsView extends CodeView {
 
 		$repoName = $this->mRepo->getName();
 		$wgOut->addHTML( '<table class="wikitable">'
-			. '<tr><th>' . wfMsgHtml( 'code-field-author' ) . '</th><th>'
-			. wfMsgHtml( 'code-stats-count' ) . '</th></tr>' );
+			. '<tr><th>' . wfMessage( 'code-field-author' )->escaped() . '</th><th>'
+			. wfMessage( 'code-stats-count' )->escaped() . '</th></tr>' );
 		$title = SpecialPage::getTitleFor( 'Code', $repoName . "/status/{$status}" );
 
 		foreach ( $array as $user => $count ) {

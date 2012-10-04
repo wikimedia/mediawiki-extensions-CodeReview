@@ -5,7 +5,7 @@ class CodeRevisionTagView extends CodeRevisionListView {
 		$this->mTag = $tag;
 
 		if ( $this->mTag ) {
-			$this->filters[] = wfMsg( 'code-revfilter-ct_tag', $this->mTag );
+			$this->filters[] = wfMessage( 'code-revfilter-ct_tag', $this->mTag )->text();
 		}
 		parent::__construct( $repo );
 	}

@@ -44,7 +44,7 @@ abstract class CodeView {
 	}
 
 	function statusDesc( $status ) {
-		return wfMsg( "code-status-$status" );
+		return wfMessage( "code-status-$status" )->text();
 	}
 
 	function formatMessage( $text ) {
@@ -62,7 +62,7 @@ abstract class CodeView {
 		$truncated = $wgLang->truncateHtml( $html, 80 );
 
 		if ( count( $lines ) > 1  ) { // If multiline, we might want to add an ellipse
-			$ellipsis = wfMsgExt( 'ellipsis', array() );
+			$ellipsis = wfMessage( 'ellipsis' )->text();
 			// Hack: don't add if the end is already an ellipse
 			if ( substr( $truncated, -strlen( $ellipsis ) ) !== $ellipsis ) {
 				$truncated .= $ellipsis;
@@ -75,11 +75,12 @@ abstract class CodeView {
 	/**
 	 * Formatted HTML array for properties display
 	 * @param $fields array 'propname' => HTML data
+	 * @return string
 	 */
 	function formatMetaData( $fields ) {
 		$html = '<table class="mw-codereview-meta">';
 		foreach ( $fields as $label => $data ) {
-			$html .= "<tr><td>" . wfMsgHtml( $label ) . "</td><td>$data</td></tr>\n";
+			$html .= "<tr><td>" . wfMessage( $label )->escaped() . "</td><td>$data</td></tr>\n";
 		}
 		return $html . "</table>\n";
 	}
@@ -96,7 +97,6 @@ abstract class CodeView {
 }
 
 abstract class SvnTablePager extends TablePager {
-
 	/**
 	 * @var CodeRepository
 	 */

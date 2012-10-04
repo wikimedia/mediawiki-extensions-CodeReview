@@ -1,38 +1,40 @@
 jQuery( function( $ ) {
+	"use strict";
     // Animate the add-tags input to suggest existing tabs
 	$('#wpTag').suggestions( {
 		fetch: function( query ) {
-			var $this = $(this);
-			var doUpdate = function(){
-				var currentText = $this.val();
-				var currentTags = currentText.split( /, */ );
-				var lastTag, doneTags;
-				if( currentTags.length == 0 ){
-					lastTag = doneTags = '';
-				} else {
-					lastTag = currentTags.pop();
-					doneTags = currentTags.length > 0
-						? currentTags.join( ', ' ) + ', '
-						: '';
-				}
-				var tags = $this.data( 'suggestions' );
+			var $this = $(this ),
+				doUpdate = function(){
+					var currentText = $this.val(),
+						currentTags = currentText.split( /, */ ),
+						lastTag, doneTags;
+					if( currentTags.length === 0 ){
+						lastTag = doneTags = '';
+					} else {
+						lastTag = currentTags.pop();
+						doneTags = currentTags.length > 0 ?
+							currentTags.join( ', ' ) + ', '
+							: '';
+					}
 
-				var suggestions = [];
-				for( var i in tags ){
-					// Don't suggest a tag that's already been added
-					var good = true;
-					for( var j in currentTags ){
-						if( currentTags[j] === tags[i] ){
-							good = false;
+					var tags = $this.data( 'suggestions' ),
+						suggestions = [];
+
+					for( var i in tags ){
+						// Don't suggest a tag that's already been added
+						var good = true;
+						for( var j in currentTags ){
+							if( currentTags[j] === tags[i] ){
+								good = false;
+							}
+						}
+						if( good && ('' + tags[i]).indexOf( lastTag ) !== -1 ){
+							suggestions.push( doneTags + tags[i] );
 						}
 					}
-					if( good && ('' + tags[i]).indexOf( lastTag ) != -1 ){
-						suggestions.push( doneTags + tags[i] );
-					}
-				}
 
-				$this.suggestions( 'suggestions', suggestions );
-			};
+					$this.suggestions( 'suggestions', suggestions );
+				};
 			if( $(this).data( 'suggestions' ) ){
 				doUpdate();
 			} else if( $(this).data( 'request' ) ){

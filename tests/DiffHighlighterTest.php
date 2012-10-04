@@ -1,7 +1,6 @@
 <?php
 
 class CodeDiffHighlighterTest extends MediaWikiTestCase {
-
 	function testParseChunksFromWindowsDiff() {
 		try {
 			CodeDiffHighlighter::parseChunkDelimiter(
@@ -81,5 +80,4 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 			),
 		);
 	}
-
 }

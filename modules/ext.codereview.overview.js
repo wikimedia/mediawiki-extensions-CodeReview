@@ -9,6 +9,8 @@
  * Hovering over a colored box pops up a little info packet box.
  */
 jQuery( function( $ ) {
+	"use strict";
+
 	// check if we're on a page with a useful list of revisions
 	if( $( '#path' ).size() && $('table.TablePager').size() ) {
 		var portlet = $( '#p-namespaces' ).size() ? 'p-namespaces' : 'p-cactions';
@@ -48,7 +50,7 @@ jQuery( function( $ ) {
 				trc = trc.split( ' ' );
 			}
 			for( var j = 0; j < trc.length; j++ ) {
-				if( trc[j].substring( 0, 21 ) == 'mw-codereview-status-' ) {
+				if( trc[j].substring( 0, 21 ) === 'mw-codereview-status-' ) {
 					status = trc[j].substring( 21 );
 				}
 			}
@@ -70,7 +72,7 @@ jQuery( function( $ ) {
 			};
 
 			var path = $td.filter( '.TablePager_col_cr_path' ).text();
-			if( path && path.indexOf( vpath ) == 0 && path != vpath && vpath != '' ) {
+			if( path && path.indexOf( vpath ) === 0 && path !== vpath && vpath !== '' ) {
 				path = '\u2026' + path.substring( vpath.length );
 			}
 			overviewPopupData[i]['path'] = path;
@@ -91,7 +93,7 @@ jQuery( function( $ ) {
 
 		var sumtext = [];
 		for( var i in totals ) {
-			if( typeof i != 'string' || typeof totals[i] != 'number' ) {
+			if( typeof i !== 'string' || typeof totals[i] !== 'number' ) {
 				continue;
 			}
 			sumtext.push( i + ': ' + totals[i] );
@@ -122,7 +124,7 @@ jQuery( function( $ ) {
 					'<div>Number of notes: <span id="overviewpop-notes">' + overviewPopupData[id]['notes'] + '</span></div>' +
 					'<div>Path: <span id="overviewpop-path">' + overviewPopupData[id]['path'] + '</span></div>' +
 					'<div>Author: <span id="overviewpop-author">' + overviewPopupData[id]['author'] + '</span></div>' +
-					'</div>')
+					'</div>');
 				$el.attr( 'title', $popup.html() );
 				$el.data( 'codeTooltip', true );
 				$el.tipsy( 'show' );

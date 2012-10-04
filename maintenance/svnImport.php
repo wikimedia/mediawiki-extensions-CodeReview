@@ -53,6 +53,8 @@ class SvnImport extends Maintenance {
 	 * Import a repository in the local database.
 	 * @param $repoName String Local name of repository
 	 * @param $start Int Revision to begin the import from (Default: null, means last stored revision);
+	 * @param int $cacheSize
+	 * @return void
 	 */
 	private function importRepo( $repoName, $start = null, $cacheSize = 0 ) {
 		global $wgCodeReviewImportBatchSize;

@@ -36,39 +36,39 @@ You missed a lot of points there and need to revert or fix your code
 
 	public function execute() {
 		$this->printSubject( '' );
-		print wfMsg( 'codereview-email-body'
+		print wfMessage( 'codereview-email-body'
 			, $this->EmailData['author']
 			, $this->EmailData['URL']
 			, $this->EmailData['rev']
 			, $this->EmailData['comment']
 			, $this->EmailData['summary']
-		) . "\n" ;
+		)->text() . "\n" ;
 		$this->printRule();
 
 		$this->printSubject( 2 );
-		print wfMsg( 'codereview-email-body2'
+		print wfMessage( 'codereview-email-body2'
 			, $this->EmailData['author']
 			, $this->EmailData['prevrev']
 			, $this->EmailData['URL']
 			, $this->EmailData['follow-up-summary']
 			, $this->EmailData['prevURL']
 			, $this->EmailData['summary']
-		). "\n";
+		)->text() . "\n";
 		$this->printRule();
 
 		$this->printSubject( 3 );
-		print wfMsg( 'codereview-email-body3'
+		print wfMessage( 'codereview-email-body3'
 			, $this->EmailData['author']
 			, $this->EmailData['rev']
 			, $this->EmailData['oldstatus']
 			, $this->EmailData['newstatus']
 			, $this->EmailData['URL']
 			, $this->EmailData['summary']
-		). "\n";
+		)->text() . "\n";
 		$this->printRule();
 
 		$this->printSubject( 4 );
-		print wfMsg( 'codereview-email-body4'
+		print wfMessage( 'codereview-email-body4'
 			, $this->EmailData['author']
 			, $this->EmailData['rev']
 			, $this->EmailData['oldstatus']
@@ -76,13 +76,13 @@ You missed a lot of points there and need to revert or fix your code
 			, $this->EmailData['URL']
 			, $this->EmailData['summary']
 			, $this->EmailData['follow-up-summary']
-		). "\n";
+		)->text() . "\n";
 		$this->printRule();
 	}
 
 	/**
 	 * Print the subject line.
-	 * @param $type Either '', 2, 3 or 4
+	 * @param $type string|int Either '', 2, 3 or 4
 	 */
 	function printSubject( $type ) {
 		$repo = $this->EmailData['repo'];
@@ -92,10 +92,10 @@ You missed a lot of points there and need to revert or fix your code
 			$rev  = $this->EmailData['rev'];
 		}
 		printf( "Subject: %s\n\n",
-			wfMsg( 'codereview-email-subj'.$type
+			wfMessage( 'codereview-email-subj'.$type
 				, $repo
 				, $rev
-			)
+			)->text()
 		);
 	}
 	function printRule() {

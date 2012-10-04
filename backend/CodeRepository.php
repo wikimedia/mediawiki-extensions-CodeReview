@@ -4,7 +4,6 @@
  * Core class for interacting with a repository of code. 
  */
 class CodeRepository {
-
 	const DIFFRESULT_BadRevision = 0;
 	const DIFFRESULT_NothingToCompare = 1;
 	const DIFFRESULT_TooManyPaths = 2;
@@ -281,7 +280,7 @@ class CodeRepository {
 	 * @return string
 	 */
 	public function getRevIdString( $id ) {
-		return wfMsg( 'code-rev-id', $id );
+		return wfMessage( 'code-rev-id', $id )->text();
 	}
 
 	/**
@@ -297,7 +296,7 @@ class CodeRepository {
 	 * @return string
 	 */
 	public function getRevIdStringUnique( $id ) {
-		$id = wfMsg( 'code-rev-id', $id );
+		$id = wfMessage( 'code-rev-id', $id )->text();
 
 	// If there is more than one repo, use the repo name as well.
 		$repos = CodeRepository::getRepoList();

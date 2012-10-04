@@ -47,14 +47,14 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 
 	function getFieldNames() {
 		return array(
-			'cpc_timestamp' => wfMsg( 'code-field-timestamp' ),
-			'cpc_user_text' => wfMsg( 'code-field-user' ),
-			'cpc_rev_id' => wfMsg( 'code-field-id' ),
-			'cr_author' => WfMsg( 'code-field-author' ),
-			'cr_message' => wfMsg( 'code-field-message' ),
-			'cpc_removed' => wfMsg( 'code-old-status' ),
-			'cpc_added' => wfMsg( 'code-new-status' ),
-			'cr_status' => wfMsg( 'code-field-status' ),
+			'cpc_timestamp' => $this->msg( 'code-field-timestamp' )->text(),
+			'cpc_user_text' => $this->msg( 'code-field-user' )->text(),
+			'cpc_rev_id' => $this->msg( 'code-field-id' )->text(),
+			'cr_author' => $this->msg( 'code-field-author' )->text(),
+			'cr_message' => $this->msg( 'code-field-message' )->text(),
+			'cpc_removed' => $this->msg( 'code-old-status' )->text(),
+			'cpc_added' => $this->msg( 'code-new-status' )->text(),
+			'cr_status' => $this->msg( 'code-field-status' )->text(),
 		);
 	}
 
@@ -76,13 +76,14 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		case 'cpc_user_text':
 			return Linker::userLink( - 1, $value );
 		case 'cpc_removed':
-			return wfMsgHtml( $value ? "code-status-$value" : "code-status-new" );
+			return $this->msg( $value ? "code-status-$value" : "code-status-new" )->escaped();
 		case 'cpc_added':
-			return wfMsgHtml( "code-status-$value" );
+			return $this->msg( "code-status-$value" )->escaped();
 		case 'cpc_timestamp':
-			global $wgLang;
-			return $wgLang->timeanddate( $value, true );
+			return $this->getLanguage()->timeanddate( $value, true );
 		}
+
+		throw new MWException( '$name is invalid input.');
 	}
 
 	function getTitle() {

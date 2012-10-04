@@ -1,7 +1,6 @@
 <?php
 
 class CodeRevisionAuthorView extends CodeRevisionListView {
-
 	function __construct( $repo, $author ) {
 		parent::__construct( $repo );
 		$this->mAuthor = $author;
@@ -14,17 +13,18 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 
 	function linkStatus() {
 		if ( !$this->mUser ) {
-			return wfMsg( 'code-author-orphan', $this->authorLink( $this->mAuthor ) );
+			return wfMessage( 'code-author-orphan' )->rawParams( $this->authorLink( $this->mAuthor ) )
+				->text();
 		}
 
-		return wfMsgHtml( 'code-author-haslink',
-			Linker::userLink( $this->mUser->getId(), $this->mUser->getName() ) .
+		return wfMessage( 'code-author-haslink' )
+			->rawParams( Linker::userLink( $this->mUser->getId(), $this->mUser->getName() ) .
 			Linker::userToolLinks(
 				$this->mUser->getId(),
 				$this->mUser->getName(),
 				false, /* default for redContribsWhenNoEdits */
 				Linker::TOOL_LINKS_EMAIL /* Add "send e-mail" link */
-			) );
+			) )->escaped();
 	}
 
 	function execute() {
@@ -36,7 +36,7 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 			$repo = $this->mRepo->getName();
 			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor/link" );
 			$linkInfo .= ' (' . Linker::link( $page,
-				wfMsg( 'code-author-' . ( $this->mUser ? 'un':'' ) . 'link' ) ) . ')' ;
+				wfMessage( 'code-author-' . ( $this->mUser ? 'un':'' ) . 'link' )->text() ) . ')' ;
 		}
 
 		$repoLink = Linker::link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
