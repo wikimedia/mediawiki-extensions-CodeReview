@@ -274,6 +274,14 @@ class CodeRevision {
 	}
 
 	/**
+	 * @param $key string
+	 * @return string
+	 */
+	private static function makeStateMessageKey( $key ) {
+		return "code-status-$key";
+	}
+
+	/**
 	 * List of all flags a user can mark themself as having done to a revision
 	 * @return Array
 	 */
