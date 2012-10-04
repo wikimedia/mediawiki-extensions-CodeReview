@@ -3212,6 +3212,7 @@ $messages['de-formal'] = array(
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
  * @author Mirzali
+ * @author Olvörg
  * @author Xoser
  */
 $messages['diq'] = array(
@@ -3279,7 +3280,7 @@ $messages['diq'] = array(
 	'code-rev-tag-remove' => 'Etiketan wedarne:',
 	'code-rev-comment-by' => 'Xulasayê $1î',
 	'code-rev-comment-preview' => 'Verqayt',
-	'code-rev-inline-preview' => 'Ver qeyd:',
+	'code-rev-inline-preview' => 'Verasayış:',
 	'code-rev-diff' => 'Ferq',
 	'code-rev-diff-link' => 'diff',
 	'code-rev-diff-too-large' => 'Ena diff zaf girda.',
