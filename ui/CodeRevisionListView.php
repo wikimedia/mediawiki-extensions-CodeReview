@@ -76,7 +76,7 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	function execute() {
-		global $wgOut, $wgUser, $wgRequest, $wgLang;
+		global $wgOut, $wgUser, $wgRequest;
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();
@@ -231,7 +231,7 @@ class CodeRevisionListView extends CodeView {
 		$options = array( Xml::option( '', $title->getPrefixedText(), $this->mStatus == '' ) );
 
 
-		foreach ( $states as $key => $state ) {
+		foreach ( $states as $state ) {
 			$title = SpecialPage::getTitleFor( 'Code', $name . "/status/$state" );
 			$options[] = Xml::option(
 				$pager->msg( "code-status-$state" )->text(),
@@ -432,7 +432,7 @@ class SvnRevTablePager extends SvnTablePager {
 			if ( $value ) {
 				$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() } );
 				$special->setFragment( '#code-comments' );
-				return Linker::link( $special, $wgLang->formatNum( htmlspecialchars( $value ) ) );
+				return Linker::link( $special, $this->getLanguage()->formatNum( htmlspecialchars( $value ) ) );
 			} else {
 				return '-';
 			}
@@ -450,7 +450,7 @@ class SvnRevTablePager extends SvnTablePager {
 			return Xml::openElement( 'div', array( 'title' => (string)$value, 'dir' => 'ltr' ) ) .
 					Linker::link(
 						SpecialPage::getTitleFor( 'Code', $title ),
-						$wgLang->truncate( (string)$value, 50 ),
+						$this->getLanguage()->truncate( (string)$value, 50 ),
 						array( 'title' => (string)$value ),
 						$options
 					) . "</div>";
