@@ -285,6 +285,7 @@ $6',
  * @author Yekrats
  */
 $messages['qqq'] = array(
+	'code-rev-id' => '{{notranslate}}',
 	'code-rev-title' => 'Title of code review page.
 * $1 - The name of the project being coded followed by a revision number. Example: MediaWiki r123456',
 	'code-comments' => '{{Identical|Comments}}',
@@ -323,6 +324,7 @@ See also: {{msg-mw|Code-references}}',
 	'code-rev-status' => '{{Identical|Status}}',
 	'code-rev-tags' => '{{Identical|Tag}}',
 	'code-rev-comment-preview' => '{{Identical|Preview}} Caption of the button used to preview a comment.',
+	'code-rev-comment-preview-accesskey' => '{{notranslate}}',
 	'code-rev-inline-preview' => '{{Identical|Preview}} Text "Preview" shown before the comment which is currently being previewed.',
 	'code-rev-history-link' => '{{Identical|History}}',
 	'code-status-new' => '{{Identical|New}}',
@@ -348,8 +350,11 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-revfilter-cr_author' => '{{Identical|Author}}',
 	'code-rev-submit' => 'Caption of the button used to Save changes when viewing a revision.
 {{Identical|Save changes}}',
+	'code-rev-submit-accesskey' => '{{notranslate}}',
 	'code-rev-submit-next' => 'Caption of the button used when viewing a revision to Save changes moving to next unresolved revision.',
+	'code-rev-submit-next-accesskey' => '{{notranslate}}',
 	'code-rev-next' => 'Caption of the button used when viewing a revision to move to the next unresolved revision.',
+	'code-rev-next-accesskey' => '{{notranslate}}',
 	'codereview-batch-submit' => '{{Identical|Submit}}',
 	'codereview-subtitle' => '{{Identical|For $1}}
 ----
@@ -580,10 +585,10 @@ $messages['af'] = array(
 	'right-codereview-set-status' => 'Verander hersienings status',
 	'right-codereview-link-user' => 'Link skrywers na die wiki gebruikers',
 	'right-codereview-associate' => 'Bestuur hersiening verenigings',
-	'right-codereview-review-own' => 'Merk jou eie hersienings as OK of opgelos',
+	'right-codereview-review-own' => 'Merk jou eie hersienings as OK of opgelos', # Fuzzy
 	'specialpages-group-developer' => 'Developer Tools',
 	'group-svnadmins' => 'SVN-administrateurs',
-	'group-svnadmins-member' => 'SVN-administrateur',
+	'group-svnadmins-member' => 'SVN-administrateur', # Fuzzy
 );
 
 /** Gheg Albanian (Gegë)
@@ -602,7 +607,7 @@ $messages['aln'] = array(
 	'code-status-deferred' => 'i shtyrë',
 	'code-pathsearch-legend' => 'shqyrtime Kërko në këtë repo nga rrugë',
 	'code-pathsearch-path' => 'Path:',
-	'code-pathsearch-filter' => 'Filter aplikuar:',
+	'code-pathsearch-filter' => 'Filter aplikuar:', # Fuzzy
 	'code-revfilter-cr_status' => 'Statusi = $1',
 	'code-revfilter-cr_author' => 'Author = $1',
 	'code-revfilter-clear' => 'Clear filter',
@@ -619,11 +624,11 @@ $messages['aln'] = array(
 	'codereview-subtitle' => 'Për $1',
 	'codereview-reply-link' => 'përgjigje',
 	'codereview-email-subj' => '[$1 $2]: koment i ri shtuar',
-	'codereview-email-body' => 'User "$1" postuar nje koment mbi $3. Plotë URL: $2 Komenti: $4',
+	'codereview-email-body' => 'User "$1" postuar nje koment mbi $3. Plotë URL: $2 Komenti: $4', # Fuzzy
 	'codereview-email-subj2' => 'Ndryshime [$1 $2]: Ndiqni-up',
-	'codereview-email-body2' => 'User "$1" bërë ndjekjen ndryshime tek $2. Plotë URL: $3 përmbledhje angazhohen: $4',
-	'codereview-email-subj3' => '[$1 $2]: testimi automatik i zbuluar regresionit',
-	'codereview-email-body3' => 'Testimi automatik i ka zbuluar një regres për shkak të ndryshimeve në $1. plotë URL: $2 përmbledhje angazhohen: $3',
+	'codereview-email-body2' => 'User "$1" bërë ndjekjen ndryshime tek $2. Plotë URL: $3 përmbledhje angazhohen: $4', # Fuzzy
+	'codereview-email-subj3' => '[$1 $2]: testimi automatik i zbuluar regresionit', # Fuzzy
+	'codereview-email-body3' => 'Testimi automatik i ka zbuluar një regres për shkak të ndryshimeve në $1. plotë URL: $2 përmbledhje angazhohen: $3', # Fuzzy
 	'repoadmin' => 'Depo Administrata',
 	'repoadmin-new-legend' => 'Krijo një depo të re',
 	'repoadmin-new-label' => 'Emri depo:',
@@ -663,7 +668,7 @@ $messages['an'] = array(
 	'code-tags' => 'etiquetas',
 	'code-authors-text' => "Contino s'amuestra una lista d'autors d'o reposte ordenaus seguntes o nombre. As cuentas de wiki locals s'amuestran entre parentesis. Pare cuenta que os datos pueden dimanar d'una memoria chaché.",
 	'code-author-haslink' => "Iste autor ye vinculau con l'usuario d'o wiki $1",
-	'code-author-orphan' => "Iste autor no tien vinclos con garra cuenta d'o wiki",
+	'code-author-orphan' => "Iste autor no tien vinclos con garra cuenta d'o wiki", # Fuzzy
 	'code-author-dolink' => "Enlace iste autor con usuario d'o wiki:",
 	'code-author-alterlink' => "Cambiar o usuario d'o wiki vinculato con iste autor:",
 	'code-author-orunlink' => "O desvincule iste usuario d'o wiki:",
@@ -693,7 +698,7 @@ URL completo: $2
 
 Comentario:
 
-$4',
+$4', # Fuzzy
 	'repoadmin' => "Almenistración d'o reposte",
 	'repoadmin-new-legend' => 'Creyar un nuevo reposte',
 	'repoadmin-new-label' => "Nombre d'o reposte:",
@@ -996,9 +1001,9 @@ $messages['arz'] = array(
 	'code-authors' => 'مؤلفون',
 	'code-status' => 'الحالات',
 	'code-tags' => 'وسوم',
-	'code-authors-text' => 'بالأسفل قائمة بمؤلفى المستودع حسب تاريخ عمليات الكوميت. حسابات الويكى المحلية معروضة بين أقواس.',
+	'code-authors-text' => 'بالأسفل قائمة بمؤلفى المستودع حسب تاريخ عمليات الكوميت. حسابات الويكى المحلية معروضة بين أقواس.', # Fuzzy
 	'code-author-haslink' => 'المؤلف ده موصول بيوزر الويكى $1',
-	'code-author-orphan' => 'هذا المؤلف ليس له وصلة لحساب ويكى',
+	'code-author-orphan' => 'هذا المؤلف ليس له وصلة لحساب ويكى', # Fuzzy
 	'code-author-dolink' => 'وصل المؤلف ده بيوزر ويكى :',
 	'code-author-alterlink' => 'غير يوزر الويكى الموصول للمؤلف ده:',
 	'code-author-orunlink' => 'أو امسح وصل يوزر الويكى  ده:',
@@ -1013,7 +1018,7 @@ $messages['arz'] = array(
 	'code-field-message' => 'ملخص الكوميت',
 	'code-field-status' => 'حالة',
 	'code-field-timestamp' => 'تاريخ',
-	'code-field-comments' => 'ملاحظات',
+	'code-field-comments' => 'ملاحظات', # Fuzzy
 	'code-field-path' => 'مسار',
 	'code-field-text' => 'ملاحظة',
 	'code-rev-author' => 'مؤلف:',
@@ -1060,7 +1065,7 @@ $messages['arz'] = array(
 
 التعليق:
 
-$4',
+$4', # Fuzzy
 	'repoadmin' => 'إدارة المستودع',
 	'repoadmin-new-legend' => 'إنشاء مستودع جديد',
 	'repoadmin-new-label' => 'اسم المستودع:',
@@ -1177,7 +1182,7 @@ $messages['ba'] = array(
 	'code-tags-no-tags' => 'Был һаҡлағыста билдәләр юҡ.',
 	'code-authors-text' => 'Түбәндә — исемдәре буйынса тәртипкә килтерелгән һаҡлағыс авторҙарының исемлеге. Урындағы вики иҫәп яҙмалары йәйә эсендә күрһәтелгән. Был мәғлүмәт кэшланған булыуы мөмкин.',
 	'code-author-haslink' => 'Был автор $1 ҡатнашыусыһына бәйләнгән',
-	'code-author-orphan' => 'Был автор бер вики иҫәп яҙмаһына ла бәйләмәгән',
+	'code-author-orphan' => 'Был автор бер вики иҫәп яҙмаһына ла бәйләмәгән', # Fuzzy
 	'code-author-dolink' => 'Был авторҙы вики ҡатнашыусыһына бәйләргә:',
 	'code-author-alterlink' => 'Был авторға бәйләнгән  вики ҡатнашыусыһын үҙгәртергә:',
 	'code-author-orunlink' => 'йәки был вики ҡатнашыусыға бәйҙе кире алырға:',
@@ -1234,7 +1239,7 @@ $messages['ba'] = array(
 	'code-status-new' => 'яңы',
 	'code-status-desc-new' => 'Өлгө ғәмәлде көтә (ғәҙәттәге торош).',
 	'code-status-fixme' => 'төҙәтергә кәрәк',
-	'code-status-desc-fixme' => 'Тикшереүсе был өлгөлә хата барлығын йәки боҙолоуын билдәләгән. Уны төҙәтергә кәрәк.',
+	'code-status-desc-fixme' => 'Тикшереүсе был өлгөлә хата барлығын йәки боҙолоуын билдәләгән. Уны төҙәтергә кәрәк.', # Fuzzy
 	'code-status-reverted' => 'кире алынған',
 	'code-status-desc-reverted' => 'Өлгө һуңғыраҡ өлгөлә кире алынған',
 	'code-status-resolved' => 'төҙәтелгән',
@@ -1258,7 +1263,7 @@ $messages['ba'] = array(
 	'code-signoff-struckdate' => '$1 ($2 һыҙып ташлаған)',
 	'code-pathsearch-legend' => 'Был һаҡлағыста адрестары буйынса өлгөләрҙе эҙләү',
 	'code-pathsearch-path' => 'Юл:',
-	'code-pathsearch-filter' => 'Ҡулланылған фильтр:',
+	'code-pathsearch-filter' => 'Ҡулланылған фильтр:', # Fuzzy
 	'code-revfilter-cr_status' => 'Торош = $1',
 	'code-revfilter-cr_author' => 'Автор = $1',
 	'code-revfilter-ct_tag' => 'Тамға = $1',
@@ -1330,7 +1335,7 @@ $6',
 	'code-stats-header' => '$1 һаҡлағысы өсөн статистика',
 	'code-stats-main' => '$1 һаҡлағыста [[Special:Code/$3/author|$4 {{PLURAL:$4|автор}}]] тарафынан тапшырылған $2 {{PLURAL:$2|өлгө}} бар.',
 	'code-stats-status-breakdown' => 'Һәр торошҡа өлгөләр',
-	'code-stats-fixme-breakdown' => '"Үҙгәртергә кәрәк" торошло өлгөләрҙе авторҙарға бүлеү',
+	'code-stats-fixme-breakdown' => '"Үҙгәртергә кәрәк" торошло өлгөләрҙе авторҙарға бүлеү', # Fuzzy
 	'code-stats-new-path' => '$1 адресы өсөн яңы үҙгәрештәр',
 	'code-stats-count' => 'Өлгөләр һаны',
 	'code-tooltip-withsummary' => 'r$1 [$2] $3 — $4',
@@ -1369,7 +1374,7 @@ $messages['bcc'] = array(
 	'code-comments' => 'توضیح',
 	'code-change-removed' => 'زورگ:',
 	'code-change-added' => 'هوربیت:',
-	'code-notes' => 'بازدید نکته',
+	'code-notes' => 'بازدید نکته', # Fuzzy
 	'code-authors' => 'نویسوکان',
 	'code-tags' => 'برچسپ',
 	'code-author-name' => 'نوکین کاربری نام وارد کن:',
@@ -1378,7 +1383,7 @@ $messages['bcc'] = array(
 	'code-field-message' => 'خلاصه دیم دیگ',
 	'code-field-status' => 'وضعیت',
 	'code-field-timestamp' => 'تاریح',
-	'code-field-comments' => 'یادداشت',
+	'code-field-comments' => 'یادداشت', # Fuzzy
 	'code-field-path' => 'جاه',
 	'code-field-text' => 'نکته',
 	'code-rev-author' => 'نویسوک:',
@@ -1760,7 +1765,7 @@ $messages['bg'] = array(
 
 Коментар:
 
-$4',
+$4', # Fuzzy
 	'code-stats' => 'статистика',
 	'code-stats-header' => 'Статистики за хранилище $1',
 	'code-stats-main' => 'Считано към $1, базата данни съдържа $2 {{PLURAL:$2|версия|версии}}, направени от [[Special:Code/$3/author|$4 {{PLURAL:$4|автор|автора}}]].',
@@ -1823,7 +1828,7 @@ $messages['bn'] = array(
 	'code-tags-no-tags' => 'এই রিপোজিটরিতে কোনো ট্যাগ নেই।',
 	'code-authors-text' => 'নিচে কমিট নাম অনুসারে রিপো প্রণেতার নাম দেওয়া হলো। স্থানীয় উইকি অ্যাকাউন্টের নাম বন্ধনীতে উল্লেখ করা হয়েছে। তারিখ ক্যাশে করা থাকতে পারে।',
 	'code-author-haslink' => 'এই প্রণেতা উইকি ব্যবহারকারী $1 হিসেবে সংযোগকৃত',
-	'code-author-orphan' => 'এই অ্যাকাউন্টটির কোনো উইকি অ্যাকাউন্টে সংযোগ নেই',
+	'code-author-orphan' => 'এই অ্যাকাউন্টটির কোনো উইকি অ্যাকাউন্টে সংযোগ নেই', # Fuzzy
 	'code-author-dolink' => 'এই প্রণেতাকে একটি উইকি ব্যবহারকারীতে সংযোগ প্রদান করুন:',
 	'code-author-alterlink' => 'উইকি ব্যবহারকারীর সংযোগটি অথরে পরিবর্তন করুন:',
 	'code-author-orunlink' => 'এই উইকি ব্যবহারকারীর সংযোগ বাতিল করুন:',
@@ -1880,7 +1885,7 @@ $messages['bn'] = array(
 	'code-status-new' => 'নতুন',
 	'code-status-desc-new' => 'সংস্করণটি একটি অ্যাকশন মূলতবি রয়েছে (প্রাথমিক অবস্থা)।',
 	'code-status-fixme' => 'ফিক্সমি',
-	'code-status-desc-fixme' => 'একজন পর্যবেক্ষক এই সংস্করণটিতে বাগ রয়েছে বা ভাঙা হিসেব নির্ধারণ করেছে। এটি শুদ্ধ করা প্রয়োজন।',
+	'code-status-desc-fixme' => 'একজন পর্যবেক্ষক এই সংস্করণটিতে বাগ রয়েছে বা ভাঙা হিসেব নির্ধারণ করেছে। এটি শুদ্ধ করা প্রয়োজন।', # Fuzzy
 	'code-status-reverted' => 'বাতিলকৃত',
 	'code-status-desc-reverted' => 'সংস্করণটি পরবর্তী সংস্করণ দ্বারা বাতিল করা হয়েছে।',
 	'code-status-resolved' => 'সমাধানকৃত',
@@ -1903,7 +1908,7 @@ $messages['bn'] = array(
 	'code-signoff-field-date' => 'তারিখ',
 	'code-pathsearch-legend' => 'রিপোতে পাথ অনুসারে সংস্করণ অনুসন্ধান করুন',
 	'code-pathsearch-path' => 'পাথ:',
-	'code-pathsearch-filter' => 'ফিল্টার প্রদান করা হয়েছে:',
+	'code-pathsearch-filter' => 'ফিল্টার প্রদান করা হয়েছে:', # Fuzzy
 	'code-revfilter-cr_status' => 'অবস্থান = $1',
 	'code-revfilter-cr_author' => 'প্রণেতা = $1',
 	'code-revfilter-clear' => 'ফিল্টার পরিস্কার',
@@ -1946,10 +1951,10 @@ $messages['bn'] = array(
 	'right-codereview-signoff' => 'সংস্করণের ওপর সাইন অফ করুন',
 	'right-codereview-link-user' => 'উইকি ব্যবহারকারী হিসেবে প্রণেতার সংযোগ প্রদান করুন',
 	'right-codereview-associate' => 'সংস্করণের অ্যাসোসিয়েশনগুলো ব্যবস্থাপনা করুন',
-	'right-codereview-review-own' => 'আপনার নিজের সংস্করণ ঠিক হিসেবে চিহ্নিত করুন',
+	'right-codereview-review-own' => 'আপনার নিজের সংস্করণ ঠিক হিসেবে চিহ্নিত করুন', # Fuzzy
 	'specialpages-group-developer' => 'ডেভলপারের সরঞ্জাম',
 	'group-svnadmins' => 'এসভিএন প্রশাসক',
-	'group-svnadmins-member' => 'এসভিএন প্রশাসক',
+	'group-svnadmins-member' => 'এসভিএন প্রশাসক', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:এসএভিএন প্রশাসক',
 );
 
@@ -2222,7 +2227,7 @@ $messages['bs'] = array(
 	'code-tags-no-tags' => 'Ne postoje oznake u ovom repozitorijumu.',
 	'code-authors-text' => 'Ispod je spisak autora repozitorijuma poredanih po imenima. Lokalni wiki računi su prikazani pod navodnicima. Podaci mogu biti keširani.',
 	'code-author-haslink' => 'Ovaj autor je povezan wiki korisničkim računom $1',
-	'code-author-orphan' => 'Ovaj autor nije povezan sa wiki računom',
+	'code-author-orphan' => 'Ovaj autor nije povezan sa wiki računom', # Fuzzy
 	'code-author-dolink' => 'Poveži ovog autora sa wiki korisnikom:',
 	'code-author-alterlink' => 'Promijeni wiki korisnika povezanog s ovim autorom:',
 	'code-author-orunlink' => 'Ili poništi link ovog wiki korisnika:',
@@ -2278,7 +2283,7 @@ $messages['bs'] = array(
 	'code-status-new' => 'novi',
 	'code-status-desc-new' => 'Revizija očekuje akciju (osnovno stanje).',
 	'code-status-fixme' => 'popravi me',
-	'code-status-desc-fixme' => 'Provjerivač je označio ovu reviziju kao uzrok greške ili je neisptavna. Treba se popraviti.',
+	'code-status-desc-fixme' => 'Provjerivač je označio ovu reviziju kao uzrok greške ili je neisptavna. Treba se popraviti.', # Fuzzy
 	'code-status-reverted' => 'vraćeno',
 	'code-status-desc-reverted' => 'Revizija je odbačena od neke kasnije revizije.',
 	'code-status-resolved' => 'riješeno',
@@ -2302,7 +2307,7 @@ $messages['bs'] = array(
 	'code-signoff-struckdate' => '$1 (poništeno $2)',
 	'code-pathsearch-legend' => 'Pretraga revizija u ovom repozitoriju po putanji',
 	'code-pathsearch-path' => 'Putanja:',
-	'code-pathsearch-filter' => 'Primijenjen filter:',
+	'code-pathsearch-filter' => 'Primijenjen filter:', # Fuzzy
 	'code-revfilter-cr_status' => 'Stanje = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-ct_tag' => 'Oznaka = $1',
@@ -2400,10 +2405,10 @@ $6',
 	'right-codereview-signoff' => 'Završi izmjene revizija',
 	'right-codereview-link-user' => 'Poveži autore sa wiki korisnicima',
 	'right-codereview-associate' => 'Upravljanje pridruženim revizijama',
-	'right-codereview-review-own' => 'Označite vaše vlastite revizije kao OK',
+	'right-codereview-review-own' => 'Označite vaše vlastite revizije kao OK', # Fuzzy
 	'specialpages-group-developer' => 'Razvojni alati',
 	'group-svnadmins' => 'SVN administratori',
-	'group-svnadmins-member' => 'SVN administrator',
+	'group-svnadmins-member' => 'SVN administrator', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:SVN administratori',
 );
 
@@ -2440,7 +2445,7 @@ $messages['ca'] = array(
 	'code-tags' => 'Etiquetes',
 	'code-tags-no-tags' => 'No existeixen etiquetes en aquest repositori.',
 	'code-author-haslink' => "Aquest autor està vinculat a l'usuari wiki $1",
-	'code-author-orphan' => "Aquest autor no té enllaç a un compte d'usuari wiki",
+	'code-author-orphan' => "Aquest autor no té enllaç a un compte d'usuari wiki", # Fuzzy
 	'code-author-dolink' => 'Vincula aquest autor a un usuari wiki:',
 	'code-author-alterlink' => "Canviau l'usuari wiki vinculat a aquest autor:",
 	'code-author-orunlink' => 'O desvinculau aquest usuari wiki:',
@@ -2513,7 +2518,7 @@ $messages['ca'] = array(
 	'code-signoff-struckdate' => '$1 (ha tatxat $2)',
 	'code-pathsearch-legend' => 'Cerca revisions en aquest repositori per ruta',
 	'code-pathsearch-path' => 'Ruta:',
-	'code-pathsearch-filter' => 'Filtre aplicat:',
+	'code-pathsearch-filter' => 'Filtre aplicat:', # Fuzzy
 	'code-revfilter-cr_status' => 'Estat = $1',
 	'code-revfilter-cr_author' => 'Autor/a = $1',
 	'code-revfilter-ct_tag' => 'Etiqueta = $1',
@@ -2565,7 +2570,7 @@ $4',
 	'right-codereview-signoff' => 'Aprova revisions',
 	'specialpages-group-developer' => 'Eines de desenvolupador',
 	'group-svnadmins' => 'administradors SVN',
-	'group-svnadmins-member' => 'administrador SVN',
+	'group-svnadmins-member' => 'administrador SVN', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:Administradors SVN',
 );
 
@@ -2576,12 +2581,14 @@ $messages['ce'] = array(
 	'codereview-reply-link' => 'жоп ло',
 );
 
-/** Sorani Kurdish (کوردی) */
+/** Sorani Kurdish (کوردی)
+ */
 $messages['ckb'] = array(
 	'codereview-batch-submit' => 'ناردن',
 );
 
-/** Corsican (corsu) */
+/** Corsican (corsu)
+ */
 $messages['co'] = array(
 	'code-field-author' => 'Autore',
 	'code-rev-author' => 'Autore:',
@@ -2973,6 +2980,7 @@ $messages['da'] = array(
  */
 $messages['de'] = array(
 	'code' => 'Codeprüfung',
+	'code-rev-id' => 'Version $1',
 	'code-rev-title' => '$1 – Codeprüfung',
 	'code-comments' => 'Kommentare',
 	'code-references' => 'Nachfolgende Revisionen',
@@ -4570,7 +4578,7 @@ Helbide osoa: $2
 
 Iruzkina:
 
-$4',
+$4', # Fuzzy
 	'code-stats' => 'Estatistikak',
 	'repoadmin' => 'Biltegiaren Administrazioa',
 	'repoadmin-new-legend' => 'Biltegi berri bat sortu',
@@ -5531,7 +5539,7 @@ $6',
 	'right-codereview-signoff' => 'Aprovar des rèvisions',
 	'right-codereview-link-user' => 'Liyér los ôtors ux usanciérs vouiqui',
 	'right-codereview-associate' => 'Administrar les associacions de rèvisions',
-	'right-codereview-review-own' => 'Marcar ses prôpres rèvisions coment OK ou ben Solucionâ',
+	'right-codereview-review-own' => 'Marcar ses prôpres rèvisions coment OK ou ben Solucionâ', # Fuzzy
 	'specialpages-group-developer' => 'Outils u dèvelopor',
 	'group-svnadmins' => 'Administrators SVN',
 	'group-svnadmins-member' => 'administrat{{GENDER:$1|or|rice}} SVN',
@@ -5570,7 +5578,7 @@ Dearbh-URL: $2
 
 Nóta tráchta:
 
-$4',
+$4', # Fuzzy
 	'repoadmin-new-button' => 'Cruthaigh',
 );
 
@@ -5830,9 +5838,9 @@ $messages['grc'] = array(
 	'code-authors' => 'δημιουργοί',
 	'code-status' => 'καταστάσεις',
 	'code-tags' => 'προσαρτήματα',
-	'code-authors-text' => 'Κάτωθι ἐστὶ καταλογή τις δημιουργῶν τῆς ἀποθήκης κατατάξει τῶν πλείω προσφάτων καταθέσεων. Τοπικοὶ βικι-λογισμοὶ δείκνυνται ἐν παρενθέσεσιν.',
+	'code-authors-text' => 'Κάτωθι ἐστὶ καταλογή τις δημιουργῶν τῆς ἀποθήκης κατατάξει τῶν πλείω προσφάτων καταθέσεων. Τοπικοὶ βικι-λογισμοὶ δείκνυνται ἐν παρενθέσεσιν.', # Fuzzy
 	'code-author-haslink' => 'Ὅδε ὁ δημιουργὸς συνδεδεμένος ἐστὶ μετὰ τοῦ βικι-χρωμένου $1',
-	'code-author-orphan' => 'Ὅδε ὁ χρώμενος οὐκ ἔχει σύνδεσμον μετὰ βικι-λογισμοῦ τινός',
+	'code-author-orphan' => 'Ὅδε ὁ χρώμενος οὐκ ἔχει σύνδεσμον μετὰ βικι-λογισμοῦ τινός', # Fuzzy
 	'code-author-dolink' => 'Συνδεῖσθαι τόνδε τὸν δημιουργὸν μετὰ βικι-χρωμένου τινός:',
 	'code-author-alterlink' => 'Ἀλλάττειν βικι-χρώμενον τὸν συνδεδεμένον μετὰ τοῦδε τοῦ χρωμένου:',
 	'code-author-orunlink' => 'Ἢ ἀποδιασυνδεῖσθαι τόνδε τὸν χρώμενον:',
@@ -5847,7 +5855,7 @@ $messages['grc'] = array(
 	'code-field-message' => 'Περιλαμβάνειν σύνοψιν',
 	'code-field-status' => 'Κατάστασις',
 	'code-field-timestamp' => 'Ἡμερομηνία',
-	'code-field-comments' => 'Σημειώματα',
+	'code-field-comments' => 'Σημειώματα', # Fuzzy
 	'code-field-path' => 'Ἀτραπός',
 	'code-field-text' => 'Σημείωμα',
 	'code-field-select' => 'Ἐπιλέγειν',
@@ -5893,7 +5901,7 @@ $messages['grc'] = array(
 
 Σχόλιον:
 
-$4',
+$4', # Fuzzy
 	'repoadmin' => 'Ἐπιτροπὴ ἀποθηκευτηρίου',
 	'repoadmin-new-legend' => 'Ποιεῖν νέαν ἀποθήκην τινά',
 	'repoadmin-new-label' => 'Ἀποθήκης τὸ ὄνομα:',
@@ -6151,7 +6159,8 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Adminischtratore',
 );
 
-/** Hausa (Hausa) */
+/** Hausa (Hausa)
+ */
 $messages['ha'] = array(
 	'code-rev-message' => 'Bahasi:',
 	'repoadmin-new-button' => 'Ƙirƙira',
@@ -6415,7 +6424,7 @@ $messages['hi'] = array(
 	'code-old-status' => 'पुरानी स्थिति',
 	'code-new-status' => 'नई स्थिति',
 	'code-prop-changes' => 'स्थिति और लॉग टैगिंग',
-	'codereview-desc' => '[[Special:Code|कोड़ समीक्षा उपकरण]] सहित [[Special:रेपोप्रबन्धक|उपसंस्करण समर्थन]]',
+	'codereview-desc' => '[[Special:Code|कोड़ समीक्षा उपकरण]] सहित [[Special:रेपोप्रबन्धक|उपसंस्करण समर्थन]]', # Fuzzy
 	'code-no-repo' => 'कोई भंडार कॉन्फ़िगर नहीं किया गया!',
 	'code-create-repo' => '[[Special:RepoAdmin|रेपोएडमिन]] को जाएँ भंडार निर्माण के लिए',
 	'code-repo-not-found' => "भंडार '''$1''' मौजूद नहीं है!",
@@ -6554,7 +6563,7 @@ $6',
 	'right-codereview-signoff' => 'संशोधन से साइन अफ़ हो जाएँ',
 	'right-codereview-link-user' => 'लेखकों को विकि सदस्यों से लिंक करें',
 	'right-codereview-associate' => 'संशोधन संघ को प्रबंधन करें',
-	'right-codereview-review-own' => 'अपना संशोधन को ठीक है या संकल्प की रूप में चिन्हित करें',
+	'right-codereview-review-own' => 'अपना संशोधन को ठीक है या संकल्प की रूप में चिन्हित करें', # Fuzzy
 	'specialpages-group-developer' => 'डेवलपर उपकरण',
 	'group-svnadmins' => 'SVN प्रबन्धकगण',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN प्रबन्धक}}',
@@ -6611,7 +6620,7 @@ $messages['hr'] = array(
 	'code-tags-no-tags' => 'Ne postoje oznake u ovom repozitoriju.',
 	'code-authors-text' => 'Ispod je popis autora repozitorija poredanih po imenima. Lokalni wiki računi prikazani su u zagradama. Podaci mogu biti iz spremnika, te time neosvježeni.',
 	'code-author-haslink' => 'Ovaj autor je povezan s wiki suradnikom $1',
-	'code-author-orphan' => 'Ovaj autor nema poveznicu s wiki računom',
+	'code-author-orphan' => 'Ovaj autor nema poveznicu s wiki računom', # Fuzzy
 	'code-author-dolink' => 'Poveži ovog autora na wiki suradnika:',
 	'code-author-alterlink' => 'Promijeni povezanog wiki suradnika za ovog autora:',
 	'code-author-orunlink' => 'Ili ukloni poveznicu za ovog wiki suradnika:',
@@ -6667,7 +6676,7 @@ $messages['hr'] = array(
 	'code-status-new' => 'novo',
 	'code-status-desc-new' => 'Revizija očekuje akciju (osnovno stanje).',
 	'code-status-fixme' => 'fixme',
-	'code-status-desc-fixme' => 'Provjerivač je označio ovu reviziju kao uzrok greške ili je neispravna. To valja ispraviti.',
+	'code-status-desc-fixme' => 'Provjerivač je označio ovu reviziju kao uzrok greške ili je neispravna. To valja ispraviti.', # Fuzzy
 	'code-status-reverted' => 'uklonjen',
 	'code-status-desc-reverted' => 'Revizija je odbačena od neke kasnije revizije.',
 	'code-status-resolved' => 'riješeno',
@@ -6691,7 +6700,7 @@ $messages['hr'] = array(
 	'code-signoff-struckdate' => '$1 (poništeno $2)',
 	'code-pathsearch-legend' => 'Traži izmjene u ovom repozitoriju preko putanje',
 	'code-pathsearch-path' => 'Putanja:',
-	'code-pathsearch-filter' => 'Primijenjen filtar:',
+	'code-pathsearch-filter' => 'Primijenjen filtar:', # Fuzzy
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-clear' => 'Očisti filtar',
@@ -6714,7 +6723,7 @@ Puni URL: $2
 
 Komentar:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]: Sljedeće izmjene',
 	'codereview-email-body2' => 'Suradnik "$1" izvršio je povezane izmjene na $2.
 
@@ -6724,7 +6733,7 @@ Puni URL: $3
 
 Napravljeni sažetak:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj3' => '[$1 $2]: Promjena stanja revizije',
 	'codereview-email-body3' => 'Suradnik "$1" promijenio je status $2.
 
@@ -6734,7 +6743,7 @@ Novi status: $4
 Potpuni URL: $5
 Commit summary:
 
-$6',
+$6', # Fuzzy
 	'codereview-email-subj4' => '[$1 $2]: Dodan je novi komentar i promijenjeno je stanje revizije',
 	'codereview-email-body4' => 'Suradnik "$1"  je promijenio stanje $2.
 
@@ -6747,12 +6756,12 @@ Puni URL: $5
 
 Komentar:
 
-$6',
+$6', # Fuzzy
 	'code-stats' => 'statistike',
 	'code-stats-header' => 'Statistike za repozitorij $1',
 	'code-stats-main' => 'Sa stanjem od $1, repozitorij je imao $2 {{PLURAL:$2|reviziju|revizije|revizija}} od strane [[Special:Code/$3/author|$4 {{PLURAL:$4|autora|autora|autora}}]].',
 	'code-stats-status-breakdown' => 'Broj revizija po stanju',
-	'code-stats-fixme-breakdown' => 'Analiza popravaka po autoru',
+	'code-stats-fixme-breakdown' => 'Analiza popravaka po autoru', # Fuzzy
 	'code-stats-count' => 'Broj revizija',
 	'repoadmin' => 'Administracija repozitorija',
 	'repoadmin-new-legend' => 'Napravi novi repozitorij',
@@ -6775,7 +6784,7 @@ $6',
 	'right-codereview-link-user' => 'Povezivanje autora s wiki suradnikom',
 	'specialpages-group-developer' => 'Alati za razvijatelje',
 	'group-svnadmins' => 'SVN administratori',
-	'group-svnadmins-member' => 'SVN administrator',
+	'group-svnadmins-member' => 'SVN administrator', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:SVN administratori',
 );
 
@@ -7490,7 +7499,7 @@ $messages['id'] = array(
 	'code-tags-no-tags' => 'Tidak ada tag di repositori ini.',
 	'code-authors-text' => 'Berikut adalah daftar penulis repo diurutkan menurut nama pelaksana. Akun wiki lokal ditampilkan dalam tanda kurung. Data mungkin disinggahkan.',
 	'code-author-haslink' => 'Penulis ini terhubung ke pengguna wiki $1',
-	'code-author-orphan' => 'Penulis ini tidak terhubung dengan akun wiki',
+	'code-author-orphan' => 'Penulis ini tidak terhubung dengan akun wiki', # Fuzzy
 	'code-author-dolink' => 'Kaitkan penulis ke Wiki pengguna:',
 	'code-author-alterlink' => 'Ubah hubungan wiki pengguna ke penulis ini:',
 	'code-author-orunlink' => 'Atau buang kaitan wiki pengguna ini:',
@@ -7547,7 +7556,7 @@ $messages['id'] = array(
 	'code-status-new' => 'baru',
 	'code-status-desc-new' => 'Revisi masih menunggu tindakan (status bawaan).',
 	'code-status-fixme' => 'perbaiki',
-	'code-status-desc-fixme' => 'Seorang peninjau menandai revisi ini sebagai penyebab bug atau rusak. Ini harus diperbaiki.',
+	'code-status-desc-fixme' => 'Seorang peninjau menandai revisi ini sebagai penyebab bug atau rusak. Ini harus diperbaiki.', # Fuzzy
 	'code-status-reverted' => 'telah dikembalikan',
 	'code-status-desc-reverted' => 'Revisi itu dibatalkan oleh revisi selanjutnya.',
 	'code-status-resolved' => 'selesai',
@@ -7571,7 +7580,7 @@ $messages['id'] = array(
 	'code-signoff-struckdate' => '$1 (dicoret $2)',
 	'code-pathsearch-legend' => 'Cari revisi di jejak penyimpanan ini:',
 	'code-pathsearch-path' => 'Jalan:',
-	'code-pathsearch-filter' => 'Penerapan filter:',
+	'code-pathsearch-filter' => 'Penerapan filter:', # Fuzzy
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Penulis = $1',
 	'code-revfilter-ct_tag' => 'Penanda = $1',
@@ -7641,7 +7650,7 @@ $6',
 	'code-stats-header' => 'Statistik repositori $1',
 	'code-stats-main' => 'Pada $1, penyimpanan ini memiliki $2 {{PLURAL:$2|revisi|revisi}} oleh [[Special:Code/$3/author|$4 {{PLURAL:$4|pemilik|pemilik}}]].',
 	'code-stats-status-breakdown' => 'Jumlah revisi per kondisi',
-	'code-stats-fixme-breakdown' => 'Perincian fixme per pemilik',
+	'code-stats-fixme-breakdown' => 'Perincian fixme per pemilik', # Fuzzy
 	'code-stats-count' => 'Jumlah revisi',
 	'repoadmin' => 'Penyimpanan Admin',
 	'repoadmin-new-legend' => 'Buat penyimpanan baru',
@@ -7663,7 +7672,7 @@ $6',
 	'right-codereview-signoff' => 'Persetujuan revisi',
 	'right-codereview-link-user' => 'Pranala penulis ke wiki pengguna',
 	'right-codereview-associate' => 'Mengelola keterkaitan revisi',
-	'right-codereview-review-own' => 'Tandai suntingan Anda sendiri sebagai OK',
+	'right-codereview-review-own' => 'Tandai suntingan Anda sendiri sebagai OK', # Fuzzy
 	'specialpages-group-developer' => 'Alat Pengembang',
 	'group-svnadmins' => 'Pengurus SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|Pengurus SVN}}',
@@ -7694,7 +7703,7 @@ $messages['ilo'] = array(
 	'code-rev-title' => '$1 - Pagrepaso ti kodigo',
 	'code-comments' => 'Dagiti komentario',
 	'code-references' => 'Dagiti sarunuen a panagbaliw',
-	'code-referenced' => 'Dagiti nasarunuan a panagbaliw',
+	'code-referenced' => 'Dagiti nasarunuan a panagbaliw', # Fuzzy
 	'code-change-status' => "sinukatan ti  '''kasasaad''' iti $1",
 	'code-change-tags' => "sinukatan dagiti '''etiketa''' para iti $1",
 	'code-change-removed' => 'inikkat:',
@@ -8796,7 +8805,7 @@ $messages['km'] = array(
 	'code-status' => 'ស្ថានភាព',
 	'code-tags' => 'ប្លាក',
 	'code-author-haslink' => '​អ្នកនិពន្ធ​នេះត្រូវ​បាន​តភ្ជាប់​ទៅ​នឹង​អ្នក​ប្រើប្រាស់​​វិគី​​ ​$1',
-	'code-author-orphan' => '​អ្នកនិពន្ធ​នេះមិន​មាន​តំណភ្ជាប់​ជាមួយ​គណនី​វិគី​ទេ​',
+	'code-author-orphan' => '​អ្នកនិពន្ធ​នេះមិន​មាន​តំណភ្ជាប់​ជាមួយ​គណនី​វិគី​ទេ​', # Fuzzy
 	'code-author-dolink' => 'តភ្ជាប់​អ្នកនិពន្ធ​នេះ​ទៅនឹង​អ្នក​ប្រើប្រាស់​វិគី​៖',
 	'code-author-name' => 'បញ្ចូលអត្តនាម៖',
 	'code-author-link' => 'តំណភ្ជាប់?',
@@ -9337,7 +9346,7 @@ $6',
 	'right-codereview-associate' => 'Verbendunge zwesche Projrammversione verwallde',
 	'right-codereview-review-own' => 'eije Versjohne als „{{int:code-status-ok}}“ udder „{{int:code-status-resolved}}“ makeere',
 	'action-repoadmin' => 'Repositorije verwallde',
-	'action-codereview-use' => '[[Special:Code|{{#special:Code}}]] bruche',
+	'action-codereview-use' => '[[Special:Code|{{#special:Code}}]] bruche', # Fuzzy
 	'action-codereview-add-tag' => 'neu Makeeronge för Projramm-Versione verjäve',
 	'action-codereview-remove-tag' => 'Makeerunge vun Projramm-Versione fott nämme',
 	'action-codereview-post-comment' => 'eije Kommentaare för Projramm-Versione afjävve',
@@ -9750,7 +9759,7 @@ Vólledige URL: $2
 
 Ópmèrking:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]: wieziginge mit correcties',
 	'codereview-email-body2' => 'Gebroeker "$1" haet wiezigingen mit correcties veur $2 gemaak.
 
@@ -9760,7 +9769,7 @@ Volledige URL: $3
 
 Toelichting bie toevoging:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj3' => '[$1 $2]: versiesjtatus gewiezig',
 	'codereview-email-body3' => '"$1" haet de sjtatus van versie $2 verangerd nao "$4".
 URL: $5
@@ -9818,7 +9827,7 @@ $6',
 	'right-codereview-signoff' => 'Versies goodkäöre',
 	'right-codereview-link-user' => 'Koppel sjrievers aan wikigebroekers',
 	'right-codereview-associate' => 'Koppeling toeveuge/ewegsjaffe',
-	'right-codereview-review-own' => 'Eige commits es OK of opgelos markere',
+	'right-codereview-review-own' => 'Eige commits es OK of opgelos markere', # Fuzzy
 	'specialpages-group-developer' => 'Hölpmiddele veur óntwikkeleers',
 	'group-svnadmins' => 'SVN-behierdes',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN-behierder}}',
@@ -10394,7 +10403,7 @@ $6',
 	'code-stats-header' => '$1 എന്ന റെപ്പോസിറ്ററിയുടെ സ്ഥിതിവിവരക്കണക്കുകൾ',
 	'code-stats-main' => '$1-ൽ, റെപ്പോസിറ്ററിയിൽ [[Special:Code/$3/author|{{PLURAL:$4|ഒരു രചയിതാവ്|$4 രചയിതാക്കൾ}}]] സൃഷ്ടിച്ച {{PLURAL:$2|ഒരു നാൾപതിപ്പ്|$2 നാൾപ്പതിപ്പുകൾ}} ഉണ്ട്.',
 	'code-stats-status-breakdown' => 'ഓരോ സ്ഥിതിയിലുമുള്ള നാൾപ്പതിപ്പുകളുടെ എണ്ണം',
-	'code-stats-fixme-breakdown' => 'ഓരോ രചയിതാക്കളും ശരിയാക്കിയ പ്രശ്നങ്ങളിലുണ്ടായ ഭ്രംശങ്ങൾ',
+	'code-stats-fixme-breakdown' => 'ഓരോ രചയിതാക്കളും ശരിയാക്കിയ പ്രശ്നങ്ങളിലുണ്ടായ ഭ്രംശങ്ങൾ', # Fuzzy
 	'code-stats-count' => 'നാൾപ്പതിപ്പുകളുടെ എണ്ണം',
 	'repoadmin' => 'റെപ്പോസിറ്ററി കാര്യനിർവഹണം',
 	'repoadmin-new-legend' => 'പുതിയ റെപ്പോസിറ്ററി സൃഷ്ടിക്കുക',
@@ -11210,11 +11219,11 @@ $messages['nds'] = array(
 	'code-load-diff' => 'An’t Diff laden …',
 	'code-notes' => 'Ne’este Notizen',
 	'code-authors' => 'Autorn',
-	'code-status' => 'Status',
+	'code-status' => 'Status', # Fuzzy
 	'code-tags' => 'Tags',
-	'code-authors-text' => 'Dit is de List vun de Autorn na de Reeg vun de Commits.',
+	'code-authors-text' => 'Dit is de List vun de Autorn na de Reeg vun de Commits.', # Fuzzy
 	'code-author-haslink' => 'Disse Autor is mit’n Wiki-Bruker $1 verbunnen',
-	'code-author-orphan' => 'Disse Autor is mit keen Wiki-Brukerkonto verbunnen',
+	'code-author-orphan' => 'Disse Autor is mit keen Wiki-Brukerkonto verbunnen', # Fuzzy
 	'code-author-dolink' => 'Dissen Autor mit en Wiki-Brukerkonto verbinnen:',
 	'code-author-alterlink' => 'Dissen Autor mit en nee Wiki-Brukerkonto verbinnen:',
 	'code-author-orunlink' => 'Oder den Autor vun dit Wiki-Brukerkonto trennen:',
@@ -11229,7 +11238,7 @@ $messages['nds'] = array(
 	'code-field-message' => 'Commit-Kommentar',
 	'code-field-status' => 'Status',
 	'code-field-timestamp' => 'Datum',
-	'code-field-comments' => 'Notizen',
+	'code-field-comments' => 'Notizen', # Fuzzy
 	'code-field-path' => 'Padd',
 	'code-field-text' => 'Notiz',
 	'code-field-select' => 'Utwählen',
@@ -11282,7 +11291,7 @@ Vulle URL: $2
 
 Kommentar:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]: Nakamen Ännern',
 	'codereview-email-body2' => 'Bruker „$1“ hett na $2 noch wedder wat ännert.
 
@@ -11290,7 +11299,7 @@ Vull URL: $3
 
 Commit-Kommentar:
 
-$4',
+$4', # Fuzzy
 	'repoadmin' => 'Repositorium-Administratschoon',
 	'repoadmin-new-legend' => 'Nee Repositorium opstellen',
 	'repoadmin-new-label' => 'Naam vun dat Repositorium:',
@@ -11604,11 +11613,11 @@ $messages['nn'] = array(
 	'code-notes' => 'nye kommentarar',
 	'code-statuschanges' => 'Statusendringar',
 	'code-authors' => 'forfattarar',
-	'code-status' => 'stoda',
+	'code-status' => 'stoda', # Fuzzy
 	'code-tags' => 'merke',
-	'code-authors-text' => 'Nedanfor er ei lista over forfattarar sorterte etter siste bidrag.',
+	'code-authors-text' => 'Nedanfor er ei lista over forfattarar sorterte etter siste bidrag.', # Fuzzy
 	'code-author-haslink' => 'Denne forfattaren er lenkja til wikibrukar $1',
-	'code-author-orphan' => 'Denne forfattaren har inga lenkja til ein wikikonto',
+	'code-author-orphan' => 'Denne forfattaren har inga lenkja til ein wikikonto', # Fuzzy
 	'code-author-dolink' => 'Lenk denne forfattaren til ein wikibrukar:',
 	'code-author-alterlink' => 'Endra wikibrukaren som er lenkja til denne forfattaren:',
 	'code-author-orunlink' => 'Eller avlenk denne wikibrukaren:',
@@ -11623,7 +11632,7 @@ $messages['nn'] = array(
 	'code-field-message' => 'Bidragssamandrag',
 	'code-field-status' => 'Stoda',
 	'code-field-timestamp' => 'Dato',
-	'code-field-comments' => 'Merknader',
+	'code-field-comments' => 'Merknader', # Fuzzy
 	'code-field-path' => 'Stig',
 	'code-field-text' => 'Merknad',
 	'code-field-select' => 'Vel',
@@ -11682,7 +11691,7 @@ Fullstendig adressa: $2
 
 Kommentar:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]: Påfylgjande endringar',
 	'codereview-email-body2' => 'Brukar "$1" gjorde påfylgjande endringar til $2.
 
@@ -11690,7 +11699,7 @@ Full URL: $3
 
 Oppsummering:
 
-$4',
+$4', # Fuzzy
 	'code-stats' => 'statistikk',
 	'repoadmin' => 'Databaseadministrasjon',
 	'repoadmin-new-legend' => 'Opprett ein ny database',
@@ -11736,9 +11745,9 @@ $messages['oc'] = array(
 	'code-authors' => 'autors',
 	'code-status' => 'estats',
 	'code-tags' => 'balisas',
-	'code-authors-text' => 'Çaijós se tròba una lista dels autors de depauses per òrdre de publicacions recentas. Los comptes del wiki local son afichats entre parentèsis.',
+	'code-authors-text' => 'Çaijós se tròba una lista dels autors de depauses per òrdre de publicacions recentas. Los comptes del wiki local son afichats entre parentèsis.', # Fuzzy
 	'code-author-haslink' => "Aqueste autor es ligat al compte $1 d'aqueste wiki",
-	'code-author-orphan' => 'Aqueste autor a pas de ligam amb un compte wiki',
+	'code-author-orphan' => 'Aqueste autor a pas de ligam amb un compte wiki', # Fuzzy
 	'code-author-dolink' => 'Associar aqueste autor a un compte wiki local :',
 	'code-author-alterlink' => 'Modificar l’utilizaire wiki ligat a aqueste autor :',
 	'code-author-orunlink' => "Levar lo ligam d'aqueste utilizaire wiki :",
@@ -11754,7 +11763,7 @@ $messages['oc'] = array(
 	'code-field-message' => 'Somari de publicacion',
 	'code-field-status' => 'Estatut',
 	'code-field-timestamp' => 'Data',
-	'code-field-comments' => 'Nòtas',
+	'code-field-comments' => 'Nòtas', # Fuzzy
 	'code-field-path' => 'Camin',
 	'code-field-text' => 'Nòta',
 	'code-field-select' => 'Seleccionar',
@@ -11809,7 +11818,7 @@ Adreça completa : $2
 
 Comentari :
 
-$4",
+$4", # Fuzzy
 	'codereview-email-subj2' => '[$1 $2] : Modificacion seguida',
 	'codereview-email-body2' => 'L’utilizaire « $1 » a fach de modificacions religadas e $2.
 
@@ -11817,15 +11826,15 @@ URL completa : $3
 
 Resumit de las modificacions :
 
-$4',
-	'codereview-email-subj3' => '[$1 $2] : lo tèst automatic a detectat una regression',
+$4', # Fuzzy
+	'codereview-email-subj3' => '[$1 $2] : lo tèst automatic a detectat una regression', # Fuzzy
 	'codereview-email-body3' => 'Lo tèst automatic a revelat una regression a causa dels cambiaments intervenguts dins la version $1.
 
 URL completa : $2
 
 Resumit al moment de la somission :
 
-$3',
+$3', # Fuzzy
 	'repoadmin' => 'Administracion dels depauses',
 	'repoadmin-new-legend' => 'Crear un depaus novèl',
 	'repoadmin-new-label' => 'Nom del depaus :',
@@ -12031,7 +12040,7 @@ $6',
 	'right-codereview-signoff' => 'ସଂସ୍କରଣରେ ସାନ-ଅଫ',
 	'right-codereview-link-user' => 'ଲେଖକଙ୍କ ଲିଙ୍କ ଉଇକି ଇଉଜରଙ୍କୁ ଦିଅନ୍ତୁ',
 	'right-codereview-associate' => 'ସଂସ୍କରଣ ସହଯୋଗୀ ସବୁ ପରିଚାଳନା କରିବେ',
-	'right-codereview-review-own' => 'ଆପଣା ସଂସ୍କରଣକୁ ଠିକ ବା ସୁଧରାଯାଇଛି ବୋଲି ଚିହ୍ନିତ କରନ୍ତୁ',
+	'right-codereview-review-own' => 'ଆପଣା ସଂସ୍କରଣକୁ ଠିକ ବା ସୁଧରାଯାଇଛି ବୋଲି ଚିହ୍ନିତ କରନ୍ତୁ', # Fuzzy
 	'specialpages-group-developer' => 'ଡେଭେଲପର ଟୁଲ',
 	'group-svnadmins' => 'SVN ପରିଚାଳକଗଣ',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN ପରିଚାଳକ}}',
@@ -12044,7 +12053,7 @@ $6',
 $messages['os'] = array(
 	'code-field-status' => 'Статус',
 	'code-field-timestamp' => 'Датæ',
-	'code-field-comments' => 'Фиппаинæгтæ',
+	'code-field-comments' => 'Фиппаинæгтæ', # Fuzzy
 	'code-field-text' => 'Фиппаинаг',
 	'code-rev-author' => 'Автор:',
 	'code-rev-status' => 'Статус:',
@@ -12877,20 +12886,20 @@ $6',
 	'right-codereview-signoff' => 'Aprovação de revisões',
 	'right-codereview-link-user' => 'Associar autores a utilizadores wiki',
 	'right-codereview-associate' => 'Administrar a associação de revisões',
-	'right-codereview-review-own' => 'Marcar as suas próprias revisões como OK ou Resolvido',
+	'right-codereview-review-own' => 'Marcar as suas próprias revisões como OK ou Resolvido', # Fuzzy
 	'specialpages-group-developer' => 'Ferramentas de desenvolvimento',
 	'group-svnadmins' => 'Administradores do SVN',
-	'group-svnadmins-member' => 'Administrador do SVN',
+	'group-svnadmins-member' => 'Administrador do SVN', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
 /** Brazilian Portuguese (português do Brasil)
- * @author 555
  * @author Eduardo.mps
  * @author Giro720
  * @author Helder.wiki
  * @author Heldergeovane
  * @author MetalBrasil
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'code' => 'Revisão de Código',
@@ -14011,7 +14020,7 @@ $6',
 	'right-codereview-review-own' => 'Означованя властных ревізій як „{{int:code-status-ok}}“ або „{{int:code-status-resolved}}“',
 	'specialpages-group-developer' => 'Інштрументы вывоя',
 	'group-svnadmins' => 'SVN адміністраторы',
-	'group-svnadmins-member' => 'SVN адміністратор',
+	'group-svnadmins-member' => 'SVN адміністратор', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:SVN адміністраторы',
 );
 
@@ -14061,7 +14070,7 @@ $messages['sah'] = array(
 	'code-tags-no-tags' => 'Манна бэлиэтээһиннэр суохтар.',
 	'code-authors-text' => 'Ааптардар тиһиктэрэ ааттарынан наарданан бэриллэр. Олохтоох биикигэ бэлиэтэммит ааттара ускуобкаҕа бэриллэр. Бу дааннайдар кээштан ылыллыбыт буолуохтарын сөп.',
 	'code-author-haslink' => 'Бу ааптар $1 кыттааччыга сигэнэр',
-	'code-author-orphan' => 'Бу ааптар биики-бырайыак ханнык да кыттааччытыгар сигэммэт',
+	'code-author-orphan' => 'Бу ааптар биики-бырайыак ханнык да кыттааччытыгар сигэммэт', # Fuzzy
 	'code-author-dolink' => 'Бу ааптары ханнык эмит кыттаачыга сигииргэ:',
 	'code-author-alterlink' => 'Бу ааптар кыттааччыга сигэниитин уларытарга:',
 	'code-author-orunlink' => 'Эбэтэр кыттаачыга сигэни эрэ соторго:',
@@ -14117,7 +14126,7 @@ $messages['sah'] = array(
 	'code-status-new' => 'саҥа',
 	'code-status-desc-new' => 'Ревизия дьайыыны көһүтэр (атын туох да ыйыллыбатах буоллаҕына турар).',
 	'code-status-fixme' => 'бэрэбиэркэлээ',
-	'code-status-desc-fixme' => 'Рецензент бу ревизияҕа алҕаһы эбэтэр алдьаныыны булбут. Ол көннөрүллүөхтээх.',
+	'code-status-desc-fixme' => 'Рецензент бу ревизияҕа алҕаһы эбэтэр алдьаныыны булбут. Ол көннөрүллүөхтээх.', # Fuzzy
 	'code-status-reverted' => 'төннөрүллүбүт',
 	'code-status-desc-reverted' => 'Ревизия атын ревизияҕа төннөрүллүбүт.',
 	'code-status-resolved' => 'быһаарыллыбыт',
@@ -14141,7 +14150,7 @@ $messages['sah'] = array(
 	'code-signoff-struckdate' => '$1 ($2 сотто)',
 	'code-pathsearch-legend' => 'Биирдиилээн барыллары чопчу аадырыһынан көрдөөһүн',
 	'code-pathsearch-path' => 'Суола:',
-	'code-pathsearch-filter' => 'Туттуллубут сиидэлэр:',
+	'code-pathsearch-filter' => 'Туттуллубут сиидэлэр:', # Fuzzy
 	'code-revfilter-cr_status' => 'Турук = $1',
 	'code-revfilter-cr_author' => 'Ааптар = $1',
 	'code-revfilter-clear' => 'Сиидэни уһул',
@@ -14164,7 +14173,7 @@ $messages['sah'] = array(
 
 Ырытыы:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]: Ол кэннинээҕи уларыйыылар',
 	'codereview-email-body2' => '"$1" кыттааччы манна уларытыыны киллэрбит $2.
 
@@ -14174,14 +14183,14 @@ $4',
 
 Уларыйыы туһунан:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj3' => '[$1 $2]: Барыл туругун уларытыы',
 	'codereview-email-body3' => '«$1» кыттааччы $2 туругун уларыппыт.
 
 Урукку туруга: $3
 Билиҥҥи туруга: $4
 
-Толору URL: $5',
+Толору URL: $5', # Fuzzy
 	'codereview-email-subj4' => '[$1 $2]: Ырытыыга саҥа этии эбиллибит, барыл туруга уларыйбыт',
 	'codereview-email-body4' => '«$1» кыттааччы $2 туругун уларыппыт.
 
@@ -14194,12 +14203,12 @@ $4',
 
 Этии:
 
-$6',
+$6', # Fuzzy
 	'code-stats' => 'Статистиката:',
 	'code-stats-header' => '«$1» репозиторий статистиката',
 	'code-stats-main' => 'Бу кэмҥэ $1 репозиторийга {{PLURAL:$2|биир ревизия баар|$2 ревизия баар}} [[Special:Code/$3/author|$4 {{PLURAL:$4|ааптар|ахсааннаах ааптар}}]].',
 	'code-stats-status-breakdown' => 'Ревизиялар туруктарынан',
-	'code-stats-fixme-breakdown' => 'Уларытыылар тарҕаныылара ааптардарынан',
+	'code-stats-fixme-breakdown' => 'Уларытыылар тарҕаныылара ааптардарынан', # Fuzzy
 	'code-stats-count' => 'Ревизия ахсаана',
 	'repoadmin' => 'Бырагыраамма куодун харайыыны салайыы',
 	'repoadmin-new-legend' => 'Саҥа харайар сири оҥоруу',
@@ -14223,7 +14232,7 @@ $6',
 	'right-codereview-associate' => 'Барыллары бөлөҕүнэн салайыы',
 	'specialpages-group-developer' => 'Оҥорооччу тэриллэрэ (үнүстүрүмүөннэрэ)',
 	'group-svnadmins' => 'SVN дьаһабыллара',
-	'group-svnadmins-member' => 'SVN дьаһабыла',
+	'group-svnadmins-member' => 'SVN дьаһабыла', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:SVN дьаһабыллара',
 );
 
@@ -14235,19 +14244,19 @@ $6',
 $messages['scn'] = array(
 	'code' => 'Rivisioni dû còdici',
 	'code-comments' => 'Cummenti',
-	'code-change-status' => "Canciatu lu '''status''' di sta rivisioni",
-	'code-change-tags' => "Canciati li '''tags''' pi sta rivisioni",
+	'code-change-status' => "Canciatu lu '''status''' di sta rivisioni", # Fuzzy
+	'code-change-tags' => "Canciati li '''tags''' pi sta rivisioni", # Fuzzy
 	'code-change-removed' => 'rimuvutu:',
 	'code-change-added' => 'junciutu:',
 	'code-prop-changes' => 'Status & log di tagging',
 	'codereview-desc' => '[[Special:Code|Stigghi pâ rivisioni dû codici]] cu [[Special:RepoAdmin|Supportu di suvvirsioni]]',
 	'code-no-repo' => 'Nuddu dipòsitu cunfiguratu!',
-	'code-notes' => 'Noti di rivisioni',
+	'code-notes' => 'Noti di rivisioni', # Fuzzy
 	'code-authors' => 'autura',
 	'code-tags' => 'etichetti',
-	'code-authors-text' => "Ccassutta c'è na lista di autura di dipòsiti n òrdini di assignazzioni cchiù ricenti",
+	'code-authors-text' => "Ccassutta c'è na lista di autura di dipòsiti n òrdini di assignazzioni cchiù ricenti", # Fuzzy
 	'code-author-haslink' => "St'auturi è culligatu ô utenti wiki $1",
-	'code-author-orphan' => "St'auturi nun è cullicatu a n'account wiki",
+	'code-author-orphan' => "St'auturi nun è cullicatu a n'account wiki", # Fuzzy
 	'code-author-dolink' => "Culligari st'auturi a n'untenti wiki:",
 	'code-author-alterlink' => "Canciari l'utilizzaturi dâ wiki cullicatu a stu auturi:",
 	'code-author-orunlink' => "O leva lu culligamentu cu st'utilizzaturi dâ wiki:",
@@ -14262,7 +14271,7 @@ $messages['scn'] = array(
 	'code-field-message' => 'Cummentu',
 	'code-field-status' => 'Statu',
 	'code-field-timestamp' => 'Data',
-	'code-field-comments' => 'Noti',
+	'code-field-comments' => 'Noti', # Fuzzy
 	'code-field-path' => 'Jolu',
 	'code-field-text' => 'Nota',
 	'code-rev-author' => 'Auturi:',
@@ -14306,7 +14315,7 @@ URL cumpleta: $2
 
 Cummentu:
 
-$4',
+$4', # Fuzzy
 	'repoadmin' => 'Amministrazzioni dî dipòsiti',
 	'repoadmin-new-legend' => 'Crèa nu dipòsitu novu',
 	'repoadmin-new-label' => 'Nomu dû dipòsitu:',
@@ -14679,7 +14688,7 @@ $6',
 	'code-stats-header' => 'Štatistika úložiska $1',
 	'code-stats-main' => '$1, úložisko má $2 {{PLURAL:$2|revíziu|revízie|revízií}} od [[Special:Code/$3/author|$4 {{PLURAL:$4|autora|autorov}}]].',
 	'code-stats-status-breakdown' => 'Počet revízií na stav',
-	'code-stats-fixme-breakdown' => 'Rozloženie fixme podľa autora',
+	'code-stats-fixme-breakdown' => 'Rozloženie fixme podľa autora', # Fuzzy
 	'code-stats-count' => 'Počet revízií',
 	'repoadmin' => 'Správa úložiska',
 	'repoadmin-new-legend' => 'Vytvoriť nové úložisko',
@@ -14701,10 +14710,10 @@ $6',
 	'right-codereview-signoff' => 'Schváliť revízie',
 	'right-codereview-link-user' => 'Zviazať autorov s používateľmi wiki',
 	'right-codereview-associate' => 'Spravovať združenia revízií',
-	'right-codereview-review-own' => 'Označiť vlastné revízie ako OK',
+	'right-codereview-review-own' => 'Označiť vlastné revízie ako OK', # Fuzzy
 	'specialpages-group-developer' => 'Nástroje vývojárov',
 	'group-svnadmins' => 'správcovia SVN',
-	'group-svnadmins-member' => 'správca SVN',
+	'group-svnadmins-member' => 'správca SVN', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:Správcovia SVN',
 );
 
@@ -14947,7 +14956,7 @@ $6',
  */
 $messages['sq'] = array(
 	'group-svnadmins' => 'Administruesit SVN',
-	'group-svnadmins-member' => 'administrues SVN',
+	'group-svnadmins-member' => 'administrues SVN', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:Administruesit SVN',
 );
 
@@ -15283,7 +15292,7 @@ $messages['stq'] = array(
 	'code-tags' => 'Tags',
 	'code-authors-text' => 'Hierunner foulget ne Lieste fon Repositoriumautore, ätter Noomen sortierd. Lokoale Wikikonten wäide in runde Klammere anwiesd. Doaten kuuden uut dän Cache stamme.',
 	'code-author-haslink' => 'Dissen Autor is tou dän Wiki-Benutser $1 ferlinked',
-	'code-author-orphan' => 'Dissen Autor häd neen Link tou n Wiki-Benutserkonto',
+	'code-author-orphan' => 'Dissen Autor häd neen Link tou n Wiki-Benutserkonto', # Fuzzy
 	'code-author-dolink' => 'Dissen Autor tou n Wiki-Benutserkonto ferlinkje:',
 	'code-author-alterlink' => 'Ju Ferlinkenge tou n Wiki-Benutserkonto fon dissen Autor annerje:',
 	'code-author-orunlink' => 'Ferlinkenge tou dät Wiki-Benutserkonto ferbreeke:',
@@ -15580,7 +15589,7 @@ $6',
 	'right-codereview-set-status' => 'Ändra versioners status',
 	'right-codereview-signoff' => 'Signera versioner',
 	'right-codereview-link-user' => 'Länka författare med wikianvändare',
-	'right-codereview-review-own' => 'Märk din egen revidering som OK eller Lösta',
+	'right-codereview-review-own' => 'Märk din egen revidering som OK eller Lösta', # Fuzzy
 	'specialpages-group-developer' => 'Utvecklarverktyg',
 	'group-svnadmins' => 'SVN administratörer',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN-administratör}}',
@@ -15604,7 +15613,7 @@ $messages['sw'] = array(
 	'code-field-author' => 'Mwandishi',
 	'code-field-status' => 'Hadhi',
 	'code-field-timestamp' => 'Tarehe',
-	'code-field-comments' => 'Maelezo',
+	'code-field-comments' => 'Maelezo', # Fuzzy
 	'code-field-select' => 'Chagua',
 	'code-rev-date' => 'Tarehe:',
 	'code-rev-message' => 'Maelezo:',
@@ -15757,7 +15766,7 @@ $messages['te'] = array(
 	'code-mycomments' => 'నా వ్యాఖ్యలు',
 	'code-authors' => 'రచయితలు',
 	'code-status' => 'స్థితులు',
-	'code-author-orphan' => 'ఈ రచయితకి వికీ ఖాతాలో లంకె లేదు',
+	'code-author-orphan' => 'ఈ రచయితకి వికీ ఖాతాలో లంకె లేదు', # Fuzzy
 	'code-author-name' => 'ఒక వాడుకరిపేరుని ఇవ్వండి:',
 	'code-author-total' => 'మొత్తం రచయితల సంఖ్య: $1',
 	'code-field-id' => 'కూర్పు',
@@ -15786,7 +15795,7 @@ $messages['te'] = array(
 	'code-rev-not-found' => "'''$1''' అనే కూర్పు లేనే లేదు!",
 	'code-rev-history-link' => 'చరిత్ర',
 	'code-status-new' => 'కొత్త',
-	'code-status-desc-fixme' => 'ఈ కూర్పు బగ్ ను చొప్పిస్తోందనో, లేక తెగిపోయిందనో ఒక వాడుకరి గుర్తు పెట్టారు. దాన్ని సరిచెయ్యాలి.',
+	'code-status-desc-fixme' => 'ఈ కూర్పు బగ్ ను చొప్పిస్తోందనో, లేక తెగిపోయిందనో ఒక వాడుకరి గుర్తు పెట్టారు. దాన్ని సరిచెయ్యాలి.', # Fuzzy
 	'code-status-reverted' => 'వెనక్కి తీసుకోబడినది',
 	'code-status-desc-reverted' => 'ఈ కూర్పులో చేసిన మార్పులు తరువాతి మార్పు ద్వారా చెయ్యబడ్డాయి.',
 	'code-status-resolved' => 'పరిష్కరించబడింది',
@@ -15886,10 +15895,10 @@ $6',
 	'right-codereview-post-comment' => 'కూర్పులపై వ్యాఖ్యలు చేర్చగలగడం',
 	'right-codereview-set-status' => 'కూర్పుల స్థితిని మార్చగలగడం',
 	'right-codereview-link-user' => 'కర్తలను వికీ వాడుకరులతో లింకు  చెయ్యి',
-	'right-codereview-review-own' => 'మీ స్వంత కూర్పులను ’సరే’ గా గుర్తించండి',
+	'right-codereview-review-own' => 'మీ స్వంత కూర్పులను ’సరే’ గా గుర్తించండి', # Fuzzy
 	'specialpages-group-developer' => 'వికాసకుల పనిముట్లు',
 	'group-svnadmins' => 'SVN నిర్వాహకులు',
-	'group-svnadmins-member' => 'SVN నిర్వాహకుడు',
+	'group-svnadmins-member' => 'SVN నిర్వాహకుడు', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:SVN నిర్వాహకులు',
 );
 
@@ -15922,19 +15931,19 @@ $messages['tet'] = array(
 $messages['tg-cyrl'] = array(
 	'code' => 'Баррасии Рамз',
 	'code-comments' => 'Тавзеҳот',
-	'code-change-status' => "'''ваъзияти''' ин нусха тағйир ёфт",
-	'code-change-tags' => "'''барчасбҳо''' барои ин нусха тағйир ёфтанд",
+	'code-change-status' => "'''ваъзияти''' ин нусха тағйир ёфт", # Fuzzy
+	'code-change-tags' => "'''барчасбҳо''' барои ин нусха тағйир ёфтанд", # Fuzzy
 	'code-change-removed' => 'пок шуд:',
 	'code-change-added' => 'изофа шуд:',
 	'code-prop-changes' => 'Вазъият ва гузориши барчасбкунӣ',
 	'codereview-desc' => '[[Special:Code|Абзори бозбинии рамз]] бо [[Special:RepoAdmin|Пуштибонии Зернусха]]',
 	'code-no-repo' => 'Ҳеҷ махзане танзим нашудааст!',
-	'code-notes' => 'нуктаҳои боздид',
+	'code-notes' => 'нуктаҳои боздид', # Fuzzy
 	'code-authors' => 'муаллифон',
 	'code-tags' => 'барчасбҳо',
-	'code-authors-text' => 'Дар зер феҳристи муаллифони махзан бо тартиби супурданҳо оварда шудааст.',
+	'code-authors-text' => 'Дар зер феҳристи муаллифони махзан бо тартиби супурданҳо оварда шудааст.', # Fuzzy
 	'code-author-haslink' => 'Ин муаллиф пайваста ба корбари викии $1 аст',
-	'code-author-orphan' => 'Ин муаллиф дорои ҳеҷ пайванде ба ин вики ҳисоб нест',
+	'code-author-orphan' => 'Ин муаллиф дорои ҳеҷ пайванде ба ин вики ҳисоб нест', # Fuzzy
 	'code-author-dolink' => 'Пайвастани ин муаллиф ба як корбари вики:',
 	'code-author-alterlink' => 'Тағйири корбари викии пайваста ба ин муаллиф:',
 	'code-author-orunlink' => 'Ё бардоштани пайванди ин корбари вики:',
@@ -15949,7 +15958,7 @@ $messages['tg-cyrl'] = array(
 	'code-field-message' => 'Супурдани хулоса',
 	'code-field-status' => 'Вазъият',
 	'code-field-timestamp' => 'Сана',
-	'code-field-comments' => 'Нуктаҳо',
+	'code-field-comments' => 'Нуктаҳо', # Fuzzy
 	'code-field-path' => 'Масир',
 	'code-field-text' => 'Нукта',
 	'code-rev-author' => 'Муаллиф:',
@@ -15991,7 +16000,7 @@ $messages['tg-cyrl'] = array(
 
 Тавзеҳ:
 
-$4',
+$4', # Fuzzy
 	'repoadmin' => 'Мудирияти Махзан',
 	'repoadmin-new-legend' => 'Эҷоди махзани нав',
 	'repoadmin-new-label' => 'Номи махзан:',
@@ -16025,7 +16034,7 @@ $messages['tg-latn'] = array(
 	'code-authors' => 'muallifon',
 	'code-tags' => 'barcasbho',
 	'code-author-haslink' => 'In muallif pajvasta ba korbari vikiji $1 ast',
-	'code-author-orphan' => 'In muallif doroi heç pajvande ba in viki hisob nest',
+	'code-author-orphan' => 'In muallif doroi heç pajvande ba in viki hisob nest', # Fuzzy
 	'code-author-dolink' => 'Pajvastani in muallif ba jak korbari viki:',
 	'code-author-alterlink' => 'Taƣjiri korbari vikiji pajvasta ba in muallif:',
 	'code-author-orunlink' => 'Jo bardoştani pajvandi in korbari viki:',
@@ -16040,7 +16049,7 @@ $messages['tg-latn'] = array(
 	'code-field-message' => 'Supurdani xulosa',
 	'code-field-status' => "Vaz'ijat",
 	'code-field-timestamp' => 'Sana',
-	'code-field-comments' => 'Nuktaho',
+	'code-field-comments' => 'Nuktaho', # Fuzzy
 	'code-field-path' => 'Masir',
 	'code-field-text' => 'Nukta',
 	'code-rev-author' => 'Muallif:',
@@ -16082,7 +16091,7 @@ Nişonai purra: $2
 
 Tavzeh:
 
-$4',
+$4', # Fuzzy
 	'repoadmin' => 'Mudirijati Maxzan',
 	'repoadmin-new-legend' => 'Eçodi maxzani nav',
 	'repoadmin-new-label' => 'Nomi maxzan:',
@@ -16142,9 +16151,9 @@ $messages['tk'] = array(
 	'code-authors' => 'awtorlar',
 	'code-status' => 'status',
 	'code-tags' => 'tegler',
-	'code-authors-text' => 'Aşakdaky sanaw ýaňy-ýakyndaky tabşyrmalara görä düzülen awtorlary görkezýär. Ýerli wiki hasaplary ýaýyň içinde görkezilýär.',
+	'code-authors-text' => 'Aşakdaky sanaw ýaňy-ýakyndaky tabşyrmalara görä düzülen awtorlary görkezýär. Ýerli wiki hasaplary ýaýyň içinde görkezilýär.', # Fuzzy
 	'code-author-haslink' => 'Bu awtor $1 wiki ulanyjysyna çykgytlydyr',
-	'code-author-orphan' => 'Bu awtoryň haýsydyr bir wiki hasaba çykgydy ýok.',
+	'code-author-orphan' => 'Bu awtoryň haýsydyr bir wiki hasaba çykgydy ýok.', # Fuzzy
 	'code-author-dolink' => 'Bu awtory haýsydyr bir wiki ulanyjysyna çykgytla:',
 	'code-author-alterlink' => 'Bu awtora çykgytlanan wiki ulanyjysyny üýtget:',
 	'code-author-orunlink' => 'Ýa-da bu wiki ulanyjysynyň çykgydyny aýyr:',
@@ -16162,7 +16171,7 @@ $messages['tk'] = array(
 	'code-field-message' => 'Tabşyryş düşündirişi',
 	'code-field-status' => 'Status',
 	'code-field-timestamp' => 'Sene',
-	'code-field-comments' => 'Bellikler',
+	'code-field-comments' => 'Bellikler', # Fuzzy
 	'code-field-path' => 'Ýol',
 	'code-field-text' => 'Bellik',
 	'code-field-select' => 'Saýla',
@@ -16203,7 +16212,7 @@ $messages['tk'] = array(
 	'code-status-old' => 'köne',
 	'code-pathsearch-legend' => 'Bu ammardaky wersiýalary ýol boýunça gözle',
 	'code-pathsearch-path' => 'Ýol:',
-	'code-pathsearch-filter' => 'Ulanylýan filtr:',
+	'code-pathsearch-filter' => 'Ulanylýan filtr:', # Fuzzy
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Awtor = $1',
 	'code-revfilter-clear' => 'Filtri arassala',
@@ -16226,7 +16235,7 @@ Doly URL: $2
 
 Teswir:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]: Yzarlama üýtgeşmeleri',
 	'codereview-email-body2' => '"$1" atly ulanyjy $2 üçin yzarlama üýtgeşmeleri etdi.
 
@@ -16236,15 +16245,15 @@ Doly URL: $3
 
 Tabşyrma düşündirişi:
 
-$4',
-	'codereview-email-subj3' => '[$1 $2]: Awtomatik synag regressiýany ýüze çykardy',
+$4', # Fuzzy
+	'codereview-email-subj3' => '[$1 $2]: Awtomatik synag regressiýany ýüze çykardy', # Fuzzy
 	'codereview-email-body3' => '$1 üçin üýtgeşmeler zerarly awtomatik synag bir regressiýany ýüze çykardy.
 
 Doly URL: $2
 
 Tabşyrma düşündirişi:
 
-$3',
+$3', # Fuzzy
 	'code-stats' => 'statistika',
 	'code-stats-header' => '$1 repozitoriýasy üçin statistika',
 	'code-stats-main' => '$1 boýunça, repozitoriýada [[Special:Code/$3/author|$4 {{PLURAL:$4|awtor|awtor}}]] tarapyndan edilen $2 {{PLURAL:$2|wersiýa|wersiýa}} bar.',
@@ -16545,7 +16554,7 @@ $messages['tr'] = array(
 	'code-tags-no-tags' => 'Bu havuzda etiket mevcut değil.',
 	'code-authors-text' => 'Aşağıdaki, teslim isimlerine göre sıralanmış depo yazarları listesidir. Yerel viki hesapları parantez içinde gösterilmiştir. Veri önbellekte olabilir.',
 	'code-author-haslink' => 'Bu yazar $1 viki kullanıcısına bağlıdır',
-	'code-author-orphan' => 'Bu yazarın bir viki hesabıyla bağı yoktur',
+	'code-author-orphan' => 'Bu yazarın bir viki hesabıyla bağı yoktur', # Fuzzy
 	'code-author-dolink' => 'Bu yazarı bir viki kullanıcısına bağla:',
 	'code-author-alterlink' => 'Bu yazara bağlı viki kullanıcısını değiştir:',
 	'code-author-orunlink' => 'Ya da bu viki kullanıcısının bağını kaldır:',
@@ -16628,7 +16637,7 @@ Tam adres: $2
 
 Yorum:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]: Takip değişiklikleri',
 	'codereview-email-body2' => '"$1" kullanıcısı $2 için takip değişiklikleri yaptı.
 
@@ -16636,15 +16645,15 @@ Tam URL: $3
 
 Teslim özeti:
 
-$4',
-	'codereview-email-subj3' => '[$1 $2]: Otomatik test gerileme saptadı',
+$4', # Fuzzy
+	'codereview-email-subj3' => '[$1 $2]: Otomatik test gerileme saptadı', # Fuzzy
 	'codereview-email-body3' => 'Otomatik test $1 revizyonundaki değişikliklerden dolayı bir gerileme ortaya çıkardı.
 
 Tam URL: $2
 
 Teslimat özeti:
 
-$3',
+$3', # Fuzzy
 	'code-stats' => 'istatistikler',
 	'code-stats-count' => 'Sürümlerin sayısı',
 	'repoadmin' => 'Depo Yönetimi',
@@ -16904,7 +16913,7 @@ $6',
 	'right-codereview-signoff' => 'Підтвердження змін',
 	'right-codereview-link-user' => "Зв'язок авторів з користувачами вікі-проекту",
 	'right-codereview-associate' => "Управління пов'язаними редагуваннями",
-	'right-codereview-review-own' => 'Відзначити власні зміни як «Вирішені»',
+	'right-codereview-review-own' => 'Відзначити власні зміни як «Вирішені»', # Fuzzy
 	'specialpages-group-developer' => 'Інструменти розробника',
 	'group-svnadmins' => 'Адміністратори SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|Адміністратор SVN|Адміністраторка SVN}}',
@@ -16987,7 +16996,7 @@ $messages['vec'] = array(
 	'code-tags' => 'tag',
 	'code-authors-text' => 'Qua soto ghe xe na lista dei autori del deposito ordenà par nome. I account wiki locali i xe mostrà tra parentesi. I dati i podarìa vegner da na memoria cache.',
 	'code-author-haslink' => "Sto autor el xe ligà a l'utente wiki $1",
-	'code-author-orphan' => "Sto autor no'l xe ligà a nissun utente wiki",
+	'code-author-orphan' => "Sto autor no'l xe ligà a nissun utente wiki", # Fuzzy
 	'code-author-dolink' => 'Ligar sto autor a un utente wiki:',
 	'code-author-alterlink' => "Canbiar l'utente wiki ligà a sto autor:",
 	'code-author-orunlink' => "O cavar el ligamento co' sto utente wiki:",
@@ -17006,7 +17015,7 @@ $messages['vec'] = array(
 	'code-field-message' => 'Comento',
 	'code-field-status' => 'Stato',
 	'code-field-timestamp' => 'Data',
-	'code-field-comments' => 'Note',
+	'code-field-comments' => 'Note', # Fuzzy
 	'code-field-path' => 'Percorso',
 	'code-field-text' => 'Note',
 	'code-field-select' => 'Selessiona',
@@ -17039,7 +17048,7 @@ $messages['vec'] = array(
 	'code-status-new' => 'novo',
 	'code-status-desc-new' => 'Sta revision la xe pendente (default).',
 	'code-status-fixme' => 'da justar',
-	'code-status-desc-fixme' => 'Un revisor gà segnà che sta revision la gà un difeto o no la va mia. Ghe xe da sistemarla.',
+	'code-status-desc-fixme' => 'Un revisor gà segnà che sta revision la gà un difeto o no la va mia. Ghe xe da sistemarla.', # Fuzzy
 	'code-status-reverted' => 'tirà indrìo',
 	'code-status-desc-reverted' => 'Sta revision la xe stà scartà da na revision sucessiva.',
 	'code-status-resolved' => 'sistemà',
@@ -17055,7 +17064,7 @@ $messages['vec'] = array(
 	'code-signoff-field-date' => 'Data',
 	'code-pathsearch-legend' => 'Serca le version drento sto deposito, in base al percorso',
 	'code-pathsearch-path' => 'Percorso:',
-	'code-pathsearch-filter' => 'Filtro aplicà:',
+	'code-pathsearch-filter' => 'Filtro aplicà:', # Fuzzy
 	'code-revfilter-cr_status' => 'Stato = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
 	'code-revfilter-clear' => 'Scansela filtro',
@@ -17078,7 +17087,7 @@ URL par intiero: $2
 
 Comento:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]: Canbiamenti seguenti',
 	'codereview-email-body2' => 'L\'utente "$1" el gà fato dele modifiche seguenti a $2.
 
@@ -17088,17 +17097,17 @@ URL: $3
 
 Ojeto de la modifica:
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj3' => '[$1 $2]: Stato de la revision canbià',
 	'codereview-email-body3' => 'L\'utente "$1" gà canbià el stato de $2.
 
 Stato vecio: $3
-Stato novo: $4',
+Stato novo: $4', # Fuzzy
 	'code-stats' => 'statisteghe',
 	'code-stats-header' => 'Statìsteghe del deposito $1',
 	'code-stats-main' => 'A la data del $1, el deposito el gà $2 {{PLURAL:$2|revision|revision}} fate da [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autori}}]].',
 	'code-stats-status-breakdown' => 'Numaro de revisioni par stato',
-	'code-stats-fixme-breakdown' => 'Analisi dei fixme par autor',
+	'code-stats-fixme-breakdown' => 'Analisi dei fixme par autor', # Fuzzy
 	'code-stats-count' => 'Numaro de revision',
 	'repoadmin' => "'Ministrassion dei depositi",
 	'repoadmin-new-legend' => 'Crea un deposito novo',
@@ -17155,6 +17164,7 @@ $messages['vep'] = array(
 	'code-rev-tag-remove' => 'Čuta virgad poiš:',
 	'code-rev-comment-by' => '$1-kävutajan kommentarii',
 	'code-rev-comment-preview' => 'Ezikacund',
+	'code-rev-comment-preview-accesskey' => 'p',
 	'code-rev-inline-preview' => 'Ezikacund:',
 	'code-rev-diff' => 'Erinendad',
 	'code-rev-diff-link' => 'erinend',
@@ -17415,7 +17425,7 @@ $messages['vo'] = array(
 	'code-authors' => 'lautans',
 	'code-status' => 'stads',
 	'code-author-haslink' => 'Lautan at peyümon lü vükigeban: $1',
-	'code-author-orphan' => 'Lautan at no labon yümis lü vükakal',
+	'code-author-orphan' => 'Lautan at no labon yümis lü vükakal', # Fuzzy
 	'code-author-dolink' => 'Yümön lautani at lü vükigeban:',
 	'code-author-alterlink' => 'Votükön vükigebani lü lautan at peyümöli:',
 	'code-author-orunlink' => 'U säyümön vükigebani at.',
@@ -17429,7 +17439,7 @@ $messages['vo'] = array(
 	'code-field-user' => 'Küpetan',
 	'code-field-status' => 'Stad',
 	'code-field-timestamp' => 'Dät',
-	'code-field-comments' => 'Noets',
+	'code-field-comments' => 'Noets', # Fuzzy
 	'code-field-path' => 'Luveg',
 	'code-field-text' => 'Noet',
 	'code-rev-author' => 'Lautan:',
@@ -17524,7 +17534,8 @@ $messages['yo'] = array(
 	'repoadmin-edit-button' => 'OK',
 );
 
-/** Cantonese (粵語) */
+/** Cantonese (粵語)
+ */
 $messages['yue'] = array(
 	'code' => '代碼複查',
 	'code-rev-title' => '$1 - 代碼複查',
@@ -17543,11 +17554,11 @@ $messages['yue'] = array(
 	'code-notes' => '之前嘅註解',
 	'code-statuschanges' => '狀態變動',
 	'code-authors' => '作者',
-	'code-status' => '狀態',
+	'code-status' => '狀態', # Fuzzy
 	'code-tags' => '標籤',
-	'code-authors-text' => '下面係檔案庫作者對於最近遞交嘅表。',
+	'code-authors-text' => '下面係檔案庫作者對於最近遞交嘅表。', # Fuzzy
 	'code-author-haslink' => '呢位作者係連結到wiki用戶$1',
-	'code-author-orphan' => '呢位作者無連結到一個wiki戶口',
+	'code-author-orphan' => '呢位作者無連結到一個wiki戶口', # Fuzzy
 	'code-author-dolink' => '連結呢位作者到一位用戶：',
 	'code-author-alterlink' => '改個wiki用戶到呢位作者：',
 	'code-author-orunlink' => '或者唔連結呢一位wiki用戶：',
@@ -17562,7 +17573,7 @@ $messages['yue'] = array(
 	'code-field-message' => '遞交摘要',
 	'code-field-status' => '狀態',
 	'code-field-timestamp' => '日期',
-	'code-field-comments' => '註',
+	'code-field-comments' => '註', # Fuzzy
 	'code-field-path' => '路徑',
 	'code-field-text' => '註',
 	'code-field-select' => '選擇',
@@ -17615,7 +17626,7 @@ $messages['yue'] = array(
 
 註解：
 
-$4',
+$4', # Fuzzy
 	'codereview-email-subj2' => '[$1 $2]：後繼更改',
 	'codereview-email-body2' => '用戶 "$1" 響 $2 整咗後繼更改。
 
@@ -17623,15 +17634,15 @@ $4',
 
 遞交摘要：
 
-$4',
-	'codereview-email-subj3' => '[$1 $2]：自動測試偵測到表達式問題',
+$4', # Fuzzy
+	'codereview-email-subj3' => '[$1 $2]：自動測試偵測到表達式問題', # Fuzzy
 	'codereview-email-body3' => '自動測試發現到響 $1 嘅改動之中出咗表達式問題。
 
 完整URL：$2
 
 遞交摘要：
 
-$3',
+$3', # Fuzzy
 	'repoadmin' => '檔案室庫管理',
 	'repoadmin-new-legend' => '開一個新檔案庫',
 	'repoadmin-new-label' => '檔案庫名：',
@@ -18128,4 +18139,3 @@ $6',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN管理員}}',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN管理員',
 );
-
