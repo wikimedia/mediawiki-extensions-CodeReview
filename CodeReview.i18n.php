@@ -17488,6 +17488,7 @@ $messages['yi'] = array(
 	'code-change-removed' => 'אראפגענומען:',
 	'code-change-added' => 'צוגעלייגט:',
 	'code-authors' => 'שרייבערס',
+	'code-author-lastcommit' => 'דאטע פון לעצטער ענדערונג',
 	'code-field-id' => 'רעוויזיע',
 	'code-field-author' => 'שרייבער',
 	'code-field-status' => 'סטאַטוס',
