@@ -2980,7 +2980,6 @@ $messages['da'] = array(
  */
 $messages['de'] = array(
 	'code' => 'Codeprüfung',
-	'code-rev-id' => 'Version $1',
 	'code-rev-title' => '$1 – Codeprüfung',
 	'code-comments' => 'Kommentare',
 	'code-references' => 'Nachfolgende Revisionen',
@@ -17164,7 +17163,6 @@ $messages['vep'] = array(
 	'code-rev-tag-remove' => 'Čuta virgad poiš:',
 	'code-rev-comment-by' => '$1-kävutajan kommentarii',
 	'code-rev-comment-preview' => 'Ezikacund',
-	'code-rev-comment-preview-accesskey' => 'p',
 	'code-rev-inline-preview' => 'Ezikacund:',
 	'code-rev-diff' => 'Erinendad',
 	'code-rev-diff-link' => 'erinend',
