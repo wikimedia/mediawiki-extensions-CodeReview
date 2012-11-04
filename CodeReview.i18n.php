@@ -1888,7 +1888,7 @@ $messages['bn'] = array(
 	'code-status-desc-fixme' => 'একজন পর্যবেক্ষক এই সংস্করণটিতে বাগ রয়েছে বা ভাঙা হিসেব নির্ধারণ করেছে। এটি শুদ্ধ করা প্রয়োজন।', # Fuzzy
 	'code-status-reverted' => 'বাতিলকৃত',
 	'code-status-desc-reverted' => 'সংস্করণটি পরবর্তী সংস্করণ দ্বারা বাতিল করা হয়েছে।',
-	'code-status-resolved' => 'সমাধানকৃত',
+	'code-status-resolved' => 'মিমাংসিত',
 	'code-status-desc-resolved' => 'সংস্করণটি একটি সমস্যা ছিলো যা পরবর্তী সংস্করণে উল্লেখ করা হয়েছে।',
 	'code-status-ok' => 'ঠিক আছে',
 	'code-status-desc-ok' => 'সংস্করণটি সম্পূর্ণ পরীক্ষিত এবং পর্যবেক্ষক নিশ্চিত যে এটি সব দিক দিয়ে ঠিক আছে।',
@@ -13568,6 +13568,7 @@ $6',
  * @author MaxSem
  * @author McDutchie
  * @author Putnik
+ * @author Volkov
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
@@ -13650,7 +13651,7 @@ $messages['ru'] = array(
 	'code-rev-diff' => 'Изменение',
 	'code-rev-diff-link' => 'изм.',
 	'code-rev-diff-too-large' => 'Разница версий слишком велика для отображения.',
-	'code-rev-purge-link' => 'очистить кеш',
+	'code-rev-purge-link' => 'очистить кэш',
 	'code-rev-total' => 'Общее количество результатов: $1',
 	'code-rev-not-found' => "Ревизии '''$1''' не существует!",
 	'code-rev-history-link' => 'история',
