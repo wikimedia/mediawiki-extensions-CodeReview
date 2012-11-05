@@ -17408,6 +17408,8 @@ $6',
 	'group-svnadmins' => 'Người quản lý SVN',
 	'group-svnadmins-member' => '{{GENDER:$1}}người quản lý SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Người quản lý SVN',
+	'group-svnadmins.css' => '/* Mã CSS tại đây sẽ chỉ ảnh hưởng đến những người quản lý SVN */',
+	'group-svnadmins.js' => '/* Mã JS tại đây sẽ chỉ ảnh hưởng đến những người người quản lý SVN */',
 );
 
 /** Volapük (Volapük)
