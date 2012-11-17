@@ -148,6 +148,12 @@ $specialPageAliases['id'] = array(
 	'Code' => array( 'Kode', 'Tinjauan_kode', 'TinjauanKode' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'Code' => array( 'Codice' ),
+	'RepoAdmin' => array( 'AdminRepo' ),
+);
+
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
 	'Code' => array( 'コード', 'コードレビュー' ),
