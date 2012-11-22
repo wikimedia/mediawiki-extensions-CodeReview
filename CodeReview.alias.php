@@ -254,6 +254,12 @@ $specialPageAliases['sa'] = array(
 	'RepoAdmin' => array( 'रेपोप्रचालक' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'Code' => array( 'Codice' ),
+	'RepoAdmin' => array( 'AdminRepo' ),
+);
+
 /** Slovak (slovenčina) */
 $specialPageAliases['sk'] = array(
 	'Code' => array( 'Kód', 'KontrolaKódu' ),
