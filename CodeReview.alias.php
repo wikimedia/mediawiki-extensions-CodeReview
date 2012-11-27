@@ -220,7 +220,7 @@ $specialPageAliases['nb'] = array(
 	'Code' => array( 'Kode' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'Code' => array( 'Kode_naokieken' ),
 	'RepoAdmin' => array( 'Repobeheer' ),
