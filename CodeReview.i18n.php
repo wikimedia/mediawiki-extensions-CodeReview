@@ -16697,6 +16697,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Aleksandrit
  * @author Alex Khimich
+ * @author Base
  * @author Dim Grits
  * @author NickK
  * @author Prima klasy4na
@@ -16708,6 +16709,7 @@ $messages['uk'] = array(
 	'code-rev-title' => '$1 – Перегляд версії',
 	'code-comments' => 'Коментарі',
 	'code-references' => 'Наступні версії',
+	'code-referenced' => 'Остання версія замінена наступною',
 	'code-change-status' => "змінив '''статус''' $1",
 	'code-change-tags' => "змінив '''мітки''' для $1",
 	'code-change-removed' => 'вилучено:',
@@ -16890,6 +16892,8 @@ $6',
 	'code-stats-fixme-breakdown-path' => 'Розподіл змін зі статусом "виправити" за шляхом',
 	'code-stats-fixme-path' => "Зміни статусом ''виправити'' для шляху: $1",
 	'code-stats-new-breakdown' => 'Розподіл нових змін за автором',
+	'code-stats-new-breakdown-path' => 'Розподілити нові версії за шляхами',
+	'code-stats-new-path' => 'Нові зміни для шляху: $1',
 	'code-stats-count' => 'Кількість ревізій',
 	'code-tooltip-withsummary' => 'r$1 [$2]  $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2]  $3',
@@ -16913,7 +16917,17 @@ $6',
 	'right-codereview-signoff' => 'Підтвердження змін',
 	'right-codereview-link-user' => "Зв'язок авторів з користувачами вікі-проекту",
 	'right-codereview-associate' => "Управління пов'язаними редагуваннями",
-	'right-codereview-review-own' => 'Відзначити власні зміни як «Вирішені»', # Fuzzy
+	'right-codereview-review-own' => 'Помітити власні версії як «{{int:code-status-ok}}» чи «{{int:code-status-resolved}}»',
+	'action-repoadmin' => 'керування репозиторієм коду',
+	'action-codereview-use' => 'використання Special:Code',
+	'action-codereview-add-tag' => 'додання нових міток до версій',
+	'action-codereview-remove-tag' => 'вилучення міток із версій',
+	'action-codereview-post-comment' => 'дадання коментарів до версій',
+	'action-codereview-set-status' => 'зміна статусу версій',
+	'action-codereview-signoff' => 'затвердження версій',
+	'action-codereview-link-user' => "пов'язування авторів із вікі-користувачами",
+	'action-codereview-associate' => 'керування асоціаціями версій',
+	'action-codereview-review-own' => 'позначати власні версії як «{{int:code-status-ok}}» чи «{{int:code-status-resolved}}»',
 	'specialpages-group-developer' => 'Інструменти розробника',
 	'group-svnadmins' => 'Адміністратори SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|Адміністратор SVN|Адміністраторка SVN}}',

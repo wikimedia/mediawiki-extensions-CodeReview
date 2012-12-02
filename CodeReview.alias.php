@@ -182,6 +182,11 @@ $specialPageAliases['ksh'] = array(
 	'RepoAdmin' => array( 'Repositorijum_Verwallde', 'Repusitorijum_Verwallde' ),
 );
 
+/** Cornish (kernowek) */
+$specialPageAliases['kw'] = array(
+	'Code' => array( 'Coden' ),
+);
+
 /** Ladino (Ladino) */
 $specialPageAliases['lad'] = array(
 	'Code' => array( 'Kóddiche' ),
