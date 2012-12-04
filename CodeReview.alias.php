@@ -56,7 +56,7 @@ $specialPageAliases['de'] = array(
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
 	'Code' => array( 'Kode' ),
-	'RepoAdmin' => array( 'XizmetkarêRepoy' ),
+	'RepoAdmin' => array( 'RepoyêSerkaran' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */
