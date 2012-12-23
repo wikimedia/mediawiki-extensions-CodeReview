@@ -294,7 +294,7 @@ $messages['qqq'] = array(
 
 A followed-up revision is a (older) revision that has been followed up by a (newer) revision.',
 	'code-change-added' => '{{Identical|Added}}',
-	'codereview-desc' => '{{desc}}',
+	'codereview-desc' => '{{desc|name=Code Review|url=http://www.mediawiki.org/wiki/Extension:CodeReview}}',
 	'code-need-group-with-rights' => 'Do not translate the word <code>repoadmin</code>.',
 	'code-repo-not-found' => "Message displayed when the requested repository does not exist in the wiki's repo definitions.  $1 is the name that was requested, and will be fully escaped before output.",
 	'code-tags' => '{{Identical|Tag}}',
@@ -1663,6 +1663,7 @@ $6',
  * @author DCLXVI
  * @author Spiritia
  * @author Turin
+ * @author පසිඳු කාවින්ද
  */
 $messages['bg'] = array(
 	'code' => 'Преглед на кода',
@@ -1758,6 +1759,7 @@ $messages['bg'] = array(
 	'code-release-endrev' => 'Последна редакция:',
 	'codereview-subtitle' => 'За $1',
 	'codereview-reply-link' => 'отговаряне',
+	'codereview-overview-title' => 'Общ преглед',
 	'codereview-email-subj' => '[$1 $2]: Беше добавен нов коментар',
 	'codereview-email-body' => 'Потребител „$1“ публикува коментар за $3.
 
@@ -2518,7 +2520,7 @@ $messages['ca'] = array(
 	'code-signoff-struckdate' => '$1 (ha tatxat $2)',
 	'code-pathsearch-legend' => 'Cerca revisions en aquest repositori per ruta',
 	'code-pathsearch-path' => 'Ruta:',
-	'code-pathsearch-filter' => 'Filtre aplicat:', # Fuzzy
+	'code-pathsearch-filter' => 'Filtre aplicat:',
 	'code-revfilter-cr_status' => 'Estat = $1',
 	'code-revfilter-cr_author' => 'Autor/a = $1',
 	'code-revfilter-ct_tag' => 'Etiqueta = $1',
@@ -2551,6 +2553,8 @@ $4',
 	'code-stats-header' => 'Estadístiques del repositori $1',
 	'code-stats-status-breakdown' => 'Nombre de revisions per estat',
 	'code-stats-count' => 'Nombre de revisions',
+	'code-tooltip-withsummary' => 'r$1 [$2] per $3 -$4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] per $3',
 	'repoadmin' => 'Administració del Repositori',
 	'repoadmin-new-legend' => 'Crea nou repositori',
 	'repoadmin-new-label' => 'Nom del repositori:',
@@ -2570,7 +2574,7 @@ $4',
 	'right-codereview-signoff' => 'Aprova revisions',
 	'specialpages-group-developer' => 'Eines de desenvolupador',
 	'group-svnadmins' => 'administradors SVN',
-	'group-svnadmins-member' => 'administrador SVN', # Fuzzy
+	'group-svnadmins-member' => '{{GENDER:$1|admin de SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Administradors SVN',
 );
 
@@ -2835,6 +2839,7 @@ $6',
 /** Danish (dansk)
  * @author Byrial
  * @author Peter Alberti
+ * @author Tjernobyl
  */
 $messages['da'] = array(
 	'code' => 'Kodegennemgang',
@@ -2892,6 +2897,7 @@ $messages['da'] = array(
 	'code-rev-modified-r' => 'erstattet',
 	'code-rev-modified-d' => 'fjernet',
 	'code-rev-modified-m' => 'ændret',
+	'code-rev-imagediff' => 'Billedændringer',
 	'code-rev-status' => 'Status:',
 	'code-rev-status-set' => 'Ændr status',
 	'code-rev-tags' => 'Tags:',
@@ -2918,6 +2924,7 @@ $messages['da'] = array(
 	'code-signoff-flag-inspected' => 'Inspiceret',
 	'code-signoff-flag-tested' => 'Testet',
 	'code-signoff-field-user' => 'Bruger',
+	'code-signoff-field-flag' => 'Anmeld',
 	'code-signoff-field-date' => 'Dato',
 	'code-signoff-struckdate' => '$1 (strøget $2)',
 	'code-pathsearch-legend' => 'Søg versioner i dette arkiv efter sti',
@@ -3838,7 +3845,7 @@ $messages['eo'] = array(
 	'code-need-repoadmin-rights' => 'Rajtojn de "repoadmin" permesas al uzanto krei deponejo',
 	'code-need-group-with-rights' => 'Neniu grupo kun rajtoj repoadmin ekzistas. Bonvolu aldoni unu por aldoni novan Deponejon.',
 	'code-repo-not-found' => "Dosierujo '''$1''' ne ekzistas!",
-	'code-load-diff' => 'Ŝarĝante diferencon...',
+	'code-load-diff' => 'Ŝargante diferencon...',
 	'code-notes' => 'lastaj komentoj',
 	'code-statuschanges' => 'statusaj ŝanĝoj',
 	'code-mycommits' => 'miaj publikigitaĵoj',
@@ -7651,6 +7658,8 @@ $6',
 	'code-stats-status-breakdown' => 'Jumlah revisi per kondisi',
 	'code-stats-fixme-breakdown' => 'Perincian fixme per pemilik', # Fuzzy
 	'code-stats-count' => 'Jumlah revisi',
+	'code-tooltip-withsummary' => 'r$1 [$2] oleh $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] oleh $3',
 	'repoadmin' => 'Penyimpanan Admin',
 	'repoadmin-new-legend' => 'Buat penyimpanan baru',
 	'repoadmin-new-label' => 'Nama tempat penyimpanan:',
@@ -7944,6 +7953,25 @@ $messages['io'] = array(
 	'codereview-batch-submit' => 'Sendez',
 	'codereview-email-subj' => '[$1 $2]: Nova komento adjuntita',
 	'repoadmin-edit-button' => 'O.K.',
+);
+
+/** Icelandic (íslenska)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['is'] = array(
+	'code-comments' => 'Athugasemdir',
+	'code-field-status' => 'Staða',
+	'code-field-timestamp' => 'Dagsetning',
+	'code-field-comments' => 'Athugasemdir',
+	'code-field-select' => 'Velja',
+	'code-rev-date' => 'Dagsetning:',
+	'code-rev-message' => 'Athugasemd:',
+	'code-rev-comment-preview' => 'Forskoða',
+	'code-rev-inline-preview' => 'Forskoða:',
+	'code-signoff-field-user' => 'Notandi',
+	'code-signoff-field-date' => 'Dagsetning',
+	'repoadmin-new-button' => 'Skapa',
+	'repoadmin-edit-button' => 'Í lagi',
 );
 
 /** Italian (italiano)
@@ -9922,6 +9950,7 @@ $messages['ltg'] = array(
  * @author Papuass
  */
 $messages['lv'] = array(
+	'code-comments' => 'Komentāri',
 	'code-old-status' => 'Vecais statuss',
 	'code-authors' => 'autori',
 	'code-field-author' => 'Autors',
@@ -9929,7 +9958,7 @@ $messages['lv'] = array(
 	'code-field-message' => 'Izmaiņas kopsavilkums',
 	'code-field-status' => 'Statuss',
 	'code-field-timestamp' => 'Datums',
-	'code-field-comments' => 'Piezīmes',
+	'code-field-comments' => 'Komentāri',
 	'code-field-path' => 'Ceļš',
 	'code-field-text' => 'Piezīme',
 	'code-rev-author' => 'Autors:',
@@ -15584,13 +15613,17 @@ $6',
 	'repoadmin-nav' => 'repositorieadministration',
 	'right-repoadmin' => 'Hantera kod-databaser',
 	'right-codereview-use' => 'Använda Special:Code',
-	'right-codereview-add-tag' => 'Lägga nya taggar till versioner',
+	'right-codereview-add-tag' => 'Lägg till nya taggar till versioner',
 	'right-codereview-remove-tag' => 'Ta bort taggar från versioner',
 	'right-codereview-post-comment' => 'Lägg till kommentarer till versioner',
 	'right-codereview-set-status' => 'Ändra versioners status',
 	'right-codereview-signoff' => 'Signera versioner',
 	'right-codereview-link-user' => 'Länka författare med wikianvändare',
 	'right-codereview-review-own' => 'Märk din egen revidering som "{{int:code-status-ok}}" eller "{{int:code-status-resolved}}"',
+	'action-codereview-use' => 'användning av Special:Code',
+	'action-codereview-add-tag' => 'lägg till nya taggar till versioner',
+	'action-codereview-remove-tag' => 'ta bort taggar från versioner',
+	'action-codereview-post-comment' => 'lägg till kommentarer till versioner',
 	'action-codereview-review-own' => 'märk dina egna revideringar som "{{int:code-status-ok}}" eller "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Utvecklarverktyg',
 	'group-svnadmins' => 'SVN administratörer',
@@ -15749,6 +15782,9 @@ $messages['ta'] = array(
 	'right-codereview-set-status' => 'பரிசீலனைகளுக்காண நிலைமையை மாற்று',
 	'right-codereview-link-user' => 'எழுத்தாளர்களை விக்கி பயனர்களுடன் இணை',
 	'specialpages-group-developer' => 'உருவாக்குநர் கருவிகள்',
+	'group-svnadmins' => 'SVN நிர்வாகிகள்',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN நிர்வாகி}}',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN நிர்வாகிகள்',
 );
 
 /** Telugu (తెలుగు)
