@@ -2422,6 +2422,7 @@ $6',
  * @author Paucabot
  * @author SMP
  * @author Solde
+ * @author Toniher
  */
 $messages['ca'] = array(
 	'code' => 'Revisió del Codi',
@@ -2520,7 +2521,7 @@ $messages['ca'] = array(
 	'code-signoff-struckdate' => '$1 (ha tatxat $2)',
 	'code-pathsearch-legend' => 'Cerca revisions en aquest repositori per ruta',
 	'code-pathsearch-path' => 'Ruta:',
-	'code-pathsearch-filter' => 'Filtre aplicat:',
+	'code-pathsearch-filter' => 'Mostra només:',
 	'code-revfilter-cr_status' => 'Estat = $1',
 	'code-revfilter-cr_author' => 'Autor/a = $1',
 	'code-revfilter-ct_tag' => 'Etiqueta = $1',
@@ -7207,6 +7208,19 @@ Régi státusz: $3
 Összefoglaló:
 
 $6',
+	'codereview-email-body4' => '"$1" megváltoztatta $2 státuszát erre: "$4" és megjegyzést is fűzött hozzá.
+URL: $5
+
+Régi státusz: $3
+Új státusz: $4
+
+$2 összefoglaló::
+
+$7
+
+$1 megjegyzése:
+
+$6',
 	'code-stats' => 'statisztika',
 	'code-stats-header' => 'A(z) $1-tárhely statisztikái',
 	'code-stats-main' => '$1-i állapot szerint a tárhelyen {{PLURAL:$2|egy|$2}} változat van tárolva, amiket [[Special:Code/$3/author|{{PLURAL:$4|egy|$4}} szerző]] tett közzé.',
@@ -9416,6 +9430,16 @@ $messages['ku-latn'] = array(
 	'codereview-subtitle' => 'Ji bo $1',
 	'code-stats' => 'statîstîk',
 	'repoadmin-edit-button' => 'Temam',
+);
+
+/** Kirghiz (Кыргызча)
+ * @author Growingup
+ */
+$messages['ky'] = array(
+	'code-rev-history-link' => 'тарых',
+	'code-status-new' => 'жаңы',
+	'repoadmin-new-legend' => 'Жаңы сактагычты жаратуу',
+	'repoadmin-new-button' => 'Жаратуу',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -15640,6 +15664,7 @@ $6',
 /** Swahili (Kiswahili)
  * @author Kwisha
  * @author Lloffiwr
+ * @author Stephenwanjau
  */
 $messages['sw'] = array(
 	'code-comments' => 'Maoni',
@@ -15651,13 +15676,18 @@ $messages['sw'] = array(
 	'code-author-name' => 'Ingiza jina la mtumiaji:',
 	'code-author-link' => 'weka kiungo?',
 	'code-author-unlink' => 'toa kiungo?',
+	'code-field-id' => 'Pitio',
 	'code-field-author' => 'Mwandishi',
 	'code-field-status' => 'Hadhi',
 	'code-field-timestamp' => 'Tarehe',
-	'code-field-comments' => 'Maelezo', # Fuzzy
+	'code-field-comments' => 'Maoni',
+	'code-field-path' => 'Njia',
+	'code-field-text' => 'Kidokezo',
 	'code-field-select' => 'Chagua',
+	'code-rev-author' => 'Mwandishi:',
 	'code-rev-date' => 'Tarehe:',
 	'code-rev-message' => 'Maelezo:',
+	'code-rev-rev' => 'Pitio:',
 	'code-rev-modified-a' => 'alichangia',
 	'code-rev-modified-d' => 'Imefutwa',
 	'code-rev-modified-m' => 'zilizotengenezwa',
@@ -15669,14 +15699,24 @@ $messages['sw'] = array(
 	'code-rev-history-link' => 'historia',
 	'code-status-new' => 'mpya',
 	'code-status-ok' => 'sawa',
+	'code-status-old' => 'nzee',
+	'code-signoff-flag-inspected' => 'Imekaguliwa',
+	'code-signoff-flag-tested' => 'Imejaribiwa',
 	'code-signoff-field-user' => 'Mtumiaji',
 	'code-signoff-field-date' => 'Tarehe',
+	'code-pathsearch-path' => 'Njia:',
+	'code-pathsearch-filter' => 'Onyesha pekee:',
 	'code-revfilter-cr_status' => 'Hali: $1',
 	'code-revfilter-cr_author' => 'Mwandishi = $1',
+	'code-revfilter-clear' => 'Tandua chujio',
 	'code-rev-submit' => 'Hifadhi mabadiliko',
 	'code-batch-status' => 'Badilisha hali:',
 	'codereview-batch-submit' => 'Wasilisha',
+	'code-releasenotes' => 'maelezo ya toleo',
+	'codereview-reply-link' => 'jibu',
+	'codereview-overview-title' => 'Maelezo ya jumla',
 	'code-stats' => 'takwimu',
+	'code-stats-count' => 'Nambari ya pitio',
 	'repoadmin-new-button' => 'Anzisha',
 	'repoadmin-edit-button' => 'Sawa',
 	'action-codereview-post-comment' => 'ongeza maoni kwa toleo',
