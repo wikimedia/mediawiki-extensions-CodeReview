@@ -1148,6 +1148,27 @@ $messages['az'] = array(
 	'repoadmin-edit-button' => 'OK',
 );
 
+/** South Azerbaijani (تورکجه)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['azb'] = array(
+	'code-field-author' => 'یارادیجی',
+	'code-field-status' => 'وضعیت',
+	'code-field-timestamp' => 'تاریخ',
+	'code-rev-date' => 'تاریخ:',
+	'code-rev-message' => 'آچیخلا:',
+	'code-rev-status' => 'وضعیت:',
+	'code-rev-comment-preview' => 'اؤن‌گؤستریش',
+	'code-rev-history-link' => 'گئچمیش',
+	'code-status-ok' => 'اولدو',
+	'code-signoff-field-user' => 'ایستیفاده‌چی',
+	'code-signoff-field-date' => 'تاریخ',
+	'codereview-batch-submit' => 'گؤندر',
+	'codereview-overview-title' => 'گنل باخیش',
+	'repoadmin-new-button' => 'یارات',
+	'repoadmin-edit-button' => 'اولدو',
+);
+
 /** Bashkir (башҡортса)
  * @author Assele
  * @author Haqmar
