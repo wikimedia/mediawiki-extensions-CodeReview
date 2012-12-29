@@ -2469,7 +2469,7 @@ $messages['ca'] = array(
 	'code-tags' => 'Etiquetes',
 	'code-tags-no-tags' => 'No existeixen etiquetes en aquest repositori.',
 	'code-author-haslink' => "Aquest autor està vinculat a l'usuari wiki $1",
-	'code-author-orphan' => "Aquest autor no té enllaç a un compte d'usuari wiki", # Fuzzy
+	'code-author-orphan' => "L'usuari SVG/Autor $1 no té enllaç a un compte wiki",
 	'code-author-dolink' => 'Vincula aquest autor a un usuari wiki:',
 	'code-author-alterlink' => "Canviau l'usuari wiki vinculat a aquest autor:",
 	'code-author-orunlink' => 'O desvinculau aquest usuari wiki:',
@@ -2594,6 +2594,13 @@ $4',
 	'right-codereview-post-comment' => 'Afegir comentaris a les revisions',
 	'right-codereview-set-status' => "Canviar l'estat de les revisions",
 	'right-codereview-signoff' => 'Aprova revisions',
+	'right-codereview-link-user' => 'Enllaça autors a usuaris wiki',
+	'action-codereview-add-tag' => 'afegeix noves etiquetes a les revisions',
+	'action-codereview-remove-tag' => 'elimina etiquetes de les revisions',
+	'action-codereview-post-comment' => 'afegeix comentaris a les revisions',
+	'action-codereview-set-status' => "canvia l'estat de les revisions",
+	'action-codereview-signoff' => 'aprova les revisions',
+	'action-codereview-link-user' => 'enllaça autors a usuaris wiki',
 	'specialpages-group-developer' => 'Eines de desenvolupador',
 	'group-svnadmins' => 'administradors SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|admin de SVN}}',
@@ -2860,6 +2867,7 @@ $6',
 
 /** Danish (dansk)
  * @author Byrial
+ * @author Christian List
  * @author Peter Alberti
  * @author Tjernobyl
  */
@@ -2946,7 +2954,7 @@ $messages['da'] = array(
 	'code-signoff-flag-inspected' => 'Inspiceret',
 	'code-signoff-flag-tested' => 'Testet',
 	'code-signoff-field-user' => 'Bruger',
-	'code-signoff-field-flag' => 'Anmeld',
+	'code-signoff-field-flag' => 'Marker',
 	'code-signoff-field-date' => 'Dato',
 	'code-signoff-struckdate' => '$1 (strøget $2)',
 	'code-pathsearch-legend' => 'Søg versioner i dette arkiv efter sti',
