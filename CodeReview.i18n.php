@@ -1172,6 +1172,7 @@ $messages['azb'] = array(
 /** Bashkir (башҡортса)
  * @author Assele
  * @author Haqmar
+ * @author Ләйсән
  * @author ҒатаУлла
  */
 $messages['ba'] = array(
@@ -1301,6 +1302,7 @@ $messages['ba'] = array(
 	'code-release-endrev' => 'Һуңғы өлгө:',
 	'codereview-subtitle' => '«$1» өсөн',
 	'codereview-reply-link' => 'яуапларға',
+	'codereview-overview-title' => 'Байҡау',
 	'codereview-email-subj' => '[$1 $2]: Яңы аңлатма өҫтәлде',
 	'codereview-email-body' => '"$1" ҡулланыусыһы $3 өсөн аңлатма өҫтәне.
 
@@ -5479,7 +5481,7 @@ $messages['frp'] = array(
 	'code-revfilter-cr_author' => 'Ôtor = $1',
 	'code-revfilter-ct_tag' => 'Balisa = $1',
 	'code-revfilter-clear' => 'Èfaciér lo filtro',
-	'code-rev-submit' => 'Sôvar los changements',
+	'code-rev-submit' => 'Encartar los changements',
 	'code-rev-submit-next' => 'Sôvar & problèmo aprés',
 	'code-rev-next' => 'Vesena pas solucionâ',
 	'code-batch-status' => 'Changiér l’ètat :',
@@ -14586,6 +14588,8 @@ $messages['si'] = array(
 	'action-codereview-remove-tag' => 'සංශෝධන වෙතින් ටැගයන් ඉවත් කරන්න',
 	'action-codereview-post-comment' => 'සංශෝධන මත පරිකථන එක් කරන්න',
 	'action-codereview-set-status' => 'සංශෝධනවල තත්වය වෙනස් කරන්න',
+	'action-codereview-link-user' => 'විකි පරිශීලකයන් වෙත කතුවරුන් සම්බන්ධ කරන්න',
+	'action-codereview-associate' => 'සංශෝධන ආශ්‍රයන් කළමනාකරණය කරන්න',
 	'specialpages-group-developer' => 'සංවර්ධක මෙවලම්',
 	'group-svnadmins' => 'පරිපාලකවරු',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN පරිපාලක}}',
