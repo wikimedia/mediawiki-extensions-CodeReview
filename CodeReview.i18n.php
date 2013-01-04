@@ -2443,6 +2443,7 @@ $6',
  * @author El libre
  * @author Loupeter
  * @author Paucabot
+ * @author Pitort
  * @author SMP
  * @author Solde
  * @author Toniher
@@ -2551,6 +2552,7 @@ $messages['ca'] = array(
 	'code-revfilter-clear' => 'Neteja filtre',
 	'code-rev-submit' => 'Desar canvis',
 	'code-rev-submit-next' => 'Guarda i vés al següent sense resoldre',
+	'code-rev-next' => 'Següent sense resoldre',
 	'code-batch-status' => "Canvia l'estat:",
 	'code-batch-tags' => 'Canvia etiquetes:',
 	'codereview-batch-title' => 'Canvia totes les revisions seleccionades',
@@ -2561,6 +2563,8 @@ $messages['ca'] = array(
 	'code-release-endrev' => 'Darrera rev:',
 	'codereview-subtitle' => 'Per $1',
 	'codereview-reply-link' => 'Contesta',
+	'codereview-overview-title' => 'Visió de conjunt',
+	'codereview-overview-desc' => 'Mostra una vista gràfica de conjunt de la llista',
 	'codereview-email-subj' => '[$1 $2]: Nou comentari afegit',
 	'codereview-email-body' => 'L\'usuari "$1" ha fet un comentari a $3.
 
@@ -10672,7 +10676,7 @@ $messages['ms'] = array(
 	'code-batch-tags' => 'Tukar label:',
 	'codereview-batch-title' => 'Tukar semua semakan yang dipilih',
 	'codereview-batch-submit' => 'Serahkan',
-	'code-releasenotes' => 'catatan lepasan',
+	'code-releasenotes' => 'catatan keluaran',
 	'code-release-legend' => 'Jana catatan lepasan',
 	'code-release-startrev' => 'Semakan pertama:',
 	'code-release-endrev' => 'Semakan terakhir:',
