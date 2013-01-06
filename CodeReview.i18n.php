@@ -3644,6 +3644,7 @@ $messages['ee'] = array(
  * @author Evropi
  * @author Glavkos
  * @author Omnipaedista
+ * @author Protnet
  * @author ZaDiak
  * @author Απεργός
  */
@@ -3857,7 +3858,7 @@ $6',
 	'action-codereview-add-tag' => 'προσθήκη νέων ετικετών σε αναθεωρήσεις',
 	'action-codereview-remove-tag' => 'απομάκρυνση ετικετών από αναθεωρήσεις',
 	'action-codereview-post-comment' => 'προσθήκη σχολίων σε αναθεωρήσεις',
-	'action-codereview-set-status' => 'αλλαγή status αναθεωρήσεων',
+	'action-codereview-set-status' => 'αλλαγή κατάστασης αναθεωρήσεων',
 	'specialpages-group-developer' => 'Εργαλεία προγραμματιστών',
 	'group-svnadmins' => 'διαχειριστές SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|διαχειριστής SVN}}',
