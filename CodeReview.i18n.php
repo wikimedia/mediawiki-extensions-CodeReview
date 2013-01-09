@@ -342,7 +342,8 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-signoff-field-user' => 'Table column header: name of the user that did the sign-off.',
 	'code-signoff-field-flag' => 'Table column header: "type" of sign-off. One of the code-signoff-flag-* messages, such as:
 * {{msg-mw|code-signoff-flag-inspected}}
-* {{msg-mw|code-signoff-flag-tested}}',
+* {{msg-mw|code-signoff-flag-tested}}
+{{Identical|Flag}}',
 	'code-signoff-field-date' => 'Table column header: timestamp of the sign-off. {{Identical|Date}}',
 	'code-signoff-struckdate' => 'This is displayed in the date column for a struck sign-off. $1 is the timestamp of the sign-off, $2 is the timestamp of when it was struck. Struck is the past tense of verb strike (as in delete).',
 	'code-pathsearch-path' => '{{Identical|Path}}',
@@ -356,9 +357,9 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-rev-next' => 'Caption of the button used when viewing a revision to move to the next unresolved revision.',
 	'code-rev-next-accesskey' => '{{notranslate}}',
 	'codereview-batch-submit' => '{{Identical|Submit}}',
-	'codereview-subtitle' => '{{Identical|For $1}}
-----
-$1 = Repository name',
+	'codereview-subtitle' => 'Parameters:
+$1 - repository name
+{{Identical|For $1}}',
 	'codereview-reply-link' => '{{Identical|Reply}}',
 	'codereview-overview-title' => '{{Identical|Overview}}',
 	'codereview-email-body' => 'Email body for notification about a comment on a revision.
@@ -9061,7 +9062,7 @@ $messages['ko'] = array(
 	'code-status-new' => '신규',
 	'code-status-desc-new' => '판 작업을 보류 중입니다 (기본 상태).',
 	'code-status-fixme' => '수정 필요',
-	'code-status-desc-fixme' => '판이 버그를 발견했거나 고장났습니다. 이는 고치거나 되돌려야 합니다.',
+	'code-status-desc-fixme' => '판이 버그를 발견했거나 고장났습니다. 고치거나 되돌려야 합니다.',
 	'code-status-reverted' => '되돌려짐',
 	'code-status-desc-reverted' => '판이 최근 판에 의해 완료되지 않았습니다.',
 	'code-status-resolved' => '해결됨',
