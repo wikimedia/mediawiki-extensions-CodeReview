@@ -11416,7 +11416,7 @@ $4', # Fuzzy
 	'specialpages-group-developer' => 'Developer-Warktüüch',
 );
 
-/** Nedersaksisch (Nedersaksisch)
+/** Nedersaksies (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
