@@ -225,7 +225,7 @@ $specialPageAliases['nb'] = array(
 	'Code' => array( 'Kode' ),
 );
 
-/** Nedersaksies (Nedersaksies) */
+/** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'Code' => array( 'Kode_naokieken' ),
 	'RepoAdmin' => array( 'Repobeheer' ),
