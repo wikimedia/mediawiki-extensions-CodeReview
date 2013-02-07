@@ -220,7 +220,7 @@ $specialPageAliases['mt'] = array(
 	'Code' => array( 'Kodiċi' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'Code' => array( 'Kode' ),
 );
@@ -237,7 +237,7 @@ $specialPageAliases['nl'] = array(
 	'RepoAdmin' => array( 'Repobeheer' ),
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎) */
+/** Norwegian Nynorsk (norsk nynorsk) */
 $specialPageAliases['nn'] = array(
 	'Code' => array( 'Kode' ),
 );
