@@ -330,11 +330,13 @@ See also: {{msg-mw|Code-references}}',
 	'code-status-new' => '{{Identical|New}}',
 	'code-status-reverted' => '{{Identical|Revert}}',
 	'code-status-ok' => '{{Identical|OK}}',
-	'code-signoffs' => 'A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
+	'code-signoffs' => 'A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.
+{{Identical|Sign off}}',
 	'code-signoff-legend' => 'A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
 	'code-signoff-submit' => 'Submit button text.
 
-A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
+A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.
+{{Identical|Sign off}}',
 	'code-signoff-strike' => 'Submit button that, when clicked, will cause the selected sign-offs to be struck. Struck sign-offs are visible but displayed <del>with a line through them</del>.',
 	'code-signoff-signoff' => 'Label text which is followed by a checkbox for each sign-off state and a submit button.',
 	'code-signoff-flag-inspected' => 'Type of sign-off indicating the code has been looked at.',
