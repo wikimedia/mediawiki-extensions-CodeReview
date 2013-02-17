@@ -16871,6 +16871,16 @@ $3', # Fuzzy
 	'specialpages-group-developer' => 'Geliştirici araçları',
 );
 
+/** Central Atlas Tamazight (ⵜⴰⵎⴰⵣⵉⵖⵜ)
+ * @author Tifinaghes
+ */
+$messages['tzm'] = array(
+	'code-author-link' => 'ⴰⵣⴷⴰⵢ?',
+	'code-field-path' => 'ⴰⴱⵔⵉⴷ',
+	'code-field-text' => 'ⵜⴰⵏⵏⴰⵢⵜ',
+	'code-signoff-field-flag' => 'ⴰⵎⴰⵜⴰⵔ',
+);
+
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Alfredie
  * @author Sahran
