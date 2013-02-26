@@ -323,9 +323,11 @@ See also: {{msg-mw|Code-references}}',
 	'code-rev-modified-m' => '{{Identical|Modified}}',
 	'code-rev-status' => '{{Identical|Status}}',
 	'code-rev-tags' => '{{Identical|Tag}}',
-	'code-rev-comment-preview' => '{{Identical|Preview}} Caption of the button used to preview a comment.',
+	'code-rev-comment-preview' => 'Caption of the button used to preview a comment.
+{{Identical|Preview}}',
 	'code-rev-comment-preview-accesskey' => '{{notranslate}}',
-	'code-rev-inline-preview' => '{{Identical|Preview}} Text "Preview" shown before the comment which is currently being previewed.',
+	'code-rev-inline-preview' => 'Text "Preview" shown before the comment which is currently being previewed.
+{{Identical|Preview}}',
 	'code-rev-history-link' => '{{Identical|History}}',
 	'code-status-new' => '{{Identical|New}}',
 	'code-status-reverted' => '{{Identical|Revert}}',
@@ -371,18 +373,19 @@ $1 - repository name
 * $3 - product name and revision number
 * $4 - comment text
 * $5 - commit summary',
-	'codereview-email-subj2' => 'Subject of an e-mail sent to a user whose revision has been followed upon.
-* <code>$1</code> – Repository name
-* <code>$2</code> – Number of the original revision (which has been followed upon)',
-	'codereview-email-body2' => 'Body of an e-mail sent to a user whose revision has been followed upon.
-* <code>$1</code> – User who created the follow-up revision
-* <code>$2</code> – Number of the revision that has been followed upon.
-* <code>$3</code> – URL to the new revision.
-* <code>$4</code> – Commit message of the new revision.
-* <code>$5</code> – URL to followed revision.
-* <code>$6</code> – Commit message of the followed revision.',
-	'codereview-email-subj3' => '* <code>$1</code> – Repository name
-* <code>$2</code> – Number of the revision',
+	'codereview-email-subj2' => 'Subject of an e-mail sent to a user whose revision has been followed upon. Parameters:
+* $1 – Repository name
+* $2 – Number of the original revision (which has been followed upon)',
+	'codereview-email-body2' => 'Body of an e-mail sent to a user whose revision has been followed upon. Parameters:
+* $1 – User who created the follow-up revision
+* $2 – Number of the revision that has been followed upon
+* $3 – URL to the new revision
+* $4 – Commit message of the new revision
+* $5 – URL to followed revision
+* $6 – Commit message of the followed revision',
+	'codereview-email-subj3' => 'Parameters:
+* $1 – Repository name
+* $2 – Number of the revision',
 	'codereview-email-body3' => '* $1 is a user name
 * $2 is a revision number
 * $3 is the old status

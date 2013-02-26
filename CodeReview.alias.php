@@ -307,7 +307,7 @@ $specialPageAliases['vep'] = array(
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'Code' => array( 'Mã_nguồn', 'Mã', 'Duyệt_mã' ),
-	'RepoAdmin' => array( 'Quản_lý_kho' ),
+	'RepoAdmin' => array( 'Quản_lý_kho', 'Quản_lí_kho' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */
