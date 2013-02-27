@@ -171,7 +171,7 @@ class CodeRevision {
 	 * on the wiki then it includes the repo name as a prefix to the revision ID
 	 * (separated with a period).
 	 * This ensures you get a unique reference, as the revision ID alone can be
-	 * confusing (e.g. in e-mails, page titles etc.).  If only one repository is
+	 * confusing (e.g. in emails, page titles etc.).  If only one repository is
 	 * defined then this returns the same as getIdString() as there is no ambiguity.
 	 *
 	 * @param $id int
@@ -700,7 +700,7 @@ class CodeRevision {
 		if ( $user ) {
 			$users[$user->getId()] = $user;
 		}
-		// If we've got a spam list, send e-mails to it too
+		// If we've got a spam list, send emails to it too
 		if ( $wgCodeReviewCommentWatcherEmail ) {
 			$watcher = new User();
 			$watcher->setEmail( $wgCodeReviewCommentWatcherEmail );
