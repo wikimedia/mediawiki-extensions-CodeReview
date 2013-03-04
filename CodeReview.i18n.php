@@ -7541,6 +7541,7 @@ $6',
  * @author Irwangatot
  * @author IvanLanin
  * @author Iwan Novirion
+ * @author Kenrick95
  */
 $messages['id'] = array(
 	'code' => 'Tinjauan Kode',
@@ -7629,7 +7630,7 @@ $messages['id'] = array(
 	'code-status-desc-new' => 'Revisi masih menunggu tindakan (status bawaan).',
 	'code-status-fixme' => 'perbaiki',
 	'code-status-desc-fixme' => 'Seorang peninjau menandai revisi ini sebagai penyebab bug atau rusak. Ini harus diperbaiki.', # Fuzzy
-	'code-status-reverted' => 'telah dikembalikan',
+	'code-status-reverted' => 'telah dibatalkan',
 	'code-status-desc-reverted' => 'Revisi itu dibatalkan oleh revisi selanjutnya.',
 	'code-status-resolved' => 'selesai',
 	'code-status-desc-resolved' => 'Revisi memiliki masalah yang dipecahkan oleh revisi berikutnya.',
