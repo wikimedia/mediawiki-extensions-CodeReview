@@ -157,7 +157,7 @@ class SvnImport extends Maintenance {
 			//		 which is mostly what is required, but there may be situations where
 			//		 you want to re-calculate diffs (e.g. if $wgCodeReviewMaxDiffPaths
 			//		 changes).  If these situations arise we will either want to revert
-			//		 this behaviour, or add a --force flag or something.
+			//		 this behavior, or add a --force flag or something.
 			$res = $dbw->select( 'code_rev', 'cr_id',
 				array( 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL OR cr_diff = ""' ),
 				__METHOD__,
