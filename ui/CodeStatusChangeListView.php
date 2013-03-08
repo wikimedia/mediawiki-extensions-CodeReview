@@ -59,6 +59,9 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 	}
 
 	function formatValue( $name, $value ) {
+		// Give grep a chance to find the usages:
+		// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
+		// code-status-ok, code-status-deferred, code-status-old
 		switch( $name ) {
 		case 'cpc_rev_id':
 			return Linker::link(

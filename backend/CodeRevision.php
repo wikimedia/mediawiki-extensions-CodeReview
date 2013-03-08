@@ -1374,6 +1374,9 @@ class CodeRevision {
 		if( $wgCodeReviewUDPAddress ) {
 			$url = $this->getCanonicalUrl();
 
+			// Give grep a chance to find the usages:
+			// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
+			// code-status-ok, code-status-deferred, code-status-old
 			$line = wfMessage( 'code-rev-status' )->text() . " \00314(" . $this->repo->getName() .
 				")\00303 " . RecentChange::cleanupForIRC( $wgUser->getName() ) . "\003 " .
 				/* Remove three apostrophes as they are intended for the parser  */

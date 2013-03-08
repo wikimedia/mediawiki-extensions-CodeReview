@@ -32,6 +32,8 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 
 		$linkInfo = $this->linkStatus();
 
+		// Give grep a chance to find the usages:
+		// code-author-link, code-author-unlink
 		if ( $wgUser->isAllowed( 'codereview-link-user' ) ) {
 			$repo = $this->mRepo->getName();
 			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor/link" );

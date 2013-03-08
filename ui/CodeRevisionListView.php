@@ -231,6 +231,9 @@ class CodeRevisionListView extends CodeView {
 		$options = array( Xml::option( '', $title->getPrefixedText(), $this->mStatus == '' ) );
 
 
+		// Give grep a chance to find the usages:
+		// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
+		// code-status-ok, code-status-deferred, code-status-old
 		foreach ( $states as $state ) {
 			$title = SpecialPage::getTitleFor( 'Code', $name . "/status/$state" );
 			$options[] = Xml::option(

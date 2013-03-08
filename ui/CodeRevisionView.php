@@ -703,6 +703,9 @@ class CodeRevisionView extends CodeView {
 			$line .= '<b>' . wfMessage( 'code-change-removed' )->escaped() . '</b> ';
 			// Status changes...
 			if ( $change->attrib == 'status' ) {
+				// Give grep a chance to find the usages:
+				// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
+				// code-status-ok, code-status-deferred, code-status-old
 				$line .= wfMessage( 'code-status-' . $change->removed )->escaped();
 				$line .= $change->added ? "&#160;" : ""; // spacing
 			// Tag changes
@@ -716,6 +719,9 @@ class CodeRevisionView extends CodeView {
 			$line .= '<b>' . wfMessage( 'code-change-added' )->escaped() . '</b> ';
 			// Status changes...
 			if ( $change->attrib == 'status' ) {
+				// Give grep a chance to find the usages:
+				// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
+				// code-status-ok, code-status-deferred, code-status-old
 				$line .= wfMessage( 'code-status-' . $change->added )->escaped();
 			// Tag changes...
 			} else {
