@@ -288,7 +288,7 @@ $messages['qqq'] = array(
 	'code-rev-id' => '{{notranslate}}',
 	'code-rev-title' => 'Title of code review page.
 * $1 - The name of the project being coded followed by a revision number. Example: MediaWiki r123456',
-	'code-comments' => '{{Identical|Comments}}',
+	'code-comments' => '{{Identical|Comment}}',
 	'code-references' => 'A follow-up revision is a (newer) revision that follows up a previous (older followed-up) revision.',
 	'code-referenced' => 'This is a header of a list of revisions which the currently showed revision follows up.
 
@@ -306,7 +306,7 @@ A followed-up revision is a (older) revision that has been followed up by a (new
 	'code-field-message' => 'This is probably a noun instead of verb, a column header.',
 	'code-field-status' => '{{Identical|Status}}',
 	'code-field-timestamp' => '{{Identical|Date}}',
-	'code-field-comments' => '{{Identical|Comments}}',
+	'code-field-comments' => '{{Identical|Comment}}',
 	'code-field-path' => '{{Identical|Path}}',
 	'code-field-text' => '{{Identical|Note}}',
 	'code-field-select' => '{{Identical|Select}}',
