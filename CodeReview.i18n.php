@@ -11609,7 +11609,7 @@ De gegevens kunnen uit een cache komen.',
 	'codereview-reply-link' => 'antwoorden',
 	'codereview-overview-title' => 'Overzicht',
 	'codereview-overview-desc' => 'Een grafisch overzicht van deze lijst weergeven',
-	'codereview-email-subj' => '[$1 $2]: nieuwe opmerking toegevoegd',
+	'codereview-email-subj' => '[$1 $2]: nieuwe reactie toegevoegd',
 	'codereview-email-body' => ' "$1" heeft een opmerking toegevoegd aan $3:
 
 URL: $2
@@ -11643,7 +11643,7 @@ Nieuwe status: $4
 Commitsamenvatting voor $2:
 
 $6',
-	'codereview-email-subj4' => '[$1 $2]: nieuwe opmerking toegevoegd en versiestatus gewijzigd',
+	'codereview-email-subj4' => '[$1 $2]: nieuwe reactie toegevoegd en versiestatus gewijzigd',
 	'codereview-email-body4' => '"$1" heeft de status van $2 gewijzigd naar "$4" en een opmerking toevoegd.
 URL $5
 
