@@ -13276,6 +13276,17 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'code-comments' => 'Willapuykuna',
+	'code-change-removed' => 'qichusqa:',
+	'code-change-added' => 'yapasqa:',
+	'code-old-status' => "Mawk'a kachkaynin",
+	'code-new-status' => 'Musuq kachkaynin',
+);
+
 /** Romanian (română)
  * @author Firilacroco
  * @author KlaudiuMihaila
