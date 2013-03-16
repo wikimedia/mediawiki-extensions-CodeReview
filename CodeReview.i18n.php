@@ -293,13 +293,28 @@ $messages['qqq'] = array(
 	'code-referenced' => 'This is a header of a list of revisions which the currently showed revision follows up.
 
 A followed-up revision is a (older) revision that has been followed up by a (newer) revision.',
+	'code-change-status' => 'Parameters:
+* $1 - revision ID',
+	'code-change-tags' => 'Parameters:
+* $1 - revision ID',
 	'code-change-added' => '{{Identical|Added}}',
 	'codereview-desc' => '{{desc|name=Code Review|url=http://www.mediawiki.org/wiki/Extension:CodeReview}}',
 	'code-need-group-with-rights' => 'Do not translate the word <code>repoadmin</code>.',
 	'code-repo-not-found' => "Message displayed when the requested repository does not exist in the wiki's repo definitions.  $1 is the name that was requested, and will be fully escaped before output.",
 	'code-tags' => '{{Identical|Tag}}',
+	'code-author-haslink' => 'Parameters:
+* $1 - username with link. e.g. <nowiki>[[User:Username|Username]]</nowiki>',
+	'code-author-orphan' => 'Parameters:
+* $1 - a link to Special:Code/reponame/author/authorname. link text is author name.',
+	'code-author-success' => 'Parameters:
+* $1 - a link to author page. link text is author name
+* $2 - username',
+	'code-author-unlinksuccess' => 'Parameters:
+* $1 - a link to author page. the link text is author name.',
 	'code-author-total' => 'This is a message shown above the list of contributors. An example can be found at http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author',
 	'code-author-lastcommit' => 'This is a column title in the list of contributors. An example can be found at http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author',
+	'code-browsing-path' => 'Parameters:
+* $1 - list of links to repositories',
 	'code-field-id' => '{{Identical|Revision}}',
 	'code-field-author' => '{{Identical|Author}}',
 	'code-field-user' => 'Column title (used in a table).',
@@ -323,11 +338,17 @@ See also: {{msg-mw|Code-references}}',
 	'code-rev-modified-m' => '{{Identical|Modified}}',
 	'code-rev-status' => '{{Identical|Status}}',
 	'code-rev-tags' => '{{Identical|Tag}}',
+	'code-rev-comment-by' => 'Parameters:
+* $1 - username (linked to the user page), and user-tool links',
 	'code-rev-comment-preview' => 'Caption of the button used to preview a comment.
 {{Identical|Preview}}',
 	'code-rev-comment-preview-accesskey' => '{{notranslate}}',
 	'code-rev-inline-preview' => 'Text "Preview" shown before the comment which is currently being previewed.
 {{Identical|Preview}}',
+	'code-rev-total' => 'Parameters:
+* $1 - number of revisions',
+	'code-rev-not-found' => 'Parameters:
+* $1 - revision ID',
 	'code-rev-history-link' => '{{Identical|History}}',
 	'code-status-new' => '{{Identical|New}}',
 	'code-status-reverted' => '{{Identical|Revert}}',
@@ -353,6 +374,8 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-pathsearch-path' => '{{Identical|Path}}',
 	'code-revfilter-cr_status' => '{{Identical|Status}}',
 	'code-revfilter-cr_author' => '{{Identical|Author}}',
+	'code-revfilter-ct_tag' => 'Parameters:
+* $1 - tag',
 	'code-rev-submit' => 'Caption of the button used to Save changes when viewing a revision.
 {{Identical|Save changes}}',
 	'code-rev-submit-accesskey' => '{{notranslate}}',
@@ -366,6 +389,9 @@ $1 - repository name
 {{Identical|For $1}}',
 	'codereview-reply-link' => '{{Identical|Reply}}',
 	'codereview-overview-title' => '{{Identical|Overview}}',
+	'codereview-email-subj' => 'Subject  for notification about a comment on a revision. Parameters:
+* $1 – Repository name
+* $2 – Number of the revision',
 	'codereview-email-body' => 'Email body for notification about a comment on a revision.
 
 * $1 - username
@@ -392,6 +418,9 @@ $1 - repository name
 * $4 is the new status
 * $5 is the full URL to code review
 * $6 is the commit summary for the change',
+	'codereview-email-subj4' => 'Used as email subject. Parameters:
+* $1 – Repository name
+* $2 – Number of the revision',
 	'codereview-email-body4' => '* $1 is a user name
 * $2 is a revision number
 * $3 is the old status
