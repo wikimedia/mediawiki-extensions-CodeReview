@@ -429,6 +429,8 @@ $1 - repository name
 * $6 is the commit summary for the change
 * $7 is the comment for the change',
 	'code-stats' => '{{Identical|Statistics}}',
+	'code-stats-header' => 'Used as <code><nowiki><h2></nowiki></code> heading. Parameters:
+* $1 - repository name',
 	'code-stats-main' => 'Parameters:
 * $1 - time and date when statistics was cached
 * $2 - total number of revisions
@@ -437,6 +439,10 @@ $1 - repository name
 * $5 - same as $1, but time only (optional)
 * $6 - same as $1, but date only (optional)',
 	'code-stats-status-breakdown' => 'Table header for column containing the number of revisions (commits) having some state (new, ok, reverted etc.)',
+	'code-stats-fixme-path' => 'Unused at this time. Parameters:
+* $1 - path',
+	'code-stats-new-path' => 'Unused at this time. Parameters:
+* $1 - path',
 	'code-tooltip-withsummary' => 'Used as the content of the code revision popups on the CodeReview interface.
 * $1 - Revision number
 * $2 - Revision status (ok, fixme, resolved, old, deferred)
@@ -447,7 +453,11 @@ $1 - repository name
 * $2 - Revision status (ok, fixme, resolved, old, deferred)
 * $3 - The author of the revision',
 	'repoadmin-new-button' => '{{Identical|Create}}',
+	'repoadmin-edit-legend' => 'Used as fieldset label. Parameters:
+* $1 - repository name',
 	'repoadmin-edit-button' => '{{Identical|OK}}',
+	'repoadmin-edit-sucess' => 'Used as success message. Parameters:
+* $1 - repository name',
 	'right-repoadmin' => '{{doc-right|repoadmin}}',
 	'right-codereview-use' => '{{doc-right|codereview-use}}',
 	'right-codereview-add-tag' => '{{doc-right|codereview-add-tag}}',
@@ -8505,7 +8515,7 @@ $1によるコメント:
 
 $6',
 	'code-stats' => '統計',
-	'code-stats-header' => 'リポジトリ$1の統計情報',
+	'code-stats-header' => 'リポジトリ $1 の統計情報',
 	'code-stats-main' => '$1現在、リポジトリには[[Special:Code/$3/author|$4 人の作者]]による$2個のリビジョンがあります。',
 	'code-stats-status-breakdown' => '状態ごとのリビジョン数',
 	'code-stats-fixme-breakdown' => '作者毎の要修正リビジョンの内訳',
