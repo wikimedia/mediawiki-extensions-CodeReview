@@ -2,7 +2,9 @@
 
 /**
  * This should let us test the CodeReview API
- * Broken as of 2011-09-02
+ * Broken as of 2011-09-02.
+ *
+ * @group medium
  */
 class CodeReviewApiTest extends ApiTestCase {
 
