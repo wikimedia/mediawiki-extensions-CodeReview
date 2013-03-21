@@ -12063,7 +12063,7 @@ $3', # Fuzzy
 $messages['or'] = array(
 	'code' => 'କୋଡ଼ ରିଭିଉ',
 	'code-rev-title' => '$1 - କୋଡ଼ ରିଭିଉ',
-	'code-comments' => 'ମତାମତ',
+	'code-comments' => 'ବିଷୟସୂଚୀ',
 	'code-references' => 'ସଂସ୍କରଣଗୁଡ଼ିକର ବାବଦରେ ପଛରେ ପଚରା-ଉଚରା କରନ୍ତୁ',
 	'code-change-status' => "$1ର '''ସ୍ଥିତି''' ବଦଳାଇ ଦିଆଗଲା",
 	'code-change-tags' => "$1ର '''ଚିହ୍ନ''' ବଦଳାଇ ଦିଆଗଲା",
