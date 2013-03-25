@@ -301,7 +301,33 @@ A followed-up revision is a (older) revision that has been followed up by a (new
 	'codereview-desc' => '{{desc|name=Code Review|url=http://www.mediawiki.org/wiki/Extension:CodeReview}}',
 	'code-need-group-with-rights' => 'Do not translate the word <code>repoadmin</code>.',
 	'code-repo-not-found' => "Message displayed when the requested repository does not exist in the wiki's repo definitions.  $1 is the name that was requested, and will be fully escaped before output.",
-	'code-tags' => '{{Identical|Tag}}',
+	'code-notes' => 'Used as link text.
+{{Related|Code-nav}}',
+	'code-statuschanges' => 'Used as link text.
+{{Related|Code-nav}}',
+	'code-mycommits' => 'Used as link text.
+
+The link points to the author page.
+{{Related|Code-nav}}',
+	'code-mycomments' => 'Used as link text.
+
+The link points to the comment author page.
+{{Related|Code-nav}}',
+	'code-authors' => 'Used as link text.
+
+The link points to the tags page.
+{{Related|Code-nav}}
+{{Identical|Author}}',
+	'code-status' => 'Used as link text.
+
+The link points to the statuses page.
+{{Related|Code-nav}}
+{{Identical|State}}',
+	'code-tags' => 'Used as link text.
+
+The link points to the tags page.
+{{Related|Code-nav}}
+{{Identical|Tag}}',
 	'code-author-haslink' => 'Parameters:
 * $1 - username with link. e.g. <nowiki>[[User:Username|Username]]</nowiki>',
 	'code-author-orphan' => 'Parameters:
@@ -383,7 +409,13 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-rev-submit-next-accesskey' => '{{notranslate}}',
 	'code-rev-next' => 'Caption of the button used when viewing a revision to move to the next unresolved revision.',
 	'code-rev-next-accesskey' => '{{notranslate}}',
+	'codereview-batch-title' => 'Used as fieldset label for the BatchInterface form.',
 	'codereview-batch-submit' => '{{Identical|Submit}}',
+	'code-releasenotes' => 'Used as link text.
+
+The link points to the release notes page.
+{{Related|Code-nav}}
+{{Identical|Release notes}}',
 	'codereview-subtitle' => 'Parameters:
 $1 - repository name
 {{Identical|For $1}}',
@@ -428,7 +460,11 @@ $1 - repository name
 * $5 is the full URL to code review
 * $6 is the commit summary for the change
 * $7 is the comment for the change',
-	'code-stats' => '{{Identical|Statistics}}',
+	'code-stats' => 'Used as link text.
+
+The link points to the statistics page.
+{{Related|Code-nav}}
+{{Identical|Statistics}}',
 	'code-stats-header' => 'Used as <code><nowiki><h2></nowiki></code> heading. Parameters:
 * $1 - repository name',
 	'code-stats-main' => 'Parameters:
@@ -452,12 +488,22 @@ $1 - repository name
 * $1 - Revision number
 * $2 - Revision status (ok, fixme, resolved, old, deferred)
 * $3 - The author of the revision',
+	'repoadmin' => '{{doc-special|RepoAdmin}}',
+	'repoadmin-new-legend' => 'Used as fieldset label in the "create new repository" form in Special:RepoAdmin.',
+	'repoadmin-new-label' => 'Used as label for "Repository name" input box in the "Create new repository" form in Special:RepoAdmin.',
 	'repoadmin-new-button' => '{{Identical|Create}}',
 	'repoadmin-edit-legend' => 'Used as fieldset label. Parameters:
 * $1 - repository name',
+	'repoadmin-edit-path' => 'Used as label for the "Repository path" input box in the "Edit repository" form in Special:RepoAdmin.',
+	'repoadmin-edit-bug' => 'Used as label for the "Bugzilla Path" input box in the "Edit repository" form in Special:RepoAdmin.',
+	'repoadmin-edit-view' => 'Used as label for the "ViewVC path" input box in the "Edit repository" form in Special:RepoAdmin.',
 	'repoadmin-edit-button' => '{{Identical|OK}}',
 	'repoadmin-edit-sucess' => 'Used as success message. Parameters:
 * $1 - repository name',
+	'repoadmin-nav' => 'Used as link text.
+
+The link points to Special:RepoAdmin/<code>RepositoryName</code>.
+{{Related|Code-nav}}',
 	'right-repoadmin' => '{{doc-right|repoadmin}}',
 	'right-codereview-use' => '{{doc-right|codereview-use}}',
 	'right-codereview-add-tag' => '{{doc-right|codereview-add-tag}}',
@@ -480,6 +526,7 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'action-codereview-link-user' => '{{doc-action|codereview-link-user}}',
 	'action-codereview-associate' => '{{doc-action|codereview-associate}}',
 	'action-codereview-review-own' => '{{doc-action|codereview-review-own}}',
+	'specialpages-group-developer' => '{{doc-special-group|that=are related to the extensions CodeReview and ExtensionDistributor|like=[[Special:Code]], [[Special:RepoAdmin]], [[Special:ExtensionDistributor]]}}',
 	'group-svnadmins' => '{{doc-group|svnadmins}}',
 	'group-svnadmins-member' => '{{doc-group|svnadmins|member}}',
 	'grouppage-svnadmins' => '{{doc-group|svnadmins|page}}',
@@ -8433,7 +8480,7 @@ $messages['ja'] = array(
 	'code-status-deferred' => '保留中',
 	'code-status-desc-deferred' => 'リビジョンはレビューを必要としていません。',
 	'code-status-old' => '古',
-	'code-status-desc-old' => '潜在的なバグがあるが、レビューする価値がない古いリビジョン',
+	'code-status-desc-old' => '潜在的なバグがあるが、レビューする価値がない古いリビジョンです。',
 	'code-signoffs' => 'サインオフ',
 	'code-signoff-legend' => 'サインオフを追加',
 	'code-signoff-submit' => 'サインオフ',
@@ -8528,7 +8575,7 @@ $6',
 	'code-tooltip-withsummary' => '$3 - $4 により r$1 [$2]',
 	'code-tooltip-withoutsummary' => '$3 により r$1 [$2]',
 	'repoadmin' => 'リポジトリ管理',
-	'repoadmin-new-legend' => '新規リポジトリを作成',
+	'repoadmin-new-legend' => 'リポジトリの新規作成',
 	'repoadmin-new-label' => 'リポジトリ名:',
 	'repoadmin-new-button' => '作成',
 	'repoadmin-edit-legend' => 'リポジトリ「$1」の変更',
