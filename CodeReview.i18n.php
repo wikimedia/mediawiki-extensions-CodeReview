@@ -285,6 +285,7 @@ $6',
  * @author Yekrats
  */
 $messages['qqq'] = array(
+	'code' => '{{doc-special|Code}}',
 	'code-rev-id' => '{{notranslate}}',
 	'code-rev-title' => 'Title of code review page.
 * $1 - The name of the project being coded followed by a revision number. Example: MediaWiki r123456',
