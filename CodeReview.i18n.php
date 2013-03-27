@@ -3420,7 +3420,7 @@ $messages['diq'] = array(
 	'code-rev-modified-d' => 'wedarîyo',
 	'code-rev-modified-m' => 'vurîya',
 	'code-rev-imagediff' => 'Vurnayîşê resimî',
-	'code-rev-status' => 'Statu:',
+	'code-rev-status' => 'Weziyet:',
 	'code-rev-status-set' => 'Weziyeti bıvurnê',
 	'code-rev-tags' => 'Etiketan:',
 	'code-rev-tag-add' => 'Etiketan de bike:',
@@ -11407,6 +11407,7 @@ $6',
 );
 
 /** Low German (Plattdüütsch)
+ * @author Joachim Mos
  * @author Slomox
  */
 $messages['nds'] = array(
@@ -11442,6 +11443,7 @@ $messages['nds'] = array(
 	'code-field-user' => 'Kommentator',
 	'code-field-message' => 'Commit-Kommentar',
 	'code-field-status' => 'Status',
+	'code-field-status-description' => 'Statusbeschrieven',
 	'code-field-timestamp' => 'Datum',
 	'code-field-comments' => 'Notizen', # Fuzzy
 	'code-field-path' => 'Padd',
@@ -11466,6 +11468,7 @@ $messages['nds'] = array(
 	'code-rev-tag-remove' => 'Tags rutnehmen:',
 	'code-rev-comment-by' => 'Kommentar vun $1',
 	'code-rev-comment-preview' => 'Vörschau',
+	'code-rev-inline-preview' => 'Vörschau:',
 	'code-rev-diff' => 'Verscheel',
 	'code-rev-diff-link' => 'Verscheel',
 	'code-rev-purge-link' => 'opfrischen',
@@ -11475,6 +11478,10 @@ $messages['nds'] = array(
 	'code-status-resolved' => 'lööst',
 	'code-status-ok' => 'OK',
 	'code-status-deferred' => 'trüchstellt',
+	'code-status-old' => 'oolt',
+	'code-signoff-field-user' => 'Bruker',
+	'code-signoff-field-flag' => 'Flagg',
+	'code-signoff-field-date' => 'Datum',
 	'code-pathsearch-legend' => 'In dit Repositorium na Versionen söken, na Padd',
 	'code-pathsearch-path' => 'Padd:',
 	'code-rev-submit' => 'Ännern spiekern',
@@ -11523,6 +11530,8 @@ $4', # Fuzzy
 	'right-codereview-set-status' => 'Versionsstatus ännern',
 	'right-codereview-link-user' => 'Autoren mit Wiki-Brukers verbinnen',
 	'specialpages-group-developer' => 'Developer-Warktüüch',
+	'group-svnadmins' => 'SVN-Admins',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN-Admins',
 );
 
 /** Nedersaksies (Nedersaksies)
