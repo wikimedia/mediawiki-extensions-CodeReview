@@ -172,7 +172,7 @@ $specialPageAliases['km'] = array(
 
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
-	'Code' => array( '코드검토', '코드' ),
+	'Code' => array( '코드', '코드검토' ),
 	'RepoAdmin' => array( '저장소관리자' ),
 );
 
