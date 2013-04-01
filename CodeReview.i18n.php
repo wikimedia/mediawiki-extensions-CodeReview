@@ -9539,7 +9539,7 @@ $6',
 	'right-codereview-associate' => 'Verbendunge zwesche Projrammversione verwallde',
 	'right-codereview-review-own' => 'eije Versjohne als „{{int:code-status-ok}}“ udder „{{int:code-status-resolved}}“ makeere',
 	'action-repoadmin' => 'Repositorije verwallde',
-	'action-codereview-use' => '[[Special:Code|{{#special:Code}}]] bruche', # Fuzzy
+	'action-codereview-use' => '[[Special:Code|{{#special:Code}}]] ze bruche', # Fuzzy
 	'action-codereview-add-tag' => 'neu Makeeronge för Projramm-Versione verjäve',
 	'action-codereview-remove-tag' => 'Makeerunge vun Projramm-Versione fott nämme',
 	'action-codereview-post-comment' => 'eije Kommentaare för Projramm-Versione afjävve',
