@@ -26,7 +26,7 @@ $specialPageAliases['arz'] = array(
 	'RepoAdmin' => array( 'ادارة_المستودع' ),
 );
 
-/** Assamese (অসমীয়া) */
+/** Assamese (অসমীয়া) */
 $specialPageAliases['as'] = array(
 	'Code' => array( 'কোড', 'কোডৰিভিউ' ),
 );
