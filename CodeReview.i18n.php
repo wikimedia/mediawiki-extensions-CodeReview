@@ -298,10 +298,57 @@ A followed-up revision is a (older) revision that has been followed up by a (new
 * $1 - revision ID',
 	'code-change-tags' => 'Parameters:
 * $1 - revision ID',
-	'code-change-added' => '{{Identical|Added}}',
+	'code-change-removed' => 'Followed by any one of the following:
+* {{msg-mw|Code-status-new}}
+* {{msg-mw|Code-status-fixme}}
+* {{msg-mw|Code-status-reverted}}
+* {{msg-mw|Code-status-resolved}}
+* {{msg-mw|Code-status-ok}}
+* {{msg-mw|Code-status-deferred}}
+* {{msg-mw|Code-status-old}}
+* tag name
+See also:
+* {{msg-mw|Code-change-added}}',
+	'code-change-added' => 'Followed by any one of the following:
+* {{msg-mw|Code-status-new}}
+* {{msg-mw|Code-status-fixme}}
+* {{msg-mw|Code-status-reverted}}
+* {{msg-mw|Code-status-resolved}}
+* {{msg-mw|Code-status-ok}}
+* {{msg-mw|Code-status-deferred}}
+* {{msg-mw|Code-status-old}}
+* tag name
+See also:
+* {{msg-mw|Code-change-removed}}
+{{Identical|Added}}',
+	'code-old-status' => 'Used as field label.
+{{Related|Code-field}}',
+	'code-new-status' => 'Used as field label.
+{{Related|Code-field}}',
+	'code-prop-changes' => 'Used as HTML <code><nowiki><h2></nowiki></code> heading.
+
+Followed by any one of the following messages:
+* {{msg-mw|Code-change-status}}
+* {{msg-mw|Code-change-tags}}',
 	'codereview-desc' => '{{desc|name=Code Review|url=http://www.mediawiki.org/wiki/Extension:CodeReview}}',
-	'code-need-group-with-rights' => 'Do not translate the word <code>repoadmin</code>.',
+	'code-no-repo' => 'Used as error message.
+
+Followed by any one of the following messages:
+* {{msg-mw|Code-create-repo}}
+* {{msg-mw|Code-need-repoadmin-rights}}',
+	'code-create-repo' => 'Preceded by {{msg-mw|Code-no-repo}}.',
+	'code-need-repoadmin-rights' => '{{doc-important|Do not translate <code>repoadmin</code>.}}
+"repoadmin" refers the right {{msg-mw|Right-repoadmin}}.
+
+Preceded by {{msg-mw|Code-no-repo}}.
+
+If there are no group which has "repoadmin" rights, this message is followed by the following message:
+* {{msg-mw|Code-need-group-with-rights}}',
+	'code-need-group-with-rights' => '{{doc-important|Do not translate the word <code>repoadmin</code>.}}
+
+"repoadmin" refers {{msg-mw|Right-repoadmin}}.',
 	'code-repo-not-found' => "Message displayed when the requested repository does not exist in the wiki's repo definitions.  $1 is the name that was requested, and will be fully escaped before output.",
+	'code-load-diff' => 'Used to indicate the diff is being loaded.',
 	'code-notes' => 'Used as link text.
 {{Related|Code-nav}}',
 	'code-statuschanges' => 'Used as link text.
@@ -329,42 +376,164 @@ The link points to the statuses page.
 The link points to the tags page.
 {{Related|Code-nav}}
 {{Identical|Tag}}',
+	'code-tags-no-tags' => 'Used when there are no tags in the repository.',
+	'code-authors-text' => 'Followed by {{msg-mw|Code-author-total}} and a list of the repository authors.
+
+An example can be found at [[mw:Special:Code/MediaWiki/author]].',
 	'code-author-haslink' => 'Parameters:
 * $1 - username with link. e.g. <nowiki>[[User:Username|Username]]</nowiki>',
 	'code-author-orphan' => 'Parameters:
 * $1 - a link to Special:Code/reponame/author/authorname. link text is author name.',
+	'code-author-dolink' => 'Used as fieldset label if no user is linked to this author.
+
+See also:
+* {{msg-mw|Code-author-alterlink}}',
+	'code-author-alterlink' => 'Used as fieldset label if a user is linked to this author.
+
+See also:
+* {{msg-mw|Code-author-dolink}}',
+	'code-author-orunlink' => 'Used as fieldset label.
+
+Preceded by another fieldset which has label {{msg-mw|Code-author-alterlink}}.
+
+Followed by the Submit button which has label {{msg-mw|Code-author-unlink}}.',
+	'code-author-name' => 'Used as label for the "Username" input box.
+
+Followed by the Submit button which has label {{msg-mw|Ok}}.',
 	'code-author-success' => 'Parameters:
 * $1 - a link to author page. link text is author name
 * $2 - username',
+	'code-author-link' => 'Used as link text.
+
+The link points to [[Special:Code]]/(RepoName)/author/(AuthorName)/link
+
+See also:
+* {{msg-mw|Code-author-unlink}}',
+	'code-author-unlink' => 'Used as link text.
+
+The link points to [[Special:Code]]/(RepoName)/author/(AuthorName)/link
+
+See also:
+* {{msg-mw|Code-author-link}}',
 	'code-author-unlinksuccess' => 'Parameters:
 * $1 - a link to author page. the link text is author name.',
-	'code-author-total' => 'This is a message shown above the list of contributors. An example can be found at http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author',
+	'code-author-badtoken' => "Used as error message if the edit-token doesn't match.",
+	'code-author-total' => 'This is a message shown above the list of contributors.
+
+An example can be found at [[mw:Special:Code/MediaWiki/author]].',
 	'code-author-lastcommit' => 'This is a column title in the list of contributors. An example can be found at http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author',
 	'code-browsing-path' => 'Parameters:
 * $1 - list of links to repositories',
-	'code-field-id' => '{{Identical|Revision}}',
-	'code-field-author' => '{{Identical|Author}}',
-	'code-field-user' => 'Column title (used in a table).',
-	'code-field-message' => 'This is probably a noun instead of verb, a column header.',
-	'code-field-status' => '{{Identical|Status}}',
-	'code-field-timestamp' => '{{Identical|Date}}',
-	'code-field-comments' => '{{Identical|Comment}}',
-	'code-field-path' => '{{Identical|Path}}',
-	'code-field-text' => '{{Identical|Note}}',
-	'code-field-select' => '{{Identical|Select}}',
+	'code-field-id' => 'Used as field label.
+{{Related|Code-field}}
+{{Identical|Revision}}',
+	'code-field-author' => 'Used as field label.
+{{Related|Code-field}}
+{{Identical|Author}}',
+	'code-field-user' => 'Column title (used in a table).
+{{Related|Code-field}}',
+	'code-field-message' => 'This is probably a noun instead of verb, a column header.
+{{Related|Code-field}}',
+	'code-field-status' => 'Used as field label.
+{{Related|Code-field}}
+{{Identical|Status}}',
+	'code-field-status-description' => 'Used as field label.
+{{Related|Code-field}}',
+	'code-field-timestamp' => 'Used as field label.
+
+"Date" stands for "timestamp (time and date)".
+{{Related|Code-field}}
+{{Identical|Date}}',
+	'code-field-comments' => 'Used as field label.
+{{Related|Code-field}}
+{{Identical|Comment}}',
+	'code-field-path' => 'Used as field label.
+{{Related|Code-field}}
+{{Identical|Path}}',
+	'code-field-text' => 'Used as field label.
+{{Related|Code-field}}
+{{Identical|Note}}',
+	'code-field-select' => 'Used as field label.
+{{Related|Code-field}}
+{{Identical|Select}}',
 	'code-reference-remove' => 'Caption of the button used to remove the selected (with checkboxes) revisions from the follow-up list.',
 	'code-reference-associate' => 'Label text which is followed by a text box in which the user can enter the ID of a revision to mark as a follow-up.
 
 See also: {{msg-mw|Code-references}}',
 	'code-reference-associate-submit' => 'Submit button for marking a revision as a follow-up.',
-	'code-rev-author' => '{{Identical|Author}}',
-	'code-rev-date' => '{{Identical|Date}}',
-	'code-rev-message' => '{{Identical|Comment}}',
-	'code-rev-rev' => '{{Identical|Revision}}',
-	'code-rev-modified-a' => '{{Identical|Added}}',
-	'code-rev-modified-m' => '{{Identical|Modified}}',
-	'code-rev-status' => '{{Identical|Status}}',
-	'code-rev-tags' => '{{Identical|Tag}}',
+	'code-rev-author' => 'Used as label in the table.
+{{Related|Code-rev-field}}
+{{Identical|Author}}',
+	'code-rev-date' => 'Used as label in the table.
+
+"Date" stands for "timestamp (time and date)".
+{{Related|Code-rev-field}}
+{{Identical|Date}}',
+	'code-rev-message' => 'Used as label in the table.
+{{Related|Code-rev-field}}
+{{Identical|Comment}}',
+	'code-rev-repo' => 'Used as label in the table.
+{{Related|Code-rev-field}}',
+	'code-rev-rev' => 'Used as label in the table.
+{{Related|Code-rev-field}}
+{{Identical|Revision}}',
+	'code-rev-rev-viewvc' => 'Used as link text.
+
+The link points to ViewVC (Web-based Version Control Repository Browsing).',
+	'code-rev-paths' => 'Used as label in the table.
+{{Related|Code-rev-field}}',
+	'code-rev-modified-a' => 'Used as description.
+
+Preceded by an external link.
+
+Followed by the link which is labeled {{msg-mw|Code-rev-history-link}}.
+{{Related|Code-rev-modified}}
+{{Identical|Added}}',
+	'code-rev-modified-r' => 'Used as description.
+
+Preceded by an external link.
+
+Followed by the links which are labeled {{msg-mw|Code-rev-history-link}} and {{msg-mw|Code-rev-diff-link}}.
+{{Related|Code-rev-modified}}',
+	'code-rev-modified-d' => 'Used as description.
+
+Preceded by an external link.
+
+Followed by the link which is labeled {{msg-mw|Code-rev-history-link}}.
+{{Related|Code-rev-modified}}
+{{Identical|Deleted}}',
+	'code-rev-modified-m' => 'Used as description.
+
+Preceded by an external link.
+
+Followed by the links which are labeled {{msg-mw|Code-rev-history-link}} and {{msg-mw|Code-rev-diff-link}}.
+{{Related|Code-rev-modified}}
+{{Identical|Modified}}',
+	'code-rev-imagediff' => 'Used as HTML <code><nowiki><h2></nowiki></code> heading.
+
+Followed by the "Image diffs" table which contains the following messages:
+* {{msg-mw|Code-rev-modified-a}}
+* {{msg-mw|Code-rev-modified-r}}
+* {{msg-mw|Code-rev-modified-d}}
+* {{msg-mw|Code-rev-modified-m}}',
+	'code-rev-status' => 'Used as label in the table.
+{{Related|Code-rev-field}}
+{{Identical|Status}}',
+	'code-rev-tags' => 'Used as label in the table.
+{{Related|Code-rev-field}}
+{{Identical|Tag}}',
+	'code-rev-tag-add' => 'Used as label for the "Add tags" input box.
+
+"Add tags" stands for "Tags to be added".
+
+See also:
+* {{msg-mw|Code-rev-tag-remove}}',
+	'code-rev-tag-remove' => 'Used as label for the "Remove tags" input box.
+
+"Add tags" stands for "Tags to be removed".
+
+See also:
+* {{msg-mw|Code-rev-tag-add}}',
 	'code-rev-comment-by' => 'Parameters:
 * $1 - username (linked to the user page), and user-tool links',
 	'code-rev-comment-preview' => 'Caption of the button used to preview a comment.
@@ -372,14 +541,47 @@ See also: {{msg-mw|Code-references}}',
 	'code-rev-comment-preview-accesskey' => '{{notranslate}}',
 	'code-rev-inline-preview' => 'Text "Preview" shown before the comment which is currently being previewed.
 {{Identical|Preview}}',
+	'code-rev-diff' => 'Used as HTML <code><nowiki><h2></nowiki></code> heading.
+
+Followed by the Purge link which is labeled {{msg-mw|Code-rev-purge-link}}.',
+	'code-rev-diff-link' => 'Used as external link text.
+
+The link points to the diff page on ViewVC.',
+	'code-rev-diff-too-large' => 'Used as error message if the diff is larger than <code>$wgCodeReviewMaxDiffSize</code>.',
+	'code-rev-purge-link' => 'Used as Purge link text.
+
+Preceded by {{msg-mw|Code-rev-diff}}.',
 	'code-rev-total' => 'Parameters:
 * $1 - number of revisions',
 	'code-rev-not-found' => 'Parameters:
 * $1 - revision ID',
-	'code-rev-history-link' => '{{Identical|History}}',
-	'code-status-new' => '{{Identical|New}}',
-	'code-status-reverted' => '{{Identical|Revert}}',
-	'code-status-ok' => '{{Identical|OK}}',
+	'code-rev-history-link' => 'Used as link text.
+
+The link points to [[Special:Code]].
+
+Preceded by any one of the following messages:
+* {{msg-mw|Code-rev-modified-a}}
+* {{msg-mw|Code-rev-modified-r}}
+* {{msg-mw|Code-rev-modified-d}}
+* {{msg-mw|Code-rev-modified-m}}
+{{Identical|History}}',
+	'code-status-new' => '{{Related|Code-status}}
+{{Identical|New}}',
+	'code-status-desc-new' => '{{Related|Code-status}}',
+	'code-status-fixme' => '{{Related|Code-status}}',
+	'code-status-desc-fixme' => '{{Related|Code-status}}',
+	'code-status-reverted' => '{{Related|Code-status}}
+{{Identical|Revert}}',
+	'code-status-desc-reverted' => '{{Related|Code-status}}',
+	'code-status-resolved' => '{{Related|Code-status}}',
+	'code-status-desc-resolved' => '{{Related|Code-status}}',
+	'code-status-ok' => '{{Related|Code-status}}
+{{Identical|OK}}',
+	'code-status-desc-ok' => '{{Related|Code-status}}',
+	'code-status-deferred' => '{{Related|Code-status}}',
+	'code-status-desc-deferred' => '{{Related|Code-status}}',
+	'code-status-old' => '{{Related|Code-status}}',
+	'code-status-desc-old' => '{{Related|Code-status}}',
 	'code-signoffs' => 'A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.
 {{Identical|Sign off}}',
 	'code-signoff-legend' => 'A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
@@ -398,9 +600,27 @@ A "sign-off" is a concept in code review that means that the person doing the si
 {{Identical|Flag}}',
 	'code-signoff-field-date' => 'Table column header: timestamp of the sign-off. {{Identical|Date}}',
 	'code-signoff-struckdate' => 'This is displayed in the date column for a struck sign-off. $1 is the timestamp of the sign-off, $2 is the timestamp of when it was struck. Struck is the past tense of verb strike (as in delete).',
-	'code-pathsearch-path' => '{{Identical|Path}}',
-	'code-revfilter-cr_status' => '{{Identical|Status}}',
-	'code-revfilter-cr_author' => '{{Identical|Author}}',
+	'code-pathsearch-legend' => 'Used as fieldset label in the form.',
+	'code-pathsearch-path' => 'Used as label for the "Path" input box.
+{{Identical|Path}}',
+	'code-pathsearch-filter' => 'Used as label for the "Status" select box which has the following options:
+* {{msg-mw|Code-status-new}}
+* {{msg-mw|Code-status-fixme}}
+* {{msg-mw|Code-status-reverted}}
+* {{msg-mw|Code-status-resolved}}
+* {{msg-mw|Code-status-ok}}
+* {{msg-mw|Code-status-deferred}}
+* {{msg-mw|Code-status-old}}',
+	'code-revfilter-cr_status' => 'Used as a filter.
+
+See also:
+* {{msg-mw|Code-revfilter-cr author}}
+{{Identical|Status}}',
+	'code-revfilter-cr_author' => 'Used as a filter.
+
+See also:
+* {{msg-mw|Code-revfilter-cr status}}
+{{Identical|Author}}',
 	'code-revfilter-ct_tag' => 'Parameters:
 * $1 - tag',
 	'code-rev-submit' => 'Caption of the button used to Save changes when viewing a revision.
@@ -410,6 +630,12 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-rev-submit-next-accesskey' => '{{notranslate}}',
 	'code-rev-next' => 'Caption of the button used when viewing a revision to move to the next unresolved revision.',
 	'code-rev-next-accesskey' => '{{notranslate}}',
+	'code-batch-status' => 'Used as label for the "Status" select box.
+
+Preceded by the fieldset label {{msg-mw|Codereview-batch-title}}.',
+	'code-batch-tags' => 'Followed by two input boxes which have the following labels:
+* {{msg-mw|Code-rev-tag-add}}
+* {{msg-mw|Code-rev-tag-remove}}',
 	'codereview-batch-title' => 'Used as fieldset label for the BatchInterface form.',
 	'codereview-batch-submit' => '{{Identical|Submit}}',
 	'code-releasenotes' => 'Used as link text.
@@ -417,11 +643,29 @@ A "sign-off" is a concept in code review that means that the person doing the si
 The link points to the release notes page.
 {{Related|Code-nav}}
 {{Identical|Release notes}}',
+	'code-release-legend' => 'Used as fieldset label of the form.
+
+Followed by the input box which is labeled {{msg-mw|Code-release-startrev}}.',
+	'code-release-startrev' => 'Used as label for the input box.
+
+Preceded by the fieldset label {{msg-mw|Code-release-legend}}.
+
+Followed by the input box which is labeled {{msg-mw|Code-release-endrev}}.',
+	'code-release-endrev' => 'Used as label for the input box.
+
+Preceded by the input box which is labeled {{msg-mw|Code-release-startrev}}.',
 	'codereview-subtitle' => 'Parameters:
 $1 - repository name
 {{Identical|For $1}}',
-	'codereview-reply-link' => '{{Identical|Reply}}',
-	'codereview-overview-title' => '{{Identical|Overview}}',
+	'codereview-reply-link' => 'Used as link text.
+
+The link points to [[Special:Code]]/repo/rev/reply/id
+{{Identical|Reply}}',
+	'codereview-overview-title' => 'Used as link text.
+
+The tooltip for the link is {{msg-mw|Codereview-overview-desc}}.
+{{Identical|Overview}}',
+	'codereview-overview-desc' => 'Used as tooltip for the link. Its link text is {{msg-mw|Codereview-overview-title}}.',
 	'codereview-email-subj' => 'Subject  for notification about a comment on a revision. Parameters:
 * $1 – Repository name
 * $2 – Number of the revision',
@@ -476,10 +720,19 @@ The link points to the statistics page.
 * $5 - same as $1, but time only (optional)
 * $6 - same as $1, but date only (optional)',
 	'code-stats-status-breakdown' => 'Table header for column containing the number of revisions (commits) having some state (new, ok, reverted etc.)',
+	'code-stats-fixme-breakdown' => '{{Related|Code-stats}}',
+	'code-stats-fixme-breakdown-path' => '{{Related|Code-stats}}',
 	'code-stats-fixme-path' => 'Unused at this time. Parameters:
-* $1 - path',
+* $1 - path
+{{Related|Code-stats}}',
+	'code-stats-new-breakdown' => '{{Related|Code-stats}}',
+	'code-stats-new-breakdown-path' => '{{Related|Code-stats}}',
 	'code-stats-new-path' => 'Unused at this time. Parameters:
-* $1 - path',
+* $1 - path
+{{Related|Code-stats}}',
+	'code-stats-count' => 'Used as column header in the table.
+
+Preceded by {{msg-mw|Code-field-status}} or {{msg-mw|Code-field-author}}.',
 	'code-tooltip-withsummary' => 'Used as the content of the code revision popups on the CodeReview interface.
 * $1 - Revision number
 * $2 - Revision status (ok, fixme, resolved, old, deferred)
@@ -8433,7 +8686,7 @@ $messages['ja'] = array(
 	'code-field-message' => 'コミット要約',
 	'code-field-status' => '状態',
 	'code-field-status-description' => '状態の説明',
-	'code-field-timestamp' => '日付',
+	'code-field-timestamp' => '日時',
 	'code-field-comments' => 'コメント',
 	'code-field-path' => 'パス',
 	'code-field-text' => '注記',
@@ -8442,7 +8695,7 @@ $messages['ja'] = array(
 	'code-reference-associate' => '追補版を関連付け:',
 	'code-reference-associate-submit' => '関連付け',
 	'code-rev-author' => '作者:',
-	'code-rev-date' => '日付:',
+	'code-rev-date' => '日時:',
 	'code-rev-message' => 'コメント:',
 	'code-rev-repo' => 'リポジトリ:',
 	'code-rev-rev' => 'リビジョン:',
@@ -8452,12 +8705,12 @@ $messages['ja'] = array(
 	'code-rev-modified-r' => '置換',
 	'code-rev-modified-d' => '削除',
 	'code-rev-modified-m' => '変更',
-	'code-rev-imagediff' => '画像の変更',
+	'code-rev-imagediff' => '画像の差分',
 	'code-rev-status' => '状態:',
 	'code-rev-status-set' => '状態を変更',
 	'code-rev-tags' => 'タグ:',
-	'code-rev-tag-add' => 'タグを追加:',
-	'code-rev-tag-remove' => 'タグを除去:',
+	'code-rev-tag-add' => '追加するタグ:',
+	'code-rev-tag-remove' => '除去するタグ:',
 	'code-rev-comment-by' => '$1 によるコメント',
 	'code-rev-comment-preview' => 'プレビュー',
 	'code-rev-inline-preview' => 'プレビュー:',
@@ -8504,11 +8757,11 @@ $messages['ja'] = array(
 	'code-rev-submit-next' => '保存し、次の未解決に移る',
 	'code-rev-next' => '次の未解決案件',
 	'code-batch-status' => '状態を変更:',
-	'code-batch-tags' => 'タグを変更:',
+	'code-batch-tags' => 'タグの変更:',
 	'codereview-batch-title' => '選択したリビジョンをすべて変更',
 	'codereview-batch-submit' => '送信',
 	'code-releasenotes' => 'リリースノート',
-	'code-release-legend' => 'リリースノートを生成',
+	'code-release-legend' => 'リリースノートの生成',
 	'code-release-startrev' => '開始リビジョン:',
 	'code-release-endrev' => '最終リビジョン:',
 	'codereview-subtitle' => '$1',
