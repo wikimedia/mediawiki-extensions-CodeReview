@@ -9757,8 +9757,8 @@ $7
 De Aanerkung vör di Version:
 
 $6',
-	'code-stats' => 'Statistike',
-	'code-stats-header' => 'Statistike vum Repositorijum „$1“',
+	'code-stats' => 'Schtatistike',
+	'code-stats-header' => 'Schtatistike vum Repositorijum „$1“',
 	'code-stats-main' => 'Bes aam $6 öm $5 Uhr {{PLURAL:$4|hät [[Special:Code/$3/author|eine Schriever]]|han [[Special:Code/$3/author|$4 Schriever]]}} {{PLURAL:$2|ein Änderung|$2 Änderunge}} em Repositorijum jemaat.',
 	'code-stats-status-breakdown' => 'Aanzahl Versione per Stattus',
 	'code-stats-fixme-breakdown' => 'Woh noch jet draan ze Verbessere es, opjeschlößelt noh de Schriever',
