@@ -573,7 +573,8 @@ Preceded by any one of the following messages:
 	'code-status-reverted' => '{{Related|Code-status}}
 {{Identical|Revert}}',
 	'code-status-desc-reverted' => '{{Related|Code-status}}',
-	'code-status-resolved' => '{{Related|Code-status}}',
+	'code-status-resolved' => '{{Related|Code-status}}
+{{Identical|Resolved}}',
 	'code-status-desc-resolved' => '{{Related|Code-status}}',
 	'code-status-ok' => '{{Related|Code-status}}
 {{Identical|OK}}',
