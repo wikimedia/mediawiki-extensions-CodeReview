@@ -10439,6 +10439,13 @@ $messages['mhr'] = array(
 	'repoadmin-edit-button' => 'Йӧра',
 );
 
+/** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
+ */
+$messages['min'] = array(
+	'group-svnadmins-member' => '{{GENDER:$1|admin SVN}}',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  * @author Brest
