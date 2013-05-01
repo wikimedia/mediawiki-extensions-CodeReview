@@ -13191,6 +13191,7 @@ $4',
  * @author Giro720
  * @author Hamilton Abreu
  * @author Lijealso
+ * @author Luckas
  * @author Malafaya
  * @author MetalBrasil
  * @author Waldir
@@ -13247,7 +13248,7 @@ $messages['pt'] = array(
 	'code-field-comments' => 'Comentários',
 	'code-field-path' => 'Caminho',
 	'code-field-text' => 'Nota',
-	'code-field-select' => 'Seleccionar',
+	'code-field-select' => 'Selecionar',
 	'code-reference-remove' => 'Remover as associações seleccionadas',
 	'code-reference-associate' => 'Associar à revisão de seguimento:',
 	'code-reference-associate-submit' => 'Associar',
@@ -13415,6 +13416,7 @@ $6',
  * @author Giro720
  * @author Helder.wiki
  * @author Heldergeovane
+ * @author Luckas
  * @author MetalBrasil
  * @author 555
  */
@@ -13447,7 +13449,7 @@ $messages['pt-br'] = array(
 	'code-tags-no-tags' => 'Nenhuma etiqueta existente neste repositório.',
 	'code-authors-text' => 'Abaixo encontra-se uma lista de autores do repositório, ordenados por nome de efetivação. Contas da wiki local são mostradas entre parênteses. Os dados podem provir da cache.',
 	'code-author-haslink' => 'Este autor está ligado ao usuário wiki $1',
-	'code-author-orphan' => 'O autor/utilizador do SVN, $1, não está associado a nenhuma conta da wiki',
+	'code-author-orphan' => 'O autor/usuário do SVN, $1, não está associado a nenhuma conta da wiki',
 	'code-author-dolink' => 'Ligar este autor a um usuário wiki:',
 	'code-author-alterlink' => 'Alterar o usuário wiki ligado a este autor:',
 	'code-author-orunlink' => 'Ou desligar este usuário wiki:',
