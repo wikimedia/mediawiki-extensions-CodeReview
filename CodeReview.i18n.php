@@ -18587,6 +18587,7 @@ $6',
  * @author Anakmalaysia
  * @author FireJackey
  * @author Horacewai2
+ * @author Kevinhksouth
  * @author Liangent
  * @author Mark85296341
  * @author Oapbtommy
@@ -18814,6 +18815,8 @@ $6',
 	'action-codereview-post-comment' => '向修訂添加註釋',
 	'action-codereview-set-status' => '修改修訂狀態',
 	'action-codereview-signoff' => '確認修訂',
+	'action-codereview-associate' => '管理修訂關聯',
+	'action-codereview-review-own' => '將自己的修訂標記為{{int:code-status-ok}}或{{int:code-status-resolved}}',
 	'specialpages-group-developer' => '開發者工具',
 	'group-svnadmins' => 'SVN管理員',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN管理員}}',
