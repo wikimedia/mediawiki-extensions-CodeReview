@@ -408,7 +408,8 @@ Followed by the Submit button which has label {{msg-mw|Ok}}.',
 The link points to [[Special:Code]]/(RepoName)/author/(AuthorName)/link
 
 See also:
-* {{msg-mw|Code-author-unlink}}',
+* {{msg-mw|Code-author-unlink}}
+{{Identical|Link}}',
 	'code-author-unlink' => 'Used as link text.
 
 The link points to [[Special:Code]]/(RepoName)/author/(AuthorName)/link
