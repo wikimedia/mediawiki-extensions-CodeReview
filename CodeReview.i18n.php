@@ -10020,6 +10020,7 @@ Bemierkung:
 
 $6',
 	'code-stats' => 'Statistiken',
+	'code-stats-main' => 'Den $1, waren am Repertoire $2 {{PLURAL:$2|Versioun|Versioune}} vu(n) [[Special:Code/$3/author|{{PLURAL:$4|engem Auteur|$4 Auteuren}}]].',
 	'code-stats-status-breakdown' => 'Zuel vun de Versioune pro Statut',
 	'code-stats-fixme-breakdown' => 'Opdeelung vun de FixMe-Versioune pro Auteur',
 	'code-stats-new-breakdown' => 'Opdeelung vun neie Versioune pro Auteur',
