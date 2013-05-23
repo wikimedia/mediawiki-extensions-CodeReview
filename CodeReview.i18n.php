@@ -9705,8 +9705,8 @@ Donn ein aanlääje, domet et müjjelesch wääde kann, heh e neu Repositorijum 
 	'codereview-reply-link' => 'antwoote',
 	'codereview-overview-title' => 'Övverbleck',
 	'codereview-overview-desc' => 'Donn en Övverssesch vun dä Leß als e Beld aanzeije',
-	'codereview-email-subj' => '[$1 $2]: Neu Aanmerkung dobei jedonn',
-	'codereview-email-body' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät en Aanmerkung enjedraare för $3
+	'codereview-email-subj' => '[$1 $2]: En neu Aanmärkong dobei jedonn',
+	'codereview-email-body' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät en Aanmärkong enjedraare för $3
 
 De janze URL es: $2
 
@@ -9714,7 +9714,7 @@ En et Logbooch hät {{GENDER:$1|hä|et|dä Metmaacher|sei|et}} jeschrevve:
 
 $5
 
-De Aanmerkung es:
+De Aanmärkong es:
 
 $4',
 	'codereview-email-subj2' => '[$1 $2]: De Änderunge donoh',
@@ -9722,11 +9722,11 @@ $4',
 
 Dä kumplätte URL vun dä Version:
 $5
-De Aanmerkung em Logbooch dohzo:
+De Aanmärkong em Logbooch dohzo:
 
 $6
 
-Dä kumplätte URL vun dä neue Fassung:
+Dä kumplätte URL vun dä neue Faßßong:
 $3
 Dä Endrach em Logbooch dohzo:
 
@@ -9738,25 +9738,25 @@ Dä wohr: $3
 un es jäz: $4
 
 Dä kumplätte URL es: $5
-De Aanmerkung em Logbooch dozo:
+De Aanmärkong em Logbooch dozo:
 
 $6',
-	'codereview-email-subj4' => '[$1 $2]: Neu Aanmerkung dobei jedonn, un der Stattus verändert',
-	'codereview-email-body4' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät von de Version $2 der Stattus verändert.
+	'codereview-email-subj4' => '[$1 $2]: En neu Aanmärkong dobei jedonn, un der Stattus verändert',
+	'codereview-email-body4' => '{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät von de Värsjohn $2 der Stattus verändert.
 
 Dä wohr: $3
 un es jäz: $4
 
-{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät och en Aanmerkung dobei jedonn.
+{{GENDER:$1|Dä|Et|Dä Metmaacher|De|Dat}} "$1" hät och en Aanmärkong dobei jedonn.
 
 Dä kumplätte URL:
 $5
 
-De Aanmerkung em Logbooch:
+De Aanmärkong em Logbooch:
 
 $7
 
-De Aanerkung vör di Version:
+De Aanmärkong vör di Version:
 
 $6',
 	'code-stats' => 'Schtatistike',
