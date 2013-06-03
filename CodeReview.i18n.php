@@ -4182,6 +4182,7 @@ $6',
 	'code-stats-main' => 'Από τις $1, το αποθηκευτήριο περιέχει $2 {{PLURAL:$2|αναθεώρηση|αναθεωρήσεις}} από [[Special:Code/$3/author|$4 {{PLURAL:$4|συγγραφέα|συγγραφείς}}]].',
 	'code-stats-status-breakdown' => 'Αριθμός αναθεωρήσεων ανά κατάσταση',
 	'code-stats-new-breakdown' => 'Κατανομή των νέων αναθεωρήσεων ανά συγγραφέα',
+	'code-stats-new-breakdown-path' => 'Κατανομή νέων αναθεωρήσεων ανά διαδρομή',
 	'code-stats-count' => 'Αριθμός αναθεωρήσεων',
 	'code-tooltip-withsummary' => 'r$1 [$2] σπό $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] σπό $3',
@@ -9345,8 +9346,8 @@ $messages['ko'] = array(
 	'code-comments' => '덧글',
 	'code-references' => '추적 수정',
 	'code-referenced' => '이 판을 추적하는 지난 판',
-	'code-change-status' => "제$1판의 '''상태'''를 바꿈",
-	'code-change-tags' => "제$1판의 '''태그'''를 바꿈",
+	'code-change-status' => "$1 판의 '''상태'''를 바꿈",
+	'code-change-tags' => "$1 판의 '''태그'''를 바꿈",
 	'code-change-removed' => '제거:',
 	'code-change-added' => '추가:',
 	'code-old-status' => '바꾸기 전 상태',
@@ -9421,7 +9422,7 @@ $messages['ko'] = array(
 	'code-rev-diff-too-large' => '이 비교는 너무 커 출력하지 못합니다',
 	'code-rev-purge-link' => '새로 고침',
 	'code-rev-total' => '결과의 총 개수: $1',
-	'code-rev-not-found' => "제'''$1'''판이 존재하지 않습니다!",
+	'code-rev-not-found' => "'''$1''' 판이 존재하지 않습니다!",
 	'code-rev-history-link' => '역사',
 	'code-status-new' => '신규',
 	'code-status-desc-new' => '판 작업을 보류 중입니다 (기본 상태).',
@@ -9436,7 +9437,7 @@ $messages['ko'] = array(
 	'code-status-deferred' => '보류됨',
 	'code-status-desc-deferred' => '판이 검토를 필요하지 않습니다.',
 	'code-status-old' => '오래됨',
-	'code-status-desc-old' => '잠재적인 버그가 있는 오래된 개정이지만 그들이 검토하는 노력을 할 가치가 없습니다.',
+	'code-status-desc-old' => '잠재적인 버그가 있는 오래된 판이지만, 그들이 검토하는 노력을 할 가치가 없습니다.',
 	'code-signoffs' => '사인 오프',
 	'code-signoff-legend' => '사인 오프 추가',
 	'code-signoff-submit' => '사인 오프',
@@ -9470,11 +9471,11 @@ $messages['ko'] = array(
 	'codereview-reply-link' => '답변',
 	'codereview-overview-title' => '둘러보기',
 	'codereview-overview-desc' => '이 목록의 그래픽 개요를 보기',
-	'codereview-email-subj' => '[$1] [$2판]: 새 의견이 추가되었습니다.',
-	'codereview-email-body' => '"$1" 사용자가 $3판에 대해 의견을 올렸습니다.
+	'codereview-email-subj' => '[$1 $2]: 새 의견이 추가되었습니다',
+	'codereview-email-body' => '"$1" 사용자가 $3 판에 의견을 게시했습니다.
 URL: $2
 
-$3판에 대한 요약:
+$3 판에 대한 요약:
 
 $5
 
@@ -9493,14 +9494,14 @@ $6
 "$1" 사용자에 의한 추적 요약:
 
 $4',
-	'codereview-email-subj3' => '[$1 $2]: 개정판 상태가 바뀌었습니다',
-	'codereview-email-body3' => '"$1" 사용자가 $2판의 상태를 "$4"로 바꾸었습니다.
+	'codereview-email-subj3' => '[$1 $2]: 판 상태가 바뀌었습니다',
+	'codereview-email-body3' => '"$1" 사용자가 $2 판의 상태를 "$4"로 바꾸었습니다.
 URL: $5
 
 이전 상태: $3
 바뀐 상태: $4
 
-$2판에 대한 커밋 요약:
+$2 판에 대한 커밋 요약:
 
 $6',
 	'codereview-email-subj4' => '[$1 $2]: 새 덧글이 추가되었고 판 상태가 바뀌었습니다',
@@ -9549,7 +9550,7 @@ $6',
 	'right-codereview-set-status' => '판의 상태를 바꾸기',
 	'right-codereview-signoff' => '판에 대해 사인 오프',
 	'right-codereview-link-user' => '만든이를 위키 사용자로 링크',
-	'right-codereview-associate' => '개정판 단체 관리',
+	'right-codereview-associate' => '판 연관 관리',
 	'right-codereview-review-own' => '"{{int:code-status-ok}}" 또는 "{{int:code-status-resolved}}"에 대해 자신의 판을 표시',
 	'action-repoadmin' => '코드 저장소 관리',
 	'action-codereview-use' => 'Special:Code 사용',
@@ -9559,7 +9560,7 @@ $6',
 	'action-codereview-set-status' => '판의 상태 바꾸기',
 	'action-codereview-signoff' => '판에 대해 사인 오프',
 	'action-codereview-link-user' => '위키 사용자에게 만든이 링크',
-	'action-codereview-associate' => '개정판 단체 관리',
+	'action-codereview-associate' => '판 연관 관리',
 	'action-codereview-review-own' => '"{{int:code-status-ok}}" 또는 "{{int:code-status-resolved}}"에 대해 자신의 판을 표시',
 	'specialpages-group-developer' => '개발자 도구',
 	'group-svnadmins' => 'SVN 관리자',
@@ -18601,6 +18602,7 @@ $6',
  * @author Anakmalaysia
  * @author FireJackey
  * @author Horacewai2
+ * @author Justincheng12345
  * @author Kevinhksouth
  * @author Liangent
  * @author Mark85296341
@@ -18829,6 +18831,7 @@ $6',
 	'action-codereview-post-comment' => '向修訂添加註釋',
 	'action-codereview-set-status' => '修改修訂狀態',
 	'action-codereview-signoff' => '確認修訂',
+	'action-codereview-link-user' => '將作者與維基用戶聯結',
 	'action-codereview-associate' => '管理修訂關聯',
 	'action-codereview-review-own' => '將自己的修訂標記為{{int:code-status-ok}}或{{int:code-status-resolved}}',
 	'specialpages-group-developer' => '開發者工具',
