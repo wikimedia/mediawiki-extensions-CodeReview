@@ -1437,7 +1437,7 @@ $4', # Fuzzy
 	'specialpages-group-developer' => 'أدوات المطورين',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  */
 $messages['as'] = array(
@@ -4450,6 +4450,7 @@ $6',
  * @author Diego Grez
  * @author Imre
  * @author Locos epraix
+ * @author MarcoAurelio
  * @author McDutchie
  * @author MetalBrasil
  * @author Omnipaedista
@@ -11433,7 +11434,7 @@ $messages['nah'] = array(
 	'code-status-ok' => 'quēmah',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Danmichaelo
  * @author Event
  * @author Laaknor
@@ -11798,7 +11799,7 @@ $4', # Fuzzy
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Admins',
 );
 
-/** Nedersaksies (Nedersaksies)
+/** Low Saxon (Netherlands) (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
@@ -12375,7 +12376,7 @@ $3', # Fuzzy
 	'specialpages-group-developer' => 'Aisinas del desvolopaire',
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Ansumang
  * @author Jnanaranjan Sahu
  * @author Odisha1
