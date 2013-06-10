@@ -184,7 +184,7 @@ $specialPageAliases['ksh'] = array(
 
 /** Cornish (kernowek) */
 $specialPageAliases['kw'] = array(
-	'Code' => array( 'Coden' ),
+	'Code' => array( 'Koden' ),
 );
 
 /** Ladino (Ladino) */

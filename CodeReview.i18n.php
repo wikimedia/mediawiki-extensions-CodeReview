@@ -2967,8 +2967,12 @@ $4',
 
 /** Chechen (нохчийн)
  * @author Sasan700
+ * @author Умар
  */
 $messages['ce'] = array(
+	'code-field-timestamp' => 'Терахь',
+	'code-rev-date' => 'Терахь:',
+	'code-revfilter-cr_status' => 'Хьал = $1',
 	'codereview-reply-link' => 'жоп ло',
 );
 
@@ -9819,6 +9823,7 @@ $6',
  * @author Welathêja
  */
 $messages['ku-latn'] = array(
+	'code-comments' => 'Şîrove',
 	'code-change-added' => 'hat zêdekirin:',
 	'code-old-status' => 'Rewşa kevn',
 	'code-new-status' => 'Rewşa nû',
@@ -9827,17 +9832,22 @@ $messages['ku-latn'] = array(
 	'code-field-timestamp' => 'Dem',
 	'code-rev-date' => 'Dîrok:',
 	'code-rev-message' => 'Şîrove:',
+	'code-rev-modified-d' => 'hate jêbirin',
+	'code-rev-modified-m' => 'hate guherandin',
 	'code-rev-comment-preview' => 'Pêşdîtin',
 	'code-rev-inline-preview' => 'Pêşdîtin:',
+	'code-rev-diff-link' => 'cudahî',
+	'code-rev-history-link' => 'dîrok',
 	'code-status-new' => 'nû',
-	'code-status-ok' => 'temam',
+	'code-status-ok' => 'baş e',
 	'code-status-old' => 'kevn',
 	'code-signoff-flag-tested' => 'Hat ceribandin',
 	'code-signoff-field-user' => 'Bikarhêner',
+	'code-rev-submit' => 'Guhertinan tomar bike',
 	'codereview-batch-submit' => 'Tomar bike',
 	'codereview-subtitle' => 'Ji bo $1',
 	'code-stats' => 'statîstîk',
-	'repoadmin-edit-button' => 'Temam',
+	'repoadmin-edit-button' => 'Baş e',
 );
 
 /** Kirghiz (Кыргызча)
@@ -10298,6 +10308,7 @@ $6',
 
 /** Lithuanian (lietuvių)
  * @author Eitvys200
+ * @author Mantak111
  * @author Matasg
  */
 $messages['lt'] = array(
@@ -10310,6 +10321,7 @@ $messages['lt'] = array(
 	'code-new-status' => 'Naujas statusas',
 	'code-notes' => 'naujausi komentarai',
 	'code-statuschanges' => 'būsenos pakitimai',
+	'code-mycommits' => 'mano įsipareigojimai',
 	'code-mycomments' => 'mano komentarai',
 	'code-authors' => 'autoriai',
 	'code-status' => 'valstijos',
@@ -10317,6 +10329,7 @@ $messages['lt'] = array(
 	'code-author-name' => 'Įveskite vartotojo vardą:',
 	'code-author-success' => 'Autorius  $1  buvo susietas su wiki vartotoju $2',
 	'code-author-link' => 'nuorodą?',
+	'code-field-id' => 'Peržiūros',
 	'code-field-author' => 'Autorius',
 	'code-field-user' => 'Komentatorius',
 	'code-field-status' => 'Būsena',
