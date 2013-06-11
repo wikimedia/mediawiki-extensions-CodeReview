@@ -10378,11 +10378,17 @@ $messages['lt'] = array(
 	'codereview-batch-submit' => 'Siųsti',
 	'codereview-subtitle' => '$1',
 	'codereview-reply-link' => 'atsakyti',
+	'codereview-overview-title' => 'Apžvalga',
 	'codereview-email-subj' => '[ $1 $2 ]: Pridėtas naujas komentaras',
 	'code-stats' => 'statistika',
+	'repoadmin' => 'Saugyklos administracija',
+	'repoadmin-new-legend' => 'Sukurti naują saugyklą',
 	'repoadmin-new-button' => 'Sukurti',
 	'repoadmin-edit-button' => 'Gerai',
+	'specialpages-group-developer' => 'Kūrėjo įrankai',
 	'group-svnadmins' => 'SVN administratoriai',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN administratorius}}',
+	'grouppage-svnadmins' => '{{ns:project}}: SVN administratoriai',
 );
 
 /** Latgalian (latgaļu)
