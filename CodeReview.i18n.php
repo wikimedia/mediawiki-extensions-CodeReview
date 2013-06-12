@@ -2972,6 +2972,7 @@ $4',
 $messages['ce'] = array(
 	'code-field-timestamp' => 'Терахь',
 	'code-rev-date' => 'Терахь:',
+	'code-signoff-field-date' => 'Терахь',
 	'code-revfilter-cr_status' => 'Хьал = $1',
 	'codereview-reply-link' => 'жоп ло',
 );
@@ -14598,7 +14599,7 @@ $6',
 	'right-codereview-review-own' => 'Означованя властных ревізій як „{{int:code-status-ok}}“ або „{{int:code-status-resolved}}“',
 	'specialpages-group-developer' => 'Інштрументы вывоя',
 	'group-svnadmins' => 'SVN адміністраторы',
-	'group-svnadmins-member' => 'SVN адміністратор', # Fuzzy
+	'group-svnadmins-member' => '{{GENDER:$1|адміністратор|адміністраторка|адміністраторы}} SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN адміністраторы',
 );
 
