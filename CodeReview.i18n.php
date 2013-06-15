@@ -15970,6 +15970,7 @@ $4',
  * @author Fluff
  * @author Gabbe.g
  * @author GameOn
+ * @author Jopparn
  * @author Lokal Profil
  * @author Najami
  * @author Per
@@ -15991,6 +15992,7 @@ $messages['sv'] = array(
 	'code-prop-changes' => 'Logg för status & taggning',
 	'codereview-desc' => '[[Special:Code|Kodgranskningsverktyg]] med [[Special:RepoAdmin|stöd för Subversion]]',
 	'code-no-repo' => 'Ingen databas konfigurerad!',
+	'code-create-repo' => 'Gå till [[Special:RepoAdmin|RepoAdmin]] för att skapa en databas',
 	'code-repo-not-found' => "Förrådet '''$1''' finns inte!",
 	'code-load-diff' => 'Ladda skillnad...',
 	'code-notes' => 'senaste kommentarer',
