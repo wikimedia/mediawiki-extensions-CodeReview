@@ -2974,6 +2974,7 @@ $messages['ce'] = array(
 	'code-rev-date' => 'Терахь:',
 	'code-signoff-field-date' => 'Терахь',
 	'code-revfilter-cr_status' => 'Хьал = $1',
+	'codereview-batch-submit' => 'ДӀадахьийта',
 	'codereview-reply-link' => 'жоп ло',
 );
 
@@ -13428,10 +13429,10 @@ $6',
 	'right-codereview-signoff' => 'Aprovação de revisões',
 	'right-codereview-link-user' => 'Associar autores a utilizadores wiki',
 	'right-codereview-associate' => 'Administrar a associação de revisões',
-	'right-codereview-review-own' => 'Marcar as suas próprias revisões como OK ou Resolvido', # Fuzzy
+	'right-codereview-review-own' => 'Marcar as suas próprias revisões como "{{int:code-status-ok}}" or "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Ferramentas de desenvolvimento',
 	'group-svnadmins' => 'Administradores do SVN',
-	'group-svnadmins-member' => 'Administrador do SVN', # Fuzzy
+	'group-svnadmins-member' => '{{GENDER:$1|Administrador|Administradora}} do SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:Administradores do SVN',
 );
 
