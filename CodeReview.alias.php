@@ -47,6 +47,11 @@ $specialPageAliases['bs'] = array(
 	'RepoAdmin' => array( 'RepoAdministracija' ),
 );
 
+/** Chechen (нохчийн) */
+$specialPageAliases['ce'] = array(
+	'Code' => array( 'Ишар' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'Code' => array( 'Quelltext', 'Quelltextprüfung' ),
