@@ -308,7 +308,8 @@ A followed-up revision is a (older) revision that has been followed up by a (new
 * {{msg-mw|Code-status-old}}
 * tag name
 See also:
-* {{msg-mw|Code-change-added}}',
+* {{msg-mw|Code-change-added}}
+{{Identical|Removed}}',
 	'code-change-added' => 'Followed by any one of the following:
 * {{msg-mw|Code-status-new}}
 * {{msg-mw|Code-status-fixme}}
@@ -520,6 +521,7 @@ Followed by the "Image diffs" table which contains the following messages:
 	'code-rev-status' => 'Used as label in the table.
 {{Related|Code-rev-field}}
 {{Identical|Status}}',
+	'code-rev-status-set' => '{{Identical|Change status}}',
 	'code-rev-tags' => 'Used as label in the table.
 {{Related|Code-rev-field}}
 {{Identical|Tag}}',
@@ -634,7 +636,8 @@ See also:
 	'code-rev-next-accesskey' => '{{notranslate}}',
 	'code-batch-status' => 'Used as label for the "Status" select box.
 
-Preceded by the fieldset label {{msg-mw|Codereview-batch-title}}.',
+Preceded by the fieldset label {{msg-mw|Codereview-batch-title}}.
+{{Identical|Change status}}',
 	'code-batch-tags' => 'Followed by two input boxes which have the following labels:
 * {{msg-mw|Code-rev-tag-add}}
 * {{msg-mw|Code-rev-tag-remove}}',
