@@ -597,7 +597,8 @@ A "sign-off" is a concept in code review that means that the person doing the si
 	'code-signoff-signoff' => 'Label text which is followed by a checkbox for each sign-off state and a submit button.',
 	'code-signoff-flag-inspected' => 'Type of sign-off indicating the code has been looked at.',
 	'code-signoff-flag-tested' => 'Type of sign-off indicating the code has been tested.',
-	'code-signoff-field-user' => 'Table column header: name of the user that did the sign-off.',
+	'code-signoff-field-user' => 'Table column header: name of the user that did the sign-off.
+{{Identical|User}}',
 	'code-signoff-field-flag' => 'Table column header: "type" of sign-off. One of the code-signoff-flag-* messages, such as:
 * {{msg-mw|code-signoff-flag-inspected}}
 * {{msg-mw|code-signoff-flag-tested}}
