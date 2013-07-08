@@ -2980,6 +2980,7 @@ $messages['ce'] = array(
 	'code-revfilter-cr_status' => 'Хьал = $1',
 	'codereview-batch-submit' => 'ДӀадахьийта',
 	'codereview-reply-link' => 'жоп ло',
+	'codereview-overview-title' => 'Гучé',
 );
 
 /** Sorani Kurdish (کوردی)
@@ -10062,6 +10063,7 @@ $6',
 	'action-codereview-post-comment' => "Bemierkungen iwwer d'Versiounen derbäisetzen",
 	'action-codereview-set-status' => 'Status vun der Versioun änneren',
 	'action-codereview-link-user' => 'Auteure mat Wiki-Benotzer verbannen (verlinken)',
+	'action-codereview-review-own' => 'markéiert Är eege Versiounen als "{{int:code-status-ok}}" oder "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Handwierksgeschir fir Entwéckler (Programméierer)',
 	'group-svnadmins' => 'SVN-Administrateuren',
 	'group-svnadmins-member' => '{{GENDER:$1|SVN-Administrateur|SVN-Administratrice}}',
