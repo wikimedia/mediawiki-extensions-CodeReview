@@ -49,7 +49,7 @@ $specialPageAliases['bs'] = array(
 
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
-	'Code' => array( 'Ишар' ),
+	'Code' => array( 'Код' ),
 );
 
 /** German (Deutsch) */
