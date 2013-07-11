@@ -5022,6 +5022,7 @@ $4', # Fuzzy
  * @author Leyth
  * @author Mardetanha
  * @author Mjbmr
+ * @author Reza1615
  * @author Sahim
  * @author Wayiran
  * @author ZxxZxxZ
@@ -5031,6 +5032,7 @@ $messages['fa'] = array(
 	'code-rev-title' => 'بازبینی کد - $1',
 	'code-comments' => 'توضیحات',
 	'code-references' => 'رسیدگی به پیگیری',
+	'code-referenced' => 'ارسال نسخه برای این پیگیری در',
 	'code-change-status' => "'''وضعیت''' $1 را تغییر داد",
 	'code-change-tags' => "'''برچسب''' را برای $1 تغییر داد",
 	'code-change-removed' => 'حذف:',
@@ -5080,6 +5082,7 @@ $messages['fa'] = array(
 	'code-field-text' => 'نکته',
 	'code-field-select' => 'انتخاب',
 	'code-reference-remove' => 'حذف انجمن‌های انتخاب شده',
+	'code-reference-associate' => 'پیگیری وابسته نسخه:',
 	'code-reference-associate-submit' => 'یکپارچه کردن',
 	'code-rev-author' => 'مولف:',
 	'code-rev-date' => 'تاریخ:',
@@ -5213,8 +5216,11 @@ $6',
 	'code-stats-main' => 'از تاریخ $1، انبار دارای $2 نسخه توسط [[Special:Code/$3/author|$4 نویسنده]] است.',
 	'code-stats-status-breakdown' => 'تعداد بازبینی‌ها در هر وضعیت',
 	'code-stats-fixme-breakdown' => 'تفکیک از متعادل‌سازی نسخه‌ها توسط مؤلف',
+	'code-stats-fixme-breakdown-path' => 'تفکیک نسخه‌های fixme بر اساس مسیر',
+	'code-stats-fixme-path' => 'نسخه‌های Fixme برای مسیر: $1',
 	'code-stats-new-breakdown' => 'تفکیک نسخه‌های جدید بر اساس هر مؤلف',
 	'code-stats-new-breakdown-path' => 'تفکیک بررسی‌های جدید بر اساس مسیر',
+	'code-stats-new-path' => 'نسخه‌های جدید برای مسیر: $1',
 	'code-stats-count' => 'تعداد نسخه‌ها',
 	'code-tooltip-withsummary' => 'r$1 [$2] توسط $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] توسط $3',
@@ -5245,7 +5251,9 @@ $6',
 	'action-codereview-remove-tag' => 'برداشتن برچسب از نسخه‌ها',
 	'action-codereview-post-comment' => 'افزودن توضیحات به نسخه‌ها',
 	'action-codereview-set-status' => 'تغییر وضعیت نسخه‌ها',
+	'action-codereview-signoff' => 'تثبیت نسخه‌ها',
 	'action-codereview-link-user' => 'پیوند کردن نویسندگان به کاربران ویکی',
+	'action-codereview-associate' => 'مدیریت نسخه‌های مرتبط',
 	'action-codereview-review-own' => 'نسخه‌های خود را به عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت گذاری کنید',
 	'specialpages-group-developer' => 'ابزارهای توسعه‌دهندگان',
 	'group-svnadmins' => 'مدیران اس‌وی‌ان',
