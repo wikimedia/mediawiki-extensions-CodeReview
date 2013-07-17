@@ -2975,7 +2975,10 @@ $4',
  */
 $messages['ce'] = array(
 	'code-field-timestamp' => 'Терахь',
+	'code-reference-remove' => 'ДӀаяха хаьржинарш',
 	'code-rev-date' => 'Терахь:',
+	'code-rev-tag-add' => 'ТӀетоха билгало:',
+	'code-rev-tag-remove' => 'ДӀаяккха билгало:',
 	'code-signoff-field-date' => 'Терахь',
 	'code-revfilter-cr_status' => 'Хьал = $1',
 	'codereview-batch-submit' => 'ДӀадахьийта',
