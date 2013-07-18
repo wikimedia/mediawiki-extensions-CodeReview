@@ -3237,6 +3237,19 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Správci SVN',
 );
 
+/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+ * @author ОйЛ
+ */
+$messages['cu'] = array(
+	'code-authors' => 'творьци',
+	'code-field-author' => 'творьць',
+	'code-rev-author' => 'творьць :',
+	'code-rev-history-link' => 'їсторїꙗ',
+	'code-signoff-field-user' => 'польꙃєватєл҄ь',
+	'code-stats' => 'статїстїка',
+	'repoadmin-new-button' => 'сътворѥниѥ',
+);
+
 /** Danish (dansk)
  * @author Byrial
  * @author Christian List
