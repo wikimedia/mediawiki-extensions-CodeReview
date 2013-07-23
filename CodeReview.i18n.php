@@ -2974,13 +2974,16 @@ $4',
  * @author Умар
  */
 $messages['ce'] = array(
+	'code-tags' => 'билгалонаш',
 	'code-field-timestamp' => 'Терахь',
 	'code-reference-remove' => 'ДӀаяха хаьржинарш',
 	'code-rev-date' => 'Терахь:',
-	'code-rev-tag-add' => 'ТӀетоха билгало:',
-	'code-rev-tag-remove' => 'ДӀаяккха билгало:',
+	'code-rev-tags' => 'Билгалонаш:',
+	'code-rev-tag-add' => 'ТӀетоха билгалонаш:',
+	'code-rev-tag-remove' => 'ДӀаяккха билгалонаш:',
 	'code-signoff-field-date' => 'Терахь',
 	'code-revfilter-cr_status' => 'Хьал = $1',
+	'code-batch-tags' => 'Хийца билгалонаш:',
 	'codereview-batch-submit' => 'ДӀадахьийта',
 	'codereview-reply-link' => 'жоп ло',
 	'codereview-overview-title' => 'Гучé',
