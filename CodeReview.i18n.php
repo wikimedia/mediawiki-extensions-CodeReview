@@ -2985,6 +2985,7 @@ $messages['ce'] = array(
 	'code-revfilter-cr_status' => 'Хьал = $1',
 	'code-batch-tags' => 'Хийца билгалонаш:',
 	'codereview-batch-submit' => 'ДӀадахьийта',
+	'codereview-subtitle' => 'цунна $1',
 	'codereview-reply-link' => 'жоп ло',
 	'codereview-overview-title' => 'Гучé',
 );
@@ -3249,6 +3250,7 @@ $messages['cu'] = array(
 	'code-rev-author' => 'творьць :',
 	'code-rev-history-link' => 'їсторїꙗ',
 	'code-signoff-field-user' => 'польꙃєватєл҄ь',
+	'code-revfilter-cr_author' => 'творьць = $1',
 	'code-stats' => 'статїстїка',
 	'repoadmin-new-button' => 'сътворѥниѥ',
 );
@@ -5531,6 +5533,7 @@ $6',
  * @author PieRRoMaN
  * @author Seb35
  * @author Sherbrooke
+ * @author Urhixidur
  * @author Verdy p
  * @author Zetud
  */
@@ -5666,7 +5669,7 @@ $messages['fr'] = array(
 	'codereview-overview-title' => 'Vue d’ensemble',
 	'codereview-overview-desc' => 'Affiche une vue d’ensemble graphique de cette liste.',
 	'codereview-email-subj' => '[$1 $2] : nouveau commentaire ajouté',
-	'codereview-email-body' => 'L’utilisateur « $1 » a posté un commentaire sur $3.
+	'codereview-email-body' => 'L’utilisateur « $1 » a publié un commentaire sur $3.
 
 Lien hypertexte complet : $2
 
@@ -5705,7 +5708,7 @@ $6',
 Ancien état : $3
 Nouvel état : $4
 
-L’utilisateur « $1 » a également posté un commentaire sur $2.
+L’utilisateur « $1 » a également publié un commentaire sur $2.
 
 Adresse URL complète : $5
 Résumé de la modification :
