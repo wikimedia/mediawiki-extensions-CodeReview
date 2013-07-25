@@ -12,6 +12,8 @@ class SpecialCode extends SpecialPage {
 	 * @param $subpage string
 	 */
 	public function execute( $subpage ) {
+		global $wgUseSiteCss;
+
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
@@ -23,6 +25,11 @@ class SpecialCode extends SpecialPage {
 		$out->addModules( 'ext.codereview' );
 		$out->addModules( 'ext.codereview.tooltips' );
 		$out->addModuleStyles( 'ext.codereview.styles' );
+
+		// Load [[MediaWiki:CodeReview.css]] (bug #16049) if site CSS is enabled
+		if ( $wgUseSiteCss ) {
+			$out->addModuleStyles( 'ext.codereview.local' );
+		}
 
 		$view = $this->getViewFrom( $subpage );
 		if( $view ) {
@@ -57,9 +64,9 @@ class SpecialCode extends SpecialPage {
 		// Defines the classes to use for each view type.
 		// The first class name is used if no additional parameters are provided.
 		// The second, if defined, is used if there is an additional parameter.  If
-		// there is no second class defined, then the first class is used in both 
+		// there is no second class defined, then the first class is used in both
 		// cases.
-		static $paramClasses 
+		static $paramClasses
 			= array(
 				'tag' => array( "CodeTagListView", "CodeRevisionTagView" ),
 				'author' => array( "CodeAuthorListView", "CodeRevisionAuthorView" ),

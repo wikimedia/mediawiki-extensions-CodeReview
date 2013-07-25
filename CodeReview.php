@@ -32,6 +32,7 @@ http://pecl.php.net/package/svn
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'CodeReview',
+	'version' => '1.11',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:CodeReview',
 	'author' => array( 'Brion Vibber', 'Aaron Schulz', 'Alexandre Emsenhuber', 'Chad Horohoe', 'Sam Reed', 'Roan Kattouw' ),
 	'descriptionmsg' => 'codereview-desc',
@@ -91,6 +92,9 @@ $wgAutoloadClasses['SvnRevAuthorTablePager'] = $dir . 'ui/CodeRevisionAuthorView
 $wgAutoloadClasses['SvnRevStatusTablePager'] = $dir . 'ui/CodeRevisionStatusView.php';
 $wgAutoloadClasses['SvnRevTagTablePager'] = $dir . 'ui/CodeRevisionTagView.php';
 $wgAutoloadClasses['CodeStatusChangeTablePager'] = $dir . 'ui/CodeRevisionStatusView.php';
+
+// MediaWiki:CodeReview.css (bug #16049)
+$wgAutoloadClasses['ResourceLoaderCodeReviewModule'] = $dir . 'ResourceLoaderCodeReviewModule.php';
 
 /******** SPECIAL PAGE SETUP ********/
 
@@ -313,6 +317,11 @@ $wgResourceModules['ext.codereview.overview'] = array(
 	'dependencies' => 'jquery.tipsy',
 	'messages' => array( 'codereview-overview-title', 'codereview-overview-desc' ),
 ) + $commonModuleInfo;
+
+// MediaWiki:CodeReview.css (bug #16049)
+$wgResourceModules['ext.codereview.local'] = array(
+	'class' => 'ResourceLoaderCodeReviewModule'
+);
 
 # Add global JS vars
 $wgHooks['MakeGlobalVariablesScript'][] = 'efCodeReviewResourceLoaderGlobals';
