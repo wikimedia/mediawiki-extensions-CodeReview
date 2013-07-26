@@ -911,7 +911,7 @@ class CodeRevisionView extends CodeView {
 			$checks .= Html::input( 'wpSignoffFlags[]', $flag, 'checkbox',
 				array(
 					'id' => "wpSignoffFlags-$flag",
-					isset( $userSignOffs[$flag] ) ? 'disabled' : '' => '',
+					'disabled' => isset( $userSignOffs[$flag] ),
 				) ) .
 				' ' . Xml::label( wfMessage( "code-signoff-flag-$flag" )->text(),
 				"wpSignoffFlags-$flag" ) . ' ';
