@@ -651,18 +651,17 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $text
-	 * @param  $review
-	 * @param null $parent
+	 * @param $text string
+	 * @param $parent null
 	 * @return int
 	 */
-	public function saveComment( $text, $review, $parent = null ) {
+	public function saveComment( $text, $parent = null ) {
 		$text = rtrim( $text );
 		if ( !strlen( $text ) ) {
 			return 0;
 		}
 		$dbw = wfGetDB( DB_MASTER );
-		$data = $this->commentData( $text, $review, $parent );
+		$data = $this->commentData( $text, $parent );
 
 		$dbw->begin();
 		$data['cc_id'] = $dbw->nextSequenceValue( 'code_comment_cc_id' );

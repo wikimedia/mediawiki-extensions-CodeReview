@@ -67,6 +67,7 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['addreferences'],
 			$params['removereferences'],
 			$params['comment'],
+			null,
 			$params['addreferenced'],
 			$params['removereferenced']
 		);

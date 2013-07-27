@@ -14,11 +14,18 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			return;
 		}
 
-		$commentId = $this->revisionUpdate( $this->mStatus, $this->mAddTags, $this->mRemoveTags,
-			$this->mSignoffFlags, $this->mStrikeSignoffs,
-			$this->mAddReferences, $this->mRemoveReferences,
-			$this->text, $wgRequest->getIntOrNull( 'wpParent' ), $wgRequest->getInt( 'wpReview' ),
-			$this->mAddReferenced, $this->mRemoveReferenced
+		$commentId = $this->revisionUpdate(
+			$this->mStatus,
+			$this->mAddTags,
+			$this->mRemoveTags,
+			$this->mSignoffFlags,
+			$this->mStrikeSignoffs,
+			$this->mAddReferences,
+			$this->mRemoveReferences,
+			$this->text,
+			$wgRequest->getIntOrNull( 'wpParent' ),
+			$this->mAddReferenced,
+			$this->mRemoveReferenced
 		);
 
 		$redirTarget = null;
@@ -65,8 +72,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 */
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
 						$addReferences, $removeReferences, $commentText,
-						$parent = null, $review = 0,
-						$addReferenced, $removeReferenced
+						$parent = null, $addReferenced, $removeReferenced
 					) {
 		if ( !$this->mRev ) {
 			return false;
@@ -123,7 +129,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		$commentId = 0;
 		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment' ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
-			$commentId = $this->mRev->saveComment( $commentText, $review, $parent );
+			$commentId = $this->mRev->saveComment( $commentText, $parent );
 
 			$commentAdded = ($commentId !== 0);
 		}
