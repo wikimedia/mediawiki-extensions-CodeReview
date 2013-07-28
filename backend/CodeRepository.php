@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Core class for interacting with a repository of code. 
+ * Core class for interacting with a repository of code.
  */
 class CodeRepository {
 	const DIFFRESULT_BadRevision = 0;
@@ -337,7 +337,7 @@ class CodeRepository {
 				$data = self::DIFFRESULT_TooManyPaths;
 			}
 		}
-	
+
 		// If an error has occurred, return it.
 		if ( $data !== null ) {
 			wfProfileOut( __METHOD__ );
@@ -467,8 +467,9 @@ class CodeRepository {
 	 * @return bool Success
 	 */
 	public function linkUser( $author, User $user ) {
+		$userId = $user->getId();
 		// We must link to an existing user
-		if ( !$user->getId() ) {
+		if ( !$userId ) {
 			return false;
 		}
 		$dbw = wfGetDB( DB_MASTER );
@@ -478,6 +479,7 @@ class CodeRepository {
 			array(
 				'ca_repo_id'   => $this->getId(),
 				'ca_author'    => $author,
+				'ca_user'      => $userId,
 				'ca_user_text' => $user->getName()
 			),
 			__METHOD__,
@@ -487,7 +489,10 @@ class CodeRepository {
 		if ( !$dbw->affectedRows() ) {
 			$dbw->update(
 				'code_authors',
-				array( 'ca_user_text' => $user->getName() ),
+				array(
+					'ca_user'      => $userId,
+					'ca_user_text' => $user->getName()
+				),
 				array(
 					'ca_repo_id'  => $this->getId(),
 					'ca_author'   => $author,
@@ -603,7 +608,7 @@ class CodeRepository {
 					return 'Unknown reason!';
 			}
 		}
-		
+
 		// TODO: Should this return "", $diff or a message string, e.g. "OK"?
 		return "";
 	}

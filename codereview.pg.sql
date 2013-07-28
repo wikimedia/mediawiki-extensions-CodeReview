@@ -44,6 +44,8 @@ CREATE TABLE code_authors (
 
   ca_author TEXT,
 
+  ca_user INTEGER NOT NULL,
+
   ca_user_text TEXT,
 
   primary key (ca_repo_id, ca_author),

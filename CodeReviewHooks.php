@@ -68,6 +68,9 @@ class CodeReviewHooks {
 				"$base/archives/code_drop_cc_review.sql", true ) );
 
 			$updater->addExtensionUpdate( array( 'dropTable', 'code_test_suite', "$base/archives/code_drop_test.sql", true ) );
+
+			$updater->addExtensionUpdate( array( 'addField', 'code_authors', 'ca_user',
+				"$base/archives/code_authors_add_ca_user.sql", true ) );
 			break;
 		case 'sqlite':
 			$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" );
@@ -78,6 +81,8 @@ class CodeReviewHooks {
 				"$base/archives/code_signoffs_timestamp_struck.sql", true ) );
 			$updater->addExtensionUpdate( array( 'addIndex', 'code_paths', 'repo_path',
 				"$base/archives/codereview-repopath.sql", true ) );
+			$updater->addExtensionUpdate( array( 'addField', 'code_authors', 'ca_user',
+				"$base/archives/code_authors_add_ca_user.sql", true ) );
 			break;
 		case 'postgres':
 			// TODO
@@ -103,6 +108,20 @@ class CodeReviewHooks {
 				$values['wgCodeReviewRepository'] = $bits[1];
 			}
 		}
+		return true;
+	}
+
+	/**
+	 * For integration with the Renameuser extension.
+	 *
+	 * @param $renameUserSQL RenameuserSQL
+	 * @return bool
+	 */
+	public static function onRenameUserSQL( $renameUserSQL ) {
+		$renameUserSQL->tables['code_authors'] = array( 'ca_user_text', 'ca_user' );
+		$renameUserSQL->tables['code_comment'] = array( 'cc_user_text', 'cc_user' );
+		$renameUserSQL->tables['code_prop_changes'] = array( 'cpc_user_text', 'cpc_user' );
+		$renameUserSQL->tables['code_signoffs'] = array( 'cs_user_text', 'cs_user' );
 		return true;
 	}
 

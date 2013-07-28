@@ -85,6 +85,9 @@ CREATE TABLE /*_*/code_authors (
   -- "Native" author name in the repo
   ca_author varchar(255) binary,
 
+  -- User ID of the local wiki account
+  ca_user int not null,
+
   -- Local wiki username, if any, to tie the edits to instead
   -- Using a username instead of ID so we don't have to worry
   -- about SUL accounts which haven't been copied over.
