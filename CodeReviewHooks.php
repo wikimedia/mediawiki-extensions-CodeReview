@@ -71,6 +71,9 @@ class CodeReviewHooks {
 
 			$updater->addExtensionUpdate( array( 'addField', 'code_authors', 'ca_user',
 				"$base/archives/code_authors_add_ca_user.sql", true ) );
+
+			$updater->addExtensionUpdate( array( 'addIndex', 'code_authors', 'ca_repo_author',
+				"$base/archives/code_authors_repo-index.sql", true ) );
 			break;
 		case 'sqlite':
 			$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" );
@@ -83,6 +86,8 @@ class CodeReviewHooks {
 				"$base/archives/codereview-repopath.sql", true ) );
 			$updater->addExtensionUpdate( array( 'addField', 'code_authors', 'ca_user',
 				"$base/archives/code_authors_add_ca_user.sql", true ) );
+			$updater->addExtensionUpdate( array( 'addIndex', 'code_authors', 'ca_repo_author',
+				"$base/archives/code_authors_repo-index.sql", true ) );
 			break;
 		case 'postgres':
 			// TODO
