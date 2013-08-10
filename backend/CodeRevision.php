@@ -633,10 +633,7 @@ class CodeRevision {
 	public function isDiffable() {
 		global $wgCodeReviewMaxDiffPaths;
 		$paths = $this->getModifiedPaths();
-		if ( !$paths->numRows() || ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() > $wgCodeReviewMaxDiffPaths ) ) {
-			return false; // things need to get done this year
-		}
-		return true;
+		return $paths->numRows() && ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() < $wgCodeReviewMaxDiffPaths );
 	}
 
 	/**

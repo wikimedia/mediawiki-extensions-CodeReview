@@ -454,10 +454,7 @@ class CodeRepository {
 	 */
 	public function isValidRev( $rev ) {
 		$rev = intval( $rev );
-		if ( $rev > 0 && $rev <= $this->getLastStoredRev() ) {
-			return true;
-		}
-		return false;
+		return ( $rev > 0 && $rev <= $this->getLastStoredRev() );
 	}
 
 	/**

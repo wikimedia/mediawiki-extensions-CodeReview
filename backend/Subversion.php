@@ -291,10 +291,11 @@ class SubversionShell extends SubversionAdaptor {
 			wfEscapeShellArg( $this->mRepoPath . $path ) );
 		$document = new DOMDocument();
 
-		if ( !@$document->loadXML( wfShellExec( $command ) ) )
+		if ( !@$document->loadXML( wfShellExec( $command ) ) ) {
 			// svn list --xml returns invalid XML if the file does not exist
 			// FIXME: report bug upstream
 			return false;
+		}
 
 		$entries = $document->getElementsByTagName( 'entry' );
 		$result = array();
