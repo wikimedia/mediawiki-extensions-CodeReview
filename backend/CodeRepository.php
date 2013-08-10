@@ -564,8 +564,9 @@ class CodeRepository {
 	 * @return string|bool
 	 */
 	public function wikiUserAuthor( $name ) {
-		if ( isset( self::$authorLinks[$name] ) )
+		if ( isset( self::$authorLinks[$name] ) ) {
 			return self::$authorLinks[$name];
+		}
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->selectField(

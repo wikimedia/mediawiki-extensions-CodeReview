@@ -173,6 +173,9 @@ class CodeRevisionView extends CodeView {
 		if ( $this->mRev->isDiffable() ) {
 			$diffHtml = $this->formatDiff();
 			// @todo FIXME: Hard coded brackets.
+			// Even in the cases of DIFFRESULT_TooManyPaths or too large,
+			// users can purge the diff to regenerate it after the relevant
+			// variables have been changed
 			$html .=
 				"<h2>" . wfMessage( 'code-rev-diff' )->escaped() .
 				' <small>[' . Linker::link(
@@ -475,15 +478,25 @@ class CodeRevisionView extends CodeView {
 			$cache = '';
 		}
 		$diff = $this->mRepo->getDiff( $this->mRev->getId(), $cache );
-		if ( is_integer( $diff ) && $deferDiffs ) {
-			// We'll try loading it by AJAX...
-			return $this->stubDiffLoader();
-		} elseif ( strlen( $diff ) > $wgCodeReviewMaxDiffSize ) {
+
+		// If there isn't anything to diff, or if it's too large, don't AJAX load
+		if ( is_string( $diff ) && strlen( $diff ) > $wgCodeReviewMaxDiffSize ) {
 			return wfMessage( 'code-rev-diff-too-large' )->escaped();
-		} else {
-			$hilite = new CodeDiffHighlighter();
-			return $hilite->render( $diff );
+		} elseif ( is_integer( $diff )
+			&& in_array( $diff,
+				array( CodeRepository::DIFFRESULT_NothingToCompare, CodeRepository::DIFFRESULT_TooManyPaths )
+			)
+		) {
+			// Some other error condition, no diff required
+			return '';
+		} elseif ( $diff === CodeRepository::DIFFRESULT_NotInCache || $deferDiffs ) {
+			// Api Enabled || Not cached => Load via JS via API
+			return $this->stubDiffLoader();
 		}
+
+		// CodeRepository::DIFFRESULT_NoDataReturned still ends up here, and we can't differentiate
+		$hilite = new CodeDiffHighlighter();
+		return $hilite->render( $diff );
 	}
 
 	/**
