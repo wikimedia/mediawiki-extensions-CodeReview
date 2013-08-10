@@ -65,7 +65,6 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @param Array $removeReferences Array of revision IDs to remove references from
 	 * @param string $commentText Comment to add to the revision
 	 * @param null|int $parent What the parent comment is (if a subcomment)
-	 * @param int $review (unused)
 	 * @param $addReferenced
 	 * @param $removeReferenced
 	 * @return int Comment ID if added, else 0

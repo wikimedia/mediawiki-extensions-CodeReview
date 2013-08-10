@@ -704,6 +704,9 @@ class CodeRevision {
 			$users[0] = $watcher; // We don't have any anons, so using 0 is safe
 		}
 
+		/**
+		 * @var $user User
+		 */
 		foreach ( $users as $id => $user ) {
 			// No sense in notifying this commenter
 			if ( $wgUser->getId() == $user->getId() ) {

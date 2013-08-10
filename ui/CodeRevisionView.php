@@ -243,7 +243,7 @@ class CodeRevisionView extends CodeView {
 		if ( $prev ) {
 			$prevTarget = SpecialPage::getTitleFor( 'Code', "$repo/$prev" );
 			$links[] = '&lt;&#160;' . Linker::link( $prevTarget, $this->mRev->getIdString( $prev ),
-				array(), array( 'path' => $this->mPath ) ).$wgLang->getDirMark();
+				array(), array( 'path' => $this->mPath ) ) . $wgLang->getDirMark();
 		}
 
 		$revText = "<b>" . $this->mRev->getIdString( $rev ) . "</b>";
@@ -251,7 +251,7 @@ class CodeRevisionView extends CodeView {
 		if ( $viewvc ) {
 			$url = htmlspecialchars( "$viewvc/?view=rev&revision=$rev" );
 			$viewvcTxt = wfMessage( 'code-rev-rev-viewvc' )->escaped();
-			$revText .= " (<a href=\"$url\" title=\"revision $rev\">$viewvcTxt</a>)".$wgLang->getDirMark();
+			$revText .= " (<a href=\"$url\" title=\"revision $rev\">$viewvcTxt</a>)" . $wgLang->getDirMark();
 		}
 		$links[] = $revText;
 
@@ -850,7 +850,7 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function commentStyle( $comment ) {
 		global $wgLang;
-		$align = $wgLang->AlignStart();
+		$align = $wgLang->alignStart();
 		$depth = $comment->threadDepth();
 		$margin = ( $depth - 1 ) * 48;
 		return "margin-$align: ${margin}px";
@@ -942,6 +942,9 @@ class CodeRevisionView extends CodeView {
 	protected function getUserSignoffs( $signOffs ) {
 		$ret = array();
 		global $wgUser;
+		/**
+		 * @var $s CodeSignoff
+		 */
 		foreach( $signOffs as $s ) {
 			if ( $s->userText == $wgUser->getName() && !$s->isStruck() ) {
 				$ret[$s->flag] = true;

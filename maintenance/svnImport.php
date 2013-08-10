@@ -37,6 +37,9 @@ class SvnImport extends Maintenance {
 
 		if ( $repo == "all" ) {
 			$repoList = CodeRepository::getRepoList();
+			/**
+			 * @var $repoInfo CodeRepository
+			 */
 			foreach ( $repoList as $repoInfo ) {
 				$this->importRepo( $repoInfo->getName(), null, $cacheSize );
 			}

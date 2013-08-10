@@ -19,6 +19,21 @@ abstract class CodeView {
 	 */
 	var $codeCommentLinkerWiki;
 
+	/**
+	 * @var string
+	 */
+	var $mPath;
+
+	/**
+	 * @var string
+	 */
+	var $mAuthor;
+
+	/**
+	 * @var string
+	 */
+	var $mStatus;
+
 	function __construct( $repo ) {
 		$this->mRepo = ( $repo instanceof CodeRepository )
 			? $repo
