@@ -26,7 +26,7 @@ window.CodeReview = $.extend( window.CodeReview, {
 			if ( window.location.hostname === 'localhost' ) {
 				alert( 'Your browser blocks XMLHttpRequest to "localhost", try using a real hostname for development/testing.' );
 			}
-			CodeReview.setDiff( 'Diff load failed!' );
+			CodeReview.setDiff( 'Failed to load diff.' );
 			throw e;
 		}
 	},
@@ -34,7 +34,8 @@ window.CodeReview = $.extend( window.CodeReview, {
 		if ( data && data.code && data.code.rev && data.code.rev.diff ) {
 			CodeReview.setDiff( data.code.rev.diff );
 		} else {
-			CodeReview.setDiff( 'Diff load failed. :(' );
+			// Will occur when MediaWiki actually serves an error back
+			CodeReview.setDiff( 'Failed to load diff. :(' );
 		}
 	},
 	diffTarget : function() {
