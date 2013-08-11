@@ -47,6 +47,11 @@ $specialPageAliases['bs'] = array(
 	'RepoAdmin' => array( 'RepoAdministracija' ),
 );
 
+/** Min Dong Chinese (Mìng-dĕ̤ng-ngṳ̄) */
+$specialPageAliases['cdo'] = array(
+	'Code' => array( '代碼' ),
+);
+
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
 	'Code' => array( 'Код' ),

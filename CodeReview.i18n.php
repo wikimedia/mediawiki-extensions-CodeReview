@@ -10990,6 +10990,28 @@ $messages['mn'] = array(
 	'codereview-batch-submit' => 'Явуулах',
 );
 
+/** Marathi (मराठी)
+ * @author V.narsikar
+ */
+$messages['mr'] = array(
+	'code-comments' => 'शेरे',
+	'code-change-status' => "$1 चा '''दर्जा''' बदलला",
+	'code-change-tags' => '$1 साठीच्या खूणपताका बदलल्या',
+	'code-change-removed' => 'हटविले:',
+	'code-change-added' => 'जोडले:',
+	'code-old-status' => 'जूना दर्जा',
+	'code-new-status' => 'नविन दर्जा',
+	'code-prop-changes' => 'दर्जा व खूणपताकांच्या नोंदी',
+	'code-load-diff' => 'भारण फरक...',
+	'code-notes' => 'अलीकडील शेरे',
+	'code-statuschanges' => 'दर्जाबदल',
+	'code-mycomments' => 'माझे शेरे',
+	'code-authors' => 'लेखक',
+	'code-status' => 'राज्ये',
+	'code-tags' => 'खूणपताका',
+	'code-tags-no-tags' => 'या भांडारात कोणत्याही खूणपताका उपलब्ध नाहीत.',
+);
+
 /** Malay (Bahasa Melayu)
  * @author Anakmalaysia
  * @author Aviator
