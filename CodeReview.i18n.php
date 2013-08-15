@@ -15636,6 +15636,7 @@ $messages['sq'] = array(
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Milicevic01
  * @author Nikola Smolenski
  * @author Rancher
  * @author Јованвб
@@ -15750,7 +15751,7 @@ $messages['sr-ec'] = array(
 	'code-pathsearch-filter' => 'Прикажи само:',
 	'code-revfilter-cr_status' => 'Статус = $1',
 	'code-revfilter-cr_author' => 'Аутор – $1',
-	'code-revfilter-ct_tag' => 'Ознака – $1',
+	'code-revfilter-ct_tag' => 'Ознака = $1',
 	'code-revfilter-clear' => 'Очисти филтер',
 	'code-rev-submit' => 'Сачувај измене',
 	'code-rev-submit-next' => 'Сачувај и прикажи следеће нерешено',
@@ -15796,6 +15797,7 @@ $messages['sr-ec'] = array(
 
 /** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
+ * @author Milicevic01
  * @author Rancher
  * @author Жељко Тодоровић
  */
@@ -15824,7 +15826,7 @@ $messages['sr-el'] = array(
 	'code-mycomments' => 'moji komentari',
 	'code-authors' => 'autori',
 	'code-status' => 'stanja',
-	'code-tags' => 'tagovi',
+	'code-tags' => 'oznake',
 	'code-tags-no-tags' => 'U ovoj riznici nema oznaka.',
 	'code-author-haslink' => 'Ovaj autor je povezan sa Viki-korisnikom $1',
 	'code-author-orphan' => 'SVN {{GENDER:$1|korisnik ($1) nije povezan|korisnica ($1) nije povezana|korisnik ($1) nije povezan}} s viki nalogom',
@@ -15868,7 +15870,7 @@ $messages['sr-el'] = array(
 	'code-rev-imagediff' => 'Izmene slika',
 	'code-rev-status' => 'Status:',
 	'code-rev-status-set' => 'Izmeni status',
-	'code-rev-tags' => 'Tagovi:',
+	'code-rev-tags' => 'Oznake:',
 	'code-rev-tag-add' => 'Dodaj tagove:',
 	'code-rev-tag-remove' => 'Izbriši tagove:',
 	'code-rev-comment-by' => 'Komantarisao $1',
@@ -15907,7 +15909,7 @@ $messages['sr-el'] = array(
 	'code-pathsearch-filter' => 'Prikaži samo:',
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Autor – $1',
-	'code-revfilter-ct_tag' => 'Oznaka – $1',
+	'code-revfilter-ct_tag' => 'Oznaka = $1',
 	'code-revfilter-clear' => 'Očisti filter',
 	'code-rev-submit' => 'Zapamti izmene',
 	'code-rev-submit-next' => 'Sačuvaj i prikaži sledeće nerešeno',
