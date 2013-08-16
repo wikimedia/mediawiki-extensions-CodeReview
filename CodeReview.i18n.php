@@ -12372,7 +12372,7 @@ $messages['oc'] = array(
 	'code-field-message' => 'Somari de publicacion',
 	'code-field-status' => 'Estatut',
 	'code-field-timestamp' => 'Data',
-	'code-field-comments' => 'Nòtas', # Fuzzy
+	'code-field-comments' => 'Comentaris',
 	'code-field-path' => 'Camin',
 	'code-field-text' => 'Nòta',
 	'code-field-select' => 'Seleccionar',
@@ -12435,13 +12435,12 @@ $messages['oc'] = array(
 	'codereview-subtitle' => 'Per $1',
 	'codereview-reply-link' => 'respondre',
 	'codereview-email-subj' => '[$1 $2] : Comentari novèl apondut',
-	'codereview-email-body' => "L'utilizaire « $1 » a mandat un comentari sus $3.
+	'codereview-email-body' => "L'utilizaire « $1 » a publicat un comentari sus $3.
+Ligam ipertèxte complet : $2
 
-Adreça completa : $2
+Resumit de la modificacion : $5
 
-Comentari :
-
-$4", # Fuzzy
+Comentari : $4",
 	'codereview-email-subj2' => '[$1 $2] : Modificacion seguida',
 	'codereview-email-body2' => 'L’utilizaire « $1 » a fach de modificacions religadas e $2.
 
