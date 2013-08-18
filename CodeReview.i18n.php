@@ -9439,7 +9439,7 @@ $messages['ko'] = array(
 	'code-reference-remove' => '선택한 연관 제거',
 	'code-reference-associate' => '연관된 추적하는 판:',
 	'code-reference-associate-submit' => '연관',
-	'code-rev-author' => '만든이:',
+	'code-rev-author' => '저자:',
 	'code-rev-date' => '날짜:',
 	'code-rev-message' => '의견:',
 	'code-rev-repo' => '저장소:',
@@ -9495,7 +9495,7 @@ $messages['ko'] = array(
 	'code-pathsearch-path' => '경로:',
 	'code-pathsearch-filter' => '항목만 보기:',
 	'code-revfilter-cr_status' => '상태 = $1',
-	'code-revfilter-cr_author' => '프로그래머 = $1',
+	'code-revfilter-cr_author' => '저자 = $1',
 	'code-revfilter-ct_tag' => '태그 = $1',
 	'code-revfilter-clear' => '필터 지움',
 	'code-rev-submit' => '저장',
@@ -9512,7 +9512,7 @@ $messages['ko'] = array(
 	'codereview-subtitle' => '$1',
 	'codereview-reply-link' => '답변',
 	'codereview-overview-title' => '둘러보기',
-	'codereview-overview-desc' => '이 목록의 그래픽 개요를 보기',
+	'codereview-overview-desc' => '이 목록의 그래픽 개요를 보여줍니다',
 	'codereview-email-subj' => '[$1 $2]: 새 의견이 추가되었습니다',
 	'codereview-email-body' => '"$1" 사용자가 $3 판에 의견을 게시했습니다.
 URL: $2
