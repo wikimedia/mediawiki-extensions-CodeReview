@@ -286,7 +286,13 @@ $6',
  */
 $messages['qqq'] = array(
 	'code' => '{{doc-special|Code}}',
-	'code-rev-id' => '{{notranslate}}',
+	'code-rev-id' => '{{notranslate}}
+Used as revision ID string.
+
+"r" stands for "revision".
+
+Parameters:
+* $1 - revision ID',
 	'code-rev-title' => 'Title of code review page.
 * $1 - The name of the project being coded followed by a revision number. Example: MediaWiki r123456',
 	'code-comments' => '{{Identical|Comment}}',
@@ -422,7 +428,10 @@ See also:
 	'code-author-badtoken' => "Used as error message if the edit-token doesn't match.",
 	'code-author-total' => 'This is a message shown above the list of contributors.
 
-An example can be found at [[mw:Special:Code/MediaWiki/author]].',
+An example can be found at [[mw:Special:Code/MediaWiki/author]].
+
+Parameters:
+* $1 - number of authors',
 	'code-author-lastcommit' => 'This is a column title in the list of contributors. An example can be found at http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author',
 	'code-browsing-path' => 'Parameters:
 * $1 - list of links to repositories',
@@ -616,13 +625,13 @@ A "sign-off" is a concept in code review that means that the person doing the si
 * {{msg-mw|Code-status-ok}}
 * {{msg-mw|Code-status-deferred}}
 * {{msg-mw|Code-status-old}}',
-	'code-revfilter-cr_status' => 'Used as a filter.
-
+	'code-revfilter-cr_status' => 'Used as a filter. Parameters:
+* $1 - status
 See also:
 * {{msg-mw|Code-revfilter-cr author}}
 {{Identical|Status}}',
-	'code-revfilter-cr_author' => 'Used as a filter.
-
+	'code-revfilter-cr_author' => 'Used as a filter. Parameters:
+* $1 - author
 See also:
 * {{msg-mw|Code-revfilter-cr status}}
 {{Identical|Author}}',
