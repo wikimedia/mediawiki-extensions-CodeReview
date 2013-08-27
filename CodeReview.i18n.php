@@ -12420,6 +12420,7 @@ $messages['oc'] = array(
 	'code-rev-diff-link' => 'dif',
 	'code-rev-diff-too-large' => 'Lo diff es tròp larg per èsser afichat.',
 	'code-rev-purge-link' => 'purgar',
+	'code-rev-history-link' => 'istoric',
 	'code-status-new' => 'novèl',
 	'code-status-fixme' => 'de reparar',
 	'code-status-reverted' => 'revocat',
