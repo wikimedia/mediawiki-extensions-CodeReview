@@ -18496,6 +18496,7 @@ $3', # Fuzzy
  * @author Kuailong
  * @author Liangent
  * @author PhiLiP
+ * @author Shirayuki
  * @author Wmr89502270
  * @author Xiaomingyan
  * @author Yfdyh000
@@ -18683,7 +18684,7 @@ $7
 $6',
 	'code-stats' => '统计信息',
 	'code-stats-header' => '版本库$1的统计信息',
-	'code-stats-main' => '截至$1，该版本库共有$2次{{PLURAL:$2|修订|修订}}和[[Special:Code/$3/author|$4名{{PLURAL:$4|作者|作者}}]]。',
+	'code-stats-main' => '截至$1，该版本库共有$2次{{PLURAL:$2|修订}}和[[Special:Code/$3/author|$4名{{PLURAL:$4|作者}}]]。',
 	'code-stats-status-breakdown' => '按状态划分的修订统计',
 	'code-stats-fixme-breakdown' => '按作者待修正修订的分项统计',
 	'code-stats-fixme-breakdown-path' => '按路径修正修订的分项统计',
