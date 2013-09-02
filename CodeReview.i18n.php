@@ -12373,9 +12373,9 @@ $messages['oc'] = array(
 	'code-authors' => 'autors',
 	'code-status' => 'estats',
 	'code-tags' => 'balisas',
-	'code-authors-text' => 'Çaijós se tròba una lista dels autors de depauses per òrdre de publicacions recentas. Los comptes del wiki local son afichats entre parentèsis.', # Fuzzy
+	'code-authors-text' => 'La lista çaijós presenta los autors de depauses triats per noms. Los comptes del wiki local son afichats entre parentèsis. Las donadas pòdon provenir d’una memòria tampon.',
 	'code-author-haslink' => "Aqueste autor es ligat al compte $1 d'aqueste wiki",
-	'code-author-orphan' => 'Aqueste autor a pas de ligam amb un compte wiki', # Fuzzy
+	'code-author-orphan' => 'L’utilizaire SVN/autor $1 es pas ligat a cap de compte wiki',
 	'code-author-dolink' => 'Associar aqueste autor a un compte wiki local :',
 	'code-author-alterlink' => 'Modificar l’utilizaire wiki ligat a aqueste autor :',
 	'code-author-orunlink' => "Levar lo ligam d'aqueste utilizaire wiki :",
@@ -12462,21 +12462,25 @@ Resumit de la modificacion : $5
 
 Comentari : $4",
 	'codereview-email-subj2' => '[$1 $2] : Modificacion seguida',
-	'codereview-email-body2' => 'L’utilizaire « $1 » a fach de modificacions religadas e $2.
+	'codereview-email-body2' => 'L’utilizaire « $1 » a fach de modificacions sus $2.
+
+URL completa de la revision seguida : $5
+Resumit de la modificacion :
+
+$6
 
 URL completa : $3
+Resumit de la modificacion : $4',
+	'codereview-email-subj3' => '[$1 $2] : l’estat de la version a cambiat',
+	'codereview-email-body3' => 'L’utilizaire « $1 » a modificat l’estat de $2.
 
-Resumit de las modificacions :
+Ancian estat : $3
+Novèl estat : $4
 
-$4', # Fuzzy
-	'codereview-email-subj3' => '[$1 $2] : lo tèst automatic a detectat una regression', # Fuzzy
-	'codereview-email-body3' => 'Lo tèst automatic a revelat una regression a causa dels cambiaments intervenguts dins la version $1.
+URL completa : $5
+Resumit de la modificacion :
 
-URL completa : $2
-
-Resumit al moment de la somission :
-
-$3', # Fuzzy
+$6',
 	'code-stats' => 'estatisticas',
 	'code-tooltip-withsummary' => 'r$1 [$2] per $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] per $3',
