@@ -367,7 +367,8 @@ The link points to the author page.
 	'code-mycomments' => 'Used as link text.
 
 The link points to the comment author page.
-{{Related|Code-nav}}',
+{{Related|Code-nav}}
+{{Identical|My comment}}',
 	'code-authors' => 'Used as link text.
 
 The link points to the tags page.
