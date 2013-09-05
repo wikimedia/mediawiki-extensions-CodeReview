@@ -671,7 +671,7 @@ Followed by the input box which is labeled {{msg-mw|Code-release-endrev}}.',
 
 Preceded by the input box which is labeled {{msg-mw|Code-release-startrev}}.',
 	'codereview-subtitle' => 'Parameters:
-$1 - repository name
+* $1 - repository name
 {{Identical|For $1}}',
 	'codereview-reply-link' => 'Used as link text.
 
@@ -4064,7 +4064,7 @@ $messages['el'] = array(
 	'code-notes' => 'πρόσφατα σχόλια',
 	'code-statuschanges' => 'αλλαγές κατάστασης',
 	'code-mycommits' => 'οι καταχωρήσεις μου',
-	'code-mycomments' => 'Τα σχόλια μου',
+	'code-mycomments' => 'τα σχόλιά μου',
 	'code-authors' => 'συγγραφείς',
 	'code-status' => 'καταστάσεις',
 	'code-tags' => 'ετικέτες',
