@@ -702,25 +702,39 @@ The tooltip for the link is {{msg-mw|Codereview-overview-desc}}.
 * $4 – Commit message of the new revision
 * $5 – URL to followed revision
 * $6 – Commit message of the followed revision',
-	'codereview-email-subj3' => 'Parameters:
-* $1 – Repository name
-* $2 – Number of the revision',
-	'codereview-email-body3' => '* $1 is a user name
-* $2 is a revision number
-* $3 is the old status
-* $4 is the new status
-* $5 is the full URL to code review
-* $6 is the commit summary for the change',
+	'codereview-email-subj3' => 'Used as email subject. Parameters:
+* $1 – repository name
+* $2 – revision ID
+See also:
+* {{msg-mw|Codereview-email-body3}}',
+	'codereview-email-body3' => 'Used as email body.
+
+The subject for this body is {{msg-mw|Codereview-email-subj3}}.
+
+Parameters:
+* $1 - a user name
+* $2 - a revision number
+* $3 - the old status
+* $4 - the new status
+* $5 - the full URL to code review
+* $6 - the commit summary for the change',
 	'codereview-email-subj4' => 'Used as email subject. Parameters:
-* $1 – Repository name
-* $2 – Number of the revision',
-	'codereview-email-body4' => '* $1 is a user name
-* $2 is a revision number
-* $3 is the old status
-* $4 is the new status
-* $5 is the full URL to code review
-* $6 is the commit summary for the change
-* $7 is the comment for the change',
+* $1 – repository name
+* $2 – revision ID
+See also:
+* {{msg-mw|Codereview-email-body4}}',
+	'codereview-email-body4' => 'Used as email body.
+
+The subject for this body is {{msg-mw|Codereview-email-subj4}}.
+
+Parameters:
+* $1 - a user name
+* $2 - a revision number
+* $3 - the old status
+* $4 - the new status
+* $5 - the full URL to code review
+* $6 - the commit summary for the change
+* $7 - the comment for the change',
 	'code-stats' => 'Used as link text.
 
 The link points to the statistics page.
