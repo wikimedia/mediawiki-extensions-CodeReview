@@ -13561,6 +13561,7 @@ $6',
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
  * @author Eduardo.mps
  * @author Giro720
  * @author Helder.wiki
@@ -13778,6 +13779,7 @@ $6',
 	'right-codereview-link-user' => 'Associar autores a utilizadores de wiki',
 	'right-codereview-associate' => 'Administrar a associação de revisões',
 	'right-codereview-review-own' => 'Marcar suas próprias revisões como "{{int:code-status-ok}}" ou "{{int:code-status-resolved}}"',
+	'action-codereview-use' => 'uso de Special:Code',
 	'specialpages-group-developer' => 'Ferramentas de desenvolvimento',
 	'group-svnadmins' => 'Administradores do SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|Administrador|Administradora}} de SVN',
