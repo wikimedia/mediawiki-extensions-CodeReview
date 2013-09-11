@@ -798,7 +798,8 @@ The link points to Special:RepoAdmin/<code>RepositoryName</code>.
 A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
 	'right-codereview-link-user' => '{{doc-right|codereview-link-user}}',
 	'right-codereview-associate' => '{{doc-right|codereview-associate}}',
-	'right-codereview-review-own' => '{{doc-right|codereview-review-own}}',
+	'right-codereview-review-own' => '{{doc-right|codereview-review-own}}
+Refers to {{msg-mw|Code-status-ok}} and {{msg-mw|Code-status-resolved}}.',
 	'action-repoadmin' => '{{doc-action|repoadmin}}',
 	'action-codereview-use' => '{{doc-action|codereview-use}}',
 	'action-codereview-add-tag' => '{{doc-action|codereview-add-tag}}',
@@ -809,7 +810,8 @@ A "sign-off" is a concept in code review that means that the person doing the si
 A "sign-off" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.',
 	'action-codereview-link-user' => '{{doc-action|codereview-link-user}}',
 	'action-codereview-associate' => '{{doc-action|codereview-associate}}',
-	'action-codereview-review-own' => '{{doc-action|codereview-review-own}}',
+	'action-codereview-review-own' => '{{doc-action|codereview-review-own}}
+Refers to {{msg-mw|Code-status-ok}} and {{msg-mw|Code-status-resolved}}.',
 	'specialpages-group-developer' => '{{doc-special-group|that=are related to the extensions CodeReview and ExtensionDistributor|like=[[Special:Code]], [[Special:RepoAdmin]], [[Special:ExtensionDistributor]]}}',
 	'group-svnadmins' => '{{doc-group|svnadmins}}',
 	'group-svnadmins-member' => '{{doc-group|svnadmins|member}}',
