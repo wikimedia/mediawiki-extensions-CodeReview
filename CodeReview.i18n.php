@@ -17031,6 +17031,7 @@ $3', # Fuzzy
 
 /** Tagalog (Tagalog)
  * @author AnakngAraw
+ * @author Sky Harbor
  */
 $messages['tl'] = array(
 	'code' => 'Muling Pagsusuri ng Kodigo',
@@ -17060,9 +17061,9 @@ $messages['tl'] = array(
 	'code-status' => 'mga kalagayan',
 	'code-tags' => 'mga tatak',
 	'code-tags-no-tags' => 'Walang umiiral na mga tatak sa loob ng taguang ito.',
-	'code-authors-text' => 'Nasa ibaba ang isang talaan ng mga may-akda ng repositoryo ayon sa pagkakasunud-sunod ng pangalan ng paglalagak.  Ipinapakita sa loob ng mga saklong ang mga akawnt ng panglokal na wiki.  Dapat na nakatago ang dato.',
+	'code-authors-text' => 'Nasa ibaba ang isang talaan ng mga may-akda ng repositoryo ayon sa pagkakasunud-sunod ng pangalan ng paglalagak.  Ipinapakita sa loob ng mga panaklong ang mga lokal na kuwentang pangwiki.  Maaaring baunin ang datos.',
 	'code-author-haslink' => 'Nakakawing ang may-akdang ito sa tagagamit ng wiking si $1',
-	'code-author-orphan' => 'Ang tagagamit/May-akda ng SVN na si $1 ay walang kawing sa isang akawnt ng wiki',
+	'code-author-orphan' => 'Ang tagagamit ng SVN/May-akda na $1 ay walang kawing sa isang kuwenta ng wiki',
 	'code-author-dolink' => 'Ikawing ang may-akdang ito sa isang tagagamit ng wiki:',
 	'code-author-alterlink' => 'Baguhin ang tagagamit na wiking nakakawing sa may-akdang ito:',
 	'code-author-orunlink' => 'O kaya tanggalin ang pagkakakawing ng tagagamit ng wiking ito:',
