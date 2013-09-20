@@ -1820,6 +1820,10 @@ $messages['bcc'] = array(
  * @author Geopoet
  */
 $messages['bcl'] = array(
+	'code' => 'Rikisa nin Kodigo',
+	'code-rev-title' => '$1 - Rikisa nin Kodigo',
+	'code-comments' => 'Mga Komento',
+	'code-references' => 'Panunodon na mga rebisyon',
 	'code-change-removed' => 'pinagtangkas:',
 	'code-change-added' => 'pinagdugang:',
 	'code-old-status' => 'Lumaong kamugtakan',
