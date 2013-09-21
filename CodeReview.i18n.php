@@ -1824,6 +1824,9 @@ $messages['bcl'] = array(
 	'code-rev-title' => '$1 - Rikisa nin Kodigo',
 	'code-comments' => 'Mga Komento',
 	'code-references' => 'Panunodon na mga rebisyon',
+	'code-referenced' => 'Nakaaging mga rebisyon na pinagsusunudan kaini',
+	'code-change-status' => "pinagliwat an '''kamugtakan''' kan $1",
+	'code-change-tags' => "pinagliwat an  '''mga tatak''' para sa $1",
 	'code-change-removed' => 'pinagtangkas:',
 	'code-change-added' => 'pinagdugang:',
 	'code-old-status' => 'Lumaong kamugtakan',
@@ -1889,6 +1892,159 @@ $messages['bcl'] = array(
 	'code-rev-status-set' => 'Magliwat nin kamugtakan',
 	'code-rev-tags' => 'Mga tatak:',
 	'code-rev-tag-add' => 'Magdugang nin mga tatak:',
+	'code-rev-tag-remove' => 'Tangkason an mga tatak:',
+	'code-rev-comment-by' => 'Komento ni $1',
+	'code-rev-comment-preview' => 'Patânaw',
+	'code-rev-inline-preview' => 'Patânaw:',
+	'code-rev-diff' => 'Kalaenan',
+	'code-rev-diff-link' => 'kalaenan',
+	'code-rev-diff-too-large' => 'An kalaenan grabe kadakula tanganing maipahiling.',
+	'code-rev-purge-link' => 'purgahon',
+	'code-rev-total' => 'Kabilogang numero kan mga resulta: $1',
+	'code-rev-not-found' => "An rebisyon na '''$1''' bakong eksistido!",
+	'code-rev-history-link' => 'historiya',
+	'code-status-new' => 'baguhon',
+	'code-status-desc-new' => 'An rebisyon naghahalat nin sarong aksyon (panugmad na kamugtakan).',
+	'code-status-fixme' => 'hirahayaako',
+	'code-status-desc-fixme' => 'An rebisyon pinagpabisto an sarong kudol o baya napasa. Ini dapat na pinaghirahay o pinagbalikwat.',
+	'code-status-reverted' => 'pinagbalikwat',
+	'code-status-desc-reverted' => 'An rebisyon dae pinagdagos kan sarong hurihon na rebisyon.',
+	'code-status-resolved' => 'resolbado',
+	'code-status-desc-resolved' => 'An rebisyon nagkaigwa nin isyu na pinagpanungod sa paagi nin sarong huring rebisyon.',
+	'code-status-ok' => 'okey',
+	'code-status-desc-ok' => 'An rebisyon bilog na pinagrepaso asin an pararepaso nakakaseguro na ini pino sa lambang paagi.',
+	'code-status-deferred' => 'pinag-antala',
+	'code-status-desc-deferred' => 'An rebisyon dae minakaipo nin repaso.',
+	'code-status-old' => 'lumaon',
+	'code-status-desc-old' => 'An lumaon na rebisyon na igwang potensyal na mga kudol, alagad bakong maninigo an pagpagal sa pagrerepaso sainda.',
+	'code-signoffs' => 'Mga nagruluwasan',
+	'code-signoff-legend' => 'Magdugang nin pagluluwas',
+	'code-signoff-submit' => 'Magluwas',
+	'code-signoff-strike' => 'Guritan an pinagpiling mga pagluwas',
+	'code-signoff-signoff' => 'Magluwas kaining rebisyon bilang:',
+	'code-signoff-flag-inspected' => 'Pinagsayudsod',
+	'code-signoff-flag-tested' => 'Pinagprubaran',
+	'code-signoff-field-user' => 'Paragamit',
+	'code-signoff-field-flag' => 'Bandera',
+	'code-signoff-field-date' => 'Petsa',
+	'code-signoff-struckdate' => '$1 (inigo kan $2)',
+	'code-pathsearch-legend' => 'Hanapon an mga rebisyon na yaon kaining repositoryo sa paagi nin agihan',
+	'code-pathsearch-path' => 'Agihan:',
+	'code-pathsearch-filter' => 'Pahiling sana:',
+	'code-revfilter-cr_status' => 'Kamugtakan = $1',
+	'code-revfilter-cr_author' => 'Kagsurat = $1',
+	'code-revfilter-ct_tag' => 'Tatak = $1',
+	'code-revfilter-clear' => 'Klaraduhon an saraan',
+	'code-rev-submit' => 'Itagama an mga kaliwatan',
+	'code-rev-submit-next' => 'Itagama asin isunod an bakong resolbado',
+	'code-rev-next' => 'Isunod an bakong resolbado',
+	'code-batch-status' => 'Liwaton an kamugtakan:',
+	'code-batch-tags' => 'Liwaton an mga tatak:',
+	'codereview-batch-title' => 'Liwaton an gabos na pinagpiling mga rebisyon',
+	'codereview-batch-submit' => 'Isumite',
+	'code-releasenotes' => 'buhion an mga katalaanan',
+	'code-release-legend' => 'Puyuson an binuhian na mga katalaanan',
+	'code-release-startrev' => 'Poon kan rebisyon:',
+	'code-release-endrev' => 'Huri kan rebisyon:',
+	'codereview-subtitle' => 'Para sa $1',
+	'codereview-reply-link' => 'simbag',
+	'codereview-overview-title' => 'Mahiwas na patanaw',
+	'codereview-overview-desc' => 'Magpahiling nin sarong grapikong mahiwas na patanaw kaining listahan',
+	'codereview-email-subj' => '[$1 $2]: Baguhong komento pinagdugang',
+	'codereview-email-body' => '"$1" nagpaskil nin sarong komento kan $3.
+URL:$2
+
+Sumaryo kan ginibo para sa $3:
+
+$5
+
+Komento ni $1:
+
+$4',
+	'codereview-email-subj2' => '[$1 $2]: Panunudon na mga kaliwatan',
+	'codereview-email-body2' => '"$1" naghimo nin panunod na mga kaliwatan sa $2.
+URL:$5
+
+Sumaryo kan ginibo para sa panunod na $2:
+
+$6
+
+Panunod na URL: $3
+Panunod na sumaryo ni "$1":
+
+$4',
+	'codereview-email-subj3' => '[$1 $2]: Rebisyon na kamugtakan pinagliwat',
+	'codereview-email-body3' => '"$1" pinagliwat an kamugtakan kan $2 na magin "$4"
+URL:$5
+
+Lumaong kamugtakan: $3
+Baguhong kamugtakan: $4
+
+Sumaryo kan ginibo para sa $2:
+
+$6',
+	'codereview-email-subj4' => '[$1 $2]: Baguhong komento pinagdugang, asin an rebisyon na kamugtakan pinagliwat',
+	'codereview-email-body4' => '"$1" pinagliwat an kamugtakan kan $2 na magin "$4" asin nagkomento kaini.
+URL:$5
+
+Lumaon na kamugtakan: $3
+Baguhon na kamugtakan: $4
+
+Sumaryo kan ginibo para sa $2:
+
+$7
+
+Komento ni $1:
+
+$6',
+	'code-stats' => 'mga estadistika',
+	'code-stats-header' => 'Mga estadistika para sa repositoryong $1',
+	'code-stats-main' => 'Magpoon kaidtong $1, an repositoryo nagkaigwa nin $2 {{PLURAL:$2|rebisyon|mga rebisyon}} kan [[Special:Code/$3/author|$4 {{PLURAL:$4|kagsurat|mga kagsurat}}]].',
+	'code-stats-status-breakdown' => 'Numero kan mga rebisyon lambang estado',
+	'code-stats-fixme-breakdown' => 'Kalistahan kan hirahayaako na mga rebisyon lambang kagsurat',
+	'code-stats-fixme-breakdown-path' => 'Kalistahan kan hirahayaako na mga rebisyon lambang agihan',
+	'code-stats-fixme-path' => 'Hirahayaako na mga rebisyon para sa agihan na:$1',
+	'code-stats-new-breakdown' => 'Kalistahan kan baguhon na mga rebisyon lambang kagsurat',
+	'code-stats-new-breakdown-path' => 'Kalistahan kan baguhon na mga rebisyon lambang agihan',
+	'code-stats-new-path' => 'Baguhon na mga rebisyon para sa agihan na: $1',
+	'code-stats-count' => 'Numero kan mga rebisyon',
+	'code-tooltip-withsummary' => 'r$1 [$2] ni $3 - $4',
+	'code-tooltip-withoutsummary' => 'r$1 [$2] ni $3',
+	'repoadmin' => 'Repositoryong Administrasyon',
+	'repoadmin-new-legend' => 'Magmukna nin baguhong repositoryo',
+	'repoadmin-new-label' => 'Repositoryong pangaran:',
+	'repoadmin-new-button' => 'Muknaon',
+	'repoadmin-edit-legend' => 'Modipikasyon kan repositoryong"$1"',
+	'repoadmin-edit-path' => 'Repositoryong agihan:',
+	'repoadmin-edit-bug' => 'Bugzilla na agihan:',
+	'repoadmin-edit-view' => 'Agihan kan ViewVC:',
+	'repoadmin-edit-button' => 'OK',
+	'repoadmin-edit-sucess' => 'An repositoryong "[[Special:Code/$1|$1]]" matrayumpong modipikado.',
+	'repoadmin-nav' => 'repositoryong administrasyon',
+	'right-repoadmin' => 'Manihoon an kodigo nin mga repositoryo',
+	'right-codereview-use' => 'Paggamit kan Espesyal:Kodigo',
+	'right-codereview-add-tag' => 'Magdugang nin baguhong mga tatak sa mga rebisyon',
+	'right-codereview-remove-tag' => 'Tangkason an mga tatak gikan sa mga rebisyon',
+	'right-codereview-post-comment' => 'Magdugang nin mga komento sa mga rebisyon',
+	'right-codereview-set-status' => 'Liwaton an kamugtakan nin mga rebisyon',
+	'right-codereview-signoff' => 'Magluwas sa mga rebisyon',
+	'right-codereview-link-user' => 'Isugpon an mga kagsurat sa mga paragamit nin wiki',
+	'right-codereview-associate' => 'Manihoon an mga asosasyon nin rebisyon',
+	'right-codereview-review-own' => 'Markahan an saimong sadireng mga rebisyon bilang "{{int:code-status-ok}}" o baya "{{int:code-status-resolved}}"',
+	'action-repoadmin' => 'manihoon an kodigo nin mga repositoryo',
+	'action-codereview-use' => 'gamit kan Espesyal:Kodigo',
+	'action-codereview-add-tag' => 'magdugang nin baguhon na mga tatak sa mga rebisyon',
+	'action-codereview-remove-tag' => 'tangkason an mga tatak gikan sa mga rebisyon',
+	'action-codereview-post-comment' => 'magdugang nin mga komento sa mga rebisyon',
+	'action-codereview-set-status' => 'liwaton an kamugtakan nin mga rebisyon',
+	'action-codereview-signoff' => 'magluwas sa mga rebisyon',
+	'action-codereview-link-user' => 'isugpon an mga kagsurat sa mga paragamit nin wiki',
+	'action-codereview-associate' => 'manihoon an mga asosasyon nin rebisyon',
+	'action-codereview-review-own' => 'markahan an saimong sadireng mga rebisyon bilang "{{int:code-status-ok}}" o baya "{{int:code-status-resolved}}"',
+	'specialpages-group-developer' => 'Mga kagamitan nin Paragibo',
+	'group-svnadmins' => 'SVN na mga administrador',
+	'group-svnadmins-member' => '{{GENDER:$1|SVN na administrador}}',
+	'grouppage-svnadmins' => '{{ns:project}}:SVN na mga administrador',
 );
 
 /** Belarusian (беларуская)
