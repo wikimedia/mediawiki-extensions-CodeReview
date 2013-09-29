@@ -6876,6 +6876,7 @@ $messages['hak'] = array(
 
 /** Hebrew (עברית)
  * @author Amire80
+ * @author Guycn1
  * @author Rotemliss
  * @author YaronSh
  */
@@ -7107,6 +7108,8 @@ $6',
 	'group-svnadmins' => 'מנהלי שרת SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|מנהל|מנהלת}} שרת SVN',
 	'grouppage-svnadmins' => '{{ns:project}}:מנהלי שרת SVN',
+	'group-svnadmins.css' => '/* הסגנונות הנכתבים כאן ישפיעו על מנהלי שרת SVN בלבד */',
+	'group-svnadmins.js' => '/* כל סקריפט JavaScript שנכתב כאן ירוץ עבור מנהלי שרת SVN בלבד */',
 );
 
 /** Hindi (हिन्दी)
@@ -13503,7 +13506,7 @@ $messages['ps'] = array(
 	'code' => 'د کوډ مخکتنه',
 	'code-comments' => 'تبصرې',
 	'code-change-removed' => 'غورځول شوی:',
-	'code-change-added' => 'ګډ شوی:',
+	'code-change-added' => 'گډ شوی:',
 	'code-old-status' => 'پخوانی دريځ',
 	'code-new-status' => 'نوی دريځ',
 	'code-notes' => 'تازه تبصرې',
