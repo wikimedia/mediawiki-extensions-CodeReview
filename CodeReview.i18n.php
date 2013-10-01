@@ -10170,6 +10170,7 @@ $messages['ky'] = array(
 /** Luxembourgish (Lëtzebuergesch)
  * @author Les Meloures
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'code' => 'Code nokucken',
@@ -10192,7 +10193,7 @@ $messages['lb'] = array(
 	'code-authors' => 'Auteuren',
 	'code-status' => 'Statussen',
 	'code-tags' => 'Tagen',
-	'code-authors-text' => 'Ënnendrënner ass eng Lëscht vun de Repo-Auteuren an der Reiefolleg vum Commit Numm. Lokal Wikikonte ginn tëschent Klamere gewisen. Et ka sinn datt Daten aus dem Tëschspäicher kommen.',
+	'code-authors-text' => 'Ënnendrënner ass eng Lëscht vun de Repo-Auteuren an der Reiefolleg vum Commit Numm. Lokal Wikikonte ginn tëscht Klamere gewisen. Et ka sinn datt Daten aus dem Tëschespäicher kommen.',
 	'code-author-haslink' => 'Dësen Auteur ass mam Wiki-Benotzer $1 verbonn',
 	'code-author-orphan' => 'SVN Benotzer/Auteur $1 huet kee Link mat engem Wiki-Benotzerkont',
 	'code-author-dolink' => 'Dësen Auteur mat engem Wiki-Benotzer verbannen:',
@@ -13527,7 +13528,7 @@ $messages['ps'] = array(
 	'code-rev-message' => 'تبصره:',
 	'code-rev-modified-a' => 'ورګډ شو',
 	'code-rev-modified-r' => 'ځايناستی شوی',
-	'code-rev-modified-d' => 'ړنګ شو',
+	'code-rev-modified-d' => 'ړنگ شو',
 	'code-rev-modified-m' => 'بدل شو',
 	'code-rev-imagediff' => 'د انځور بدلونونه',
 	'code-rev-status' => 'دريځ:',
