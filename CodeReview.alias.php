@@ -322,7 +322,7 @@ $specialPageAliases['vi'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
-	'Code' => array( '代码' ),
+	'Code' => array( '代码', '代码复审' ),
 	'RepoAdmin' => array( '信息库管理' ),
 );
 
