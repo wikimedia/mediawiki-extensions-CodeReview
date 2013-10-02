@@ -9382,6 +9382,7 @@ Summary:',
  * @author Dawid Deutschland
  * @author ITshnik
  * @author Malafaya
+ * @author Nodar Kherkheulidze
  * @author გიორგიმელა
  */
 $messages['ka'] = array(
@@ -9401,7 +9402,7 @@ $messages['ka'] = array(
 	'code-mycomments' => 'ჩემი კომენტარები',
 	'code-authors' => 'ავტორები',
 	'code-status' => 'სტატუსი',
-	'code-tags' => 'აღნიშვნები',
+	'code-tags' => 'მონიშვნები',
 	'code-author-orphan' => 'SVN მომხმარებელი/ავტორი $1 არ არის ვიკი-ანგარიშთან დაკავშირებული',
 	'code-author-name' => 'მომხმარებლის სახელის შეტანა:',
 	'code-author-link' => 'კავშირის დამყარება?',
@@ -13526,7 +13527,7 @@ $messages['ps'] = array(
 	'code-rev-author' => 'ليکوال:',
 	'code-rev-date' => 'نېټه:',
 	'code-rev-message' => 'تبصره:',
-	'code-rev-modified-a' => 'ورګډ شو',
+	'code-rev-modified-a' => 'ورگډ شو',
 	'code-rev-modified-r' => 'ځايناستی شوی',
 	'code-rev-modified-d' => 'ړنگ شو',
 	'code-rev-modified-m' => 'بدل شو',
