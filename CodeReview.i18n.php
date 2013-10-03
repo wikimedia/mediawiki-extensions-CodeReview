@@ -13551,7 +13551,7 @@ $messages['ps'] = array(
 	'code-signoff-field-date' => 'نېټه',
 	'code-revfilter-cr_status' => 'دريځ = $1',
 	'code-revfilter-cr_author' => 'ليکوال = $1',
-	'code-revfilter-clear' => 'چاڼګرونه پاکول',
+	'code-revfilter-clear' => 'چاڼگرونه پاکول',
 	'code-rev-submit' => 'بدلونونه خوندي کول',
 	'code-batch-status' => 'دريځ بدلول:',
 	'codereview-batch-submit' => 'سپارل',
