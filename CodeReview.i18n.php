@@ -6867,7 +6867,7 @@ $messages['ha'] = array(
 	'repoadmin-new-button' => 'Ƙirƙira',
 );
 
-/** Hakka (Hak-kâ-fa)
+/** Hakka (客家語/Hak-kâ-ngî)
  * @author Hakka
  */
 $messages['hak'] = array(
@@ -10158,7 +10158,7 @@ $messages['ku-latn'] = array(
 	'repoadmin-edit-button' => 'Baş e',
 );
 
-/** Kirghiz (Кыргызча)
+/** Kyrgyz (Кыргызча)
  * @author Growingup
  */
 $messages['ky'] = array(
