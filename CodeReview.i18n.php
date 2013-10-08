@@ -7117,8 +7117,8 @@ $6',
  * @author Siddhartha Ghai
  */
 $messages['hi'] = array(
-	'code' => 'कोड़ समीक्षा',
-	'code-rev-title' => '$1 - कोड़ समीक्षा',
+	'code' => 'कोड समीक्षा',
+	'code-rev-title' => '$1 - कोड समीक्षा',
 	'code-comments' => 'टिप्पणियाँ',
 	'code-references' => 'अनुवर्ती संशोधन',
 	'code-change-status' => "$1 की '''स्थिति''' बदला गया",
@@ -7128,7 +7128,7 @@ $messages['hi'] = array(
 	'code-old-status' => 'पुरानी स्थिति',
 	'code-new-status' => 'नई स्थिति',
 	'code-prop-changes' => 'स्थिति और लॉग टैगिंग',
-	'codereview-desc' => '[[Special:Code|कोड़ समीक्षा उपकरण]] सहित [[Special:रेपोप्रबन्धक|उपसंस्करण समर्थन]]', # Fuzzy
+	'codereview-desc' => '[[Special:Code|कोड समीक्षा उपकरण]] [[Special:RepoAdmin|सबवर्ज़न समर्थन]] के साथ',
 	'code-no-repo' => 'कोई भंडार कॉन्फ़िगर नहीं किया गया!',
 	'code-create-repo' => '[[Special:RepoAdmin|रेपोएडमिन]] को जाएँ भंडार निर्माण के लिए',
 	'code-repo-not-found' => "भंडार '''$1''' मौजूद नहीं है!",
