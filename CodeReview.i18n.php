@@ -7377,6 +7377,7 @@ $messages['hr'] = array(
 	'code-rev-purge-link' => 'očisti',
 	'code-rev-total' => 'Ukupan broj rezultata: $1',
 	'code-rev-not-found' => "Revizija '''$1''' ne postoji!",
+	'code-rev-history-link' => 'povijest',
 	'code-status-new' => 'novo',
 	'code-status-desc-new' => 'Revizija očekuje akciju (osnovno stanje).',
 	'code-status-fixme' => 'fixme',
