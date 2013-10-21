@@ -485,7 +485,8 @@ See also: {{msg-mw|Code-references}}',
 {{Related|Code-rev-field}}
 {{Identical|Comment}}',
 	'code-rev-repo' => 'Used as label in the table.
-{{Related|Code-rev-field}}',
+{{Related|Code-rev-field}}
+{{Identical|Repository}}',
 	'code-rev-rev' => 'Used as label in the table.
 {{Related|Code-rev-field}}
 {{Identical|Revision}}',
@@ -3238,6 +3239,7 @@ $messages['ce'] = array(
 	'code-rev-tags' => 'Билгалонаш:',
 	'code-rev-tag-add' => 'ТӀетоха билгалонаш:',
 	'code-rev-tag-remove' => 'ДӀаяккха билгалонаш:',
+	'code-rev-purge-link' => 'кэш цӀанъян',
 	'code-signoff-field-date' => 'Терахь',
 	'code-revfilter-cr_status' => 'Хьал = $1',
 	'code-batch-tags' => 'Хийца билгалонаш:',
@@ -5407,7 +5409,7 @@ $messages['fa'] = array(
 	'code-signoff-legend' => 'افزودن ثبات',
 	'code-signoff-submit' => 'تثبیت کردن',
 	'code-signoff-strike' => 'حذف اثبات‌های انتخاب شده',
-	'code-signoff-signoff' => 'تثبیت کردن این نسخه به عنوان:',
+	'code-signoff-signoff' => 'تثبیت‌کردن این نسخه به‌عنوان:',
 	'code-signoff-flag-inspected' => 'بازرسی‌شده',
 	'code-signoff-flag-tested' => 'آزمایش شد',
 	'code-signoff-field-user' => 'کاربر',
@@ -5420,7 +5422,7 @@ $messages['fa'] = array(
 	'code-revfilter-cr_status' => 'وضعیت = $1',
 	'code-revfilter-cr_author' => 'نویسنده = $1',
 	'code-revfilter-ct_tag' => 'برچسب = $1',
-	'code-revfilter-clear' => 'پاک کردن پالایه',
+	'code-revfilter-clear' => 'پاک‌کردن پالایه',
 	'code-rev-submit' => 'ذخیره‌کردن تغییرات',
 	'code-rev-submit-next' => 'ذخیره و حرکت به مورد حل نشدهٔ بعدی',
 	'code-rev-next' => 'حل نشدهٔ بعدی',
