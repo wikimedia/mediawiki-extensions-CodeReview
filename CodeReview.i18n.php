@@ -7294,6 +7294,7 @@ $messages['hif-latn'] = array(
  * @author Dalibor Bosits
  * @author Ex13
  * @author Herr Mlinka
+ * @author MaGa
  * @author Roberta F.
  * @author SpeedyGonsales
  */
@@ -7410,6 +7411,7 @@ $messages['hr'] = array(
 	'code-pathsearch-filter' => 'Primijenjen filtar:', # Fuzzy
 	'code-revfilter-cr_status' => 'Status = $1',
 	'code-revfilter-cr_author' => 'Autor = $1',
+	'code-revfilter-ct_tag' => 'Oznaka = $1',
 	'code-revfilter-clear' => 'Očisti filtar',
 	'code-rev-submit' => 'Spremi izmjene',
 	'code-rev-submit-next' => 'Spremi i sljedeće neriješeno',
