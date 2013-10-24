@@ -16337,6 +16337,7 @@ $4',
 );
 
 /** Swedish (svenska)
+ * @author Bengt B
  * @author Boivie
  * @author Cohan
  * @author Dafer45
@@ -16349,6 +16350,7 @@ $4',
  * @author Najami
  * @author Per
  * @author Rotsee
+ * @author Skalman
  * @author Tobulos1
  * @author WikiPhoenix
  */
@@ -16368,6 +16370,8 @@ $messages['sv'] = array(
 	'codereview-desc' => '[[Special:Code|Kodgranskningsverktyg]] med [[Special:RepoAdmin|stöd för Subversion]]',
 	'code-no-repo' => 'Ingen databas konfigurerad!',
 	'code-create-repo' => 'Gå till [[Special:RepoAdmin|RepoAdmin]] för att skapa en databas',
+	'code-need-repoadmin-rights' => 'repoadmin-rättigheter krävs för att kunna skapa ett Repository',
+	'code-need-group-with-rights' => 'Ingen grupp med repoadmin-rättigheter finns. Lägg till en för att kunna lägga till ett nytt Repository',
 	'code-repo-not-found' => "Förrådet '''$1''' finns inte!",
 	'code-load-diff' => 'Ladda skillnad...',
 	'code-notes' => 'senaste kommentarer',
@@ -16405,6 +16409,7 @@ $messages['sv'] = array(
 	'code-field-text' => 'Not',
 	'code-field-select' => 'Välj',
 	'code-reference-remove' => 'Ta bort markerade associationer',
+	'code-reference-associate' => 'Associera uppföljande version',
 	'code-reference-associate-submit' => 'Associera',
 	'code-rev-author' => 'Författare:',
 	'code-rev-date' => 'Datum:',
@@ -16562,6 +16567,7 @@ $6',
 	'action-codereview-add-tag' => 'lägg till nya taggar till versioner',
 	'action-codereview-remove-tag' => 'ta bort taggar från versioner',
 	'action-codereview-post-comment' => 'lägg till kommentarer till versioner',
+	'action-codereview-link-user' => 'länka till wiki användare',
 	'action-codereview-review-own' => 'märk dina egna revideringar som "{{int:code-status-ok}}" eller "{{int:code-status-resolved}}"',
 	'specialpages-group-developer' => 'Utvecklarverktyg',
 	'group-svnadmins' => 'SVN administratörer',
