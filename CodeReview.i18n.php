@@ -5311,8 +5311,8 @@ $messages['fa'] = array(
 	'code' => 'مرور کد',
 	'code-rev-title' => 'بازبینی کد - $1',
 	'code-comments' => 'توضیحات',
-	'code-references' => 'رسیدگی به پیگیری',
-	'code-referenced' => 'ارسال نسخه برای این پیگیری در',
+	'code-references' => 'رسیدگی به پی‌گیری',
+	'code-referenced' => 'نسخه‌های پشیین وابسته به این',
 	'code-change-status' => "'''وضعیت''' $1 را تغییر داد",
 	'code-change-tags' => "'''برچسب''' را برای $1 تغییر داد",
 	'code-change-removed' => 'حذف:',
@@ -5362,7 +5362,7 @@ $messages['fa'] = array(
 	'code-field-text' => 'نکته',
 	'code-field-select' => 'انتخاب',
 	'code-reference-remove' => 'حذف انجمن‌های انتخاب شده',
-	'code-reference-associate' => 'پیگیری وابسته نسخه:',
+	'code-reference-associate' => 'پی‌گیری نسخهٔ وابسته:',
 	'code-reference-associate-submit' => 'یکپارچه کردن',
 	'code-rev-author' => 'مولف:',
 	'code-rev-date' => 'تاریخ:',
@@ -5449,7 +5449,7 @@ $5
 نظر:
 
 $4',
-	'codereview-email-subj2' => 'پیگیری تغییرات: [$1 $2]',
+	'codereview-email-subj2' => 'پی‌گیری تغییرات: [$1 $2]',
 	'codereview-email-body2' => 'کاربر «$1» این تغییرات را به $2 داده‌است.
 
 نشانی کامل برای این نسخه‌ها: $5
