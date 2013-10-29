@@ -241,11 +241,9 @@ $wgCodeReviewFixmePerPath = array();
 $wgCodeReviewNewPerPath = array();
 
 /**
- * UDP comment and status changes notification
+ * Comment and status changes notification
  */
-$wgCodeReviewUDPAddress = false;
-$wgCodeReviewUDPPort = false;
-$wgCodeReviewUDPPrefix = '';
+$wgCodeReviewRC = array();
 
 /**
 * How long to cache repository statistics in seconds
