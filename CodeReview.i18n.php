@@ -3904,6 +3904,7 @@ $messages['de-formal'] = array(
 
 /** Zazaki (Zazaki)
  * @author Erdemaslancan
+ * @author Gorizon
  * @author Mirzali
  * @author Olvörg
  * @author Xoser
@@ -3919,7 +3920,7 @@ $messages['diq'] = array(
 	'code-change-added' => 'de biyo:',
 	'code-old-status' => 'Weziyeto kehan',
 	'code-new-status' => 'Weziyeto newe',
-	'code-prop-changes' => 'Logê statuyî & etîketî',
+	'code-prop-changes' => 'Qeydé etiketan u weziyetan',
 	'codereview-desc' => '[[Special:Code|Xacetan ke qe kontralê kodî]] pê [[Special:RepoAdmin|Yardimê subversionî]]',
 	'code-no-repo' => 'Yew arşîv cinfigure nebiyo!',
 	'code-repo-not-found' => "Repositor '''$1''' cini yo!",
@@ -3951,7 +3952,7 @@ $messages['diq'] = array(
 	'code-field-status' => 'Weziyet',
 	'code-field-timestamp' => 'Deme',
 	'code-field-comments' => 'Vatışi',
-	'code-field-path' => 'Raher',
+	'code-field-path' => 'Ray',
 	'code-field-text' => 'Not',
 	'code-field-select' => 'Weçine',
 	'code-rev-author' => 'Nuştekar:',
@@ -4064,7 +4065,7 @@ $6',
 	'repoadmin' => 'Îdarê Kerdîşê Arşîvî',
 	'repoadmin-new-legend' => 'Yew arşîvê newî viraze',
 	'repoadmin-new-label' => 'Nameyê arşîvî:',
-	'repoadmin-new-button' => 'Vıraze',
+	'repoadmin-new-button' => 'İycad ke',
 	'repoadmin-edit-legend' => 'Arşîvê $1î mofifiye kerdişî',
 	'repoadmin-edit-path' => 'Patikayê arşîvî:',
 	'repoadmin-edit-bug' => 'Patikayê bugzillayî:',
