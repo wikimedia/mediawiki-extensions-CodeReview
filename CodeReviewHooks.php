@@ -102,13 +102,14 @@ class CodeReviewHooks {
 	 * a subpage of a repository on Special:Code.
 	 *
 	 * @param $values array
+	 * @param $out OutputPage
 	 * @return bool
 	 */
-	public static function onMakeGlobalVariablesScript( &$values ) {
+	public static function onMakeGlobalVariablesScript( &$values, $out ) {
 		# Bleugh, this is horrible
-		global $wgTitle;
-		if ( $wgTitle->isSpecial( 'Code' ) ) {
-			$bits = explode( '/', $wgTitle->getText() );
+		$title = $out->getTitle();
+		if ( $title->isSpecial( 'Code' ) ) {
+			$bits = explode( '/', $title->getText() );
 			if ( isset( $bits[1] ) ) {
 				$values['wgCodeReviewRepository'] = $bits[1];
 			}
