@@ -178,7 +178,7 @@ $4',
 	'codereview-email-body3' => '"$1" changed the status of $2 to "$4"
 URL: $5
 
-Old status:  $3
+Old status: $3
 New status: $4
 
 Commit summary for $2:
