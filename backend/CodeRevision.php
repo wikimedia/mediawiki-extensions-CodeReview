@@ -1342,54 +1342,74 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $commentId
-	 * @param  $text
-	 * @param null $url
+	 * @param string $commentId
+	 * @param string $text
+	 * @param null|string $url
 	 * @return void
 	 */
 	protected function sendCommentToUDP( $commentId, $text, $url = null ) {
-		global $wgCodeReviewUDPAddress, $wgCodeReviewUDPPort, $wgCodeReviewUDPPrefix, $wgLang, $wgUser;
-
-		if( $wgCodeReviewUDPAddress ) {
-			if( is_null( $url ) ) {
-				$url = $this->getCanonicalUrl( $commentId );
-			}
-
-			$line = wfMessage( 'code-rev-message' )->text() . " \00314(" . $this->repo->getName() .
-					")\003 \0037" . $this->getIdString() . "\003 \00303" . RecentChange::cleanupForIRC( $wgUser->getName() ) .
-					"\003: \00310" . RecentChange::cleanupForIRC( $wgLang->truncate( $text, 100 ) ) . "\003 " . $url;
-
-			RecentChange::sendToUDP( $line, $wgCodeReviewUDPAddress, $wgCodeReviewUDPPrefix, $wgCodeReviewUDPPort );
+		global $wgLang, $wgUser;
+		if( is_null( $url ) ) {
+			$url = $this->getCanonicalUrl( $commentId );
 		}
+
+		$line = sprintf(
+			"%s \00314(%s)\003 \0037%s\003 \00303%s\003: \00310%s\003%s",
+			wfMessage( 'code-rev-message' )->text(),
+			$this->repo->getName(),
+			$this->getIdString(),
+			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgUser->getName() ),
+			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgLang->truncate( $text, 100 ) ),
+			$url
+		);
+
+		$this->sendRecentChanges( $line );
 	}
 
 	/**
-	 * @param $status string
-	 * @param $oldStatus string
+	 * @param string $status
+	 * @param string $oldStatus
 	 */
 	protected function sendStatusToUDP( $status, $oldStatus ) {
-		global $wgCodeReviewUDPAddress, $wgCodeReviewUDPPort, $wgCodeReviewUDPPrefix, $wgUser;
+		global $wgUser;
+		$url = $this->getCanonicalUrl();
 
-		if( $wgCodeReviewUDPAddress ) {
-			$url = $this->getCanonicalUrl();
+		// Give grep a chance to find the usages:
+		// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
+		// code-status-ok, code-status-deferred, code-status-old
+		$line = sprintf(
+			"%s \00314(%s)\00303 %s\003 %s: \00315%s\003 -> \00310%s\003%s",
+			wfMessage( 'code-rev-status' )->text(),
+			$this->repo->getName(),
+			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgUser->getName() ),
+			// Remove three apostrophes as they are intended for the parser
+			str_replace(
+				"'''",
+				'',
+				wfMessage(
+					'code-change-status',
+					"\0037{$this->getIdString()}\003"
+				)->text()
+			),
+			wfMessage( 'code-status-' . $oldStatus )->text(),
+			wfMessage( 'code-status-' . $status )->text(),
+			$url
+		);
 
-			// Give grep a chance to find the usages:
-			// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
-			// code-status-ok, code-status-deferred, code-status-old
-			$line = wfMessage( 'code-rev-status' )->text() . " \00314(" . $this->repo->getName() .
-				")\00303 " . RecentChange::cleanupForIRC( $wgUser->getName() ) . "\003 " .
-				/* Remove three apostrophes as they are intended for the parser  */
-				str_replace(
-					"'''",
-					'',
-					wfMessage(
-						'code-change-status',
-						"\0037" . $this->getIdString() . "\003"
-					)->text() ) .
-					": \00315" . wfMessage( 'code-status-' . $oldStatus )->text() . "\003 -> \00310" .
-				wfMessage( 'code-status-' . $status )->text() . "\003 " . $url;
+		$this->sendRecentChanges( $line );
+	}
 
-			RecentChange::sendToUDP( $line, $wgCodeReviewUDPAddress, $wgCodeReviewUDPPrefix, $wgCodeReviewUDPPort );
+	/**
+	 * @param string $line
+	 */
+	private function sendRecentChanges( $line ) {
+		global $wgCodeReviewRC;
+		foreach ( $wgCodeReviewRC as $rc ) {
+			/**
+			 * @var $engine RCFeedEngine
+			 */
+			$engine = new $rc['formatter'];
+			$engine->send( $rc, $line );
 		}
 	}
 }
