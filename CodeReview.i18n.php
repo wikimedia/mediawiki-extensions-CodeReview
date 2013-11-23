@@ -9768,7 +9768,7 @@ $messages['ko'] = array(
 	'code-signoff-field-flag' => '플래그',
 	'code-signoff-field-date' => '날짜',
 	'code-signoff-struckdate' => '$1 ($2 공격)',
-	'code-pathsearch-legend' => '이 보관소(repo)에서 있었던 수정 사항을 경로로 검색하기',
+	'code-pathsearch-legend' => '이 저장소에서 경로로 판을 검색하기',
 	'code-pathsearch-path' => '경로:',
 	'code-pathsearch-filter' => '항목만 보기:',
 	'code-revfilter-cr_status' => '상태 = $1',
