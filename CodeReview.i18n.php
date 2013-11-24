@@ -7953,6 +7953,21 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-adminisztrátorok',
 );
 
+/** Armenian (Հայերեն)
+ * @author M hamlet
+ */
+$messages['hy'] = array(
+	'codereview-email-body3' => '«$1» օգտագործողը փոխեց $2֊ի կարգավիճակը $4֊ով
+
+Հին կարգավիճակը՝ $3
+Նոր կարգավիճակը՝ $4
+
+Լրիվ URL-հասցեն՝ $5
+Խմբագրման ամփոփում $2֊ի համար՝
+
+$6',
+);
+
 /** Interlingua (interlingua)
  * @author McDutchie
  */
