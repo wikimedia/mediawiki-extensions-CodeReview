@@ -3056,6 +3056,7 @@ $6',
  * @author Arnaugir
  * @author El libre
  * @author Loupeter
+ * @author Papapep
  * @author Paucabot
  * @author Pitort
  * @author SMP
@@ -3091,10 +3092,10 @@ $messages['ca'] = array(
 	'code-author-alterlink' => "Canviau l'usuari wiki vinculat a aquest autor:",
 	'code-author-orunlink' => 'O desvinculau aquest usuari wiki:',
 	'code-author-name' => "Indiqueu un nom d'usuari:",
-	'code-author-success' => "L'autor $1 ha estat vinculat amb l'usuari wiki $2",
+	'code-author-success' => "S'ha vinculat l'autor $1 amb l'usuari wiki $2",
 	'code-author-link' => 'vincula?',
 	'code-author-unlink' => "Elimina l'enllaç?",
-	'code-author-unlinksuccess' => "L'autor $1 ha estat desvinculat",
+	'code-author-unlinksuccess' => "S'ha desvinculat l'autor $1",
 	'code-author-badtoken' => "Error de sessió en intentar realitzar l'acció.",
 	'code-author-total' => "Nombre total d'autors/es: $1",
 	'code-author-lastcommit' => "Data de l'última acció",
