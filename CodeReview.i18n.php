@@ -3240,6 +3240,8 @@ $messages['ce'] = array(
 	'code-rev-tags' => 'Билгалонаш:',
 	'code-rev-tag-add' => 'ТӀетоха билгалонаш:',
 	'code-rev-tag-remove' => 'ДӀаяккха билгалонаш:',
+	'code-rev-comment-preview' => 'Хьалха муха ю хьажа',
+	'code-rev-inline-preview' => 'Хьалха муха ю хьажа:',
 	'code-rev-purge-link' => 'кэш цӀанъян',
 	'code-signoff-field-date' => 'Терахь',
 	'code-revfilter-cr_status' => 'Хьал = $1',
@@ -3264,7 +3266,7 @@ $messages['co'] = array(
 	'code-rev-history-link' => 'cronolugia',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Danny B.
  * @author Kuvaly
  * @author Matěj Grabovský
@@ -3501,7 +3503,7 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:Správci SVN',
 );
 
-/** Church Slavic (словѣ́ньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
+/** Church Slavic (словѣньскъ / ⰔⰎⰑⰂⰡⰐⰠⰔⰍⰟ)
  * @author ОйЛ
  */
 $messages['cu'] = array(
@@ -6881,6 +6883,7 @@ $messages['hak'] = array(
 /** Hebrew (עברית)
  * @author Amire80
  * @author Guycn1
+ * @author Guycn2
  * @author Rotemliss
  * @author YaronSh
  */
