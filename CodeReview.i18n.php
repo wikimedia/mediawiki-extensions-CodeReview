@@ -3233,10 +3233,14 @@ $4',
  * @author Умар
  */
 $messages['ce'] = array(
+	'code-change-status' => "хийцина '''хьал''' r$1",
+	'code-change-tags' => "хийцина '''билгалонаш''' цу r$1",
+	'code-change-removed' => 'дӀаяьккхина:',
 	'code-tags' => 'билгалонаш',
 	'code-field-timestamp' => 'Терахь',
 	'code-reference-remove' => 'ДӀаяха хаьржинарш',
 	'code-rev-date' => 'Терахь:',
+	'code-rev-modified-d' => 'дӀаяьккхина',
 	'code-rev-tags' => 'Билгалонаш:',
 	'code-rev-tag-add' => 'ТӀетоха билгалонаш:',
 	'code-rev-tag-remove' => 'ДӀаяккха билгалонаш:',
