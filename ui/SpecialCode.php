@@ -36,7 +36,7 @@ class SpecialCode extends SpecialPage {
 			$view->execute();
 		} else {
 			$out->addWikiMsg( 'nosuchactiontext' );
-			$out->returnToMain( null, $this->getTitle() );
+			$out->returnToMain( null, $this->getPageTitle() );
 			return;
 		}
 
