@@ -9731,7 +9731,7 @@ $messages['ko'] = array(
 	'code-browsing-path' => "'''$1'''에서 판 보기",
 	'code-field-id' => '버전',
 	'code-field-author' => '작성자',
-	'code-field-user' => '의견 작성자',
+	'code-field-user' => '의견 남긴 이',
 	'code-field-message' => '코드 적용 요약',
 	'code-field-status' => '상태',
 	'code-field-status-description' => '상태 설명',
@@ -9809,8 +9809,8 @@ $messages['ko'] = array(
 	'code-batch-tags' => '태그 바꾸기:',
 	'codereview-batch-title' => '모든 선택한 판을 수정',
 	'codereview-batch-submit' => '제출',
-	'code-releasenotes' => '배포 노트',
-	'code-release-legend' => '배포 노트 만들기',
+	'code-releasenotes' => '릴리스 노트',
+	'code-release-legend' => '릴리스 노트 생성',
 	'code-release-startrev' => '시작 버전:',
 	'code-release-endrev' => '마지막 버전:',
 	'codereview-subtitle' => '$1',
@@ -18658,6 +18658,8 @@ $messages['yi'] = array(
  * @author Demmy
  */
 $messages['yo'] = array(
+	'code-rev-history-link' => 'ìtàn',
+	'code-status-new' => 'tuntun',
 	'code-stats' => 'àwọn statistiki:',
 	'repoadmin-edit-button' => 'OK',
 );
