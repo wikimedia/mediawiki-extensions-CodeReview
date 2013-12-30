@@ -23,9 +23,9 @@ class SpecialRepoAdmin extends SpecialPage {
 
 		$repo = $wgRequest->getVal( 'repo', $subpage );
 		if ( $repo == '' ) {
-			$view = new RepoAdminListView( $this->getTitle() );
+			$view = new RepoAdminListView( $this->getPageTitle() );
 		} else {
-			$view = new RepoAdminRepoView( $this->getTitle( $repo ), $repo );
+			$view = new RepoAdminRepoView( $this->getPageTitle( $repo ), $repo );
 		}
 		$view->execute();
 	}
