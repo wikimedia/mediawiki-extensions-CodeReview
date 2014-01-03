@@ -1739,7 +1739,7 @@ $7
 $6',
 	'code-stats' => 'статистика',
 	'code-stats-header' => '$1 һаҡлағысы өсөн статистика',
-	'code-stats-main' => '$1 һаҡлағыста [[Special:Code/$3/author|$4 {{PLURAL:$4|автор}}]] тарафынан тапшырылған $2 {{PLURAL:$2|өлгө}} бар.',
+	'code-stats-main' => '$1 һаҡлағыста [[Special:Code/$3/author|$4 {{PLURAL:$4|1=автор}}]] тарафынан тапшырылған $2 {{PLURAL:$2|өлгө}} бар.', # Fuzzy
 	'code-stats-status-breakdown' => 'Һәр торошҡа өлгөләр',
 	'code-stats-fixme-breakdown' => '"Үҙгәртергә кәрәк" торошло өлгөләрҙе авторҙарға бүлеү', # Fuzzy
 	'code-stats-new-path' => '$1 адресы өсөн яңы үҙгәрештәр',
@@ -14738,7 +14738,7 @@ $7
 $6',
 	'code-stats' => 'статистика',
 	'code-stats-header' => 'Статистика репозитория «$1»',
-	'code-stats-main' => 'На $1 в репозитории {{PLURAL:$2|содержится одна ревизия|содержатся $2 ревизии|содержатся $2 ревизий}} [[Special:Code/$3/author|$4 {{PLURAL:$4|автора|авторов}}]].',
+	'code-stats-main' => 'На $1 в репозитории {{PLURAL:$2|содержится одна ревизия|содержатся $2 ревизий|содержатся $2 ревизии}} [[Special:Code/$3/author|$4 {{PLURAL:$4|1=автора|авторов}}]].', # Fuzzy
 	'code-stats-status-breakdown' => 'Статистика по состояниям',
 	'code-stats-fixme-breakdown' => 'Распределение версий со статусом «исправить» по авторам',
 	'code-stats-fixme-breakdown-path' => 'Распределение версий со статусом «исправить» по пути',
@@ -17812,6 +17812,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Aleksandrit
  * @author Alex Khimich
+ * @author Andriykopanytsia
  * @author Base
  * @author Dim Grits
  * @author NickK
@@ -18001,7 +18002,7 @@ $7
 $6',
 	'code-stats' => 'статистика',
 	'code-stats-header' => 'Статистика репозиторія $1',
-	'code-stats-main' => 'Станом на $1, репозиторій має $2 {{PLURAL:$2|перегляд|перегляди|переглядів}} виконаних  [[Special:Code/$3/author|$4 {{PLURAL:$4|автором|авторами}}]].',
+	'code-stats-main' => 'Станом на $1, репозиторій має $2 {{PLURAL:$2|перегляд|перегляди|переглядів}} виконаних  [[Special:Code/$3/author|$4 {{PLURAL:$4|1=автором|авторами}}]].',
 	'code-stats-status-breakdown' => 'Кількість переглядів на стан',
 	'code-stats-fixme-breakdown' => 'Розподіл змін зі статусом "виправити" за авторами',
 	'code-stats-fixme-breakdown-path' => 'Розподіл змін зі статусом "виправити" за шляхом',
