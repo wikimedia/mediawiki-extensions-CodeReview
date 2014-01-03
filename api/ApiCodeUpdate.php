@@ -21,9 +21,8 @@
 class ApiCodeUpdate extends ApiBase {
 
 	public function execute() {
-		global $wgUser;
 		// Before doing anything at all, let's check permissions
-		if ( !$wgUser->isAllowed( 'codereview-use' ) ) {
+		if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
 			$this->dieUsage( 'You don\'t have permission to update code', 'permissiondenied' );
 		}
 		$params = $this->extractRequestParams();
@@ -120,9 +119,5 @@ class ApiCodeUpdate extends ApiBase {
 		return array(
 			'api.php?action=codeupdate&repo=MediaWiki&rev=42080',
 		);
-	}
-
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
 	}
 }

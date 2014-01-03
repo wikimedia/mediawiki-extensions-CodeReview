@@ -24,24 +24,28 @@
 class ApiRevisionUpdate extends ApiBase {
 
 	public function execute() {
-		global $wgUser;
+		$user = $this->getUser();
 		// Before doing anything at all, let's check permissions
-		if ( !$wgUser->isAllowed( 'codereview-use' ) ) {
+		if ( !$user->isAllowed( 'codereview-use' ) ) {
 			$this->dieUsage( 'You don\'t have permission to update code', 'permissiondenied' );
 		}
 
 		$params = $this->extractRequestParams();
 
-		if( $params['comment']
-			&& !$wgUser->isAllowed( 'codereview-post-comment' ) ) {
+		if (
+			$params['comment'] &&
+			!$user->isAllowed( 'codereview-post-comment' )
+		)
+		{
 			$this->dieUsage( 'You do not have permission to post comment', 'permissiondenied' );
 		}
 
 		global $wgCodeReviewInlineComments;
-		if(
+		if (
 			!$wgCodeReviewInlineComments
 			&& isset( $params['patchline'] )
-		) {
+		)
+		{
 			$this->dieUsageMsg( "Can not attach a comment to a diff when inline commenting is disabled (\$wgCodeReviewInlineComments is false)." );
 		}
 
@@ -77,9 +81,9 @@ class ApiRevisionUpdate extends ApiBase {
 
 		if ( $commentID !== 0 ) {
 			// id inserted
-			$r['commentid'] = intval($commentID);
+			$r['commentid'] = intval( $commentID );
 			// HTML Formatted comment
-			$view = new CodeRevisionView( $repo, $rev);
+			$view = new CodeRevisionView( $repo, $rev );
 			$comment = CodeComment::newFromID( $commentID, $rev );
 			$r['HTML'] = $view->formatComment( $comment );
 		}
@@ -193,9 +197,5 @@ class ApiRevisionUpdate extends ApiBase {
 		return array(
 			'api.php?action=coderevisionupdate&repo=MediaWiki&rev=1&status=fixme',
 		);
-	}
-
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
 	}
 }

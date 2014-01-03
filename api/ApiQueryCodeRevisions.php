@@ -241,8 +241,4 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			'api.php?action=query&list=coderevisions&crrepo=MediaWiki&crprop=revid|author|status|timestamp|tags',
 		);
 	}
-
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
-	}
 }

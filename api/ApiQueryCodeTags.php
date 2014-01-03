@@ -25,9 +25,8 @@ class ApiQueryCodeTags extends ApiQueryBase {
 	}
 
 	public function execute() {
-		global $wgUser;
 		// Before doing anything at all, let's check permissions
-		if ( !$wgUser->isAllowed( 'codereview-use' ) ) {
+		if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
 			$this->dieUsage( 'You don\'t have permission to view code tags', 'permissiondenied' );
 		}
 		$params = $this->extractRequestParams();
@@ -80,9 +79,5 @@ class ApiQueryCodeTags extends ApiQueryBase {
 		return array(
 			'api.php?action=query&list=codetags&ctrepo=MediaWiki',
 		);
-	}
-
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
 	}
 }
