@@ -1470,6 +1470,7 @@ $4', # Fuzzy
 
 /** Assamese (অসমীয়া)
  * @author Bishnu Saikia
+ * @author Gitartha.bordoloi
  */
 $messages['as'] = array(
 	'code-authors' => 'লেখকসকল',
@@ -1488,7 +1489,7 @@ $messages['as'] = array(
 	'code-signoff-field-date' => 'তাৰিখ',
 	'codereview-batch-submit' => 'দাখিল কৰক',
 	'repoadmin-new-button' => 'সৃষ্টি কৰক',
-	'repoadmin-edit-button' => 'ঠিক আছে',
+	'repoadmin-edit-button' => 'শুদ্ধ',
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -4079,7 +4080,7 @@ $6',
 	'repoadmin' => 'Îdarê Kerdîşê Arşîvî',
 	'repoadmin-new-legend' => 'Yew arşîvê newî viraze',
 	'repoadmin-new-label' => 'Nameyê arşîvî:',
-	'repoadmin-new-button' => 'İycad ke',
+	'repoadmin-new-button' => 'Vıraze',
 	'repoadmin-edit-legend' => 'Arşîvê $1î mofifiye kerdişî',
 	'repoadmin-edit-path' => 'Patikayê arşîvî:',
 	'repoadmin-edit-bug' => 'Patikayê bugzillayî:',
