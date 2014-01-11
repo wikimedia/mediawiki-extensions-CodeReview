@@ -3259,6 +3259,7 @@ $messages['ce'] = array(
 	'codereview-subtitle' => 'цунна $1',
 	'codereview-reply-link' => 'жоп ло',
 	'codereview-overview-title' => 'Гучé',
+	'repoadmin-edit-button' => 'Кийчча ю',
 	'group-svnadmins' => 'Куьйгалхой SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|Куьйгалхой SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Куьйгалхой SVN',
