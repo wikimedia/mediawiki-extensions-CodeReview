@@ -3237,6 +3237,7 @@ $messages['ce'] = array(
 	'code-change-status' => "хийцина '''хьал''' r$1",
 	'code-change-tags' => "хийцина '''билгалонаш''' цу r$1",
 	'code-change-removed' => 'дӀаяьккхина:',
+	'code-authors' => 'Автораш',
 	'code-tags' => 'билгалонаш',
 	'code-field-message' => 'Хийцамах лаьцна',
 	'code-field-status-description' => 'Статусах лаьцна',
