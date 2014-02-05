@@ -6043,6 +6043,8 @@ $6',
 	'group-svnadmins' => 'Administrateurs SVN',
 	'group-svnadmins-member' => '{{GENDER:$1|administrateur SVN|administratrice SVN}}',
 	'grouppage-svnadmins' => '{{ns:project}}:Administrateurs SVN',
+	'group-svnadmins.css' => '/* Le CSS placé ici n’affectera que les administrateurs de SVN */',
+	'group-svnadmins.js' => '/* Le Javascript placé ici n’affectera que les administrateurs de SVN */',
 );
 
 /** Franco-Provençal (arpetan)
