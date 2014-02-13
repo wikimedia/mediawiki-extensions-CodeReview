@@ -3242,6 +3242,7 @@ $messages['ce'] = array(
 	'code-field-message' => 'Хийцамах лаьцна',
 	'code-field-status-description' => 'Статусах лаьцна',
 	'code-field-timestamp' => 'Терахь',
+	'code-field-select' => 'Харжа',
 	'code-reference-remove' => 'ДӀаяха хаьржинарш',
 	'code-rev-date' => 'Терахь:',
 	'code-rev-message' => 'Хийцамах лаьцна:',
