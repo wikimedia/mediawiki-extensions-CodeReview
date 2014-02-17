@@ -16820,11 +16820,14 @@ $messages['ta'] = array(
  * @author C.Chandra Kanth Rao
  * @author Chaduvari
  * @author Kiranmayee
+ * @author Ravichandra
  * @author Veeven
  */
 $messages['te'] = array(
+	'code' => 'కోడ్ పరిశీలించు',
 	'code-comments' => 'వ్యాఖ్యలు',
 	'code-change-removed' => 'తొలిగించబడినది',
+	'code-change-added' => 'చేర్చబడింది:',
 	'code-old-status' => 'పాత స్థితి',
 	'code-new-status' => 'కొత్త స్థితి',
 	'code-prop-changes' => 'స్థితి & ట్యాగుల చిట్టా',
@@ -16833,8 +16836,11 @@ $messages['te'] = array(
 	'code-mycomments' => 'నా వ్యాఖ్యలు',
 	'code-authors' => 'రచయితలు',
 	'code-status' => 'స్థితులు',
+	'code-tags' => 'పట్టీలు',
 	'code-author-orphan' => 'ఈ రచయితకి వికీ ఖాతాలో లంకె లేదు', # Fuzzy
 	'code-author-name' => 'ఒక వాడుకరిపేరుని ఇవ్వండి:',
+	'code-author-link' => 'అనుసంధానించాలా?',
+	'code-author-unlink' => 'లంకె తొలగించాలా?',
 	'code-author-total' => 'మొత్తం రచయితల సంఖ్య: $1',
 	'code-field-id' => 'కూర్పు',
 	'code-field-author' => 'రచయిత',
@@ -16844,7 +16850,9 @@ $messages['te'] = array(
 	'code-field-status-description' => 'స్థితి వివరణ',
 	'code-field-timestamp' => 'తేదీ',
 	'code-field-comments' => 'వ్యాఖ్యలు',
+	'code-field-path' => 'దారి',
 	'code-field-text' => 'గమనిక',
+	'code-field-select' => 'ఎన్నుకోండి',
 	'code-rev-author' => 'రచయిత:',
 	'code-rev-date' => 'తేది:',
 	'code-rev-message' => 'వ్యాఖ్య:',
@@ -16891,6 +16899,7 @@ $messages['te'] = array(
 	'code-release-endrev' => 'చివరి కూర్పు:',
 	'codereview-subtitle' => '$1 కొరకు',
 	'codereview-reply-link' => 'స్పందించు',
+	'codereview-overview-title' => 'అవలోకనం',
 	'codereview-email-subj' => '[$1 $2]: కొత్త వ్యాఖ్యని చేర్చారు',
 	'codereview-email-body' => 'వాడుకరి "$1" $3పై ఒక వ్యాఖ్య రాసారు.
 
