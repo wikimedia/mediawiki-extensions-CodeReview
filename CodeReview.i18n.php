@@ -3063,6 +3063,7 @@ $6',
  * @author SMP
  * @author Solde
  * @author Toniher
+ * @author Vriullop
  */
 $messages['ca'] = array(
 	'code' => 'Revisió del Codi',
@@ -3137,7 +3138,7 @@ $messages['ca'] = array(
 	'code-rev-diff' => 'dif',
 	'code-rev-diff-link' => 'dif',
 	'code-rev-diff-too-large' => 'La diferència és massa gran per ser mostrada.',
-	'code-rev-purge-link' => 'Purga',
+	'code-rev-purge-link' => 'Refresca',
 	'code-rev-total' => 'Nombre total de resultats: $1',
 	'code-rev-not-found' => "La revisió '''$1''' no existeix!",
 	'code-rev-history-link' => 'historial',
