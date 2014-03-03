@@ -16998,7 +16998,7 @@ $6',
 	'right-codereview-review-own' => 'మీ స్వంత కూర్పులను ’సరే’ గా గుర్తించండి', # Fuzzy
 	'specialpages-group-developer' => 'వికాసకుల పనిముట్లు',
 	'group-svnadmins' => 'SVN నిర్వాహకులు',
-	'group-svnadmins-member' => 'SVN నిర్వాహకుడు', # Fuzzy
+	'group-svnadmins-member' => 'SVN నిర్వాహకులు',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN నిర్వాహకులు',
 );
 
