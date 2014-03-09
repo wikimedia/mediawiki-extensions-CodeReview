@@ -13655,6 +13655,7 @@ $4',
  * @author Crazymadlover
  * @author Giro720
  * @author Hamilton Abreu
+ * @author Imperadeiro98
  * @author Lijealso
  * @author Luckas
  * @author Malafaya
@@ -13846,6 +13847,7 @@ $6',
 	'code-stats-status-breakdown' => 'Número de revisões, por estado',
 	'code-stats-fixme-breakdown' => 'Detalhe das revisões de correcção, por autor',
 	'code-stats-new-breakdown' => 'Detalhe das novas revisões, por autor',
+	'code-stats-new-path' => 'Novas revisões para o caminho: $1',
 	'code-stats-count' => 'Número de revisões',
 	'code-tooltip-withsummary' => 'r$1 [$2] por $3 - $4',
 	'code-tooltip-withoutsummary' => 'r$1 [$2] por $3',
