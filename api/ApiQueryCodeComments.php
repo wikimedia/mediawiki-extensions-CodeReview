@@ -139,7 +139,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 	}
 
 	public function getDescription() {
-		return 'List comments on revisions in CodeReview';
+		return 'List comments on revisions in CodeReview.';
 	}
 
 	public function getPossibleErrors() {

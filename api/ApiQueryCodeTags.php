@@ -65,7 +65,7 @@ class ApiQueryCodeTags extends ApiQueryBase {
 	}
 
 	public function getDescription() {
-		return 'Get a list of tags applied to revisions in a given repository';
+		return 'Get a list of tags applied to revisions in a given repository.';
 	}
 
 	public function getPossibleErrors() {

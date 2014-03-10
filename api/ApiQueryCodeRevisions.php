@@ -225,7 +225,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	}
 
 	public function getDescription() {
-		return 'List revisions in CodeReview';
+		return 'List revisions in CodeReview.';
 	}
 
 	public function getPossibleErrors() {

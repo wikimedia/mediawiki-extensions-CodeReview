@@ -181,7 +181,7 @@ class ApiRevisionUpdate extends ApiBase {
 
 	public function getDescription() {
 		return array(
-			'Submit comments, new status and tags to a revision'
+			'Submit comments, new status and tags to a revision.'
 		);
 	}
 

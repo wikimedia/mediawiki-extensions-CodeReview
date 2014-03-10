@@ -83,7 +83,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 	}
 
 	public function getDescription() {
-		return 'Get a list of 10 paths in a given repository, based on the input path prefix';
+		return 'Get a list of 10 paths in a given repository, based on the input path prefix.';
 	}
 
 	public function getPossibleErrors() {
