@@ -16876,6 +16876,7 @@ $messages['te'] = array(
 	'code-rev-date' => 'తేది:',
 	'code-rev-message' => 'వ్యాఖ్య:',
 	'code-rev-rev' => 'కూర్పు:',
+	'code-rev-paths' => 'మార్చిన దారులు:',
 	'code-rev-modified-a' => 'చేర్చబడినది',
 	'code-rev-modified-r' => 'మార్పు చేయబడినది',
 	'code-rev-modified-d' => 'తొలిగించబడినది',
