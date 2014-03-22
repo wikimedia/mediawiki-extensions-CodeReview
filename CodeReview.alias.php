@@ -66,7 +66,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'Code' => array( 'Qode', 'QodeAsayış' ),
+	'Code' => array( 'Kode' ),
 	'RepoAdmin' => array( 'AdminéRepoy' ),
 );
 

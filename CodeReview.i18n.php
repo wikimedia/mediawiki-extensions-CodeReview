@@ -6885,6 +6885,26 @@ $6',
 	'grouppage-svnadmins' => '{{ns:project}}:SVN-Adminischtratore',
 );
 
+/** Gujarati (ગુજરાતી)
+ * @author KartikMistry
+ */
+$messages['gu'] = array(
+	'code-change-removed' => 'દુર કરેલ:',
+	'code-change-added' => 'ઉમેરેલ:',
+	'code-authors' => 'લેખકો',
+	'code-tags' => 'ટૅગ્સ',
+	'code-field-author' => 'લેખક',
+	'code-field-status' => 'સ્થિતિ',
+	'code-field-timestamp' => 'તારીખ',
+	'code-rev-inline-preview' => 'પૂર્વદર્શન:',
+	'code-rev-diff' => 'ભેદ',
+	'code-rev-diff-link' => 'ભેદ',
+	'code-status-new' => 'નવું',
+	'code-status-ok' => 'બરાબર',
+	'code-signoff-field-user' => 'સભ્ય',
+	'code-signoff-field-date' => 'તારીખ',
+);
+
 /** Hausa (Hausa)
  */
 $messages['ha'] = array(
