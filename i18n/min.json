@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "Iwan Novirion"
+        ]
+    },
+    "group-svnadmins-member": "{{GENDER:$1|admin SVN}}"
+}

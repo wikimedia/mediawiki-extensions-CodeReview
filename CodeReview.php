@@ -34,7 +34,7 @@ http://pecl.php.net/package/svn
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'CodeReview',
-	'version' => '1.17',
+	'version' => '1.18',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:CodeReview',
 	'author' => array( 'Brion Vibber', 'Aaron Schulz', 'Alexandre Emsenhuber', 'Chad Horohoe', 'Sam Reed', 'Roan Kattouw' ),
 	'descriptionmsg' => 'codereview-desc',
@@ -42,7 +42,7 @@ $wgExtensionCredits['specialpage'][] = array(
 
 /******** CLASS DEFINITIONS ********/
 
-$dir = dirname( __FILE__ ) . '/';
+$dir = __DIR__ . '/';
 
 $wgAutoloadClasses['ApiCodeUpdate'] = $dir . 'api/ApiCodeUpdate.php';
 $wgAutoloadClasses['ApiCodeDiff'] = $dir . 'api/ApiCodeDiff.php';
@@ -119,6 +119,7 @@ $wgAPIListModules['codetags'] = 'ApiQueryCodeTags';
 
 /******** I18N MESSAGES ********/
 
+$wgMessagesDirs['CodeReview'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['CodeReview'] = $dir . 'CodeReview.i18n.php';
 $wgExtensionMessagesFiles['CodeReviewAliases'] = $dir . 'CodeReview.alias.php';
 

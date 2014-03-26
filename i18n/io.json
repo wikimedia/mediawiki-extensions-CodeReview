@@ -1,0 +1,32 @@
+{
+    "@metadata": {
+        "authors": [
+            "Malafaya"
+        ]
+    },
+    "code-comments": "Komenti",
+    "code-change-removed": "forigita:",
+    "code-change-added": "adjuntita:",
+    "code-old-status": "Anciena stando",
+    "code-new-status": "Nova stando",
+    "code-authors": "autori",
+    "code-author-link": "ligar?",
+    "code-author-unlink": "desligar?",
+    "code-field-author": "Autoro",
+    "code-field-status": "Stando",
+    "code-field-timestamp": "Dato",
+    "code-rev-author": "Autoro:",
+    "code-rev-date": "Dato:",
+    "code-rev-message": "Komento:",
+    "code-rev-comment-by": "Komento per $1",
+    "code-rev-diff": "Diferi",
+    "code-rev-diff-link": "dif.",
+    "code-status-new": "nova",
+    "code-status-ok": "o.k.",
+    "code-status-old": "anciena",
+    "code-revfilter-cr_status": "Stando = $1",
+    "code-revfilter-cr_author": "Autoro = $1",
+    "codereview-batch-submit": "Sendez",
+    "codereview-email-subj": "[$1 $2]: Nova komento adjuntita",
+    "repoadmin-edit-button": "O.K."
+}
