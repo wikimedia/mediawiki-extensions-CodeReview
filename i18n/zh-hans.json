@@ -109,7 +109,7 @@
     "code-status-ok": "确定",
     "code-status-desc-ok": "该修订已被全面复查，复查者认为它无可挑剔。",
     "code-status-deferred": "推迟",
-    "code-status-desc-deferred": "该修订无需复查。",
+    "code-status-desc-deferred": "版本不需要复核。",
     "code-status-old": "旧",
     "code-status-desc-old": "带有潜在错误的旧修订，但不值得付诸复审。",
     "code-signoffs": "确认",

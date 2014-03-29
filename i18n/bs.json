@@ -89,7 +89,7 @@
     "code-status-new": "novi",
     "code-status-desc-new": "Revizija očekuje akciju (osnovno stanje).",
     "code-status-fixme": "popravi me",
-    "code-status-desc-fixme": "Provjerivač je označio ovu reviziju kao uzrok greške ili je neisptavna. Treba se popraviti.",
+    "code-status-desc-fixme": "Revizija je prouzrokovala grešku ili je pokvarena. Trebala bi biti ispravljena ili vraćena.",
     "code-status-reverted": "vraćeno",
     "code-status-desc-reverted": "Revizija je odbačena od neke kasnije revizije.",
     "code-status-resolved": "riješeno",
