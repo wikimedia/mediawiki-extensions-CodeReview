@@ -15,7 +15,7 @@
             "阿pp"
         ]
     },
-    "code": "代码复审",
+    "code": "代码检查",
     "code-rev-title": "$1 - 代码复审",
     "code-comments": "评论",
     "code-references": "后续修订",
@@ -107,7 +107,7 @@
     "code-status-resolved": "解决",
     "code-status-desc-resolved": "该修订存在的问题已被更高版本的修订处理。",
     "code-status-ok": "确定",
-    "code-status-desc-ok": "该修订已被全面复查，复查者认为它无可挑剔。",
+    "code-status-desc-ok": "版本已全面复核，复核者认为它非常完善。",
     "code-status-deferred": "推迟",
     "code-status-desc-deferred": "版本不需要复核。",
     "code-status-old": "旧",
