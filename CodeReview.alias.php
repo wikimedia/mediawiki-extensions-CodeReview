@@ -330,5 +330,5 @@ $specialPageAliases['zh-hans'] = array(
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
 	'Code' => array( '代碼' ),
-	'RepoAdmin' => array( '信息庫管理' ),
+	'RepoAdmin' => array( '資料庫管理' ),
 );
