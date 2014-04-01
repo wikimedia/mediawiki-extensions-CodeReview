@@ -96,7 +96,7 @@
     "code-status-reverted": "враћено",
     "code-status-desc-reverted": "Измена је одбачена од стране новије измене.",
     "code-status-resolved": "решено",
-    "code-status-ok": "ок",
+    "code-status-ok": "у реду",
     "code-status-deferred": "одложено",
     "code-status-desc-deferred": "Измена не захтева преглед.",
     "code-status-old": "старо",
