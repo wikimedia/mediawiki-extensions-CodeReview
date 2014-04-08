@@ -196,7 +196,7 @@
     "action-codereview-link-user": "collegare gli autori agli utenti del sito wiki",
     "action-codereview-associate": "gestire le associazioni fra revisioni",
     "action-codereview-review-own": "contrassegnare le proprie revisioni come \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-    "specialpages-group-developer": "Tool di sviluppo",
+    "specialpages-group-developer": "Strumenti per gli sviluppatori",
     "group-svnadmins": "Amministratori SVN",
     "group-svnadmins-member": "{{GENDER:$1|SVN admin}}",
     "grouppage-svnadmins": "{{ns:project}}: amministratori SVN"
