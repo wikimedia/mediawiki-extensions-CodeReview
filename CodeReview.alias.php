@@ -121,6 +121,11 @@ $specialPageAliases['gu'] = array(
 	'Code' => array( 'સંજ્ઞા', 'સંજ્ઞાપરીક્ષણ' ),
 );
 
+/** Hawaiian (Hawai`i) */
+$specialPageAliases['haw'] = array(
+	'Code' => array( 'Pāʻālua', 'Paalua' ),
+);
+
 /** Croatian (hrvatski) */
 $specialPageAliases['hr'] = array(
 	'Code' => array( 'Kod' ),
