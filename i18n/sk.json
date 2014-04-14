@@ -4,7 +4,8 @@
             "Helix84",
             "Jkjk",
             "Mormegil",
-            "Pitr2311"
+            "Pitr2311",
+            "Sudo77(new)"
         ]
     },
     "code": "Kontrola kódu",
@@ -88,6 +89,7 @@
     "code-rev-purge-link": "vyčistiť",
     "code-rev-total": "Celkový počet výsledkov: $1",
     "code-rev-not-found": "Revízia '''$1''' neexistuje!",
+    "code-rev-history-link": "história",
     "code-status-new": "nový",
     "code-status-desc-new": "Revízia čaká na vykonanie operácie (štandardný stav).",
     "code-status-fixme": "fixme",
@@ -118,9 +120,11 @@
     "code-pathsearch-filter": "Zobraziť len:",
     "code-revfilter-cr_status": "Stav = $1",
     "code-revfilter-cr_author": "Autor = $1",
+    "code-revfilter-ct_tag": "Značka = $1",
     "code-revfilter-clear": "Vyčistiť filter",
     "code-rev-submit": "Uložiť zmeny",
     "code-rev-submit-next": "Uložiť & ďalší nevyriešený",
+    "code-rev-next": "Ďalšia nevyriešená",
     "code-batch-status": "Zmeniť stav:",
     "code-batch-tags": "Zmeniť značky:",
     "codereview-batch-title": "Zmeniť všetky vybrané revízie",
@@ -131,6 +135,8 @@
     "code-release-endrev": "Posledná rev.:",
     "codereview-subtitle": "Pre $1",
     "codereview-reply-link": "odpovedať",
+    "codereview-overview-title": "Prehľad",
+    "codereview-overview-desc": "Zobraziť grafický prehľad tohto zoznamu",
     "codereview-email-subj": "[$1 $2]: Pridaný nový komentár",
     "codereview-email-body": "Používateľ „$1” poslal komentár k $3.\n\nPlný URL: $2\nZhrnutie začlenenia:\n\n$5\n\nKomentár:\n\n$4",
     "codereview-email-subj2": "[$1 $2]: Nadväzujúce zmeny",
