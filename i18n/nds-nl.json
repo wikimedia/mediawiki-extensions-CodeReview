@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Servien"
-        ]
-    },
-    "code-rev-author": "Auteur:",
-    "code-rev-date": "Daotum:",
-    "code-rev-message": "Opmarking:",
-    "code-rev-repo": "Repositorium:",
-    "code-rev-rev": "Versie:",
-    "code-rev-rev-viewvc": "in ViewVC"
+	"@metadata": {
+		"authors": [
+			"Servien"
+		]
+	},
+	"code-rev-author": "Auteur:",
+	"code-rev-date": "Daotum:",
+	"code-rev-message": "Opmarking:",
+	"code-rev-repo": "Repositorium:",
+	"code-rev-rev": "Versie:",
+	"code-rev-rev-viewvc": "in ViewVC"
 }

@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kghbln"
-        ]
-    },
-    "code-create-repo": "Gehen Sie zur Spezialseite [[Special:RepoAdmin|RepoAdmin]] um ein Repositorium zu erstellen"
+	"@metadata": {
+		"authors": [
+			"Kghbln"
+		]
+	},
+	"code-create-repo": "Gehen Sie zur Spezialseite [[Special:RepoAdmin|RepoAdmin]] um ein Repositorium zu erstellen"
 }

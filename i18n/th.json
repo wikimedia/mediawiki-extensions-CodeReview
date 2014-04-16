@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Manop"
-        ]
-    },
-    "code-comments": "ความเห็น",
-    "code-field-author": "ผู้แต่ง",
-    "code-field-status": "สถานะ",
-    "code-field-timestamp": "วันที่",
-    "code-rev-date": "วันที่:",
-    "code-rev-modified-a": "ถูกเพิ่ม",
-    "code-rev-modified-r": "ถูกแทนที่",
-    "code-rev-modified-d": "ถูกลบ",
-    "code-rev-comment-preview": "ดูตัวอย่าง",
-    "code-status-new": "ใหม่"
+	"@metadata": {
+		"authors": [
+			"Manop"
+		]
+	},
+	"code-comments": "ความเห็น",
+	"code-field-author": "ผู้แต่ง",
+	"code-field-status": "สถานะ",
+	"code-field-timestamp": "วันที่",
+	"code-rev-date": "วันที่:",
+	"code-rev-modified-a": "ถูกเพิ่ม",
+	"code-rev-modified-r": "ถูกแทนที่",
+	"code-rev-modified-d": "ถูกลบ",
+	"code-rev-comment-preview": "ดูตัวอย่าง",
+	"code-status-new": "ใหม่"
 }

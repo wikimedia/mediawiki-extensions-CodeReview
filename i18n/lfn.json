@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Malafaya"
-        ]
-    },
-    "code-authors": "autores",
-    "code-field-author": "Autor",
-    "code-rev-author": "Autor:",
-    "repoadmin-new-button": "Crea",
-    "repoadmin-edit-button": "Oce"
+	"@metadata": {
+		"authors": [
+			"Malafaya"
+		]
+	},
+	"code-authors": "autores",
+	"code-field-author": "Autor",
+	"code-rev-author": "Autor:",
+	"repoadmin-new-button": "Crea",
+	"repoadmin-edit-button": "Oce"
 }

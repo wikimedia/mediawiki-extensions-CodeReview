@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Ukabia"
-        ]
-    },
-    "code-author-link": "jìkó?",
-    "code-author-unlink": "á jịkòkwàlà?",
-    "code-field-author": "Odé ákwụ́kwọ́",
-    "code-field-timestamp": "Ǹgụ́ụ̀bọ̀chị̀",
-    "code-field-path": "Uzọr",
-    "code-status-new": "ohüru",
-    "code-status-ok": "Ngwanu",
-    "code-status-old": "ichié",
-    "repoadmin-new-button": "Ké",
-    "repoadmin-edit-button": "Ngwanu"
+	"@metadata": {
+		"authors": [
+			"Ukabia"
+		]
+	},
+	"code-author-link": "jìkó?",
+	"code-author-unlink": "á jịkòkwàlà?",
+	"code-field-author": "Odé ákwụ́kwọ́",
+	"code-field-timestamp": "Ǹgụ́ụ̀bọ̀chị̀",
+	"code-field-path": "Uzọr",
+	"code-status-new": "ohüru",
+	"code-status-ok": "Ngwanu",
+	"code-status-old": "ichié",
+	"repoadmin-new-button": "Ké",
+	"repoadmin-edit-button": "Ngwanu"
 }

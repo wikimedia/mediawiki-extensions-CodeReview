@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Тест"
-        ]
-    },
-    "code-field-author": "Аўтар",
-    "code-rev-author": "Аўтар:",
-    "code-revfilter-cr_author": "Аўтар = $1",
-    "code-stats": "статыстыка"
+	"@metadata": {
+		"authors": [
+			"Тест"
+		]
+	},
+	"code-field-author": "Аўтар",
+	"code-rev-author": "Аўтар:",
+	"code-revfilter-cr_author": "Аўтар = $1",
+	"code-stats": "статыстыка"
 }

@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Namik"
-        ]
-    },
-    "code-rev-date": "Нумра/заман",
-    "code-status-old": "иски",
-    "code-signoff-field-flag": "Пайдах"
+	"@metadata": {
+		"authors": [
+			"Namik"
+		]
+	},
+	"code-rev-date": "Нумра/заман",
+	"code-status-old": "иски",
+	"code-signoff-field-flag": "Пайдах"
 }
