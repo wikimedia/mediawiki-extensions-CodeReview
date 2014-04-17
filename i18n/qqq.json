@@ -142,6 +142,7 @@
 	"code-revfilter-cr_status": "Used as a filter. Parameters:\n* $1 - status\nSee also:\n* {{msg-mw|Code-revfilter-cr author}}\n{{Identical|Status}}",
 	"code-revfilter-cr_author": "Used as a filter. Parameters:\n* $1 - author\nSee also:\n* {{msg-mw|Code-revfilter-cr status}}\n{{Identical|Author}}",
 	"code-revfilter-ct_tag": "Parameters:\n* $1 - tag",
+	"code-revfilter-clear": "Unused at this time.",
 	"code-rev-submit": "Caption of the button used to Save changes when viewing a revision.\n{{Identical|Save changes}}",
 	"code-rev-submit-accesskey": "{{notranslate}}",
 	"code-rev-submit-next": "Caption of the button used when viewing a revision to Save changes moving to next unresolved revision.",
