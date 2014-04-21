@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"AnakngAraw",
-			"Sky Harbor"
+			"Sky Harbor",
+			"Jojit fb"
 		]
 	},
 	"code": "Muling Pagsusuri ng Kodigo",
@@ -34,7 +35,7 @@
 	"code-tags-no-tags": "Walang umiiral na mga tatak sa loob ng taguang ito.",
 	"code-authors-text": "Nasa ibaba ang isang talaan ng mga may-akda ng repositoryo ayon sa pagkakasunud-sunod ng pangalan ng paglalagak.  Ipinapakita sa loob ng mga panaklong ang mga lokal na kuwentang pangwiki.  Maaaring baunin ang datos.",
 	"code-author-haslink": "Nakakawing ang may-akdang ito sa tagagamit ng wiking si $1",
-	"code-author-orphan": "Ang tagagamit ng SVN/May-akda na $1 ay walang kawing sa isang kuwenta ng wiki",
+	"code-author-orphan": "Ang tagagamit ng SVN/May-akda na $1 ay walang link sa isang account ng wiki",
 	"code-author-dolink": "Ikawing ang may-akdang ito sa isang tagagamit ng wiki:",
 	"code-author-alterlink": "Baguhin ang tagagamit na wiking nakakawing sa may-akdang ito:",
 	"code-author-orunlink": "O kaya tanggalin ang pagkakakawing ng tagagamit ng wiking ito:",
