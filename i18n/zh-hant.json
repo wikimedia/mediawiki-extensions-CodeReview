@@ -10,7 +10,8 @@
 			"Mark85296341",
 			"Oapbtommy",
 			"Skjackey tse",
-			"Waihorace"
+			"Waihorace",
+			"Cwlin0416"
 		]
 	},
 	"code": "預覽程式碼",
@@ -117,7 +118,7 @@
 	"code-signoff-signoff": "該修訂的確認狀態為：",
 	"code-signoff-flag-inspected": "檢查過",
 	"code-signoff-flag-tested": "測試過了",
-	"code-signoff-field-user": "用戶",
+	"code-signoff-field-user": "使用者",
 	"code-signoff-field-flag": "標記",
 	"code-signoff-field-date": "日期",
 	"code-signoff-struckdate": "$1（打$2）",
