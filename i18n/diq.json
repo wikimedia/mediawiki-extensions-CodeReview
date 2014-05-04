@@ -5,7 +5,8 @@
 			"Gorizon",
 			"Mirzali",
 			"Olvörg",
-			"Xoser"
+			"Xoser",
+			"Marmase"
 		]
 	},
 	"code": "Kontrolê kodî",
@@ -130,13 +131,13 @@
 	"repoadmin-edit-bug": "Patikayê bugzillayî:",
 	"repoadmin-edit-view": "Patikayê ViewVCyî:",
 	"repoadmin-edit-button": "Temam",
-	"repoadmin-edit-sucess": "Arşîvê \"[[Special:Code/$1|$1]]\"î vurne.",
-	"right-repoadmin": "Arşîvê kodî îdare bike",
-	"right-codereview-use": "Kar kerdişê xasî: Kod",
+	"repoadmin-edit-sucess": "Arşiva \"[[Special:Code/$1|$1]]\"i vurneyê.",
+	"right-repoadmin": "Arşivanê kodi idare ke",
+	"right-codereview-use": "Special:Kod karkerden",
 	"right-codereview-add-tag": "Revîzyonî ra etîketanê newî de keno",
 	"right-codereview-remove-tag": "Revîzyonî ra etîketan de keno",
 	"right-codereview-post-comment": "Revîzyonî rê xulasa de keno",
-	"right-codereview-set-status": "Statuyê revîzyonî vurneno",
+	"right-codereview-set-status": "Weziyeta rewizyoner bıvurne",
 	"right-codereview-link-user": "Nuştekarî, karberanê wîkî rê link keno",
 	"specialpages-group-developer": "Xacetanê raverberdoğî",
 	"group-svnadmins": "SVN admini",
