@@ -98,7 +98,7 @@
 	"code-rev-status": "Used as label in the table.\n{{Related|Code-rev-field}}\n{{Identical|Status}}",
 	"code-rev-status-set": "{{Identical|Change status}}",
 	"code-rev-tags": "Used as label in the table.\n{{Related|Code-rev-field}}\n{{Identical|Tag}}",
-	"code-rev-tag-add": "Used as label for the \"Add tags\" input box.\n\n\"Add tags\" stands for \"Tags to be added\".\n\nSee also:\n* {{msg-mw|Code-rev-tag-remove}}",
+	"code-rev-tag-add": "Used as label for the \"Add tags\" input box.\n\n\"Add tags\" stands for \"Tags to be added\".\n\nSee also:\n* {{msg-mw|Code-rev-tag-remove}}\n{{Identical|Add tag}}",
 	"code-rev-tag-remove": "Used as label for the \"Remove tags\" input box.\n\n\"Add tags\" stands for \"Tags to be removed\".\n\nSee also:\n* {{msg-mw|Code-rev-tag-add}}",
 	"code-rev-comment-by": "Parameters:\n* $1 - username (linked to the user page), and user-tool links",
 	"code-rev-comment-preview": "Caption of the button used to preview a comment.\n{{Identical|Preview}}",
