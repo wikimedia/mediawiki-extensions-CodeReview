@@ -131,7 +131,7 @@
 	"repoadmin-edit-bug": "Patikayê bugzillayî:",
 	"repoadmin-edit-view": "Patikayê ViewVCyî:",
 	"repoadmin-edit-button": "Temam",
-	"repoadmin-edit-sucess": "Arşiva \"[[Special:Code/$1|$1]]\"i vurneyê.",
+	"repoadmin-edit-sucess": "Embarê \"[[Special:Code/$1|$1]]\" be serkewtış ra vuriya.",
 	"right-repoadmin": "Arşivanê kodi idare ke",
 	"right-codereview-use": "Xısusi:Kod gurenayene",
 	"right-codereview-add-tag": "Revîzyonî ra etîketanê newî de keno",
