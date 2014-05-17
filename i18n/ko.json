@@ -158,7 +158,7 @@
 	"code-stats-new-breakdown": "저자별 새로 필요한 판의 개수",
 	"code-stats-new-breakdown-path": "경로별 새로 필요한 판의 개수",
 	"code-stats-new-path": "$1 경로의 새로 필요한 판",
-	"code-stats-count": "전체 편집 횟수",
+	"code-stats-count": "판 수",
 	"code-tooltip-withsummary": "$1판 $3 사용자의 [$2] - $4",
 	"code-tooltip-withoutsummary": "$1판 $3 사용자의 [$2]",
 	"repoadmin": "저장소 관리",
