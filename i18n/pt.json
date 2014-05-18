@@ -9,7 +9,8 @@
 			"Luckas",
 			"Malafaya",
 			"MetalBrasil",
-			"Waldir"
+			"Waldir",
+			"Fúlvio"
 		]
 	},
 	"code": "Revisão de Código",
@@ -180,6 +181,8 @@
 	"right-codereview-link-user": "Associar autores a utilizadores wiki",
 	"right-codereview-associate": "Administrar a associação de revisões",
 	"right-codereview-review-own": "Marcar as suas próprias revisões como \"{{int:code-status-ok}}\" or \"{{int:code-status-resolved}}\"",
+	"action-repoadmin": "gerenciar repositórios de código",
+	"action-codereview-use": "utilização de Special:Code",
 	"specialpages-group-developer": "Ferramentas de desenvolvimento",
 	"group-svnadmins": "Administradores do SVN",
 	"group-svnadmins-member": "{{GENDER:$1|Administrador|Administradora}} do SVN",
