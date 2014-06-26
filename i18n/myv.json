@@ -5,6 +5,7 @@
 		]
 	},
 	"code-change-added": "поладозь:",
+	"code-notes": "чиень мельть-арсемат",
 	"code-authors": "теицянзо",
 	"code-author-name": "Совавтт теицянь лем:",
 	"code-author-link": "аравтомс сюлмавома пе?",
@@ -28,6 +29,7 @@
 	"code-status-fixme": "витемак",
 	"code-status-old": "ташто",
 	"code-pathsearch-path": "Яннэсь:",
+	"code-pathsearch-filter": "Невтемс ансяк:",
 	"code-revfilter-cr_author": "Авторозо = $1",
 	"code-stats": "статистикат",
 	"repoadmin-new-button": "Шкик-теик",
