@@ -13,7 +13,9 @@
 			"Xiaomingyan",
 			"Yfdyh000",
 			"阿pp",
-			"Mywood"
+			"Mywood",
+			"Impersonator 1",
+			"Liuxinyu970226"
 		]
 	},
 	"code": "代码检查",
@@ -28,7 +30,7 @@
 	"code-old-status": "旧状态",
 	"code-new-status": "新状态",
 	"code-prop-changes": "状态和标签日志",
-	"codereview-desc": "[[Special:RepoAdmin|支持Subversion]]的[[Special:Code|代码复审工具]]",
+	"codereview-desc": "[[Special:RepoAdmin|支持Subversion]]的[[Special:Code|代码复核工具]]",
 	"code-no-repo": "未配置版本库！",
 	"code-create-repo": "前往[[Special:RepoAdmin|版本库管理]]创建版本库",
 	"code-need-repoadmin-rights": "需要版本库管理权限来创建版本库",
