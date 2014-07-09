@@ -347,6 +347,9 @@ $wgHooks['LoadExtensionSchemaUpdates'][] = 'CodeReviewHooks::onLoadExtensionSche
 # Renameuser support
 $wgHooks['RenameUserSQL'][] = 'CodeReviewHooks::onRenameUserSQL';
 
+# UserMerge support
+$wgHooks['UserMergeAccountFields'][] = 'CodeReviewHooks::onUserMergeAccountFields';
+
 /******** UNIT TESTS ********/
 
 $wgHooks['UnitTestsList'][] = 'CodeReviewHooks::onUnitTestsList';

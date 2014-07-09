@@ -124,10 +124,30 @@ class CodeReviewHooks {
 	 * @return bool
 	 */
 	public static function onRenameUserSQL( $renameUserSQL ) {
-		$renameUserSQL->tables['code_authors'] = array( 'ca_user_text', 'ca_user' );
-		$renameUserSQL->tables['code_comment'] = array( 'cc_user_text', 'cc_user' );
-		$renameUserSQL->tables['code_prop_changes'] = array( 'cpc_user_text', 'cpc_user' );
-		$renameUserSQL->tables['code_signoffs'] = array( 'cs_user_text', 'cs_user' );
+		foreach( self::$userTables as $table => $fields ) {
+			$renameUserSQL->tables[$table] = $fields;
+		}
+		return true;
+	}
+
+	private static $userTables = array(
+		'code_authors' => array( 'ca_user_text', 'ca_user' ),
+		'code_comment' => array( 'cc_user_text', 'cc_user' ),
+		'code_prop_changes' => array( 'cpc_user_text', 'cpc_user' ),
+		'code_signoffs' => array( 'cs_user_text', 'cs_user' )
+	);
+
+	/**
+	 * For integration with the UserMerge extension.
+	 *
+	 * @param array $updateFields
+	 * @return bool
+	 */
+	public static function onUserMergeAccountFields( &$updateFields ) {
+		// array( tableName, idField, textField )
+		foreach( self::$userTables as $table => $fields ) {
+			$updateFields[] = array( $table, $fields[1], $fields[0] );
+		}
 		return true;
 	}
 
