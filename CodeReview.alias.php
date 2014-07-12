@@ -126,6 +126,12 @@ $specialPageAliases['haw'] = array(
 	'Code' => array( 'Pāʻālua', 'Paalua' ),
 );
 
+/** Hebrew (עברית) */
+$specialPageAliases['he'] = array(
+	'Code' => array( 'סקירת_קוד' ),
+	'RepoAdmin' => array( 'ניהול_מאגר' ),
+);
+
 /** Croatian (hrvatski) */
 $specialPageAliases['hr'] = array(
 	'Code' => array( 'Kod' ),
