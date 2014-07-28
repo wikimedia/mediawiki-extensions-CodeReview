@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bellayet",
-			"Wikitanvir"
+			"Wikitanvir",
+			"Aftab1995"
 		]
 	},
 	"code": "কোড পর্যবেক্ষণ",
@@ -113,7 +114,7 @@
 	"code-signoff-field-date": "তারিখ",
 	"code-pathsearch-legend": "রিপোতে পাথ অনুসারে সংস্করণ অনুসন্ধান করুন",
 	"code-pathsearch-path": "পাথ:",
-	"code-pathsearch-filter": "ফিল্টার প্রদান করা হয়েছে:",
+	"code-pathsearch-filter": "শুধু দেখান:",
 	"code-revfilter-cr_status": "অবস্থান = $1",
 	"code-revfilter-cr_author": "প্রণেতা = $1",
 	"code-revfilter-clear": "ফিল্টার পরিস্কার",
