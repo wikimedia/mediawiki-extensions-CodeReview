@@ -264,6 +264,11 @@ $specialPageAliases['nn'] = array(
 	'Code' => array( 'Kode' ),
 );
 
+/** Punjabi (ਪੰਜਾਬੀ) */
+$specialPageAliases['pa'] = array(
+	'Code' => array( 'ਕੋਡ' ),
+);
+
 /** Polish (polski) */
 $specialPageAliases['pl'] = array(
 	'Code' => array( 'Kod' ),
