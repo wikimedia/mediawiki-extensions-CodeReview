@@ -35,13 +35,15 @@ jQuery( function( $ ) {
 
 					$this.suggestions( 'suggestions', suggestions );
 				};
+
+			var request;
 			if( $(this).data( 'suggestions' ) ){
 				doUpdate();
 			} else if( $(this).data( 'request' ) ){
 				// A request is in progress, we'll get to it eventually
 			} else {
 				// Need to get the tags from the API
-				var request = $.getJSON(
+				request = $.getJSON(
 					mw.config.get( 'wgScriptPath' ) + '/api.php',
 					{
 						action: 'query',

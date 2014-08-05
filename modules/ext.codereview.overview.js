@@ -75,7 +75,7 @@ jQuery( function( $ ) {
 			if( path && path.indexOf( vpath ) === 0 && path !== vpath && vpath !== '' ) {
 				path = '\u2026' + path.substring( vpath.length );
 			}
-			overviewPopupData[i]['path'] = path;
+			overviewPopupData[i].path = path;
 
 			if( !totals[statusname] ) {
 				totals[statusname] = 0;
@@ -119,11 +119,11 @@ jQuery( function( $ ) {
 				var id = parseInt( $(this).attr( 'id' ).replace( /box\-/i, '' ) );
 
 				var $popup = $( '<div id="overviewpop">' +
-					'<div>Rev: r<span id="overviewpop-rev">' + overviewPopupData[id]['rev'] +
-					'</span> (<span id="overviewpop-status">' + overviewPopupData[id]['status'] + '</span>)</div>' +
-					'<div>Number of notes: <span id="overviewpop-notes">' + overviewPopupData[id]['notes'] + '</span></div>' +
-					'<div>Path: <span id="overviewpop-path">' + overviewPopupData[id]['path'] + '</span></div>' +
-					'<div>Author: <span id="overviewpop-author">' + overviewPopupData[id]['author'] + '</span></div>' +
+					'<div>Rev: r<span id="overviewpop-rev">' + overviewPopupData[id].rev +
+					'</span> (<span id="overviewpop-status">' + overviewPopupData[id].status + '</span>)</div>' +
+					'<div>Number of notes: <span id="overviewpop-notes">' + overviewPopupData[id].notes + '</span></div>' +
+					'<div>Path: <span id="overviewpop-path">' + overviewPopupData[id].path + '</span></div>' +
+					'<div>Author: <span id="overviewpop-author">' + overviewPopupData[id].author + '</span></div>' +
 					'</div>');
 				$el.attr( 'title', $popup.html() );
 				$el.data( 'codeTooltip', true );
