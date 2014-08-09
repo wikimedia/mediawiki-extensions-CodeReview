@@ -23,7 +23,8 @@
 			"Sp5uhe",
 			"Umherirrender",
 			"Verdy p",
-			"Yekrats"
+			"Yekrats",
+			"Liuxinyu970226"
 		]
 	},
 	"code": "{{doc-special|Code}}",
@@ -123,7 +124,7 @@
 	"code-status-desc-ok": "{{Related|Code-status}}",
 	"code-status-deferred": "{{Related|Code-status}}",
 	"code-status-desc-deferred": "{{Related|Code-status}}",
-	"code-status-old": "{{Related|Code-status}}",
+	"code-status-old": "{{Related|Code-status}}\n{{Identical|Old}}",
 	"code-status-desc-old": "{{Related|Code-status}}",
 	"code-signoffs": "A \"sign-off\" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.\n{{Identical|Sign off}}",
 	"code-signoff-legend": "A \"sign-off\" is a concept in code review that means that the person doing the sign-off has approved the involved code changes.",
