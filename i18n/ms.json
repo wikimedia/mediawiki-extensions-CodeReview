@@ -3,7 +3,8 @@
 		"authors": [
 			"Anakmalaysia",
 			"Aviator",
-			"Izzudin"
+			"Izzudin",
+			"Pizza1016"
 		]
 	},
 	"code": "Kajian Kod",
@@ -21,7 +22,7 @@
 	"codereview-desc": "[[Special:Code|Alat mengkaji kod]] dengan [[Special:RepoAdmin|sokongan Subversion]]",
 	"code-no-repo": "Tiada gedung yang ditetapkan!",
 	"code-create-repo": "Pergi ke [[Special:RepoAdmin|RepoAdmin]] untuk membuka Gedung",
-	"code-need-repoadmin-rights": "hak repoadmin (pentadbir gedung) diperlukan untuk membuka Gedung",
+	"code-need-repoadmin-rights": "hak repoadmin (penyelia gedung) diperlukan untuk membuka Gedung",
 	"code-need-group-with-rights": "Tiada kumpulan yang memegang hak repoadmin. Sila tambahkan satu kumpulan sedemikian supaya dapat membuat Gedung baru",
 	"code-repo-not-found": "Gedung '''$1''' tidak wujud!",
 	"code-load-diff": "Memuat perbezaan…",
@@ -189,7 +190,7 @@
 	"action-codereview-associate": "mengurus perkaitan semakan",
 	"action-codereview-review-own": "Menandai semakan sendiri sebagai \"{{int:code-status-ok}}\" atau \"{{int:code-status-resolved}}\"",
 	"specialpages-group-developer": "Alatan pembangun",
-	"group-svnadmins": "Pentadbir SVN",
-	"group-svnadmins-member": "{{GENDER:$1|pentadbir SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Pentadbir SVN"
+	"group-svnadmins": "Penyelia SVN",
+	"group-svnadmins-member": "{{GENDER:$1|penyelia SVN}}",
+	"grouppage-svnadmins": "{{ns:project}}:Penyelia SVN"
 }
