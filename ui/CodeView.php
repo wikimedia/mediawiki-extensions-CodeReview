@@ -7,32 +7,32 @@ abstract class CodeView {
 	/**
 	 * @var CodeRepository
 	 */
-	var $mRepo;
+	public $mRepo;
 
 	/**
 	 * @var CodeCommentLinkerHtml
 	 */
-	var $codeCommentLinkerHtml;
+	public $codeCommentLinkerHtml;
 
 	/**
 	 * @var CodeCommentLinkerWiki
 	 */
-	var $codeCommentLinkerWiki;
+	public $codeCommentLinkerWiki;
 
 	/**
 	 * @var string
 	 */
-	var $mPath;
+	public $mPath;
 
 	/**
 	 * @var string
 	 */
-	var $mAuthor;
+	public $mAuthor;
 
 	/**
 	 * @var string
 	 */
-	var $mStatus;
+	public $mStatus;
 
 	function __construct( $repo ) {
 		$this->mRepo = ( $repo instanceof CodeRepository )
