@@ -11,7 +11,8 @@
 			"SMP",
 			"Solde",
 			"Toniher",
-			"Vriullop"
+			"Vriullop",
+			"Fitoschido"
 		]
 	},
 	"code": "Revisió del Codi",
@@ -94,7 +95,7 @@
 	"code-status-fixme": "arregla'm",
 	"code-status-reverted": "Revertit",
 	"code-status-resolved": "Resolt",
-	"code-status-ok": "ok",
+	"code-status-ok": "correcte",
 	"code-status-deferred": "diferits",
 	"code-status-old": "edat",
 	"code-signoffs": "Aprovacions",
@@ -147,7 +148,7 @@
 	"repoadmin-edit-path": "Ruta del repositori:",
 	"repoadmin-edit-bug": "Ruta de Bugzilla:",
 	"repoadmin-edit-view": "Ruta de ViewVC:",
-	"repoadmin-edit-button": "OK",
+	"repoadmin-edit-button": "D’acord",
 	"repoadmin-nav": "administració del repositori",
 	"right-repoadmin": "Gestionar els repositoris de codi",
 	"right-codereview-use": "Usar la pàgina Special:Code",
