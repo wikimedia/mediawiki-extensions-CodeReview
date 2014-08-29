@@ -108,13 +108,6 @@ class ApiCodeUpdate extends ApiBase {
 			'Update CodeReview repository data from master revision control system.' );
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to update code' ),
-			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
-		) );
-	}
-
 	public function getExamples() {
 		return array(
 			'api.php?action=codeupdate&repo=MediaWiki&rev=42080',

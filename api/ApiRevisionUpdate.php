@@ -185,14 +185,6 @@ class ApiRevisionUpdate extends ApiBase {
 		);
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to update code' ),
-			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
-			array( 'code' => 'nosuchrev', 'info' => 'There is no revision with ID \'rev\'' ),
-		) );
-	}
-
 	public function getExamples() {
 		return array(
 			'api.php?action=coderevisionupdate&repo=MediaWiki&rev=1&status=fixme',

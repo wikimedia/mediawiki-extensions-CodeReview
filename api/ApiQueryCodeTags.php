@@ -68,13 +68,6 @@ class ApiQueryCodeTags extends ApiQueryBase {
 		return 'Get a list of tags applied to revisions in a given repository.';
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to view code tags' ),
-			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
-		) );
-	}
-
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=codetags&ctrepo=MediaWiki',

@@ -142,13 +142,6 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		return 'List comments on revisions in CodeReview.';
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'code' => 'permissiondenied', 'info' => 'You don\'t have permission to view code comments' ),
-			array( 'code' => 'invalidrepo', 'info' => "Invalid repo ``repo''" ),
-		) );
-	}
-
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=codecomments&ccrepo=MediaWiki',
