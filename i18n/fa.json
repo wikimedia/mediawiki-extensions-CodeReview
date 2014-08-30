@@ -13,7 +13,8 @@
 			"Sahim",
 			"Wayiran",
 			"ZxxZxxZ",
-			"Oldstoneage"
+			"Oldstoneage",
+			"Alirezaaa"
 		]
 	},
 	"code": "مرور کد",
@@ -26,7 +27,7 @@
 	"code-change-removed": "حذف:",
 	"code-change-added": "اضافه:",
 	"code-old-status": "وضعیت قدیمی",
-	"code-new-status": "وضعیت جدید",
+	"code-new-status": "وضعیت تازه",
 	"code-prop-changes": "سیاههٔ وضعیت و برچسب‌دهی",
 	"codereview-desc": "[[Special:Code|ابزار بازبینی کد]] با [[Special:RepoAdmin|پشتیبانی از Subversion]]",
 	"code-no-repo": "هیچ مخزنی تنظیم نشده‌است!",
