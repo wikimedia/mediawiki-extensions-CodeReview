@@ -142,7 +142,7 @@
 	"code-pathsearch-filter": "Used as label for the \"Status\" select box which has the following options:\n* {{msg-mw|Code-status-new}}\n* {{msg-mw|Code-status-fixme}}\n* {{msg-mw|Code-status-reverted}}\n* {{msg-mw|Code-status-resolved}}\n* {{msg-mw|Code-status-ok}}\n* {{msg-mw|Code-status-deferred}}\n* {{msg-mw|Code-status-old}}",
 	"code-revfilter-cr_status": "Used as a filter. Parameters:\n* $1 - status\nSee also:\n* {{msg-mw|Code-revfilter-cr author}}\n{{Identical|Status}}",
 	"code-revfilter-cr_author": "Used as a filter. Parameters:\n* $1 - author\nSee also:\n* {{msg-mw|Code-revfilter-cr status}}\n{{Identical|Author}}",
-	"code-revfilter-ct_tag": "Parameters:\n* $1 - tag",
+	"code-revfilter-ct_tag": "Parameters:\n* $1 - tag\n{{Identical|Tag}}",
 	"code-revfilter-clear": "Unused at this time.",
 	"code-rev-submit": "Caption of the button used to Save changes when viewing a revision.\n{{Identical|Save changes}}",
 	"code-rev-submit-accesskey": "{{notranslate}}",
