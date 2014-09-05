@@ -220,6 +220,12 @@ $specialPageAliases['lb'] = array(
 	'Code' => array( 'Quelltext' ),
 );
 
+/** Malagasy (Malagasy) */
+$specialPageAliases['mg'] = array(
+	'Code' => array( 'Kaody' ),
+	'RepoAdmin' => array( 'Petrakaodimpandrindra' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'Code' => array( 'ПрограмскиКод', 'Код', 'ПрегледНаКод' ),
