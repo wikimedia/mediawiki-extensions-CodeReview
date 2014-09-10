@@ -17,7 +17,8 @@
 			"Remember the dot",
 			"Sanbec",
 			"Translationista",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Macofe"
 		]
 	},
 	"code": "Revisión de código",
@@ -183,7 +184,7 @@
 	"repoadmin-edit-sucess": "El repositorio «[[Special:Code/$1|$1]]» ha sido modificado correctamente.",
 	"repoadmin-nav": "administración del repositorio",
 	"right-repoadmin": "Gestionar repositorios de código",
-	"right-codereview-use": "Uso de especial:Código",
+	"right-codereview-use": "Usar Especial:Código",
 	"right-codereview-add-tag": "Añadir nuevas etiquetas a las revisiones",
 	"right-codereview-remove-tag": "Quitar etiquetas de las revisiones",
 	"right-codereview-post-comment": "Añadir comentarios a las revisiones",
@@ -193,7 +194,7 @@
 	"right-codereview-associate": "Administrar las asociaciones de revisión",
 	"right-codereview-review-own": "Marque sus propias revisiones como \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "administrar repositorios de código",
-	"action-codereview-use": "Uso de Special:Código",
+	"action-codereview-use": "usar Especial:Código",
 	"action-codereview-add-tag": "añadir nuevas etiquetas a las revisiones",
 	"action-codereview-remove-tag": "eliminar etiquetas de las revisiones",
 	"action-codereview-post-comment": "añadir comentarios a las revisiones",
