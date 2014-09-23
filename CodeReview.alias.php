@@ -143,7 +143,7 @@ $specialPageAliases['hsb'] = array(
 	'Code' => array( 'Žórłowy_tekst' ),
 );
 
-/** 湘语 (湘语) */
+/** Xiang Chinese (湘语) */
 $specialPageAliases['hsn'] = array(
 	'Code' => array( '编码', '编码审查' ),
 );
@@ -327,7 +327,7 @@ $specialPageAliases['tr'] = array(
 	'RepoAdmin' => array( 'RepoHizmetli', 'RepoYönetici' ),
 );
 
-/** vèneto (vèneto) */
+/** Venetian (vèneto) */
 $specialPageAliases['vec'] = array(
 	'Code' => array( 'Còdese' ),
 );
