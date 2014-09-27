@@ -189,7 +189,7 @@
 	"action-codereview-signoff": "לחתום על גרסאות",
 	"action-codereview-link-user": "לקשר כותבים לחשבונות בוויקי",
 	"action-codereview-associate": "לנהל שיוכי גרסאות",
-	"action-codereview-review-own": "לסמן את הגרסאות של עצמכם \"{{int:code-status-ok}} או \"{{int:code-status-resolved}}\"",
+	"action-codereview-review-own": "לסמן את הגרסאות של עצמך כ\"{{int:code-status-ok}}\" או \"{{int:code-status-resolved}}\"",
 	"specialpages-group-developer": "כלי פיתוח",
 	"group-svnadmins": "מנהלי שרת SVN",
 	"group-svnadmins-member": "{{GENDER:$1|מנהל|מנהלת}} שרת SVN",
