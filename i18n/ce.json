@@ -44,6 +44,8 @@
 	"codereview-overview-title": "Гучé",
 	"repoadmin-new-button": "Кхолла",
 	"repoadmin-edit-button": "Кийчча ю",
+	"right-codereview-use": "лелае Special:Code",
+	"action-codereview-use": "лелае Special:Code",
 	"group-svnadmins": "Куьйгалхой SVN",
 	"group-svnadmins-member": "{{GENDER:$1|Куьйгалхой SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Куьйгалхой SVN"
