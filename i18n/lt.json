@@ -3,7 +3,8 @@
 		"authors": [
 			"Eitvys200",
 			"Mantak111",
-			"Matasg"
+			"Matasg",
+			"Hugo.arg"
 		]
 	},
 	"code": "Kodo peržiūra",
@@ -38,7 +39,7 @@
 	"code-reference-associate-submit": "Susieti",
 	"code-rev-author": "Autorius:",
 	"code-rev-date": "Data:",
-	"code-rev-message": "Komentaras:",
+	"code-rev-message": "Paaiškinimas:",
 	"code-rev-modified-a": "pridėta",
 	"code-rev-modified-r": "pakeista",
 	"code-rev-modified-d": "ištrinta",
@@ -48,7 +49,7 @@
 	"code-rev-tags": "Žymės:",
 	"code-rev-tag-add": "Pridėti žymes:",
 	"code-rev-tag-remove": "Pašalinti žymes:",
-	"code-rev-comment-by": "Komentaras $1",
+	"code-rev-comment-by": "Paaiškinimas $1",
 	"code-rev-comment-preview": "Peržiūra",
 	"code-rev-inline-preview": "Peržiūra:",
 	"code-rev-total": "Iš viso rezultatų: $1",
