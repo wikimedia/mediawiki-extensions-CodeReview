@@ -191,7 +191,7 @@
 	"right-codereview-associate": "管理版本关联",
 	"right-codereview-review-own": "将自己的版本标记为{{int:code-status-ok}}或{{int:code-status-resolved}}",
 	"action-repoadmin": "管理代码库",
-	"action-codereview-use": "Special:Code的使用",
+	"action-codereview-use": "使用Special:Code",
 	"action-codereview-add-tag": "给版本添加新标签",
 	"action-codereview-remove-tag": "移除版本的标签",
 	"action-codereview-post-comment": "向版本添加注释",
