@@ -6,5 +6,6 @@
 	},
 	"code-tags": "標",
 	"code-rev-tags": "標：",
-	"code-rev-history-link": "誌"
+	"code-rev-history-link": "誌",
+	"code-revfilter-ct_tag": "標 = $1"
 }
