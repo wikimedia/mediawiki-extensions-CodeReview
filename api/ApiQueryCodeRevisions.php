@@ -212,6 +212,9 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		$p = $this->getModulePrefix();
 		return array(
@@ -224,14 +227,32 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'List revisions in CodeReview.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=coderevisions&crrepo=MediaWiki',
 			'api.php?action=query&list=coderevisions&crrepo=MediaWiki&crprop=revid|author|status|timestamp|tags',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=coderevisions&crrepo=MediaWiki'
+				=> 'apihelp-query+coderevisions-example-1',
+			'action=query&list=coderevisions&crrepo=MediaWiki&crprop=revid|author|status|timestamp|tags'
+				=> 'apihelp-query+coderevisions-example-2',
 		);
 	}
 }

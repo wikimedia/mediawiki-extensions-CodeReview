@@ -129,6 +129,9 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'repo' => 'Name of the repository',
@@ -138,10 +141,16 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'List comments on revisions in CodeReview.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=codecomments&ccrepo=MediaWiki',
@@ -149,7 +158,15 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		);
 	}
 
-	public function getVersion() {
-		return __CLASS__ . ': $Id$';
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=codecomments&ccrepo=MediaWiki'
+				=> 'apihelp-query+codecomments-example-1',
+			'action=query&list=codecomments&ccrepo=MediaWiki&ccprop=timestamp|user|status|text'
+				=> 'apihelp-query+codecomments-example-2',
+		);
 	}
 }

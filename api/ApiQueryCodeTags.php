@@ -58,19 +58,38 @@ class ApiQueryCodeTags extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'repo' => 'Name of the repository',
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Get a list of tags applied to revisions in a given repository.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=codetags&ctrepo=MediaWiki',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=codetags&ctrepo=MediaWiki'
+				=> 'apihelp-query+codetags-example-1',
 		);
 	}
 }

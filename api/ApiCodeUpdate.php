@@ -97,20 +97,39 @@ class ApiCodeUpdate extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'repo' => 'Name of repository to update',
 			'rev' => 'Revision ID number to update to' );
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return array(
 			'Update CodeReview repository data from master revision control system.' );
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=codeupdate&repo=MediaWiki&rev=42080',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=codeupdate&repo=MediaWiki&rev=42080'
+				=> 'apihelp-codeupdate-example-1',
 		);
 	}
 }

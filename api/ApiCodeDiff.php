@@ -72,20 +72,39 @@ class ApiCodeDiff extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'repo' => 'Name of repository to look at',
 			'rev' => 'Revision ID to fetch diff of' );
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return array(
 			'Fetch formatted diff from CodeReview\'s backing revision control system.' );
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=codediff&repo=MediaWiki&rev=42080',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=codediff&repo=MediaWiki&rev=42080'
+				=> 'apihelp-codediff-example-1',
 		);
 	}
 }

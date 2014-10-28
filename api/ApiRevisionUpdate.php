@@ -161,6 +161,9 @@ class ApiRevisionUpdate extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'repo' => 'Name of repository',
@@ -179,15 +182,31 @@ class ApiRevisionUpdate extends ApiBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return array(
 			'Submit comments, new status and tags to a revision.'
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=coderevisionupdate&repo=MediaWiki&rev=1&status=fixme',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=coderevisionupdate&repo=MediaWiki&rev=1&status=fixme'
+				=> 'apihelp-coderevisionupdate-example-1',
 		);
 	}
 }

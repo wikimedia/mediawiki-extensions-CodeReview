@@ -75,6 +75,9 @@ class ApiQueryCodePaths extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getParamDescription() {
 		return array(
 			'repo' => 'Name of the repository',
@@ -82,13 +85,29 @@ class ApiQueryCodePaths extends ApiQueryBase {
 		);
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getDescription() {
 		return 'Get a list of 10 paths in a given repository, based on the input path prefix.';
 	}
 
+	/**
+	 * @deprecated since MediaWiki core 1.25
+	 */
 	public function getExamples() {
 		return array(
 			'api.php?action=query&list=codepaths&cprepo=MediaWiki&cppath=/trunk/phase3',
+		);
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=query&list=codepaths&cprepo=MediaWiki&cppath=/trunk/phase3'
+				=> 'apihelp-query+codepaths-example-1',
 		);
 	}
 }
