@@ -194,5 +194,17 @@
 	"specialpages-group-developer": "Entwicklerwerkzeuge",
 	"group-svnadmins": "SVN-Administratoren",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-Administrator|SVN-Administratorin}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-Administratoren"
+	"grouppage-svnadmins": "{{ns:project}}:SVN-Administratoren",
+	"apihelp-codediff-param-repo": "Name des zu suchenden Repositoriums.",
+	"apihelp-coderevisionupdate-param-repo": "Name des Repositoriums.",
+	"apihelp-coderevisionupdate-param-rev": "Revisionskennnummer.",
+	"apihelp-codeupdate-param-repo": "Name des zu aktualisierenden Repositoriums.",
+	"apihelp-codeupdate-example-1": "Daten für die MediaWiki-Revision 42080 aktualisieren",
+	"apihelp-query+codecomments-param-repo": "Name des Repositoriums.",
+	"apihelp-query+coderevisions-description": "Revisionen in CodeReview auflisten.",
+	"apihelp-query+coderevisions-param-repo": "Name des Repositoriums.",
+	"apihelp-query+coderevisions-param-limit": "Wie viele Revisionen zurückgegeben werden sollen.",
+	"apihelp-query+coderevisions-param-prop": "Welche Eigenschaften zurückgegeben werden sollen.",
+	"apihelp-query+codetags-param-repo": "Name des Repositoriums.",
+	"apihelp-query+codetags-example-1": "Tags in MediaWiki auflisten"
 }
