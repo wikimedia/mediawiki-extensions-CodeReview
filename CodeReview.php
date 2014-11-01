@@ -288,7 +288,7 @@ $wgCodeReviewFlags = array(
 /******** RESOURCE CONFIGURATION ********/
 
 $commonModuleInfo = array(
-	'localBasePath' => dirname( __FILE__ ) . '/modules',
+	'localBasePath' => __DIR__ . '/modules',
 	'remoteExtPath' => 'CodeReview/modules',
 );
 

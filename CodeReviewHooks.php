@@ -19,7 +19,7 @@ class CodeReviewHooks {
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
-		$base = dirname( __FILE__ );
+		$base = __DIR__;
 		switch ( $updater->getDB()->getType() ) {
 		case 'mysql':
 			$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" ); // Initial install tables
@@ -158,10 +158,9 @@ class CodeReviewHooks {
 	 * @return bool
 	 */
 	public static function onUnitTestsList( &$files ) {
-		$dir = dirname( __FILE__ );
-		$files[] = $dir . '/tests/CodeReviewApiTest.php';
-		$files[] = $dir . '/tests/CodeReviewTest.php';
-		$files[] = $dir . '/tests/DiffHighlighterTest.php';
+		$files[] = __DIR__ . '/tests/CodeReviewApiTest.php';
+		$files[] = __DIR__ . '/tests/CodeReviewTest.php';
+		$files[] = __DIR__ . '/tests/DiffHighlighterTest.php';
 		return true;
 	}
 }
