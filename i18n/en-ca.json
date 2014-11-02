@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chess"
+		]
+	},
+	"apihelp-coderevisionupdate-param-status": "Status to set the revision to."
+}

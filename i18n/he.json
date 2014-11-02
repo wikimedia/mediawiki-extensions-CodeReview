@@ -195,5 +195,16 @@
 	"group-svnadmins-member": "{{GENDER:$1|מנהל|מנהלת}} שרת SVN",
 	"grouppage-svnadmins": "{{ns:project}}:מנהלי שרת SVN",
 	"group-svnadmins.css": "/* הסגנונות הנכתבים כאן ישפיעו על מנהלי שרת SVN בלבד */",
-	"group-svnadmins.js": "/* כל סקריפט JavaScript שנכתב כאן ירוץ עבור מנהלי שרת SVN בלבד */"
+	"group-svnadmins.js": "/* כל סקריפט JavaScript שנכתב כאן ירוץ עבור מנהלי שרת SVN בלבד */",
+	"apihelp-codediff-description": "אחזור השוואה מעוצבת ממערכת בקרת גרסאות של CodeReview.",
+	"apihelp-codediff-param-repo": "שם המאגר לבחינה.",
+	"apihelp-codediff-param-rev": "מספר הגרסה לאחזור השוואה.",
+	"apihelp-codediff-example-1": "אחזור השוואה לגרסת מדיה־ויקי 42080",
+	"apihelp-coderevisionupdate-description": "שליחת הערות, מצב חדש ותגים לגרסה.",
+	"apihelp-coderevisionupdate-param-repo": "שם המאגר.",
+	"apihelp-coderevisionupdate-param-rev": "מספר הגרסה.",
+	"apihelp-coderevisionupdate-param-comment": "הערות להוסיף לגרסה.",
+	"apihelp-coderevisionupdate-param-status": "איזה מצב להגדיר לגרסה.",
+	"apihelp-coderevisionupdate-param-addtags": "אילו תגים להוסיף לגרסה.",
+	"apihelp-coderevisionupdate-param-removetags": "אילו תגים להסיר מהגרסה."
 }
