@@ -8,7 +8,8 @@
 			"Marcin Łukasz Kiejzik",
 			"Olgak85",
 			"Sp5uhe",
-			"Woytecr"
+			"Woytecr",
+			"Chrumps"
 		]
 	},
 	"code": "Podgląd kodu",
@@ -196,5 +197,11 @@
 	"specialpages-group-developer": "Narzędzia dewelopera",
 	"group-svnadmins": "Administratorzy SVN",
 	"group-svnadmins-member": "{{GENDER:$1|administrator SVN|administratorka SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Administratorzy SVN"
+	"grouppage-svnadmins": "{{ns:project}}:Administratorzy SVN",
+	"apihelp-coderevisionupdate-param-repo": "Nazwa repozytorium.",
+	"apihelp-codeupdate-param-repo": "Nazwa repozytorium do aktualizacji.",
+	"apihelp-query+codecomments-param-repo": "Nazwa repozytorium.",
+	"apihelp-query+codepaths-param-repo": "Nazwa repozytorium.",
+	"apihelp-query+coderevisions-param-repo": "Nazwa repozytorium.",
+	"apihelp-query+codetags-param-repo": "Nazwa repozytorium."
 }

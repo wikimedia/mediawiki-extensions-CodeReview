@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Max20091"
 		]
 	},
 	"code": "Duyệt mã",
@@ -192,5 +193,12 @@
 	"group-svnadmins-member": "{{GENDER:$1}}người quản lý SVN",
 	"grouppage-svnadmins": "{{ns:project}}:Người quản lý SVN",
 	"group-svnadmins.css": "/* Mã CSS tại đây sẽ chỉ ảnh hưởng đến những người quản lý SVN */",
-	"group-svnadmins.js": "/* Mã JS tại đây sẽ chỉ ảnh hưởng đến những người người quản lý SVN */"
+	"group-svnadmins.js": "/* Mã JS tại đây sẽ chỉ ảnh hưởng đến những người người quản lý SVN */",
+	"apihelp-codediff-example-1": "Lấy bản khác biệt cho thay đổi 42080 của MediaWiki",
+	"apihelp-coderevisionupdate-param-repo": "Tên kho mã nguồn.",
+	"apihelp-query+codecomments-param-repo": "Tên kho mã nguồn.",
+	"apihelp-query+codepaths-param-repo": "Tên repository.",
+	"apihelp-query+coderevisions-param-repo": "Tên kho mã nguồn.",
+	"apihelp-query+codetags-param-repo": "Tên kho mã nguồn.",
+	"apihelp-query+codetags-example-1": "Danh sách các thẻ trong MediaWiki"
 }

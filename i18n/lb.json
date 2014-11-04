@@ -163,5 +163,6 @@
 	"specialpages-group-developer": "Handwierksgeschir fir Entwéckler (Programméierer)",
 	"group-svnadmins": "SVN-Administrateuren",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-Administrateur|SVN-Administratrice}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-Administrateuren"
+	"grouppage-svnadmins": "{{ns:project}}:SVN-Administrateuren",
+	"apihelp-coderevisionupdate-param-addreferences": "Referenzen an dës Versioun dobäisetzen."
 }

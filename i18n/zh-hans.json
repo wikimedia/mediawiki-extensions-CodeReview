@@ -203,5 +203,10 @@
 	"specialpages-group-developer": "开发者工具",
 	"group-svnadmins": "SVN管理员",
 	"group-svnadmins-member": "{{GENDER:$1|SVN管理员}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN管理员"
+	"grouppage-svnadmins": "{{ns:project}}:SVN管理员",
+	"apihelp-coderevisionupdate-param-repo": "存储库名称。",
+	"apihelp-query+codecomments-param-repo": "存储库名称。",
+	"apihelp-query+codepaths-param-repo": "存储库名称。",
+	"apihelp-query+coderevisions-param-repo": "存储库名称。",
+	"apihelp-query+codetags-param-repo": "存储库名称。"
 }
