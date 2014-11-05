@@ -197,7 +197,7 @@
 	"apihelp-codediff-example-1": "Lấy bản khác biệt cho thay đổi 42080 của MediaWiki",
 	"apihelp-coderevisionupdate-param-repo": "Tên kho mã nguồn.",
 	"apihelp-query+codecomments-param-repo": "Tên kho mã nguồn.",
-	"apihelp-query+codepaths-param-repo": "Tên repository.",
+	"apihelp-query+codepaths-param-repo": "Tên kho mã nguồn.",
 	"apihelp-query+coderevisions-param-repo": "Tên kho mã nguồn.",
 	"apihelp-query+codetags-param-repo": "Tên kho mã nguồn.",
 	"apihelp-query+codetags-example-1": "Danh sách các thẻ trong MediaWiki"
