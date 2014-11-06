@@ -217,7 +217,7 @@
 	"apihelp-codeupdate-example-1": "Поднови ги податоците за преработката 42080 на МедијаВики",
 	"apihelp-query+codecomments-description": "Испиши ги коментарите на преработките во CodeReview.",
 	"apihelp-query+codecomments-param-repo": "Назив на складиштето.",
-	"apihelp-query+codecomments-param-limit": "Колку коментари да се даваат.",
+	"apihelp-query+codecomments-param-limit": "Колку коментари да се дадат.",
 	"apihelp-query+codecomments-param-start": "Од кој датум и време да почне исписот.",
 	"apihelp-query+codecomments-param-prop": "Кои својства да се даваат. преработка (revision) е застарен алијас за состојба (status).",
 	"apihelp-query+codecomments-example-1": "Испиши коментари на складиштето на МедијаВики",
