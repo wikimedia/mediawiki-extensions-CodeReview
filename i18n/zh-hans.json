@@ -208,5 +208,7 @@
 	"apihelp-query+codecomments-param-repo": "存储库名称。",
 	"apihelp-query+codepaths-param-repo": "存储库名称。",
 	"apihelp-query+coderevisions-param-repo": "存储库名称。",
-	"apihelp-query+codetags-param-repo": "存储库名称。"
+	"apihelp-query+coderevisions-example-1": "MediaWiki修订列表",
+	"apihelp-query+codetags-param-repo": "存储库名称。",
+	"apihelp-query+codetags-example-1": "MediaWiki标签列表"
 }
