@@ -5,5 +5,7 @@
 		]
 	},
 	"code-rev-history-link": "skiednis",
-	"repoadmin-new-button": "Oanmeitsje"
+	"code-status-ok": "ok",
+	"repoadmin-new-button": "Oanmeitsje",
+	"repoadmin-edit-button": "OK"
 }
