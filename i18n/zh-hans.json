@@ -205,6 +205,7 @@
 	"group-svnadmins-member": "{{GENDER:$1|SVN管理员}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN管理员",
 	"apihelp-coderevisionupdate-param-repo": "存储库名称。",
+	"apihelp-codeupdate-example-1": "更新MediaWiki修订版本42080的数据",
 	"apihelp-query+codecomments-param-repo": "存储库名称。",
 	"apihelp-query+codepaths-param-repo": "存储库名称。",
 	"apihelp-query+coderevisions-param-repo": "存储库名称。",
