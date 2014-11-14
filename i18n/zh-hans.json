@@ -205,11 +205,15 @@
 	"group-svnadmins-member": "{{GENDER:$1|SVN管理员}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN管理员",
 	"apihelp-coderevisionupdate-param-repo": "存储库名称。",
+	"apihelp-coderevisionupdate-param-rev": "修订版本的ID号。",
+	"apihelp-codeupdate-param-repo": "要更新的存储库名称。",
 	"apihelp-codeupdate-example-1": "更新MediaWiki修订版本42080的数据",
 	"apihelp-query+codecomments-param-repo": "存储库名称。",
 	"apihelp-query+codepaths-param-repo": "存储库名称。",
 	"apihelp-query+coderevisions-param-repo": "存储库名称。",
+	"apihelp-query+coderevisions-param-prop": "返回的属性。",
 	"apihelp-query+coderevisions-example-1": "MediaWiki修订列表",
+	"apihelp-query+coderevisions-example-2": "获取MediaWiki的修订信息",
 	"apihelp-query+codetags-param-repo": "存储库名称。",
 	"apihelp-query+codetags-example-1": "MediaWiki标签列表"
 }
