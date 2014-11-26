@@ -179,7 +179,6 @@
 	"right-codereview-review-own": "التعليم على مراجعاتك بانها \"{{int:code-status-ok}}\" أو \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "التحكم بمستودعات الكود",
 	"action-codereview-use": "استخدام Special:Code",
-	"specialpages-group-developer": "أدوات المطورين",
 	"group-svnadmins": "إداريو SVN",
 	"group-svnadmins-member": "{{GENDER:$1|إداري SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:إداريو SVN",
