@@ -189,7 +189,6 @@
 	"action-codereview-link-user": "link authors to wiki users",
 	"action-codereview-associate": "manage revision associations",
 	"action-codereview-review-own": "mark your own revisions as \"{{int:code-status-ok}}\" or \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Developer tools",
 	"group-svnadmins": "SVN admins",
 	"group-svnadmins-member": "{{GENDER:$1|SVN admin}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN admins",

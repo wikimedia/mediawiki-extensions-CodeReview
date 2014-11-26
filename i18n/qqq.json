@@ -214,7 +214,6 @@
 	"action-codereview-link-user": "{{doc-action|codereview-link-user}}",
 	"action-codereview-associate": "{{doc-action|codereview-associate}}",
 	"action-codereview-review-own": "{{doc-action|codereview-review-own}}\nRefers to {{msg-mw|Code-status-ok}} and {{msg-mw|Code-status-resolved}}.",
-	"specialpages-group-developer": "{{doc-special-group|that=are related to the extensions CodeReview and ExtensionDistributor|like=[[Special:Code]], [[Special:RepoAdmin]], [[Special:ExtensionDistributor]]}}",
 	"group-svnadmins": "{{doc-group|svnadmins}}",
 	"group-svnadmins-member": "{{doc-group|svnadmins|member}}",
 	"grouppage-svnadmins": "{{doc-group|svnadmins|page}}",
