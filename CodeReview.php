@@ -42,63 +42,61 @@ $wgExtensionCredits['specialpage'][] = array(
 
 /******** CLASS DEFINITIONS ********/
 
-$dir = __DIR__ . '/';
+$wgAutoloadClasses['ApiCodeUpdate'] = __DIR__ . '/api/ApiCodeUpdate.php';
+$wgAutoloadClasses['ApiCodeDiff'] = __DIR__ . '/api/ApiCodeDiff.php';
+$wgAutoloadClasses['ApiRevisionUpdate'] = __DIR__ . '/api/ApiRevisionUpdate.php';
+$wgAutoloadClasses['ApiQueryCodeComments'] = __DIR__ . '/api/ApiQueryCodeComments.php';
+$wgAutoloadClasses['ApiQueryCodePaths'] = __DIR__ . '/api/ApiQueryCodePaths.php';
+$wgAutoloadClasses['ApiQueryCodeRevisions'] = __DIR__ . '/api/ApiQueryCodeRevisions.php';
+$wgAutoloadClasses['ApiQueryCodeTags'] = __DIR__ . '/api/ApiQueryCodeTags.php';
+$wgAutoloadClasses['CodeRevisionCommitterApi'] = __DIR__ . '/api/CodeRevisionCommitterApi.php';
 
-$wgAutoloadClasses['ApiCodeUpdate'] = $dir . 'api/ApiCodeUpdate.php';
-$wgAutoloadClasses['ApiCodeDiff'] = $dir . 'api/ApiCodeDiff.php';
-$wgAutoloadClasses['ApiRevisionUpdate'] = $dir . 'api/ApiRevisionUpdate.php';
-$wgAutoloadClasses['ApiQueryCodeComments'] = $dir . 'api/ApiQueryCodeComments.php';
-$wgAutoloadClasses['ApiQueryCodePaths'] = $dir . 'api/ApiQueryCodePaths.php';
-$wgAutoloadClasses['ApiQueryCodeRevisions'] = $dir . 'api/ApiQueryCodeRevisions.php';
-$wgAutoloadClasses['ApiQueryCodeTags'] = $dir . 'api/ApiQueryCodeTags.php';
-$wgAutoloadClasses['CodeRevisionCommitterApi'] = $dir . 'api/CodeRevisionCommitterApi.php';
+$wgAutoloadClasses['SubversionAdaptor'] = __DIR__ . '/backend/Subversion.php';
+$wgAutoloadClasses['CodeDiffHighlighter'] = __DIR__ . '/backend/DiffHighlighter.php';
 
-$wgAutoloadClasses['SubversionAdaptor'] = $dir . 'backend/Subversion.php';
-$wgAutoloadClasses['CodeDiffHighlighter'] = $dir . 'backend/DiffHighlighter.php';
+$wgAutoloadClasses['CodeRepository'] = __DIR__ . '/backend/CodeRepository.php';
+$wgAutoloadClasses['CodeRevision'] = __DIR__ . '/backend/CodeRevision.php';
+$wgAutoloadClasses['CodeComment'] = __DIR__ . '/backend/CodeComment.php';
+$wgAutoloadClasses['CodeCommentLinker'] = __DIR__ . '/backend/CodeCommentLinker.php';
+$wgAutoloadClasses['CodeCommentLinkerHtml'] = __DIR__ . '/backend/CodeCommentLinker.php';
+$wgAutoloadClasses['CodeCommentLinkerWiki'] = __DIR__ . '/backend/CodeCommentLinker.php';
+$wgAutoloadClasses['CodePropChange'] = __DIR__ . '/backend/CodePropChange.php';
+$wgAutoloadClasses['CodeSignoff'] = __DIR__ . '/backend/CodeSignoff.php';
+$wgAutoloadClasses['RepoStats'] = __DIR__ . '/backend/RepoStats.php';
 
-$wgAutoloadClasses['CodeRepository'] = $dir . 'backend/CodeRepository.php';
-$wgAutoloadClasses['CodeRevision'] = $dir . 'backend/CodeRevision.php';
-$wgAutoloadClasses['CodeComment'] = $dir . 'backend/CodeComment.php';
-$wgAutoloadClasses['CodeCommentLinker'] = $dir . 'backend/CodeCommentLinker.php';
-$wgAutoloadClasses['CodeCommentLinkerHtml'] = $dir . 'backend/CodeCommentLinker.php';
-$wgAutoloadClasses['CodeCommentLinkerWiki'] = $dir . 'backend/CodeCommentLinker.php';
-$wgAutoloadClasses['CodePropChange'] = $dir . 'backend/CodePropChange.php';
-$wgAutoloadClasses['CodeSignoff'] = $dir . 'backend/CodeSignoff.php';
-$wgAutoloadClasses['RepoStats'] = $dir . 'backend/RepoStats.php';
+$wgAutoloadClasses['CodeRepoListView'] = __DIR__ . '/ui/CodeRepoListView.php';
+$wgAutoloadClasses['CodeRepoStatsView'] = __DIR__ . '/ui/CodeRepoStatsView.php';
+$wgAutoloadClasses['CodeRevisionAuthorView'] = __DIR__ . '/ui/CodeRevisionAuthorView.php';
+$wgAutoloadClasses['CodeRevisionAuthorLink'] = __DIR__ . '/ui/CodeRevisionAuthorLink.php';
+$wgAutoloadClasses['CodeRevisionCommitter'] = __DIR__ . '/ui/CodeRevisionCommitter.php';
+$wgAutoloadClasses['CodeRevisionListView'] = __DIR__ . '/ui/CodeRevisionListView.php';
+$wgAutoloadClasses['CodeRevisionStatusView'] = __DIR__ . '/ui/CodeRevisionStatusView.php';
+$wgAutoloadClasses['CodeRevisionTagView'] = __DIR__ . '/ui/CodeRevisionTagView.php';
+$wgAutoloadClasses['CodeRevisionView'] = __DIR__ . '/ui/CodeRevisionView.php';
+$wgAutoloadClasses['CodeAuthorListView'] = __DIR__ . '/ui/CodeAuthorListView.php';
+$wgAutoloadClasses['CodeStatusListView'] = __DIR__ . '/ui/CodeStatusListView.php';
+$wgAutoloadClasses['CodeTagListView'] = __DIR__ . '/ui/CodeTagListView.php';
+$wgAutoloadClasses['CodeCommentsListView'] = __DIR__ . '/ui/CodeCommentsListView.php';
+$wgAutoloadClasses['CodeCommentsAuthorListView'] = __DIR__ . '/ui/CodeCommentsAuthorListView.php';
+$wgAutoloadClasses['CodeReleaseNotes'] = __DIR__ . '/ui/CodeReleaseNotes.php';
+$wgAutoloadClasses['CodeStatusChangeListView'] = __DIR__ . '/ui/CodeStatusChangeListView.php';
+$wgAutoloadClasses['CodeStatusChangeAuthorListView'] = __DIR__ . '/ui/CodeStatusChangeAuthorListView.php';
+$wgAutoloadClasses['SpecialCode'] = __DIR__ . '/ui/SpecialCode.php';
+$wgAutoloadClasses['CodeView'] = __DIR__ . '/ui/CodeView.php';
+$wgAutoloadClasses['SpecialRepoAdmin'] = __DIR__ . '/ui/SpecialRepoAdmin.php';
+$wgAutoloadClasses['WordCloud'] = __DIR__ . '/ui/WordCloud.php';
 
-$wgAutoloadClasses['CodeRepoListView'] = $dir . 'ui/CodeRepoListView.php';
-$wgAutoloadClasses['CodeRepoStatsView'] = $dir . 'ui/CodeRepoStatsView.php';
-$wgAutoloadClasses['CodeRevisionAuthorView'] = $dir . 'ui/CodeRevisionAuthorView.php';
-$wgAutoloadClasses['CodeRevisionAuthorLink'] = $dir . 'ui/CodeRevisionAuthorLink.php';
-$wgAutoloadClasses['CodeRevisionCommitter'] = $dir . 'ui/CodeRevisionCommitter.php';
-$wgAutoloadClasses['CodeRevisionListView'] = $dir . 'ui/CodeRevisionListView.php';
-$wgAutoloadClasses['CodeRevisionStatusView'] = $dir . 'ui/CodeRevisionStatusView.php';
-$wgAutoloadClasses['CodeRevisionTagView'] = $dir . 'ui/CodeRevisionTagView.php';
-$wgAutoloadClasses['CodeRevisionView'] = $dir . 'ui/CodeRevisionView.php';
-$wgAutoloadClasses['CodeAuthorListView'] = $dir . 'ui/CodeAuthorListView.php';
-$wgAutoloadClasses['CodeStatusListView'] = $dir . 'ui/CodeStatusListView.php';
-$wgAutoloadClasses['CodeTagListView'] = $dir . 'ui/CodeTagListView.php';
-$wgAutoloadClasses['CodeCommentsListView'] = $dir . 'ui/CodeCommentsListView.php';
-$wgAutoloadClasses['CodeCommentsAuthorListView'] = $dir . 'ui/CodeCommentsAuthorListView.php';
-$wgAutoloadClasses['CodeReleaseNotes'] = $dir . 'ui/CodeReleaseNotes.php';
-$wgAutoloadClasses['CodeStatusChangeListView'] = $dir . 'ui/CodeStatusChangeListView.php';
-$wgAutoloadClasses['CodeStatusChangeAuthorListView'] = $dir . 'ui/CodeStatusChangeAuthorListView.php';
-$wgAutoloadClasses['SpecialCode'] = $dir . 'ui/SpecialCode.php';
-$wgAutoloadClasses['CodeView'] = $dir . 'ui/CodeView.php';
-$wgAutoloadClasses['SpecialRepoAdmin'] = $dir . 'ui/SpecialRepoAdmin.php';
-$wgAutoloadClasses['WordCloud'] = $dir . 'ui/WordCloud.php';
+$wgAutoloadClasses['SvnRevTablePager'] = __DIR__ . '/ui/CodeRevisionListView.php';
+$wgAutoloadClasses['CodeCommentsTablePager'] = __DIR__ . '/ui/CodeCommentsListView.php';
+$wgAutoloadClasses['SvnRevAuthorTablePager'] = __DIR__ . '/ui/CodeRevisionAuthorView.php';
+$wgAutoloadClasses['SvnRevStatusTablePager'] = __DIR__ . '/ui/CodeRevisionStatusView.php';
+$wgAutoloadClasses['SvnRevTagTablePager'] = __DIR__ . '/ui/CodeRevisionTagView.php';
+$wgAutoloadClasses['CodeStatusChangeTablePager'] = __DIR__ . '/ui/CodeRevisionStatusView.php';
 
-$wgAutoloadClasses['SvnRevTablePager'] = $dir . 'ui/CodeRevisionListView.php';
-$wgAutoloadClasses['CodeCommentsTablePager'] = $dir . 'ui/CodeCommentsListView.php';
-$wgAutoloadClasses['SvnRevAuthorTablePager'] = $dir . 'ui/CodeRevisionAuthorView.php';
-$wgAutoloadClasses['SvnRevStatusTablePager'] = $dir . 'ui/CodeRevisionStatusView.php';
-$wgAutoloadClasses['SvnRevTagTablePager'] = $dir . 'ui/CodeRevisionTagView.php';
-$wgAutoloadClasses['CodeStatusChangeTablePager'] = $dir . 'ui/CodeRevisionStatusView.php';
-
-$wgAutoloadClasses['CodeReviewHooks'] = $dir . 'CodeReviewHooks.php';
+$wgAutoloadClasses['CodeReviewHooks'] = __DIR__ . '/CodeReviewHooks.php';
 
 // MediaWiki:CodeReview.css (bug #16049)
-$wgAutoloadClasses['ResourceLoaderCodeReviewModule'] = $dir . 'ResourceLoaderCodeReviewModule.php';
+$wgAutoloadClasses['ResourceLoaderCodeReviewModule'] = __DIR__ . '/ResourceLoaderCodeReviewModule.php';
 
 /******** SPECIAL PAGE SETUP ********/
 
@@ -120,8 +118,8 @@ $wgAPIListModules['codetags'] = 'ApiQueryCodeTags';
 /******** I18N MESSAGES ********/
 
 $wgMessagesDirs['CodeReview'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['CodeReview'] = $dir . 'CodeReview.i18n.php';
-$wgExtensionMessagesFiles['CodeReviewAliases'] = $dir . 'CodeReview.alias.php';
+$wgExtensionMessagesFiles['CodeReview'] = __DIR__ . '/CodeReview.i18n.php';
+$wgExtensionMessagesFiles['CodeReviewAliases'] = __DIR__ . '/CodeReview.alias.php';
 
 /******** NEW USER RIGHTS ********/
 
@@ -180,7 +178,7 @@ $wgCodeReviewENotif = false;
 // Set this to an email list to send all comments to
 $wgCodeReviewCommentWatcherEmail = false;
 // Name to use in the To: header of emails to the list. Ignored if $wgCodeReviewCommentWatcherEmail isn't set
-$wgCodeReviewCommentWatcherName = "CodeReview comments list";
+$wgCodeReviewCommentWatcherName = 'CodeReview comments list';
 
 // Set this flag to true if you want to disable the automatic notifications to all
 // watchers of a specific revision, when a follow-up to that revision is committed.
@@ -247,8 +245,8 @@ $wgCodeReviewNewPerPath = array();
 $wgCodeReviewRC = array();
 
 /**
-* How long to cache repository statistics in seconds
-* See http://www.mediawiki.org/wiki/Special:Code/MediaWiki/stats
+ * How long to cache repository statistics in seconds
+ * See http://www.mediawiki.org/wiki/Special:Code/MediaWiki/stats
  */
 $wgCodeReviewRepoStatsCacheTime = 6 * 60 * 60; // 6 Hours
 
