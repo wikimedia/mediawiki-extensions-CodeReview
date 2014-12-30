@@ -54,7 +54,11 @@ class ApiQueryCodePaths extends ApiQueryBase {
 
 		foreach ( $res as $row ) {
 			$item = array();
-			ApiResult::setContent( $item, $row->cp_path );
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				ApiResult::setContentValue( $item, 'path', $row->cp_path );
+			} else {
+				ApiResult::setContent( $item, $row->cp_path );
+			}
 			$data[] = $item;
 		}
 

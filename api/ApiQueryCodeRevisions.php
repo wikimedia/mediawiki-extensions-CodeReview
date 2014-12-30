@@ -119,7 +119,11 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			$item['path'] = $row->cr_path;
 		}
 		if ( isset( $this->props['message'] ) ) {
-			ApiResult::setContent( $item, $row->cr_message );
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				ApiResult::setContentValue( $item, 'message', $row->cr_message );
+			} else {
+				ApiResult::setContent( $item, $row->cr_message );
+			}
 		}
 		if ( isset( $this->props['author'] ) ) {
 			$item['author'] = $row->cr_author;
@@ -164,7 +168,11 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 				'timestamp' => wfTimestamp( TS_ISO_8601, $ref->cr_timestamp ),
 				'author' => $ref->cr_author ,
 			);
-			ApiResult::setContent( $refItem, $ref->cr_message );
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				ApiResult::setContentValue( $refItem, 'message', $ref->cr_message );
+			} else {
+				ApiResult::setContent( $refItem, $ref->cr_message );
+			}
 
 			$items[] = $refItem;
 		}
