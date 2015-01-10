@@ -112,7 +112,7 @@ class SubversionPecl extends SubversionAdaptor {
 
 			return $out;
 		} else {
-			return new MWException( "Diffing error" );
+			return new Exception( "Diffing error" );
 		}
 	}
 
@@ -215,7 +215,7 @@ class SubversionShell extends SubversionAdaptor {
 					break;
 				} else {
 					return $out;
-					# throw new MWException( "Unexpected start line: $line" );
+					# throw new Exception( "Unexpected start line: $line" );
 				}
 			case "revdata":
 				if ( $line == "" ) {
@@ -231,7 +231,7 @@ class SubversionShell extends SubversionAdaptor {
 					if ( preg_match( $regex, $text, $matches ) ) {
 						$data[$key] = $matches[1];
 					} else {
-						throw new MWException(
+						throw new Exception(
 							"Unexpected format for $key in '$text'" );
 					}
 				}
@@ -246,7 +246,7 @@ class SubversionShell extends SubversionAdaptor {
 					// No changed paths?
 					$state = "msg";
 				} else {
-					throw new MWException(
+					throw new Exception(
 						"Expected 'Changed paths:' or '', got '$line'" );
 				}
 				break;
@@ -274,9 +274,9 @@ class SubversionShell extends SubversionAdaptor {
 				}
 				break;
 			case "done":
-				throw new MWException( "Unexpected input after end: $line" );
+				throw new Exception( "Unexpected input after end: $line" );
 			default:
-				throw new MWException( "Invalid state '$state'" );
+				throw new Exception( "Invalid state '$state'" );
 			}
 		}
 
@@ -360,7 +360,7 @@ class SubversionProxy extends SubversionAdaptor {
 	}
 
 	function getFile( $path, $rev = null ) {
-		throw new MWException( "NYI" );
+		throw new Exception( "NYI" );
 	}
 
 	function getDiff( $path, $rev1, $rev2 ) {
@@ -399,7 +399,7 @@ class SubversionProxy extends SubversionAdaptor {
 		$target = $this->mProxy . '?' . wfArrayToCgi( $params );
 		$blob = Http::get( $target, $this->mTimeout );
 		if ( $blob === false ) {
-			throw new MWException( "SVN proxy error" );
+			throw new Exception( "SVN proxy error" );
 		}
 		$data = unserialize( $blob );
 		return $data;

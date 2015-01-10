@@ -80,7 +80,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 			return $this->getLanguage()->timeanddate( $value, true );
 		}
 
-		throw new MWException( '$name is invalid input.');
+		throw new Exception( '$name is invalid input.');
 	}
 
 	function getTitle() {

@@ -233,7 +233,7 @@ class CodeDiffHighlighter {
 	 * NOTE: visibility is 'public' since the function covered by tests.
 	 *
 	 * @param $chunkHeader string a one line chunk as described above
-	 * @throws MWException
+	 * @throws Exception
 	 * @return array with the four values above as an array
 	 */
 	static function parseChunkDelimiter( $chunkHeader ) {
@@ -266,7 +266,7 @@ class CodeDiffHighlighter {
 		}
 
 		# We really really should have matched something!
-		throw new MWException(
+		throw new Exception(
 			__METHOD__ . " given an invalid chunk header: '$chunkHeader'\n"
 		);
 	}

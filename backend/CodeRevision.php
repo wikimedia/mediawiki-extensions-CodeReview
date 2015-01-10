@@ -124,7 +124,7 @@ class CodeRevision {
 
 	/**
 	 * @static
-	 * @throws MWException
+	 * @throws Exception
 	 * @param CodeRepository $repo
 	 * @param  $row
 	 * @return CodeRevision
@@ -133,7 +133,7 @@ class CodeRevision {
 		$rev = new CodeRevision();
 		$rev->repoId = intval( $row->cr_repo_id );
 		if ( $rev->repoId != $repo->getId() ) {
-			throw new MWException( "Invalid repo ID in " . __METHOD__ );
+			throw new Exception( "Invalid repo ID in " . __METHOD__ );
 		}
 		$rev->repo = $repo;
 		$rev->id = intval( $row->cr_id );
@@ -309,14 +309,14 @@ class CodeRevision {
 	}
 
 	/**
-	 * @throws MWException
+	 * @throws Exception
 	 * @param $status String, value in CodeRevision::getPossibleStates
 	 * @param $user User
 	 * @return bool
 	 */
 	public function setStatus( $status, $user ) {
 		if ( !$this->isValidStatus( $status ) ) {
-			throw new MWException( "Tried to save invalid code revision status" );
+			throw new Exception( "Tried to save invalid code revision status" );
 		}
 
 		// Don't allow the user account tied to the committer account mark their own revisions as ok/resolved
@@ -750,7 +750,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @throws MWException
+	 * @throws Exception
 	 * @param  $parent
 	 * @param  $ts
 	 * @return string
@@ -768,7 +768,7 @@ class CodeRevision {
 				return $parentKey . ',' . $ts;
 			} else {
 				// hmmmm
-				throw new MWException( 'Invalid parent submission' );
+				throw new Exception( 'Invalid parent submission' );
 			}
 		} else {
 			return $ts;

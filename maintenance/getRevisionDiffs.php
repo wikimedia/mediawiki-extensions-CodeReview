@@ -39,7 +39,7 @@ class GetRevisionDiffs extends Maintenance {
 			$id = $row->cr_id;
 			try {
 				$diff = $repo->getDiff( $row->cr_id , '' );
-			} catch ( MWException $mwe ) {
+			} catch ( Exception $mwe ) {
 				// Suppress errors
 				$this->output( "$id - error {$mwe->getMessage()}\n" );
 				continue;

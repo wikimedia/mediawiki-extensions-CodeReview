@@ -250,7 +250,7 @@ class CodeRepository {
 	/**
 	 * Load a particular revision out of the DB
 	 * @param $id int|string
-	 * @throws MWException
+	 * @throws Exception
 	 * @return CodeRevision
 	 */
 	public function getRevision( $id ) {
@@ -267,7 +267,7 @@ class CodeRepository {
 			__METHOD__
 		);
 		if ( !$row ) {
-			throw new MWException( 'Failed to load expected revision data' );
+			throw new Exception( 'Failed to load expected revision data' );
 		}
 		return CodeRevision::newFromRow( $this, $row );
 	}

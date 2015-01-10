@@ -62,7 +62,7 @@ class CodeReviewApiTest extends ApiTestCase {
 	/**
 	 * @group Broken
 	 * Send a backtrace:
-	 * MWException: Empty $mTitle in OutputPage::parse
+	 * Exception: Empty $mTitle in OutputPage::parse
 	 * Caused because our wgOut object does not have a title thus a call to
 	 * $wgOut->parse() backtrace :b
 	 */
