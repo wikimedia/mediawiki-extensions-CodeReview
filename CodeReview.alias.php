@@ -32,6 +32,11 @@ $specialPageAliases['as'] = array(
 	'Code' => array( 'কোড', 'কোডৰিভিউ' ),
 );
 
+/** Avaric (авар) */
+$specialPageAliases['av'] = array(
+	'Code' => array( 'Код' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'Code' => array( 'Kode' ),
