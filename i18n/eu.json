@@ -4,7 +4,8 @@
 			"An13sa",
 			"Kobazulo",
 			"Theklan",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Subi"
 		]
 	},
 	"code": "Kode Berrikuspena",
@@ -17,6 +18,7 @@
 	"code-new-status": "Egoera berria",
 	"code-prop-changes": "Egoera eta etiketatzeko loga",
 	"code-notes": "iruzkin berriak",
+	"code-mycomments": "nire iruzkinak",
 	"code-authors": "egileak",
 	"code-tags": "etiketak",
 	"code-author-name": "Idatzi erabiltzaile izen bat:",
@@ -90,6 +92,5 @@
 	"right-codereview-remove-tag": "Kendu etiketak berrikuspenetatik",
 	"right-codereview-post-comment": "Gehitu iruzkinak berrikuspenei",
 	"right-codereview-set-status": "Aldatu berrikuspenen egoera",
-	"right-codereview-link-user": "Lotu egileak wiki lankideei",
-	"specialpages-group-developer": "Garatzaileen tresnak"
+	"right-codereview-link-user": "Lotu egileak wiki lankideei"
 }
