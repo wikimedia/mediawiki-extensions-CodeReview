@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Banjo"
 		]
 	},
 	"code": "Revisión do código",
@@ -186,10 +187,15 @@
 	"action-codereview-link-user": "ligar autores a usuarios do wiki",
 	"action-codereview-associate": "xestionar as asociacións de revisións",
 	"action-codereview-review-own": "marcar as revisións propias como \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Ferramentas dos desenvolvedores",
 	"group-svnadmins": "Administradores do SVN",
 	"group-svnadmins-member": "{{GENDER:$1|administrador|administradora}} do SVN",
 	"grouppage-svnadmins": "{{ns:project}}:Administradores do SVN",
 	"group-svnadmins.css": "/* O CSS que se coloque aquí afectará soamente aos administradores do SVN */",
-	"group-svnadmins.js": "/* O JS que se coloque aquí afectará soamente aos administradores do SVN */"
+	"group-svnadmins.js": "/* O JS que se coloque aquí afectará soamente aos administradores do SVN */",
+	"apihelp-coderevisionupdate-param-repo": "Nome do repositorio.",
+	"apihelp-coderevisionupdate-param-addreferences": "Engadir referencias a esta revisión.",
+	"apihelp-query+codecomments-param-repo": "Nome do repositorio.",
+	"apihelp-query+codepaths-param-repo": "Nome do repositorio.",
+	"apihelp-query+coderevisions-param-repo": "Nome do repositorio.",
+	"apihelp-query+codetags-param-repo": "Nome do repositorio."
 }
