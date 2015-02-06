@@ -52,6 +52,9 @@ $wgAutoloadClasses['ApiQueryCodeTags'] = __DIR__ . '/api/ApiQueryCodeTags.php';
 $wgAutoloadClasses['CodeRevisionCommitterApi'] = __DIR__ . '/api/CodeRevisionCommitterApi.php';
 
 $wgAutoloadClasses['SubversionAdaptor'] = __DIR__ . '/backend/Subversion.php';
+$wgAutoloadClasses['SubversionPecl'] = __DIR__ . '/backend/Subversion.php';
+$wgAutoloadClasses['SubversionShell'] = __DIR__ . '/backend/Subversion.php';
+$wgAutoloadClasses['SubversionProxy'] = __DIR__ . '/backend/Subversion.php';
 $wgAutoloadClasses['CodeDiffHighlighter'] = __DIR__ . '/backend/DiffHighlighter.php';
 
 $wgAutoloadClasses['CodeRepository'] = __DIR__ . '/backend/CodeRepository.php';
@@ -83,7 +86,10 @@ $wgAutoloadClasses['CodeStatusChangeListView'] = __DIR__ . '/ui/CodeStatusChange
 $wgAutoloadClasses['CodeStatusChangeAuthorListView'] = __DIR__ . '/ui/CodeStatusChangeAuthorListView.php';
 $wgAutoloadClasses['SpecialCode'] = __DIR__ . '/ui/SpecialCode.php';
 $wgAutoloadClasses['CodeView'] = __DIR__ . '/ui/CodeView.php';
+$wgAutoloadClasses['SvnTablePager'] = __DIR__ . '/ui/CodeView.php';
 $wgAutoloadClasses['SpecialRepoAdmin'] = __DIR__ . '/ui/SpecialRepoAdmin.php';
+$wgAutoloadClasses['RepoAdminListView'] = __DIR__ . '/ui/SpecialRepoAdmin.php';
+$wgAutoloadClasses['RepoAdminRepoView'] = __DIR__ . '/ui/SpecialRepoAdmin.php';
 $wgAutoloadClasses['WordCloud'] = __DIR__ . '/ui/WordCloud.php';
 
 $wgAutoloadClasses['SvnRevTablePager'] = __DIR__ . '/ui/CodeRevisionListView.php';
@@ -91,7 +97,7 @@ $wgAutoloadClasses['CodeCommentsTablePager'] = __DIR__ . '/ui/CodeCommentsListVi
 $wgAutoloadClasses['SvnRevAuthorTablePager'] = __DIR__ . '/ui/CodeRevisionAuthorView.php';
 $wgAutoloadClasses['SvnRevStatusTablePager'] = __DIR__ . '/ui/CodeRevisionStatusView.php';
 $wgAutoloadClasses['SvnRevTagTablePager'] = __DIR__ . '/ui/CodeRevisionTagView.php';
-$wgAutoloadClasses['CodeStatusChangeTablePager'] = __DIR__ . '/ui/CodeRevisionStatusView.php';
+$wgAutoloadClasses['CodeStatusChangeTablePager'] = __DIR__ . '/ui/CodeStatusChangeListView.php';
 
 $wgAutoloadClasses['CodeReviewHooks'] = __DIR__ . '/CodeReviewHooks.php';
 
