@@ -315,7 +315,6 @@ class CodeRepository {
 	 */
 	public function getDiff( $rev, $useCache = '' ) {
 		global $wgMemc, $wgCodeReviewMaxDiffPaths;
-		wfProfileIn( __METHOD__ );
 
 		$data = null;
 
@@ -340,7 +339,6 @@ class CodeRepository {
 
 		// If an error has occurred, return it.
 		if ( $data !== null ) {
-			wfProfileOut( __METHOD__ );
 			return $data;
 		}
 
@@ -415,7 +413,6 @@ class CodeRepository {
 			}
 		}
 
-		wfProfileOut( __METHOD__ );
 		return $data;
 	}
 
@@ -425,7 +422,6 @@ class CodeRepository {
 	 */
 	public function setDiffCache( CodeRevision $codeRev ) {
 		global $wgMemc;
-		wfProfileIn( __METHOD__ );
 
 		$rev1 = $codeRev->getId() - 1;
 		$rev2 = $codeRev->getId();
@@ -444,7 +440,6 @@ class CodeRepository {
 			array( 'cr_repo_id' => $this->id, 'cr_id' => $codeRev->getId() ),
 			__METHOD__
 		);
-		wfProfileOut( __METHOD__ );
 	}
 
 	/**

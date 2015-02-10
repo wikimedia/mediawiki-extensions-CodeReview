@@ -48,7 +48,6 @@ class RepoStats {
 	}
 
 	private function generate() {
-		wfProfileIn( __METHOD__ );
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$this->revisions = $dbr->selectField( 'code_rev',
@@ -94,7 +93,6 @@ class RepoStats {
 				$this->newPerPath[$path] = $this->getPathNews( $path );
 			}
 		}
-		wfProfileOut( __METHOD__ );
 	}
 
 	/**
