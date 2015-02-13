@@ -8,7 +8,8 @@
 			"Olli",
 			"Str4nd",
 			"Tarmo",
-			"ZeiP"
+			"ZeiP",
+			"Pxos"
 		]
 	},
 	"code": "Koodintarkistus",
@@ -35,7 +36,7 @@
 	"code-mycomments": "omat kommentit",
 	"code-authors": "tekijät",
 	"code-status": "tilat",
-	"code-tags": "merkinnät",
+	"code-tags": "merkkaukset",
 	"code-tags-no-tags": "Tällä säilytyspaikalla ei ole avainsanoja.",
 	"code-authors-text": "Alla on lista versionhallinnassa olevista tekijöistä käyttäjätunnuksen mukaan. Paikalliset wikitilit näytetään suluissa. Tiedot saattavat tulla välimuistista.",
 	"code-author-haslink": "Tämä tekijä on kytketty wikikäyttäjään $1",
@@ -80,7 +81,7 @@
 	"code-rev-imagediff": "Kuvamuutokset",
 	"code-rev-status": "Tila:",
 	"code-rev-status-set": "Vaihda tilaa",
-	"code-rev-tags": "Merkinnät:",
+	"code-rev-tags": "Merkkaukset:",
 	"code-rev-tag-add": "Lisää merkintöjä:",
 	"code-rev-tag-remove": "Poista merkintöjä:",
 	"code-rev-comment-by": "Käyttäjän $1 kommentti",
@@ -191,7 +192,6 @@
 	"action-codereview-signoff": "merkitä koodimuutos luetuksi tai testatuksi",
 	"action-codereview-link-user": "liittää kehittäjiä wiki-tunnuksiin",
 	"action-codereview-associate": "hallinnoida koodimuutosten ristiviittauksia",
-	"specialpages-group-developer": "Kehittäjien työkalut",
 	"group-svnadmins": "SVN-ylläpitäjät",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-ylläpitäjä}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-ylläpitäjät"
