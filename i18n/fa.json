@@ -118,7 +118,7 @@
 	"code-signoff-legend": "افزودن ثبات",
 	"code-signoff-submit": "تثبیت‌کردن",
 	"code-signoff-strike": "حذف اثبات‌های انتخاب شده",
-	"code-signoff-signoff": "تثبیت‌کردن این نسخه به‌عنوان:",
+	"code-signoff-signoff": "تثبیت‌کردن این نسخه به عنوان:",
 	"code-signoff-flag-inspected": "بازرسی‌شده",
 	"code-signoff-flag-tested": "آزمایش شد",
 	"code-signoff-field-user": "کاربر",
@@ -199,7 +199,6 @@
 	"action-codereview-link-user": "پیوند کردن نویسندگان به کاربران ویکی",
 	"action-codereview-associate": "مدیریت نسخه‌های مرتبط",
 	"action-codereview-review-own": "نسخه‌های خود را به‌عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
-	"specialpages-group-developer": "ابزارهای توسعه‌دهندگان",
 	"group-svnadmins": "مدیران اس‌وی‌ان",
 	"group-svnadmins-member": "مدیر اس‌وی‌ان",
 	"grouppage-svnadmins": "{{ns:project}}:مدیران اس‌وی‌ان"
