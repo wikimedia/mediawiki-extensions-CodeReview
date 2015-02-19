@@ -188,7 +188,7 @@
 	"right-codereview-signoff": "تثبیت نسخه‌ها",
 	"right-codereview-link-user": "پیوند کردن نویسندگان به کاربران ویکی",
 	"right-codereview-associate": "مدیریت انجمن‌های نسخه‌ها",
-	"right-codereview-review-own": "نسخه‌های خود را به‌عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
+	"right-codereview-review-own": "نسخه‌های خود را به عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
 	"action-repoadmin": "مدیریت مخازن کد",
 	"action-codereview-use": "استفاده از ویژه:کد",
 	"action-codereview-add-tag": "افزودن برچسب‌های تازه به نسخه‌ها",
@@ -198,7 +198,7 @@
 	"action-codereview-signoff": "تثبیت نسخه‌ها",
 	"action-codereview-link-user": "پیوند کردن نویسندگان به کاربران ویکی",
 	"action-codereview-associate": "مدیریت نسخه‌های مرتبط",
-	"action-codereview-review-own": "نسخه‌های خود را به‌عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
+	"action-codereview-review-own": "نسخه‌های خود را به عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
 	"group-svnadmins": "مدیران اس‌وی‌ان",
 	"group-svnadmins-member": "مدیر اس‌وی‌ان",
 	"grouppage-svnadmins": "{{ns:project}}:مدیران اس‌وی‌ان"
