@@ -93,7 +93,11 @@ class ApiQueryCodeComments extends ApiQueryBase {
 			$item['status'] = $row->cr_status;
 		}
 		if ( isset( $this->props['text'] ) ) {
-			ApiResult::setContent( $item, $row->cc_text );
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				ApiResult::setContentValue( $item, 'text', $row->cc_text );
+			} else {
+				ApiResult::setContent( $item, $row->cc_text );
+			}
 		}
 		return $item;
 	}
