@@ -187,10 +187,12 @@
 	"action-codereview-link-user": "Schriiver op Metmaacher em Wiki verlinke",
 	"action-codereview-associate": "Verbendonge zwesche Projrammversjohne verwallde",
 	"action-codereview-review-own": "de eije Versjone als „{{int:code-status-ok}}“ udder „{{int:code-status-resolved}}“ makeere",
-	"specialpages-group-developer": "Werkzüch fö Entwecklere",
 	"group-svnadmins": "Verwallder vum SVN",
 	"group-svnadmins-member": "{{GENDER:$1|Verwallder|Verwallderėn|Verwallder|Verwallderėn|Verwallder}} vum SVN",
 	"grouppage-svnadmins": "{{ns:project}}:Verwallder vum SVN",
 	"group-svnadmins.css": "/* Dat CSS heh aan dä Stell wirrek nur op de SVN-Bedeener */",
-	"group-svnadmins.js": "/* Dat JavaSkrep heh aan dä Stell wirrek nur op de SVN-Bedeener */"
+	"group-svnadmins.js": "/* Dat JavaSkrep heh aan dä Stell wirrek nur op de SVN-Bedeener */",
+	"apihelp-query+coderevisions-param-prop": "Wat för en Eijeschaffte ußjävve?",
+	"apihelp-query+coderevisions-example-1": "De Väsjohne em MeedijaWikki ußjävve",
+	"apihelp-query+coderevisions-example-2": "Aanjahbe övver de Väsjohne em MeedijaWikki enholle"
 }
