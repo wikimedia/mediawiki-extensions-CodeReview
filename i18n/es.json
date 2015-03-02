@@ -18,7 +18,8 @@
 			"Sanbec",
 			"Translationista",
 			"Vivaelcelta",
-			"Macofe"
+			"Macofe",
+			"Fitoschido"
 		]
 	},
 	"code": "Revisión de código",
@@ -28,10 +29,10 @@
 	"code-referenced": "Revisiones pasadas que esto ha seguido",
 	"code-change-status": "cambiado el '''status''' de $1",
 	"code-change-tags": "cambiadas las '''etiquetas''' de $1",
-	"code-change-removed": "quitados:",
-	"code-change-added": "agregado:",
-	"code-old-status": "Antiguo status",
-	"code-new-status": "Nuevo status",
+	"code-change-removed": "quitadas:",
+	"code-change-added": "añadidas:",
+	"code-old-status": "Estado anterior",
+	"code-new-status": "Estado nuevo",
 	"code-prop-changes": "Registro de estatus y etiquetado",
 	"codereview-desc": "[[Special:Code|Herramienta de revisión de código]] con [[Special:RepoAdmin|apoyo de ''Subversion'']]",
 	"code-no-repo": "¡No está configurado el repositorio!",
@@ -41,7 +42,7 @@
 	"code-repo-not-found": "Repositorio '''$1''' no existe!",
 	"code-load-diff": "Cargando diferencias...",
 	"code-notes": "comentarios recientes",
-	"code-statuschanges": "cambios de status",
+	"code-statuschanges": "cambios de estado",
 	"code-mycommits": "mis publicaciones",
 	"code-mycomments": "mis comentarios",
 	"code-authors": "autores",
@@ -173,8 +174,8 @@
 	"code-tooltip-withsummary": "r $1 [ $2 ] por $3 - $4",
 	"code-tooltip-withoutsummary": "r $1 [ $2 ] por $3",
 	"repoadmin": "Administración de repositorio",
-	"repoadmin-new-legend": "Crear nuevo repositorio",
-	"repoadmin-new-label": "Nombre de repositorio:",
+	"repoadmin-new-legend": "Crear un repositorio nuevo",
+	"repoadmin-new-label": "Nombre del repositorio:",
 	"repoadmin-new-button": "Crear",
 	"repoadmin-edit-legend": "Modificación del repositorio «$1»",
 	"repoadmin-edit-path": "Ruta de repositorio:",
@@ -203,8 +204,8 @@
 	"action-codereview-link-user": "enlazar autores con usuarios wiki",
 	"action-codereview-associate": "administrar asociaciones de revisión",
 	"action-codereview-review-own": "marcar sus propias revisiones como \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Herramientas para desarrolladores",
 	"group-svnadmins": "Administradores de SVN",
 	"group-svnadmins-member": "{{GENDER:$1|administrador|administradora}} de SVN",
-	"grouppage-svnadmins": "{{ns:project}}: administradores de SVN"
+	"grouppage-svnadmins": "{{ns:project}}: administradores de SVN",
+	"apihelp-query+coderevisions-param-repo": "El nombre del repositorio."
 }
