@@ -334,14 +334,7 @@ $wgResourceModules['ext.codereview.local'] = array(
 $wgHooks['MakeGlobalVariablesScript'][] = 'CodeReviewHooks::onMakeGlobalVariablesScript';
 
 # Add state messages to RL
-$wgExtensionFunctions[] = function() {
-	global $wgResourceModules;
-
-	$wgResourceModules['ext.codereview.tooltips']['messages'] = array_merge(
-		CodeRevision::getPossibleStateMessageKeys(),
-		array( 'code-tooltip-withsummary', 'code-tooltip-withoutsummary' )
-	);
-};
+$wgExtensionFunctions[] = 'CodeReviewHooks::onExtensionFunctions';
 
 /******** DB UPDATING ********/
 
