@@ -29,6 +29,11 @@ http://pecl.php.net/package/svn
 
 */
 
+/**
+ * This PHP entry point is deprecated. Please use wfLoadExtension() and the extension.json file instead.
+ * See https://www.mediawiki.org/wiki/Manual:Extension_registration for more details.
+ */
+
 /******** EXTENSION CREDITS ********/
 
 $wgExtensionCredits['specialpage'][] = array(
