@@ -86,7 +86,7 @@
 	"code-rev-diff": "Разл",
 	"code-rev-diff-link": "разл",
 	"code-rev-diff-too-large": "Разлика је превелика да би била приказана.",
-	"code-rev-purge-link": "очисти",
+	"code-rev-purge-link": "освежи",
 	"code-rev-total": "Укупно резултата: $1",
 	"code-rev-not-found": "Измена '''$1''' не постоји.",
 	"code-rev-history-link": "историја",
@@ -155,7 +155,6 @@
 	"right-codereview-remove-tag": "брисање ознака из измена",
 	"right-codereview-post-comment": "Додајте коментаре ревизијама",
 	"right-codereview-set-status": "Промени статус ревизије",
-	"specialpages-group-developer": "Програмерски алати",
 	"group-svnadmins": "SVN администратори",
 	"group-svnadmins-member": "{{GENDER:$1|SVN администратор|SVN администраторка|SVN администратор}}"
 }
