@@ -232,6 +232,7 @@
 	"apihelp-query+codecomments-param-prop": "返回的属性。修订是被弃用的状态别名。",
 	"apihelp-query+codecomments-example-1": "列出MediaWiki版本库的评论",
 	"apihelp-query+codecomments-example-2": "显示MediaWiki版本库上的评论信息",
+	"apihelp-query+codepaths-description": "基于输入的路径前缀，获得指定存储库中10条路径的列表。",
 	"apihelp-query+codepaths-param-repo": "存储库名称。",
 	"apihelp-query+codepaths-param-path": "要筛选的路径前缀。",
 	"apihelp-query+codepaths-example-1": "获取在MediaWiki的/trunk/phase3下的路径",
@@ -240,9 +241,11 @@
 	"apihelp-query+coderevisions-param-limit": "返回的修订数。",
 	"apihelp-query+coderevisions-param-path": "仅显示这些路径的版本。",
 	"apihelp-query+coderevisions-param-start": "列表的起始时间戳。",
+	"apihelp-query+coderevisions-param-revs": "要获得有关信息的修订列表。覆盖$1start。",
 	"apihelp-query+coderevisions-param-prop": "返回的属性。",
 	"apihelp-query+coderevisions-example-1": "MediaWiki修订列表",
 	"apihelp-query+coderevisions-example-2": "获取MediaWiki的修订信息",
+	"apihelp-query+codetags-description": "获得指定存储库中提交至修订的标签列表。",
 	"apihelp-query+codetags-param-repo": "存储库名称。",
 	"apihelp-query+codetags-example-1": "MediaWiki标签列表"
 }
