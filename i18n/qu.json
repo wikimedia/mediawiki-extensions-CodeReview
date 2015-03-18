@@ -8,5 +8,8 @@
 	"code-change-removed": "qichusqa:",
 	"code-change-added": "yapasqa:",
 	"code-old-status": "Mawk'a kachkaynin",
-	"code-new-status": "Musuq kachkaynin"
+	"code-new-status": "Musuq kachkaynin",
+	"code-field-timestamp": "P'unchaw",
+	"code-rev-date": "P'unchaw:",
+	"code-signoff-field-date": "P'unchaw"
 }
