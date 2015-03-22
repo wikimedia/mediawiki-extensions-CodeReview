@@ -193,9 +193,13 @@
 	"group-svnadmins.css": "/* O CSS que se coloque aquí afectará soamente aos administradores do SVN */",
 	"group-svnadmins.js": "/* O JS que se coloque aquí afectará soamente aos administradores do SVN */",
 	"apihelp-coderevisionupdate-param-repo": "Nome do repositorio.",
+	"apihelp-coderevisionupdate-param-rev": "Número de Identificación da revisión.",
 	"apihelp-coderevisionupdate-param-addreferences": "Engadir referencias a esta revisión.",
 	"apihelp-query+codecomments-param-repo": "Nome do repositorio.",
+	"apihelp-query+codecomments-param-limit": "Número de comentarios a devolver.",
 	"apihelp-query+codepaths-param-repo": "Nome do repositorio.",
 	"apihelp-query+coderevisions-param-repo": "Nome do repositorio.",
+	"apihelp-query+coderevisions-param-limit": "Número de revisións a devolver.",
+	"apihelp-query+coderevisions-example-1": "Listar revisións en MediaWiki",
 	"apihelp-query+codetags-param-repo": "Nome do repositorio."
 }
