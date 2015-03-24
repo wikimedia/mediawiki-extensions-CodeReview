@@ -40,7 +40,7 @@
 	"code-old-status": "Used as field label.\n{{Related|Code-field}}",
 	"code-new-status": "Used as field label.\n{{Related|Code-field}}",
 	"code-prop-changes": "Used as HTML <code><nowiki><h2></nowiki></code> heading.\n\nFollowed by any one of the following messages:\n* {{msg-mw|Code-change-status}}\n* {{msg-mw|Code-change-tags}}",
-	"codereview-desc": "{{desc|name=Code Review|url=http://www.mediawiki.org/wiki/Extension:CodeReview}}",
+	"codereview-desc": "{{desc|name=Code Review|url=https://www.mediawiki.org/wiki/Extension:CodeReview}}",
 	"code-no-repo": "Used as error message.\n\nFollowed by any one of the following messages:\n* {{msg-mw|Code-create-repo}}\n* {{msg-mw|Code-need-repoadmin-rights}}",
 	"code-create-repo": "Preceded by {{msg-mw|Code-no-repo}}.",
 	"code-need-repoadmin-rights": "{{doc-important|Do not translate <code>repoadmin</code>.}}\n\"repoadmin\" refers the right {{msg-mw|Right-repoadmin}}.\n\nPreceded by {{msg-mw|Code-no-repo}}.\n\nIf there are no group which has \"repoadmin\" rights, this message is followed by the following message:\n* {{msg-mw|Code-need-group-with-rights}}",
