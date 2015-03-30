@@ -286,6 +286,12 @@ $specialPageAliases['pl'] = array(
 	'RepoAdmin' => array( 'Administrowanie_repozytorium' ),
 );
 
+/** Brazilian Portuguese (português do Brasil) */
+$specialPageAliases['pt-br'] = array(
+	'Code' => array( 'Código', 'Revisão_de_código' ),
+	'RepoAdmin' => array( 'Administrador_do_repositório' ),
+);
+
 /** Russian (русский) */
 $specialPageAliases['ru'] = array(
 	'Code' => array( 'Код' ),
