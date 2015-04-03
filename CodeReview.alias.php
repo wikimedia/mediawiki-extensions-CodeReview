@@ -225,6 +225,11 @@ $specialPageAliases['lb'] = array(
 	'Code' => array( 'Quelltext' ),
 );
 
+/** لوری (لوری) */
+$specialPageAliases['lrc'] = array(
+	'Code' => array( 'رازینه،_وانئری_رازینه' ),
+);
+
 /** Malagasy (Malagasy) */
 $specialPageAliases['mg'] = array(
 	'Code' => array( 'Kaody' ),
@@ -336,6 +341,11 @@ $specialPageAliases['tl'] = array(
 $specialPageAliases['tr'] = array(
 	'Code' => array( 'Kod' ),
 	'RepoAdmin' => array( 'RepoHizmetli', 'RepoYönetici' ),
+);
+
+/** Ukrainian (українська) */
+$specialPageAliases['uk'] = array(
+	'Code' => array( 'Код' ),
 );
 
 /** Venetian (vèneto) */

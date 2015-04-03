@@ -207,5 +207,13 @@
 	"group-svnadmins": "Administradores de SVN",
 	"group-svnadmins-member": "{{GENDER:$1|administrador|administradora}} de SVN",
 	"grouppage-svnadmins": "{{ns:project}}: administradores de SVN",
-	"apihelp-query+coderevisions-param-repo": "El nombre del repositorio."
+	"apihelp-coderevisionupdate-param-repo": "El nombre del repositorio.",
+	"apihelp-coderevisionupdate-param-rev": "El número de identificación de la revisión.",
+	"apihelp-coderevisionupdate-param-comment": "Comentario que añadir a la revisión.",
+	"apihelp-query+codecomments-param-repo": "Nombre del repositorio.",
+	"apihelp-query+codecomments-param-limit": "Cuántos comentarios se devolverán.",
+	"apihelp-query+codepaths-param-repo": "Nombre del repositorio.",
+	"apihelp-query+coderevisions-param-repo": "El nombre del repositorio.",
+	"apihelp-query+coderevisions-param-prop": "Qué propiedades se devolverán.",
+	"apihelp-query+codetags-param-repo": "Nombre del repositorio."
 }
