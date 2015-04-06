@@ -37,6 +37,12 @@ $specialPageAliases['av'] = array(
 	'Code' => array( 'Код' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'Code' => array( 'کوڈ' ),
+	'RepoAdmin' => array( 'خزانه_ئی_مدیر' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'Code' => array( 'Kode' ),
