@@ -48,7 +48,7 @@ class CodeRepository {
 	 * @return CodeRepository|null
 	 */
 	public static function newFromName( $name ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_SLAVE );
 		$row = $dbw->selectRow(
 			'code_repo',
 			array(
@@ -72,7 +72,7 @@ class CodeRepository {
 	 * @return CodeRepository|null
 	 */
 	public static function newFromId( $id ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_SLAVE );
 		$row = $dbw->selectRow(
 			'code_repo',
 			array(
