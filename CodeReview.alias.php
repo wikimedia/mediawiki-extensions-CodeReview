@@ -233,7 +233,7 @@ $specialPageAliases['lb'] = array(
 
 /** لوری (لوری) */
 $specialPageAliases['lrc'] = array(
-	'Code' => array( 'رازینه،_وانئری_رازینه' ),
+	'Code' => array( 'رازینه', 'وانئری_رازینه' ),
 );
 
 /** Malagasy (Malagasy) */
