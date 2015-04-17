@@ -36,6 +36,7 @@
 	"code-revfilter-cr_author": "Автор = $1",
 	"code-revfilter-ct_tag": "Билгало = $1",
 	"code-revfilter-clear": "Литтарш цӀанъян",
+	"code-rev-next": "ТӀаьхьа догӀург даланза ду",
 	"code-batch-status": "Хийца хьал:",
 	"code-batch-tags": "Хийца билгалонаш:",
 	"codereview-batch-submit": "ДӀадахьийта",
