@@ -4,7 +4,9 @@
 			"Cekli829",
 			"Joseph",
 			"Srhat",
-			"Suelnur"
+			"Suelnur",
+			"Watermelon juice",
+			"Ömer Berkay"
 		]
 	},
 	"code": "Kod Gözden Geçirmesi",
@@ -25,6 +27,7 @@
 	"code-notes": "son yorumlar",
 	"code-statuschanges": "durum değişiklikleri",
 	"code-mycommits": "taahhütlerim",
+	"code-mycomments": "yorumlarım",
 	"code-authors": "yazarlar",
 	"code-status": "durum",
 	"code-tags": "etiketler",
@@ -53,6 +56,7 @@
 	"code-field-path": "Yol",
 	"code-field-text": "Not",
 	"code-field-select": "Seç",
+	"code-reference-associate-submit": "Önlisans",
 	"code-rev-author": "Yazar:",
 	"code-rev-date": "Tarih:",
 	"code-rev-message": "Yorum:",
@@ -78,6 +82,7 @@
 	"code-rev-diff-too-large": "Fark görüntülenemeyecek kadar büyük.",
 	"code-rev-purge-link": "temizle",
 	"code-rev-total": "Toplam sonuç sayısı: $1",
+	"code-rev-not-found": "Revizyon \"'$1\"' yok!",
 	"code-rev-history-link": "geçmiş",
 	"code-status-new": "yeni",
 	"code-status-fixme": "benidüzelt",
@@ -107,12 +112,14 @@
 	"code-release-endrev": "Son rev:",
 	"codereview-subtitle": "$1 için",
 	"codereview-reply-link": "yanıtla",
+	"codereview-overview-title": "Genel bakış",
 	"codereview-email-subj": "[$1 $2]: Yeni yorum eklendi",
 	"codereview-email-body": "$3'de \"$1\" kullanıcısı bir yorum yolladı.\n\nTam adres: $2\n\nYorum:\n\n$4",
 	"codereview-email-subj2": "[$1 $2]: Takip değişiklikleri",
 	"codereview-email-body2": "\"$1\" kullanıcısı $2 için takip değişiklikleri yaptı.\n\nTam URL: $3\n\nTeslim özeti:\n\n$4",
 	"codereview-email-subj3": "[$1 $2]: Otomatik test gerileme saptadı",
 	"codereview-email-body3": "Otomatik test $1 revizyonundaki değişikliklerden dolayı bir gerileme ortaya çıkardı.\n\nTam URL: $2\n\nTeslimat özeti:\n\n$3",
+	"codereview-email-subj4": "[$1 $2]: Yeni yorum eklendi ve revizyon durumu değişti",
 	"code-stats": "istatistikler",
 	"code-stats-count": "Sürümlerin sayısı",
 	"repoadmin": "Depo Yönetimi",
@@ -131,6 +138,5 @@
 	"right-codereview-remove-tag": "Revizyonlardan etiket çıkar",
 	"right-codereview-post-comment": "Revizyonlara yorum ekle",
 	"right-codereview-set-status": "Revizyon durumunu değiştir",
-	"right-codereview-link-user": "Yazarları viki kullanıcılarına bağla",
-	"specialpages-group-developer": "Geliştirici araçları"
+	"right-codereview-link-user": "Yazarları viki kullanıcılarına bağla"
 }
