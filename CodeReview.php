@@ -308,6 +308,7 @@ $wgResourceModules['ext.codereview'] = array(
 ) + $commonModuleInfo;
 
 $wgResourceModules['ext.codereview.styles'] = array(
+	'position' => 'top',
 	'styles' => 'ext.codereview.styles.css',
 ) + $commonModuleInfo;
 
@@ -332,6 +333,7 @@ $wgResourceModules['ext.codereview.overview'] = array(
 
 // MediaWiki:CodeReview.css (bug #16049)
 $wgResourceModules['ext.codereview.local'] = array(
+	'position' => 'top',
 	'class' => 'ResourceLoaderCodeReviewModule'
 );
 
