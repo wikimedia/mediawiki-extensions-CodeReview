@@ -3,7 +3,8 @@
 		"authors": [
 			"Aushulz",
 			"Gmelfi",
-			"Santu"
+			"Santu",
+			"Pippinu"
 		]
 	},
 	"code": "Rivisioni dû còdici",
@@ -35,7 +36,7 @@
 	"code-field-message": "Cummentu",
 	"code-field-status": "Statu",
 	"code-field-timestamp": "Data",
-	"code-field-comments": "Noti",
+	"code-field-comments": "Cummenti",
 	"code-field-path": "Jolu",
 	"code-field-text": "Nota",
 	"code-rev-author": "Auturi:",
@@ -89,6 +90,5 @@
 	"right-codereview-remove-tag": "Leva l'etichetti dî rivisioni",
 	"right-codereview-post-comment": "Jiunci li cummenti ê rivisioni",
 	"right-codereview-set-status": "Cancia lu statu dî rivisioni",
-	"right-codereview-link-user": "Lìja li autura ê utilizzatura dâ wiki",
-	"specialpages-group-developer": "Stigghi dû sviluppaturi"
+	"right-codereview-link-user": "Lìja li autura ê utilizzatura dâ wiki"
 }
