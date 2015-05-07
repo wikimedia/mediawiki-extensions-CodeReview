@@ -181,8 +181,7 @@
 	"action-codereview-remove-tag": "απομάκρυνση ετικετών από αναθεωρήσεις",
 	"action-codereview-post-comment": "προσθήκη σχολίων σε αναθεωρήσεις",
 	"action-codereview-set-status": "αλλαγή κατάστασης αναθεωρήσεων",
-	"specialpages-group-developer": "Εργαλεία προγραμματιστών",
-	"group-svnadmins": "διαχειριστές SVN",
-	"group-svnadmins-member": "{{GENDER:$1|διαχειριστής SVN}}",
+	"group-svnadmins": "Διαχειριστές SVN",
+	"group-svnadmins-member": "{{GENDER:$1|διαχειριστής|διαχειρίστρια}} SVN",
 	"grouppage-svnadmins": "{{ns:project}}:Διαχειριστές SVN"
 }
