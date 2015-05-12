@@ -21,7 +21,7 @@ $specialPageAliases['ar'] = array(
 	'RepoAdmin' => array( 'إدارة_المستودع' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'Code' => array( 'كود', 'مراجعة_الكود' ),
 	'RepoAdmin' => array( 'ادارة_المستودع' ),
@@ -231,7 +231,7 @@ $specialPageAliases['lb'] = array(
 	'Code' => array( 'Quelltext' ),
 );
 
-/** لوری (لوری) */
+/** لوری مینجایی (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'Code' => array( 'رازینه', 'وانئری_رازینه' ),
 	'RepoAdmin' => array( 'سردیوونیار' ),
