@@ -24,7 +24,8 @@
 			"Umherirrender",
 			"Verdy p",
 			"Yekrats",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Nemo bis"
 		]
 	},
 	"code": "{{doc-special|Code}}",
@@ -230,10 +231,10 @@
 	"apihelp-coderevisionupdate-param-status": "{{doc-apihelp-param|coderevisionupdate|status}}",
 	"apihelp-coderevisionupdate-param-addtags": "{{doc-apihelp-param|coderevisionupdate|addtags}}",
 	"apihelp-coderevisionupdate-param-removetags": "{{doc-apihelp-param|coderevisionupdate|removetags}}",
-	"apihelp-coderevisionupdate-param-addflags": "{{doc-apihelp-param|coderevisionupdate|addflags}}",
-	"apihelp-coderevisionupdate-param-removeflags": "{{doc-apihelp-param|coderevisionupdate|removeflags}}",
-	"apihelp-coderevisionupdate-param-addreferences": "{{doc-apihelp-param|coderevisionupdate|addreferences}}",
-	"apihelp-coderevisionupdate-param-removereferences": "{{doc-apihelp-param|coderevisionupdate|removereferences}}",
+	"apihelp-coderevisionupdate-param-addflags": "Flags are pre-defined statuses which may be assigned or not, e.g. \"ok\".\n----\n{{doc-apihelp-param|coderevisionupdate|addflags}}",
+	"apihelp-coderevisionupdate-param-removeflags": "Flags are pre-defined statuses which may be assigned or not, e.g. \"ok\".\n----\n{{doc-apihelp-param|coderevisionupdate|removeflags}}",
+	"apihelp-coderevisionupdate-param-addreferences": "\"References\" are connections to related bug reports or repository revisions.\n----\n{{doc-apihelp-param|coderevisionupdate|addreferences}}",
+	"apihelp-coderevisionupdate-param-removereferences": "\"References\" are connections to related bug reports or repository revisions.\n----\n{{doc-apihelp-param|coderevisionupdate|removereferences}}",
 	"apihelp-coderevisionupdate-param-addreferenced": "{{doc-apihelp-param|coderevisionupdate|addreferenced}}",
 	"apihelp-coderevisionupdate-param-removereferenced": "{{doc-apihelp-param|coderevisionupdate|removereferenced}}",
 	"apihelp-coderevisionupdate-example-1": "{{doc-apihelp-example|coderevisionupdate}}",
