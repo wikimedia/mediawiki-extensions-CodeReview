@@ -139,4 +139,8 @@ class SpecialCode extends SpecialPage {
 		}
 		return $view;
 	}
+
+	protected function getGroupName() {
+		return 'developer';
+	}
 }

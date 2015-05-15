@@ -29,6 +29,10 @@ class SpecialRepoAdmin extends SpecialPage {
 		}
 		$view->execute();
 	}
+
+	protected function getGroupName() {
+		return 'developer';
+	}
 }
 
 /**

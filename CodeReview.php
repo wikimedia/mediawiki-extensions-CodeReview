@@ -112,9 +112,7 @@ $wgAutoloadClasses['ResourceLoaderCodeReviewModule'] = __DIR__ . '/ResourceLoade
 /******** SPECIAL PAGE SETUP ********/
 
 $wgSpecialPages['Code'] = 'SpecialCode';
-$wgSpecialPageGroups['Code'] = 'developer';
 $wgSpecialPages['RepoAdmin'] = 'SpecialRepoAdmin';
-$wgSpecialPageGroups['RepoAdmin'] = 'developer';
 
 /******** API SETUP ********/
 
