@@ -231,7 +231,7 @@ $specialPageAliases['lb'] = array(
 	'Code' => array( 'Quelltext' ),
 );
 
-/** لوری مینجایی (لوری مینجایی) */
+/** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'Code' => array( 'رازینه', 'وانئری_رازینه' ),
 	'RepoAdmin' => array( 'سردیوونیار' ),
