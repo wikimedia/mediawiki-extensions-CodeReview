@@ -119,10 +119,6 @@
 		"localBasePath": "modules",
 		"remoteExtPath": "CodeReview/modules"
 	},
-	"SpecialPageGroups": {
-		"Code": "developer",
-		"RepoAdmin": "developer"
-	},
 	"GroupPermissions": {
 		"*": {
 			"codereview-use": true
