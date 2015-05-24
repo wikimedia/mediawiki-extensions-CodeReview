@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ansumang"
+			"Ansumang",
+			"NehalDaveND"
 		]
 	},
 	"code-authors": "लेखक",
@@ -11,7 +12,7 @@
 	"code-rev-date": "दिनाङ्क:",
 	"code-rev-comment-preview": "प्राग्दृश्यम् दर्श्यताम्",
 	"code-rev-inline-preview": "प्राग्दृश्यम् दर्श्यताम्:",
-	"code-rev-history-link": "इतिहास",
+	"code-rev-history-link": "इतिहासः",
 	"code-status-ok": "अस्तु",
 	"code-signoff-field-user": "योजकः",
 	"code-signoff-field-date": "दिनाङ्क"
