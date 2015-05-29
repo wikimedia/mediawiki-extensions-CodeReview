@@ -93,6 +93,7 @@
 			"dependencies": "jquery.suggestions"
 		},
 		"ext.codereview.styles": {
+			"position": "top",
 			"styles": "ext.codereview.styles.css"
 		},
 		"ext.codereview.loaddiff": {
@@ -112,6 +113,7 @@
 			]
 		},
 		"ext.codereview.local": {
+			"position": "top",
 			"class": "ResourceLoaderCodeReviewModule"
 		}
 	},
