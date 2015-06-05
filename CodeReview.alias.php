@@ -233,8 +233,8 @@ $specialPageAliases['lb'] = array(
 
 /** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
-	'Code' => array( 'رازینه', 'وانئری_رازینه' ),
-	'RepoAdmin' => array( 'سردیوونیار' ),
+	'Code' => array( 'رازینە', 'ڤانئیأری_رازینە' ),
+	'RepoAdmin' => array( 'سأردیڤوٙنیار' ),
 );
 
 /** Malagasy (Malagasy) */
