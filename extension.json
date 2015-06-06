@@ -212,5 +212,6 @@
 		"CodeStatusChangeTablePager": "ui/CodeStatusChangeListView.php",
 		"CodeReviewHooks": "CodeReviewHooks.php",
 		"ResourceLoaderCodeReviewModule": "ResourceLoaderCodeReviewModule.php"
-	}
+	},
+	"manifest_version": 1
 }
