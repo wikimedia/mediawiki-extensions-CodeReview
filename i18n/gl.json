@@ -193,6 +193,7 @@
 	"grouppage-svnadmins": "{{ns:project}}:Administradores do SVN",
 	"group-svnadmins.css": "/* O CSS que se coloque aquí afectará soamente aos administradores do SVN */",
 	"group-svnadmins.js": "/* O JS que se coloque aquí afectará soamente aos administradores do SVN */",
+	"apihelp-codediff-description": "Buscar a diferencia formatada en forma do sistema de xestión de versión CodeReview.",
 	"apihelp-codediff-param-repo": "Nome do repositorio a analizar.",
 	"apihelp-codediff-param-rev": "Identificador de revisión do que buscar o diff.",
 	"apihelp-codediff-example-1": "Buscar un diff para a revisión 42080 de MediaWiki",
