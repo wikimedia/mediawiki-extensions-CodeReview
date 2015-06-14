@@ -231,7 +231,7 @@ $specialPageAliases['lb'] = array(
 	'Code' => array( 'Quelltext' ),
 );
 
-/** Northern Luri (لوری مینجایی) */
+/** Northern Luri (لۊری شومالی) */
 $specialPageAliases['lrc'] = array(
 	'Code' => array( 'رازینە', 'ڤانئیأری_رازینە' ),
 	'RepoAdmin' => array( 'سأردیڤوٙنیار' ),
