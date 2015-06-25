@@ -120,8 +120,8 @@
 	"code-revfilter-ct_tag": "Oznaka = $1",
 	"code-revfilter-clear": "Očisti filtere",
 	"code-rev-submit": "Spremi izmjene",
-	"code-rev-submit-next": "Spremi i prikaži slijedeći nerješeni",
-	"code-rev-next": "Slijedeći neriješeni",
+	"code-rev-submit-next": "Sačuvaj i prikaži sljedeći neriješeni",
+	"code-rev-next": "Sljedeći neriješeni",
 	"code-batch-status": "Promijeni status:",
 	"code-batch-tags": "Promijeni oznake:",
 	"codereview-batch-title": "Promijeni sve odabrane revizije",
@@ -172,7 +172,6 @@
 	"right-codereview-link-user": "Poveži autore sa wiki korisnicima",
 	"right-codereview-associate": "Upravljanje pridruženim revizijama",
 	"right-codereview-review-own": "Označite vaše vlastite revizije kao OK",
-	"specialpages-group-developer": "Razvojni alati",
 	"group-svnadmins": "SVN administratori",
 	"group-svnadmins-member": "SVN administrator",
 	"grouppage-svnadmins": "{{ns:project}}:SVN administratori"
