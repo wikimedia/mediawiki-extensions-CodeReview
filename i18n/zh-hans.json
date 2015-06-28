@@ -189,7 +189,7 @@
 	"right-codereview-signoff": "确认版本",
 	"right-codereview-link-user": "将作者与Wiki用户关联",
 	"right-codereview-associate": "管理版本关联",
-	"right-codereview-review-own": "将自己的版本标记为{{int:code-status-ok}}或{{int:code-status-resolved}}",
+	"right-codereview-review-own": "将自己的版本标记为“{{int:code-status-ok}}”或“{{int:code-status-resolved}}”",
 	"action-repoadmin": "管理代码库",
 	"action-codereview-use": "使用Special:Code",
 	"action-codereview-add-tag": "给版本添加新标签",
