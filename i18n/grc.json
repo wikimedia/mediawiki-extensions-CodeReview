@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Crazymadlover",
-			"Omnipaedista"
+			"Omnipaedista",
+			"Protnet"
 		]
 	},
 	"code": "Ἐπιθεωρεῖν τὸν Κώδικα",
@@ -50,7 +51,7 @@
 	"code-rev-paths": "Μεταβεβλημέναι ἀποθέσεις:",
 	"code-rev-modified-a": "προστεθειμένη",
 	"code-rev-modified-r": "ὑποκατεστημένη",
-	"code-rev-modified-d": "διεγραμμένη",
+	"code-rev-modified-d": "διαγεγραμμένη",
 	"code-rev-modified-m": "μεταβεβλημένη",
 	"code-rev-status": "Κατάστασις:",
 	"code-rev-status-set": "Μεταβάλλειν τὸ καθεστώς",
@@ -93,6 +94,5 @@
 	"right-codereview-remove-tag": "Ἀφαιρεῖν προσαρτήματα ὑπὸ τὰς ἀναθεωρήσεις",
 	"right-codereview-post-comment": "Προστιθέναι νέα σχόλια ταῖς ἀναθεωρήσεσιν",
 	"right-codereview-set-status": "Μεταβάλλειν τὸ καθεστὼς τῶν ἀναθεωρήσεων",
-	"right-codereview-link-user": "Συνδεῖσθαι τοὺς δημιουργοὺς μετὰ βικι-χρωμένων",
-	"specialpages-group-developer": "Ἐργαλεῖα ἀναπτυκτῶν"
+	"right-codereview-link-user": "Συνδεῖσθαι τοὺς δημιουργοὺς μετὰ βικι-χρωμένων"
 }
