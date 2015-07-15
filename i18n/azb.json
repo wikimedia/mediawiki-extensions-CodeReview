@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Koroğlu"
 		]
 	},
 	"code-field-author": "یارادیجی",
@@ -13,7 +14,7 @@
 	"code-rev-comment-preview": "اؤن‌گؤستریش",
 	"code-rev-history-link": "گئچمیش",
 	"code-status-ok": "اولدو",
-	"code-signoff-field-user": "ایستیفاده‌چی",
+	"code-signoff-field-user": "ایشلدن",
 	"code-signoff-field-date": "تاریخ",
 	"codereview-batch-submit": "گؤندر",
 	"codereview-overview-title": "گنل باخیش",
