@@ -180,7 +180,7 @@
 	"action-repoadmin": "التحكم بمستودعات الكود",
 	"action-codereview-use": "استخدام Special:Code",
 	"group-svnadmins": "إداريو SVN",
-	"group-svnadmins-member": "{{GENDER:$1|إداري SVN}}",
+	"group-svnadmins-member": "{{GENDER:$1|إداري SVN|إدارية SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:إداريو SVN",
 	"apihelp-coderevisionupdate-param-repo": "اسم المستودع."
 }
