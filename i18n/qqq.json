@@ -246,7 +246,7 @@
 	"apihelp-query+codecomments-param-repo": "{{doc-apihelp-param|query+codecomments|repo}}",
 	"apihelp-query+codecomments-param-limit": "{{doc-apihelp-param|query+codecomments|limit}}",
 	"apihelp-query+codecomments-param-start": "{{doc-apihelp-param|query+codecomments|start}}",
-	"apihelp-query+codecomments-param-prop": "{{doc-apihelp-param|query+codecomments|prop}}",
+	"apihelp-query+codecomments-param-prop": "Do not translate \"revision\" and \"status\".\n{{doc-apihelp-param|query+codecomments|prop}}",
 	"apihelp-query+codecomments-example-1": "{{doc-apihelp-example|query+codecomments}}",
 	"apihelp-query+codecomments-example-2": "{{doc-apihelp-example|query+codecomments}}",
 	"apihelp-query+codepaths-description": "{{doc-apihelp-description|query+codepaths}}",
