@@ -203,6 +203,7 @@
 	"group-svnadmins": "SVN管理员",
 	"group-svnadmins-member": "{{GENDER:$1|SVN管理员}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN管理员",
+	"group-svnadmins.css": "/* 这里放置的CSS将只影响SVN管理员 */",
 	"apihelp-codediff-description": "从CodeReview的向后修订控制系统获取格式化的差异。",
 	"apihelp-codediff-param-repo": "要查看的存储库名称。",
 	"apihelp-codediff-param-rev": "要检索差异的修订ID。",
