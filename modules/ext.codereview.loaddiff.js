@@ -4,7 +4,7 @@
 window.CodeReview = $.extend( window.CodeReview, {
 
 	loadDiff : function(repo, rev) {
-		var apiPath = mw.config.get( 'wgScriptPath' ) + '/api' + mw.config.get( 'wgScriptExtension' );
+		var apiPath = mw.config.get( 'wgScriptPath' ) + '/api.php';
 		injectSpinner( CodeReview.diffTarget(), 'codereview-diff' );
 		try {
 			$.ajax({
