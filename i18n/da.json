@@ -136,7 +136,6 @@
 	"right-codereview-post-comment": "Tilføje kommentarer til versioner",
 	"right-codereview-set-status": "Ændre versioners status",
 	"right-codereview-link-user": "Knytte forfattere til wikibrugere",
-	"specialpages-group-developer": "Udviklerværktøjer",
 	"group-svnadmins": "SVN-administratorer",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-administrator}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-administratorer"

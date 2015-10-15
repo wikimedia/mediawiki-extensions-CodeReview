@@ -168,7 +168,6 @@
 	"right-codereview-post-comment": "hozzászólás az egyes változatokhoz",
 	"right-codereview-set-status": "változat állapotának megváltoztatása",
 	"right-codereview-link-user": "szerzők összekapcsolása a wiki szerkesztőivel",
-	"specialpages-group-developer": "Fejlesztői eszközök",
 	"group-svnadmins": "SVN-adminisztrátorok",
 	"group-svnadmins-member": "SVN-adminisztrátor",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-adminisztrátorok"

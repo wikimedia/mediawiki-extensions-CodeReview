@@ -160,7 +160,6 @@
 	"action-codereview-link-user": "Auteure mat Wiki-Benotzer verbannen (verlinken)",
 	"action-codereview-associate": "Associatioune vu Versioune geréieren",
 	"action-codereview-review-own": "markéiert Är eege Versiounen als \"{{int:code-status-ok}}\" oder \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Handwierksgeschir fir Entwéckler (Programméierer)",
 	"group-svnadmins": "SVN-Administrateuren",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-Administrateur|SVN-Administratrice}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-Administrateuren",

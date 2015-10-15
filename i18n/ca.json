@@ -164,7 +164,6 @@
 	"action-codereview-set-status": "canvia l'estat de les revisions",
 	"action-codereview-signoff": "aprova les revisions",
 	"action-codereview-link-user": "enllaça autors a usuaris wiki",
-	"specialpages-group-developer": "Eines de desenvolupador",
 	"group-svnadmins": "administradors SVN",
 	"group-svnadmins-member": "{{GENDER:$1|admin de SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Administradors SVN"

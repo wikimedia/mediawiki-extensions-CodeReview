@@ -186,7 +186,6 @@
 	"action-codereview-link-user": "isilpo dagiti mannurat kadagiti agar-aramat ti wiki",
 	"action-codereview-associate": "taripatuen dagiti gunglo ti panagbaliw",
 	"action-codereview-review-own": "markaam dagiti bukodmo a panagbalbaliw a kas \"{{int:code-status-ok}}\" wenno \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Ramramit dagiti agraramid",
 	"group-svnadmins": "dagiti administrador ti SVN",
 	"group-svnadmins-member": "{{GENDER:$1|SVN admin}}",
 	"grouppage-svnadmins": "{{ns:project}}:Dagiti administrador ti SVN"

@@ -188,7 +188,6 @@
 	"action-codereview-link-user": "ikawing ang mga may-akda sa mga tagagamit ng wiki",
 	"action-codereview-associate": "pangasiwaan ang mga kaugnayan ng rebisyon",
 	"action-codereview-review-own": "markahan ang sarili mong mga rebisyon bilang \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Mga kasangkapan ng tagapagpaunlad",
 	"group-svnadmins": "Mga tagapangasiwa ng SVN",
 	"group-svnadmins-member": "{{GENDER:$1|tagapangasiwa ng SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Mga tagapangasiwa ng SVN",

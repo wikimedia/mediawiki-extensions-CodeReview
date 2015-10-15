@@ -3,7 +3,8 @@
 		"authors": [
 			"Bellayet",
 			"Wikitanvir",
-			"Aftab1995"
+			"Aftab1995",
+			"Aftabuzzaman"
 		]
 	},
 	"code": "কোড পর্যবেক্ষণ",
@@ -158,7 +159,6 @@
 	"right-codereview-link-user": "উইকি ব্যবহারকারী হিসেবে প্রণেতার সংযোগ প্রদান করুন",
 	"right-codereview-associate": "সংস্করণের অ্যাসোসিয়েশনগুলো ব্যবস্থাপনা করুন",
 	"right-codereview-review-own": "আপনার নিজের সংস্করণ ঠিক হিসেবে চিহ্নিত করুন",
-	"specialpages-group-developer": "ডেভলপারের সরঞ্জাম",
 	"group-svnadmins": "এসভিএন প্রশাসক",
 	"group-svnadmins-member": "এসভিএন প্রশাসক",
 	"grouppage-svnadmins": "{{ns:project}}:এসএভিএন প্রশাসক"

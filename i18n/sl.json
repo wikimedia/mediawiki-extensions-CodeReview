@@ -186,7 +186,6 @@
 	"action-codereview-link-user": "povezovanje avtorjev z wikiuporabniki",
 	"action-codereview-associate": "upravljanje združitev redakcij",
 	"action-codereview-review-own": "označevanje svojih redakcij kot »{{int:code-status-ok}}« ali »{{int:code-status-resolved}}«",
-	"specialpages-group-developer": "Razvijalska orodja",
 	"group-svnadmins": "Skrbniki SVN",
 	"group-svnadmins-member": "{{GENDER:$1|skrbnik|skrbnica}} SVN",
 	"grouppage-svnadmins": "{{ns:project}}:Skrbniki SVN"

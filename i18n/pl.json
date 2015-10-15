@@ -194,7 +194,6 @@
 	"action-codereview-link-user": "połącz autorów z użytkownikami wiki",
 	"action-codereview-associate": "zarządzaj powiązaniami wersji",
 	"action-codereview-review-own": "zaznacz własne \"{{int:code-status-ok}}\" lub \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Narzędzia dewelopera",
 	"group-svnadmins": "Administratorzy SVN",
 	"group-svnadmins-member": "{{GENDER:$1|administrator SVN|administratorka SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Administratorzy SVN",

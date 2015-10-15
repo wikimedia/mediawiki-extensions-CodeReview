@@ -189,7 +189,6 @@
 	"action-codereview-link-user": "auteurs aan wikigebruikers te koppelen",
 	"action-codereview-associate": "versiekoppelingen toe te voegen of te verwijderen",
 	"action-codereview-review-own": "eigen versies als \"{{int:code-status-ok}} of \"{{int:code-status-resolved}}\" te markeren",
-	"specialpages-group-developer": "Hulpmiddelen voor ontwikkelaars",
 	"group-svnadmins": "SVN-beheerders",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-beheerder}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-beheerders",

@@ -171,7 +171,6 @@
 	"right-codereview-signoff": "Өлгөләрҙе раҫлау",
 	"right-codereview-link-user": "Авторҙарҙы вики ҡатнашыусыларға бәйләү",
 	"right-codereview-associate": "Өлгөләрҙе бәйләү менән идара итеү",
-	"specialpages-group-developer": "Программист ҡоралдары",
 	"group-svnadmins": "SVN идарасылары",
 	"group-svnadmins-member": "{{GENDER:$1|SVN администраторы}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN идарасылары"

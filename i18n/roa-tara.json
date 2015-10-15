@@ -187,7 +187,6 @@
 	"action-codereview-link-user": "colleghe le auture a le utinde de uicchi",
 	"action-codereview-associate": "gestisce le associaziune d'a revisione",
 	"action-codereview-review-own": "signe le revisiune tune cumme \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Struminde pe le sviluppature",
 	"group-svnadmins": "Amministrature de SVN",
 	"group-svnadmins-member": "{{GENDER:$1|amministratore de SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Amministrature de SVN"

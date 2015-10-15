@@ -154,7 +154,6 @@
 	"action-codereview-link-user": "awtorow z wikiwužywarjami zwězaś",
 	"action-codereview-associate": "wersijowe zwiski zastojaś",
 	"action-codereview-review-own": "swóje wersije ako \"{{int:code-status-ok}} abo \"{{int:code-status-resolved}}\" markěrowaś",
-	"specialpages-group-developer": "Rědy wuwiwarjow",
 	"group-svnadmins": "SVN-administratory",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-administrator|SVN-administratorka}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-administratory"

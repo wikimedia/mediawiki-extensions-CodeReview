@@ -172,7 +172,6 @@
 	"right-codereview-link-user": "Pranala penulis ke wiki pengguna",
 	"right-codereview-associate": "Mengelola keterkaitan revisi",
 	"right-codereview-review-own": "Tandai suntingan Anda sendiri sebagai OK",
-	"specialpages-group-developer": "Alat Pengembang",
 	"group-svnadmins": "Pengurus SVN",
 	"group-svnadmins-member": "{{GENDER:$1|Pengurus SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Pengurus SVN"

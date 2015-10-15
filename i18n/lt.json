@@ -87,7 +87,6 @@
 	"repoadmin-new-legend": "Sukurti naują saugyklą",
 	"repoadmin-new-button": "Sukurti",
 	"repoadmin-edit-button": "Gerai",
-	"specialpages-group-developer": "Kūrėjo įrankai",
 	"group-svnadmins": "SVN administratoriai",
 	"group-svnadmins-member": "{{GENDER:$1|SVN administratorius}}",
 	"grouppage-svnadmins": "{{ns:project}}: SVN administratoriai"

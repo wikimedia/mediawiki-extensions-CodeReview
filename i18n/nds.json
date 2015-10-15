@@ -111,7 +111,6 @@
 	"right-codereview-post-comment": "Kommentaren to Versionen tofögen",
 	"right-codereview-set-status": "Versionsstatus ännern",
 	"right-codereview-link-user": "Autoren mit Wiki-Brukers verbinnen",
-	"specialpages-group-developer": "Developer-Warktüüch",
 	"group-svnadmins": "SVN-Admins",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-Admins"
 }

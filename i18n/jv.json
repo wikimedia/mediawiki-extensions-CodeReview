@@ -178,7 +178,6 @@
 	"action-codereview-link-user": "hubungaké panganggit karo panganggo wiki",
 	"action-codereview-associate": "tata asosiasi benahan",
 	"action-codereview-review-own": "tandhai benahan Sampéyan dhéwé minangka \"{{int:code-status-ok}}\" utawa \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Piranti déveloper",
 	"group-svnadmins": "Pangurus SVN",
 	"group-svnadmins-member": "{{GENDER:$1|Pangurus SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Pangurus SVN"

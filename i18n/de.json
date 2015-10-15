@@ -191,7 +191,6 @@
 	"action-codereview-link-user": "Autoren zu Wiki-Benutzern zu verlinken",
 	"action-codereview-associate": "Revisionszuordnungen zu verwalten",
 	"action-codereview-review-own": "die eigenen Revisionen als „{{int:code-status-ok}}“ oder „{{int:code-status-resolved}}“ zu markieren",
-	"specialpages-group-developer": "Entwicklerwerkzeuge",
 	"group-svnadmins": "SVN-Administratoren",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-Administrator|SVN-Administratorin}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-Administratoren",

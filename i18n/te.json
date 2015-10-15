@@ -138,7 +138,6 @@
 	"right-codereview-set-status": "కూర్పుల స్థితిని మార్చగలగడం",
 	"right-codereview-link-user": "కర్తలను వికీ వాడుకరులతో లింకు  చెయ్యి",
 	"right-codereview-review-own": "మీ స్వంత కూర్పులను \"{{int:code-status-ok}}\" లేక \"{{int:code-status-resolved}}\" గా గుర్తించండి",
-	"specialpages-group-developer": "వికాసకుల పనిముట్లు",
 	"group-svnadmins": "SVN నిర్వాహకులు",
 	"group-svnadmins-member": "{{GENDER:$1|SVN నిర్వాహకులు}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN నిర్వాహకులు"

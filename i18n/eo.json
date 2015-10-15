@@ -177,7 +177,6 @@
 	"right-codereview-link-user": "Ligi aŭtorojn al viki-uzantoj",
 	"right-codereview-associate": "Trakti asociojn de revizioj",
 	"right-codereview-review-own": "Marki viajn proprajn reviziojn kiel \"{{int:code-status-ok}}\" aŭ \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Disvolvistaj iloj",
 	"group-svnadmins": "SVN-administrantoj",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-administranto|SVN-administrantino}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-administrantoj"

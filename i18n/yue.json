@@ -104,6 +104,5 @@
 	"right-codereview-remove-tag": "響修訂度拎走標籤",
 	"right-codereview-post-comment": "響修訂度加註解",
 	"right-codereview-set-status": "改修訂狀態",
-	"right-codereview-link-user": "連結作者到wiki用戶",
-	"specialpages-group-developer": "開發者工具"
+	"right-codereview-link-user": "連結作者到wiki用戶"
 }

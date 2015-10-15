@@ -190,7 +190,6 @@
 	"action-codereview-link-user": "даданьне да аўтараў спасылак на рахункі ўдзельнікаў вікі",
 	"action-codereview-associate": "кіраваньне сувязямі вэрсіяў",
 	"action-codereview-review-own": "пазначэньне ўласных вэрсіяў як «{{int:code-status-ok}}» ці «{{int:code-status-resolved}}»",
-	"specialpages-group-developer": "Інструмэнты распрацоўшчыка",
 	"group-svnadmins": "Адміністратары SVN",
 	"group-svnadmins-member": "{{GENDER:$1|Адміністратар SVN|Адміністратарка SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Адміністратары SVN"

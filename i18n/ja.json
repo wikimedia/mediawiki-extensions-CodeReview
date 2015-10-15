@@ -198,7 +198,6 @@
 	"action-codereview-link-user": "作者とウィキ利用者をリンク",
 	"action-codereview-associate": "版のつながりを管理",
 	"action-codereview-review-own": "自分のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける",
-	"specialpages-group-developer": "開発者用ツール",
 	"group-svnadmins": "SVN管理者",
 	"group-svnadmins-member": "{{GENDER:$1|SVN 管理者}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN管理者",

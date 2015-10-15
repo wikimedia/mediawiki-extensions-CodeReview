@@ -200,7 +200,6 @@
 	"action-codereview-link-user": "связывание авторов с вики-пользователями",
 	"action-codereview-associate": "управление ассоциациями ревизий",
 	"action-codereview-review-own": "пометка собственных ревизий как «{{int:code-status-ok}}» или «{{int:code-status-resolved}}»",
-	"specialpages-group-developer": "Инструменты разработчика",
 	"group-svnadmins": "Администраторы SVN",
 	"group-svnadmins-member": "{{GENDER:$1|Администратор SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Администраторы SVN"

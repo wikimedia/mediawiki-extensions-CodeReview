@@ -152,7 +152,6 @@
 	"right-codereview-signoff": "Skriva under på versjonar",
 	"right-codereview-link-user": "Lenkja forfattarar til wikibrukarar",
 	"action-repoadmin": "handsama kodelager",
-	"specialpages-group-developer": "Utviklarverktøy",
 	"group-svnadmins": "SVN-administratorar",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-administrator}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-administratorar"

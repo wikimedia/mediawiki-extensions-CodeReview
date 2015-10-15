@@ -169,7 +169,6 @@
 	"right-codereview-set-status": "Promijeni status revizije",
 	"right-codereview-signoff": "Završi izmjene revizija",
 	"right-codereview-link-user": "Povezivanje autora s wiki suradnikom",
-	"specialpages-group-developer": "Alati za razvijatelje",
 	"group-svnadmins": "SVN administratori",
 	"group-svnadmins-member": "SVN administrator",
 	"grouppage-svnadmins": "{{ns:project}}:SVN administratori"

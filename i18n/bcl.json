@@ -186,7 +186,6 @@
 	"action-codereview-link-user": "isugpon an mga kagsurat sa mga paragamit nin wiki",
 	"action-codereview-associate": "manihoon an mga asosasyon nin rebisyon",
 	"action-codereview-review-own": "markahan an saimong sadireng mga rebisyon bilang \"{{int:code-status-ok}}\" o baya \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Mga kagamitan nin Paragibo",
 	"group-svnadmins": "SVN na mga administrador",
 	"group-svnadmins-member": "{{GENDER:$1|SVN na administrador}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN na mga administrador"

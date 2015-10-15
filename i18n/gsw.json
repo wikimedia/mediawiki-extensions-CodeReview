@@ -187,7 +187,6 @@
 	"action-codereview-link-user": "Autore mit Wiki-Benutzer z verlinke",
 	"action-codereview-associate": "Revisionszueornige z verwalte",
 	"action-codereview-review-own": "di eigene Revisione as „{{int:code-status-ok}}“ oder „{{int:code-status-resolved}}“ z markiere",
-	"specialpages-group-developer": "Entwicklerwärchzyyg",
 	"group-svnadmins": "SVN-Adminischtratore",
 	"group-svnadmins-member": "{{GENDER:$1|SVN-Ammann|SVN-Amtsfrou}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-Adminischtratore"

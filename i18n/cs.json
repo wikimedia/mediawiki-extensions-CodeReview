@@ -189,7 +189,6 @@
 	"action-codereview-link-user": "propojovat autory s wikiuživateli",
 	"action-codereview-associate": "spravovat vztahy mezi revizemi",
 	"action-codereview-review-own": "označovat vlastní revize jako „{{int:code-status-ok}}“ nebo „{{int:code-status-resolved}}“",
-	"specialpages-group-developer": "Vývojářské nástroje",
 	"group-svnadmins": "Správci SVN",
 	"group-svnadmins-member": "{{GENDER:$1|správce|správkyně|správce}} SVN",
 	"grouppage-svnadmins": "{{ns:project}}:Správci SVN"

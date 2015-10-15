@@ -152,6 +152,5 @@
 	"right-codereview-add-tag": "Dodajte tagove revizijama",
 	"right-codereview-remove-tag": "Brišite tagove sa revizija",
 	"right-codereview-post-comment": "Dodajte komentare revizijama",
-	"right-codereview-set-status": "Promeni status revizije",
-	"specialpages-group-developer": "Programerski alati"
+	"right-codereview-set-status": "Promeni status revizije"
 }

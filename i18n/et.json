@@ -164,7 +164,6 @@
 	"action-codereview-set-status": "redaktsioonide olekut muuta",
 	"action-codereview-link-user": "autoreid vikikasutajatega siduda",
 	"action-codereview-review-own": "märkida enda redaktsioonide olekuks \"{{int:code-status-ok}}\" ega \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Arendusriistad",
 	"group-svnadmins": "SVN-administraatorid",
 	"group-svnadmins-member": "SVN-administraator",
 	"grouppage-svnadmins": "{{ns:project}}:SVN-administraatorid"

@@ -126,7 +126,6 @@
 	"right-codereview-post-comment": "Добавяне на коментари към версиите",
 	"right-codereview-set-status": "Променяне на статута на версиите",
 	"right-codereview-link-user": "Свързване на имената на авторите с имена на уики потребители",
-	"specialpages-group-developer": "Инструменти за разработчици",
 	"group-svnadmins": "SVN администратори",
 	"group-svnadmins-member": "{{GENDER:$1|SVN администратор}}",
 	"grouppage-svnadmins": "{{ns:project}}:SVN администратори"

@@ -189,7 +189,6 @@
 	"action-codereview-link-user": "liammañ an oberourien d'an implijerien wiki",
 	"action-codereview-associate": "ouzhpennañ/lemel ar c'henstroll adwelet",
 	"action-codereview-review-own": "merkañ ar gwiriadennoù graet ganeoc'h evel \"{{int:code-status-ok}}\" pe \"{{int:code-status-resolved}}\"",
-	"specialpages-group-developer": "Ostilhoù diorren",
 	"group-svnadmins": "Merourien SVN",
 	"group-svnadmins-member": "{{GENDER:$1|merour SVN|merourez SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}:Merourien SVN"
