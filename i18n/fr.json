@@ -106,7 +106,7 @@
 	"code-status-new": "nouveau",
 	"code-status-desc-new": "Une action est en attente pour cette révision (état par défaut).",
 	"code-status-fixme": "à corriger",
-	"code-status-desc-fixme": "La révision a introduit un bug ou est erronée. Elle devrait être corrigée ou annulée.",
+	"code-status-desc-fixme": "La révision a introduit un bogue ou est erronée. Elle devrait être corrigée ou annulée.",
 	"code-status-reverted": "révoqué",
 	"code-status-desc-reverted": "La révision a été rejetée par une révision ultérieure.",
 	"code-status-resolved": "résolu",
