@@ -224,7 +224,7 @@
 	"apihelp-query+codecomments-param-repo": "Назва репозиторію.",
 	"apihelp-query+codecomments-param-limit": "Скільки коментарів виводити.",
 	"apihelp-query+codecomments-param-start": "Часова мітка, з якої почати список.",
-	"apihelp-query+codecomments-param-prop": "Які властивості виводити. Версія є застарілим аліасом для статусу.",
+	"apihelp-query+codecomments-param-prop": "Які властивості виводити. revision є застарілим аліасом для status.",
 	"apihelp-query+codecomments-example-1": "Список коментарів до репозиторію MediaWiki",
 	"apihelp-query+codecomments-example-2": "Показати інформацію для коментарів до репозиторію MediaWiki",
 	"apihelp-query+codepaths-description": "Отримати список 10 шляхів у даному репозиторії на основі вхідного префіксу шляху.",
