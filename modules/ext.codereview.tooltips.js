@@ -30,7 +30,7 @@ var CodeTooltipsInit = function() {
 			};
 			$el.tipsy( { fade: true, gravity: 'sw', html:true } );
 			$.getJSON(
-				mw.config.get( 'wgScriptPath' ) + '/api.php';
+				mw.config.get( 'wgScriptPath' ) + '/api.php',
 				reqData,
 				function( data ) {
 					if ( !data || !data.query || !data.query.coderevisions ) {
