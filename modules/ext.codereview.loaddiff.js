@@ -1,3 +1,4 @@
+/* global alert */
 ( function( $ ) {
 	"use strict";
 // Create or extend the object

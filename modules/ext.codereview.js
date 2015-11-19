@@ -2,7 +2,7 @@ jQuery( function( $ ) {
 	"use strict";
     // Animate the add-tags input to suggest existing tabs
 	$('#wpTag').suggestions( {
-		fetch: function( query ) {
+		fetch: function() {
 			var $this = $(this ),
 				doUpdate = function(){
 					var currentText = $this.val(),
@@ -80,7 +80,7 @@ jQuery( function( $ ) {
 		positionFromLeft: $( 'body' ).hasClass( 'rtl' ),
 		highlightInput: true
 	} )
-	.bind( 'paste cut drop', function( e ) {
+	.bind( 'paste cut drop', function() {
 		// make sure paste and cut events from the mouse and drag&drop events
 		// trigger the keypress handler and cause the suggestions to update
 		$( this ).trigger( 'keypress' );

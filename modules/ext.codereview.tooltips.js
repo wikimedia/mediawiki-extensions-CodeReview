@@ -67,7 +67,7 @@ var CodeTooltipsInit = function() {
 		// We want to avoid doing API calls just because someone accidentally moves the mouse
 		// over a link, so we only want to do an API call after the mouse has been on a link
 		// for 250ms.
-		$( this ).mouseenter( function( e ) {
+		$( this ).mouseenter( function() {
 			var that = this,
 				timerID = $( this ).data( 'codeTooltipTimer' );
 
@@ -80,7 +80,7 @@ var CodeTooltipsInit = function() {
 		} );
 		// take care of cases when louse leaves our link while we load stuff from API.
 		// We shouldn't display the tooltip in such case.
-		$( this ).mouseleave( function( e ) {
+		$( this ).mouseleave( function() {
 			var $el = $( this ),
 				timerID = $el.data( 'codeTooltipTimer' );
 
