@@ -11,7 +11,8 @@
 			"Oapbtommy",
 			"Skjackey tse",
 			"Waihorace",
-			"Cwlin0416"
+			"Cwlin0416",
+			"LNDDYL"
 		]
 	},
 	"code": "程式碼審查",
@@ -83,7 +84,7 @@
 	"code-rev-modified-m": "已修改",
 	"code-rev-imagediff": "影像變更",
 	"code-rev-status": "狀態：",
-	"code-rev-status-set": "更改狀態",
+	"code-rev-status-set": "變更狀態",
 	"code-rev-tags": "標籤：",
 	"code-rev-tag-add": "新增標籤：",
 	"code-rev-tag-remove": "移除標籤：",
@@ -132,8 +133,8 @@
 	"code-rev-submit": "儲存變更",
 	"code-rev-submit-next": "儲存並繼續處理",
 	"code-rev-next": "繼續處理",
-	"code-batch-status": "更改狀態：",
-	"code-batch-tags": "更改標籤：",
+	"code-batch-status": "變更狀態：",
+	"code-batch-tags": "變更標籤：",
 	"codereview-batch-title": "更改所有已選擇的修訂",
 	"codereview-batch-submit": "送出",
 	"code-releasenotes": "發佈說明",
@@ -181,7 +182,7 @@
 	"right-codereview-add-tag": "新增標籤到修訂",
 	"right-codereview-remove-tag": "從修訂中移除標籤",
 	"right-codereview-post-comment": "增加修訂的意見",
-	"right-codereview-set-status": "更改修訂狀態",
+	"right-codereview-set-status": "變更修訂狀態",
 	"right-codereview-signoff": "簽署修訂",
 	"right-codereview-link-user": "連結作者到 Wiki 使用者",
 	"right-codereview-associate": "管理修訂關聯",
