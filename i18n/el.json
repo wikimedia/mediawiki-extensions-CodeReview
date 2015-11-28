@@ -43,7 +43,7 @@
 	"code-author-dolink": "Σύνδεση αυτού του χρήστη με έναν χρήστη wiki:",
 	"code-author-alterlink": "Αλλαγή του χρήστη wiki συνδεδεμένου με αυτό τον συγγραφέα:",
 	"code-author-orunlink": "Ή αποδιασύνδεση αυτού του χρήστη wiki:",
-	"code-author-name": "Εισάγετε ένα όνομα χρήστη:",
+	"code-author-name": "Εισαγάγετε όνομα χρήστη:",
 	"code-author-success": "Ο συγγραφέας $1 έχει συνδεθεί με τον χρήστη wiki $2",
 	"code-author-link": "σύνδεση;",
 	"code-author-unlink": "αποσύνδεση;",
