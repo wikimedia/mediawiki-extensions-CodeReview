@@ -6,7 +6,7 @@ window.CodeReview = $.extend( window.CodeReview, {
 
 	loadDiff : function(repo, rev) {
 		var apiPath = mw.config.get( 'wgScriptPath' ) + '/api.php';
-		injectSpinner( CodeReview.diffTarget(), 'codereview-diff' );
+		$( CodeReview.diffTarget() ).injectSpinner( 'codereview-diff' );
 		try {
 			$.ajax({
 				url: apiPath,
@@ -19,11 +19,11 @@ window.CodeReview = $.extend( window.CodeReview, {
 				dataType : 'json',
 				success : function( data ) {
 					CodeReview.decodeAndShowDiff( data );
-					removeSpinner( 'codereview-diff' );
+					$.removeSpinner( 'codereview-diff' );
 				}
 			});
 		} catch ( e ) {
-			removeSpinner( 'codereview-diff' );
+			$.removeSpinner( 'codereview-diff' );
 			if ( window.location.hostname === 'localhost' ) {
 				alert( 'Your browser blocks XMLHttpRequest to "localhost", try using a real hostname for development/testing.' );
 			}

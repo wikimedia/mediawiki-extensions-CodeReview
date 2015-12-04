@@ -97,7 +97,8 @@
 			"styles": "ext.codereview.styles.css"
 		},
 		"ext.codereview.loaddiff": {
-			"scripts": "ext.codereview.loaddiff.js"
+			"scripts": "ext.codereview.loaddiff.js",
+			"dependencies": "jquery.spinner"
 		},
 		"ext.codereview.tooltips": {
 			"scripts": "ext.codereview.tooltips.js",
