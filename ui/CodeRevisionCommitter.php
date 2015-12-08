@@ -80,8 +80,8 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		global $wgUser;
 
 		$dbw = wfGetDB( DB_MASTER );
+		$dbw->startAtomic( __METHOD__ );
 
-		$dbw->begin();
 		// Change the status if allowed
 		$statusChanged = false;
 		if ( $this->mRev->isValidStatus( $status ) && $this->validPost( 'codereview-set-status' ) ) {
@@ -132,7 +132,8 @@ class CodeRevisionCommitter extends CodeRevisionView {
 
 			$commentAdded = ($commentId !== 0);
 		}
-		$dbw->commit();
+
+		$dbw->endAtomic( __METHOD__ );
 
 		if ( $statusChanged || $commentAdded ) {
 			$url = $this->mRev->getCanonicalUrl( $commentId );
