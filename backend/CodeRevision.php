@@ -661,11 +661,11 @@ class CodeRevision {
 		$dbw = wfGetDB( DB_MASTER );
 		$data = $this->commentData( $text, $parent );
 
-		$dbw->begin();
+		$dbw->startAtomic( __METHOD__ );
 		$data['cc_id'] = $dbw->nextSequenceValue( 'code_comment_cc_id' );
 		$dbw->insert( 'code_comment', $data, __METHOD__ );
 		$commentId = $dbw->insertId();
-		$dbw->commit();
+		$dbw->endAtomic( __METHOD__ );
 
 		$url = $this->getCanonicalUrl( $commentId );
 
