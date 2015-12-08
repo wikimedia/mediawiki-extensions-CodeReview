@@ -396,7 +396,7 @@ class CodeRevision {
 	 */
 	public function save() {
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin();
+		$dbw->startAtomic( __METHOD__ );
 
 		$dbw->insert( 'code_rev',
 			array(
@@ -520,7 +520,8 @@ class CodeRevision {
 				}
 			}
 		}
-		$dbw->commit();
+
+		$dbw->endAtomic( __METHOD__ );
 	}
 
 	/**
