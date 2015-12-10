@@ -192,7 +192,7 @@
 	"action-codereview-add-tag": "新增標籤到修訂",
 	"action-codereview-remove-tag": "從修訂中移除標籤",
 	"action-codereview-post-comment": "增加修訂的意見",
-	"action-codereview-set-status": "更改修訂狀態",
+	"action-codereview-set-status": "變更修訂狀態",
 	"action-codereview-signoff": "簽署修訂",
 	"action-codereview-link-user": "連結作者到 Wiki 使用者",
 	"action-codereview-associate": "管理修訂關聯",
