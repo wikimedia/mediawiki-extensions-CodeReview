@@ -18,7 +18,7 @@
 	"code-old-status": "পুরোনো অবস্থান",
 	"code-new-status": "নতুন অবস্থান",
 	"code-prop-changes": "অবস্থান ও ট্যাগিং লগ",
-	"codereview-desc": "[[Special:RepoAdmin|সাবভার্সন সহায়তার]] সঙ্গে [[Special:Code|কোড রিভিউ সরঞ্জাম]]",
+	"codereview-desc": "[[Special:RepoAdmin|উপসংস্করণ সহায়তার]] সঙ্গে [[Special:Code|কোড পর্যালোচনা সরঞ্জাম]]",
 	"code-no-repo": "কোনো রিপোজিটরি কনফিগার করা হয়নি!",
 	"code-create-repo": "রিপোজিটরি তৈরি করতে [[Special:RepoAdmin|রিপোঅ্যাডমিনে]] যান",
 	"code-need-repoadmin-rights": "রিপোজিটরি তৈরি করার জন্য আপনার রিপোঅ্যাডমিন অধিকার প্রয়োজন",
