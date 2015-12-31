@@ -59,7 +59,7 @@ class PopulateCaUserColumn extends Maintenance {
 		$this->output( "{$numRows} authors with ca_user = 0 in the table...\n" );
 
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin();
+		$this->beginTransaction( $dbw, __METHOD__ );
 
 		foreach ( $res as $row ) {
 			$userId = User::idFromName( $row->ca_user_text );
@@ -83,7 +83,7 @@ class PopulateCaUserColumn extends Maintenance {
 			);
 		}
 
-		$dbw->commit();
+		$this->commitTransaction( $dbw, __METHOD__ );
 
 		$this->output( "Done!\n" );
 	}

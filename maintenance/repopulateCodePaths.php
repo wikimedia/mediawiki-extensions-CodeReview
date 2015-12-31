@@ -43,7 +43,7 @@ class RepopulateCodePaths extends Maintenance {
 			__METHOD__ );
 
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->begin();
+		$this->beginTransaction( $dbw, __METHOD__ );
 
 		foreach ( $res as $row ) {
 			$fragments = CodeRevision::getPathFragments(
@@ -56,7 +56,7 @@ class RepopulateCodePaths extends Maintenance {
 				count( $fragments ) . "\n" );
 		}
 
-		$dbw->commit();
+		$this->commitTransaction( $dbw, __METHOD__ );
 
 		$this->output( "Done!\n" );
 	}
