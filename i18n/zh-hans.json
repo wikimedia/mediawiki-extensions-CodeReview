@@ -231,7 +231,7 @@
 	"apihelp-query+codecomments-param-repo": "存储库名称。",
 	"apihelp-query+codecomments-param-limit": "返回多少个评论。",
 	"apihelp-query+codecomments-param-start": "列表的起始时间戳。",
-	"apihelp-query+codecomments-param-prop": "返回的属性。修订是被弃用的状态别名。",
+	"apihelp-query+codecomments-param-prop": "要返回的属性。revision是被弃用的status别名。",
 	"apihelp-query+codecomments-example-1": "列出MediaWiki版本库的评论",
 	"apihelp-query+codecomments-example-2": "显示MediaWiki版本库上的评论信息",
 	"apihelp-query+codepaths-description": "基于输入的路径前缀，获得指定存储库中10条路径的列表。",
