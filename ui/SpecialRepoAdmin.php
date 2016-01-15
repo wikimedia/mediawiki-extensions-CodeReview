@@ -8,6 +8,10 @@ class SpecialRepoAdmin extends SpecialPage {
 		parent::__construct( 'RepoAdmin', 'repoadmin' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * @param $subpage string
 	 */
