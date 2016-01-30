@@ -131,7 +131,6 @@ abstract class SvnTablePager extends TablePager {
 		$this->mView = $view;
 		$this->mRepo = $view->mRepo;
 		$this->mDefaultDirection = true;
-		$this->mCurSVN = SpecialVersion::getSvnRevision( $IP );
 		parent::__construct();
 	}
 
