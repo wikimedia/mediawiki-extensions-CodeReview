@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"OC Ripper"
+			"OC Ripper",
+			"Conquistador"
 		]
 	},
+	"code-rev-comment-preview": "Pregled",
+	"code-rev-inline-preview": "Pregled",
 	"codereview-batch-submit": "Unesi"
 }
