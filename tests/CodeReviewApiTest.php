@@ -5,6 +5,7 @@
  * Broken as of 2011-09-02.
  *
  * @group medium
+ * @group CodeReview
  */
 class CodeReviewApiTest extends ApiTestCase {
 

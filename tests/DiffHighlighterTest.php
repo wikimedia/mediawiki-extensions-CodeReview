@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @group CodeReview
+ */
 class CodeDiffHighlighterTest extends MediaWikiTestCase {
 	function testParseChunksFromWindowsDiff() {
 		try {

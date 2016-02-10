@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @group CodeReview
+ */
 class CodeReviewTest extends MediaWikiTestCase {
 	private function createRepo() {
 		$row = new stdClass();
@@ -49,7 +52,7 @@ class CodeReviewTest extends MediaWikiTestCase {
 			'author' => 'hashar',
 			'date'   => '15 august 2011',
 			'msg'    => 'dumb revision message',
-			'paths'  => array( '/dev/null' ),
+			'paths'  => array( array( 'path' => '/dev/null', 'action' => 'A' ) ),
 			)
 		);
 
