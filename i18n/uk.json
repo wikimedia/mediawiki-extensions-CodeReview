@@ -13,7 +13,8 @@
 			"Riwnodennyk",
 			"Тест",
 			"Ата",
-			"Macofe"
+			"Macofe",
+			"Piramidion"
 		]
 	},
 	"code": "Перевірка коду",
@@ -201,6 +202,7 @@
 	"group-svnadmins": "Адміністратори SVN",
 	"group-svnadmins-member": "{{GENDER:$1|Адміністратор SVN|Адміністраторка SVN}}",
 	"grouppage-svnadmins": "{{ns:project}}: Адміністратори SVN",
+	"apihelp-codediff-description": "Вибірка форматованого дифу із системи контролю попередніх версій CodeReview.",
 	"apihelp-codediff-param-repo": "Назва потрібного репозиторію.",
 	"apihelp-codediff-param-rev": "ID версії для вибірки дифу.",
 	"apihelp-codediff-example-1": "Вибрати диф для версії MediaWiki 42080",
@@ -211,6 +213,8 @@
 	"apihelp-coderevisionupdate-param-status": "Статус, який встановити для версії.",
 	"apihelp-coderevisionupdate-param-addtags": "Теґи для додання до версії.",
 	"apihelp-coderevisionupdate-param-removetags": "Теґи для вилучення з версії.",
+	"apihelp-coderevisionupdate-param-addflags": "Прапорці затвердження коду (Code Signoff), що прикріплюються до версії поточним користувачем.",
+	"apihelp-coderevisionupdate-param-removeflags": "Прапорці затвердження коду (Code Signoff), що усуваються із версії поточним користувачем.",
 	"apihelp-coderevisionupdate-param-addreferences": "Додати примітки до цієї версії.",
 	"apihelp-coderevisionupdate-param-removereferences": "Вилучити примітки з цієї версії.",
 	"apihelp-coderevisionupdate-param-addreferenced": "Додати версії з примітками з цієї версії.",
