@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sasan700",
-			"Умар"
+			"Умар",
+			"Исмаил Садуев"
 		]
 	},
 	"code-change-status": "хийцина '''хьал''' r$1",
@@ -23,7 +24,7 @@
 	"code-rev-tag-add": "ТӀетоха билгалонаш:",
 	"code-rev-tag-remove": "ДӀаяккха билгалонаш:",
 	"code-rev-comment-preview": "Хьалха хьажар",
-	"code-rev-inline-preview": "Хьалха хьажар:",
+	"code-rev-inline-preview": "Хьалххе хьажар:",
 	"code-rev-purge-link": "кэш цӀанъян",
 	"code-rev-history-link": "истори",
 	"code-signoff-field-user": "Декъашхо",
