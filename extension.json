@@ -134,9 +134,6 @@
 			"codereview-link-user": true,
 			"codereview-signoff": true,
 			"codereview-associate": true
-		},
-		"svnadmins": {
-			"repoadmin": true
 		}
 	},
 	"AvailableRights": [

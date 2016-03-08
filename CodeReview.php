@@ -153,8 +153,6 @@ $wgGroupPermissions['user']['codereview-link-user'] = true;
 $wgGroupPermissions['user']['codereview-signoff'] = true;
 $wgGroupPermissions['user']['codereview-associate'] = true;
 
-$wgGroupPermissions['svnadmins']['repoadmin'] = true;
-
 /******** CONFIGURATION SETTINGS ********/
 
 // If you can't directly access the remote SVN repo, you can set this
