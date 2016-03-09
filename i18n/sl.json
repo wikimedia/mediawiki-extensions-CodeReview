@@ -164,7 +164,7 @@
 	"repoadmin-edit-bug": "Pot Bugzilla:",
 	"repoadmin-edit-view": "Pot ViewVC:",
 	"repoadmin-edit-button": "V redu",
-	"repoadmin-edit-sucess": "Shramba »[[Special:Code/$1|$1]]« je bila uspešno spremenjena.",
+	"repoadmin-edit-sucess": "Shrambo »[[Special:Code/$1|$1]]« smo spremenili.",
 	"repoadmin-nav": "upravljanje shramb",
 	"right-repoadmin": "Upravljanje shramb kode",
 	"right-codereview-use": "Uporaba Special:Code",
@@ -185,8 +185,5 @@
 	"action-codereview-signoff": "sprejemanje redakcij",
 	"action-codereview-link-user": "povezovanje avtorjev z wikiuporabniki",
 	"action-codereview-associate": "upravljanje združitev redakcij",
-	"action-codereview-review-own": "označevanje svojih redakcij kot »{{int:code-status-ok}}« ali »{{int:code-status-resolved}}«",
-	"group-svnadmins": "Skrbniki SVN",
-	"group-svnadmins-member": "{{GENDER:$1|skrbnik|skrbnica}} SVN",
-	"grouppage-svnadmins": "{{ns:project}}:Skrbniki SVN"
+	"action-codereview-review-own": "označevanje svojih redakcij kot »{{int:code-status-ok}}« ali »{{int:code-status-resolved}}«"
 }
