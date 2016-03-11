@@ -11,7 +11,8 @@
 			"MetalBrasil",
 			"Waldir",
 			"Fúlvio",
-			"Polyethylen"
+			"Polyethylen",
+			"Vitorvicentevalente"
 		]
 	},
 	"code": "Revisão de Código",
@@ -172,7 +173,7 @@
 	"repoadmin-edit-bug": "Caminho do Bugzilla:",
 	"repoadmin-edit-view": "Caminho do ViewVC:",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "O repositório \"[[Special:Code/$1|$1]]\" foi modificado com sucesso.",
+	"repoadmin-edit-sucess": "O repositório \"[[Special:Code/$1|$1]]\" foi modificado.",
 	"repoadmin-nav": "administração do repositório",
 	"right-repoadmin": "Gerir repositórios de código",
 	"right-codereview-use": "Uso de Especial:Code",
@@ -193,8 +194,5 @@
 	"action-codereview-signoff": "desconectar-se das revisões",
 	"action-codereview-link-user": "ligar autores a utilizadores wiki",
 	"action-codereview-associate": "gerir as associações de revisões",
-	"action-codereview-review-own": "assinalar as suas próprias revisões como \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Administradores do SVN",
-	"group-svnadmins-member": "{{GENDER:$1|Administrador|Administradora}} do SVN",
-	"grouppage-svnadmins": "{{ns:project}}:Administradores do SVN"
+	"action-codereview-review-own": "assinalar as suas próprias revisões como \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\""
 }
