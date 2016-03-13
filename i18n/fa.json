@@ -133,7 +133,7 @@
 	"code-revfilter-cr_author": "نویسنده = $1",
 	"code-revfilter-ct_tag": "برچسب = $1",
 	"code-revfilter-clear": "پاک‌کردن پالایه",
-	"code-rev-submit": "ذخیره‌کردن تغییرات",
+	"code-rev-submit": "ذخیره کردن تغییرات",
 	"code-rev-submit-next": "ذخیره و حرکت به مورد حل نشدهٔ بعدی",
 	"code-rev-next": "حل نشدهٔ بعدی",
 	"code-batch-status": "تغییر وضعیت:",
@@ -199,8 +199,5 @@
 	"action-codereview-signoff": "تثبیت نسخه‌ها",
 	"action-codereview-link-user": "پیوند کردن نویسندگان به کاربران ویکی",
 	"action-codereview-associate": "مدیریت نسخه‌های مرتبط",
-	"action-codereview-review-own": "نسخه‌های خود را به عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
-	"group-svnadmins": "مدیران اس‌وی‌ان",
-	"group-svnadmins-member": "مدیر اس‌وی‌ان",
-	"grouppage-svnadmins": "{{ns:project}}:مدیران اس‌وی‌ان"
+	"action-codereview-review-own": "نسخه‌های خود را به عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید"
 }
