@@ -19,7 +19,8 @@
 			"Translationista",
 			"Vivaelcelta",
 			"Macofe",
-			"Fitoschido"
+			"Fitoschido",
+			"Matiia"
 		]
 	},
 	"code": "Revisión de código",
@@ -182,7 +183,7 @@
 	"repoadmin-edit-bug": "Ruta de Bugzilla:",
 	"repoadmin-edit-view": "Ruta de ViewVC:",
 	"repoadmin-edit-button": "Aceptar",
-	"repoadmin-edit-sucess": "El repositorio «[[Special:Code/$1|$1]]» ha sido modificado correctamente.",
+	"repoadmin-edit-sucess": "El repositorio «[[Special:Code/$1|$1]]» ha sido modificado.",
 	"repoadmin-nav": "administración del repositorio",
 	"right-repoadmin": "Gestionar repositorios de código",
 	"right-codereview-use": "Usar Especial:Código",
@@ -204,9 +205,6 @@
 	"action-codereview-link-user": "enlazar autores con usuarios wiki",
 	"action-codereview-associate": "administrar asociaciones de revisión",
 	"action-codereview-review-own": "marcar tus propias revisiones como \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Administradores de SVN",
-	"group-svnadmins-member": "{{GENDER:$1|administrador|administradora}} de SVN",
-	"grouppage-svnadmins": "{{ns:project}}: Administradores de SVN",
 	"apihelp-codediff-param-repo": "Nombre del repositorio que se examinará.",
 	"apihelp-codediff-param-rev": "Identificador de revisión cuyas diferencias se mostrarán.",
 	"apihelp-codediff-example-1": "Obtener diferencias de la revisión n.º 42080 de MediaWiki",
