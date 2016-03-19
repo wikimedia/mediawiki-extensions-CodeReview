@@ -12,7 +12,8 @@
 			"Skjackey tse",
 			"Waihorace",
 			"Cwlin0416",
-			"LNDDYL"
+			"LNDDYL",
+			"Liuxinyu970226"
 		]
 	},
 	"code": "程式碼審查",
@@ -30,8 +31,8 @@
 	"codereview-desc": "[[Special:Code|程式碼審查工具]] 可 [[Special:RepoAdmin|支援 Subversion]]",
 	"code-no-repo": "尚未設定儲存庫！",
 	"code-create-repo": "前往 [[Special:RepoAdmin|儲存庫管理]] 建立新的儲存庫",
-	"code-need-repoadmin-rights": "建立新的儲存庫管理需要儲存庫管理權限",
-	"code-need-group-with-rights": "目前沒有任何擁有儲存庫管理權限的群組。 請新增一個群組，使其可建立新的儲存庫。",
+	"code-need-repoadmin-rights": "建立新的儲存庫管理需要 repoadmin 權限",
+	"code-need-group-with-rights": "目前沒有任何擁有 repoadmin 權限的群組。 請新增一個群組，使其可建立新的儲存庫。",
 	"code-repo-not-found": "儲存庫 '''$1''' 不存在！",
 	"code-load-diff": "讀取差異 ...",
 	"code-notes": "最近意見",
@@ -197,9 +198,6 @@
 	"action-codereview-link-user": "連結作者到 Wiki 使用者",
 	"action-codereview-associate": "管理修訂關聯",
 	"action-codereview-review-own": "將自己的修訂標記為 \"{{int:code-status-ok}}\" 或 \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "SVN 管理員",
-	"group-svnadmins-member": "{{GENDER:$1|SVN 管理員}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN admins",
 	"apihelp-codediff-description": "自 CodeReview 的後端修訂控制系統取得格式化的 diif。",
 	"apihelp-codediff-param-repo": "要查看的儲存庫名稱。",
 	"apihelp-codediff-param-rev": "要取得 diff 的修訂 ID。",
