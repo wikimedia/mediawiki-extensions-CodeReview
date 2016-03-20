@@ -179,7 +179,7 @@
 	"repoadmin-edit-bug": "Путь к базе Bugzilla:",
 	"repoadmin-edit-view": "Путь к ViewVC:",
 	"repoadmin-edit-button": "Готово",
-	"repoadmin-edit-sucess": "Хранилище «[[Special:Code/$1|$1]]» успешно изменено.",
+	"repoadmin-edit-sucess": "Хранилище «[[Special:Code/$1|$1]]» изменено.",
 	"repoadmin-nav": "управление репозиторием",
 	"right-repoadmin": "Управление хранилищами кодов",
 	"right-codereview-use": "использование Special:Code",
@@ -201,9 +201,6 @@
 	"action-codereview-link-user": "связывание авторов с вики-пользователями",
 	"action-codereview-associate": "управление ассоциациями ревизий",
 	"action-codereview-review-own": "пометка собственных ревизий как «{{int:code-status-ok}}» или «{{int:code-status-resolved}}»",
-	"group-svnadmins": "Администраторы SVN",
-	"group-svnadmins-member": "{{GENDER:$1|Администратор SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Администраторы SVN",
 	"apihelp-query+coderevisions-param-prop": "Какие свойства возвращать.",
 	"apihelp-query+codetags-param-repo": "Название репозитория."
 }
