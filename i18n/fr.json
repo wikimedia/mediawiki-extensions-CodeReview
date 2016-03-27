@@ -17,7 +17,8 @@
 			"Sherbrooke",
 			"Urhixidur",
 			"Verdy p",
-			"Zetud"
+			"Zetud",
+			"Orlodrim"
 		]
 	},
 	"code": "Révision du code",
@@ -242,9 +243,9 @@
 	"apihelp-query+coderevisions-param-start": "Horodatage à partir duquel commencer la liste.",
 	"apihelp-query+coderevisions-param-revs": "Liste des révisions sur lesquels obtenir des informations. Écrase $1start.",
 	"apihelp-query+coderevisions-param-prop": "Quelles propriétés à renvoyer.",
-	"apihelp-query+coderevisions-example-1": "Lister les révisions dans MédiaWiki",
+	"apihelp-query+coderevisions-example-1": "Lister les révisions dans MediaWiki",
 	"apihelp-query+coderevisions-example-2": "Chercher des informations pour les révisions dans MédiaWiki",
 	"apihelp-query+codetags-description": "Obtenir une liste de balises appliquées aux révisions dans un dépôt donné.",
 	"apihelp-query+codetags-param-repo": "Nom du dépôt.",
-	"apihelp-query+codetags-example-1": "Lister les balises dans MédiaWiki"
+	"apihelp-query+codetags-example-1": "Lister les balises dans MediaWiki"
 }
