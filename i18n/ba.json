@@ -5,7 +5,8 @@
 			"Haqmar",
 			"Ләйсән",
 			"ҒатаУлла",
-			"З. ӘЙЛЕ"
+			"З. ӘЙЛЕ",
+			"Айбикә"
 		]
 	},
 	"code": "Кодты тикшереү",
@@ -150,8 +151,9 @@
 	"code-stats-header": "$1 һаҡлағысы өсөн статистика",
 	"code-stats-main": "$1 һаҡлағыста [[Special:Code/$3/author|$4 {{PLURAL:$4|1=автор}}]] тарафынан тапшырылған $2 {{PLURAL:$2|өлгө}} бар.",
 	"code-stats-status-breakdown": "Һәр торошҡа өлгөләр",
-	"code-stats-fixme-breakdown": "\"Үҙгәртергә кәрәк\" торошло өлгөләрҙе авторҙарға бүлеү",
+	"code-stats-fixme-breakdown": "\"Төҙәтергә\" статуслы версияларҙы авторҙар араһында бүлергә",
 	"code-stats-fixme-breakdown-path": "\"Төҙәтеү\" статуслы версияларҙы  билдәләү",
+	"code-stats-fixme-path": "$1 юлы өсөн \"төҙәтергә\" статуслы версиялар",
 	"code-stats-new-breakdown": "Яңы версияларҙы авторҙар буйынса бүлеү",
 	"code-stats-new-breakdown-path": "Адрес буйынса яңы үҙгәрештәрҙе бүлеү",
 	"code-stats-new-path": "$1 адресы өсөн яңы үҙгәрештәр",
@@ -184,7 +186,9 @@
 	"action-codereview-add-tag": "Өлгөләргә билдәләр өҫтәү",
 	"action-codereview-remove-tag": "Өлгөләрҙән билдәләрҙе юйыу",
 	"action-codereview-post-comment": "Өлгөләргә аңлатмалар өҫтәү",
+	"action-codereview-set-status": "Ревизиялар статусын үҙгәртеү",
 	"action-codereview-signoff": "Өлгөләрҙе раҫлау",
+	"action-codereview-link-user": "Авторҙарҙы вики ҡатнашыусыларға бәйләү",
 	"apihelp-query+coderevisions-param-prop": "Ниндәй үҙенсәлекте ҡайтарырға",
 	"apihelp-query+codetags-param-repo": "Һаҡлағыс атамаһы"
 }
