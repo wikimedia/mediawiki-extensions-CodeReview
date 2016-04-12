@@ -11,6 +11,7 @@
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:CodeReview",
 	"descriptionmsg": "codereview-desc",
+	"license-name": "GPL-2.0+",
 	"type": "specialpage",
 	"config": {
 		"CodeReviewMaxDiffSize": 500000,
