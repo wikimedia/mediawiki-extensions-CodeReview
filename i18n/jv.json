@@ -102,7 +102,7 @@
 	"code-signoff-legend": "Tambah kaspakatan",
 	"code-signoff-submit": "Spakat",
 	"code-signoff-strike": "Orèk kaspakatan kapilih",
-	"code-signoff-signoff": "Spakati rèvisi iki minangka:",
+	"code-signoff-signoff": "Tandha tangani owahan iki minangka:",
 	"code-signoff-flag-inspected": "Diinspèksi",
 	"code-signoff-flag-tested": "Dijajal",
 	"code-signoff-field-user": "Panganggo",
@@ -177,8 +177,5 @@
 	"action-codereview-signoff": "spakati benahan",
 	"action-codereview-link-user": "hubungaké panganggit karo panganggo wiki",
 	"action-codereview-associate": "tata asosiasi benahan",
-	"action-codereview-review-own": "tandhai benahan Sampéyan dhéwé minangka \"{{int:code-status-ok}}\" utawa \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Pangurus SVN",
-	"group-svnadmins-member": "{{GENDER:$1|Pangurus SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Pangurus SVN"
+	"action-codereview-review-own": "tandhai benahan Sampéyan dhéwé minangka \"{{int:code-status-ok}}\" utawa \"{{int:code-status-resolved}}\""
 }
