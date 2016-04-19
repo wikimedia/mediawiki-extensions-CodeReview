@@ -4,7 +4,8 @@
 			"Krinkle",
 			"Mihxil",
 			"SPQRobin",
-			"Siebrand"
+			"Siebrand",
+			"Jeleniccz"
 		]
 	},
 	"code": "Codecontrole",
@@ -167,7 +168,7 @@
 	"repoadmin-edit-bug": "Bugzilla-pad:",
 	"repoadmin-edit-view": "ViewVC-pad:",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "De repository \"[[Special:Code/$1|$1]]\" is aangepast.",
+	"repoadmin-edit-sucess": "Het archief \"[[Special:Code/$1|$1]]\" is gewijzigd.",
 	"repoadmin-nav": "repositorybeheer",
 	"right-repoadmin": "Coderepositories beheren",
 	"right-codereview-use": "[[Special:Code|Hulpprogramma voor codecontrole]] gebruiken",
@@ -189,9 +190,6 @@
 	"action-codereview-link-user": "auteurs aan wikigebruikers te koppelen",
 	"action-codereview-associate": "versiekoppelingen toe te voegen of te verwijderen",
 	"action-codereview-review-own": "eigen versies als \"{{int:code-status-ok}} of \"{{int:code-status-resolved}}\" te markeren",
-	"group-svnadmins": "SVN-beheerders",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-beheerder}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-beheerders",
 	"apihelp-codediff-description": "Opgemaakte verschillen ophalen voor CodeReview's versiecontrolesysteem.",
 	"apihelp-codediff-param-repo": "Naam van de te bekijken repository.",
 	"apihelp-codediff-param-rev": "Versienummer om de diff voor op te halen.",
