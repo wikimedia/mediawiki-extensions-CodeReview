@@ -433,8 +433,11 @@ class SvnRevTablePager extends SvnTablePager {
 			return $this->getLanguage()->timeanddate( $value, true );
 		case 'comments':
 			if ( $value ) {
-				$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() } );
-				$special->setFragment( '#code-comments' );
+				$special = SpecialPage::getTitleFor(
+					'Code',
+					$this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() },
+					'code-comments'
+				);
 				return Linker::link( $special, $this->getLanguage()->formatNum( htmlspecialchars( $value ) ) );
 			} else {
 				return '-';

@@ -777,8 +777,7 @@ class CodeRevisionView extends CodeView {
 	protected function commentLink( $commentId ) {
 		$repo = $this->mRepo->getName();
 		$rev = $this->mRev->getId();
-		$title = SpecialPage::getTitleFor( 'Code', "$repo/$rev" );
-		$title->setFragment( "#c{$commentId}" );
+		$title = SpecialPage::getTitleFor( 'Code', "$repo/$rev", "c{$commentId}" );
 		return $title;
 	}
 
@@ -866,8 +865,7 @@ class CodeRevisionView extends CodeView {
 		}
 		$repo = $this->mRepo->getName();
 		$rev = $this->mRev->getId();
-		$self = SpecialPage::getTitleFor( 'Code', "$repo/$rev/reply/$id" );
-		$self->setFragment( "#c$id" );
+		$self = SpecialPage::getTitleFor( 'Code', "$repo/$rev/reply/$id", "c$id" );
 		// @todo FIXME: Hard coded brackets.
 		return '[' . Linker::link( $self, wfMessage( 'codereview-reply-link' )->escaped() ) . ']';
 	}

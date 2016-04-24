@@ -1332,12 +1332,13 @@ class CodeRevision {
 	 * @return string
 	 */
 	public function getCanonicalUrl( $commentId = 0 ) {
-		$title = SpecialPage::getTitleFor( 'Code', $this->repo->getName() . '/' . $this->id );
-
 		# Append comment id if not null, empty string or zero
-		if ( $commentId ) {
-			$title->setFragment( "#c{$commentId}" );
-		}
+		$fragment = $commentId ? "c{$commentId}" : '';
+		$title = SpecialPage::getTitleFor(
+			'Code',
+			$this->repo->getName() . '/' . $this->id,
+			$fragment
+		);
 
 		return $title->getCanonicalUrl();
 	}
