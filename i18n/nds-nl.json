@@ -9,5 +9,6 @@
 	"code-rev-message": "Opmarking:",
 	"code-rev-repo": "Repositorium:",
 	"code-rev-rev": "Versie:",
-	"code-rev-rev-viewvc": "in ViewVC"
+	"code-rev-rev-viewvc": "in ViewVC",
+	"code-stats": "staotistieken"
 }
