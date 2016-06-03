@@ -5,8 +5,8 @@
 			"McDutchie"
 		]
 	},
-	"code": "Verificacion del còde",
-	"code-rev-title": "$1 - Revision del còde",
+	"code": "Verificacion del còdi",
+	"code-rev-title": "$1 - Revision del còdi",
 	"code-comments": "Nòtas de relectura",
 	"code-references": "Referéncias cap a las revisions",
 	"code-change-status": "a modificat l''''estat''' de $1",
@@ -16,7 +16,7 @@
 	"code-old-status": "Estatut ancian",
 	"code-new-status": "Estatut novèl",
 	"code-prop-changes": "Estatut e jornal de balisatge",
-	"codereview-desc": "[[Special:Code|Aisinas per tornar veire lo còde]] amb [[Special:RepoAdmin|supòrt de Subversion]]",
+	"codereview-desc": "[[Special:Code|Aisinas per tornar veire lo còdi]] amb [[Special:RepoAdmin|supòrt de Subversion]]",
 	"code-no-repo": "Pas de depaus configurat !",
 	"code-load-diff": "Cargament del dif…",
 	"code-notes": "comentaris recents",
@@ -120,7 +120,7 @@
 	"codereview-email-subj": "[$1 $2] : Comentari novèl apondut",
 	"codereview-email-body": "L'utilizaire « $1 » a publicat un comentari sus $3.\nLigam ipertèxte complet : $2\n\nResumit de la modificacion : $5\n\nComentari : $4",
 	"codereview-email-subj2": "[$1 $2] : Modificacion seguida",
-	"codereview-email-body2": "L’utilizaire « $1 » a fach de modificacions sus $2.\n\nURL completa de la revision seguida : $5\nResumit de la modificacion :\n\n$6\n\nURL completa : $3\nResumit de la modificacion : $4",
+	"codereview-email-body2": "L’utilizaire « $1 » a fait de modificacions sus $2.\n\nURL completa de la revision seguida : $5\nResumit de la modificacion :\n\n$6\n\nURL completa : $3\nResumit de la modificacion : $4",
 	"codereview-email-subj3": "[$1 $2] : l’estat de la version a cambiat",
 	"codereview-email-body3": "L’utilizaire « $1 » a modificat l’estat de $2.\n\nAncian estat : $3\nNovèl estat : $4\n\nURL completa : $5\nResumit de la modificacion :\n\n$6",
 	"code-stats": "estatisticas",
@@ -137,7 +137,7 @@
 	"repoadmin-edit-button": "D'acòrdi",
 	"repoadmin-edit-sucess": "Lo depaux \"[[Special:Code/$1|$1]]\" es estat modificat amb succès.",
 	"repoadmin-nav": "administracion del depaus",
-	"right-repoadmin": "Administrar los depauses de còde",
+	"right-repoadmin": "Administrar los depauses de còdi",
 	"right-codereview-use": "Utilizar Special:Code",
 	"right-codereview-add-tag": "Apondre d'atributs novèls a las revisions",
 	"right-codereview-remove-tag": "Levar d'atributs a las revisions",
@@ -146,9 +146,6 @@
 	"right-codereview-signoff": "Aprovar de revisions",
 	"right-codereview-link-user": "Liga los autors als utilizaires wiki",
 	"right-codereview-associate": "gerir las associacions de revisions",
-	"action-repoadmin": "gerir los depauses de còde",
-	"action-codereview-associate": "gerir las associacions entre revisions",
-	"group-svnadmins": "Administrators SVN",
-	"group-svnadmins-member": "{{GENDER:$1|administrator SVN|administratritz SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Administrators SVN"
+	"action-repoadmin": "gerir los depauses de còdi",
+	"action-codereview-associate": "gerir las associacions entre revisions"
 }
