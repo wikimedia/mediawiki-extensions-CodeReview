@@ -16,7 +16,8 @@
 			"Mywood",
 			"Impersonator 1",
 			"Liuxinyu970226",
-			"Macofe"
+			"Macofe",
+			"Tomchen1989"
 		]
 	},
 	"code": "代码检查",
@@ -98,7 +99,7 @@
 	"code-rev-diff": "差异",
 	"code-rev-diff-link": "差异",
 	"code-rev-diff-too-large": "差异过大，无法显示。",
-	"code-rev-purge-link": "清除",
+	"code-rev-purge-link": "刷新缓存",
 	"code-rev-total": "结果总数：$1",
 	"code-rev-not-found": "版本'''$1'''不存在！",
 	"code-rev-history-link": "历史",

@@ -13,7 +13,8 @@
 			"Waihorace",
 			"Cwlin0416",
 			"LNDDYL",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Tomchen1989"
 		]
 	},
 	"code": "程式碼審查",
@@ -95,7 +96,7 @@
 	"code-rev-diff": "差異",
 	"code-rev-diff-link": "差異",
 	"code-rev-diff-too-large": "差異太大，無法顯示。",
-	"code-rev-purge-link": "清除",
+	"code-rev-purge-link": "清除快取",
 	"code-rev-total": "結果總計：$1",
 	"code-rev-not-found": "修訂 '''$1''' 不存在！",
 	"code-rev-history-link": "歷史記錄",

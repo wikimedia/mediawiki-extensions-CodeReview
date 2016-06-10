@@ -109,7 +109,7 @@
 	"code-rev-diff": "Used as HTML <code><nowiki><h2></nowiki></code> heading.\n\nFollowed by the Purge link which is labeled {{msg-mw|Code-rev-purge-link}}.\n{{Identical|Diff}}",
 	"code-rev-diff-link": "Used as external link text.\n\nThe link points to the diff page on ViewVC.\n{{Identical|Diff}}",
 	"code-rev-diff-too-large": "Used as error message if the diff is larger than <code>$wgCodeReviewMaxDiffSize</code>.",
-	"code-rev-purge-link": "Used as Purge link text.\n\nPreceded by {{msg-mw|Code-rev-diff}}.",
+	"code-rev-purge-link": "Used as Purge link text.\n\nPreceded by {{msg-mw|Code-rev-diff}}.\n{{Identical|Purge}}",
 	"code-rev-total": "Parameters:\n* $1 - number of revisions",
 	"code-rev-not-found": "Parameters:\n* $1 - revision ID",
 	"code-rev-history-link": "Used as link text.\n\nThe link points to [[Special:Code]].\n\nPreceded by any one of the following messages:\n* {{msg-mw|Code-rev-modified-a}}\n* {{msg-mw|Code-rev-modified-r}}\n* {{msg-mw|Code-rev-modified-d}}\n* {{msg-mw|Code-rev-modified-m}}\n{{Identical|History}}",
