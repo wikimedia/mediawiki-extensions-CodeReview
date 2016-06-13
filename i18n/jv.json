@@ -22,7 +22,7 @@
 	"code-need-repoadmin-rights": "hak repoadmin dibutuhaké kanggo bisa nggawé Panyimpenan",
 	"code-need-group-with-rights": "Ora ana klompok mawa hak repoadmin. Mangga tambah siji kanggo bisa nambah Panyimpenan anyar",
 	"code-repo-not-found": "Panyimpenan '''$1''' ora ana!",
-	"code-load-diff": "Ngemot prabédan...",
+	"code-load-diff": "Ngamot béda...",
 	"code-notes": "Komentar anyar",
 	"code-statuschanges": "owahan status",
 	"code-mycommits": "komitmen kula",
