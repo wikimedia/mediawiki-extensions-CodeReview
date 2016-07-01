@@ -8,7 +8,9 @@
 			"Kwj2772",
 			"Yknok29",
 			"아라",
-			"Mooozi"
+			"Mooozi",
+			"Revi",
+			"Ykhwong"
 		]
 	},
 	"code": "코드 검토",
@@ -171,7 +173,7 @@
 	"repoadmin-edit-bug": "버그질라 경로:",
 	"repoadmin-edit-view": "ViewVC 경로:",
 	"repoadmin-edit-button": "확인",
-	"repoadmin-edit-sucess": "저장소 \"[[Special:Code/$1|$1]]\"이 성공적으로 바뀌었습니다.",
+	"repoadmin-edit-sucess": "\"[[Special:Code/$1|$1]]\" 저장소가 바뀌었습니다.",
 	"repoadmin-nav": "저장소 관리",
 	"right-repoadmin": "코드 저장소 관리",
 	"right-codereview-use": "Special:Code 사용",
@@ -193,11 +195,9 @@
 	"action-codereview-link-user": "위키 사용자에게 만든이 링크",
 	"action-codereview-associate": "판 연관 관리",
 	"action-codereview-review-own": "\"{{int:code-status-ok}}\" 또는 \"{{int:code-status-resolved}}\"에 대해 자신의 판을 표시",
-	"group-svnadmins": "SVN 관리자",
-	"group-svnadmins-member": "{{GENDER:$1|SVN 관리자}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN 관리자",
-	"group-svnadmins.css": "/* 이 CSS 설정은 SVN 관리자에만 적용됩니다 */",
-	"group-svnadmins.js": "/* 이 자바스크립트 설정은 SVN 관리자에만 적용됩니다 */",
+	"apihelp-codediff-param-repo": "확인할 저장소의 이름.",
+	"apihelp-codediff-param-rev": "차이를 불러올 판 ID.",
+	"apihelp-codediff-example-1": "미디어위키 판 42080의 차이를 불러오기",
 	"apihelp-query+codepaths-param-repo": "저장소의 이름",
 	"apihelp-query+coderevisions-param-repo": "저장소의 이름"
 }
