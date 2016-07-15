@@ -145,7 +145,7 @@
 	"repoadmin-edit-bug": "Bugzilla-rada:",
 	"repoadmin-edit-view": "ViewVC-rada:",
 	"repoadmin-edit-button": "Sobib",
-	"repoadmin-edit-sucess": "Hoidla \"[[Special:Code/$1|$1]]\" on edukalt muudetud.",
+	"repoadmin-edit-sucess": "Hoidla \"[[Special:Code/$1|$1]]\" on muudetud.",
 	"repoadmin-nav": "hoidla haldamine",
 	"right-repoadmin": "Hallata koodihoidlaid",
 	"right-codereview-use": "Kasutada erilehekülge Special:Code",
@@ -163,8 +163,5 @@
 	"action-codereview-post-comment": "redaktsioonidele kommentaare lisada",
 	"action-codereview-set-status": "redaktsioonide olekut muuta",
 	"action-codereview-link-user": "autoreid vikikasutajatega siduda",
-	"action-codereview-review-own": "märkida enda redaktsioonide olekuks \"{{int:code-status-ok}}\" ega \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "SVN-administraatorid",
-	"group-svnadmins-member": "SVN-administraator",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-administraatorid"
+	"action-codereview-review-own": "märkida enda redaktsioonide olekuks \"{{int:code-status-ok}}\" ega \"{{int:code-status-resolved}}\""
 }

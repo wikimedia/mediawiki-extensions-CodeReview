@@ -213,7 +213,7 @@
 	"apihelp-query+codecomments-param-repo": "Назив на складиштето.",
 	"apihelp-query+codecomments-param-limit": "Колку коментари да се дадат.",
 	"apihelp-query+codecomments-param-start": "Од кој датум и време да почне исписот.",
-	"apihelp-query+codecomments-param-prop": "Кои својства да се даваат. преработка (revision) е застарен алијас за состојба (status).",
+	"apihelp-query+codecomments-param-prop": "Кои својства да се даваат. преработка е застарен истозначник за состојба.",
 	"apihelp-query+codecomments-example-1": "Испиши коментари на складиштето на МедијаВики",
 	"apihelp-query+codecomments-example-2": "Прикажни информации за коментарите на складиштето на МедијаВики",
 	"apihelp-query+codepaths-description": "Дај список на 10 патеки во дадено складиште, според претставката на вносната патека.",
