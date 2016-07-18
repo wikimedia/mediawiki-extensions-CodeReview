@@ -50,7 +50,8 @@
 		"CodeReviewAutoTagPath": {},
 		"CodeReviewFixmePerPath": {},
 		"CodeReviewNewPerPath": {},
-		"CodeReviewRC": []
+		"CodeReviewRC": [],
+		"CodeReviewListSpecialPage": true
 	},
 	"ExtensionMessagesFiles": {
 		"CodeReviewAliases": "CodeReview.alias.php"

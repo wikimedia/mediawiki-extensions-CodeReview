@@ -143,4 +143,11 @@ class SpecialCode extends SpecialPage {
 	protected function getGroupName() {
 		return 'developer';
 	}
+
+	/**
+	 * Only list me on Special:SpecialPages when configured.
+	 */
+	public function isListed() {
+		return $this->getConfig()->get( 'CodeReviewListSpecialPage' );
+	}
 }
