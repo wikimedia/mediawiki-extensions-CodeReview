@@ -18,6 +18,8 @@ class SvnImport extends Maintenance {
 		$this->addArg( 'start', "The revision to begin the import from.  If not specified then " .
 						"it starts from the last repo imported to the wiki.  Ignored if " .
 						"'all' is specified for <repo>", false );
+
+		$this->requireExtension( 'CodeReview' );
 	}
 
 	public function execute() {

@@ -11,6 +11,8 @@ class RepopulateCodePaths extends Maintenance {
 		$this->mDescription = "Rebuilds all code paths to support more efficient searching";
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 		$this->addArg( 'revisions', "The revisions to set status for. Format: start:end" );
+
+		$this->requireExtension( 'CodeReview' );
 	}
 
 	public function execute() {
