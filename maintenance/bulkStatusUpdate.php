@@ -17,6 +17,8 @@ class BulkStatusUpdate extends Maintenance {
 			. "'resolved', 'ok', 'deferred', 'old'" );
 		$this->addArg( 'user', "Username for whom to accredit the state changes to." .
 				"The User needs to have the 'codereview-set-status' right" );
+
+		$this->requireExtension( 'CodeReview' );
 	}
 
 	public function execute() {

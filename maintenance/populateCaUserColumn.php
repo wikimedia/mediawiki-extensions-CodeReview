@@ -17,6 +17,8 @@ class PopulateCaUserColumn extends Maintenance {
 		parent::__construct();
 		$this->mDescription = 'Populates the code_authors.ca_user column so that Renameuser doesn\'t get confused.';
 		$this->addOption( 'repo', 'The name of the repository. Cannot be all.', true, true );
+
+		$this->requireExtension( 'CodeReview' );
 	}
 
 	public function execute() {

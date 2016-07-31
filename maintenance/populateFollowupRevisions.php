@@ -13,6 +13,8 @@ class PopulateFollowupRevisions extends Maintenance {
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 		$this->addArg( 'revisions', "The revisions to set followups revisions for. Format: start:end" );
 		$this->addOption( 'dry-run', 'Perform a dry run' );
+
+		$this->requireExtension( 'CodeReview' );
 	}
 
 	public function execute() {
