@@ -11,6 +11,7 @@ class DeleteBadTags extends Maintenance {
 		parent::__construct();
 		$this->mDescription = "Delete empty Code Review tags";
 		$this->addOption( 'dry-run', 'Don\'t actually delete bad tags, just compile statistics.' );
+		$this->requireExtension( 'CodeReview' );
 	}
 
 	public function execute() {
