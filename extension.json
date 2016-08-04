@@ -79,9 +79,6 @@
 		],
 		"UserMergeAccountFields": [
 			"CodeReviewHooks::onUserMergeAccountFields"
-		],
-		"UnitTestsList": [
-			"CodeReviewHooks::onUnitTestsList"
 		]
 	},
 	"MessagesDirs": {

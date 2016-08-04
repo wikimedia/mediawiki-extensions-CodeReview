@@ -163,17 +163,4 @@ class CodeReviewHooks {
 		}
 		return true;
 	}
-
-	/**
-	 * Register PHP unit tests.
-	 *
-	 * @param $files array
-	 * @return bool
-	 */
-	public static function onUnitTestsList( &$files ) {
-		$files[] = __DIR__ . '/tests/CodeReviewApiTest.php';
-		$files[] = __DIR__ . '/tests/CodeReviewTest.php';
-		$files[] = __DIR__ . '/tests/DiffHighlighterTest.php';
-		return true;
-	}
 }
