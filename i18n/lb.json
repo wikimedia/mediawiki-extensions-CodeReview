@@ -144,7 +144,7 @@
 	"repoadmin-edit-bug": "Bugzilla Pad:",
 	"repoadmin-edit-view": "Pad op ViewVC:",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "De ''Repositoire'' \"[[Special:Code/$1|$1]]\" gouf geännert.",
+	"repoadmin-edit-sucess": "De Repositoire \"[[Special:Code/$1|$1]]\" gouf geännert.",
 	"right-codereview-use": "Spezial benotzen: Code",
 	"right-codereview-add-tag": "Nei Markéierunge bei d'Versiounen derbäisetzen",
 	"right-codereview-remove-tag": "Markéierungen aus Versiounen eraushuelen",
@@ -160,8 +160,5 @@
 	"action-codereview-link-user": "Auteure mat Wiki-Benotzer verbannen (verlinken)",
 	"action-codereview-associate": "Associatioune vu Versioune geréieren",
 	"action-codereview-review-own": "markéiert Är eege Versiounen als \"{{int:code-status-ok}}\" oder \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "SVN-Administrateuren",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-Administrateur|SVN-Administratrice}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-Administrateuren",
 	"apihelp-coderevisionupdate-param-addreferences": "Referenzen an dës Versioun dobäisetzen."
 }
