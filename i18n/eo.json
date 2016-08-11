@@ -3,7 +3,8 @@
 		"authors": [
 			"Blahma",
 			"Castelobranco",
-			"Yekrats"
+			"Yekrats",
+			"Robin van der Vliet"
 		]
 	},
 	"code": "Kontrolo de Programkodo",
@@ -34,7 +35,7 @@
 	"code-tags-no-tags": "Neniuj etikedoj en ĉi tiu deponujo.",
 	"code-authors-text": "Jen listo de dosierujaj aŭtoroj ordigitaj laŭ sendita nomo. Loka vikikontoj estas montrataj en parentezoj. Datenoj eble estas en kaŝmemoro.",
 	"code-author-haslink": "Ĉi tiu aŭtoro estas ligita al la vikiuzanto $1",
-	"code-author-orphan": "SVN-uzulo/Aŭtoro $1 ne havas ligilon kun vikia konto",
+	"code-author-orphan": "SVN-uzanto/aŭtoro $1 ne havas ligilon kun vikia konto",
 	"code-author-dolink": "Ligi ĉi tiun autoron al vikiuzanto:",
 	"code-author-alterlink": "Ŝanĝi la vikian uzanton ligitan al ĉi tiu aŭtoro:",
 	"code-author-orunlink": "Aŭ malligi ĉi tiun vikian uzanton:",
@@ -176,8 +177,5 @@
 	"right-codereview-signoff": "Aprobi reviziojn",
 	"right-codereview-link-user": "Ligi aŭtorojn al viki-uzantoj",
 	"right-codereview-associate": "Trakti asociojn de revizioj",
-	"right-codereview-review-own": "Marki viajn proprajn reviziojn kiel \"{{int:code-status-ok}}\" aŭ \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "SVN-administrantoj",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-administranto|SVN-administrantino}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-administrantoj"
+	"right-codereview-review-own": "Marki viajn proprajn reviziojn kiel \"{{int:code-status-ok}}\" aŭ \"{{int:code-status-resolved}}\""
 }
