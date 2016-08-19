@@ -6,7 +6,8 @@
 			"Mirzali",
 			"Olvörg",
 			"Xoser",
-			"Marmase"
+			"Marmase",
+			"Kumkumuk"
 		]
 	},
 	"code": "Kontrolê kodî",
@@ -102,7 +103,7 @@
 	"code-rev-submit-next": "Keyd ke & neresolve binî",
 	"code-batch-status": "Vurnayışê weziyeti:",
 	"code-batch-tags": "Etiketan bivurne:",
-	"codereview-batch-title": "Revizyonanê ke ti specîfe kerd înan bivurne",
+	"codereview-batch-title": "Weçinaye revizyona pêron bıvurnê",
 	"codereview-batch-submit": "Qeyd ke",
 	"code-releasenotes": "notan verade",
 	"code-release-legend": "Notanê releaseyî viraze",
@@ -138,8 +139,5 @@
 	"right-codereview-remove-tag": "Revîzyonî ra etîketan de keno",
 	"right-codereview-post-comment": "Revîzyonî rê xulasa de keno",
 	"right-codereview-set-status": "Weziyetê çımraviyarnayışi bıvurne",
-	"right-codereview-link-user": "Nuştekarî, karberanê wîkî rê link keno",
-	"group-svnadmins": "SVN admini",
-	"group-svnadmins-member": "{{GENDER:$1|SVN admin}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN admini"
+	"right-codereview-link-user": "Nuştekarî, karberanê wîkî rê link keno"
 }
