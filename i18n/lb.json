@@ -89,7 +89,7 @@
 	"code-status-resolved": "geléist",
 	"code-status-desc-resolved": "D'Versioun hat e Feeler deen duerch eng méi nei Versioun verbessert gouf.",
 	"code-status-ok": "ok",
-	"code-status-desc-ok": "Versioun komplett nogekuckt an deen deen dat gemaacht huet ass sécher datt et op all Manéier gutt ass.",
+	"code-status-desc-ok": "Versioun komplett nogekuckt, an deen, deen dat gemaach huet, ass sécher, datt et op all Manéier gutt ass.",
 	"code-status-deferred": "zréckgestallt",
 	"code-status-desc-deferred": "D'Versioun muss net nogekuckt ginn.",
 	"code-status-old": "al",
