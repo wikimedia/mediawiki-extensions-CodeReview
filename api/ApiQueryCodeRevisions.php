@@ -119,11 +119,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			$item['path'] = $row->cr_path;
 		}
 		if ( isset( $this->props['message'] ) ) {
-			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				ApiResult::setContentValue( $item, 'message', $row->cr_message );
-			} else {
-				ApiResult::setContent( $item, $row->cr_message );
-			}
+			ApiResult::setContentValue( $item, 'message', $row->cr_message );
 		}
 		if ( isset( $this->props['author'] ) ) {
 			$item['author'] = $row->cr_author;
@@ -168,11 +164,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 				'timestamp' => wfTimestamp( TS_ISO_8601, $ref->cr_timestamp ),
 				'author' => $ref->cr_author ,
 			);
-			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				ApiResult::setContentValue( $refItem, 'message', $ref->cr_message );
-			} else {
-				ApiResult::setContent( $refItem, $ref->cr_message );
-			}
+			ApiResult::setContentValue( $refItem, 'message', $ref->cr_message );
 
 			$items[] = $refItem;
 		}
@@ -217,38 +209,6 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 					'followedup',
 				),
 			),
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		$p = $this->getModulePrefix();
-		return array(
-			'repo' => 'Name of the repository',
-			'limit' => 'How many revisions to return',
-			'path' => 'Only show revisions in these path(s)',
-			'start' => 'Timestamp to start listing at',
-			'revs' => "List of revisions to get information about. Overrides {$p}start",
-			'prop' => 'Which properties to return',
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'List revisions in CodeReview.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=query&list=coderevisions&crrepo=MediaWiki',
-			'api.php?action=query&list=coderevisions&crrepo=MediaWiki&crprop=revid|author|status|timestamp|tags',
 		);
 	}
 

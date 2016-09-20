@@ -93,11 +93,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 			$item['status'] = $row->cr_status;
 		}
 		if ( isset( $this->props['text'] ) ) {
-			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				ApiResult::setContentValue( $item, 'text', $row->cc_text );
-			} else {
-				ApiResult::setContent( $item, $row->cc_text );
-			}
+			ApiResult::setContentValue( $item, 'text', $row->cc_text );
 		}
 		return $item;
 	}
@@ -130,35 +126,6 @@ class ApiQueryCodeComments extends ApiQueryBase {
 					'revision',
 				),
 			),
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'repo' => 'Name of the repository',
-			'limit' => 'How many comments to return',
-			'start' => 'Timestamp to start listing at',
-			'prop' => 'Which properties to return. revision is a deprecated alias for status',
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'List comments on revisions in CodeReview.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=query&list=codecomments&ccrepo=MediaWiki',
-			'api.php?action=query&list=codecomments&ccrepo=MediaWiki&ccprop=timestamp|user|status|text',
 		);
 	}
 

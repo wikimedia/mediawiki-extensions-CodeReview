@@ -54,11 +54,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 
 		foreach ( $res as $row ) {
 			$item = array();
-			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				ApiResult::setContentValue( $item, 'path', $row->cp_path );
-			} else {
-				ApiResult::setContent( $item, $row->cp_path );
-			}
+			ApiResult::setContentValue( $item, 'path', $row->cp_path );
 			$data[] = $item;
 		}
 
@@ -76,32 +72,6 @@ class ApiQueryCodePaths extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
 			),
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'repo' => 'Name of the repository',
-			'path' => 'Path prefix to filter on',
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Get a list of 10 paths in a given repository, based on the input path prefix.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=query&list=codepaths&cprepo=MediaWiki&cppath=/trunk/phase3',
 		);
 	}
 

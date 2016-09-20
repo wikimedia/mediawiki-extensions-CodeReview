@@ -103,10 +103,6 @@ class ApiRevisionUpdate extends ApiBase {
 		return 'csrf';
 	}
 
-	public function getTokenSalt() {
-		return '';
-	}
-
 	public function getAllowedParams() {
 		$flags = CodeRevision::getPossibleFlags();
 		return array(
@@ -158,45 +154,6 @@ class ApiRevisionUpdate extends ApiBase {
 				ApiBase::PARAM_ISMULTI => true,
 			),
 			'token' => null,
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'repo' => 'Name of repository',
-			'rev' => 'Revision ID number',
-			'comment' => 'Comment to add to the revision',
-			'status' => 'Status to set the revision to',
-			'addtags' => 'Tags to be added to the revision',
-			'removetags' => 'Tags to be removed from the revision',
-			'addflags' => 'Code Signoff flags to assign to the revision by the current user',
-			'removeflags' => 'Code Signoff flags to strike from the revision by the current user',
-			'addreferences' => 'Add references to this revision',
-			'removereferences' => 'Remove references from this revision',
-			'addreferenced' => 'Add referenced revisions from this revision',
-			'removereferenced' => 'Remove referenced revisions from this revision',
-			'token' => 'Edit token. You can get one of these through prop=info.' ,
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return array(
-			'Submit comments, new status and tags to a revision.'
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=coderevisionupdate&repo=MediaWiki&rev=1&status=fixme',
 		);
 	}
 
