@@ -55,7 +55,7 @@
 	"code-author-orunlink": "或取消该Wiki用户的关联：",
 	"code-author-name": "输入用户名：",
 	"code-author-success": "作者$1已与Wiki用户$2关联",
-	"code-author-link": "关联？",
+	"code-author-link": "链接么？",
 	"code-author-unlink": "取消关联？",
 	"code-author-unlinksuccess": "取消作者$1的关联",
 	"code-author-badtoken": "试图执行操作的会话错误。",
