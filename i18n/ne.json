@@ -18,5 +18,6 @@
 	"code-rev-message": "टिप्पणी :",
 	"code-status-new": "नयाँ",
 	"code-status-ok": "हुन्छ",
-	"code-signoff-field-user": "प्रयोगकर्ता"
+	"code-signoff-field-user": "प्रयोगकर्ता",
+	"code-rev-submit": "परिवर्तन सङ्ग्रह गर्ने"
 }

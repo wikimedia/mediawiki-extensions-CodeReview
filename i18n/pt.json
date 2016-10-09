@@ -185,7 +185,7 @@
 	"right-codereview-link-user": "Associar autores a utilizadores wiki",
 	"right-codereview-associate": "Administrar a associação de revisões",
 	"right-codereview-review-own": "Marcar as suas próprias revisões como \"{{int:code-status-ok}}\" or \"{{int:code-status-resolved}}\"",
-	"action-repoadmin": "gerenciar repositórios de código",
+	"action-repoadmin": "administrar repositórios de código",
 	"action-codereview-use": "utilização de Special:Code",
 	"action-codereview-add-tag": "acrescentar novas etiquetas às revisões",
 	"action-codereview-remove-tag": "remover etiquetas de revisões",
