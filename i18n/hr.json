@@ -7,7 +7,8 @@
 			"Herr Mlinka",
 			"MaGa",
 			"Roberta F.",
-			"SpeedyGonsales"
+			"SpeedyGonsales",
+			"Bugoslav"
 		]
 	},
 	"code": "Pregled koda",
@@ -85,8 +86,8 @@
 	"code-rev-comment-by": "Komentirao $1",
 	"code-rev-comment-preview": "Pregled",
 	"code-rev-inline-preview": "Pregled:",
-	"code-rev-diff": "Raz",
-	"code-rev-diff-link": "raz",
+	"code-rev-diff": "Razl",
+	"code-rev-diff-link": "razl",
 	"code-rev-diff-too-large": "Razlika je prevelika za prikaz.",
 	"code-rev-purge-link": "očisti",
 	"code-rev-total": "Ukupan broj rezultata: $1",
@@ -168,8 +169,5 @@
 	"right-codereview-post-comment": "Dodavanje komentara na reviziju",
 	"right-codereview-set-status": "Promijeni status revizije",
 	"right-codereview-signoff": "Završi izmjene revizija",
-	"right-codereview-link-user": "Povezivanje autora s wiki suradnikom",
-	"group-svnadmins": "SVN administratori",
-	"group-svnadmins-member": "SVN administrator",
-	"grouppage-svnadmins": "{{ns:project}}:SVN administratori"
+	"right-codereview-link-user": "Povezivanje autora s wiki suradnikom"
 }
