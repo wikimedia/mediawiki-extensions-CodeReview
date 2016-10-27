@@ -194,12 +194,10 @@
 	"action-codereview-link-user": "połącz autorów z użytkownikami wiki",
 	"action-codereview-associate": "zarządzaj powiązaniami wersji",
 	"action-codereview-review-own": "zaznacz własne \"{{int:code-status-ok}}\" lub \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Administratorzy SVN",
-	"group-svnadmins-member": "{{GENDER:$1|administrator SVN|administratorka SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Administratorzy SVN",
 	"apihelp-coderevisionupdate-param-repo": "Nazwa repozytorium.",
 	"apihelp-codeupdate-param-repo": "Nazwa repozytorium do aktualizacji.",
 	"apihelp-query+codecomments-param-repo": "Nazwa repozytorium.",
+	"apihelp-query+codecomments-param-limit": "Liczba komentarzy do zwrócenia.",
 	"apihelp-query+codepaths-param-repo": "Nazwa repozytorium.",
 	"apihelp-query+coderevisions-param-repo": "Nazwa repozytorium.",
 	"apihelp-query+codetags-param-repo": "Nazwa repozytorium."
