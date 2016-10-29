@@ -194,5 +194,6 @@
 	"action-codereview-signoff": "desconectar-se das revisões",
 	"action-codereview-link-user": "ligar autores a utilizadores wiki",
 	"action-codereview-associate": "gerir as associações de revisões",
-	"action-codereview-review-own": "assinalar as suas próprias revisões como \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\""
+	"action-codereview-review-own": "assinalar as suas próprias revisões como \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\"",
+	"apihelp-query+codepaths-description": "Obter uma lista de 10 caminhos num dado repositório, com base no prefixo do caminho de entrada."
 }
