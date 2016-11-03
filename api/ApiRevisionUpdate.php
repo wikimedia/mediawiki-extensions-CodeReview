@@ -26,18 +26,24 @@ class ApiRevisionUpdate extends ApiBase {
 	public function execute() {
 		$user = $this->getUser();
 		// Before doing anything at all, let's check permissions
-		if ( !$user->isAllowed( 'codereview-use' ) ) {
-			$this->dieUsage( 'You don\'t have permission to update code', 'permissiondenied' );
+		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+			$this->checkUserRightsAny( 'codereview-use' );
+		} else {
+			if ( !$user->isAllowed( 'codereview-use' ) ) {
+				 $this->dieUsage( 'You don\'t have permission to update code', 'permissiondenied' );
+			}
 		}
 
 		$params = $this->extractRequestParams();
 
-		if (
-			$params['comment'] &&
-			!$user->isAllowed( 'codereview-post-comment' )
-		)
-		{
-			$this->dieUsage( 'You do not have permission to post comment', 'permissiondenied' );
+		if ( $params['comment'] ) {
+			if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+				$this->checkUserRightsAny( 'codereview-post-comment' );
+			} else {
+				if ( !$user->isAllowed( 'codereview-post-comment' ) ) {
+					$this->dieUsage( 'You do not have permission to post comment', 'permissiondenied' );
+				}
+			}
 		}
 
 		global $wgCodeReviewInlineComments;
@@ -46,18 +52,34 @@ class ApiRevisionUpdate extends ApiBase {
 			&& isset( $params['patchline'] )
 		)
 		{
-			$this->dieUsageMsg( "Can not attach a comment to a diff when inline commenting is disabled (\$wgCodeReviewInlineComments is false)." );
+			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
+				$this->dieWithError( 'apierror-codereview-inlinecommentingdisabled', 'inlinecommentingdisabled' );
+			} else {
+				$this->dieUsage(
+					'Can not attach a comment to a diff when inline commenting is disabled '
+						. '($wgCodeReviewInlineComments is false).',
+					'inlinecommentingdisabled'
+				);
+			}
 		}
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
-			$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
+			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
+				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+			} else {
+				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
+			}
 		}
 
 		$rev = $repo->getRevision( $params['rev'] );
 
 		if ( !$rev ) {
-			$this->dieUsage( "There is no revision with ID {$params['rev']}", 'nosuchrev' );
+			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
+				$this->dieWithError( array( 'apierror-nosuchrevid', $params['rev'] ) );
+			} else {
+				$this->dieUsage( "There is no revision with ID {$params['rev']}", 'nosuchrev' );
+			}
 		}
 
 		$revisionCommitter = new CodeRevisionCommitterApi( $repo, $rev );

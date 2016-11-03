@@ -259,5 +259,7 @@
 	"apihelp-query+coderevisions-example-2": "{{doc-apihelp-example|query+coderevisions}}",
 	"apihelp-query+codetags-description": "{{doc-apihelp-description|query+codetags}}",
 	"apihelp-query+codetags-param-repo": "{{doc-apihelp-param|query+codetags|repo}}",
-	"apihelp-query+codetags-example-1": "{{doc-apihelp-example|query+codetags}}"
+	"apihelp-query+codetags-example-1": "{{doc-apihelp-example|query+codetags}}",
+	"apierror-codereview-inlinecommentingdisabled": "{{doc-apierror}}",
+	"apierror-invalidrepo": "{{doc-apierror}}\n\nParameters:\n* $1 - Supplied repository name."
 }
