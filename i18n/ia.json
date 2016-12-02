@@ -164,7 +164,7 @@
 	"repoadmin-edit-bug": "Cammino de Bugzilla:",
 	"repoadmin-edit-view": "Cammino de ViewVC:",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "Le repositorio \"[[Special:Code/$1|$1]]\" ha essite modificate con successo.",
+	"repoadmin-edit-sucess": "Le repositorio \"[[Special:Code/$1|$1]]\" ha essite modificate.",
 	"repoadmin-nav": "administration de repositorios",
 	"right-repoadmin": "Administrar le repositorios de codice",
 	"right-codereview-use": "Uso de Special:Code",
@@ -185,8 +185,5 @@
 	"action-codereview-signoff": "approbar versiones",
 	"action-codereview-link-user": "ligar autores a usatores del wiki",
 	"action-codereview-associate": "gerer associationes de versiones",
-	"action-codereview-review-own": "marcar le proprie versiones como \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Administratores SVN",
-	"group-svnadmins-member": "{{GENDER:$1|administrator|administratrice}} SVN",
-	"grouppage-svnadmins": "{{ns:project}}:Administratores SVN"
+	"action-codereview-review-own": "marcar le proprie versiones como \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\""
 }
