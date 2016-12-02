@@ -31,8 +31,12 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	public function execute() {
 		$this->getMain()->setCacheMode( 'anon-public-user-private' );
 		// Before doing anything at all, let's check permissions
-		if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
-			$this->dieUsage( 'You don\'t have permission to view code revisions', 'permissiondenied' );
+		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+			$this->checkUserRightsAny( 'codereview-use' );
+		} else {
+			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
+				$this->dieUsage( 'You don\'t have permission to view code revisions', 'permissiondenied' );
+			}
 		}
 		$params = $this->extractRequestParams();
 
@@ -41,7 +45,11 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		$repo = CodeRepository::newFromName( $params['repo'] );
 
 		if ( !$repo ) {
-			$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
+			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
+				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+			} else {
+				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
+			}
 		}
 
 		$data = array();

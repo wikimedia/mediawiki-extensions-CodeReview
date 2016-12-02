@@ -180,7 +180,7 @@
 	"right-codereview-associate": "Manage revision associations",
 	"right-codereview-review-own": "Mark your own revisions as \"{{int:code-status-ok}}\" or \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "manage code repositories",
-	"action-codereview-use": "use Special:Code",
+	"action-codereview-use": "use CodeReview",
 	"action-codereview-add-tag": "add new tags to revisions",
 	"action-codereview-remove-tag": "remove tags from revisions",
 	"action-codereview-post-comment": "add comments on revisions",
@@ -233,5 +233,7 @@
 	"apihelp-query+coderevisions-example-2": "Fetch info for revisions in MediaWiki",
 	"apihelp-query+codetags-description": "Get a list of tags applied to revisions in a given repository.",
 	"apihelp-query+codetags-param-repo": "Name of the repository.",
-	"apihelp-query+codetags-example-1": "List tags in MediaWiki"
+	"apihelp-query+codetags-example-1": "List tags in MediaWiki",
+	"apierror-invalidrepo": "Invalid repo \"$1\".",
+	"apierror-codereview-inlinecommentingdisabled": "Can not attach a comment to a diff when inline commenting is disabled (<var>$wgCodeReviewInlineComments</var> is false)."
 }
