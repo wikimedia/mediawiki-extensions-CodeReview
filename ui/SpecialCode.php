@@ -9,6 +9,24 @@ class SpecialCode extends SpecialPage {
 	}
 
 	/**
+	 * Return an array of subpages that this special page will accept.
+	 *
+	 * @return string[] subpages
+	 */
+	public function getSubpagesForPrefixSearch() {
+		$repos = CodeRepository::getRepoList();
+		if ( count( $repos ) ) {
+			$retVal = [];
+			foreach ( $repos as $repo ) {
+				$retVal[] = $repo->getName();
+			}
+			sort( $retVal );
+			return $retVal;
+		}
+		return [];
+	}
+
+	/**
 	 * @param $subpage string
 	 */
 	public function execute( $subpage ) {
