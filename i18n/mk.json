@@ -178,7 +178,7 @@
 	"right-codereview-associate": "Раководење со поврзување на преработки",
 	"right-codereview-review-own": "Означување на своите преработки како „{{int:code-status-ok}}“ или „{{int:code-status-resolved}}“",
 	"action-repoadmin": "раководење со складишта на код",
-	"action-codereview-use": "користење на Special:Code",
+	"action-codereview-use": "користење на Проверка на кодот",
 	"action-codereview-add-tag": "додавање нови ознаки кон преработки",
 	"action-codereview-remove-tag": "отстранување ознаки од преработки",
 	"action-codereview-post-comment": "додавање коментари кон преработки",
@@ -231,5 +231,7 @@
 	"apihelp-query+coderevisions-example-2": "Дај информации за преработките во МедијаВики",
 	"apihelp-query+codetags-description": "Дај список на ознаки приложени кон преработките во дадено складиште.",
 	"apihelp-query+codetags-param-repo": "Назив на складиштето.",
-	"apihelp-query+codetags-example-1": "Список на ознаки во МедијаВики"
+	"apihelp-query+codetags-example-1": "Список на ознаки во МедијаВики",
+	"apierror-invalidrepo": "Неважечко складиште „$1“.",
+	"apierror-codereview-inlinecommentingdisabled": "Не можам да приложам коментар кон разликата кога е оневозможено коментирањето во самиот текст (<var>$wgCodeReviewInlineComments</var> е неточно)."
 }

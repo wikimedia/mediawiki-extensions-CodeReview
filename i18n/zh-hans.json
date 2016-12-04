@@ -193,7 +193,7 @@
 	"right-codereview-associate": "管理版本关联",
 	"right-codereview-review-own": "将自己的版本标记为“{{int:code-status-ok}}”或“{{int:code-status-resolved}}”",
 	"action-repoadmin": "管理代码库",
-	"action-codereview-use": "使用Special:Code",
+	"action-codereview-use": "使用代码复审",
 	"action-codereview-add-tag": "给版本添加新标签",
 	"action-codereview-remove-tag": "移除版本的标签",
 	"action-codereview-post-comment": "向版本添加注释",
@@ -246,5 +246,7 @@
 	"apihelp-query+coderevisions-example-2": "获取MediaWiki的修订信息",
 	"apihelp-query+codetags-description": "获得指定存储库中提交至修订的标签列表。",
 	"apihelp-query+codetags-param-repo": "存储库名称。",
-	"apihelp-query+codetags-example-1": "MediaWiki标签列表"
+	"apihelp-query+codetags-example-1": "MediaWiki标签列表",
+	"apierror-invalidrepo": "无效的存储库“$1”。",
+	"apierror-codereview-inlinecommentingdisabled": "当行内注释被禁用（<var>$wgCodeReviewInlineComments</var>为false）时，不能给差异附加一段注释。"
 }

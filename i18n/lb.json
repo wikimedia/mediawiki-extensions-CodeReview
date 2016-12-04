@@ -153,7 +153,7 @@
 	"right-codereview-signoff": "Ännerunge fräiginn",
 	"right-codereview-link-user": "Auteure mat Wiki-Benotzer verbannen (verlinken)",
 	"right-codereview-review-own": "Markéiert Är eege Versiounen als \"{{int:code-status-ok}}\" oder \"{{int:code-status-resolved}}\"",
-	"action-codereview-use": "Special:Code gëtt benotze",
+	"action-codereview-use": "CodeReview benotzen",
 	"action-codereview-post-comment": "Bemierkungen iwwer d'Versiounen derbäisetzen",
 	"action-codereview-set-status": "Status vun der Versioun änneren",
 	"action-codereview-signoff": "Ännerunge fräiginn",

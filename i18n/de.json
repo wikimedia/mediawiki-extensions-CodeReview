@@ -182,7 +182,7 @@
 	"right-codereview-associate": "Revisionszuordnungen verwalten",
 	"right-codereview-review-own": "Eigene Revisionen als „{{int:code-status-ok}}“ oder „{{int:code-status-resolved}}“ markieren",
 	"action-repoadmin": "Coderepositorien zu verwalten",
-	"action-codereview-use": "CodeReview zu nutzen",
+	"action-codereview-use": "die Codeüberprüfung zu nutzen",
 	"action-codereview-add-tag": "neue Tags zu Revisionen hinzuzufügen",
 	"action-codereview-remove-tag": "Tags von Revisionen zu entfernen",
 	"action-codereview-post-comment": "Kommentare zu Revisionen abzugeben",
@@ -235,5 +235,7 @@
 	"apihelp-query+coderevisions-example-2": "Informationen für Revisionen in MediaWiki abrufen",
 	"apihelp-query+codetags-description": "Ruft eine Liste mit Tags, die auf Revisionen in einem angegebenen Repositorium angewandt sind, ab.",
 	"apihelp-query+codetags-param-repo": "Name des Repositoriums.",
-	"apihelp-query+codetags-example-1": "Tags in MediaWiki auflisten"
+	"apihelp-query+codetags-example-1": "Tags in MediaWiki auflisten",
+	"apierror-invalidrepo": "Ungültiges Repositorium „$1“.",
+	"apierror-codereview-inlinecommentingdisabled": "Es kann kein Kommentar einem Diff beigefügt werden, wenn Inline-Kommentare deaktiviert sind (<var>$wgCodeReviewInlineComments</var> ist auf „false“)."
 }

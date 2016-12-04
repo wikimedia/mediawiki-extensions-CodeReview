@@ -177,7 +177,7 @@
 	"right-codereview-associate": "Upravljanje združitev redakcij",
 	"right-codereview-review-own": "Označite svoje redakcije kot »{{int:code-status-ok}}« ali »{{int:code-status-resolved}}«",
 	"action-repoadmin": "upravljanje shramb kode",
-	"action-codereview-use": "uporabo Special:Code",
+	"action-codereview-use": "uporabo CodeReview",
 	"action-codereview-add-tag": "dodajanje novih oznak redakcijam",
 	"action-codereview-remove-tag": "odstranjevanje oznak redakcijam",
 	"action-codereview-post-comment": "dodajanje pripomb na redakcije",

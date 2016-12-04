@@ -192,7 +192,7 @@
 	"right-codereview-associate": "управление ассоциациями ревизий",
 	"right-codereview-review-own": "Отметить собственные ревизии как «{{int:code-status-ok}}» или «{{int:code-status-resolved}}»",
 	"action-repoadmin": "управление репозиторием кода",
-	"action-codereview-use": "использование Special:Code",
+	"action-codereview-use": "использование CodeReview",
 	"action-codereview-add-tag": "добавление новых меток к ревизиям",
 	"action-codereview-remove-tag": "удаление меток с ревизий",
 	"action-codereview-post-comment": "добавление комментариев к ревизиям",

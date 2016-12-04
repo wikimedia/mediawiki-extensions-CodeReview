@@ -18,7 +18,8 @@
 			"Urhixidur",
 			"Verdy p",
 			"Zetud",
-			"Orlodrim"
+			"Orlodrim",
+			"Wladek92"
 		]
 	},
 	"code": "Révision du code",
@@ -194,7 +195,7 @@
 	"right-codereview-associate": "Gérer les associations de révisions",
 	"right-codereview-review-own": "Marquer ses propres révisions comme \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "gérer les dépôts de code",
-	"action-codereview-use": "utiliser Special:Code",
+	"action-codereview-use": "utiliser CodeReview",
 	"action-codereview-add-tag": "ajouter de nouvelles balises aux révisions",
 	"action-codereview-remove-tag": "supprimer des balises des révisions",
 	"action-codereview-post-comment": "ajouter des commentaires aux révisions",
@@ -247,5 +248,7 @@
 	"apihelp-query+coderevisions-example-2": "Chercher des informations pour les révisions dans MédiaWiki",
 	"apihelp-query+codetags-description": "Obtenir une liste de balises appliquées aux révisions dans un dépôt donné.",
 	"apihelp-query+codetags-param-repo": "Nom du dépôt.",
-	"apihelp-query+codetags-example-1": "Lister les balises dans MediaWiki"
+	"apihelp-query+codetags-example-1": "Lister les balises dans MediaWiki",
+	"apierror-invalidrepo": "Zone de dépot invalide « $1 ».",
+	"apierror-codereview-inlinecommentingdisabled": "Pas possible d'associer un commentaire sur un diff lorsque des commentaires en ligne sont désactivés (<var>$wgCodeReviewInlineComments</var> est à faux)."
 }

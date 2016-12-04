@@ -200,5 +200,6 @@
 	"apihelp-query+codecomments-param-limit": "Liczba komentarzy do zwrócenia.",
 	"apihelp-query+codepaths-param-repo": "Nazwa repozytorium.",
 	"apihelp-query+coderevisions-param-repo": "Nazwa repozytorium.",
-	"apihelp-query+codetags-param-repo": "Nazwa repozytorium."
+	"apihelp-query+codetags-param-repo": "Nazwa repozytorium.",
+	"apierror-invalidrepo": "Nieprawidłowe repozytorium „$1”."
 }

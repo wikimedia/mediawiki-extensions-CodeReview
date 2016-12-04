@@ -188,7 +188,7 @@
 	"right-codereview-associate": "Administrar as associações de revisões",
 	"right-codereview-review-own": "Marcar as suas próprias revisões como \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "administrar repositórios de código",
-	"action-codereview-use": "utilização de Special:Code",
+	"action-codereview-use": "usar Revisão de Código",
 	"action-codereview-add-tag": "adicionar novas etiquetas a revisões",
 	"action-codereview-remove-tag": "remover etiquetas de revisões",
 	"action-codereview-post-comment": "acrescentar comentários a revisões",
@@ -241,5 +241,7 @@
 	"apihelp-query+coderevisions-example-2": "Obter informação de revisões no MediaWiki",
 	"apihelp-query+codetags-description": "Obter uma lista das etiquetas aplicadas a revisões num repositório indicado.",
 	"apihelp-query+codetags-param-repo": "Nome do repositório.",
-	"apihelp-query+codetags-example-1": "Listar as etiquetas no MediaWiki"
+	"apihelp-query+codetags-example-1": "Listar as etiquetas no MediaWiki",
+	"apierror-invalidrepo": "O repositório \"$1\" é inválido.",
+	"apierror-codereview-inlinecommentingdisabled": "Não pode anexar um comentário a uma lista de diferenças quando os comentários em linha estão desativados  (<var>$wgCodeReviewInlineComments</var> tem o valor falso)."
 }

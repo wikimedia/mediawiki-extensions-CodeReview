@@ -186,7 +186,7 @@
 	"right-codereview-associate": "판 연관 관리",
 	"right-codereview-review-own": "\"{{int:code-status-ok}}\" 또는 \"{{int:code-status-resolved}}\"에 대해 자신의 판을 표시",
 	"action-repoadmin": "코드 저장소 관리",
-	"action-codereview-use": "Special:Code 사용",
+	"action-codereview-use": "CodeReview 사용",
 	"action-codereview-add-tag": "특정 판에 새 태그 추가",
 	"action-codereview-remove-tag": "특정 판에 태그 삭제",
 	"action-codereview-post-comment": "판에 대한 의견을 추가",
