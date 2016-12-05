@@ -157,7 +157,7 @@
 	"right-codereview-associate": "Hallata redaktsioonide seostusi",
 	"right-codereview-review-own": "Märkida enda redaktsioonide olekuks \"{{int:code-status-ok}}\" või \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "koodihoidlaid hallata",
-	"action-codereview-use": "kasutada erilehekülge Special:Code",
+	"action-codereview-use": "kasutada koodiülevaatuse lisa",
 	"action-codereview-add-tag": "redaktsioonidele uusi märgiseid lisada",
 	"action-codereview-remove-tag": "redaktsioonidelt märgiseid eemaldada",
 	"action-codereview-post-comment": "redaktsioonidele kommentaare lisada",

@@ -188,7 +188,7 @@
 	"right-codereview-associate": "Gestisce le associazioni fra versioni",
 	"right-codereview-review-own": "Segna le proprie versioni come \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "gestire la repository del codice",
-	"action-codereview-use": "usare Special:Code",
+	"action-codereview-use": "usare CodeReview",
 	"action-codereview-add-tag": "aggiungere nuove etichette alle modifiche",
 	"action-codereview-remove-tag": "rimuovere le etichette dalle modifiche",
 	"action-codereview-post-comment": "aggiungere commenti alle versioni",

@@ -179,7 +179,7 @@
 	"right-codereview-associate": "Xestionar as asociacións de revisións",
 	"right-codereview-review-own": "Marcar as revisións propias como \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "xestionar os repositorios de código",
-	"action-codereview-use": "usar Special:Code",
+	"action-codereview-use": "usar CodeReview",
 	"action-codereview-add-tag": "engadir etiquetas novas ás revisións",
 	"action-codereview-remove-tag": "eliminar etiquetas das revisións",
 	"action-codereview-post-comment": "engadir comentarios ás revisións",
