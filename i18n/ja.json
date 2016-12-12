@@ -13,7 +13,8 @@
 			"Shirayuki",
 			"Whym",
 			"青子守歌",
-			"Rxy"
+			"Rxy",
+			"Otokoume"
 		]
 	},
 	"code": "コードレビュー",
@@ -189,7 +190,7 @@
 	"right-codereview-associate": "版のつながりを管理",
 	"right-codereview-review-own": "自身のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける",
 	"action-repoadmin": "コードリポジトリの管理",
-	"action-codereview-use": "Special:Code の使用",
+	"action-codereview-use": "CodeReview の使用",
 	"action-codereview-add-tag": "リビジョンに新しいタグを追加",
 	"action-codereview-remove-tag": "リビジョンからタグを除去",
 	"action-codereview-post-comment": "リビジョンにコメントを追加",
@@ -197,10 +198,5 @@
 	"action-codereview-signoff": "リビジョンでサインオフ",
 	"action-codereview-link-user": "作者とウィキ利用者をリンク",
 	"action-codereview-associate": "版のつながりを管理",
-	"action-codereview-review-own": "自分のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける",
-	"group-svnadmins": "SVN管理者",
-	"group-svnadmins-member": "{{GENDER:$1|SVN 管理者}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN管理者",
-	"group-svnadmins.css": "/* ここに記述したCSSはSVN管理者のみに影響します */",
-	"group-svnadmins.js": "/* ここに記述したJSはSVN管理者のみに影響します */"
+	"action-codereview-review-own": "自分のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける"
 }

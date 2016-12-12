@@ -190,7 +190,7 @@
 	"right-codereview-associate": "Управління пов'язаними редагуваннями",
 	"right-codereview-review-own": "Помітити власні версії як «{{int:code-status-ok}}» чи «{{int:code-status-resolved}}»",
 	"action-repoadmin": "керування репозиторієм коду",
-	"action-codereview-use": "використання Special:Code",
+	"action-codereview-use": "використання CodeReview",
 	"action-codereview-add-tag": "додання нових міток до версій",
 	"action-codereview-remove-tag": "вилучення міток із версій",
 	"action-codereview-post-comment": "дадання коментарів до версій",
@@ -243,5 +243,7 @@
 	"apihelp-query+coderevisions-example-2": "Вибірка інформації для версій у MediaWiki",
 	"apihelp-query+codetags-description": "Отримати список теґів, застосованих до версій у даному репозиторії.",
 	"apihelp-query+codetags-param-repo": "Назва репозиторію.",
-	"apihelp-query+codetags-example-1": "Список теґів у MediaWiki"
+	"apihelp-query+codetags-example-1": "Список теґів у MediaWiki",
+	"apierror-invalidrepo": "Недійсний репозиторій «$1».",
+	"apierror-codereview-inlinecommentingdisabled": "Неможливо додати коментар до версії, коли рядкове коментування вимкнене (<var>$wgCodeReviewInlineComments</var> встановлено як «false»)."
 }

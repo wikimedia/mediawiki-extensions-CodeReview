@@ -185,7 +185,7 @@
 	"right-codereview-associate": "Zarządzanie powiązaniem wersji",
 	"right-codereview-review-own": "Oznaczanie własnych zmian jako \"{{int:code-status-ok}}\" lub \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "zarządzanie kodem repozytoriów",
-	"action-codereview-use": "użyj Special:Code",
+	"action-codereview-use": "używania CodeReview",
 	"action-codereview-add-tag": "dodaj nowe znaczniki do wersji",
 	"action-codereview-remove-tag": "usuń znaczniki z wersji",
 	"action-codereview-post-comment": "dodaj komentarze do wersji",
