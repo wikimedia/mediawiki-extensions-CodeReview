@@ -4,7 +4,8 @@
 			"Danny B.",
 			"Kuvaly",
 			"Matěj Grabovský",
-			"Mormegil"
+			"Mormegil",
+			"Dvorapa"
 		]
 	},
 	"code": "Kontrola kódu",
@@ -180,7 +181,7 @@
 	"right-codereview-associate": "Správa vztahů mezi revizemi",
 	"right-codereview-review-own": "Označování vlastních revizí jako „{{int:code-status-ok}}“ nebo „{{int:code-status-resolved}}“",
 	"action-repoadmin": "spravovat úložiště kódu",
-	"action-codereview-use": "používat Special:Code",
+	"action-codereview-use": "používat CodeReview",
 	"action-codereview-add-tag": "přidávat nové značky k revizím",
 	"action-codereview-remove-tag": "odstraňovat značky z revizí",
 	"action-codereview-post-comment": "přidávat komentáře k revizím",
@@ -188,8 +189,5 @@
 	"action-codereview-signoff": "schvalovat revize",
 	"action-codereview-link-user": "propojovat autory s wikiuživateli",
 	"action-codereview-associate": "spravovat vztahy mezi revizemi",
-	"action-codereview-review-own": "označovat vlastní revize jako „{{int:code-status-ok}}“ nebo „{{int:code-status-resolved}}“",
-	"group-svnadmins": "Správci SVN",
-	"group-svnadmins-member": "{{GENDER:$1|správce|správkyně|správce}} SVN",
-	"grouppage-svnadmins": "{{ns:project}}:Správci SVN"
+	"action-codereview-review-own": "označovat vlastní revize jako „{{int:code-status-ok}}“ nebo „{{int:code-status-resolved}}“"
 }
