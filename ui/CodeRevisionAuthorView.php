@@ -32,17 +32,18 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 
 		$linkInfo = $this->linkStatus();
 
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		// Give grep a chance to find the usages:
 		// code-author-link, code-author-unlink
 		if ( $wgUser->isAllowed( 'codereview-link-user' ) ) {
 			$repo = $this->mRepo->getName();
 			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor/link" );
-			$linkInfo .= ' (' . Linker::link( $page,
+			$linkInfo .= ' (' . $linkRenderer->makeLink( $page,
 				wfMessage( 'code-author-' . ( $this->mUser ? 'un':'' ) . 'link' )->text() ) . ')' ;
 		}
 
-		$repoLink = Linker::link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
-			htmlspecialchars( $this->mRepo->getName() ) );
+		$repoLink = $linkRenderer->makeLink( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+			$this->mRepo->getName() );
 		$fields = array(
 			'code-rev-repo' => $repoLink,
 			'code-rev-author' => $this->mAuthor,

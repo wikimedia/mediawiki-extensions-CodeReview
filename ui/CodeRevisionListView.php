@@ -392,14 +392,15 @@ class SvnRevTablePager extends SvnTablePager {
 	function formatRevValue( $name, $value, $row ) {
 		$pathQuery = count( $this->mView->mPath ) ? array( 'path' => $this->mView->getPathsAsString() ) : array();
 
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		switch( $name ) {
 		case 'selectforchange':
 			$sort = $this->getDefaultSort();
 			return Xml::check( "wpRevisionSelected[]", false, array( 'value' => $row->$sort ) );
 		case 'cr_id':
-			return Linker::link(
+			return $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value ),
-				htmlspecialchars( $value ),
+				$value,
 				array(),
 				array()
 			);
@@ -409,9 +410,9 @@ class SvnRevTablePager extends SvnTablePager {
 				$options['author'] = $this->mView->mAuthor;
 			}
 			$options['status'] = $value;
-			return Linker::link(
+			return $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
-				htmlspecialchars( $this->mView->statusDesc( $value ) ),
+				$this->mView->statusDesc( $value ),
 				array(),
 				$options
 			);
@@ -421,9 +422,9 @@ class SvnRevTablePager extends SvnTablePager {
 				$options['status'] = $this->mView->mStatus;
 			}
 			$options['author'] = $value;
-			return Linker::link(
+			return $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
-				htmlspecialchars( $value ),
+				$value,
 				array(),
 				$options
 			);
@@ -438,7 +439,7 @@ class SvnRevTablePager extends SvnTablePager {
 					$this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() },
 					'code-comments'
 				);
-				return Linker::link( $special, $this->getLanguage()->formatNum( htmlspecialchars( $value ) ) );
+				return $linkRenderer->makeLink( $special, $this->getLanguage()->formatNum( $value ) );
 			} else {
 				return '-';
 			}
@@ -454,7 +455,7 @@ class SvnRevTablePager extends SvnTablePager {
 			}
 
 			return Xml::openElement( 'div', array( 'title' => (string)$value, 'dir' => 'ltr' ) ) .
-					Linker::link(
+					$linkRenderer->makeLink(
 						SpecialPage::getTitleFor( 'Code', $title ),
 						$this->getLanguage()->truncate( (string)$value, 50 ),
 						array( 'title' => (string)$value ),

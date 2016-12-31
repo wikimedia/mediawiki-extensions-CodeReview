@@ -59,23 +59,24 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 	}
 
 	function formatValue( $name, $value ) {
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		// Give grep a chance to find the usages:
 		// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
 		// code-status-ok, code-status-deferred, code-status-old
 		switch( $name ) {
 		case 'cpc_rev_id':
-			return Linker::link(
+			return $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-changes' ),
-				htmlspecialchars( $value ) );
+				$value );
 		case 'cr_author':
 			return $this->mView->authorLink( $value );
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cr_status':
-			return Linker::link(
+			return $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Code',
 					$this->mRepo->getName() . '/status/' . $value ),
-				htmlspecialchars( $this->mView->statusDesc( $value ) ) );
+				$this->mView->statusDesc( $value ) );
 		case 'cpc_user_text':
 			return Linker::userLink( - 1, $value );
 		case 'cpc_removed':

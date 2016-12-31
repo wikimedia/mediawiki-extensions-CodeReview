@@ -113,8 +113,9 @@ class CodeRevisionView extends CodeView {
 		$wgOut->setPageTitle( wfMessage( 'code-rev-title', $pageTitle ) );
 		$wgOut->setHTMLTitle( wfMessage( 'code-rev-title', $htmlTitle ) );
 
-		$repoLink = Linker::link( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
-			htmlspecialchars( $this->mRepo->getName() ) );
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+		$repoLink = $linkRenderer->makeLink( SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+			$this->mRepo->getName() );
 		$revText = $this->navigationLinks();
 		$paths = '';
 		$modifiedPaths = $this->mRev->getModifiedPaths();
@@ -151,7 +152,7 @@ class CodeRevisionView extends CodeView {
 		if ( $this->mPath != '' ) {
 			$links = array();
 			foreach( explode( '|', $this->mPath ) as $path ) {
-				$links[] = Linker::link(
+				$links[] = $linkRenderer->makeLink(
 					SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 					$path,
 					array(),
@@ -178,9 +179,9 @@ class CodeRevisionView extends CodeView {
 			// variables have been changed
 			$html .=
 				"<h2>" . wfMessage( 'code-rev-diff' )->escaped() .
-				' <small>[' . Linker::link(
+				' <small>[' . $linkRenderer->makeLink(
 					$special,
-					wfMessage( 'code-rev-purge-link' )->escaped(),
+					wfMessage( 'code-rev-purge-link' )->text(),
 					array(),
 					array( 'action' => 'purge' )
 				) . ']</small></h2>' .
@@ -240,9 +241,10 @@ class CodeRevisionView extends CodeView {
 
 		$links = array();
 
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		if ( $prev ) {
 			$prevTarget = SpecialPage::getTitleFor( 'Code', "$repo/$prev" );
-			$links[] = '&lt;&#160;' . Linker::link( $prevTarget, $this->mRev->getIdString( $prev ),
+			$links[] = '&lt;&#160;' . $linkRenderer->makeLink( $prevTarget, $this->mRev->getIdString( $prev ),
 				array(), array( 'path' => $this->mPath ) ) . $wgLang->getDirMark();
 		}
 
@@ -257,7 +259,7 @@ class CodeRevisionView extends CodeView {
 
 		if ( $next ) {
 			$nextTarget = SpecialPage::getTitleFor( 'Code', "$repo/$next" );
-			$links[] = Linker::link( $nextTarget, $this->mRev->getIdString( $next ),
+			$links[] = $linkRenderer->makeLink( $nextTarget, $this->mRev->getIdString( $next ),
 				array(), array( 'path' => $this->mPath ) ) . '&#160;&gt;';
 		}
 
@@ -319,9 +321,10 @@ class CodeRevisionView extends CodeView {
 		$path = preg_replace( '/ \([^\)]+\)$/', '', $path );
 		$viewvc = $this->mRepo->getViewVcBase();
 		$diff = '';
-		$hist = Linker::link(
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+		$hist = $linkRenderer->makeLink(
 			SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
-			wfMessage( 'code-rev-history-link' )->escaped(), array(), array( 'path' => $path )
+			wfMessage( 'code-rev-history-link' )->text(), array(), array( 'path' => $path )
 		);
 		$safePath = wfUrlEncode( $path );
 		if ( $viewvc ) {
@@ -451,7 +454,8 @@ class CodeRevisionView extends CodeView {
 	protected function formatTag( $tag ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/tag/$tag" );
-		return Linker::link( $special, htmlspecialchars( $tag ) );
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+		return $linkRenderer->makeLink( $special, $tag );
 	}
 
 	/**
@@ -757,7 +761,8 @@ class CodeRevisionView extends CodeView {
 		$css = 'mw-codereview-status-' . htmlspecialchars( $row->cr_status );
 		$date = $wgLang->timeanddate( $row->cr_timestamp, true );
 		$title = SpecialPage::getTitleFor( 'Code', "$repo/$rev" );
-		$revLink = Linker::link( $title, $this->mRev->getIdString( $rev ) );
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+		$revLink = $linkRenderer->makeLink( $title, $this->mRev->getIdString( $rev ) );
 		$summary = $this->messageFragment( $row->cr_message );
 		$author = $this->authorLink( $row->cr_author );
 
@@ -813,7 +818,8 @@ class CodeRevisionView extends CodeView {
 			$permaLink = '<strong>' . wfMessage( 'code-rev-inline-preview' )->escaped() . '</strong> ';
 		} else {
 			$linkId = 'c' . intval( $comment->id );
-			$permaLink = Linker::link( $this->commentLink( $comment->id ), "#" );
+			$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+			$permaLink = $linkRenderer->makeLink( $this->commentLink( $comment->id ), "#" );
 		}
 
 		$popts = $wgOut->parserOptions();
@@ -866,8 +872,9 @@ class CodeRevisionView extends CodeView {
 		$repo = $this->mRepo->getName();
 		$rev = $this->mRev->getId();
 		$self = SpecialPage::getTitleFor( 'Code', "$repo/$rev/reply/$id", "c$id" );
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		// @todo FIXME: Hard coded brackets.
-		return '[' . Linker::link( $self, wfMessage( 'codereview-reply-link' )->escaped() ) . ']';
+		return '[' . $linkRenderer->makeLink( $self, wfMessage( 'codereview-reply-link' )->text() ) . ']';
 	}
 
 	protected function postCommentForm( $parent = null ) {
