@@ -12,14 +12,15 @@ class CodeStatusListView extends CodeView {
 		$states = CodeRevision::getPossibleStates();
 		$wgOut->wrapWikiMsg( "== $1 ==", 'code-field-status' );
 
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		$table_rows = '';
 		foreach ( $states as $state ) {
 			// Give grep a chance to find the usages:
 			// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
 			// code-status-ok, code-status-deferred, code-status-old
-			$link = Linker::link(
+			$link = $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Code', $name . "/status/$state" ),
-				wfMessage( "code-status-".$state )->escaped()
+				wfMessage( "code-status-".$state )->text()
 			);
 			// Give grep a chance to find the usages:
 			// code-status-desc-new, code-status-desc-fixme, code-status-desc-reverted, code-status-desc-resolved,

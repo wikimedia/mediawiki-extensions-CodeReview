@@ -60,16 +60,17 @@ class CodeCommentsTablePager extends SvnTablePager {
 	}
 
 	function formatValue( $name, $value ) {
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		switch( $name ) {
 		case 'cc_rev_id':
-			return Linker::link(
+			return $linkRenderer->makeLink(
 				SpecialPage::getSafeTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-comments' ),
-				htmlspecialchars( $value ) );
+				$value );
 		case 'cr_status':
-			return Linker::link(
+			return $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Code',
 					$this->mRepo->getName() . '/status/' . $value ),
-				htmlspecialchars( $this->mView->statusDesc( $value ) ) );
+				$this->mView->statusDesc( $value ) );
 		case 'cc_user_text':
 			return Linker::userLink( - 1, $value );
 		case 'cr_message':

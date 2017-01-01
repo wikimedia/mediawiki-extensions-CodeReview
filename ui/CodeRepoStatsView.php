@@ -26,12 +26,13 @@ class CodeRepoStatsView extends CodeView {
 			$wgOut->addHTML( '<table class="wikitable">'
 				. '<tr><th>' . wfMessage( 'code-field-status' )->escaped() . '</th><th>'
 				. wfMessage( 'code-stats-count' )->escaped() . '</th></tr>' );
+			$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 			foreach ( CodeRevision::getPossibleStates() as $state ) {
 				$count = isset( $stats->states[$state] ) ? $stats->states[$state] : 0;
 				$count = htmlspecialchars( $wgLang->formatNum( $count ) );
-				$link = Linker::link(
+				$link = $linkRenderer->makeLink(
 					SpecialPage::getTitleFor( 'Code', $repoName . '/status/' . $state ),
-					htmlspecialchars( $this->statusDesc( $state ) )
+					$this->statusDesc( $state )
 				);
 				$wgOut->addHTML( "<tr><td>$link</td>"
 					. "<td class=\"mw-codereview-status-$state\">$count</td></tr>" );
@@ -95,11 +96,12 @@ class CodeRepoStatsView extends CodeView {
 			. wfMessage( 'code-stats-count' )->escaped() . '</th></tr>' );
 		$title = SpecialPage::getTitleFor( 'Code', $repoName . "/status/{$status}" );
 
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		foreach ( $array as $user => $count ) {
 			$count = htmlspecialchars( $wgLang->formatNum( $count ) );
-			$link = Linker::link(
+			$link = $linkRenderer->makeLink(
 				$title,
-				htmlspecialchars( $user ),
+				$user,
 				array(),
 				array_merge( $options, array( 'author' => $user ) )
 			);
