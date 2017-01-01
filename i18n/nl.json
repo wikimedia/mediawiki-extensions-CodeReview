@@ -5,7 +5,8 @@
 			"Mihxil",
 			"SPQRobin",
 			"Siebrand",
-			"Jeleniccz"
+			"Jeleniccz",
+			"Mainframe98"
 		]
 	},
 	"code": "Codecontrole",
@@ -181,7 +182,7 @@
 	"right-codereview-associate": "Koppeling toevoegen/verwijderen",
 	"right-codereview-review-own": "Eigen commits als \"{{int:code-status-ok}}\" of \"{{int:code-status-resolved}}\" markeren",
 	"action-repoadmin": "coderepositories te beheren",
-	"action-codereview-use": "Special:Code te gebruiken",
+	"action-codereview-use": "CodeReview gebruiken",
 	"action-codereview-add-tag": "nieuwe labels aan versies toe te voegen",
 	"action-codereview-remove-tag": "labels van versies te verwijderen",
 	"action-codereview-post-comment": "opmerkingen aan versies toe te voegen",
