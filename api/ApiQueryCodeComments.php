@@ -43,7 +43,8 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		if ( isset( $this->props['revision'] ) ) {
 			if ( is_callable( [ $this, 'addDeprecation' ] ) ) {
 				$this->addDeprecation(
-					[ 'apiwarn-deprecation-withreplacement', 'ccprop=revision', 'ccprop=status' ]
+					[ 'apiwarn-deprecation-withreplacement', 'ccprop=revision', 'ccprop=status' ],
+					'action=query&list=codecomments&ccprop=revision'
 				);
 			} else {
 				$this->setWarning( 'ccprop=revision has been deprecated in favor of ccprop=status' );
