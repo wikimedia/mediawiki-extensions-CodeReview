@@ -97,4 +97,4 @@ var CodeTooltipsInit = function() {
 	});
 };
 
-$( document ).ready( CodeTooltipsInit );
+$( CodeTooltipsInit );
