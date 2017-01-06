@@ -21,6 +21,7 @@ class ApiCodeDiff extends ApiBase {
 
 	public function execute() {
 		global $wgCodeReviewMaxDiffSize;
+
 		// Before doing anything at all, let's check permissions
 		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
 			$this->checkUserRightsAny( 'codereview-use' );

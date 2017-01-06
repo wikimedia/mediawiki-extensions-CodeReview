@@ -86,9 +86,9 @@ class SubversionPecl extends SubversionAdaptor {
 	 * It throws a warning if the repository does not exist.
 	 */
 	function canConnect() {
-		//wfSuppressWarnings();
-		//$result = svn_info( $this->mRepoPath );
-		//wfRestoreWarnings();
+		// wfSuppressWarnings();
+		// $result = svn_info( $this->mRepoPath );
+		// wfRestoreWarnings();
 		return true;
 	}
 
@@ -140,7 +140,7 @@ class SubversionShell extends SubversionAdaptor {
 	function __construct( $repo ) {
 		parent::__construct( $repo );
 		global $wgMaxShellMemory;
-		if( $wgMaxShellMemory < self::MIN_MEMORY ) {
+		if ( $wgMaxShellMemory < self::MIN_MEMORY ) {
 			$wgMaxShellMemory = self::MIN_MEMORY;
 			wfDebug( __METHOD__ . " raised wgMaxShellMemory to $wgMaxShellMemory\n" );
 		}
@@ -148,14 +148,15 @@ class SubversionShell extends SubversionAdaptor {
 
 	function canConnect() {
 		$command = sprintf(
-			"svn info %s %s",
+			'svn info %s %s',
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->mRepoPath ) );
+			wfEscapeShellArg( $this->mRepoPath )
+		);
 
 		$result = wfShellExec( $command );
-		if ( $result == "" ) {
+		if ( $result == '' ) {
 			return false;
-		} elseif ( strpos( $result, "No repository found" ) !== false ) {
+		} elseif ( strpos( $result, 'No repository found' ) !== false ) {
 			return false;
 		} else {
 			return true;
@@ -167,7 +168,7 @@ class SubversionShell extends SubversionAdaptor {
 			$path .= "@$rev";
 		}
 		$command = sprintf(
-			"svn cat %s %s",
+			'svn cat %s %s',
 			$this->getExtraArgs(),
 			wfEscapeShellArg( $this->mRepoPath . $path ) );
 
@@ -176,17 +177,18 @@ class SubversionShell extends SubversionAdaptor {
 
 	function getDiff( $path, $rev1, $rev2 ) {
 		$command = sprintf(
-			"svn diff -r%d:%d %s %s",
+			'svn diff -r%d:%d %s %s',
 			intval( $rev1 ),
 			intval( $rev2 ),
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->mRepoPath . $path ) );
+			wfEscapeShellArg( $this->mRepoPath . $path )
+		);
 
 		return wfShellExec( $command );
 	}
 
 	function getLog( $path, $startRev = null, $endRev = null ) {
-		$lang = wfIsWindows() ? "" : "LC_ALL=en_US.utf-8 ";
+		$lang = wfIsWindows() ? '' : 'LC_ALL=en_US.utf-8 ';
 		$command = sprintf(
 			"{$lang}svn log -v -r%s:%s %s %s",
 			wfEscapeShellArg( $this->_rev( $startRev, 'BASE' ) ),
@@ -209,21 +211,21 @@ class SubversionShell extends SubversionAdaptor {
 			$line = rtrim( $line );
 
 			switch( $state ) {
-			case "start":
+			case 'start':
 				if ( $line == $divider ) {
-					$state = "revdata";
+					$state = 'revdata';
 					break;
 				} else {
 					return $out;
 					# throw new Exception( "Unexpected start line: $line" );
 				}
-			case "revdata":
-				if ( $line == "" ) {
-					$state = "done";
+			case 'revdata':
+				if ( $line == '' ) {
+					$state = 'done';
 					break;
 				}
 				$data = array();
-				$bits = explode( " | ", $line );
+				$bits = explode( ' | ', $line );
 				$i = 0;
 				foreach ( $formats as $key => $regex ) {
 					$text = $bits[$i++];
@@ -239,19 +241,19 @@ class SubversionShell extends SubversionAdaptor {
 				$data['paths'] = array();
 				$state = 'changedpaths';
 				break;
-			case "changedpaths":
-				if ( $line == "Changed paths:" ) { // broken when svn messages are not in English
-					$state = "path";
-				} elseif ( $line == "" ) {
+			case 'changedpaths':
+				if ( $line == 'Changed paths:' ) { // broken when svn messages are not in English
+					$state = 'path';
+				} elseif ( $line == '' ) {
 					// No changed paths?
-					$state = "msg";
+					$state = 'msg';
 				} else {
 					throw new Exception(
 						"Expected 'Changed paths:' or '', got '$line'" );
 				}
 				break;
-			case "path":
-				if ( $line == "" ) {
+			case 'path':
+				if ( $line == '' ) {
 					// Out of paths. Move on to the message...
 					$state = 'msg';
 				} else {
@@ -259,21 +261,22 @@ class SubversionShell extends SubversionAdaptor {
 					if ( preg_match( '/^   (.) (.*)$/', $line, $matches ) ) {
 						$data['paths'][] = array(
 							'action' => $matches[1],
-							'path' => $matches[2] );
+							'path' => $matches[2]
+						);
 					}
 				}
 				break;
-			case "msg":
+			case 'msg':
 				$data['msg'] .= $line;
 				if ( --$data['lines'] ) {
 					$data['msg'] .= "\n";
 				} else {
 					unset( $data['lines'] );
 					$out[] = $data;
-					$state = "start";
+					$state = 'start';
 				}
 				break;
-			case "done":
+			case 'done':
 				throw new Exception( "Unexpected input after end: $line" );
 			default:
 				throw new Exception( "Invalid state '$state'" );
@@ -285,10 +288,11 @@ class SubversionShell extends SubversionAdaptor {
 
 	function getDirList( $path, $rev = null ) {
 		$command = sprintf(
-			"svn list --xml -r%s %s %s",
+			'svn list --xml -r%s %s %s',
 			wfEscapeShellArg( $this->_rev( $rev, 'HEAD' ) ),
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->mRepoPath . $path ) );
+			wfEscapeShellArg( $this->mRepoPath . $path )
+		);
 		$document = new DOMDocument();
 
 		if ( !@$document->loadXML( wfShellExec( $command ) ) ) {
@@ -360,7 +364,7 @@ class SubversionProxy extends SubversionAdaptor {
 	}
 
 	function getFile( $path, $rev = null ) {
-		throw new Exception( "NYI" );
+		throw new Exception( 'NYI' );
 	}
 
 	function getDiff( $path, $rev1, $rev2 ) {
@@ -369,7 +373,8 @@ class SubversionProxy extends SubversionAdaptor {
 			'base' => $this->mRepoPath,
 			'path' => $path,
 			'rev1' => $rev1,
-			'rev2' => $rev2 ) );
+			'rev2' => $rev2
+		) );
 	}
 
 	function getLog( $path, $startRev = null, $endRev = null ) {
@@ -378,7 +383,8 @@ class SubversionProxy extends SubversionAdaptor {
 			'base' => $this->mRepoPath,
 			'path' => $path,
 			'start' => $startRev,
-			'end' => $endRev ) );
+			'end' => $endRev
+		) );
 	}
 
 	function getDirList( $path, $rev = null ) {
@@ -386,7 +392,8 @@ class SubversionProxy extends SubversionAdaptor {
 			'action' => 'list',
 			'base' => $this->mRepoPath,
 			'path' => $path,
-			'rev' => $rev ) );
+			'rev' => $rev
+		) );
 	}
 
 	protected function _proxy( $params ) {
@@ -399,7 +406,7 @@ class SubversionProxy extends SubversionAdaptor {
 		$target = $this->mProxy . '?' . wfArrayToCgi( $params );
 		$blob = Http::get( $target, $this->mTimeout );
 		if ( $blob === false ) {
-			throw new Exception( "SVN proxy error" );
+			throw new Exception( 'SVN proxy error' );
 		}
 		$data = unserialize( $blob );
 		return $data;

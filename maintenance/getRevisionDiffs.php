@@ -4,12 +4,12 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class GetRevisionDiffs extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Populates the cr_diff column (where possible) for all rows in a repo";
+		$this->mDescription = 'Populates the cr_diff column (where possible) for all rows in a repo';
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 
 		$this->requireExtension( 'CodeReview' );
@@ -18,7 +18,7 @@ class GetRevisionDiffs extends Maintenance {
 	public function execute() {
 		$repoName = $this->getArg( 0 );
 
-		if ( $repoName == "all" ) {
+		if ( $repoName == 'all' ) {
 			$this->error( "Cannot use the 'all' repo", true );
 		}
 
@@ -32,7 +32,7 @@ class GetRevisionDiffs extends Maintenance {
 		$res = $dbr->select(
 			'code_rev',
 			'cr_id',
-			array( 'cr_repo_id' => $repo->getId(), 'cr_diff IS null',  ),
+			array( 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL' ),
 			__METHOD__
 		);
 
@@ -61,5 +61,5 @@ class GetRevisionDiffs extends Maintenance {
 	}
 }
 
-$maintClass = "GetRevisionDiffs";
-require_once( DO_MAINTENANCE );
+$maintClass = 'GetRevisionDiffs';
+require_once DO_MAINTENANCE;

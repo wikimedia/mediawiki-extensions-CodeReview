@@ -123,7 +123,7 @@ class CodeRevisionListView extends CodeView {
 				array( 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'post' )
 			) .
 			$pager->getBody() .
-			//$pager->getLimitDropdown() .
+			// $pager->getLimitDropdown() .
 			$navBar
 		);
 		if ( $this->batchForm ) {
@@ -230,7 +230,6 @@ class CodeRevisionListView extends CodeView {
 		$title = SpecialPage::getTitleFor( 'Code', $name );
 		$options = array( Xml::option( '', $title->getPrefixedText(), $this->mStatus == '' ) );
 
-
 		// Give grep a chance to find the usages:
 		// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
 		// code-status-ok, code-status-deferred, code-status-old
@@ -243,11 +242,11 @@ class CodeRevisionListView extends CodeView {
 			);
 		}
 
-		$ret = "<fieldset><legend>" . wfMessage( 'code-pathsearch-legend' )->escaped() . "</legend>" .
+		$ret = '<fieldset><legend>' . wfMessage( 'code-pathsearch-legend' )->escaped() . '</legend>' .
 				'<table width="100%"><tr><td>' .
 				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-				Xml::inputlabel( wfMessage( "code-pathsearch-path" )->text(), 'path', 'path', 55,
-					$this->getPathsAsString(), array( 'dir' => 'ltr' ) )  . '&#160;' .
+				Xml::inputLabel( wfMessage( "code-pathsearch-path" )->text(), 'path', 'path', 55,
+					$this->getPathsAsString(), array( 'dir' => 'ltr' ) ) . '&#160;' .
 				Xml::label( wfMessage( 'code-pathsearch-filter' )->text(), 'code-status-filter' ) .
 			'&#160;' .
 				Xml::openElement( 'select', array( 'id' => 'code-status-filter', 'name' => 'title' ) ) .
@@ -273,7 +272,7 @@ class CodeRevisionListView extends CodeView {
 	/**
 	 * Get total number of revisions for this revision view
 	 *
-	 * @var $dbr DatabaseBase
+	 * @param DatabaseBase $dbr
 	 * @return int Number of revisions
 	 */
 	function getRevCount( $dbr ) {
@@ -319,7 +318,10 @@ class SvnRevTablePager extends SvnTablePager {
 					'cp_repo_id' => $this->mRepo->getId(),
 					'cp_path' => $this->getSVNPath(),
 				),
-				'options' => array( 'GROUP BY' => $defaultSort, 'USE INDEX' => array( 'code_path' => 'cp_repo_id' ) ),
+				'options' => array(
+					'GROUP BY' => $defaultSort,
+					'USE INDEX' => array( 'code_path' => 'cp_repo_id' )
+				),
 				'join_conds' => array(
 					'code_rev' => array( 'INNER JOIN', 'cr_repo_id = cp_repo_id AND cr_id = cp_rev_id' ),
 					'code_comment' => array( 'LEFT JOIN', 'cc_repo_id = cp_repo_id AND cc_rev_id = cp_rev_id' ),
@@ -338,11 +340,11 @@ class SvnRevTablePager extends SvnTablePager {
 			);
 		}
 
-		if( $this->mView->mAuthor ) {
+		if ( $this->mView->mAuthor ) {
 			$query['conds']['cr_author'] = $this->mView->mAuthor;
 		}
 
-		if( $this->mView->mStatus ) {
+		if ( $this->mView->mStatus ) {
 			$query['conds']['cr_status'] = $this->mView->mStatus;
 		}
 		return $query;
@@ -436,7 +438,7 @@ class SvnRevTablePager extends SvnTablePager {
 			if ( $value ) {
 				$special = SpecialPage::getTitleFor(
 					'Code',
-					$this->mRepo->getName() . '/' . $row-> { $this->getDefaultSort() },
+					$this->mRepo->getName() . '/' . $row->{$this->getDefaultSort()},
 					'code-comments'
 				);
 				return $linkRenderer->makeLink( $special, $this->getLanguage()->formatNum( $value ) );
@@ -447,7 +449,7 @@ class SvnRevTablePager extends SvnTablePager {
 			$title = $this->mRepo->getName();
 
 			$options = array( 'path' => (string)$value );
-			if( $this->mView->mAuthor ) {
+			if ( $this->mView->mAuthor ) {
 				$options['author'] = $this->mView->mAuthor;
 			}
 			if ( $this->mView->mStatus ) {
@@ -460,7 +462,7 @@ class SvnRevTablePager extends SvnTablePager {
 						$this->getLanguage()->truncate( (string)$value, 50 ),
 						array( 'title' => (string)$value ),
 						$options
-					) . "</div>";
+					) . '</div>';
 		}
 
 		return '';

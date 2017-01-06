@@ -3,8 +3,8 @@ table.mw-codereview-meta td {
 }
 
 .mw-codereview-paths {
-	max-height:600px;
-	overflow:auto;
+	max-height: 600px;
+	overflow: auto;
 }
 
 .TablePager_col_selectforchange,

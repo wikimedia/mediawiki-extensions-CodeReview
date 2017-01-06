@@ -4,14 +4,14 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class PopulateFollowupRevisions extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Populates followup revisions. Useful for setting them on old revisions, without reimporting";
+		$this->mDescription = 'Populates followup revisions. Useful for setting them on old revisions, without reimporting';
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
-		$this->addArg( 'revisions', "The revisions to set followups revisions for. Format: start:end" );
+		$this->addArg( 'revisions', 'The revisions to set followups revisions for. Format: start:end' );
 		$this->addOption( 'dry-run', 'Perform a dry run' );
 
 		$this->requireExtension( 'CodeReview' );
@@ -20,7 +20,7 @@ class PopulateFollowupRevisions extends Maintenance {
 	public function execute() {
 		$repoName = $this->getArg( 0 );
 
-		if ( $repoName == "all" ) {
+		if ( $repoName == 'all' ) {
 			$this->error( "Cannot use the 'all' repo", true );
 		}
 
@@ -45,8 +45,12 @@ class PopulateFollowupRevisions extends Maintenance {
 
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$res = $dbr->select( 'code_rev', '*', array( 'cr_id' => $revisions, 'cr_repo_id' => $repo->getId() ),
-			__METHOD__ );
+		$res = $dbr->select(
+			'code_rev',
+			'*',
+			array( 'cr_id' => $revisions, 'cr_repo_id' => $repo->getId() ),
+			__METHOD__
+		);
 
 		foreach ( $res as $row ) {
 			$rev = CodeRevision::newFromRow( $repo, $row );
@@ -56,7 +60,7 @@ class PopulateFollowupRevisions extends Maintenance {
 			$this->output( "r{$row->cr_id}: " );
 
 			if ( count( $affectedRevs ) ) {
-				$this->output( "associating revs " . implode( ',', $affectedRevs ) . "\n" );
+				$this->output( 'associating revs ' . implode( ',', $affectedRevs ) . "\n" );
 
 				if ( !$dryrun ) {
 					$rev->addReferencesTo( $affectedRevs );
@@ -69,5 +73,5 @@ class PopulateFollowupRevisions extends Maintenance {
 	}
 }
 
-$maintClass = "PopulateFollowupRevisions";
-require_once( DO_MAINTENANCE );
+$maintClass = 'PopulateFollowupRevisions';
+require_once DO_MAINTENANCE;

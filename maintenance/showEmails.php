@@ -1,10 +1,10 @@
 <?php
 
 $IP = getenv( 'MW_INSTALL_PATH' );
-if( $IP === false ) {
+if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class CodeReviewShowEmails extends Maintenance {
 	private $EmailData = array(
@@ -31,7 +31,7 @@ You missed a lot of points there and need to revert or fix your code
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Show example emails for CodeReview";
+		$this->mDescription = 'Show example emails for CodeReview';
 
 		$this->requireExtension( 'CodeReview' );
 	}
@@ -44,7 +44,7 @@ You missed a lot of points there and need to revert or fix your code
 			, $this->EmailData['rev']
 			, $this->EmailData['comment']
 			, $this->EmailData['summary']
-		)->text() . "\n" ;
+		)->text() . "\n";
 		$this->printRule();
 
 		$this->printSubject( 2 );
@@ -88,22 +88,23 @@ You missed a lot of points there and need to revert or fix your code
 	 */
 	function printSubject( $type ) {
 		$repo = $this->EmailData['repo'];
-		if( $type == 2 ) {
+		if ( $type == 2 ) {
 			$rev  = $this->EmailData['prevrev'];
 		} else {
 			$rev  = $this->EmailData['rev'];
 		}
 		printf( "Subject: %s\n\n",
-			wfMessage( 'codereview-email-subj'.$type
+			wfMessage( 'codereview-email-subj' . $type
 				, $repo
 				, $rev
 			)->text()
 		);
 	}
+
 	function printRule() {
 		print "===============================================\n";
 	}
 }
 
 $maintClass = 'CodeReviewShowEmails';
-require_once( DO_MAINTENANCE );
+require_once DO_MAINTENANCE;

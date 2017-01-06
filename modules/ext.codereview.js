@@ -1,10 +1,10 @@
 jQuery( function( $ ) {
 	"use strict";
     // Animate the add-tags input to suggest existing tabs
-	$('#wpTag').suggestions( {
+	$( '#wpTag' ).suggestions( {
 		fetch: function() {
-			var $this = $(this ),
-				doUpdate = function(){
+			var $this = $( this ),
+				doUpdate = function() {
 					var currentText = $this.val(),
 						currentTags = currentText.split( /, */ ),
 						lastTag, doneTags;
@@ -23,12 +23,12 @@ jQuery( function( $ ) {
 					for( var i in tags ){
 						// Don't suggest a tag that's already been added
 						var good = true;
-						for( var j in currentTags ){
-							if( currentTags[j] === tags[i] ){
+						for ( var j in currentTags ){
+							if ( currentTags[j] === tags[i] ){
 								good = false;
 							}
 						}
-						if( good && ('' + tags[i]).indexOf( lastTag ) !== -1 ){
+						if ( good && ( '' + tags[i] ).indexOf( lastTag ) !== -1 ) {
 							suggestions.push( doneTags + tags[i] );
 						}
 					}
@@ -37,9 +37,9 @@ jQuery( function( $ ) {
 				};
 
 			var request;
-			if( $(this).data( 'suggestions' ) ){
+			if ( $( this ).data( 'suggestions' ) ) {
 				doUpdate();
-			} else if( $(this).data( 'request' ) ){
+			} else if ( $( this ).data( 'request' ) ) {
 				// A request is in progress, we'll get to it eventually
 			} else {
 				// Need to get the tags from the API
@@ -65,10 +65,10 @@ jQuery( function( $ ) {
 					}
 				);
 			}
-			$(this).data( 'request', request );
+			$( this ).data( 'request', request );
 		},
 		cancel: function () {
-			var request = $(this).data( 'request' );
+			var request = $( this ).data( 'request' );
 			// If the delay setting has caused the fetch to have not even happend yet, the request object will
 			// have never been set
 			if ( request && $.isFunction( request.abort ) ) {

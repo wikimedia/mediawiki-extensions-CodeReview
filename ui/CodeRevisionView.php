@@ -64,7 +64,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $item string
+	 * @param string $item
 	 * @return int
 	 */
 	private function ltrimIntval( $item ) {
@@ -73,7 +73,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $input string
+	 * @param string $input
 	 * @return array
 	 */
 	private function stringToRevList( $input ) {
@@ -121,7 +121,7 @@ class CodeRevisionView extends CodeView {
 		$modifiedPaths = $this->mRev->getModifiedPaths();
 		foreach ( $modifiedPaths as $row ) {
 			// Don't output NOOP paths
-			if ( strtolower( $row->cp_action ) == 'n' ){
+			if ( strtolower( $row->cp_action ) == 'n' ) {
 				continue;
 			}
 			$paths .= $this->formatPathLine( $row->cp_path, $row->cp_action );
@@ -130,7 +130,7 @@ class CodeRevisionView extends CodeView {
 			$paths = "<div class='mw-codereview-paths mw-content-ltr'><ul>\n$paths</ul></div>\n";
 		}
 		$comments = $this->formatComments();
-		$commentsLink = "";
+		$commentsLink = '';
 		if ( $comments ) {
 			$commentsLink = " (<a href=\"#code-comments\">" . wfMessage( 'code-comments' )->escaped() .
 				"</a>)\n";
@@ -151,7 +151,7 @@ class CodeRevisionView extends CodeView {
 		$html = '';
 		if ( $this->mPath != '' ) {
 			$links = array();
-			foreach( explode( '|', $this->mPath ) as $path ) {
+			foreach ( explode( '|', $this->mPath ) as $path ) {
 				$links[] = $linkRenderer->makeLink(
 					SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 					$path,
@@ -163,7 +163,7 @@ class CodeRevisionView extends CodeView {
 				->parseAsBlock();
 		}
 		# Output form
-		$html .= Xml::openElement( 'form', array( 'action' => $special->getLocalUrl(), 'method' => 'post' ) );
+		$html .= Xml::openElement( 'form', array( 'action' => $special->getLocalURL(), 'method' => 'post' ) );
 
 		if ( $this->canPostComments() ) {
 			$html .= $this->addActionButtons();
@@ -226,7 +226,7 @@ class CodeRevisionView extends CodeView {
 			$html .= "<h2 id='code-changes'>" . wfMessage( 'code-prop-changes' )->escaped() .
 				"</h2>\n" . $changes;
 		}
-		$html .= xml::closeElement( 'form' );
+		$html .= Xml::closeElement( 'form' );
 
 		$wgOut->addHTML( $html );
 	}
@@ -333,7 +333,7 @@ class CodeRevisionView extends CodeView {
 			if ( $action === 'd' ) {
 				if ( $rev > 1 ) {
 					$link = Linker::makeExternalLink( // last rev
-						"{$viewvc}{$safePath}?view=markup&pathrev=".($rev-1),
+						"{$viewvc}{$safePath}?view=markup&pathrev=" . ( $rev -1 ),
 						$path . $from );
 				} else {
 					$link = $safePath; // imported to SVN or something
@@ -361,7 +361,7 @@ class CodeRevisionView extends CodeView {
 		$tags = $this->mRev->getTags();
 		$list = '';
 		if ( count( $tags ) ) {
-			$list = implode( ", ",
+			$list = implode( ', ',
 				array_map(
 					array( $this, 'formatTag' ),
 					$tags )
@@ -374,14 +374,14 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $input string
+	 * @param string $input
 	 * @return array|null
 	 */
 	protected function splitTags( $input ) {
 		if ( !$this->mRev ) {
 			return array();
 		}
-		$tags = array_map( 'trim', explode( ",", $input ) );
+		$tags = array_map( 'trim', explode( ',', $input ) );
 		foreach ( $tags as $key => $tag ) {
 			$normal = $this->mRev->normalizeTag( $tag );
 			if ( $normal === false ) {
@@ -398,9 +398,9 @@ class CodeRevisionView extends CodeView {
 	 */
 	static function listTags( $tags ) {
 		if ( empty( $tags ) ) {
-			return "";
+			return '';
 		}
-		return implode( ",", $tags );
+		return implode( ',', $tags );
 	}
 
 	/**
@@ -435,8 +435,8 @@ class CodeRevisionView extends CodeView {
 
 	/**
 	 * Parameters are the tags to be added/removed sent with the request
-	 * @param $addTags array
-	 * @param $removeTags array
+	 * @param array $addTags
+	 * @param array $removeTags
 	 * @return string
 	 */
 	static function addTagForm( $addTags, $removeTags ) {
@@ -448,7 +448,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $tag string
+	 * @param string $tag
 	 * @return string
 	 */
 	protected function formatTag( $tag ) {
@@ -560,7 +560,11 @@ class CodeRevisionView extends CodeView {
 						'src' => $url,
 						'alt' => $alt,
 						'title' => $alt,
-						'border' => '0' ) ) ) );
+						'border' => '0'
+					)
+				)
+			)
+		);
 	}
 
 	/**
@@ -582,8 +586,8 @@ class CodeRevisionView extends CodeView {
 
 	/**
 	 * Format the sign-offs table
-	 * @param $signOffs array
-	 * @param $showButtons bool Whether the buttons to strike and submit sign-offs should be shown
+	 * @param array $signOffs
+	 * @param bool $showButtons Whether the buttons to strike and submit sign-offs should be shown
 	 * @return string HTML
 	 */
 	protected function formatSignoffs( $signOffs, $showButtons ) {
@@ -637,9 +641,9 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $references array
-	 * @param $showButtons bool
-	 * @param $inputName
+	 * @param array $references
+	 * @param bool $showButtons
+	 * @param string $inputName
 	 * @return string
 	 */
 	protected function formatReferences( $references, $showButtons, $inputName ) {
@@ -663,7 +667,7 @@ class CodeRevisionView extends CodeView {
 
 	/**
 	 * Format a single sign-off row. Helper function for formatSignoffs()
-	 * @param $signoff CodeSignoff
+	 * @param CodeSignoff $signoff
 	 * @return string HTML
 	 */
 	protected function formatSignoffInline( $signoff ) {
@@ -690,7 +694,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param  $comment CodeComment
+	 * @param CodeComment $comment
 	 * @return string
 	 */
 	protected function formatCommentInline( $comment ) {
@@ -703,7 +707,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $change CodePropChange
+	 * @param CodePropChange $change
 	 * @return string
 	 */
 	protected function formatChangeInline( $change ) {
@@ -776,7 +780,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $commentId int
+	 * @param int $commentId
 	 * @return Title
 	 */
 	protected function commentLink( $commentId ) {
@@ -797,7 +801,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $text string
+	 * @param string $text
 	 * @return string
 	 */
 	protected function previewComment( $text ) {
@@ -806,7 +810,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param  $comment CodeComment
+	 * @param CodeComment $comment
 	 * @param string $replyForm
 	 * @return string
 	 */
@@ -819,7 +823,7 @@ class CodeRevisionView extends CodeView {
 		} else {
 			$linkId = 'c' . intval( $comment->id );
 			$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
-			$permaLink = $linkRenderer->makeLink( $this->commentLink( $comment->id ), "#" );
+			$permaLink = $linkRenderer->makeLink( $this->commentLink( $comment->id ), '#' );
 		}
 
 		$popts = $wgOut->parserOptions();
@@ -862,7 +866,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $id int
+	 * @param int $id
 	 * @return string
 	 */
 	protected function commentReplyLink( $id ) {
@@ -911,7 +915,7 @@ class CodeRevisionView extends CodeView {
 	 * Render the bottom row of the sign-offs table containing the buttons to
 	 * strike and submit sign-offs
 	 *
-	 * @param $signOffs array
+	 * @param array $signOffs
 	 * @return string HTML
 	 */
 	protected function signoffButtons( $signOffs ) {
@@ -941,8 +945,8 @@ class CodeRevisionView extends CodeView {
 	/**
 	 * Gets all the current signoffs the user has against this revision
 	 *
-	 * @param Array $signOffs
-	 * @return Array
+	 * @param array $signOffs
+	 * @return array
 	 */
 	protected function getUserSignoffs( $signOffs ) {
 		$ret = array();
@@ -950,7 +954,7 @@ class CodeRevisionView extends CodeView {
 		/**
 		 * @var $s CodeSignoff
 		 */
-		foreach( $signOffs as $s ) {
+		foreach ( $signOffs as $s ) {
 			if ( $s->userText == $wgUser->getName() && !$s->isStruck() ) {
 				$ret[$s->flag] = true;
 			}
@@ -961,7 +965,7 @@ class CodeRevisionView extends CodeView {
 	/**
 	 * Render the bottom row of the follow-up revisions table containing the buttons and
 	 * textbox to add and remove follow-up associations
-	 * @param $inputName string
+	 * @param string $inputName
 	 * @return string HTML
 	 */
 	protected function referenceButtons( $inputName ) {

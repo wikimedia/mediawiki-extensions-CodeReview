@@ -25,7 +25,7 @@
 class WordCloud {
 	/**
 	 * Nice big array of words and their weights
-	 * @var Array
+	 * @var array
 	 */
 	private $wordsArray = array();
 
@@ -46,11 +46,11 @@ class WordCloud {
 	/**
 	 * Constructor
 	 *
-	 * @param $words Array of word => rank pairs
-	 * @param $callback Callback|null
+	 * @param array $words Array of word => rank pairs
+	 * @param Callback|null $callback
 	 */
 	public function __construct( Array $words = array(), $callback = null ) {
-		foreach( $words as $word => $rank ) {
+		foreach ( $words as $word => $rank ) {
 			$this->addWord( $word, $rank );
 		}
 		$this->callback = $callback ? $callback : array( $this, 'defaultTextCallback' );
@@ -59,12 +59,12 @@ class WordCloud {
 	/**
 	 * Assign word to array
 	 *
-	 * @param $word String The word to add
-	 * @param $value Int the weight to give it
+	 * @param string $word The word to add
+	 * @param int $value The weight to give it
 	 */
 	public function addWord( $word, $value = 1 ) {
 		$word = strtolower( $word );
-		if( array_key_exists( $word, $this->wordsArray ) ) {
+		if ( array_key_exists( $word, $this->wordsArray ) ) {
 			$this->wordsArray[$word] += $value;
 		} else {
 			$this->wordsArray[$word] = $value;
@@ -74,7 +74,7 @@ class WordCloud {
 	/**
 	 * Calculate size of words array
 	 *
-	 * @return Int
+	 * @return int
 	 */
 	public function getCloudSize() {
 		return array_sum( $this->wordsArray );
@@ -83,11 +83,11 @@ class WordCloud {
 	/**
 	 * Create the HTML code for each word and apply font size.
 	 *
-	 * @return String
+	 * @return string
 	 */
 	public function getCloudHtml() {
 		global $wgCodeReviewShuffleTagCloud;
-		if( 0 === count( $this->wordsArray ) ) {
+		if ( 0 === count( $this->wordsArray ) ) {
 			return '';
 		}
 
@@ -98,7 +98,7 @@ class WordCloud {
 		}
 
 		$max = max( $this->wordsArray );
-		if( is_array( $this->wordsArray ) ) {
+		if ( is_array( $this->wordsArray ) ) {
 			$return = '';
 			foreach ( $this->wordsArray as $word => $popularity ) {
 				$sizeRange = $this->getClassFromPercent( ( $popularity / $max ) * 100 );
@@ -112,9 +112,8 @@ class WordCloud {
 	/**
 	 * Default text callback for word display
 	 *
-	 * @param $word string
+	 * @param string $word
 	 * @param $sizeRange
-	 *
 	 * @return string
 	 */
 	public function defaultTextCallback( $word, $sizeRange ) {
@@ -130,10 +129,10 @@ class WordCloud {
 
 		shuffle( $keys );
 
-		if( count( $keys ) && is_array( $keys ) ) {
+		if ( count( $keys ) && is_array( $keys ) ) {
 			$tmpArray = $this->wordsArray;
 			$this->wordsArray = array();
-			foreach( $keys as $value ) {
+			foreach ( $keys as $value ) {
 				$this->wordsArray[$value] = $tmpArray[$value];
 			}
 		}
@@ -142,13 +141,12 @@ class WordCloud {
 	/**
 	 * Get the class range using a percentage
 	 *
-	 * @param $percent
-	 *
-	 * @return Int
+	 * @param int $percent
+	 * @return int
 	 */
 	private function getClassFromPercent( $percent ) {
-		foreach( $this->classPercentages as $class => $limit ) {
-			if( $percent >= $limit ) {
+		foreach ( $this->classPercentages as $class => $limit ) {
+			if ( $percent >= $limit ) {
 				return $class;
 			}
 		}

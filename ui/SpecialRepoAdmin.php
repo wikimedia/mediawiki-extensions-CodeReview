@@ -77,7 +77,7 @@ class RepoAdminListView {
 
 	/**
 	 * Get "create new repo" form
-	 * @return String
+	 * @return string
 	 */
 	private function getForm() {
 		global $wgScript;
@@ -117,7 +117,7 @@ class RepoAdminRepoView {
 
 	/**
 	 * Human-readable name of the repository
-	 * @var String
+	 * @var string
 	 */
 	private $repoName;
 
@@ -127,8 +127,8 @@ class RepoAdminRepoView {
 	private $repo;
 
 	/**
-	 * @param $t Title Special page title (with repo subpage)
-	 * @param $repo string
+	 * @param Title $t Special page title (with repo subpage)
+	 * @param string $repo
 	 */
 	public function __construct( Title $t, $repo ) {
 		$this->title = $t;
@@ -177,11 +177,11 @@ class RepoAdminRepoView {
 			Xml::buildForm(
 				array(
 					'repoadmin-edit-path' =>
-						Xml::input( 'wpRepoPath', 60, $repoPath, array( 'dir' => 'ltr') ),
+						Xml::input( 'wpRepoPath', 60, $repoPath, array( 'dir' => 'ltr' ) ),
 					'repoadmin-edit-bug' =>
-						Xml::input( 'wpBugPath', 60, $bugPath, array( 'dir' => 'ltr') ),
+						Xml::input( 'wpBugPath', 60, $bugPath, array( 'dir' => 'ltr' ) ),
 					'repoadmin-edit-view' =>
-						Xml::input( 'wpViewPath', 60, $viewPath, array( 'dir' => 'ltr') ) ) ) .
+						Xml::input( 'wpViewPath', 60, $viewPath, array( 'dir' => 'ltr' ) ) ) ) .
 			Html::hidden( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) ) .
 			Xml::submitButton( wfMessage( 'repoadmin-edit-button' )->text() ) .
 			'</form></fieldset>'

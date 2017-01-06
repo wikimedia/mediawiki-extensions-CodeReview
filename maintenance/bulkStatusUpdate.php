@@ -4,18 +4,18 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class BulkStatusUpdate extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Updates a range of revisions to a specific status";
+		$this->mDescription = 'Updates a range of revisions to a specific status';
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
-		$this->addArg( 'revisions', "The revisions to set status for. Format: start:end" );
+		$this->addArg( 'revisions', 'The revisions to set status for. Format: start:end' );
 		$this->addArg( 'status', "Code States: 'new', 'fixme', 'reverted', "
 			. "'resolved', 'ok', 'deferred', 'old'" );
-		$this->addArg( 'user', "Username for whom to accredit the state changes to." .
+		$this->addArg( 'user', 'Username for whom to accredit the state changes to.' .
 				"The User needs to have the 'codereview-set-status' right" );
 
 		$this->requireExtension( 'CodeReview' );
@@ -24,7 +24,7 @@ class BulkStatusUpdate extends Maintenance {
 	public function execute() {
 		$repoName = $this->getArg( 0 );
 
-		if ( $repoName == "all" ) {
+		if ( $repoName == 'all' ) {
 			$this->error( "Cannot use the 'all' repo", true );
 		}
 
@@ -37,7 +37,7 @@ class BulkStatusUpdate extends Maintenance {
 		if ( strpos( $revisions, ':' ) !== false ) {
 			$revisionVals = explode( ':', $revisions, 2 );
 		} else {
-			$this->error( "Invalid revision range", true );
+			$this->error( 'Invalid revision range', true );
 		}
 
 		$start = intval( $revisionVals[0] );
@@ -64,8 +64,12 @@ class BulkStatusUpdate extends Maintenance {
 
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$res = $dbr->select( 'code_rev', '*', array( 'cr_id' => $revisions, 'cr_repo_id' => $repo->getId() ),
-			__METHOD__ );
+		$res = $dbr->select(
+			'code_rev',
+			'*',
+			array( 'cr_id' => $revisions, 'cr_repo_id' => $repo->getId() ),
+			__METHOD__
+		);
 
 		foreach ( $res as $row ) {
 			$rev = CodeRevision::newFromRow( $repo, $row );
@@ -81,5 +85,5 @@ class BulkStatusUpdate extends Maintenance {
 	}
 }
 
-$maintClass = "BulkStatusUpdate";
-require_once( DO_MAINTENANCE );
+$maintClass = 'BulkStatusUpdate';
+require_once DO_MAINTENANCE;

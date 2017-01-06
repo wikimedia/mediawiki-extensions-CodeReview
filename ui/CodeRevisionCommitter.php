@@ -57,12 +57,12 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * Does the revision database update
 	 *
 	 * @param string $status Status to set the revision to
-	 * @param Array $addTags Tags to add to the revision
-	 * @param Array $removeTags Tags to remove from the Revision
-	 * @param Array $addSignoffs Array of sign-off flags to add
-	 * @param Array $strikeSignoffs Array of sign-off IDs to strike
-	 * @param Array $addReferences Array of revision IDs to add reference from
-	 * @param Array $removeReferences Array of revision IDs to remove references from
+	 * @param array $addTags Tags to add to the revision
+	 * @param array $removeTags Tags to remove from the Revision
+	 * @param array $addSignoffs Sign-off flags to add
+	 * @param array $strikeSignoffs Sign-off IDs to strike
+	 * @param array $addReferences Revision IDs to add reference from
+	 * @param array $removeReferences Revision IDs to remove references from
 	 * @param string $commentText Comment to add to the revision
 	 * @param null|int $parent What the parent comment is (if a subcomment)
 	 * @param $addReferenced
@@ -130,7 +130,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
 			$commentId = $this->mRev->saveComment( $commentText, $parent );
 
-			$commentAdded = ($commentId !== 0);
+			$commentAdded = ( $commentId !== 0 );
 		}
 
 		$dbw->endAtomic( __METHOD__ );

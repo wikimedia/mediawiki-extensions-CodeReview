@@ -71,8 +71,8 @@ class CodeRevision {
 
 		// Check for ignored paths
 		global $wgCodeReviewDeferredPaths;
-		if ( isset( $wgCodeReviewDeferredPaths[ $repo->getName() ] ) ) {
-			foreach ( $wgCodeReviewDeferredPaths[ $repo->getName() ] as $defer ) {
+		if ( isset( $wgCodeReviewDeferredPaths[$repo->getName()] ) ) {
+			foreach ( $wgCodeReviewDeferredPaths[$repo->getName()] as $defer ) {
 				if ( preg_match( $defer, $rev->commonPath ) ) {
 					$rev->status = 'deferred';
 					break;
@@ -81,8 +81,8 @@ class CodeRevision {
 		}
 
 		global $wgCodeReviewAutoTagPath;
-		if ( isset( $wgCodeReviewAutoTagPath[ $repo->getName() ] ) ) {
-			foreach ( $wgCodeReviewAutoTagPath[ $repo->getName() ] as $path => $tags ) {
+		if ( isset( $wgCodeReviewAutoTagPath[$repo->getName()] ) ) {
+			foreach ( $wgCodeReviewAutoTagPath[$repo->getName()] as $path => $tags ) {
 				if ( preg_match( $path, $rev->commonPath ) ) {
 					$rev->changeTags( $tags, array() );
 					break;
@@ -100,10 +100,10 @@ class CodeRevision {
 	public static function getPathFragments( $paths = array() ) {
 		$allPaths = array();
 
-		foreach( $paths as $path ) {
-			$currentPath = "/";
-			foreach( explode( '/', $path['path'] ) as $fragment ) {
-				if ( $currentPath !== "/" ) {
+		foreach ( $paths as $path ) {
+			$currentPath = '/';
+			foreach ( explode( '/', $path['path'] ) as $fragment ) {
+				if ( $currentPath !== '/' ) {
 					$currentPath .= '/';
 				}
 
@@ -115,7 +115,10 @@ class CodeRevision {
 					$action = 'N';
 				}
 
-				$allPaths[] = array( 'path' => $currentPath, 'action' => $action );
+				$allPaths[] = array(
+					'path' => $currentPath,
+					'action' => $action
+				);
 			}
 		}
 
@@ -133,7 +136,7 @@ class CodeRevision {
 		$rev = new CodeRevision();
 		$rev->repoId = intval( $row->cr_repo_id );
 		if ( $rev->repoId != $repo->getId() ) {
-			throw new Exception( "Invalid repo ID in " . __METHOD__ );
+			throw new Exception( 'Invalid repo ID in ' . __METHOD__ );
 		}
 		$rev->repo = $repo;
 		$rev->id = intval( $row->cr_id );
@@ -157,7 +160,7 @@ class CodeRevision {
 	 * Like getId(), but returns the result as a string, including prefix,
 	 * i.e. "r123" instead of 123.
 	 * @param $id
-	 * @return String
+	 * @return string
 	 */
 	public function getIdString( $id = null ) {
 		if ( $id === null ) {
@@ -171,7 +174,7 @@ class CodeRevision {
 	 * on the wiki then it includes the repo name as a prefix to the revision ID
 	 * (separated with a period).
 	 * This ensures you get a unique reference, as the revision ID alone can be
-	 * confusing (e.g. in emails, page titles etc.).  If only one repository is
+	 * confusing (e.g. in emails, page titles etc.). If only one repository is
 	 * defined then this returns the same as getIdString() as there is no ambiguity.
 	 *
 	 * @param $id int
@@ -200,7 +203,7 @@ class CodeRevision {
 
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getAuthor() {
 		return $this->author;
@@ -221,28 +224,28 @@ class CodeRevision {
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getMessage() {
 		return $this->message;
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getStatus() {
 		return $this->status;
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getOldStatus() {
 		return $this->oldStatus;
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getCommonPath() {
 		return $this->commonPath;
@@ -250,7 +253,7 @@ class CodeRevision {
 
 	/**
 	 * List of all possible states a CodeRevision can be in
-	 * @return Array
+	 * @return array
 	 */
 	public static function getPossibleStates() {
 		global $wgCodeReviewStates;
@@ -259,7 +262,7 @@ class CodeRevision {
 
 	/**
 	 * List of all states that a user cannot set on their own revision
-	 * @return Array
+	 * @return array
 	 */
 	public static function getProtectedStates() {
 		global $wgCodeReviewProtectedStates;
@@ -270,7 +273,7 @@ class CodeRevision {
 	 * @return array
 	 */
 	public static function getPossibleStateMessageKeys() {
-		return array_map( array( 'self', 'makeStateMessageKey'), self::getPossibleStates() );
+		return array_map( array( 'self', 'makeStateMessageKey' ), self::getPossibleStates() );
 	}
 
 	/**
@@ -283,7 +286,7 @@ class CodeRevision {
 
 	/**
 	 * List of all flags a user can mark themself as having done to a revision
-	 * @return Array
+	 * @return array
 	 */
 	public static function getPossibleFlags() {
 		global $wgCodeReviewFlags;
@@ -316,10 +319,11 @@ class CodeRevision {
 	 */
 	public function setStatus( $status, $user ) {
 		if ( !$this->isValidStatus( $status ) ) {
-			throw new Exception( "Tried to save invalid code revision status" );
+			throw new Exception( 'Tried to save invalid code revision status' );
 		}
 
-		// Don't allow the user account tied to the committer account mark their own revisions as ok/resolved
+		// Don't allow the user account tied to the committer account mark
+		// their own revisions as ok/resolved
 		// Obviously only works if user accounts are tied!
 		$wikiUser = $this->getWikiUser();
 		if ( self::isProtectedStatus( $status ) && $wikiUser && $user->getName() == $wikiUser->getName() ) {
@@ -331,7 +335,8 @@ class CodeRevision {
 
 		// Get the old status from the master
 		$dbw = wfGetDB( DB_MASTER );
-		$this->oldStatus = $dbw->selectField( 'code_rev',
+		$this->oldStatus = $dbw->selectField(
+			'code_rev',
 			'cr_status',
 			array( 'cr_repo_id' => $this->repoId, 'cr_id' => $this->id ),
 			__METHOD__
@@ -341,16 +346,19 @@ class CodeRevision {
 		}
 		// Update status
 		$this->status = $status;
-		$dbw->update( 'code_rev',
+		$dbw->update(
+			'code_rev',
 			array( 'cr_status' => $status ),
 			array(
 				'cr_repo_id' => $this->repoId,
-				'cr_id' => $this->id ),
+				'cr_id' => $this->id
+			),
 			__METHOD__
 		);
 		// Log this change
 		if ( $user && $user->getId() ) {
-			$dbw->insert( 'code_prop_changes',
+			$dbw->insert(
+				'code_prop_changes',
 				array(
 					'cpc_repo_id'   => $this->getRepoId(),
 					'cpc_rev_id'    => $this->getId(),
@@ -374,8 +382,8 @@ class CodeRevision {
 	 * Quickie protection against huuuuuuuuge batch inserts
 	 *
 	 * @param DatabaseBase $db
-	 * @param String $table
-	 * @param Array $data
+	 * @param string $table
+	 * @param array $data
 	 * @param string $method
 	 * @param array $options
 	 * @return void
@@ -383,7 +391,8 @@ class CodeRevision {
 	protected static function insertChunks( $db, $table, $data, $method = __METHOD__, $options = array() ) {
 		$chunkSize = 100;
 		for ( $i = 0; $i < count( $data ); $i += $chunkSize ) {
-			$db->insert( $table,
+			$db->insert(
+				$table,
 				array_slice( $data, $i, $chunkSize ),
 				$method,
 				$options
@@ -398,7 +407,8 @@ class CodeRevision {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->startAtomic( __METHOD__ );
 
-		$dbw->insert( 'code_rev',
+		$dbw->insert(
+			'code_rev',
 			array(
 				'cr_repo_id' => $this->repoId,
 				'cr_id' => $this->id,
@@ -407,7 +417,8 @@ class CodeRevision {
 				'cr_message' => $this->message,
 				'cr_status' => $this->status,
 				'cr_path' => $this->commonPath,
-				'cr_flags' => '' ),
+				'cr_flags' => ''
+			),
 			__METHOD__,
 			array( 'IGNORE' )
 		);
@@ -415,15 +426,18 @@ class CodeRevision {
 		// Already exists? Update the row!
 		$newRevision = $dbw->affectedRows() > 0;
 		if ( !$newRevision ) {
-			$dbw->update( 'code_rev',
+			$dbw->update(
+				'code_rev',
 				array(
 					'cr_author' => $this->author,
 					'cr_timestamp' => $dbw->timestamp( $this->timestamp ),
 					'cr_message' => $this->message,
-					'cr_path' => $this->commonPath ),
+					'cr_path' => $this->commonPath
+				),
 				array(
 					'cr_repo_id' => $this->repoId,
-					'cr_id' => $this->id ),
+					'cr_id' => $this->id
+				),
 				__METHOD__
 			);
 		}
@@ -454,7 +468,8 @@ class CodeRevision {
 			}
 
 			// Get the authors of these revisions
-			$res = $dbw->select( 'code_rev',
+			$res = $dbw->select(
+				'code_rev',
 				array(
 					'cr_repo_id',
 					'cr_id',
@@ -488,19 +503,21 @@ class CodeRevision {
 
 				$revisionCommitSummary = $revision->getMessage();
 
-				//Add the followup revision author if they have not already been added as a commentor (they won't want dupe emails!)
+				// Add the followup revision author if they have not already
+				// been added as a commentor (they won't want dupe emails!)
 				if ( $revisionAuthor && !array_key_exists( $revisionAuthor->getId(), $users ) ) {
 					$users[$revisionAuthor->getId()] = $revisionAuthor;
 				}
 
-				//Notify commenters and revision author of followup revision
+				// Notify commenters and revision author of followup revision
 				foreach ( $users as $user ) {
 
 					/**
 					 * @var $user User
 					 */
 
-					// No sense in notifying the author of this rev if they are a commenter/the author on the target rev
+					// No sense in notifying the author of this rev if they are
+					// a commenter/the author on the target rev
 					if ( $commitAuthorId == $user->getId() ) {
 						continue;
 					}
@@ -525,10 +542,10 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $dbw DatabaseBase
-	 * @param $paths array
-	 * @param $repoId int
-	 * @param $revId int
+	 * @param DatabaseBase $dbw DatabaseBase
+	 * @param array $paths
+	 * @param int $repoId
+	 * @param int $revId
 	 */
 	public static function insertPaths( $dbw, $paths, $repoId, $revId ) {
 		$data = array();
@@ -537,7 +554,8 @@ class CodeRevision {
 				'cp_repo_id' => $repoId,
 				'cp_rev_id'  => $revId,
 				'cp_path'    => $path['path'],
-				'cp_action'  => $path['action'] );
+				'cp_action'  => $path['action']
+			);
 		}
 		self::insertChunks( $dbw, 'code_paths', $data, __METHOD__, array( 'IGNORE' ) );
 	}
@@ -597,7 +615,8 @@ class CodeRevision {
 		// Also, get previous revisions that have bugs in common...
 		$affectedRevs = array();
 		if ( count( $affectedBugs ) ) {
-			$res = $dbw->select( 'code_bugs',
+			$res = $dbw->select(
+				'code_bugs',
 				array( 'cb_from' ),
 				array(
 					'cb_repo_id' => $this->repoId,
@@ -688,8 +707,8 @@ class CodeRevision {
 		}
 
 		$args = func_get_args();
-		array_shift( $args ); //Drop $subject
-		array_shift( $args ); //Drop $body
+		array_shift( $args ); // Drop $subject
+		array_shift( $args ); // Drop $body
 
 		// Make list of users to send emails to
 		$users = $this->getCommentingUsers();
@@ -747,7 +766,8 @@ class CodeRevision {
 			'cc_user' => $wgUser->getId(),
 			'cc_user_text' => $wgUser->getName(),
 			'cc_timestamp' => $dbw->timestamp( $ts ),
-			'cc_sortkey' => $sortkey );
+			'cc_sortkey' => $sortkey
+		);
 	}
 
 	/**
@@ -761,10 +781,12 @@ class CodeRevision {
 			// We construct a threaded sort key by concatenating the timestamps
 			// of all our parent comments
 			$dbw = wfGetDB( DB_MASTER );
-			$parentKey = $dbw->selectField( 'code_comment',
+			$parentKey = $dbw->selectField(
+				'code_comment',
 				'cc_sortkey',
 				array( 'cc_id' => $parent ),
-				__METHOD__ );
+				__METHOD__
+			);
 			if ( $parentKey ) {
 				return $parentKey . ',' . $ts;
 			} else {
@@ -781,7 +803,8 @@ class CodeRevision {
 	 */
 	public function getComments() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$result = $dbr->select( 'code_comment',
+		$result = $dbr->select(
+			'code_comment',
 			array(
 				'cc_id',
 				'cc_text',
@@ -791,10 +814,10 @@ class CodeRevision {
 				'cc_sortkey' ),
 			array(
 				'cc_repo_id' => $this->repoId,
-				'cc_rev_id' => $this->id ),
+				'cc_rev_id' => $this->id
+			),
 			__METHOD__,
-			array(
-				'ORDER BY' => 'cc_sortkey' )
+			array( 'ORDER BY' => 'cc_sortkey' )
 		);
 		$comments = array();
 		foreach ( $result as $row ) {
@@ -828,7 +851,8 @@ class CodeRevision {
 	 */
 	public function getPropChanges() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$result = $dbr->select( array( 'code_prop_changes', 'user' ),
+		$result = $dbr->select(
+			array( 'code_prop_changes', 'user' ),
 			array(
 				'cpc_attrib',
 				'cpc_removed',
@@ -857,7 +881,8 @@ class CodeRevision {
 	 */
 	public function getPropChangeUsers() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$result = $dbr->select( 'code_prop_changes',
+		$result = $dbr->select(
+			'code_prop_changes',
 			'DISTINCT(cpc_user)',
 			array(
 				'cpc_repo_id' => $this->repoId,
@@ -886,7 +911,8 @@ class CodeRevision {
 	 */
 	protected function getCommentingUsers() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select( 'code_comment',
+		$res = $dbr->select(
+			'code_comment',
 			'DISTINCT(cc_user)',
 			array(
 				'cc_repo_id' => $this->repoId,
@@ -896,7 +922,7 @@ class CodeRevision {
 			__METHOD__
 		);
 		$users = array();
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$users[$row->cc_user] = User::newFromId( $row->cc_user );
 		}
 		return $users;
@@ -924,7 +950,7 @@ class CodeRevision {
 			),
 			__METHOD__
 		);
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			if ( $this->id < intval( $row->cr_id ) ) {
 				$refs[] = $row;
 			}
@@ -951,7 +977,7 @@ class CodeRevision {
 			),
 			__METHOD__
 		);
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			if ( $this->id > intval( $row->cr_id ) ) {
 				$refs[] = $row;
 			}
@@ -1046,7 +1072,8 @@ class CodeRevision {
 	 */
 	public function getSignoffs( $from = DB_SLAVE ) {
 		$db = wfGetDB( $from );
-		$result = $db->select( 'code_signoffs',
+		$result = $db->select(
+			'code_signoffs',
 			array( 'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp', 'cs_timestamp_struck' ),
 			array(
 				'cs_repo_id' => $this->repoId,
@@ -1108,12 +1135,15 @@ class CodeRevision {
 	 */
 	public function getTags( $from = DB_SLAVE ) {
 		$db = wfGetDB( $from );
-		$result = $db->select( 'code_tags',
+		$result = $db->select(
+			'code_tags',
 			array( 'ct_tag' ),
 			array(
 				'ct_repo_id' => $this->repoId,
-				'ct_rev_id' => $this->id ),
-			__METHOD__ );
+				'ct_rev_id' => $this->id
+			),
+			__METHOD__
+		);
 
 		$tags = array();
 		foreach ( $result as $row ) {
@@ -1138,14 +1168,16 @@ class CodeRevision {
 		// Do the queries
 		$dbw = wfGetDB( DB_MASTER );
 		if ( $addTags ) {
-			$dbw->insert( 'code_tags',
+			$dbw->insert(
+				'code_tags',
 				$this->tagData( $addTags ),
 				__METHOD__,
 				array( 'IGNORE' )
 			);
 		}
 		if ( $removeTags ) {
-			$dbw->delete( 'code_tags',
+			$dbw->delete(
+				'code_tags',
 				array(
 					'ct_repo_id' => $this->repoId,
 					'ct_rev_id'  => $this->id,
@@ -1209,7 +1241,7 @@ class CodeRevision {
 		$title = Title::newFromText( $tag );
 		if ( $title ) {
 			global $wgContLang;
-			return $wgContLang->lc( $title->getDbKey() );
+			return $wgContLang->lc( $title->getDBkey() );
 		}
 
 		return false;
@@ -1240,7 +1272,9 @@ class CodeRevision {
 			$order = 'cr_id DESC';
 		}
 		$conds[] = "cr_id < $encId";
-		$row = $dbr->selectRow( $tables, 'cr_id',
+		$row = $dbr->selectRow(
+			$tables,
+			'cr_id',
 			$conds,
 			__METHOD__,
 			array( 'ORDER BY' => $order )
@@ -1269,7 +1303,9 @@ class CodeRevision {
 			$order = 'cr_id ASC';
 		}
 		$conds[] = "cr_id > $encId";
-		$row = $dbr->selectRow( $tables, 'cr_id',
+		$row = $dbr->selectRow(
+			$tables,
+			'cr_id',
 			$conds,
 			__METHOD__,
 			array( 'ORDER BY' => $order )
@@ -1288,7 +1324,7 @@ class CodeRevision {
 	protected function getPathConds( $path ) {
 		return array(
 			'cp_repo_id' => $this->repoId,
-			'cp_path'  => $path,
+			'cp_path' => $path,
 			// join conds
 			'cr_repo_id = cp_repo_id',
 			'cr_id = cp_rev_id'
@@ -1313,7 +1349,9 @@ class CodeRevision {
 		}
 		$conds[] = "cr_id > $encId";
 		$conds['cr_status'] = array( 'new', 'fixme' );
-		$row = $dbr->selectRow( $tables, 'cr_id',
+		$row = $dbr->selectRow(
+			$tables,
+			'cr_id',
 			$conds,
 			__METHOD__,
 			array( 'ORDER BY' => $order )
@@ -1327,12 +1365,12 @@ class CodeRevision {
 
 	/**
 	 * Get the canonical URL of a revision. Constructs a Title for this revision
-	 * along the lines of [[Special:Code/RepoName/12345#c678]] and calls getCanonicalUrl().
+	 * along the lines of [[Special:Code/RepoName/12345#c678]] and calls getCanonicalURL().
 	 * @param $commentId string|int
 	 * @return string
 	 */
 	public function getCanonicalUrl( $commentId = 0 ) {
-		# Append comment id if not null, empty string or zero
+		# Append comment ID if not null, empty string or zero
 		$fragment = $commentId ? "c{$commentId}" : '';
 		$title = SpecialPage::getTitleFor(
 			'Code',
@@ -1340,7 +1378,7 @@ class CodeRevision {
 			$fragment
 		);
 
-		return $title->getCanonicalUrl();
+		return $title->getCanonicalURL();
 	}
 
 	/**
@@ -1351,7 +1389,7 @@ class CodeRevision {
 	 */
 	protected function sendCommentToUDP( $commentId, $text, $url = null ) {
 		global $wgLang, $wgUser;
-		if( is_null( $url ) ) {
+		if ( is_null( $url ) ) {
 			$url = $this->getCanonicalUrl( $commentId );
 		}
 

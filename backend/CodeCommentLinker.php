@@ -7,18 +7,18 @@ abstract class CodeCommentLinker {
 	protected $mRepo;
 
 	/**
-	 * @param $repo CodeRepository
+	 * @param CodeRepository $repo
 	 */
 	function __construct( $repo ) {
 		$this->mRepo = $repo;
 	}
 
 	/**
-	 * @param $text string
+	 * @param string $text
 	 * @return string
 	 */
 	function link( $text ) {
-		# Catch links like http://www.mediawiki.org/wiki/Special:Code/MediaWiki/44245#c829
+		# Catch links like https://www.mediawiki.org/wiki/Special:Code/MediaWiki/44245#c829
 		# Ended by space or brackets (like those pesky <br /> tags)
 		$text = preg_replace_callback( '/(^|[^\w[])(' . wfUrlProtocolsWithoutProtRel() . ')(' . Parser::EXT_LINK_URL_CLASS . '+)/',
 			array( $this, 'generalLink' ), $text );
@@ -30,7 +30,7 @@ abstract class CodeCommentLinker {
 	}
 
 	/**
-	 * @param $arr array
+	 * @param array $arr
 	 * @return string
 	 */
 	function generalLink( $arr ) {
@@ -40,7 +40,7 @@ abstract class CodeCommentLinker {
 	}
 
 	/**
-	 * @param $arr array
+	 * @param array $arr
 	 * @return string
 	 */
 	function messageBugLink( $arr ) {
@@ -55,7 +55,7 @@ abstract class CodeCommentLinker {
 	}
 
 	/**
-	 * @param $matches array
+	 * @param array $matches
 	 * @return string
 	 */
 	function messageRevLink( $matches ) {
@@ -69,16 +69,16 @@ abstract class CodeCommentLinker {
 	}
 
 	/**
-	 * @param $url string
-	 * @param $text string
+	 * @param string $url
+	 * @param string $text
 	 * @return string
 	 */
 	abstract function makeExternalLink( $url, $text );
 
 	/**
 	 * @abstract
-	 * @param $title Title
-	 * @param $text string
+	 * @param Title $title
+	 * @param string $text
 	 * @return string
 	 */
 	abstract function makeInternalLink( $title, $text );
@@ -87,8 +87,8 @@ abstract class CodeCommentLinker {
 class CodeCommentLinkerHtml extends CodeCommentLinker {
 
 	/**
-	 * @param $url string
-	 * @param $text string
+	 * @param string $url
+	 * @param string $text
 	 * @return string
 	 */
 	function makeExternalLink( $url, $text ) {
@@ -96,9 +96,9 @@ class CodeCommentLinkerHtml extends CodeCommentLinker {
 	}
 
 	/**
-	 * @param $title Title
-	 * @param $text string
-	 * @return  string
+	 * @param Title $title
+	 * @param string $text
+	 * @return string
 	 */
 	function makeInternalLink( $title, $text ) {
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
@@ -108,8 +108,8 @@ class CodeCommentLinkerHtml extends CodeCommentLinker {
 
 class CodeCommentLinkerWiki extends CodeCommentLinker {
 	/**
-	 * @param $url string
-	 * @param $text string
+	 * @param string $url
+	 * @param string $text
 	 * @return string
 	 */
 	function makeExternalLink( $url, $text ) {
@@ -117,11 +117,11 @@ class CodeCommentLinkerWiki extends CodeCommentLinker {
 	}
 
 	/**
-	 * @param $title Title
-	 * @param $text string
+	 * @param Title $title
+	 * @param string $text
 	 * @return string
 	 */
 	function makeInternalLink( $title, $text ) {
-		return "[[" . $title->getPrefixedText() . "|$text]]";
+		return '[[' . $title->getPrefixedText() . "|$text]]";
 	}
 }

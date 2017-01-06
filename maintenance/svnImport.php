@@ -4,19 +4,19 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class SvnImport extends Maintenance {
 
 	/* Initialize various stuff to make this a useful command line script */
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Import revisions to Code Review from a Subversion repo";
+		$this->mDescription = 'Import revisions to Code Review from a Subversion repo';
 		$this->addOption( 'precache', 'Pre-cache diffs for last N revisions.  ' .
 						'May be a positive integer, 0 (for none) or \'all\'.  Default is 0', false, true );
 		$this->addArg( 'repo', 'The name of the repo. Use \'all\' to import from all defined repos' );
-		$this->addArg( 'start', "The revision to begin the import from.  If not specified then " .
-						"it starts from the last repo imported to the wiki.  Ignored if " .
+		$this->addArg( 'start', 'The revision to begin the import from. If not specified then ' .
+						'it starts from the last repo imported to the wiki. Ignored if ' .
 						"'all' is specified for <repo>", false );
 
 		$this->requireExtension( 'CodeReview' );
@@ -26,7 +26,7 @@ class SvnImport extends Maintenance {
 		$cacheSize = 0;
 		if ( $this->hasOption( 'precache' ) ) {
 			$cacheSize = $this->getOption( 'precache' );
-			if ( strtolower( $cacheSize ) !== "all" ) {
+			if ( strtolower( $cacheSize ) !== 'all' ) {
 				if ( preg_match( '/^\d+$/', $cacheSize ) ) {
 					$cacheSize = intval( $cacheSize );
 				} else {
@@ -37,7 +37,7 @@ class SvnImport extends Maintenance {
 
 		$repo = $this->getArg( 0 );
 
-		if ( $repo == "all" ) {
+		if ( $repo == 'all' ) {
 			$repoList = CodeRepository::getRepoList();
 			/**
 			 * @var $repoInfo CodeRepository
@@ -56,13 +56,14 @@ class SvnImport extends Maintenance {
 
 	/**
 	 * Import a repository in the local database.
-	 * @param $repoName String Local name of repository
-	 * @param $start Int Revision to begin the import from (Default: null, means last stored revision);
+	 * @param string $repoName Local name of repository
+	 * @param int $start Revision to begin the import from (Default: null, means last stored revision);
 	 * @param int $cacheSize
 	 * @return void
 	 */
 	private function importRepo( $repoName, $start = null, $cacheSize = 0 ) {
 		global $wgCodeReviewImportBatchSize;
+
 		static $adaptorReported = false;
 
 		$repo = CodeRepository::newFromName( $repoName );
@@ -74,7 +75,7 @@ class SvnImport extends Maintenance {
 
 		$svn = SubversionAdaptor::newFromRepo( $repo->getPath() );
 		if ( !$adaptorReported ) {
-			$this->output( "Using " . get_class($svn). " adaptor\n" );
+			$this->output( 'Using ' . get_class( $svn ) . " adaptor\n" );
 			$adaptorReported = true;
 		}
 
@@ -94,7 +95,7 @@ class SvnImport extends Maintenance {
 		 * mediawiki '/trunk/phase3' got created with r1284.
 		 */
 		if ( $start > ( $lastStoredRev + 1 ) ) {
-			$this->error( "Invalid starting point. r{$start} is beyond last stored revision: r" . ($lastStoredRev + 1) );
+			$this->error( "Invalid starting point. r{$start} is beyond last stored revision: r" . ( $lastStoredRev + 1 ) );
 			return;
 		}
 
@@ -144,7 +145,7 @@ class SvnImport extends Maintenance {
 			$dbw = wfGetDB( DB_MASTER );
 			$options = array( 'ORDER BY' => 'cr_id DESC' );
 
-			if ( $cacheSize == "all" ) {
+			if ( $cacheSize == 'all' ) {
 				$this->output( "Pre-caching all uncached diffs...\n" );
 			} else {
 				if ( $cacheSize == 1 ) {
@@ -161,9 +162,11 @@ class SvnImport extends Maintenance {
 			// TODO: This was optimised in order to skip rows that already have a diff,
 			//		 which is mostly what is required, but there may be situations where
 			//		 you want to re-calculate diffs (e.g. if $wgCodeReviewMaxDiffPaths
-			//		 changes).  If these situations arise we will either want to revert
+			//		 changes). If these situations arise we will either want to revert
 			//		 this behavior, or add a --force flag or something.
-			$res = $dbw->select( 'code_rev', 'cr_id',
+			$res = $dbw->select(
+				'code_rev',
+				'cr_id',
 				array( 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL OR cr_diff = ""' ),
 				__METHOD__,
 				$options
@@ -173,9 +176,9 @@ class SvnImport extends Maintenance {
 				$diff = $repo->getDiff( $row->cr_id ); // trigger caching
 				$msg = "Diff r{$row->cr_id} ";
 				if ( is_integer( $diff ) ) {
-					$msg .= "Skipped: " . CodeRepository::getDiffErrorMessage( $diff );
+					$msg .= 'Skipped: ' . CodeRepository::getDiffErrorMessage( $diff );
 				} else {
-					$msg .= "done";
+					$msg .= 'done';
 				}
 				$this->output( $msg . "\n" );
 			}
@@ -186,5 +189,5 @@ class SvnImport extends Maintenance {
 	}
 }
 
-$maintClass = "SvnImport";
-require_once( DO_MAINTENANCE );
+$maintClass = 'SvnImport';
+require_once DO_MAINTENANCE;

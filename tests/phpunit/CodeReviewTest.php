@@ -27,7 +27,7 @@ class CodeReviewTest extends MediaWikiTestCase {
 		// $this->assertEquals( '[http://foo.bar r123]', $formatter->link( '[http://foo.bar r123]' ) );
 		// $this->assertEquals( '[[foo|bug 1234]]', $formatter->link( '[[foo|bug 1234]]' ) );
 		// $this->assertEquals( '[[bugzilla:19359|bug 19359]]', $formatter->link( '[[bugzilla:19359|bug 19359]]' ) );
-		
+
 		// fails, bug 19299
 		// $this->assertEquals( '[http://www.mediawiki.org/wiki/Special:Code/MediaWiki/75762#code-comments r75762 CR comments]',
 		//	$formatter->link( '[http://www.mediawiki.org/wiki/Special:Code/MediaWiki/75762#code-comments r75762 CR comments]' ) );
@@ -40,7 +40,7 @@ class CodeReviewTest extends MediaWikiTestCase {
 		// $this->assertEquals( 'http://example.com/13518#c9', $formatter->link( 'bug 13518 comment 9' ) );
 
 		// $this->assertEquals( '[[Special:Code/Test/10234#c5]]', $formatter->link( 'r10234#c5' ) );
-		
+
 		// $this->assertEquals( '', $formatter->link( '' ) );
 	}
 
@@ -57,7 +57,7 @@ class CodeReviewTest extends MediaWikiTestCase {
 		);
 
 		# Find out our revision root URL
-		$baseUrl = SpecialPage::getTitleFor( 'Code', $repo->getName().'/305' )->getCanonicalUrl();
+		$baseUrl = SpecialPage::getTitleFor( 'Code', $repo->getName() . '/305' )->getCanonicalUrl();
 
 		# Test revision URL with various comment id:
 		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl(    '' ) );

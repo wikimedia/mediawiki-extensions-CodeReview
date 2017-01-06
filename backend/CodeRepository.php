@@ -12,13 +12,13 @@ class CodeRepository {
 
 	/**
 	 * Local cache of Wiki user -> SVN user mappings
-	 * @var Array
+	 * @var array
 	 */
 	private static $userLinks = array();
 
 	/**
 	 * Sort of the same, but looking it up for the other direction
-	 * @var Array
+	 * @var array
 	 */
 	private static $authorLinks = array();
 
@@ -29,13 +29,13 @@ class CodeRepository {
 
 	/**
 	 * Constructor, can't use it. Call one of the static newFrom* methods
-	 * @param $id Int Database id for the repo
-	 * @param $name String User-defined name for the repository
-	 * @param $path String Path to SVN
-	 * @param $viewvc String Base path to ViewVC URLs
-	 * @param $bugzilla String Base path to Bugzilla
+	 * @param int $id Database ID for the repo
+	 * @param string $name User-defined name for the repository
+	 * @param string $path Path to SVN
+	 * @param string $viewvc Base path to ViewVC URLs
+	 * @param string $bugzilla Base path to Bugzilla
 	 */
-	public function  __construct( $id, $name, $path, $viewvc, $bugzilla ) {
+	public function __construct( $id, $name, $path, $viewvc, $bugzilla ) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->path = $path;
@@ -44,7 +44,7 @@ class CodeRepository {
 	}
 
 	/**
-	 * @param $name string
+	 * @param string $name
 	 * @return CodeRepository|null
 	 */
 	public static function newFromName( $name ) {
@@ -56,7 +56,8 @@ class CodeRepository {
 				'repo_name',
 				'repo_path',
 				'repo_viewvc',
-				'repo_bugzilla' ),
+				'repo_bugzilla'
+			),
 			array( 'repo_name' => $name ),
 			__METHOD__ );
 
@@ -68,7 +69,7 @@ class CodeRepository {
 	}
 
 	/**
-	 * @param $id int
+	 * @param int $id
 	 * @return CodeRepository|null
 	 */
 	public static function newFromId( $id ) {
@@ -127,28 +128,28 @@ class CodeRepository {
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getName() {
 		return $this->name;
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getPath() {
 		return $this->path;
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getViewVcBase() {
 		return $this->viewVc;
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getBugzillaBase() {
 		return $this->bugzilla;
@@ -198,13 +199,19 @@ class CodeRepository {
 			array( 'cr_author', 'MAX(cr_timestamp) AS time' ),
 			array( 'cr_repo_id' => $this->getId() ),
 			__METHOD__,
-			array( 'GROUP BY' => 'cr_author',
-				'ORDER BY' => 'cr_author', 'LIMIT' => 500 )
+			array(
+				'GROUP BY' => 'cr_author',
+				'ORDER BY' => 'cr_author',
+				'LIMIT' => 500
+			)
 		);
 		$authors = array();
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			if ( $row->cr_author !== null ) {
-				$authors[] = array( 'author' => $row->cr_author, 'lastcommit' => $row->time );
+				$authors[] = array(
+					'author' => $row->cr_author,
+					'lastcommit' => $row->time
+				);
 			}
 		}
 		$wgMemc->set( $key, $authors, 3600 * 24 );
@@ -236,11 +243,14 @@ class CodeRepository {
 			array( 'ct_tag', 'COUNT(*) AS revs' ),
 			array( 'ct_repo_id' => $this->getId() ),
 			__METHOD__,
-			array( 'GROUP BY' => 'ct_tag',
-				'ORDER BY' => 'revs DESC', 'LIMIT' => 500 )
+			array(
+				'GROUP BY' => 'ct_tag',
+				'ORDER BY' => 'revs DESC',
+				'LIMIT' => 500
+			)
 		);
 		$tags = array();
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$tags[$row->ct_tag] = $row->revs;
 		}
 		$wgMemc->set( $key, $tags, 3600 * 3 );
@@ -249,7 +259,7 @@ class CodeRepository {
 
 	/**
 	 * Load a particular revision out of the DB
-	 * @param $id int|string
+	 * @param int|string $id
 	 * @throws Exception
 	 * @return CodeRevision
 	 */
@@ -258,7 +268,8 @@ class CodeRepository {
 			return null;
 		}
 		$dbr = wfGetDB( DB_SLAVE );
-		$row = $dbr->selectRow( 'code_rev',
+		$row = $dbr->selectRow(
+			'code_rev',
 			'*',
 			array(
 				'cr_id' => $id,
@@ -276,7 +287,7 @@ class CodeRepository {
 	 * Returns the supplied revision ID as a string ready for output, including the
 	 * appropriate (localisable) prefix (e.g. "r123" instead of 123).
 	 *
-	 * @param $id string
+	 * @param string $id
 	 * @return string
 	 */
 	public function getRevIdString( $id ) {
@@ -288,28 +299,28 @@ class CodeRepository {
 	 * on the wiki then it includes the repo name as a prefix to the revision ID
 	 * (separated with a period).
 	 * This ensures you get a unique reference, as the revision ID alone can be
-	 * confusing (e.g. in emails, page titles etc.).  If only one repository is
+	 * confusing (e.g. in emails, page titles etc.). If only one repository is
 	 * defined then this returns the same as getRevIdString() as there
 	 * is no ambiguity.
 	 *
-	 * @param $id string
+	 * @param string $id
 	 * @return string
 	 */
 	public function getRevIdStringUnique( $id ) {
 		$id = wfMessage( 'code-rev-id', $id )->text();
 
-	// If there is more than one repo, use the repo name as well.
+		// If there is more than one repo, use the repo name as well.
 		$repos = CodeRepository::getRepoList();
 		if ( count( $repos ) > 1 ) {
-			$id = $this->getName() . "." . $id;
+			$id = $this->getName() . '.' . $id;
 		}
 
 		return $id;
 	}
 
 	/**
-	 * @param $rev int Revision ID
-	 * @param $useCache string 'skipcache' to avoid caching
+	 * @param int $rev Revision ID
+	 * @param string $useCache 'skipcache' to avoid caching
 	 *                   'cached' to *only* fetch if cached
 	 * @return string|int The diff text on success, a DIFFRESULT_* constant on failure.
 	 */
@@ -358,7 +369,8 @@ class CodeRepository {
 		// it from the DB.
 		if ( !$data && $useCache != 'skipcache' ) {
 			$dbr = wfGetDB( DB_SLAVE );
-			$row = $dbr->selectRow( 'code_rev',
+			$row = $dbr->selectRow(
+				'code_rev',
 				array( 'cr_diff', 'cr_flags' ),
 				array( 'cr_repo_id' => $this->id, 'cr_id' => $rev, 'cr_diff IS NOT NULL' ),
 				__METHOD__
@@ -391,8 +403,8 @@ class CodeRepository {
 
 				// If $data is blank, report the error that no data was returned.
 				// TODO: Currently we can't tell the difference between an SVN/connection
-				//		 failure and an empty diff.  See if we can remedy this!
-				if ($data == "") {
+				//		 failure and an empty diff. See if we can remedy this!
+				if ( $data == '' ) {
 					$data = self::DIFFRESULT_NoDataReturned;
 				} else {
 					// Otherwise, store the resulting diff to both the temporary cache and
@@ -404,7 +416,8 @@ class CodeRepository {
 					$storedData = $data;
 					$flags = Revision::compressRevisionText( $storedData );
 					$dbw = wfGetDB( DB_MASTER );
-					$dbw->update( 'code_rev',
+					$dbw->update(
+						'code_rev',
 						array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
 						array( 'cr_repo_id' => $this->id, 'cr_id' => $rev ),
 						__METHOD__
@@ -435,7 +448,8 @@ class CodeRepository {
 		$storedData = $data;
 		$flags = Revision::compressRevisionText( $storedData );
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->update( 'code_rev',
+		$dbw->update(
+			'code_rev',
 			array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
 			array( 'cr_repo_id' => $this->id, 'cr_id' => $codeRev->getId() ),
 			__METHOD__
@@ -445,7 +459,7 @@ class CodeRepository {
 	/**
 	 * Is the requested revid a valid revision to show?
 	 * @return bool
-	 * @param $rev int Rev id to check
+	 * @param int $rev Rev ID to check
 	 */
 	public function isValidRev( $rev ) {
 		$rev = intval( $rev );
@@ -454,8 +468,8 @@ class CodeRepository {
 
 	/**
 	 * Link the $author to the wikiuser $user
-	 * @param $author String
-	 * @param $user User
+	 * @param string $author
+	 * @param User $user
 	 * @return bool Success
 	 */
 	public function linkUser( $author, User $user ) {
@@ -467,7 +481,8 @@ class CodeRepository {
 		$dbw = wfGetDB( DB_MASTER );
 		// Insert in the auther -> user link row.
 		// Skip existing rows.
-		$dbw->insert( 'code_authors',
+		$dbw->insert(
+			'code_authors',
 			array(
 				'ca_repo_id'   => $this->getId(),
 				'ca_author'    => $author,
@@ -519,8 +534,7 @@ class CodeRepository {
 	 * returns a User object if $author has a wikiuser associated,
 	 * or false
 	 *
-	 * @param $author string
-	 *
+	 * @param string $author
 	 * @return User|bool
 	 */
 	public function authorWikiUser( $author ) {
@@ -542,7 +556,7 @@ class CodeRepository {
 		if ( $wikiUser !== false ) {
 			$user = User::newFromName( $wikiUser );
 		}
-		if ( $user instanceof User ){
+		if ( $user instanceof User ) {
 			$res = $user;
 		} else {
 			$res = false;
@@ -554,8 +568,7 @@ class CodeRepository {
 	 * returns an author name if $name wikiuser has an author associated,
 	 * or false
 	 *
-	 * @param $name string
-	 *
+	 * @param string $name
 	 * @return string|bool
 	 */
 	public function wikiUserAuthor( $name ) {
@@ -578,21 +591,21 @@ class CodeRepository {
 
 	/**
 	 * @static
-	 * @param $diff int (error code) or string (diff text), as returned from getDiff()
+	 * @param int|string $diff Error code (int) or diff text (string), as returned from getDiff()
 	 * @return string (error message, or empty string if valid diff)
 	 */
 	public static function getDiffErrorMessage( $diff ) {
 		global $wgCodeReviewMaxDiffPaths;
 
 		if ( is_integer( $diff ) ) {
-			switch( $diff ) {
+			switch ( $diff ) {
 				case self::DIFFRESULT_BadRevision:
 					return 'Bad revision';
 				case self::DIFFRESULT_NothingToCompare:
 					return 'Nothing to compare';
 				case self::DIFFRESULT_TooManyPaths:
 					return 'Too many paths ($wgCodeReviewMaxDiffPaths = '
-					       . $wgCodeReviewMaxDiffPaths . ')';
+							. $wgCodeReviewMaxDiffPaths . ')';
 				case self::DIFFRESULT_NoDataReturned:
 					return 'No data returned - no diff data, or connection lost';
 				case self::DIFFRESULT_NotInCache:
@@ -603,6 +616,6 @@ class CodeRepository {
 		}
 
 		// TODO: Should this return "", $diff or a message string, e.g. "OK"?
-		return "";
+		return '';
 	}
 }

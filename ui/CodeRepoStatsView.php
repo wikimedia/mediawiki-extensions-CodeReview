@@ -58,8 +58,8 @@ class CodeRepoStatsView extends CodeView {
 	}
 
 	/**
-	 * @param $status string
-	 * @param $array array
+	 * @param string $status
+	 * @param array $array
 	 */
 	function writeStatusPathTable( $status, $array ) {
 		global $wgOut;
@@ -73,8 +73,8 @@ class CodeRepoStatsView extends CodeView {
 	}
 
 	/**
-	 * @param $status string
-	 * @param $array array
+	 * @param string $status
+	 * @param array $array
 	 */
 	function writeAuthorStatusTable( $status, $array ) {
 		global $wgOut;
@@ -83,9 +83,9 @@ class CodeRepoStatsView extends CodeView {
 	}
 
 	/**
-	 * @param $status string
-	 * @param $array array
-	 * @param $options array
+	 * @param string $status
+	 * @param array $array
+	 * @param array $options
 	 */
 	function writeAuthorTable( $status, $array, $options = array() ) {
 		global $wgOut, $wgLang;

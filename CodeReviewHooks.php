@@ -137,7 +137,7 @@ class CodeReviewHooks {
 	 * @return bool
 	 */
 	public static function onRenameUserSQL( $renameUserSQL ) {
-		foreach( self::$userTables as $table => $fields ) {
+		foreach ( self::$userTables as $table => $fields ) {
 			$renameUserSQL->tables[$table] = $fields;
 		}
 		return true;
@@ -158,7 +158,7 @@ class CodeReviewHooks {
 	 */
 	public static function onUserMergeAccountFields( &$updateFields ) {
 		// array( tableName, idField, textField )
-		foreach( self::$userTables as $table => $fields ) {
+		foreach ( self::$userTables as $table => $fields ) {
 			$updateFields[] = array( $table, $fields[1], $fields[0] );
 		}
 		return true;

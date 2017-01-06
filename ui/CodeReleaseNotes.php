@@ -32,19 +32,19 @@ class CodeReleaseNotes extends CodeView {
 		$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/releasenotes' );
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
-			"<fieldset><legend>" . wfMessage( 'code-release-legend' )->escaped() . "</legend>" .
-				Html::hidden( 'title', $special->getPrefixedDBKey() ) . '<b>' .
-				Xml::inputlabel( wfMessage( "code-release-startrev" )->text(), 'startrev', 'startrev',
+			'<fieldset><legend>' . wfMessage( 'code-release-legend' )->escaped() . '</legend>' .
+				Html::hidden( 'title', $special->getPrefixedDBkey() ) . '<b>' .
+				Xml::inputLabel( wfMessage( 'code-release-startrev' )->text(), 'startrev', 'startrev',
 					10, $this->mStartRev ) .
 				'</b>&#160;' .
-				Xml::inputlabel( wfMessage( "code-release-endrev" )->text(), 'endrev', 'endrev', 10,
+				Xml::inputLabel( wfMessage( 'code-release-endrev' )->text(), 'endrev', 'endrev', 10,
 					$this->mEndRev ) .
 				'&#160;' .
-				Xml::inputlabel( wfMessage( "code-pathsearch-path" )->text(), 'path', 'path', 45,
-		$this->mPath ) .
+				Xml::inputLabel( wfMessage( 'code-pathsearch-path' )->text(), 'path', 'path', 45,
+					$this->mPath ) .
 				'&#160;' .
 				Xml::submitButton( wfMessage( 'allpagessubmit' )->text() ) . "\n" .
-			"</fieldset>" . Xml::closeElement( 'form' )
+			'</fieldset>' . Xml::closeElement( 'form' )
 		);
 	}
 
@@ -61,7 +61,8 @@ class CodeReleaseNotes extends CodeView {
 			$where['cr_path'] = $this->mPath;
 		}
 		# Select commits within this range...
-		$res = $dbr->select( array( 'code_rev', 'code_tags' ),
+		$res = $dbr->select(
+			array( 'code_rev', 'code_tags' ),
 			array( 'cr_message', 'cr_author', 'cr_id', 'ct_tag AS rnotes' ),
 			array_merge( array(
 				'cr_repo_id' => $this->mRepo->getId(), // this repo
@@ -84,8 +85,8 @@ class CodeReleaseNotes extends CodeView {
 				$summary = $this->shortenSummary( $summary );
 				# Anything left? (this can happen with some heuristics)
 				if ( $summary ) {
-					$summary = str_replace( "\n", "<br />", $summary ); // Newlines -> <br />
-					$wgOut->addHTML( "<li>" );
+					$summary = str_replace( "\n", '<br />', $summary ); // Newlines -> <br />
+					$wgOut->addHTML( '<li>' );
 					$wgOut->addHTML(
 						$this->codeCommentLinkerHtml->link( $summary ) . " <i>(" . htmlspecialchars( $row->cr_author ) .
 						', ' . $this->codeCommentLinkerHtml->link( "r{$row->cr_id}" ) . ")</i>"
@@ -139,16 +140,16 @@ class CodeReleaseNotes extends CodeView {
 	/**
 	 * Quick relevance tests (these *should* be over-inclusive a little if anything)
 	 *
-	 * @param  $summary
-	 * @param bool $whole
+	 * @param string $summary
+	 * @param bool $whole Are we looking at the whole summary or an aspect of it?
 	 * @return bool|int
 	 */
 	private function isRelevant( $summary, $whole = true ) {
 		# Mentioned a bug?
-		if ( preg_match( CodeRevision::BugReference, $summary) ) {
+		if ( preg_match( CodeRevision::BugReference, $summary ) ) {
 			return true;
 		}
-		#Mentioned a config var?
+		# Mentioned a config var?
 		if ( preg_match( '/\b\$[we]g[0-9a-z]{3,50}\b/i', $summary ) ) {
 			return true;
 		}

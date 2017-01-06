@@ -31,7 +31,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	function doForm() {
 		global $wgOut, $wgUser;
 		$form = Xml::openElement( 'form', array( 'method' => 'post',
-			'action' => $this->getTitle()->getLocalUrl(),
+			'action' => $this->getTitle()->getLocalURL(),
 			'name' => 'uluser', 'id' => 'mw-codeauthor-form1' ) );
 
 		$form .= Html::hidden( 'linktoken', $wgUser->getEditToken( 'link' ) );

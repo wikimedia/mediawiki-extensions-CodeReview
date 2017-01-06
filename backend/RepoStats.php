@@ -80,16 +80,16 @@ class RepoStats {
 
 		$this->fixmesPerPath = array();
 		global $wgCodeReviewFixmePerPath;
-		if ( isset( $wgCodeReviewFixmePerPath[ $repoName ] ) ) {
-			foreach( $wgCodeReviewFixmePerPath[ $repoName ] as $path ) {
+		if ( isset( $wgCodeReviewFixmePerPath[$repoName] ) ) {
+			foreach ( $wgCodeReviewFixmePerPath[$repoName] as $path ) {
 				$this->fixmesPerPath[$path] = $this->getPathFixmes( $path );
 			}
 		}
 
 		$this->newPerPath = array();
 		global $wgCodeReviewNewPerPath;
-		if ( isset( $wgCodeReviewNewPerPath[ $repoName ] ) ) {
-			foreach( $wgCodeReviewNewPerPath[ $repoName ] as $path ) {
+		if ( isset( $wgCodeReviewNewPerPath[$repoName] ) ) {
+			foreach ( $wgCodeReviewNewPerPath[$repoName] as $path ) {
 				$this->newPerPath[$path] = $this->getPathNews( $path );
 			}
 		}

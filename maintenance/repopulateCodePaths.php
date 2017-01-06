@@ -3,14 +3,14 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class RepopulateCodePaths extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Rebuilds all code paths to support more efficient searching";
+		$this->mDescription = 'Rebuilds all code paths to support more efficient searching';
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
-		$this->addArg( 'revisions', "The revisions to set status for. Format: start:end" );
+		$this->addArg( 'revisions', 'The revisions to set status for. Format: start:end' );
 
 		$this->requireExtension( 'CodeReview' );
 	}
@@ -18,7 +18,7 @@ class RepopulateCodePaths extends Maintenance {
 	public function execute() {
 		$repoName = $this->getArg( 0 );
 
-		if ( $repoName == "all" ) {
+		if ( $repoName == 'all' ) {
 			$this->error( "Cannot use the 'all' repo", true );
 		}
 
@@ -41,8 +41,12 @@ class RepopulateCodePaths extends Maintenance {
 
 		$dbr = wfGetDB( DB_SLAVE );
 
-		$res = $dbr->select( 'code_paths', '*', array( 'cp_rev_id' => $revisions, 'cp_repo_id' => $repo->getId() ),
-			__METHOD__ );
+		$res = $dbr->select(
+			'code_paths',
+			'*',
+			array( 'cp_rev_id' => $revisions, 'cp_repo_id' => $repo->getId() ),
+			__METHOD__
+		);
 
 		$dbw = wfGetDB( DB_MASTER );
 		$this->beginTransaction( $dbw, __METHOD__ );
@@ -64,5 +68,5 @@ class RepopulateCodePaths extends Maintenance {
 	}
 }
 
-$maintClass = "RepopulateCodePaths";
-require_once( DO_MAINTENANCE );
+$maintClass = 'RepopulateCodePaths';
+require_once DO_MAINTENANCE;

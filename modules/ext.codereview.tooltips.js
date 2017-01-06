@@ -15,7 +15,7 @@ var CodeTooltipsInit = function() {
 
 		function showTooltip() {
 			var $el = $( this );
-			if ( $el.data('codeTooltip') ) {
+			if ( $el.data( 'codeTooltip' ) ) {
 				return; // already processed
 			}
 			$el.data( 'codeTooltipLoading', true );
@@ -93,8 +93,8 @@ var CodeTooltipsInit = function() {
 				return;
 			}
 			$el.data( 'codeTooltipLeft', true );
-		});
-	});
+		} );
+	} );
 };
 
 $( CodeTooltipsInit );

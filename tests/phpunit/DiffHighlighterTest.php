@@ -10,7 +10,7 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 				"@@ -1,3 +1,4 @@\r\n"
 			);
 			$this->assertTrue( true, 'Managed to parse a chunk with \r\n' );
-		} catch( Exception $e ) {
+		} catch ( Exception $e ) {
 			$this->fail( "parseChunkDelimiter() could not parse a chunk finishing with '\\r\\n' This is happening on Windows" );
 		}
 	}
@@ -21,7 +21,7 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 				"@@ -1,3 +1,4 @@\n"
 			);
 			$this->assertTrue( true, 'Managed to parse a chunk with \n' );
-		} catch( Exception $e ) {
+		} catch ( Exception $e ) {
 			$this->fail( "parseChunkDelimiter() could not parse a chunk finishing with '\\n' This is happening on Unix systems" );
 		}
 	}
@@ -39,7 +39,7 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 	function provideUnifiedDiffChunksDelimiters() {
 		return array( /* expected array, chunk delimiter */
 			array(
-				array( 1, 3, 1, 4),
+				array( 1, 3, 1, 4 ),
 				'@@ -1,3 +1,4 @@'
 			),
 			array(

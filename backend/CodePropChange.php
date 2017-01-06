@@ -10,14 +10,14 @@ class CodePropChange {
 	public $rev;
 
 	/**
-	 * @param $rev CodeRevision
+	 * @param CodeRevision $rev
 	 */
 	function __construct( $rev ) {
 		$this->rev = $rev;
 	}
 
 	/**
-	 * @param $rev CodeRevision
+	 * @param CodeRevision $rev
 	 * @param $row
 	 * @return CodePropChange
 	 */
@@ -26,7 +26,7 @@ class CodePropChange {
 	}
 
 	/**
-	 * @param $rev CodeRevision
+	 * @param CodeRevision $rev
 	 * @param $data
 	 * @return CodePropChange
 	 */

@@ -8,6 +8,7 @@ class CodeAuthorListView extends CodeView {
 
 	function execute() {
 		global $wgOut, $wgLang;
+
 		$authors = $this->mRepo->getAuthorList();
 		$repo = $this->mRepo->getName();
 		$text = wfMessage( 'code-authors-text' )->text() . "\n\n";
@@ -22,8 +23,8 @@ class CodeAuthorListView extends CodeView {
 
 		foreach ( $authors as $committer ) {
 			if ( $committer ) {
-				$wgOut->addHTML( "<tr><td>" );
-				$author = $committer["author"];
+				$wgOut->addHTML( '<tr><td>' );
+				$author = $committer['author'];
 				$text = "[[Special:Code/$repo/author/$author|$author]]";
 				$user = $this->mRepo->authorWikiUser( $author );
 				if ( $user ) {

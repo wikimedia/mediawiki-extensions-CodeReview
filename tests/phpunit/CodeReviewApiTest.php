@@ -26,8 +26,8 @@ class CodeReviewApiTest extends ApiTestCase {
 
 	function tearDown() {
 		parent::tearDown();
-		//TODO:
-		//$this->destroyRepo();
+		// TODO:
+		// $this->destroyRepo();
 	}
 
 	private function createRepo() {

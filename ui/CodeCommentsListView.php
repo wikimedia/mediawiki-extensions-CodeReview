@@ -28,12 +28,12 @@ class CodeCommentsTablePager extends SvnTablePager {
 			'options' => array(),
 		);
 
-		if( count( $this->mView->mPath ) ) {
+		if ( count( $this->mView->mPath ) ) {
 			$query['tables'][] = 'code_paths';
 			$query['join_conds']['code_paths'] = array( 'INNER JOIN', 'cc_repo_id = cp_repo_id AND cc_rev_id = cp_rev_id' );
 			$query['conds']['cp_path'] = $this->mView->mPath;
 		}
-		if( $this->mView->mAuthor ) {
+		if ( $this->mView->mAuthor ) {
 			$query['conds']['cc_user_text'] = User::newFromName( $this->mView->mAuthor )->getName();
 		}
 
@@ -65,12 +65,14 @@ class CodeCommentsTablePager extends SvnTablePager {
 		case 'cc_rev_id':
 			return $linkRenderer->makeLink(
 				SpecialPage::getSafeTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-comments' ),
-				$value );
+				$value
+			);
 		case 'cr_status':
 			return $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Code',
 					$this->mRepo->getName() . '/status/' . $value ),
-				$this->mView->statusDesc( $value ) );
+				$this->mView->statusDesc( $value )
+			);
 		case 'cc_user_text':
 			return Linker::userLink( - 1, $value );
 		case 'cr_message':
@@ -81,7 +83,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 			return $this->getLanguage()->timeanddate( $value, true );
 		}
 
-		throw new Exception( '$name is invalid input.');
+		throw new Exception( '$name is invalid input.' );
 	}
 
 	function getTitle() {

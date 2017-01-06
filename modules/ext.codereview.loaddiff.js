@@ -4,24 +4,24 @@
 // Create or extend the object
 window.CodeReview = $.extend( window.CodeReview, {
 
-	loadDiff : function(repo, rev) {
+	loadDiff: function( repo, rev ) {
 		var apiPath = mw.config.get( 'wgScriptPath' ) + '/api.php';
 		$( CodeReview.diffTarget() ).injectSpinner( 'codereview-diff' );
 		try {
-			$.ajax({
+			$.ajax( {
 				url: apiPath,
-				data : {
-					'format' : 'json',
-					'action' : 'codediff',
-					'repo' : repo,
-					'rev' : rev
+				data: {
+					'format': 'json',
+					'action': 'codediff',
+					'repo': repo,
+					'rev': rev
 				},
-				dataType : 'json',
-				success : function( data ) {
+				dataType: 'json',
+				success: function( data ) {
 					CodeReview.decodeAndShowDiff( data );
 					$.removeSpinner( 'codereview-diff' );
 				}
-			});
+			} );
 		} catch ( e ) {
 			$.removeSpinner( 'codereview-diff' );
 			if ( window.location.hostname === 'localhost' ) {
@@ -31,7 +31,7 @@ window.CodeReview = $.extend( window.CodeReview, {
 			throw e;
 		}
 	},
-	decodeAndShowDiff : function( data ) {
+	decodeAndShowDiff: function( data ) {
 		if ( data && data.code && data.code.rev && data.code.rev.diff ) {
 			CodeReview.setDiff( data.code.rev.diff );
 		} else {
@@ -39,12 +39,12 @@ window.CodeReview = $.extend( window.CodeReview, {
 			CodeReview.setDiff( 'Failed to load diff. :(' );
 		}
 	},
-	diffTarget : function() {
+	diffTarget: function() {
 		return document.getElementById( 'mw-codereview-diff' );
 	},
-	setDiff : function( diffHtml ) {
+	setDiff: function( diffHtml ) {
 		CodeReview.diffTarget().innerHTML = diffHtml;
 	}
 
-});
+} );
 })( jQuery );

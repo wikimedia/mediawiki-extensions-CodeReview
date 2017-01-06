@@ -33,7 +33,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 			'options' => array(),
 		);
 
-		if( count( $this->mView->mPath ) ) {
+		if ( count( $this->mView->mPath ) ) {
 			$query['tables'][] = 'code_paths';
 			$query['join_conds']['code_paths'] = array( 'INNER JOIN', 'cpc_repo_id = cp_repo_id AND cpc_rev_id = cp_rev_id' );
 			$query['conds']['cp_path'] = $this->mView->mPath;
@@ -80,14 +80,14 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		case 'cpc_user_text':
 			return Linker::userLink( - 1, $value );
 		case 'cpc_removed':
-			return $this->msg( $value ? "code-status-$value" : "code-status-new" )->escaped();
+			return $this->msg( $value ? "code-status-$value" : 'code-status-new' )->escaped();
 		case 'cpc_added':
 			return $this->msg( "code-status-$value" )->escaped();
 		case 'cpc_timestamp':
 			return $this->getLanguage()->timeanddate( $value, true );
 		}
 
-		throw new Exception( '$name is invalid input.');
+		throw new Exception( '$name is invalid input.' );
 	}
 
 	function getTitle() {

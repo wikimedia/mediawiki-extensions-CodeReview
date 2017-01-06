@@ -77,7 +77,7 @@ abstract class CodeView {
 		$html = $this->formatMessage( $first );
 		$truncated = $wgLang->truncateHtml( $html, 80 );
 
-		if ( count( $lines ) > 1  ) { // If multiline, we might want to add an ellipse
+		if ( count( $lines ) > 1 ) { // If multiline, we might want to add an ellipse
 			$ellipsis = wfMessage( 'ellipsis' )->text();
 			// Hack: don't add if the end is already an ellipse
 			if ( substr( $truncated, -strlen( $ellipsis ) ) !== $ellipsis ) {
@@ -125,7 +125,6 @@ abstract class SvnTablePager extends TablePager {
 
 	/**
 	 * @param $view CodeView
-	 *
 	 */
 	function __construct( $view ) {
 		global $IP;
@@ -149,7 +148,7 @@ abstract class SvnTablePager extends TablePager {
 		$s = "<tr class=\"$css\">\n";
 		// Some of this stolen from Pager.php...sigh
 		$fieldNames = $this->getFieldNames();
-		$this->mCurrentRow = $row;  # In case formatValue needs to know
+		$this->mCurrentRow = $row; # In case formatValue needs to know
 		foreach ( $fieldNames as $field => $name ) {
 			$value = isset( $row->$field ) ? $row->$field : null;
 			$formatted = strval( $this->formatRevValue( $field, $value, $row ) );

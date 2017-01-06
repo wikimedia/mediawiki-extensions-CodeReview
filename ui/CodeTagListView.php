@@ -10,7 +10,7 @@ class CodeTagListView extends CodeView {
 		global $wgOut;
 		$list = $this->mRepo->getTagList( true );
 
-		if( count( $list ) === 0 ) {
+		if ( count( $list ) === 0 ) {
 			$wgOut->addWikiMsg( 'code-tags-no-tags' );
 		} else {
 			# Show a cloud made of tags

@@ -62,14 +62,17 @@ class CodeSignoff {
 			return;
 		}
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->update( 'code_signoffs', array( 'cs_timestamp_struck' => $dbw->timestamp() ),
+		$dbw->update(
+			'code_signoffs',
+			array( 'cs_timestamp_struck' => $dbw->timestamp() ),
 			array(
 				'cs_repo_id' => $this->rev->getRepoId(),
 				'cs_rev_id' => $this->rev->getId(),
 				'cs_flag' => $this->flag,
 				'cs_user_text' => $this->userText,
 				'cs_timestamp_struck' => $this->timestampStruck
-			), __METHOD__
+			),
+			__METHOD__
 		);
 	}
 
@@ -119,8 +122,12 @@ class CodeSignoff {
 			return null;
 		}
 		$dbr = wfGetDB( DB_SLAVE );
-		$row = $dbr->selectRow( 'code_signoffs',
-			array( 'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp', 'cs_timestamp_struck' ),
+		$row = $dbr->selectRow(
+			'code_signoffs',
+			array(
+				'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp',
+				'cs_timestamp_struck'
+			),
 			array(
 				'cs_repo_id' => $rev->getRepoId(),
 				'cs_rev_id' => $rev->getId(),

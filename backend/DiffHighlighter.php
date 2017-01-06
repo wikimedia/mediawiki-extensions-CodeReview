@@ -48,18 +48,21 @@ class CodeDiffHighlighter {
 	function parseLine( $line ) {
 		$this->lineNumber++;
 
-		if( $line === '' ) { return ""; } // do not create bogus lines
+		if ( $line === '' ) {
+			// do not create bogus lines
+			return '';
+		}
 
 		# Dispatch diff lines to the proper handler
 		switch( substr( $line, 0, 1 ) ) {
 		case '-':
-			if( substr( $line, 0, 3 ) === '---' ) {
+			if ( substr( $line, 0, 3 ) === '---' ) {
 				return '';
 			}
 			$r = $this->handleLineDeletion( $line );
 			break;
 		case '+':
-			if( substr( $line, 0, 3 ) === '+++' ) {
+			if ( substr( $line, 0, 3 ) === '+++' ) {
 				return '';
 			}
 			$r = $this->handleLineAddition( $line );
@@ -90,12 +93,11 @@ class CodeDiffHighlighter {
 	 * @return string
 	 */
 	function formatLine( $content, $class = null ) {
-
 		if ( $class === null ) {
 			return Html::rawElement( 'tr', $this->getLineIdAttr(),
-					  Html::element( 'td', array( 'class' => 'linenumbers' ), $this->left  )
+					  Html::element( 'td', array( 'class' => 'linenumbers' ), $this->left )
 					. Html::element( 'td', array( 'class' => 'linenumbers' ), $this->right )
-					. Html::rawElement( 'td', array() , Html::element( 'span', array() , $content ) )
+					. Html::rawElement( 'td', array(), Html::element( 'span', array(), $content ) )
 			);
 		}
 
@@ -128,7 +130,7 @@ class CodeDiffHighlighter {
 		return Html::rawElement( 'tr', $this->getLineIdAttr(),
 				  Html::element( 'td', array( 'class' => 'linenumbers' ), $left  )
 				. Html::element( 'td', array( 'class' => 'linenumbers' ), $right )
-				. Html::rawElement( 'td', $classAttr , Html::element( $inlineWrapEl, array() , $content ) )
+				. Html::rawElement( 'td', $classAttr , Html::element( $inlineWrapEl, array(), $content ) )
 		);
 	}
 
@@ -166,7 +168,7 @@ class CodeDiffHighlighter {
 		$this->chunk = 0;
 		return Html::rawElement( 'tr',
 			array_merge( $this->getLineIdAttr(), array( 'class' => 'patchedfile' ) ),
-			Html::Element( 'td', array('colspan'=>3), $line )
+			Html::Element( 'td', array( 'colspan' => 3 ), $line )
 		);
 	}
 	#### END OF LINES HANDLERS #########################################
@@ -183,10 +185,10 @@ class CodeDiffHighlighter {
 	 */
 	function colorLine( $line ) {
 		if ( $line == '' ) {
-			return ""; // don't create bogus spans
+			return ''; // don't create bogus spans
 		}
 		list( $element, $attribs ) = $this->tagForLine( $line );
-		return "<tr>".Xml::element( $element, $attribs, $line )."</tr>";
+		return '<tr>' . Xml::element( $element, $attribs, $line ) . '</tr>';
 	}
 
 	/**
@@ -201,7 +203,7 @@ class CodeDiffHighlighter {
 			'+' => array( 'td', array( 'class' => 'ins' ) ),
 			'@' => array( 'td', array( 'class' => 'meta' ) ),
 			' ' => array( 'td', array() ),
-			);
+		);
 		$first = substr( $line, 0, 1 );
 		if ( isset( $tags[$first] ) ) {
 			return $tags[$first];
@@ -243,7 +245,7 @@ class CodeDiffHighlighter {
 		$n = "(\d+)";
 		$s = "(?:,(\d+))";
 		$matches = preg_match( "/^@@ -$n$s \+$n$s @@$/", $chunkHeader, $m );
-		if( $matches === 1 ) {
+		if ( $matches === 1 ) {
 			array_shift( $m );
 			return $m;
 		}
@@ -251,17 +253,17 @@ class CodeDiffHighlighter {
 		$s_default_value = 1;
 
 		$matches = preg_match( "/^@@ -$n$s \+$n @@$/", $chunkHeader, $m );
-		if( $matches === 1 ) {
+		if ( $matches === 1 ) {
 			return array( $m[1], $m[2], $m[3], $s_default_value );
 		}
 
 		$matches = preg_match( "/^@@ -$n \+$n$s @@$/", $chunkHeader, $m );
-		if( $matches === 1 ) {
+		if ( $matches === 1 ) {
 			return array( $m[1], $s_default_value, $m[2], $m[3] );
 		}
 
 		$matches = preg_match( "/^@@ -$n \+$n @@$/", $chunkHeader, $m );
-		if( $matches === 1 ) {
+		if ( $matches === 1 ) {
 			return array( $m[1], $s_default_value, $m[2], $s_default_value );
 		}
 

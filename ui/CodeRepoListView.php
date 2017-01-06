@@ -24,14 +24,14 @@ class CodeRepoListView {
 		}
 		$text = '';
 		foreach ( $repos as $repo ) {
-			$text .= "* " . self::getNavItem( $repo ) . "\n";
+			$text .= '* ' . self::getNavItem( $repo ) . "\n";
 		}
 		$wgOut->addWikiText( $text );
 	}
 
 	/**
 	 * @static
-	 * @param  $repo CodeRepository
+	 * @param $repo CodeRepository
 	 * @return string
 	 */
 	public static function getNavItem( $repo ) {
@@ -39,28 +39,28 @@ class CodeRepoListView {
 		$name = $repo->getName();
 
 		$code = SpecialPage::getTitleFor( 'Code', $name );
-		$links[] = "[[$code/comments|" . wfMessage( 'code-notes' )->escaped() . "]]";
-		$links[] = "[[$code/statuschanges|" . wfMessage( 'code-statuschanges' )->escaped() . "]]";
+		$links[] = "[[$code/comments|" . wfMessage( 'code-notes' )->escaped() . ']]';
+		$links[] = "[[$code/statuschanges|" . wfMessage( 'code-statuschanges' )->escaped() . ']]';
 		if ( $wgUser->getId() ) {
 			$author = $repo->wikiUserAuthor( $wgUser->getName() );
 			if ( $author !== false ) {
-				$links[] = "[[$code/author/$author|" . wfMessage( 'code-mycommits' )->escaped() . "]]";
+				$links[] = "[[$code/author/$author|" . wfMessage( 'code-mycommits' )->escaped() . ']]';
 			}
 		}
 
 		if ( $wgUser->isAllowed( 'codereview-post-comment' ) ) {
 			$userName = $wgUser->getName();
 			$links[] = "[[$code/comments/author/$userName|" . wfMessage( 'code-mycomments' )->escaped() .
-				"]]";
+				']]';
 		}
 
-		$links[] = "[[$code/tag|" . wfMessage( 'code-tags' )->escaped() . "]]";
-		$links[] = "[[$code/author|" . wfMessage( 'code-authors' )->escaped() . "]]";
-		$links[] = "[[$code/status|" . wfMessage( 'code-status' )->escaped() . "]]";
-		$links[] = "[[$code/releasenotes|" . wfMessage( 'code-releasenotes' )->escaped() . "]]";
-		$links[] = "[[$code/stats|" . wfMessage( 'code-stats' )->escaped() . "]]";
-		if( $wgUser->isAllowed( 'repoadmin' ) ) {
-			$links[] = "[[Special:RepoAdmin/$name|" . wfMessage( 'repoadmin-nav' )->escaped() . "]]";
+		$links[] = "[[$code/tag|" . wfMessage( 'code-tags' )->escaped() . ']]';
+		$links[] = "[[$code/author|" . wfMessage( 'code-authors' )->escaped() . ']]';
+		$links[] = "[[$code/status|" . wfMessage( 'code-status' )->escaped() . ']]';
+		$links[] = "[[$code/releasenotes|" . wfMessage( 'code-releasenotes' )->escaped() . ']]';
+		$links[] = "[[$code/stats|" . wfMessage( 'code-stats' )->escaped() . ']]';
+		if ( $wgUser->isAllowed( 'repoadmin' ) ) {
+			$links[] = "[[Special:RepoAdmin/$name|" . wfMessage( 'repoadmin-nav' )->escaped() . ']]';
 		}
 		$text = "'''[[$code|$name]]''' " .
 			wfMessage( 'parentheses', $wgLang->pipeList( $links ) )->text();

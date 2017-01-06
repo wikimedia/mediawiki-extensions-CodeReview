@@ -50,7 +50,7 @@ class SpecialCode extends SpecialPage {
 		}
 
 		$view = $this->getViewFrom( $subpage );
-		if( $view ) {
+		if ( $view ) {
 			$view->execute();
 		} else {
 			$out->addWikiMsg( 'nosuchactiontext' );
@@ -75,24 +75,24 @@ class SpecialCode extends SpecialPage {
 
 	/**
 	 * Get a view object from a sub page path.
-	 * @param $subpage string
+	 * @param string $subpage
 	 * @return CodeView|null - Null if no valid action could be found
 	 */
 	private function getViewFrom( $subpage ) {
 		// Defines the classes to use for each view type.
 		// The first class name is used if no additional parameters are provided.
-		// The second, if defined, is used if there is an additional parameter.  If
+		// The second, if defined, is used if there is an additional parameter. If
 		// there is no second class defined, then the first class is used in both
 		// cases.
 		static $paramClasses
 			= array(
-				'tag' => array( "CodeTagListView", "CodeRevisionTagView" ),
-				'author' => array( "CodeAuthorListView", "CodeRevisionAuthorView" ),
-				'status' => array( "CodeStatusListView", "CodeRevisionStatusView" ),
-				'comments' => array( "CodeCommentsListView" ),
-				'statuschanges' => array( "CodeStatusChangeListView" ),
-				'releasenotes' => array( "CodeReleaseNotes" ),
-				'stats' => array( "CodeRepoStatsView" ),
+				'tag' => array( 'CodeTagListView', 'CodeRevisionTagView' ),
+				'author' => array( 'CodeAuthorListView', 'CodeRevisionAuthorView' ),
+				'status' => array( 'CodeStatusListView', 'CodeRevisionStatusView' ),
+				'comments' => array( 'CodeCommentsListView' ),
+				'statuschanges' => array( 'CodeStatusChangeListView' ),
+				'releasenotes' => array( 'CodeReleaseNotes' ),
+				'stats' => array( 'CodeRepoStatsView' ),
 			);
 
 		$request = $this->getRequest();
@@ -140,7 +140,7 @@ class SpecialCode extends SpecialPage {
 					$view = new CodeRevisionAuthorLink( $repo, $params[2] );
 					break;
 				} elseif ( $params[1] === 'comments' ) {
-					$view = new CodeCommentsAuthorListView( $repo, $params[3]  );
+					$view = new CodeCommentsAuthorListView( $repo, $params[3] );
 					break;
 				} elseif ( $params[1] === 'statuschanges' ) {
 					$view = new CodeStatusChangeAuthorListView( $repo, $params[3] );

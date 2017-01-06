@@ -12,14 +12,14 @@ class CodeComment {
 	public $rev;
 
 	/**
-	 * @param $rev CodeRevision
+	 * @param CodeRevision $rev
 	 */
 	function __construct( $rev ) {
 		$this->rev = $rev;
 	}
 
 	/**
-	 * @param $rev CodeRevision
+	 * @param CodeRevision $rev
 	 * @param $row
 	 * @return CodeComment
 	 */
@@ -28,7 +28,7 @@ class CodeComment {
 	}
 
 	/**
-	 * Create a comment given its id AND a repository
+	 * Create a comment given its ID _AND_ a repository
 	 * @param int $cc_id Comment ID in the database
 	 * @param CodeRevision $rev A revision object to which the comment is
 	 * attached
@@ -36,7 +36,8 @@ class CodeComment {
 	 */
 	static function newFromID( $cc_id, CodeRevision $rev ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		$row = $dbr->selectRow( 'code_comment',
+		$row = $dbr->selectRow(
+			'code_comment',
 			array(
 				# fields needed to build a CodeRevision
 				'cc_rev_id',
@@ -58,14 +59,14 @@ class CodeComment {
 	}
 
 	/**
-	 * @param $rev CodeRevision
-	 * @param $data array
+	 * @param CodeRevision $rev
+	 * @param array $data
 	 * @return CodeComment
 	 */
 	static function newFromData( $rev, $data ) {
 		$comment = new CodeComment( $rev );
 		$comment->id = intval( $data['cc_id'] );
-		$comment->text = $data['cc_text']; // fixme
+		$comment->text = $data['cc_text']; // @todo FIXME
 		$comment->user = $data['cc_user'];
 		$comment->userText = $data['cc_user_text'];
 		$comment->timestamp = wfTimestamp( TS_MW, $data['cc_timestamp'] );
@@ -77,7 +78,7 @@ class CodeComment {
 	 * @return int
 	 */
 	function threadDepth() {
-		$timestamps = explode( ",", $this->sortkey );
+		$timestamps = explode( ',', $this->sortkey );
 		return count( $timestamps );
 	}
 }
