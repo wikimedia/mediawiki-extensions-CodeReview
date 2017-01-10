@@ -163,8 +163,7 @@ abstract class SvnTablePager extends TablePager {
 	}
 
 	function getStartBody() {
-		global $wgOut;
-		$wgOut->addModules( 'ext.codereview.overview' );
+		$this->getOutput()->addModules( 'ext.codereview.overview' );
 		return parent::getStartBody();
 	}
 }
