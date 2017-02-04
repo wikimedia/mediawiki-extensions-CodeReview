@@ -132,7 +132,7 @@
 	"code-revfilter-cr_status": "وضعیت = $1",
 	"code-revfilter-cr_author": "نویسنده = $1",
 	"code-revfilter-ct_tag": "برچسب = $1",
-	"code-revfilter-clear": "پاک‌کردن پالایه",
+	"code-revfilter-clear": "پاک کردن پالایه",
 	"code-rev-submit": "ذخیره کردن تغییرات",
 	"code-rev-submit-next": "ذخیره و حرکت به مورد حل نشدهٔ بعدی",
 	"code-rev-next": "حل نشدهٔ بعدی",
