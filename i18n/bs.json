@@ -3,7 +3,8 @@
 		"authors": [
 			"CERminator",
 			"Smooth O",
-			"KWiki"
+			"KWiki",
+			"Srdjan m"
 		]
 	},
 	"code": "Provjera koda",
@@ -16,7 +17,7 @@
 	"code-change-added": "dodano:",
 	"code-old-status": "Staro stanje",
 	"code-new-status": "Novo stanje",
-	"code-prop-changes": "Zapis stanja i oznaka",
+	"code-prop-changes": "Zapisnik stanja i oznaka",
 	"codereview-desc": "[[Special:Code|Alat za provjeru koda]] sa [[Special:RepoAdmin|podrškom za subverzije]]",
 	"code-no-repo": "Nijedan repozitorijum nije konfigurisan!",
 	"code-create-repo": "Idite na [[Special:RepoAdmin|RepoAdmin]] za pravljenje Repozitorija",
@@ -92,7 +93,7 @@
 	"code-status-fixme": "popravi me",
 	"code-status-desc-fixme": "Revizija je prouzrokovala grešku ili je pokvarena. Trebala bi biti ispravljena ili vraćena.",
 	"code-status-reverted": "vraćeno",
-	"code-status-desc-reverted": "Revizija je odbačena od neke kasnije revizije.",
+	"code-status-desc-reverted": "Izmjenu je poništila neka novija izmjena.",
 	"code-status-resolved": "riješeno",
 	"code-status-desc-resolved": "Revizija je imala problem koji je riješen putem nekom kasnijom revizijom.",
 	"code-status-ok": "u redu",
@@ -171,8 +172,5 @@
 	"right-codereview-signoff": "Završi izmjene revizija",
 	"right-codereview-link-user": "Poveži autore sa wiki korisnicima",
 	"right-codereview-associate": "Upravljanje pridruženim revizijama",
-	"right-codereview-review-own": "Označite vaše vlastite revizije kao OK",
-	"group-svnadmins": "SVN administratori",
-	"group-svnadmins-member": "SVN administrator",
-	"grouppage-svnadmins": "{{ns:project}}:SVN administratori"
+	"right-codereview-review-own": "Označite vaše vlastite revizije kao OK"
 }
