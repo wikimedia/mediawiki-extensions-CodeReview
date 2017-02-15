@@ -106,6 +106,7 @@
 	"code-revfilter-clear": "Escafar lo filtre",
 	"code-rev-submit": "Salvar las modificacions",
 	"code-rev-submit-next": "Salvar & venenta pas resolguda",
+	"code-rev-next": "Seguent sens resòlvre",
 	"code-batch-status": "Modificar l'estatut :",
 	"code-batch-tags": "Modificar las balisas :",
 	"codereview-batch-title": "Modificar totas las revisions seleccionadas",
