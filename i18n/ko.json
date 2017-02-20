@@ -91,7 +91,7 @@
 	"code-rev-inline-preview": "미리 보기:",
 	"code-rev-diff": "차이",
 	"code-rev-diff-link": "차이",
-	"code-rev-diff-too-large": "차이가 너무 커서 출력할 수 없습니다.",
+	"code-rev-diff-too-large": "차이가 너무 커서 표시할 수 없습니다.",
 	"code-rev-purge-link": "새로 고침",
 	"code-rev-total": "결과의 총 개수: $1",
 	"code-rev-not-found": "'''$1''' 판이 존재하지 않습니다!",
