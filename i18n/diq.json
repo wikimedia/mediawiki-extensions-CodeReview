@@ -8,7 +8,8 @@
 			"Xoser",
 			"Marmase",
 			"Kumkumuk",
-			"1917 Ekim Devrimi"
+			"1917 Ekim Devrimi",
+			"Gırd"
 		]
 	},
 	"code": "Kontrolê kodî",
@@ -102,7 +103,7 @@
 	"code-revfilter-clear": "Filtre wedarne",
 	"code-rev-submit": "Vurnayışan qeyd ke",
 	"code-rev-submit-next": "Keyd ke & neresolve binî",
-	"code-batch-status": "Vurnayışê weziyeti:",
+	"code-batch-status": "Weziyetê vırnayışi:",
 	"code-batch-tags": "Etiketan bivurne:",
 	"codereview-batch-title": "Çımraviyarnayışanê weçinıteyan pêro bıvurne",
 	"codereview-batch-submit": "Qeyd ke",
