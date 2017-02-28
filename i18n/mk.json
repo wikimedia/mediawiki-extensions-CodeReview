@@ -85,7 +85,7 @@
 	"code-rev-diff-link": "разлика",
 	"code-rev-diff-too-large": "Разликата е преголема за да се прикаже.",
 	"code-rev-purge-link": "исчисти",
-	"code-rev-total": "Вкупно резултати: $1",
+	"code-rev-total": "Вкупно ставки: $1",
 	"code-rev-not-found": "Преработката '''$1''' не постои!",
 	"code-rev-history-link": "историја",
 	"code-status-new": "нов",
