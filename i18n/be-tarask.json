@@ -168,7 +168,7 @@
 	"repoadmin-edit-bug": "Адрас Bugzilla:",
 	"repoadmin-edit-view": "Адрас ViewVC:",
 	"repoadmin-edit-button": "Добра",
-	"repoadmin-edit-sucess": "Сховішча «[[Special:Code/$1|$1]]» было пасьпяхова зьменена.",
+	"repoadmin-edit-sucess": "Сховішча «[[Special:Code/$1|$1]]» было зьменена.",
 	"repoadmin-nav": "кіраваньне сховішчам",
 	"right-repoadmin": "кіраваньне сховішчамі коду",
 	"right-codereview-use": "выкарыстаньне Special:Code",
@@ -181,7 +181,7 @@
 	"right-codereview-associate": "кіраваньне сувязямі вэрсіяў",
 	"right-codereview-review-own": "пазначэньне ўласных вэрсіяў як «{{int:code-status-ok}}» ці «{{int:code-status-resolved}}»",
 	"action-repoadmin": "кіраваньне сховішчамі коду",
-	"action-codereview-use": "выкарыстаньне Special:Code",
+	"action-codereview-use": "выкарыстаньне CodeReview",
 	"action-codereview-add-tag": "даданьне новых тэгаў да вэрсіі",
 	"action-codereview-remove-tag": "выдаленьне тэгаў з вэрсіяў",
 	"action-codereview-post-comment": "даданьне камэнтараў да вэрсіяў",
@@ -189,8 +189,5 @@
 	"action-codereview-signoff": "зацьверджаньне вэрсіяЎ",
 	"action-codereview-link-user": "даданьне да аўтараў спасылак на рахункі ўдзельнікаў вікі",
 	"action-codereview-associate": "кіраваньне сувязямі вэрсіяў",
-	"action-codereview-review-own": "пазначэньне ўласных вэрсіяў як «{{int:code-status-ok}}» ці «{{int:code-status-resolved}}»",
-	"group-svnadmins": "Адміністратары SVN",
-	"group-svnadmins-member": "{{GENDER:$1|Адміністратар SVN|Адміністратарка SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Адміністратары SVN"
+	"action-codereview-review-own": "пазначэньне ўласных вэрсіяў як «{{int:code-status-ok}}» ці «{{int:code-status-resolved}}»"
 }
