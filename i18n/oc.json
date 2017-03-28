@@ -136,7 +136,7 @@
 	"repoadmin-edit-bug": "Camin de Bugzilla :",
 	"repoadmin-edit-view": "Camin de ViewVC :",
 	"repoadmin-edit-button": "D'acòrdi",
-	"repoadmin-edit-sucess": "Lo depaux \"[[Special:Code/$1|$1]]\" es estat modificat amb succès.",
+	"repoadmin-edit-sucess": "Lo depaus \"[[Special:Code/$1|$1]]\" es estat modificat.",
 	"repoadmin-nav": "administracion del depaus",
 	"right-repoadmin": "Administrar los depauses de còdi",
 	"right-codereview-use": "Utilizar Special:Code",
