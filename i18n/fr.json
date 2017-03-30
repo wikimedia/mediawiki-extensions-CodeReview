@@ -162,7 +162,7 @@
 	"codereview-email-body4": "L’utilisateur « $1 » a modifié l’état de $2.\n\nAncien état : $3\nNouvel état : $4\n\nL’utilisateur « $1 » a également publié un commentaire sur $2.\n\nAdresse URL complète : $5\nRésumé de la modification :\n\n$7\n\nCommentaire :\n\n$6",
 	"code-stats": "statistiques",
 	"code-stats-header": "Statistiques du dépôt $1",
-	"code-stats-main": "À la date du $1, le dépôt a $2 {{PLURAL:$2|révision|révisions}} faites par [[Special:Code/$3/author|$4 {{PLURAL:$4|auteur|auteurs}}]].",
+	"code-stats-main": "En date du $1, le dépôt a $2 révision{{PLURAL:$2||s}} faite{{PLURAL:$2||s}} par [[Special:Code/$3/author|$4 auteur{{PLURAL:$4||s}}]].",
 	"code-stats-status-breakdown": "Nombre de révisions par état",
 	"code-stats-fixme-breakdown": "Ventilation des révisions à corriger par auteur",
 	"code-stats-fixme-breakdown-path": "Répartition des révisions de type correction par chemin",
