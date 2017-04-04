@@ -118,7 +118,7 @@
 	"code-pathsearch-filter": "শুধু দেখান:",
 	"code-revfilter-cr_status": "অবস্থান = $1",
 	"code-revfilter-cr_author": "প্রণেতা = $1",
-	"code-revfilter-clear": "ফিল্টার পরিস্কার",
+	"code-revfilter-clear": "ফিল্টার পরিষ্কার",
 	"code-rev-submit": "পরিবর্তন সংরক্ষণ",
 	"code-batch-status": "অবস্থা পরিবর্তন",
 	"code-batch-tags": "ট্যাগ পরিবর্তন:",
