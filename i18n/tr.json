@@ -6,7 +6,8 @@
 			"Srhat",
 			"Suelnur",
 			"Watermelon juice",
-			"Ömer Berkay"
+			"Ömer Berkay",
+			"Vito Genovese"
 		]
 	},
 	"code": "Kod Gözden Geçirmesi",
@@ -19,7 +20,7 @@
 	"code-change-added": "eklendi:",
 	"code-old-status": "Eski durum",
 	"code-new-status": "Yeni durum",
-	"code-prop-changes": "Durum & etiket günlüğü",
+	"code-prop-changes": "Durum ve etiketleme günlüğü",
 	"codereview-desc": "[[Special:Code|Kod gözden geçirme aracı]], [[Special:RepoAdmin|Altsürüm desteği]] ile",
 	"code-no-repo": "Hiç depo yapılandırılmadı!",
 	"code-repo-not-found": "Depo '''$1''' mevcut değil!",
