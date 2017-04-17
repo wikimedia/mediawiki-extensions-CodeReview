@@ -53,7 +53,7 @@ table.mw-codereview-meta td {
 }
 
 .mw-codereview-comment-text {
-	background: white;
+	background: #fff;
 	padding: 16px;
 }
 
@@ -73,13 +73,13 @@ table.mw-codereview-meta td {
 
 .mw-codereview-status-fixme,
 .mw-codereview-status-fixme td {
-	background: #ff9999 !important;
+	background: #f99 !important;
 }
 
 .mw-codereview-status-fixme:hover,
 .mw-codereview-status-fixme:hover td {
 	background: #df0000 !important;
-	color: white;
+	color: #fff;
 }
 
 .mw-codereview-status-fixme:hover a,
@@ -143,30 +143,32 @@ table.mw-codereview-meta td {
 
 /* Diffs */
 .mw-codereview-diff table {
-	/* @noflip */direction: ltr; /* Source code is always LTR */
+	/* Source code is always LTR */
+	/* @noflip */
+	direction: ltr;
 
-	font-family: monospace, "Courer New";
+	font-family: monospace, 'Courer New';
 	line-height: 1.3em;
-	background-color: #F9F9F9;
-	border: 1px solid #CCC;
-	color: black;
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	color: #000;
 
 	/* fix up space between cells (cellspacing) */
 	border-collapse: collapse;
 }
 
 .mw-codereview-diff tr.patchedfile {
-	background-color: #EEE;
-	color: black;
+	background-color: #eee;
+	color: #000;
 }
 
 .mw-codereview-diff tr.patchedfile td {
 	padding: 1em;
-	border: 1px solid #CCC;
+	border: 1px solid #ccc;
 }
 
 .mw-codereview-diff td {
-	border: 1px #CCC;
+	border: 1px #ccc;
 	border-style: none solid;
 
 	/* respect white spaces just like <pre> */
@@ -174,7 +176,7 @@ table.mw-codereview-meta td {
 }
 
 .mw-codereview-diff td.linenumbers{
-	background-color: #EEE;
+	background-color: #eee;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
@@ -183,26 +185,26 @@ table.mw-codereview-meta td {
 }
 
 .mw-codereview-diff td.ins {
-	color: green;
+	color: #008000;
 }
 
 .mw-codereview-diff td.del {
-	color: red;
+	color: #f00;
 }
 
 .mw-codereview-diff td.ins ins {
-	background: #EDFFED;
+	background: #edffed;
 	text-decoration: none;
 }
 
 .mw-codereview-diff td.del del {
-	background: #FFEDED;
+	background: #ffeded;
 	text-decoration: none;
 }
 
 .mw-codereview-diff td.chunkdelimiter {
-	background-color: #EDEDFF;
-	color: black;
+	background-color: #ededff;
+	color: #000;
 }
 
 .mw-codereview-diff .meta {
@@ -237,7 +239,7 @@ a.mw-wordcloud-size-1 {
 
 a.mw-wordcloud-size-2 {
 	color: #333;
-	font-size:220%;
+	font-size: 220%;
 }
 
 a.mw-wordcloud-size-3 {

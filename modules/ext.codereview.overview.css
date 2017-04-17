@@ -1,16 +1,16 @@
 #overviewmap {
-	border: 1px solid #2F6FAB;
+	border: 1px solid #2f6fab;
 	padding: 2px;
 	min-width: 300px;
 }
 #overviewpop {
 	padding: 3px;
-	border: 1px solid black;
+	border: 1px solid #000;
 	position: absolute;
 	height: 6.5em;
 	width: 16em;
 	display: none;
-	background-color: #ffffdd;
+	background-color: #ffd;
 	font-size: 80%;
 	line-height: 100%;
 	overflow: hidden;
