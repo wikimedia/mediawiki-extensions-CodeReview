@@ -10,7 +10,8 @@
 			"MetalBrasil",
 			"555",
 			"OTAVIO1981",
-			"He7d3r"
+			"He7d3r",
+			"Felipe L. Ewald"
 		]
 	},
 	"code": "Revisão de Código",
@@ -192,7 +193,10 @@
 	"action-codereview-link-user": "Associar autores a usuários de wiki",
 	"action-codereview-associate": "Administrar a associação de revisões",
 	"action-codereview-review-own": "Marcar suas próprias revisões como \"{{int:code-status-ok}}\" ou \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Administradores do SVN",
-	"group-svnadmins-member": "{{GENDER:$1|Administrador|Administradora}} de SVN",
-	"grouppage-svnadmins": "{{ns:project}}:Administradores do SVN"
+	"apihelp-coderevisionupdate-param-repo": "Nome do repositório.",
+	"apihelp-codeupdate-param-repo": "Nome do repositório a ser atualizado.",
+	"apihelp-query+codecomments-param-repo": "Nome do repositório.",
+	"apihelp-query+codepaths-param-repo": "Nome do repositório.",
+	"apihelp-query+coderevisions-param-repo": "Nome do repositório.",
+	"apihelp-query+codetags-param-repo": "Nome do repositório."
 }

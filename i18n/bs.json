@@ -35,7 +35,7 @@
 	"code-tags-no-tags": "Ne postoje oznake u ovom repozitorijumu.",
 	"code-authors-text": "Ispod je spisak autora repozitorijuma poredanih po imenima. Lokalni wiki računi su prikazani pod navodnicima. Podaci mogu biti keširani.",
 	"code-author-haslink": "Ovaj autor je povezan wiki korisničkim računom $1",
-	"code-author-orphan": "Ovaj autor nije povezan sa wiki računom",
+	"code-author-orphan": "SVN korisnik/Autor $1 nije povezan s wiki računom",
 	"code-author-dolink": "Poveži ovog autora sa wiki korisnikom:",
 	"code-author-alterlink": "Promijeni wiki korisnika povezanog s ovim autorom:",
 	"code-author-orunlink": "Ili poništi link ovog wiki korisnika:",
@@ -115,7 +115,7 @@
 	"code-signoff-struckdate": "$1 (poništeno $2)",
 	"code-pathsearch-legend": "Pretraga revizija u ovom repozitoriju po putanji",
 	"code-pathsearch-path": "Putanja:",
-	"code-pathsearch-filter": "Primijenjen filter:",
+	"code-pathsearch-filter": "Prikaži samo:",
 	"code-revfilter-cr_status": "Stanje = $1",
 	"code-revfilter-cr_author": "Autor = $1",
 	"code-revfilter-ct_tag": "Oznaka = $1",
@@ -161,7 +161,7 @@
 	"repoadmin-edit-bug": "Bugzilla putanja:",
 	"repoadmin-edit-view": "Putanja za ViewVC:",
 	"repoadmin-edit-button": "U redu",
-	"repoadmin-edit-sucess": "Repozitorijum \"[[Special:Code/$1|$1]]\" je uspješno promijenjen.",
+	"repoadmin-edit-sucess": "Repozitorijum \"[[Special:Code/$1|$1]]\" je promijenjen.",
 	"repoadmin-nav": "administracija repozitorijuma",
 	"right-repoadmin": "Uređivanje repozitorijuma koda",
 	"right-codereview-use": "Korištenje Special:Code",
@@ -172,5 +172,5 @@
 	"right-codereview-signoff": "Završi izmjene revizija",
 	"right-codereview-link-user": "Poveži autore sa wiki korisnicima",
 	"right-codereview-associate": "Upravljanje pridruženim revizijama",
-	"right-codereview-review-own": "Označite vaše vlastite revizije kao OK"
+	"right-codereview-review-own": "Označite vlastite izmjene kao \"{{int:code-status-ok}}\" ili \"{{int:code-status-resolved}}\""
 }
