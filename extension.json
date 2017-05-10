@@ -114,7 +114,10 @@
 		},
 		"ext.codereview.local": {
 			"position": "top",
-			"class": "ResourceLoaderCodeReviewModule"
+			"class": "ResourceLoaderWikiModule",
+			"styles": [
+				"MediaWiki:CodeReview.css"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -207,8 +210,7 @@
 		"SvnRevStatusTablePager": "ui/CodeRevisionStatusView.php",
 		"SvnRevTagTablePager": "ui/CodeRevisionTagView.php",
 		"CodeStatusChangeTablePager": "ui/CodeStatusChangeListView.php",
-		"CodeReviewHooks": "CodeReviewHooks.php",
-		"ResourceLoaderCodeReviewModule": "ResourceLoaderCodeReviewModule.php"
+		"CodeReviewHooks": "CodeReviewHooks.php"
 	},
 	"manifest_version": 1
 }
