@@ -233,5 +233,6 @@
 	"apihelp-query+codetags-description": "Obter unha lista de etiquetas aplicadas a revisión nun repositorio dado.",
 	"apihelp-query+codetags-param-repo": "Nome do repositorio.",
 	"apihelp-query+codetags-example-1": "Lista de etiquetas en MediaWiki",
-	"apierror-invalidrepo": "O repositorio \"$1\" non é válido."
+	"apierror-invalidrepo": "O repositorio \"$1\" non é válido.",
+	"apierror-codereview-inlinecommentingdisabled": "Non pode engadir un comentario a unha lista de modificacións cando está desactivados os comentarios en liña (<var>$wgCodeReviewInlineComments</var> é falso)"
 }
