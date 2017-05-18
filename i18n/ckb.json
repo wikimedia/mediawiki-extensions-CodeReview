@@ -1,4 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Lost Whispers"
+		]
+	},
+	"code-author-link": "بەستەر",
 	"codereview-batch-submit": "ناردن"
 }
