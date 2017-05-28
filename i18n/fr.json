@@ -19,7 +19,8 @@
 			"Verdy p",
 			"Zetud",
 			"Orlodrim",
-			"Wladek92"
+			"Wladek92",
+			"Trial"
 		]
 	},
 	"code": "Révision du code",
@@ -34,9 +35,9 @@
 	"code-old-status": "ancien statut",
 	"code-new-status": "nouveau statut",
 	"code-prop-changes": "Journal des états et du balisage",
-	"codereview-desc": "[[Special:Code|Outils de révision du code]] avec le [[Special:RepoAdmin|support de Subversion]]",
+	"codereview-desc": "[[Special:Code|Outils de révision du code]] avec le [[Special:RepoAdmin|gestion Subversion]]",
 	"code-no-repo": "Pas de dépôt configuré !",
-	"code-create-repo": "Allez à [[Special:RepoAdmin|support de Subversion]] pour créer un dépôt",
+	"code-create-repo": "Allez à [[Special:RepoAdmin|soutien de Subversion]] pour créer un dépôt",
 	"code-need-repoadmin-rights": "Des privilèges de niveau ''repoadmin'' sont requis pour créer un dépôt",
 	"code-need-group-with-rights": "Aucun groupe de niveau ''repoadmin'' n’existe. Veuillez en ajouter un pour être en mesure de créer un nouveau dépôt.",
 	"code-repo-not-found": "Le dépôt '''$1''' n’existe pas !",
