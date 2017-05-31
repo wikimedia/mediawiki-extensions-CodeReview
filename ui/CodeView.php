@@ -127,7 +127,6 @@ abstract class SvnTablePager extends TablePager {
 	 * @param $view CodeView
 	 */
 	function __construct( $view ) {
-		global $IP;
 		$this->mView = $view;
 		$this->mRepo = $view->mRepo;
 		$this->mDefaultDirection = true;
