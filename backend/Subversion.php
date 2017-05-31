@@ -295,7 +295,8 @@ class SubversionShell extends SubversionAdaptor {
 		);
 		$document = new DOMDocument();
 
-		if ( !@$document->loadXML( wfShellExec( $command ) ) ) {
+		$listXml = wfShellExec( $command );
+		if ( !$listXml || !$document->loadXML( $listXml ) ) {
 			// svn list --xml returns invalid XML if the file does not exist
 			// FIXME: report bug upstream
 			return false;
