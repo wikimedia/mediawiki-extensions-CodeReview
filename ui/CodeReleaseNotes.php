@@ -34,8 +34,8 @@ class CodeReleaseNotes extends CodeView {
 			Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 			'<fieldset><legend>' . wfMessage( 'code-release-legend' )->escaped() . '</legend>' .
 				Html::hidden( 'title', $special->getPrefixedDBkey() ) . '<b>' .
-				Xml::inputLabel( wfMessage( 'code-release-startrev' )->text(), 'startrev', 'startrev',
-					10, $this->mStartRev ) .
+				Xml::inputLabel( wfMessage( 'code-release-startrev' )->text(), 'startrev',
+					'startrev', 10, $this->mStartRev ) .
 				'</b>&#160;' .
 				Xml::inputLabel( wfMessage( 'code-release-endrev' )->text(), 'endrev', 'endrev', 10,
 					$this->mEndRev ) .
@@ -53,7 +53,8 @@ class CodeReleaseNotes extends CodeView {
 		$dbr = wfGetDB( DB_SLAVE );
 		$where = array();
 		if ( $this->mEndRev ) {
-			$where[] = 'cr_id BETWEEN ' . intval( $this->mStartRev ) . ' AND ' . intval( $this->mEndRev );
+			$where[] = 'cr_id BETWEEN ' . intval( $this->mStartRev ) . ' AND ' .
+				intval( $this->mEndRev );
 		} else {
 			$where[] = 'cr_id >= ' . intval( $this->mStartRev );
 		}
@@ -88,8 +89,9 @@ class CodeReleaseNotes extends CodeView {
 					$summary = str_replace( "\n", '<br />', $summary ); // Newlines -> <br />
 					$wgOut->addHTML( '<li>' );
 					$wgOut->addHTML(
-						$this->codeCommentLinkerHtml->link( $summary ) . " <i>(" . htmlspecialchars( $row->cr_author ) .
-						', ' . $this->codeCommentLinkerHtml->link( "r{$row->cr_id}" ) . ")</i>"
+						$this->codeCommentLinkerHtml->link( $summary ) . " <i>(" .
+							htmlspecialchars( $row->cr_author ) .
+							', ' . $this->codeCommentLinkerHtml->link( "r{$row->cr_id}" ) . ")</i>"
 					);
 					$wgOut->addHTML( "</li>\n" );
 				}
@@ -163,7 +165,10 @@ class CodeReleaseNotes extends CodeView {
 			return true;
 		}
 		# Random keywords
-		if ( preg_match( '/\b(wiki|HTML\d|CSS\d|UTF-?8|(Apache|PHP|CGI|Java|Perl|Python|\w+SQL) ?\d?\.?\d?)\b/i', $summary ) ) {
+		if ( preg_match(
+			'/\b(wiki|HTML\d|CSS\d|UTF-?8|(Apache|PHP|CGI|Java|Perl|Python|\w+SQL) ?\d?\.?\d?)\b/i',
+			$summary )
+		) {
 			return true;
 		}
 		# Are we looking at the whole summary or an aspect of it?

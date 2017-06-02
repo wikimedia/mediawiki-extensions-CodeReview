@@ -22,7 +22,8 @@ class CodeRepoStatsView extends CodeView {
 		);
 
 		if ( !empty( $stats->states ) ) {
-			$wgOut->wrapWikiMsg( '<h3 id="stats-revisions">$1</h3>', 'code-stats-status-breakdown' );
+			$wgOut->wrapWikiMsg( '<h3 id="stats-revisions">$1</h3>',
+				'code-stats-status-breakdown' );
 			$wgOut->addHTML( '<table class="wikitable">'
 				. '<tr><th>' . wfMessage( 'code-field-status' )->escaped() . '</th><th>'
 				. wfMessage( 'code-stats-count' )->escaped() . '</th></tr>' );
@@ -64,10 +65,12 @@ class CodeRepoStatsView extends CodeView {
 	function writeStatusPathTable( $status, $array ) {
 		global $wgOut;
 
-		$wgOut->wrapWikiMsg( "<h3 id=\"stats-$status-path\">$1</h3>", "code-stats-$status-breakdown-path" );
+		$wgOut->wrapWikiMsg( "<h3 id=\"stats-$status-path\">$1</h3>",
+			"code-stats-$status-breakdown-path" );
 
 		foreach ( $array as $path => $news ) {
-			$wgOut->wrapWikiMsg( "<h4 id=\"stats-$status-path\">$1</h4>", array( "code-stats-$status-path", $path ) );
+			$wgOut->wrapWikiMsg( "<h4 id=\"stats-$status-path\">$1</h4>",
+				array( "code-stats-$status-path", $path ) );
 			$this->writeAuthorTable( $status, $news, array( 'path' => $path ) );
 		}
 	}
@@ -78,7 +81,8 @@ class CodeRepoStatsView extends CodeView {
 	 */
 	function writeAuthorStatusTable( $status, $array ) {
 		global $wgOut;
-		$wgOut->wrapWikiMsg( "<h3 id=\"stats-{$status}\">$1</h3>", "code-stats-{$status}-breakdown" );
+		$wgOut->wrapWikiMsg( "<h3 id=\"stats-{$status}\">$1</h3>",
+			"code-stats-{$status}-breakdown" );
 		$this->writeAuthorTable( $status, $array );
 	}
 

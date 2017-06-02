@@ -326,7 +326,9 @@ class CodeRevision {
 		// their own revisions as ok/resolved
 		// Obviously only works if user accounts are tied!
 		$wikiUser = $this->getWikiUser();
-		if ( self::isProtectedStatus( $status ) && $wikiUser && $user->getName() == $wikiUser->getName() ) {
+		if ( self::isProtectedStatus( $status )
+			&& $wikiUser && $user->getName() == $wikiUser->getName()
+		) {
 			// allow the user to review their own code if required
 			if ( !$wikiUser->isAllowed( 'codereview-review-own' ) ) {
 				return false;
@@ -388,7 +390,9 @@ class CodeRevision {
 	 * @param array $options
 	 * @return void
 	 */
-	protected static function insertChunks( $db, $table, $data, $method = __METHOD__, $options = array() ) {
+	protected static function insertChunks(
+		$db, $table, $data, $method = __METHOD__, $options = array()
+	) {
 		$chunkSize = 100;
 		for ( $i = 0; $i < count( $data ); $i += $chunkSize ) {
 			$db->insert(
@@ -455,7 +459,9 @@ class CodeRevision {
 
 		global $wgEnableEmail, $wgCodeReviewDisableFollowUpNotification;
 		// Email the authors of revisions that this follows up on
-		if ( $wgEnableEmail && !$wgCodeReviewDisableFollowUpNotification && $newRevision && count( $affectedRevs ) > 0 ) {
+		if ( $wgEnableEmail && !$wgCodeReviewDisableFollowUpNotification
+			&& $newRevision && count( $affectedRevs ) > 0
+		) {
 			// Get committer wiki user name, or repo name at least
 			$commitAuthor = $this->getWikiUser();
 
@@ -589,7 +595,8 @@ class CodeRevision {
 	}
 
 	/**
-	 * Parses references bugs in the comment, inserts them to code bugs, and returns an array of previous revs linking to the same bug
+	 * Parses references bugs in the comment, inserts them to code bugs, and returns an array of
+	 * previous revs linking to the same bug
 	 *
 	 * @return array
 	 */
@@ -653,7 +660,8 @@ class CodeRevision {
 	public function isDiffable() {
 		global $wgCodeReviewMaxDiffPaths;
 		$paths = $this->getModifiedPaths();
-		return $paths->numRows() && ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() < $wgCodeReviewMaxDiffPaths );
+		return $paths->numRows()
+			&& ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() < $wgCodeReviewMaxDiffPaths );
 	}
 
 	/**
@@ -1093,7 +1101,8 @@ class CodeRevision {
 	/**
 	 * Add signoffs for this revision
 	 * @param $user User object for the user who did the sign-off
-	 * @param $flags array of flags (strings, see getPossibleFlags()). Each flag is added as a separate sign-off
+	 * @param $flags array of flags (strings, see getPossibleFlags()). Each flag is added as
+	 *   a separate sign-off
 	 */
 	public function addSignoff( $user, $flags ) {
 		$dbw = wfGetDB( DB_MASTER );

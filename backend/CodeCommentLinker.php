@@ -22,7 +22,8 @@ abstract class CodeCommentLinker {
 		# Ended by space or brackets (like those pesky <br /> tags)
 		$EXT_LINK_URL_CLASS = '[^][<>"\\x00-\\x20\\x7F\p{Zs}]';
 
-		$text = preg_replace_callback( '/(^|[^\w[])(' . wfUrlProtocolsWithoutProtRel() . ')(' . $EXT_LINK_URL_CLASS . '+)/',
+		$text = preg_replace_callback(
+			'/(^|[^\w[])(' . wfUrlProtocolsWithoutProtRel() . ')(' . $EXT_LINK_URL_CLASS . '+)/',
 			array( $this, 'generalLink' ), $text );
 		$text = preg_replace_callback( '/\br(\d+)\b/',
 			array( $this, 'messageRevLink' ), $text );

@@ -23,6 +23,7 @@ class CodeReviewTest extends MediaWikiTestCase {
 		$this->assertEquals( '[http://example.com/123 bug 123]', $formatter->link( 'bug 123' ) );
 		$this->assertEquals( '[[Special:Code/Test/456|r456]]', $formatter->link( 'r456' ) );
 
+		// @codingStandardsIgnoreStart
 		// fails, 18614
 		// $this->assertEquals( '[http://foo.bar r123]', $formatter->link( '[http://foo.bar r123]' ) );
 		// $this->assertEquals( '[[foo|bug 1234]]', $formatter->link( '[[foo|bug 1234]]' ) );
@@ -42,6 +43,7 @@ class CodeReviewTest extends MediaWikiTestCase {
 		// $this->assertEquals( '[[Special:Code/Test/10234#c5]]', $formatter->link( 'r10234#c5' ) );
 
 		// $this->assertEquals( '', $formatter->link( '' ) );
+		// @codingStandardsIgnoreEnd
 	}
 
 	public function testCommentCanonicalUrl() {

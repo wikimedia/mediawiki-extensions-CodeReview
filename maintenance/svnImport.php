@@ -12,12 +12,12 @@ class SvnImport extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Import revisions to Code Review from a Subversion repo';
-		$this->addOption( 'precache', 'Pre-cache diffs for last N revisions.  ' .
-						'May be a positive integer, 0 (for none) or \'all\'.  Default is 0', false, true );
+		$this->addOption( 'precache', 'Pre-cache diffs for last N revisions. ' .
+			'May be a positive integer, 0 (for none) or \'all\'.  Default is 0', false, true );
 		$this->addArg( 'repo', 'The name of the repo. Use \'all\' to import from all defined repos' );
 		$this->addArg( 'start', 'The revision to begin the import from. If not specified then ' .
-						'it starts from the last repo imported to the wiki. Ignored if ' .
-						"'all' is specified for <repo>", false );
+			'it starts from the last repo imported to the wiki. Ignored if ' .
+			"'all' is specified for <repo>", false );
 
 		$this->requireExtension( 'CodeReview' );
 	}
@@ -30,7 +30,8 @@ class SvnImport extends Maintenance {
 				if ( preg_match( '/^\d+$/', $cacheSize ) ) {
 					$cacheSize = intval( $cacheSize );
 				} else {
-					$this->error( "Invalid argument for --precache (must be a positive integer, 0 or 'all')", true );
+					$this->error( "Invalid argument for --precache (must be a positive integer," .
+						" 0 or 'all')", true );
 				}
 			}
 		}
@@ -57,7 +58,8 @@ class SvnImport extends Maintenance {
 	/**
 	 * Import a repository in the local database.
 	 * @param string $repoName Local name of repository
-	 * @param int $start Revision to begin the import from (Default: null, means last stored revision);
+	 * @param int $start Revision to begin the import from
+	 *   (Default: null, means last stored revision);
 	 * @param int $cacheSize
 	 * @return void
 	 */
@@ -95,7 +97,8 @@ class SvnImport extends Maintenance {
 		 * mediawiki '/trunk/phase3' got created with r1284.
 		 */
 		if ( $start > ( $lastStoredRev + 1 ) ) {
-			$this->error( "Invalid starting point. r{$start} is beyond last stored revision: r" . ( $lastStoredRev + 1 ) );
+			$this->error( "Invalid starting point. r{$start} is beyond last stored revision: r" .
+				( $lastStoredRev + 1 ) );
 			return;
 		}
 
