@@ -20,7 +20,9 @@
 			"Vivaelcelta",
 			"Macofe",
 			"Fitoschido",
-			"Matiia"
+			"Matiia",
+			"Dgstranz",
+			"Indiralena"
 		]
 	},
 	"code": "Revisión de código",
@@ -154,13 +156,13 @@
 	"codereview-overview-title": "Visión general",
 	"codereview-overview-desc": "Mostrar un resumen gráfico de esta lista",
 	"codereview-email-subj": "[$1 $2]: Añadido nuevo comentario",
-	"codereview-email-body": "El usuario \"$1\" envió un comentario en $3.\n\nURL completa: $2\nResumen de  confirmaciones:\n\n$5\n\nComentario:\n\n$4",
+	"codereview-email-body": "El usuario «$1» envió un comentario en $3.\n\nURL completa: $2\n\nResumen de  confirmaciones:\n\n$5\n\nComentario de $1:\n\n$4",
 	"codereview-email-subj2": "[$1 $2]: Cambios de seguimiento",
-	"codereview-email-body2": "El usuario \"$1\" ha hecho de modificaciones de seguimiento a $2.\n\nURL completa para la revisión de seguimiento: $5\nResumen de confirmaciones:\n\n$6\n\nURL completa : $3\nResumen de las confirmaciones:\n\n$4",
+	"codereview-email-body2": "El usuario «$1» ha modificado $2.\n\nURL: $5\n\nResumen de la versión $2:\n\n$6\n\nURL completa de la modificación: $3\nResumen de la modificación de $1:\n\n$4",
 	"codereview-email-subj3": "[$1 $2] : El estado de revisión ha cambiado",
-	"codereview-email-body3": "El usuario \"$1\" modificó el estado de $2.\n\nEstado antiguo: $3\nEstado nuevo: $4\n\nURL completa: $5\nResumen de confirmaciones:\n\n$6",
+	"codereview-email-body3": "El usuario «$1» modificó el estado de $2 a «$4».\nURL: $5\n\nEstado antiguo: $3\nEstado nuevo: $4\n\nResumen de la modificación de $2:\n\n$6",
 	"codereview-email-subj4": "[$1 $2]: Nuevo comentario añadido, y cambiado el estado de la revisión",
-	"codereview-email-body4": "El usuario \"$1\" modificó el estado de $2.\n\nEstado antiguo: $3\nEstado nuevo: $4\n\nEl usuario \"$1\" ha escrito también un comentario en $2.\n\nURL completa: $5\nResumen de confirmaciones:\n\n$7\n\nComentario:\n\n$6",
+	"codereview-email-body4": "El usuario «$1» modificó el estado de $2 a «$4» y lo comentó.\nURL: $5\n\nEstado antiguo: $3\nEstado nuevo: $4\n\nResumen de la modificación:\n\n$7\n\nComentario de $1:\n\n$6",
 	"code-stats": "estadísticas",
 	"code-stats-header": "Estadísticas del repositorio $1",
 	"code-stats-main": " A la fecha de $1, el repositorio tiene $2 {{PLURAL:$2|revisión|revisiones}} hechas por [[Special:Code/$3/author|$4 {{PLURAL:$4|autor|autores}}]].",
