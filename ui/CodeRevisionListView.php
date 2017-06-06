@@ -86,7 +86,9 @@ class CodeRevisionListView extends CodeView {
 		// Check for batch change requests.
 		$editToken = $wgRequest->getVal( 'wpBatchChangeEditToken' );
 		$revisions = $wgRequest->getArray( 'wpRevisionSelected' );
-		if ( $wgRequest->wasPosted() && count( $revisions ) && $wgUser->matchEditToken( $editToken ) ) {
+		if ( $wgRequest->wasPosted() && count( $revisions )
+			&& $wgUser->matchEditToken( $editToken )
+		) {
 			$this->doBatchChange();
 			return;
 		}
@@ -112,7 +114,8 @@ class CodeRevisionListView extends CodeView {
 		);
 		if ( $revCount !== -1 ) {
 			$wgOut->addHTML(
-				'<td>&#160;<strong>' . wfMessage( 'code-rev-total' )->numParams( $revCount )->escaped() .
+				'<td>&#160;<strong>' .
+					wfMessage( 'code-rev-total' )->numParams( $revCount )->escaped() .
 					'</strong></td>'
 			);
 		}
@@ -146,7 +149,11 @@ class CodeRevisionListView extends CodeView {
 		// Grab data from the DB
 		$dbr = wfGetDB( DB_SLAVE );
 		$revObjects = array();
-		$res = $dbr->select( 'code_rev', '*', array( 'cr_id' => $revisions, 'cr_repo_id' => $this->mRepo->getId() ), __METHOD__ );
+		$res = $dbr->select(
+			'code_rev', '*',
+			array( 'cr_id' => $revisions, 'cr_repo_id' => $this->mRepo->getId() ),
+			__METHOD__
+		);
 		foreach ( $res as $row ) {
 			$revObjects[] = CodeRevision::newFromRow( $this->mRepo, $row );
 		}
@@ -242,7 +249,8 @@ class CodeRevisionListView extends CodeView {
 			);
 		}
 
-		$ret = '<fieldset><legend>' . wfMessage( 'code-pathsearch-legend' )->escaped() . '</legend>' .
+		$ret = '<fieldset><legend>' .
+				wfMessage( 'code-pathsearch-legend' )->escaped() . '</legend>' .
 				'<table width="100%"><tr><td>' .
 				Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
 				Xml::inputLabel( wfMessage( "code-pathsearch-path" )->text(), 'path', 'path', 55,
@@ -323,8 +331,10 @@ class SvnRevTablePager extends SvnTablePager {
 					'USE INDEX' => array( 'code_path' => 'cp_repo_id' )
 				),
 				'join_conds' => array(
-					'code_rev' => array( 'INNER JOIN', 'cr_repo_id = cp_repo_id AND cr_id = cp_rev_id' ),
-					'code_comment' => array( 'LEFT JOIN', 'cc_repo_id = cp_repo_id AND cc_rev_id = cp_rev_id' ),
+					'code_rev' => array( 'INNER JOIN',
+						'cr_repo_id = cp_repo_id AND cr_id = cp_rev_id' ),
+					'code_comment' => array( 'LEFT JOIN',
+						'cc_repo_id = cp_repo_id AND cc_rev_id = cp_rev_id' ),
 				)
 			);
 		// No path; entire repo...
@@ -335,7 +345,8 @@ class SvnRevTablePager extends SvnTablePager {
 				'conds' => array( 'cr_repo_id' => $this->mRepo->getId() ),
 				'options' => array( 'GROUP BY' => $defaultSort ),
 				'join_conds' => array(
-					'code_comment' => array( 'LEFT JOIN', 'cc_repo_id = cr_repo_id AND cc_rev_id = cr_id' ),
+					'code_comment' => array( 'LEFT JOIN',
+						'cc_repo_id = cr_repo_id AND cc_rev_id = cr_id' ),
 				)
 			);
 		}
@@ -392,7 +403,8 @@ class SvnRevTablePager extends SvnTablePager {
 	function formatValue( $name, $value ) { } // unused
 
 	function formatRevValue( $name, $value, $row ) {
-		$pathQuery = count( $this->mView->mPath ) ? array( 'path' => $this->mView->getPathsAsString() ) : array();
+		$pathQuery = count( $this->mView->mPath )
+			? array( 'path' => $this->mView->getPathsAsString() ) : array();
 
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		switch( $name ) {
@@ -441,7 +453,8 @@ class SvnRevTablePager extends SvnTablePager {
 					$this->mRepo->getName() . '/' . $row->{$this->getDefaultSort()},
 					'code-comments'
 				);
-				return $linkRenderer->makeLink( $special, $this->getLanguage()->formatNum( $value ) );
+				return $linkRenderer->makeLink(
+					$special, $this->getLanguage()->formatNum( $value ) );
 			} else {
 				return '-';
 			}

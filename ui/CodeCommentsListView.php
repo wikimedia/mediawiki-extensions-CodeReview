@@ -30,7 +30,8 @@ class CodeCommentsTablePager extends SvnTablePager {
 
 		if ( count( $this->mView->mPath ) ) {
 			$query['tables'][] = 'code_paths';
-			$query['join_conds']['code_paths'] = array( 'INNER JOIN', 'cc_repo_id = cp_repo_id AND cc_rev_id = cp_rev_id' );
+			$query['join_conds']['code_paths'] = array( 'INNER JOIN',
+				'cc_repo_id = cp_repo_id AND cc_rev_id = cp_rev_id' );
 			$query['conds']['cp_path'] = $this->mView->mPath;
 		}
 		if ( $this->mView->mAuthor ) {
@@ -64,7 +65,8 @@ class CodeCommentsTablePager extends SvnTablePager {
 		switch( $name ) {
 		case 'cc_rev_id':
 			return $linkRenderer->makeLink(
-				SpecialPage::getSafeTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-comments' ),
+				SpecialPage::getSafeTitleFor( 'Code',
+					$this->mRepo->getName() . '/' . $value . '#code-comments' ),
 				$value
 			);
 		case 'cr_status':

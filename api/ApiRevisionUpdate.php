@@ -41,7 +41,8 @@ class ApiRevisionUpdate extends ApiBase {
 				$this->checkUserRightsAny( 'codereview-post-comment' );
 			} else {
 				if ( !$user->isAllowed( 'codereview-post-comment' ) ) {
-					$this->dieUsage( 'You do not have permission to post comment', 'permissiondenied' );
+					$this->dieUsage(
+						'You do not have permission to post comment', 'permissiondenied' );
 				}
 			}
 		}
@@ -53,7 +54,8 @@ class ApiRevisionUpdate extends ApiBase {
 		)
 		{
 			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( 'apierror-codereview-inlinecommentingdisabled', 'inlinecommentingdisabled' );
+				$this->dieWithError(
+					'apierror-codereview-inlinecommentingdisabled', 'inlinecommentingdisabled' );
 			} else {
 				$this->dieUsage(
 					'Can not attach a comment to a diff when inline commenting is disabled '
@@ -66,7 +68,8 @@ class ApiRevisionUpdate extends ApiBase {
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
 			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+				$this->dieWithError(
+					array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
 			} else {
 				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
 			}

@@ -24,8 +24,9 @@ class CodeStatusListView extends CodeView {
 				wfMessage( 'code-status-' . $state )->text()
 			);
 			// Give grep a chance to find the usages:
-			// code-status-desc-new, code-status-desc-fixme, code-status-desc-reverted, code-status-desc-resolved,
-			// code-status-desc-ok, code-status-desc-deferred, code-status-desc-old
+			// code-status-desc-new, code-status-desc-fixme, code-status-desc-reverted,
+			// code-status-desc-resolved, code-status-desc-ok, code-status-desc-deferred,
+			// code-status-desc-old
 			$tableRows .= "<tr><td class=\"mw-codereview-status-$state\">$link</td>"
 				. '<td>' . wfMessage( 'code-status-desc-' . $state )->escaped() . "</td></tr>\n";
 		}

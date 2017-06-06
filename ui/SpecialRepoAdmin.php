@@ -140,9 +140,13 @@ class RepoAdminRepoView {
 		global $wgOut, $wgRequest, $wgUser;
 		$repoExists = (bool)$this->repo;
 		$repoPath = $wgRequest->getVal( 'wpRepoPath', $repoExists ? $this->repo->getPath() : '' );
-		$bugPath = $wgRequest->getVal( 'wpBugPath', $repoExists ? $this->repo->getBugzillaBase() : '' );
-		$viewPath = $wgRequest->getVal( 'wpViewPath', $repoExists ? $this->repo->getViewVcBase() : '' );
-		if ( $wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName ) ) {
+		$bugPath = $wgRequest->getVal( 'wpBugPath',
+			$repoExists ? $this->repo->getBugzillaBase() : '' );
+		$viewPath = $wgRequest->getVal( 'wpViewPath',
+			$repoExists ? $this->repo->getViewVcBase() : '' );
+		if ( $wgRequest->wasPosted()
+			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName )
+		) {
 			// @todo log
 			$dbw = wfGetDB( DB_MASTER );
 			if ( $repoExists ) {
@@ -168,12 +172,15 @@ class RepoAdminRepoView {
 					__METHOD__
 				);
 			}
-			$wgOut->wrapWikiMsg( '<div class="successbox">$1</div>', array( 'repoadmin-edit-sucess', $this->repoName ) );
+			$wgOut->wrapWikiMsg( '<div class="successbox">$1</div>',
+				array( 'repoadmin-edit-sucess', $this->repoName ) );
 			return;
 		}
 		$wgOut->addHTML(
 			Xml::fieldset( wfMessage( 'repoadmin-edit-legend', $this->repoName )->text() ) .
-			Xml::openElement( 'form', array( 'method' => 'post', 'action' => $this->title->getLocalURL() ) ) .
+			Xml::openElement(
+				'form', array( 'method' => 'post', 'action' => $this->title->getLocalURL() )
+			) .
 			Xml::buildForm(
 				array(
 					'repoadmin-edit-path' =>

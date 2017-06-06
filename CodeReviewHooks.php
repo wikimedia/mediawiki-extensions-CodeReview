@@ -35,7 +35,9 @@ class CodeReviewHooks {
 		$base = __DIR__;
 		switch ( $updater->getDB()->getType() ) {
 		case 'mysql':
-			$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" ); // Initial install tables
+			// Initial install tables
+			$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" );
+
 			$updater->addExtensionField( 'code_rev', 'cr_diff',
 				"$base/archives/codereview-cr_diff.sql" );
 			$updater->addExtensionIndex( 'code_relations', 'repo_to_from',
@@ -80,7 +82,8 @@ class CodeReviewHooks {
 			$updater->addExtensionUpdate( array( 'dropField', 'code_comment', 'cc_review',
 				"$base/archives/code_drop_cc_review.sql", true ) );
 
-			$updater->addExtensionUpdate( array( 'dropTable', 'code_test_suite', "$base/archives/code_drop_test.sql", true ) );
+			$updater->addExtensionUpdate( array( 'dropTable', 'code_test_suite',
+				"$base/archives/code_drop_test.sql", true ) );
 
 			$updater->addExtensionUpdate( array( 'addField', 'code_authors', 'ca_user',
 				"$base/archives/code_authors_add_ca_user.sql", true ) );

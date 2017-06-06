@@ -35,7 +35,9 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 
 		if ( count( $this->mView->mPath ) ) {
 			$query['tables'][] = 'code_paths';
-			$query['join_conds']['code_paths'] = array( 'INNER JOIN', 'cpc_repo_id = cp_repo_id AND cpc_rev_id = cp_rev_id' );
+			$query['join_conds']['code_paths'] = array(
+				'INNER JOIN', 'cpc_repo_id = cp_repo_id AND cpc_rev_id = cp_rev_id'
+			);
 			$query['conds']['cp_path'] = $this->mView->mPath;
 		}
 		if ( $this->mView->mAuthor ) {
@@ -66,8 +68,10 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		switch( $name ) {
 		case 'cpc_rev_id':
 			return $linkRenderer->makeLink(
-				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value . '#code-changes' ),
-				$value );
+				SpecialPage::getTitleFor( 'Code',
+					$this->mRepo->getName() . '/' . $value . '#code-changes' ),
+				$value
+			);
 		case 'cr_author':
 			return $this->mView->authorLink( $value );
 		case 'cr_message':

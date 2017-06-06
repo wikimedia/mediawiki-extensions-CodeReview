@@ -29,7 +29,8 @@ class CodeSignoff {
 	 * @param $userText string User name
 	 * @param $flag string Flag
 	 * @param $timestamp string TS_MW timestamp
-	 * @param $timestampStruck string Raw (unformatted!) timestamp from the cs_timestamp_struck DB field
+	 * @param $timestampStruck string Raw (unformatted!) timestamp from the cs_timestamp_struck
+	 *   DB field
 	 */
 	public function __construct( $rev, $user, $userText, $flag, $timestamp, $timestampStruck ) {
 		$this->rev = $rev;
@@ -48,7 +49,8 @@ class CodeSignoff {
 	}
 
 	/**
-	 * @return mixed Timestamp (TS_MW format) the revision was struck at, or false if it hasn't been struck
+	 * @return mixed Timestamp (TS_MW format) the revision was struck at, or false if it hasn't
+	 *   been struck
 	 */
 	public function getTimestampStruck() {
 		return $this->isStruck() ? wfTimestamp( TS_MW, $this->timestampStruck ) : false;
