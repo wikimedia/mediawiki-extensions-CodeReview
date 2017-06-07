@@ -129,7 +129,9 @@ class CodeReleaseNotes extends CodeView {
 				# Is this bit important? Does it mention a revision?
 				} elseif ( $this->isRelevant( $blurb ) || preg_match( '/\br(\d+)\b/', $blurb ) ) {
 					$bit = $this->shortenSummary( $blurb, false );
-					if ( $bit ) $summary[] = $bit;
+					if ( $bit ) {
+						$summary[] = $bit;
+					}
 				}
 			}
 			$summary = implode( "\n", $summary );
