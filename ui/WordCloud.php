@@ -27,7 +27,7 @@ class WordCloud {
 	 * Nice big array of words and their weights
 	 * @var array
 	 */
-	private $wordsArray = array();
+	private $wordsArray = [];
 
 	/**
 	 * An optional callback to format the text before outputting
@@ -37,11 +37,11 @@ class WordCloud {
 	/**
 	 * Mapping of percentage limits to their CSS classes
 	 */
-	private $classPercentages = array(
+	private $classPercentages = [
 		1 => 99, 2 => 70, 3 => 60,
 		4 => 50, 5 => 40, 6 => 30,
 		7 => 20, 8 => 10, 9 => 5
-	);
+	];
 
 	/**
 	 * Constructor
@@ -49,11 +49,11 @@ class WordCloud {
 	 * @param array $words Array of word => rank pairs
 	 * @param Callback|null $callback
 	 */
-	public function __construct( array $words = array(), $callback = null ) {
+	public function __construct( array $words = [], $callback = null ) {
 		foreach ( $words as $word => $rank ) {
 			$this->addWord( $word, $rank );
 		}
-		$this->callback = $callback ? $callback : array( $this, 'defaultTextCallback' );
+		$this->callback = $callback ? $callback : [ $this, 'defaultTextCallback' ];
 	}
 
 	/**
@@ -102,7 +102,7 @@ class WordCloud {
 			$return = '';
 			foreach ( $this->wordsArray as $word => $popularity ) {
 				$sizeRange = $this->getClassFromPercent( ( $popularity / $max ) * 100 );
-				$return .= call_user_func_array( $this->callback, array( $word, $sizeRange ) );
+				$return .= call_user_func_array( $this->callback, [ $word, $sizeRange ] );
 			}
 			return '<div class="mw-wordcloud">' . $return . '</div>';
 		}
@@ -117,8 +117,8 @@ class WordCloud {
 	 * @return string
 	 */
 	public function defaultTextCallback( $word, $sizeRange ) {
-		return Html::element( 'span', array(
-			'class' => 'mw-wordcloud-size-' . $sizeRange ), $word );
+		return Html::element( 'span', [
+			'class' => 'mw-wordcloud-size-' . $sizeRange ], $word );
 	}
 
 	/**
@@ -131,7 +131,7 @@ class WordCloud {
 
 		if ( count( $keys ) && is_array( $keys ) ) {
 			$tmpArray = $this->wordsArray;
-			$this->wordsArray = array();
+			$this->wordsArray = [];
 			foreach ( $keys as $value ) {
 				$this->wordsArray[$value] = $tmpArray[$value];
 			}

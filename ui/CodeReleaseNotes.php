@@ -31,7 +31,7 @@ class CodeReleaseNotes extends CodeView {
 		global $wgOut, $wgScript;
 		$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/releasenotes' );
 		$wgOut->addHTML(
-			Xml::openElement( 'form', array( 'action' => $wgScript, 'method' => 'get' ) ) .
+			Xml::openElement( 'form', [ 'action' => $wgScript, 'method' => 'get' ] ) .
 			'<fieldset><legend>' . wfMessage( 'code-release-legend' )->escaped() . '</legend>' .
 				Html::hidden( 'title', $special->getPrefixedDBkey() ) . '<b>' .
 				Xml::inputLabel( wfMessage( 'code-release-startrev' )->text(), 'startrev',
@@ -51,7 +51,7 @@ class CodeReleaseNotes extends CodeView {
 	protected function showReleaseNotes() {
 		global $wgOut;
 		$dbr = wfGetDB( DB_SLAVE );
-		$where = array();
+		$where = [];
 		if ( $this->mEndRev ) {
 			$where[] = 'cr_id BETWEEN ' . intval( $this->mStartRev ) . ' AND ' .
 				intval( $this->mEndRev );
@@ -63,18 +63,18 @@ class CodeReleaseNotes extends CodeView {
 		}
 		# Select commits within this range...
 		$res = $dbr->select(
-			array( 'code_rev', 'code_tags' ),
-			array( 'cr_message', 'cr_author', 'cr_id', 'ct_tag AS rnotes' ),
-			array_merge( array(
+			[ 'code_rev', 'code_tags' ],
+			[ 'cr_message', 'cr_author', 'cr_id', 'ct_tag AS rnotes' ],
+			array_merge( [
 				'cr_repo_id' => $this->mRepo->getId(), // this repo
 				"cr_status NOT IN('reverted','deferred','fixme')", // not reverted/deferred/fixme
 				"cr_message != ''",
-			), $where ),
+			], $where ),
 			__METHOD__,
-			array( 'ORDER BY' => 'cr_id DESC' ),
-			array( 'code_tags' => array( 'LEFT JOIN', # Tagged for release notes?
-				'ct_repo_id = cr_repo_id AND ct_rev_id = cr_id AND ct_tag = "release-notes"' )
-			)
+			[ 'ORDER BY' => 'cr_id DESC' ],
+			[ 'code_tags' => [ 'LEFT JOIN', # Tagged for release notes?
+				'ct_repo_id = cr_repo_id AND ct_rev_id = cr_id AND ct_tag = "release-notes"' ]
+			]
 		);
 		$wgOut->addHTML( '<ul>' );
 		# Output any relevant seeming commits...
@@ -121,7 +121,7 @@ class CodeReleaseNotes extends CodeView {
 		}
 		# Keep it short if possible...
 		if ( count( $blurbs ) > 1 ) {
-			$summary = array();
+			$summary = [];
 			foreach ( $blurbs as $blurb ) {
 				# Always show the first bit
 				if ( $header && $first && count( $summary ) == 0 ) {

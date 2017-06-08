@@ -30,9 +30,9 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 
 	function doForm() {
 		global $wgOut, $wgUser;
-		$form = Xml::openElement( 'form', array( 'method' => 'post',
+		$form = Xml::openElement( 'form', [ 'method' => 'post',
 			'action' => $this->getTitle()->getLocalURL(),
-			'name' => 'uluser', 'id' => 'mw-codeauthor-form1' ) );
+			'name' => 'uluser', 'id' => 'mw-codeauthor-form1' ] );
 
 		$form .= Html::hidden( 'linktoken', $wgUser->getEditToken( 'link' ) );
 		$form .= Xml::openElement( 'fieldset' );
@@ -40,18 +40,18 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 		$additional = '';
 		// Is there already a user linked to this author?
 		if ( $this->mUser ) {
-			$form .= Xml::element( 'legend', array(), wfMessage( 'code-author-alterlink' )->text() );
+			$form .= Xml::element( 'legend', [], wfMessage( 'code-author-alterlink' )->text() );
 			$additional = Xml::openElement( 'fieldset' ) .
-				Xml::element( 'legend', array(), wfMessage( 'code-author-orunlink' )->text() ) .
-				Xml::submitButton( wfMessage( 'code-author-unlink' )->text(), array( 'name' => 'unlink' ) ) .
+				Xml::element( 'legend', [], wfMessage( 'code-author-orunlink' )->text() ) .
+				Xml::submitButton( wfMessage( 'code-author-unlink' )->text(), [ 'name' => 'unlink' ] ) .
 				Xml::closeElement( 'fieldset' );
 		} else {
-			$form .= Xml::element( 'legend', array(), wfMessage( 'code-author-dolink' )->text() );
+			$form .= Xml::element( 'legend', [], wfMessage( 'code-author-dolink' )->text() );
 		}
 
 		$form .= Xml::inputLabel( wfMessage( 'code-author-name' )->text(),
 			'linktouser', 'username', 30, '' ) . ' ' .
-				Xml::submitButton( wfMessage( 'ok' )->text(), array( 'name' => 'newname' ) ) .
+				Xml::submitButton( wfMessage( 'ok' )->text(), [ 'name' => 'newname' ] ) .
 				Xml::closeElement( 'fieldset' ) .
 				$additional .
 				Xml::closeElement( 'form' ) . "\n";

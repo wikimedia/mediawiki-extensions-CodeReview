@@ -14,15 +14,15 @@ class CodeTagListView extends CodeView {
 			$wgOut->addWikiMsg( 'code-tags-no-tags' );
 		} else {
 			# Show a cloud made of tags
-			$tc = new WordCloud( $list, array( $this, 'linkCallback' ) );
+			$tc = new WordCloud( $list, [ $this, 'linkCallback' ] );
 			$wgOut->addHTML( $tc->getCloudHtml() );
 		}
 	}
 
 	public function linkCallback( $tag, $weight ) {
 		$query = $this->mRepo->getName() . '/tag/' . $tag;
-		return Html::element( 'a', array(
+		return Html::element( 'a', [
 			'href' => SpecialPage::getTitleFor( 'Code', $query )->getFullURL(),
-			'class' => 'plainlinks mw-wordcloud-size-' . $weight ), $tag ) . "\n";
+			'class' => 'plainlinks mw-wordcloud-size-' . $weight ], $tag ) . "\n";
 	}
 }

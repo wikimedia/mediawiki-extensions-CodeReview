@@ -85,15 +85,15 @@ class SpecialCode extends SpecialPage {
 		// there is no second class defined, then the first class is used in both
 		// cases.
 		static $paramClasses
-			= array(
-				'tag' => array( 'CodeTagListView', 'CodeRevisionTagView' ),
-				'author' => array( 'CodeAuthorListView', 'CodeRevisionAuthorView' ),
-				'status' => array( 'CodeStatusListView', 'CodeRevisionStatusView' ),
-				'comments' => array( 'CodeCommentsListView' ),
-				'statuschanges' => array( 'CodeStatusChangeListView' ),
-				'releasenotes' => array( 'CodeReleaseNotes' ),
-				'stats' => array( 'CodeRepoStatsView' ),
-			);
+			= [
+				'tag' => [ 'CodeTagListView', 'CodeRevisionTagView' ],
+				'author' => [ 'CodeAuthorListView', 'CodeRevisionAuthorView' ],
+				'status' => [ 'CodeStatusListView', 'CodeRevisionStatusView' ],
+				'comments' => [ 'CodeCommentsListView' ],
+				'statuschanges' => [ 'CodeStatusChangeListView' ],
+				'releasenotes' => [ 'CodeReleaseNotes' ],
+				'stats' => [ 'CodeRepoStatsView' ],
+			];
 
 		$request = $this->getRequest();
 		# Remove stray slashes

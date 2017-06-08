@@ -11,7 +11,7 @@ class CodeRepoStatsView extends CodeView {
 
 		$stats = RepoStats::newFromRepo( $this->mRepo );
 		$repoName = $this->mRepo->getName();
-		$wgOut->wrapWikiMsg( '<h2 id="stats-main">$1</h2>', array( 'code-stats-header', $repoName ) );
+		$wgOut->wrapWikiMsg( '<h2 id="stats-main">$1</h2>', [ 'code-stats-header', $repoName ] );
 		$wgOut->addWikiMsg( 'code-stats-main',
 			$wgLang->timeanddate( $stats->time, true ),
 			$wgLang->formatNum( $stats->revisions ),
@@ -70,8 +70,8 @@ class CodeRepoStatsView extends CodeView {
 
 		foreach ( $array as $path => $news ) {
 			$wgOut->wrapWikiMsg( "<h4 id=\"stats-$status-path\">$1</h4>",
-				array( "code-stats-$status-path", $path ) );
-			$this->writeAuthorTable( $status, $news, array( 'path' => $path ) );
+				[ "code-stats-$status-path", $path ] );
+			$this->writeAuthorTable( $status, $news, [ 'path' => $path ] );
 		}
 	}
 
@@ -91,7 +91,7 @@ class CodeRepoStatsView extends CodeView {
 	 * @param array $array
 	 * @param array $options
 	 */
-	function writeAuthorTable( $status, $array, $options = array() ) {
+	function writeAuthorTable( $status, $array, $options = [] ) {
 		global $wgOut, $wgLang;
 
 		$repoName = $this->mRepo->getName();
@@ -106,8 +106,8 @@ class CodeRepoStatsView extends CodeView {
 			$link = $linkRenderer->makeLink(
 				$title,
 				$user,
-				array(),
-				array_merge( $options, array( 'author' => $user ) )
+				[],
+				array_merge( $options, [ 'author' => $user ] )
 			);
 			$wgOut->addHTML( "<tr><td>$link</td>"
 				. "<td>$count</td></tr>" );

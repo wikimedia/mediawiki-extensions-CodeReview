@@ -52,11 +52,11 @@ abstract class CodeView {
 
 	abstract function execute();
 
-	function authorLink( $author, $extraParams = array() ) {
+	function authorLink( $author, $extraParams = [] ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/author/$author" );
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
-		return $linkRenderer->makeLink( $special, $author, array(), $extraParams );
+		return $linkRenderer->makeLink( $special, $author, [], $extraParams );
 	}
 
 	function statusDesc( $status ) {

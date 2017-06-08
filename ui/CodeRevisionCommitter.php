@@ -50,7 +50,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 				$redirTarget = $this->revLink();
 			}
 		}
-		$wgOut->redirect( $redirTarget->getFullUrl( array( 'path' => $this->mPath ) ) );
+		$wgOut->redirect( $redirTarget->getFullUrl( [ 'path' => $this->mPath ] ) );
 	}
 
 	/**
@@ -87,7 +87,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		if ( $this->mRev->isValidStatus( $status ) && $this->validPost( 'codereview-set-status' ) ) {
 			$statusChanged = $this->mRev->setStatus( $status, $wgUser );
 		}
-		$validAddTags = $validRemoveTags = array();
+		$validAddTags = $validRemoveTags = [];
 		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag' ) ) {
 			$validAddTags = $addTags;
 		}

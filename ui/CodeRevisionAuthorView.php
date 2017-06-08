@@ -46,10 +46,10 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 			SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
 			$this->mRepo->getName()
 		);
-		$fields = array(
+		$fields = [
 			'code-rev-repo' => $repoLink,
 			'code-rev-author' => $this->mAuthor,
-		);
+		];
 
 		$wgOut->addHTML( $this->formatMetaData( $fields ) . $linkInfo );
 

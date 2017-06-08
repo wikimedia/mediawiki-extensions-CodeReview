@@ -82,7 +82,7 @@ class RepoAdminListView {
 	private function getForm() {
 		global $wgScript;
 		return Xml::fieldset( wfMessage( 'repoadmin-new-legend' )->text() ) .
-			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) ) .
+			Xml::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] ) .
 			Html::hidden( 'title', $this->title->getPrefixedDBKey() ) .
 			Xml::inputLabel( wfMessage( 'repoadmin-new-label' )->text(), 'repo', 'repo' ) .
 			Xml::submitButton( wfMessage( 'repoadmin-new-button' )->text() ) .
@@ -152,43 +152,43 @@ class RepoAdminRepoView {
 			if ( $repoExists ) {
 				$dbw->update(
 					'code_repo',
-					array(
+					[
 						'repo_path' => $repoPath,
 						'repo_viewvc' => $viewPath,
 						'repo_bugzilla' => $bugPath
-					),
-					array( 'repo_id' => $this->repo->getId() ),
+					],
+					[ 'repo_id' => $this->repo->getId() ],
 					__METHOD__
 				);
 			} else {
 				$dbw->insert(
 					'code_repo',
-					array(
+					[
 						'repo_name' => $this->repoName,
 						'repo_path' => $repoPath,
 						'repo_viewvc' => $viewPath,
 						'repo_bugzilla' => $bugPath
-					),
+					],
 					__METHOD__
 				);
 			}
 			$wgOut->wrapWikiMsg( '<div class="successbox">$1</div>',
-				array( 'repoadmin-edit-sucess', $this->repoName ) );
+				[ 'repoadmin-edit-sucess', $this->repoName ] );
 			return;
 		}
 		$wgOut->addHTML(
 			Xml::fieldset( wfMessage( 'repoadmin-edit-legend', $this->repoName )->text() ) .
 			Xml::openElement(
-				'form', array( 'method' => 'post', 'action' => $this->title->getLocalURL() )
+				'form', [ 'method' => 'post', 'action' => $this->title->getLocalURL() ]
 			) .
 			Xml::buildForm(
-				array(
+				[
 					'repoadmin-edit-path' =>
-						Xml::input( 'wpRepoPath', 60, $repoPath, array( 'dir' => 'ltr' ) ),
+						Xml::input( 'wpRepoPath', 60, $repoPath, [ 'dir' => 'ltr' ] ),
 					'repoadmin-edit-bug' =>
-						Xml::input( 'wpBugPath', 60, $bugPath, array( 'dir' => 'ltr' ) ),
+						Xml::input( 'wpBugPath', 60, $bugPath, [ 'dir' => 'ltr' ] ),
 					'repoadmin-edit-view' =>
-						Xml::input( 'wpViewPath', 60, $viewPath, array( 'dir' => 'ltr' ) ) ) ) .
+						Xml::input( 'wpViewPath', 60, $viewPath, [ 'dir' => 'ltr' ] ) ] ) .
 			Html::hidden( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) ) .
 			Xml::submitButton( wfMessage( 'repoadmin-edit-button' )->text() ) .
 			'</form></fieldset>'

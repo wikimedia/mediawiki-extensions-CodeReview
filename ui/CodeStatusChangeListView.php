@@ -23,21 +23,21 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 	}
 
 	function getQueryInfo() {
-		$query = array(
-			'tables' => array( 'code_prop_changes', 'code_rev' ),
+		$query = [
+			'tables' => [ 'code_prop_changes', 'code_rev' ],
 			'fields' => array_keys( $this->getFieldNames() ),
-			'conds' => array( 'cpc_repo_id' => $this->mRepo->getId(), 'cpc_attrib' => 'status' ),
-			'join_conds' => array(
-				'code_rev' => array( 'LEFT JOIN', 'cpc_repo_id = cr_repo_id AND cpc_rev_id = cr_id' )
-			),
-			'options' => array(),
-		);
+			'conds' => [ 'cpc_repo_id' => $this->mRepo->getId(), 'cpc_attrib' => 'status' ],
+			'join_conds' => [
+				'code_rev' => [ 'LEFT JOIN', 'cpc_repo_id = cr_repo_id AND cpc_rev_id = cr_id' ]
+			],
+			'options' => [],
+		];
 
 		if ( count( $this->mView->mPath ) ) {
 			$query['tables'][] = 'code_paths';
-			$query['join_conds']['code_paths'] = array(
+			$query['join_conds']['code_paths'] = [
 				'INNER JOIN', 'cpc_repo_id = cp_repo_id AND cpc_rev_id = cp_rev_id'
-			);
+			];
 			$query['conds']['cp_path'] = $this->mView->mPath;
 		}
 		if ( $this->mView->mAuthor ) {
@@ -48,7 +48,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 	}
 
 	function getFieldNames() {
-		return array(
+		return [
 			'cpc_timestamp' => $this->msg( 'code-field-timestamp' )->text(),
 			'cpc_user_text' => $this->msg( 'code-field-user' )->text(),
 			'cpc_rev_id' => $this->msg( 'code-field-id' )->text(),
@@ -57,7 +57,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 			'cpc_removed' => $this->msg( 'code-old-status' )->text(),
 			'cpc_added' => $this->msg( 'code-new-status' )->text(),
 			'cr_status' => $this->msg( 'code-field-status' )->text(),
-		);
+		];
 	}
 
 	function formatValue( $name, $value ) {
