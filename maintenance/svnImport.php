@@ -163,10 +163,10 @@ class SvnImport extends Maintenance {
 			// This is LIMITed according to the $cacheSize setting, above, so only the
 			// rows that we plan to pre-cache are returned.
 			// TODO: This was optimised in order to skip rows that already have a diff,
-			//		 which is mostly what is required, but there may be situations where
-			//		 you want to re-calculate diffs (e.g. if $wgCodeReviewMaxDiffPaths
-			//		 changes). If these situations arise we will either want to revert
-			//		 this behavior, or add a --force flag or something.
+			// which is mostly what is required, but there may be situations where
+			// you want to re-calculate diffs (e.g. if $wgCodeReviewMaxDiffPaths
+			// changes). If these situations arise we will either want to revert
+			// this behavior, or add a --force flag or something.
 			$res = $dbw->select(
 				'code_rev',
 				'cr_id',

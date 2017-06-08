@@ -36,7 +36,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 		$params = $this->extractRequestParams();
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
-		if ( !$repo instanceof CodeRepository  ) {
+		if ( !$repo instanceof CodeRepository ) {
 			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
 				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
 			} else {

@@ -62,7 +62,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 
 	function formatValue( $name, $value ) {
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
-		switch( $name ) {
+		switch ( $name ) {
 		case 'cc_rev_id':
 			return $linkRenderer->makeLink(
 				SpecialPage::getSafeTitleFor( 'Code',

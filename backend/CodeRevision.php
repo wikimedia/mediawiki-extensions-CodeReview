@@ -201,7 +201,6 @@ class CodeRevision {
 		return $this->repo;
 	}
 
-
 	/**
 	 * @return string
 	 */
@@ -394,7 +393,7 @@ class CodeRevision {
 		$db, $table, $data, $method = __METHOD__, $options = array()
 	) {
 		$chunkSize = 100;
-		for ( $i = 0; $i < count( $data ); $i += $chunkSize ) {
+		for ( $i = 0, $count = count( $data ); $i < $count; $i += $chunkSize ) {
 			$db->insert(
 				$table,
 				array_slice( $data, $i, $chunkSize ),
@@ -971,7 +970,7 @@ class CodeRevision {
 	 *
 	 * @return array of code_rev database row objects
 	 */
-	public function getFollowedUpRevisions()  {
+	public function getFollowedUpRevisions() {
 		$refs = array();
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(

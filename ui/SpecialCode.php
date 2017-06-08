@@ -5,7 +5,7 @@
  */
 class SpecialCode extends SpecialPage {
 	public function __construct() {
-		parent::__construct( 'Code' , 'codereview-use' );
+		parent::__construct( 'Code', 'codereview-use' );
 	}
 
 	/**
@@ -112,7 +112,7 @@ class SpecialCode extends SpecialPage {
 				return $view;
 			}
 
-			switch( count( $params ) ) {
+			switch ( count( $params ) ) {
 			case 1:
 				$view = new CodeRevisionListView( $repo );
 				break;

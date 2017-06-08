@@ -62,11 +62,11 @@ class CodeReviewTest extends MediaWikiTestCase {
 		$baseUrl = SpecialPage::getTitleFor( 'Code', $repo->getName() . '/305' )->getCanonicalUrl();
 
 		# Test revision URL with various comment id:
-		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl(    '' ) );
-		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl(     0 ) );
-		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl(  null ) );
-		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl(   "0" ) );
-		$this->assertEquals( $baseUrl . '#c777', $cr->getCanonicalUrl(   777 ) );
+		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl( '' ) );
+		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl( 0 ) );
+		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl( null ) );
+		$this->assertEquals( $baseUrl, $cr->getCanonicalUrl( "0" ) );
+		$this->assertEquals( $baseUrl . '#c777', $cr->getCanonicalUrl( 777 ) );
 		$this->assertEquals( $baseUrl . '#c777', $cr->getCanonicalUrl( "777" ) );
 	}
 }

@@ -265,7 +265,7 @@ class CodeRevisionListView extends CodeView {
 				'&#160;' . Xml::submitButton( wfMessage( 'allpagessubmit' )->text() ) .
 				$pager->getHiddenFields( array( 'path', 'title' ) ) .
 				Xml::closeElement( 'form' ) .
-				'</td></tr></table></fieldset>' ;
+				'</td></tr></table></fieldset>';
 
 		return $ret;
 	}
@@ -400,14 +400,16 @@ class SvnRevTablePager extends SvnTablePager {
 		return $fields;
 	}
 
-	function formatValue( $name, $value ) { } // unused
+	function formatValue( $name, $value ) {
+		// unused
+	}
 
 	function formatRevValue( $name, $value, $row ) {
 		$pathQuery = count( $this->mView->mPath )
 			? array( 'path' => $this->mView->getPathsAsString() ) : array();
 
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
-		switch( $name ) {
+		switch ( $name ) {
 		case 'selectforchange':
 			$sort = $this->getDefaultSort();
 			return Xml::check( "wpRevisionSelected[]", false, array( 'value' => $row->$sort ) );

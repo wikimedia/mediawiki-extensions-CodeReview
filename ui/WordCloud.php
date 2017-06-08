@@ -49,7 +49,7 @@ class WordCloud {
 	 * @param array $words Array of word => rank pairs
 	 * @param Callback|null $callback
 	 */
-	public function __construct( Array $words = array(), $callback = null ) {
+	public function __construct( array $words = array(), $callback = null ) {
 		foreach ( $words as $word => $rank ) {
 			$this->addWord( $word, $rank );
 		}

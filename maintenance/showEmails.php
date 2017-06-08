@@ -38,46 +38,46 @@ You missed a lot of points there and need to revert or fix your code
 
 	public function execute() {
 		$this->printSubject( '' );
-		print wfMessage( 'codereview-email-body'
-			, $this->EmailData['author']
-			, $this->EmailData['URL']
-			, $this->EmailData['rev']
-			, $this->EmailData['comment']
-			, $this->EmailData['summary']
+		print wfMessage( 'codereview-email-body',
+			$this->EmailData['author'],
+			$this->EmailData['URL'],
+			$this->EmailData['rev'],
+			$this->EmailData['comment'],
+			$this->EmailData['summary']
 		)->text() . "\n";
 		$this->printRule();
 
 		$this->printSubject( 2 );
-		print wfMessage( 'codereview-email-body2'
-			, $this->EmailData['author']
-			, $this->EmailData['prevrev']
-			, $this->EmailData['URL']
-			, $this->EmailData['follow-up-summary']
-			, $this->EmailData['prevURL']
-			, $this->EmailData['summary']
+		print wfMessage( 'codereview-email-body2',
+			$this->EmailData['author'],
+			$this->EmailData['prevrev'],
+			$this->EmailData['URL'],
+			$this->EmailData['follow-up-summary'],
+			$this->EmailData['prevURL'],
+			$this->EmailData['summary']
 		)->text() . "\n";
 		$this->printRule();
 
 		$this->printSubject( 3 );
-		print wfMessage( 'codereview-email-body3'
-			, $this->EmailData['author']
-			, $this->EmailData['rev']
-			, $this->EmailData['oldstatus']
-			, $this->EmailData['newstatus']
-			, $this->EmailData['URL']
-			, $this->EmailData['summary']
+		print wfMessage( 'codereview-email-body3',
+			$this->EmailData['author'],
+			$this->EmailData['rev'],
+			$this->EmailData['oldstatus'],
+			$this->EmailData['newstatus'],
+			$this->EmailData['URL'],
+			$this->EmailData['summary']
 		)->text() . "\n";
 		$this->printRule();
 
 		$this->printSubject( 4 );
-		print wfMessage( 'codereview-email-body4'
-			, $this->EmailData['author']
-			, $this->EmailData['rev']
-			, $this->EmailData['oldstatus']
-			, $this->EmailData['newstatus']
-			, $this->EmailData['URL']
-			, $this->EmailData['summary']
-			, $this->EmailData['follow-up-summary']
+		print wfMessage( 'codereview-email-body4',
+			$this->EmailData['author'],
+			$this->EmailData['rev'],
+			$this->EmailData['oldstatus'],
+			$this->EmailData['newstatus'],
+			$this->EmailData['URL'],
+			$this->EmailData['summary'],
+			$this->EmailData['follow-up-summary']
 		)->text() . "\n";
 		$this->printRule();
 	}
@@ -89,14 +89,14 @@ You missed a lot of points there and need to revert or fix your code
 	function printSubject( $type ) {
 		$repo = $this->EmailData['repo'];
 		if ( $type == 2 ) {
-			$rev  = $this->EmailData['prevrev'];
+			$rev = $this->EmailData['prevrev'];
 		} else {
-			$rev  = $this->EmailData['rev'];
+			$rev = $this->EmailData['rev'];
 		}
 		printf( "Subject: %s\n\n",
-			wfMessage( 'codereview-email-subj' . $type
-				, $repo
-				, $rev
+			wfMessage( 'codereview-email-subj' . $type,
+				$repo,
+				$rev
 			)->text()
 		);
 	}

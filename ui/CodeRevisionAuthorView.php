@@ -39,7 +39,7 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 			$repo = $this->mRepo->getName();
 			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor/link" );
 			$linkInfo .= ' (' . $linkRenderer->makeLink( $page,
-				wfMessage( 'code-author-' . ( $this->mUser ? 'un': '' ) . 'link' )->text() ) . ')' ;
+				wfMessage( 'code-author-' . ( $this->mUser ? 'un': '' ) . 'link' )->text() ) . ')';
 		}
 
 		$repoLink = $linkRenderer->makeLink(

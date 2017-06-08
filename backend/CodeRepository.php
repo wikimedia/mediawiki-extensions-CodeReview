@@ -403,7 +403,7 @@ class CodeRepository {
 
 				// If $data is blank, report the error that no data was returned.
 				// TODO: Currently we can't tell the difference between an SVN/connection
-				//		 failure and an empty diff. See if we can remedy this!
+				// failure and an empty diff. See if we can remedy this!
 				if ( $data == '' ) {
 					$data = self::DIFFRESULT_NoDataReturned;
 				} else {

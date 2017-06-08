@@ -210,7 +210,7 @@ class SubversionShell extends SubversionAdaptor {
 		foreach ( $lines as $line ) {
 			$line = rtrim( $line );
 
-			switch( $state ) {
+			switch ( $state ) {
 			case 'start':
 				if ( $line == $divider ) {
 					$state = 'revdata';

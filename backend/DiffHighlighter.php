@@ -5,7 +5,7 @@
  */
 class CodeDiffHighlighter {
 	/* chunk line count for the original file */
-	protected $left  = 0;
+	protected $left = 0;
 	/* chunk line count for the changed file */
 	protected $right = 0;
 	/* number of chunks */
@@ -54,7 +54,7 @@ class CodeDiffHighlighter {
 		}
 
 		# Dispatch diff lines to the proper handler
-		switch( substr( $line, 0, 1 ) ) {
+		switch ( substr( $line, 0, 1 ) ) {
 		case '-':
 			if ( substr( $line, 0, 3 ) === '---' ) {
 				return '';
@@ -128,9 +128,9 @@ class CodeDiffHighlighter {
 
 		$classAttr = is_null( $class ) ? array() : array( 'class' => $class );
 		return Html::rawElement( 'tr', $this->getLineIdAttr(),
-				  Html::element( 'td', array( 'class' => 'linenumbers' ), $left  )
+				Html::element( 'td', array( 'class' => 'linenumbers' ), $left )
 				. Html::element( 'td', array( 'class' => 'linenumbers' ), $right )
-				. Html::rawElement( 'td', $classAttr , Html::element( $inlineWrapEl, array(), $content ) )
+				. Html::rawElement( 'td', $classAttr, Html::element( $inlineWrapEl, array(), $content ) )
 		);
 	}
 
