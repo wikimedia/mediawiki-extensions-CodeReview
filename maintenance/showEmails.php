@@ -7,7 +7,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class CodeReviewShowEmails extends Maintenance {
-	private $EmailData = array(
+	private $EmailData = [
 		'author'  => 'Author',
 		'repo'    => 'Repository',
 		'rev'     => 'r88888',
@@ -27,7 +27,7 @@ You missed a lot of points there and need to revert or fix your code
 ',
 		'oldstatus' => 'new',
 		'newstatus' => 'fixme',
-	);
+	];
 
 	public function __construct() {
 		parent::__construct();

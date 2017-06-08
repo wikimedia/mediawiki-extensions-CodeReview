@@ -67,7 +67,7 @@ class BulkStatusUpdate extends Maintenance {
 		$res = $dbr->select(
 			'code_rev',
 			'*',
-			array( 'cr_id' => $revisions, 'cr_repo_id' => $repo->getId() ),
+			[ 'cr_id' => $revisions, 'cr_repo_id' => $repo->getId() ],
 			__METHOD__
 		);
 

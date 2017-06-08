@@ -49,13 +49,13 @@ class CodeReviewTest extends MediaWikiTestCase {
 	public function testCommentCanonicalUrl() {
 		# Fixture:
 		$repo = $this->createRepo();
-		$cr = CodeRevision::newFromSvn( $repo, array(
+		$cr = CodeRevision::newFromSvn( $repo, [
 			'rev'    => 305,
 			'author' => 'hashar',
 			'date'   => '15 august 2011',
 			'msg'    => 'dumb revision message',
-			'paths'  => array( array( 'path' => '/dev/null', 'action' => 'A' ) ),
-			)
+			'paths'  => [ [ 'path' => '/dev/null', 'action' => 'A' ] ],
+			]
 		);
 
 		# Find out our revision root URL

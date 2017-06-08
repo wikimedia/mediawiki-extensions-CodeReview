@@ -32,7 +32,7 @@ class GetRevisionDiffs extends Maintenance {
 		$res = $dbr->select(
 			'code_rev',
 			'cr_id',
-			array( 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL' ),
+			[ 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL' ],
 			__METHOD__
 		);
 

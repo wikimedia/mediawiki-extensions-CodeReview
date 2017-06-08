@@ -43,10 +43,10 @@ class PopulateCaUserColumn extends Maintenance {
 		$res = $dbr->select(
 			'code_authors',
 			'ca_user_text',
-			array(
+			[
 				'ca_repo_id' => $repo->getId(),
 				'ca_user' => 0
-			),
+			],
 			__METHOD__
 		);
 
@@ -77,11 +77,11 @@ class PopulateCaUserColumn extends Maintenance {
 
 			$dbw->update(
 				'code_authors',
-				array( 'ca_user' => $userId ),
-				array(
+				[ 'ca_user' => $userId ],
+				[
 					'ca_repo_id' => $repo->getId(),
 					'ca_user_text' => $row->ca_user_text
-				),
+				],
 				__METHOD__
 			);
 		}

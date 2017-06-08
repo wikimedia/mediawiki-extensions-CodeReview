@@ -146,7 +146,7 @@ class SvnImport extends Maintenance {
 
 		if ( $cacheSize !== 0 ) {
 			$dbw = wfGetDB( DB_MASTER );
-			$options = array( 'ORDER BY' => 'cr_id DESC' );
+			$options = [ 'ORDER BY' => 'cr_id DESC' ];
 
 			if ( $cacheSize == 'all' ) {
 				$this->output( "Pre-caching all uncached diffs...\n" );
@@ -170,7 +170,7 @@ class SvnImport extends Maintenance {
 			$res = $dbw->select(
 				'code_rev',
 				'cr_id',
-				array( 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL OR cr_diff = ""' ),
+				[ 'cr_repo_id' => $repo->getId(), 'cr_diff IS NULL OR cr_diff = ""' ],
 				__METHOD__,
 				$options
 			);

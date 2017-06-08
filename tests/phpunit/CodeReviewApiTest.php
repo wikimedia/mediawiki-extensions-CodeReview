@@ -18,10 +18,10 @@ class CodeReviewApiTest extends ApiTestCase {
 		parent::setUp();
 		$this->doLogin();
 		$this->createRepo();
-		$this->commonApiData = array(
+		$this->commonApiData = [
 			'repo' => 'Test',
 			'format' => 'json',
-		);
+		];
 	}
 
 	function tearDown() {
@@ -34,12 +34,12 @@ class CodeReviewApiTest extends ApiTestCase {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->insert(
 			'code_repo',
-			array(
+			[
 				'repo_name' => 'Test',
 				'repo_path' => 'somewhere',
 				'repo_viewvc'   => 'http://example.com/view/',
 				'repo_bugzilla' => 'http://www.example.com/$1',
-			),
+			],
 			__METHOD__
 		);
 		$id = $dbw->insertId();
@@ -68,11 +68,11 @@ class CodeReviewApiTest extends ApiTestCase {
 	 * $wgOut->parse() backtrace :b
 	 */
 	function testAddInlineComment() {
-		$this->doApiRequest( array(
+		$this->doApiRequest( [
 			'action' => 'coderevisionupdate',
 			'rev' => 777,
 			'comment' => 'Awesome comment',
 
-		) + $this->commonApiData );
+		] + $this->commonApiData );
 	}
 }
