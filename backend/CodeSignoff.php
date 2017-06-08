@@ -66,14 +66,14 @@ class CodeSignoff {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->update(
 			'code_signoffs',
-			array( 'cs_timestamp_struck' => $dbw->timestamp() ),
-			array(
+			[ 'cs_timestamp_struck' => $dbw->timestamp() ],
+			[
 				'cs_repo_id' => $this->rev->getRepoId(),
 				'cs_rev_id' => $this->rev->getId(),
 				'cs_flag' => $this->flag,
 				'cs_user_text' => $this->userText,
 				'cs_timestamp_struck' => $this->timestampStruck
-			),
+			],
 			__METHOD__
 		);
 	}
@@ -87,7 +87,7 @@ class CodeSignoff {
 	 * @return string ID
 	 */
 	public function getID() {
-		return implode( '|', array( $this->flag, $this->timestampStruck, $this->userText ) );
+		return implode( '|', [ $this->flag, $this->timestampStruck, $this->userText ] );
 	}
 
 	/**
@@ -126,17 +126,17 @@ class CodeSignoff {
 		$dbr = wfGetDB( DB_SLAVE );
 		$row = $dbr->selectRow(
 			'code_signoffs',
-			array(
+			[
 				'cs_user', 'cs_user_text', 'cs_flag', 'cs_timestamp',
 				'cs_timestamp_struck'
-			),
-			array(
+			],
+			[
 				'cs_repo_id' => $rev->getRepoId(),
 				'cs_rev_id' => $rev->getId(),
 				'cs_flag' => $parts[0],
 				'cs_timestamp_struck' => $parts[1],
 				'cs_user_text' => $parts[2]
-			), __METHOD__
+			], __METHOD__
 		);
 		if ( !$row ) {
 			return null;

@@ -23,7 +23,7 @@ class ApiCodeDiff extends ApiBase {
 		global $wgCodeReviewMaxDiffSize;
 
 		// Before doing anything at all, let's check permissions
-		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
 			$this->checkUserRightsAny( 'codereview-use' );
 		} else {
 			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
@@ -34,8 +34,8 @@ class ApiCodeDiff extends ApiBase {
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 			} else {
 				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
 			}
@@ -44,8 +44,8 @@ class ApiCodeDiff extends ApiBase {
 		$lastStoredRev = $repo->getLastStoredRev();
 
 		if ( $params['rev'] > $lastStoredRev ) {
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( array( 'apierror-nosuchrevid', $params['rev'] ) );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-nosuchrevid', $params['rev'] ] );
 			} else {
 				$this->dieUsage( "There is no revision with ID {$params['rev']}", 'nosuchrev' );
 			}
@@ -63,35 +63,35 @@ class ApiCodeDiff extends ApiBase {
 			$html = $hilite->render( $diff );
 		}
 
-		$data = array(
+		$data = [
 			'repo' => $params['repo'],
 			'id' => $params['rev'],
 			'diff' => $html
-		);
+		];
 		$this->getResult()->addValue( 'code', 'rev', $data );
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'repo' => array(
+		return [
+			'repo' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'rev' => array(
+			],
+			'rev' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_REQUIRED => true,
-			)
-		);
+			]
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=codediff&repo=MediaWiki&rev=42080'
 				=> 'apihelp-codediff-example-1',
-		);
+		];
 	}
 }

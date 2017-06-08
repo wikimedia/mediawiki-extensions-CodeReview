@@ -197,15 +197,15 @@ class SubversionShell extends SubversionAdaptor {
 			wfEscapeShellArg( $this->mRepoPath . $path ) );
 
 		$lines = explode( "\n", wfShellExec( $command ) );
-		$out = array();
+		$out = [];
 
 		$divider = str_repeat( '-', 72 );
-		$formats = array(
+		$formats = [
 			'rev' => '/^r(\d+)$/',
 			'author' => '/^(.*)$/',
 			'date' => '/^(?:(.*?) )?\(.*\)$/', // account for '(no date)'
 			'lines' => '/^(\d+) lines?$/',
-		);
+		];
 		$state = "start";
 		foreach ( $lines as $line ) {
 			$line = rtrim( $line );
@@ -224,12 +224,12 @@ class SubversionShell extends SubversionAdaptor {
 					$state = 'done';
 					break;
 				}
-				$data = array();
+				$data = [];
 				$bits = explode( ' | ', $line );
 				$i = 0;
 				foreach ( $formats as $key => $regex ) {
 					$text = $bits[$i++];
-					$matches = array();
+					$matches = [];
 					if ( preg_match( $regex, $text, $matches ) ) {
 						$data[$key] = $matches[1];
 					} else {
@@ -238,7 +238,7 @@ class SubversionShell extends SubversionAdaptor {
 					}
 				}
 				$data['msg'] = '';
-				$data['paths'] = array();
+				$data['paths'] = [];
 				$state = 'changedpaths';
 				break;
 			case 'changedpaths':
@@ -257,12 +257,12 @@ class SubversionShell extends SubversionAdaptor {
 					// Out of paths. Move on to the message...
 					$state = 'msg';
 				} else {
-					$matches = array();
+					$matches = [];
 					if ( preg_match( '/^   (.) (.*)$/', $line, $matches ) ) {
-						$data['paths'][] = array(
+						$data['paths'][] = [
 							'action' => $matches[1],
 							'path' => $matches[2]
-						);
+						];
 					}
 				}
 				break;
@@ -303,9 +303,9 @@ class SubversionShell extends SubversionAdaptor {
 		}
 
 		$entries = $document->getElementsByTagName( 'entry' );
-		$result = array();
+		$result = [];
 		foreach ( $entries as $entry ) {
-			$item = array();
+			$item = [];
 			$item['type'] = $entry->getAttribute( 'kind' );
 			foreach ( $entry->childNodes as $child ) {
 				switch ( $child->nodeName ) {
@@ -369,32 +369,32 @@ class SubversionProxy extends SubversionAdaptor {
 	}
 
 	function getDiff( $path, $rev1, $rev2 ) {
-		return $this->_proxy( array(
+		return $this->_proxy( [
 			'action' => 'diff',
 			'base' => $this->mRepoPath,
 			'path' => $path,
 			'rev1' => $rev1,
 			'rev2' => $rev2
-		) );
+		] );
 	}
 
 	function getLog( $path, $startRev = null, $endRev = null ) {
-		return $this->_proxy( array(
+		return $this->_proxy( [
 			'action' => 'log',
 			'base' => $this->mRepoPath,
 			'path' => $path,
 			'start' => $startRev,
 			'end' => $endRev
-		) );
+		] );
 	}
 
 	function getDirList( $path, $rev = null ) {
-		return $this->_proxy( array(
+		return $this->_proxy( [
 			'action' => 'list',
 			'base' => $this->mRepoPath,
 			'path' => $path,
 			'rev' => $rev
-		) );
+		] );
 	}
 
 	protected function _proxy( $params ) {

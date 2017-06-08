@@ -30,7 +30,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 
 	public function execute() {
 		// Before doing anything at all, let's check permissions
-		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
 			$this->checkUserRightsAny( 'codereview-use' );
 		} else {
 			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
@@ -53,8 +53,8 @@ class ApiQueryCodeComments extends ApiQueryBase {
 
 		$listview = new CodeCommentsListView( $params['repo'] );
 		if ( is_null( $listview->getRepo() ) ) {
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 			} else {
 				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
 			}
@@ -70,7 +70,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		$pager->doQuery();
 
 		$comments = $pager->getResult();
-		$data = array();
+		$data = [];
 
 		$count = 0;
 		$lastTimestamp = 0;
@@ -93,7 +93,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 	}
 
 	private function formatRow( $row ) {
-		$item = array();
+		$item = [];
 		if ( isset( $this->props['revid'] ) ) {
 			$item['revid'] = $row->cc_rev_id;
 		}
@@ -113,45 +113,45 @@ class ApiQueryCodeComments extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'repo' => array(
+		return [
+			'repo' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'limit' => array(
+			],
+			'limit' => [
 				ApiBase::PARAM_DFLT => 10,
 				ApiBase::PARAM_TYPE => 'limit',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
-			),
-			'start' => array(
+			],
+			'start' => [
 				ApiBase::PARAM_TYPE => 'timestamp'
-			),
-			'prop' => array(
+			],
+			'prop' => [
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_DFLT => 'timestamp|user|status|revid',
-				ApiBase::PARAM_TYPE => array(
+				ApiBase::PARAM_TYPE => [
 					'timestamp',
 					'user',
 					'status',
 					'text',
 					'revid',
 					'revision',
-				),
-			),
-		);
+				],
+			],
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&list=codecomments&ccrepo=MediaWiki'
 				=> 'apihelp-query+codecomments-example-1',
 			'action=query&list=codecomments&ccrepo=MediaWiki&ccprop=timestamp|user|status|text'
 				=> 'apihelp-query+codecomments-example-2',
-		);
+		];
 	}
 }

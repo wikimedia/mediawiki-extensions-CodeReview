@@ -14,13 +14,13 @@ class CodeRepository {
 	 * Local cache of Wiki user -> SVN user mappings
 	 * @var array
 	 */
-	private static $userLinks = array();
+	private static $userLinks = [];
 
 	/**
 	 * Sort of the same, but looking it up for the other direction
 	 * @var array
 	 */
-	private static $authorLinks = array();
+	private static $authorLinks = [];
 
 	/**
 	 * Various data about the repo
@@ -51,14 +51,14 @@ class CodeRepository {
 		$dbw = wfGetDB( DB_SLAVE );
 		$row = $dbw->selectRow(
 			'code_repo',
-			array(
+			[
 				'repo_id',
 				'repo_name',
 				'repo_path',
 				'repo_viewvc',
 				'repo_bugzilla'
-			),
-			array( 'repo_name' => $name ),
+			],
+			[ 'repo_name' => $name ],
 			__METHOD__ );
 
 		if ( $row ) {
@@ -76,13 +76,13 @@ class CodeRepository {
 		$dbw = wfGetDB( DB_SLAVE );
 		$row = $dbw->selectRow(
 			'code_repo',
-			array(
+			[
 				'repo_id',
 				'repo_name',
 				'repo_path',
 				'repo_viewvc',
-				'repo_bugzilla' ),
-			array( 'repo_id' => intval( $id ) ),
+				'repo_bugzilla' ],
+			[ 'repo_id' => intval( $id ) ],
 			__METHOD__ );
 
 		if ( $row ) {
@@ -111,9 +111,9 @@ class CodeRepository {
 	 */
 	static function getRepoList() {
 		$dbr = wfGetDB( DB_SLAVE );
-		$options = array( 'ORDER BY' => 'repo_name' );
-		$res = $dbr->select( 'code_repo', '*', array(), __METHOD__, $options );
-		$repos = array();
+		$options = [ 'ORDER BY' => 'repo_name' ];
+		$res = $dbr->select( 'code_repo', '*', [], __METHOD__, $options );
+		$repos = [];
 		foreach ( $res as $row ) {
 			$repos[] = self::newFromRow( $row );
 		}
@@ -177,7 +177,7 @@ class CodeRepository {
 		$row = $dbr->selectField(
 			'code_rev',
 			'MAX(cr_id)',
-			array( 'cr_repo_id' => $this->getId() ),
+			[ 'cr_repo_id' => $this->getId() ],
 			__METHOD__
 		);
 		return intval( $row );
@@ -196,22 +196,22 @@ class CodeRepository {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'code_rev',
-			array( 'cr_author', 'MAX(cr_timestamp) AS time' ),
-			array( 'cr_repo_id' => $this->getId() ),
+			[ 'cr_author', 'MAX(cr_timestamp) AS time' ],
+			[ 'cr_repo_id' => $this->getId() ],
 			__METHOD__,
-			array(
+			[
 				'GROUP BY' => 'cr_author',
 				'ORDER BY' => 'cr_author',
 				'LIMIT' => 500
-			)
+			]
 		);
-		$authors = array();
+		$authors = [];
 		foreach ( $res as $row ) {
 			if ( $row->cr_author !== null ) {
-				$authors[] = array(
+				$authors[] = [
 					'author' => $row->cr_author,
 					'lastcommit' => $row->time
-				);
+				];
 			}
 		}
 		$wgMemc->set( $key, $authors, 3600 * 24 );
@@ -240,16 +240,16 @@ class CodeRepository {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'code_tags',
-			array( 'ct_tag', 'COUNT(*) AS revs' ),
-			array( 'ct_repo_id' => $this->getId() ),
+			[ 'ct_tag', 'COUNT(*) AS revs' ],
+			[ 'ct_repo_id' => $this->getId() ],
 			__METHOD__,
-			array(
+			[
 				'GROUP BY' => 'ct_tag',
 				'ORDER BY' => 'revs DESC',
 				'LIMIT' => 500
-			)
+			]
 		);
-		$tags = array();
+		$tags = [];
 		foreach ( $res as $row ) {
 			$tags[$row->ct_tag] = $row->revs;
 		}
@@ -271,10 +271,10 @@ class CodeRepository {
 		$row = $dbr->selectRow(
 			'code_rev',
 			'*',
-			array(
+			[
 				'cr_id' => $id,
 				'cr_repo_id' => $this->getId(),
-			),
+			],
 			__METHOD__
 		);
 		if ( !$row ) {
@@ -371,8 +371,8 @@ class CodeRepository {
 			$dbr = wfGetDB( DB_SLAVE );
 			$row = $dbr->selectRow(
 				'code_rev',
-				array( 'cr_diff', 'cr_flags' ),
-				array( 'cr_repo_id' => $this->id, 'cr_id' => $rev, 'cr_diff IS NOT NULL' ),
+				[ 'cr_diff', 'cr_flags' ],
+				[ 'cr_repo_id' => $this->id, 'cr_id' => $rev, 'cr_diff IS NOT NULL' ],
 				__METHOD__
 			);
 			if ( $row ) {
@@ -418,8 +418,8 @@ class CodeRepository {
 					$dbw = wfGetDB( DB_MASTER );
 					$dbw->update(
 						'code_rev',
-						array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
-						array( 'cr_repo_id' => $this->id, 'cr_id' => $rev ),
+						[ 'cr_diff' => $storedData, 'cr_flags' => $flags ],
+						[ 'cr_repo_id' => $this->id, 'cr_id' => $rev ],
 						__METHOD__
 					);
 				}
@@ -450,8 +450,8 @@ class CodeRepository {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->update(
 			'code_rev',
-			array( 'cr_diff' => $storedData, 'cr_flags' => $flags ),
-			array( 'cr_repo_id' => $this->id, 'cr_id' => $codeRev->getId() ),
+			[ 'cr_diff' => $storedData, 'cr_flags' => $flags ],
+			[ 'cr_repo_id' => $this->id, 'cr_id' => $codeRev->getId() ],
 			__METHOD__
 		);
 	}
@@ -483,27 +483,27 @@ class CodeRepository {
 		// Skip existing rows.
 		$dbw->insert(
 			'code_authors',
-			array(
+			[
 				'ca_repo_id'   => $this->getId(),
 				'ca_author'    => $author,
 				'ca_user'      => $userId,
 				'ca_user_text' => $user->getName()
-			),
+			],
 			__METHOD__,
-			array( 'IGNORE' )
+			[ 'IGNORE' ]
 		);
 		// If the last query already found a row, then update it.
 		if ( !$dbw->affectedRows() ) {
 			$dbw->update(
 				'code_authors',
-				array(
+				[
 					'ca_user'      => $userId,
 					'ca_user_text' => $user->getName()
-				),
-				array(
+				],
+				[
 					'ca_repo_id'  => $this->getId(),
 					'ca_author'   => $author,
-				),
+				],
 				__METHOD__
 			);
 		}
@@ -520,10 +520,10 @@ class CodeRepository {
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->delete(
 			'code_authors',
-			array(
+			[
 				'ca_repo_id' => $this->getId(),
 				'ca_author'  => $author,
-			),
+			],
 			__METHOD__
 		);
 		self::$userLinks[$author] = false;
@@ -546,10 +546,10 @@ class CodeRepository {
 		$wikiUser = $dbr->selectField(
 			'code_authors',
 			'ca_user_text',
-			array(
+			[
 				'ca_repo_id' => $this->getId(),
 				'ca_author'  => $author,
-			),
+			],
 			__METHOD__
 		);
 		$user = null;
@@ -580,10 +580,10 @@ class CodeRepository {
 		$res = $dbr->selectField(
 			'code_authors',
 			'ca_author',
-			array(
+			[
 				'ca_repo_id'   => $this->getId(),
 				'ca_user_text' => $name,
-			),
+			],
 			__METHOD__
 		);
 		return self::$authorLinks[$name] = $res;

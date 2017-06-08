@@ -22,7 +22,7 @@ class ApiCodeUpdate extends ApiBase {
 
 	public function execute() {
 		// Before doing anything at all, let's check permissions
-		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
 			$this->checkUserRightsAny( 'codereview-use' );
 		} else {
 			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
@@ -33,8 +33,8 @@ class ApiCodeUpdate extends ApiBase {
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 			} else {
 				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
 			}
@@ -46,7 +46,7 @@ class ApiCodeUpdate extends ApiBase {
 		if ( $lastStoredRev >= $params['rev'] ) {
 			// Nothing to do, we're up to date.
 			// Return an empty result
-			$this->getResult()->addValue( null, $this->getModuleName(), array() );
+			$this->getResult()->addValue( null, $this->getModuleName(), [] );
 			return;
 		}
 
@@ -58,17 +58,17 @@ class ApiCodeUpdate extends ApiBase {
 			ApiBase::dieDebug( __METHOD__, 'Something awry...' );
 		}
 
-		$result = array();
-		$revs = array();
+		$result = [];
+		$revs = [];
 		foreach ( $log as $data ) {
 			$codeRev = CodeRevision::newFromSvn( $repo, $data );
 			$codeRev->save();
-			$result[] = array(
+			$result[] = [
 				'id' => $codeRev->getId(),
 				'author' => $codeRev->getAuthor(),
 				'timestamp' => wfTimestamp( TS_ISO_8601, $codeRev->getTimestamp() ),
 				'message' => $codeRev->getMessage()
-			);
+			];
 			$revs[] = $codeRev;
 		}
 		// Cache the diffs if there are a only a few.
@@ -92,26 +92,26 @@ class ApiCodeUpdate extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'repo' => array(
+		return [
+			'repo' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'rev' => array(
+			],
+			'rev' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_REQUIRED => true,
-			)
-		);
+			]
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=codeupdate&repo=MediaWiki&rev=42080'
 				=> 'apihelp-codeupdate-example-1',
-		);
+		];
 	}
 }

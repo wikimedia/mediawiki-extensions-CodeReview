@@ -52,22 +52,22 @@ class RepoStats {
 
 		$this->revisions = $dbr->selectField( 'code_rev',
 			'COUNT(*)',
-			array( 'cr_repo_id' => $this->repo->getId() ),
+			[ 'cr_repo_id' => $this->repo->getId() ],
 			__METHOD__
 		);
 
 		$this->authors = $dbr->selectField( 'code_rev',
 			'COUNT(DISTINCT cr_author)',
-			array( 'cr_repo_id' => $this->repo->getId() ),
+			[ 'cr_repo_id' => $this->repo->getId() ],
 			__METHOD__
 		);
 
-		$this->states = array();
+		$this->states = [];
 		$res = $dbr->select( 'code_rev',
-			array( 'cr_status', 'COUNT(*) AS revs' ),
-			array( 'cr_repo_id' => $this->repo->getId() ),
+			[ 'cr_status', 'COUNT(*) AS revs' ],
+			[ 'cr_repo_id' => $this->repo->getId() ],
 			__METHOD__,
-			array( 'GROUP BY' => 'cr_status' )
+			[ 'GROUP BY' => 'cr_status' ]
 		);
 		foreach ( $res as $row ) {
 			$this->states[$row->cr_status] = $row->revs;
@@ -78,7 +78,7 @@ class RepoStats {
 		$this->fixmes = $this->getAuthorStatusCounts( 'fixme' );
 		$this->new = $this->getAuthorStatusCounts( 'new' );
 
-		$this->fixmesPerPath = array();
+		$this->fixmesPerPath = [];
 		global $wgCodeReviewFixmePerPath;
 		if ( isset( $wgCodeReviewFixmePerPath[$repoName] ) ) {
 			foreach ( $wgCodeReviewFixmePerPath[$repoName] as $path ) {
@@ -86,7 +86,7 @@ class RepoStats {
 			}
 		}
 
-		$this->newPerPath = array();
+		$this->newPerPath = [];
 		global $wgCodeReviewNewPerPath;
 		if ( isset( $wgCodeReviewNewPerPath[$repoName] ) ) {
 			foreach ( $wgCodeReviewNewPerPath[$repoName] as $path ) {
@@ -101,17 +101,17 @@ class RepoStats {
 	 * @return array
 	 */
 	private function getAuthorStatusCounts( $status ) {
-		$array = array();
+		$array = [];
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select( 'code_rev',
-			array( 'COUNT(*) AS revs', 'cr_author' ),
-			array( 'cr_repo_id' => $this->repo->getId(), 'cr_status' => $status ),
+			[ 'COUNT(*) AS revs', 'cr_author' ],
+			[ 'cr_repo_id' => $this->repo->getId(), 'cr_status' => $status ],
 			__METHOD__,
-			array(
+			[
 				'GROUP BY' => 'cr_author',
 				'ORDER BY' => 'revs DESC',
 				'LIMIT' => 500,
-			)
+			]
 		);
 		foreach ( $res as $row ) {
 			$array[$row->cr_author] = $row->revs;
@@ -141,25 +141,25 @@ class RepoStats {
 	 * @return array
 	 */
 	private function getStatusPath( $path, $status ) {
-		$array = array();
+		$array = [];
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
-			array( 'code_paths', 'code_rev' ),
-			array( 'COUNT(*) AS revs', 'cr_author' ),
-			array(
+			[ 'code_paths', 'code_rev' ],
+			[ 'COUNT(*) AS revs', 'cr_author' ],
+			[
 				'cr_repo_id' => $this->repo->getId(),
 				'cp_path' => $path,
 				'cr_status' => $status,
-			),
+			],
 			__METHOD__,
-			array(
+			[
 				'GROUP BY' => 'cr_author',
 				'ORDER BY' => 'revs DESC',
 				'LIMIT' => 500,
-			),
-			array(
-				'code_rev' => array( 'INNER JOIN', 'cr_repo_id = cp_repo_id AND cr_id = cp_rev_id' )
-			)
+			],
+			[
+				'code_rev' => [ 'INNER JOIN', 'cr_repo_id = cp_repo_id AND cr_id = cp_rev_id' ]
+			]
 		);
 		foreach ( $res as $row ) {
 			$array[$row->cr_author] = $row->revs;

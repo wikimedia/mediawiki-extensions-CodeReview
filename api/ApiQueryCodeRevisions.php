@@ -31,7 +31,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	public function execute() {
 		$this->getMain()->setCacheMode( 'anon-public-user-private' );
 		// Before doing anything at all, let's check permissions
-		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
 			$this->checkUserRightsAny( 'codereview-use' );
 		} else {
 			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
@@ -45,14 +45,14 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		$repo = CodeRepository::newFromName( $params['repo'] );
 
 		if ( !$repo ) {
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 			} else {
 				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
 			}
 		}
 
-		$data = array();
+		$data = [];
 
 		$listview = new CodeRevisionListView( $repo );
 		if ( isset( $params['path'] ) && $params['path'] !== '' ) {
@@ -113,7 +113,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	 * @return array
 	 */
 	private function formatRow( $row, $repo, $result ) {
-		$item = array();
+		$item = [];
 		if ( isset( $this->props['revid'] ) ) {
 			$item['revid'] = intval( $row->cr_id );
 		}
@@ -164,14 +164,14 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	 * @return array
 	 */
 	protected function addReferenced( $rev ) {
-		$items = array();
+		$items = [];
 		foreach ( $rev->getFollowedUpRevisions() as $ref ) {
-			$refItem = array(
+			$refItem = [
 				'revid' => $ref->cr_id,
 				'status' => $ref->cr_status,
 				'timestamp' => wfTimestamp( TS_ISO_8601, $ref->cr_timestamp ),
 				'author' => $ref->cr_author ,
-			);
+			];
 			ApiResult::setContentValue( $refItem, 'message', $ref->cr_message );
 
 			$items[] = $refItem;
@@ -180,31 +180,31 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'repo' => array(
+		return [
+			'repo' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'limit' => array(
+			],
+			'limit' => [
 				ApiBase::PARAM_DFLT => 10,
 				ApiBase::PARAM_TYPE => 'limit',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
-			),
+			],
 			'path' => null,
-			'start' => array(
+			'start' => [
 				ApiBase::PARAM_TYPE => 'integer'
-			),
-			'revs' => array(
+			],
+			'revs' => [
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_MIN => 1,
-			),
-			'prop' => array(
+			],
+			'prop' => [
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_DFLT => 'revid|status|author|timestamp',
-				ApiBase::PARAM_TYPE => array(
+				ApiBase::PARAM_TYPE => [
 					'revid',
 					'status',
 					'commentcount',
@@ -215,20 +215,20 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 					'timestamp',
 					'followups',
 					'followedup',
-				),
-			),
-		);
+				],
+			],
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&list=coderevisions&crrepo=MediaWiki'
 				=> 'apihelp-query+coderevisions-example-1',
 			'action=query&list=coderevisions&crrepo=MediaWiki&crprop=revid|author|status|timestamp|tags'
 				=> 'apihelp-query+coderevisions-example-2',
-		);
+		];
 	}
 }

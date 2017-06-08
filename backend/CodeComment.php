@@ -38,7 +38,7 @@ class CodeComment {
 		$dbr = wfGetDB( DB_SLAVE );
 		$row = $dbr->selectRow(
 			'code_comment',
-			array(
+			[
 				# fields needed to build a CodeRevision
 				'cc_rev_id',
 				'cc_repo_id',
@@ -51,8 +51,8 @@ class CodeComment {
 				'cc_patch_line',
 				'cc_timestamp',
 				'cc_sortkey'
-			),
-			array( 'cc_id' => (int) $cc_id ),
+			],
+			[ 'cc_id' => (int) $cc_id ],
 			__METHOD__
 		);
 		return self::newFromRow( $rev, $row );

@@ -26,7 +26,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 
 	public function execute() {
 		// Before doing anything at all, let's check permissions
-		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
 			$this->checkUserRightsAny( 'codereview-use' );
 		} else {
 			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
@@ -37,8 +37,8 @@ class ApiQueryCodePaths extends ApiQueryBase {
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo instanceof CodeRepository ) {
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 			} else {
 				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
 			}
@@ -46,7 +46,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 
 		$this->addTables( 'code_paths' );
 		$this->addFields( 'DISTINCT cp_path' );
-		$this->addWhere( array( 'cp_repo_id' => $repo->getId() ) );
+		$this->addWhere( [ 'cp_repo_id' => $repo->getId() ] );
 		$db = $this->getDB();
 
 		$this->addWhere( 'cp_path ' . $db->buildLike( $params['path'], $db->anyString() ) );
@@ -58,10 +58,10 @@ class ApiQueryCodePaths extends ApiQueryBase {
 
 		$result = $this->getResult();
 
-		$data = array();
+		$data = [];
 
 		foreach ( $res as $row ) {
-			$item = array();
+			$item = [];
 			ApiResult::setContentValue( $item, 'path', $row->cp_path );
 			$data[] = $item;
 		}
@@ -71,25 +71,25 @@ class ApiQueryCodePaths extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'repo' => array(
+		return [
+			'repo' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'path' => array(
+			],
+			'path' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-		);
+			],
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&list=codepaths&cprepo=MediaWiki&cppath=/trunk/phase3'
 				=> 'apihelp-query+codepaths-example-1',
-		);
+		];
 	}
 }

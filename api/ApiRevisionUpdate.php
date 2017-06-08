@@ -26,7 +26,7 @@ class ApiRevisionUpdate extends ApiBase {
 	public function execute() {
 		$user = $this->getUser();
 		// Before doing anything at all, let's check permissions
-		if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
 			$this->checkUserRightsAny( 'codereview-use' );
 		} else {
 			if ( !$user->isAllowed( 'codereview-use' ) ) {
@@ -37,7 +37,7 @@ class ApiRevisionUpdate extends ApiBase {
 		$params = $this->extractRequestParams();
 
 		if ( $params['comment'] ) {
-			if ( is_callable( array( $this, 'checkUserRightsAny' ) ) ) {
+			if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
 				$this->checkUserRightsAny( 'codereview-post-comment' );
 			} else {
 				if ( !$user->isAllowed( 'codereview-post-comment' ) ) {
@@ -53,7 +53,7 @@ class ApiRevisionUpdate extends ApiBase {
 			&& isset( $params['patchline'] )
 		)
 		{
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
 				$this->dieWithError(
 					'apierror-codereview-inlinecommentingdisabled', 'inlinecommentingdisabled' );
 			} else {
@@ -67,9 +67,9 @@ class ApiRevisionUpdate extends ApiBase {
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
 				$this->dieWithError(
-					array( 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ) );
+					[ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 			} else {
 				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
 			}
@@ -78,8 +78,8 @@ class ApiRevisionUpdate extends ApiBase {
 		$rev = $repo->getRevision( $params['rev'] );
 
 		if ( !$rev ) {
-			if ( is_callable( array( $this, 'dieWithError' ) ) ) {
-				$this->dieWithError( array( 'apierror-nosuchrevid', $params['rev'] ) );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( [ 'apierror-nosuchrevid', $params['rev'] ] );
 			} else {
 				$this->dieUsage( "There is no revision with ID {$params['rev']}", 'nosuchrev' );
 			}
@@ -102,7 +102,7 @@ class ApiRevisionUpdate extends ApiBase {
 		);
 
 		// Forge a response object
-		$r = array( 'result' => 'Success' );
+		$r = [ 'result' => 'Success' ];
 
 		if ( $commentID !== 0 ) {
 			// id inserted
@@ -130,65 +130,65 @@ class ApiRevisionUpdate extends ApiBase {
 
 	public function getAllowedParams() {
 		$flags = CodeRevision::getPossibleFlags();
-		return array(
-			'repo' => array(
+		return [
+			'repo' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'rev' => array(
+			],
+			'rev' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_REQUIRED => true,
-			),
+			],
 			'comment' => null,
-			'status' => array(
+			'status' => [
 				ApiBase::PARAM_TYPE => CodeRevision::getPossibleStates()
-			),
-			'addtags' => array(
+			],
+			'addtags' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'removetags' => array(
+			],
+			'removetags' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'addflags' => array(
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_TYPE => $flags
-			),
-			'removeflags' => array(
+			],
+			'addflags' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_TYPE => $flags
-			),
-			'addreferences' => array(
+			],
+			'removeflags' => [
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_ISMULTI => true,
+				ApiBase::PARAM_TYPE => $flags
+			],
+			'addreferences' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'removereferences' => array(
+			],
+			'removereferences' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'addreferenced' => array(
+			],
+			'addreferenced' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'removereferenced' => array(
+			],
+			'removereferenced' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_ISMULTI => true,
-			),
+			],
 			'token' => null,
-		);
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=coderevisionupdate&repo=MediaWiki&rev=1&status=fixme'
 				=> 'apihelp-coderevisionupdate-example-1',
-		);
+		];
 	}
 }
