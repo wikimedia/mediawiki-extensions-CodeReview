@@ -5,380 +5,379 @@
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'Code' => array( 'Code', 'CodeReview' ),
-	'RepoAdmin' => array( 'RepoAdmin' ),
-);
+$specialPageAliases['en'] = [
+	'Code' => [ 'Code', 'CodeReview' ],
+	'RepoAdmin' => [ 'RepoAdmin' ],
+];
 
 /** Arabic (العربية) */
-$specialPageAliases['ar'] = array(
-	'Code' => array( 'كود', 'مراجعة_الكود' ),
-	'RepoAdmin' => array( 'إدارة_المستودع' ),
-);
+$specialPageAliases['ar'] = [
+	'Code' => [ 'كود', 'مراجعة_الكود' ],
+	'RepoAdmin' => [ 'إدارة_المستودع' ],
+];
 
 /** Egyptian Arabic (مصرى) */
-$specialPageAliases['arz'] = array(
-	'Code' => array( 'كود', 'مراجعة_الكود' ),
-	'RepoAdmin' => array( 'ادارة_المستودع' ),
-);
+$specialPageAliases['arz'] = [
+	'Code' => [ 'كود', 'مراجعة_الكود' ],
+	'RepoAdmin' => [ 'ادارة_المستودع' ],
+];
 
 /** Assamese (অসমীয়া) */
-$specialPageAliases['as'] = array(
-	'Code' => array( 'কোড', 'কোডৰিভিউ' ),
-);
+$specialPageAliases['as'] = [
+	'Code' => [ 'কোড', 'কোডৰিভিউ' ],
+];
 
 /** Avaric (авар) */
-$specialPageAliases['av'] = array(
-	'Code' => array( 'Код' ),
-);
+$specialPageAliases['av'] = [
+	'Code' => [ 'Код' ],
+];
 
 /** Western Balochi (بلوچی رخشانی) */
-$specialPageAliases['bgn'] = array(
-	'Code' => array( 'کوڈ' ),
-	'RepoAdmin' => array( 'خزانه_ئی_مدیر' ),
-);
+$specialPageAliases['bgn'] = [
+	'Code' => [ 'کوڈ' ],
+	'RepoAdmin' => [ 'خزانه_ئی_مدیر' ],
+];
 
 /** Banjar (Bahasa Banjar) */
-$specialPageAliases['bjn'] = array(
-	'Code' => array( 'Kode' ),
-);
+$specialPageAliases['bjn'] = [
+	'Code' => [ 'Kode' ],
+];
 
 /** Breton (brezhoneg) */
-$specialPageAliases['br'] = array(
-	'Code' => array( 'Kod' ),
-);
+$specialPageAliases['br'] = [
+	'Code' => [ 'Kod' ],
+];
 
 /** Bosnian (bosanski) */
-$specialPageAliases['bs'] = array(
-	'Code' => array( 'Kod', 'PregledKoda' ),
-	'RepoAdmin' => array( 'RepoAdministracija' ),
-);
+$specialPageAliases['bs'] = [
+	'Code' => [ 'Kod', 'PregledKoda' ],
+	'RepoAdmin' => [ 'RepoAdministracija' ],
+];
 
 /** Min Dong Chinese (Mìng-dĕ̤ng-ngṳ̄) */
-$specialPageAliases['cdo'] = array(
-	'Code' => array( '代碼' ),
-);
+$specialPageAliases['cdo'] = [
+	'Code' => [ '代碼' ],
+];
 
 /** Chechen (нохчийн) */
-$specialPageAliases['ce'] = array(
-	'Code' => array( 'Код' ),
-);
+$specialPageAliases['ce'] = [
+	'Code' => [ 'Код' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'Code' => array( 'Quelltext', 'Quelltextprüfung' ),
-	'RepoAdmin' => array( 'Repositoriumsverwaltung' ),
-);
+$specialPageAliases['de'] = [
+	'Code' => [ 'Quelltext', 'Quelltextprüfung' ],
+	'RepoAdmin' => [ 'Repositoriumsverwaltung' ],
+];
 
 /** Zazaki (Zazaki) */
-$specialPageAliases['diq'] = array(
-	'Code' => array( 'Qode', 'VerasayışaQoder' ),
-	'RepoAdmin' => array( 'AdminéRepoy' ),
-);
+$specialPageAliases['diq'] = [
+	'Code' => [ 'Qode', 'VerasayışaQoder' ],
+	'RepoAdmin' => [ 'AdminéRepoy' ],
+];
 
 /** Lower Sorbian (dolnoserbski) */
-$specialPageAliases['dsb'] = array(
-	'Code' => array( 'Žrědłowy_tekst' ),
-);
+$specialPageAliases['dsb'] = [
+	'Code' => [ 'Žrědłowy_tekst' ],
+];
 
 /** Esperanto (Esperanto) */
-$specialPageAliases['eo'] = array(
-	'Code' => array( 'Kodo' ),
-);
+$specialPageAliases['eo'] = [
+	'Code' => [ 'Kodo' ],
+];
 
 /** Spanish (español) */
-$specialPageAliases['es'] = array(
-	'Code' => array( 'Código', 'RevisarCódigo' ),
-);
+$specialPageAliases['es'] = [
+	'Code' => [ 'Código', 'RevisarCódigo' ],
+];
 
 /** Basque (euskara) */
-$specialPageAliases['eu'] = array(
-	'Code' => array( 'Kodea' ),
-);
+$specialPageAliases['eu'] = [
+	'Code' => [ 'Kodea' ],
+];
 
 /** Persian (فارسی) */
-$specialPageAliases['fa'] = array(
-	'Code' => array( 'کد' ),
-	'RepoAdmin' => array( 'مدیر_مخزن' ),
-);
+$specialPageAliases['fa'] = [
+	'Code' => [ 'کد' ],
+	'RepoAdmin' => [ 'مدیر_مخزن' ],
+];
 
 /** Finnish (suomi) */
-$specialPageAliases['fi'] = array(
-	'Code' => array( 'Koodin_katselmointi' ),
-);
+$specialPageAliases['fi'] = [
+	'Code' => [ 'Koodin_katselmointi' ],
+];
 
 /** Gagauz (Gagauz) */
-$specialPageAliases['gag'] = array(
-	'Code' => array( 'Kod' ),
-);
+$specialPageAliases['gag'] = [
+	'Code' => [ 'Kod' ],
+];
 
 /** Galician (galego) */
-$specialPageAliases['gl'] = array(
-	'Code' => array( 'Código', 'Revisión_do_código' ),
-);
+$specialPageAliases['gl'] = [
+	'Code' => [ 'Código', 'Revisión_do_código' ],
+];
 
 /** Swiss German (Alemannisch) */
-$specialPageAliases['gsw'] = array(
-	'Code' => array( 'Quälltäxt' ),
-);
+$specialPageAliases['gsw'] = [
+	'Code' => [ 'Quälltäxt' ],
+];
 
 /** Gujarati (ગુજરાતી) */
-$specialPageAliases['gu'] = array(
-	'Code' => array( 'સંજ્ઞા', 'સંજ્ઞાપરીક્ષણ' ),
-);
+$specialPageAliases['gu'] = [
+	'Code' => [ 'સંજ્ઞા', 'સંજ્ઞાપરીક્ષણ' ],
+];
 
 /** Hawaiian (Hawai`i) */
-$specialPageAliases['haw'] = array(
-	'Code' => array( 'Pāʻālua', 'Paalua' ),
-);
+$specialPageAliases['haw'] = [
+	'Code' => [ 'Pāʻālua', 'Paalua' ],
+];
 
 /** Hebrew (עברית) */
-$specialPageAliases['he'] = array(
-	'Code' => array( 'סקירת_קוד' ),
-	'RepoAdmin' => array( 'ניהול_מאגר' ),
-);
+$specialPageAliases['he'] = [
+	'Code' => [ 'סקירת_קוד' ],
+	'RepoAdmin' => [ 'ניהול_מאגר' ],
+];
 
 /** Croatian (hrvatski) */
-$specialPageAliases['hr'] = array(
-	'Code' => array( 'Kod' ),
-	'RepoAdmin' => array( 'Admin_repozitorija' ),
-);
+$specialPageAliases['hr'] = [
+	'Code' => [ 'Kod' ],
+	'RepoAdmin' => [ 'Admin_repozitorija' ],
+];
 
 /** Upper Sorbian (hornjoserbsce) */
-$specialPageAliases['hsb'] = array(
-	'Code' => array( 'Žórłowy_tekst' ),
-);
+$specialPageAliases['hsb'] = [
+	'Code' => [ 'Žórłowy_tekst' ],
+];
 
 /** Xiang Chinese (湘语) */
-$specialPageAliases['hsn'] = array(
-	'Code' => array( '编码', '编码审查' ),
-);
+$specialPageAliases['hsn'] = [
+	'Code' => [ '编码', '编码审查' ],
+];
 
 /** Haitian (Kreyòl ayisyen) */
-$specialPageAliases['ht'] = array(
-	'Code' => array( 'Kòd', 'RevizeKòd' ),
-	'RepoAdmin' => array( 'DepoAdmin' ),
-);
+$specialPageAliases['ht'] = [
+	'Code' => [ 'Kòd', 'RevizeKòd' ],
+	'RepoAdmin' => [ 'DepoAdmin' ],
+];
 
 /** Hungarian (magyar) */
-$specialPageAliases['hu'] = array(
-	'Code' => array( 'Kód' ),
-);
+$specialPageAliases['hu'] = [
+	'Code' => [ 'Kód' ],
+];
 
 /** Interlingua (interlingua) */
-$specialPageAliases['ia'] = array(
-	'Code' => array( 'Codice', 'Recension_de_codice' ),
-	'RepoAdmin' => array( 'Admin_deposito' ),
-);
+$specialPageAliases['ia'] = [
+	'Code' => [ 'Codice', 'Recension_de_codice' ],
+	'RepoAdmin' => [ 'Admin_deposito' ],
+];
 
 /** Indonesian (Bahasa Indonesia) */
-$specialPageAliases['id'] = array(
-	'Code' => array( 'Kode', 'Tinjauan_kode', 'TinjauanKode' ),
-);
+$specialPageAliases['id'] = [
+	'Code' => [ 'Kode', 'Tinjauan_kode', 'TinjauanKode' ],
+];
 
 /** Italian (italiano) */
-$specialPageAliases['it'] = array(
-	'Code' => array( 'Codice' ),
-	'RepoAdmin' => array( 'AdminRepo' ),
-);
+$specialPageAliases['it'] = [
+	'Code' => [ 'Codice' ],
+	'RepoAdmin' => [ 'AdminRepo' ],
+];
 
 /** Japanese (日本語) */
-$specialPageAliases['ja'] = array(
-	'Code' => array( 'コード', 'コードレビュー' ),
-	'RepoAdmin' => array( 'リポジトリ管理' ),
-);
+$specialPageAliases['ja'] = [
+	'Code' => [ 'コード', 'コードレビュー' ],
+	'RepoAdmin' => [ 'リポジトリ管理' ],
+];
 
 /** Georgian (ქართული) */
-$specialPageAliases['ka'] = array(
-	'Code' => array( 'კოდი' ),
-);
+$specialPageAliases['ka'] = [
+	'Code' => [ 'კოდი' ],
+];
 
 /** Khmer (ភាសាខ្មែរ) */
-$specialPageAliases['km'] = array(
-	'Code' => array( 'កូដ' ),
-);
+$specialPageAliases['km'] = [
+	'Code' => [ 'កូដ' ],
+];
 
 /** Korean (한국어) */
-$specialPageAliases['ko'] = array(
-	'Code' => array( '코드', '코드검토' ),
-	'RepoAdmin' => array( '저장소관리자' ),
-);
+$specialPageAliases['ko'] = [
+	'Code' => [ '코드', '코드검토' ],
+	'RepoAdmin' => [ '저장소관리자' ],
+];
 
 /** Colognian (Ripoarisch) */
-$specialPageAliases['ksh'] = array(
-	'Code' => array( 'Quelltäx' ),
-	'RepoAdmin' => array( 'Repositorijum_Verwallde', 'Repusitorijum_Verwallde' ),
-);
+$specialPageAliases['ksh'] = [
+	'Code' => [ 'Quelltäx' ],
+	'RepoAdmin' => [ 'Repositorijum_Verwallde', 'Repusitorijum_Verwallde' ],
+];
 
 /** Cornish (kernowek) */
-$specialPageAliases['kw'] = array(
-	'Code' => array( 'Koden' ),
-);
+$specialPageAliases['kw'] = [
+	'Code' => [ 'Koden' ],
+];
 
 /** Ladino (Ladino) */
-$specialPageAliases['lad'] = array(
-	'Code' => array( 'Kóddiche' ),
-	'RepoAdmin' => array( 'RépoAdmin' ),
-);
+$specialPageAliases['lad'] = [
+	'Code' => [ 'Kóddiche' ],
+	'RepoAdmin' => [ 'RépoAdmin' ],
+];
 
 /** Luxembourgish (Lëtzebuergesch) */
-$specialPageAliases['lb'] = array(
-	'Code' => array( 'Quelltext' ),
-);
+$specialPageAliases['lb'] = [
+	'Code' => [ 'Quelltext' ],
+];
 
 /** Northern Luri (لۊری شومالی) */
-$specialPageAliases['lrc'] = array(
-	'Code' => array( 'رازینە', 'ڤانئیأری_رازینە' ),
-	'RepoAdmin' => array( 'سأردیڤوٙنیار' ),
-);
+$specialPageAliases['lrc'] = [
+	'Code' => [ 'رازینە', 'ڤانئیأری_رازینە' ],
+	'RepoAdmin' => [ 'سأردیڤوٙنیار' ],
+];
 
 /** Malagasy (Malagasy) */
-$specialPageAliases['mg'] = array(
-	'Code' => array( 'Kaody' ),
-	'RepoAdmin' => array( 'Petrakaodimpandrindra' ),
-);
+$specialPageAliases['mg'] = [
+	'Code' => [ 'Kaody' ],
+	'RepoAdmin' => [ 'Petrakaodimpandrindra' ],
+];
 
 /** Macedonian (македонски) */
-$specialPageAliases['mk'] = array(
-	'Code' => array( 'ПрограмскиКод', 'Код', 'ПрегледНаКод' ),
-	'RepoAdmin' => array( 'АдминНаСкладиштето' ),
-);
+$specialPageAliases['mk'] = [
+	'Code' => [ 'ПрограмскиКод', 'Код', 'ПрегледНаКод' ],
+	'RepoAdmin' => [ 'АдминНаСкладиштето' ],
+];
 
 /** Malayalam (മലയാളം) */
-$specialPageAliases['ml'] = array(
-	'Code' => array( 'മൂലരൂപം', 'മൂലരൂപസംശോധനം' ),
-	'RepoAdmin' => array( 'റെപ്പോകാര്യനിർവാഹകൻ' ),
-);
+$specialPageAliases['ml'] = [
+	'Code' => [ 'മൂലരൂപം', 'മൂലരൂപസംശോധനം' ],
+	'RepoAdmin' => [ 'റെപ്പോകാര്യനിർവാഹകൻ' ],
+];
 
 /** Marathi (मराठी) */
-$specialPageAliases['mr'] = array(
-	'RepoAdmin' => array( 'रेपोप्रचालक' ),
-);
+$specialPageAliases['mr'] = [
+	'RepoAdmin' => [ 'रेपोप्रचालक' ],
+];
 
 /** Maltese (Malti) */
-$specialPageAliases['mt'] = array(
-	'Code' => array( 'Kodiċi' ),
-);
+$specialPageAliases['mt'] = [
+	'Code' => [ 'Kodiċi' ],
+];
 
 /** Norwegian Bokmål (norsk bokmål) */
-$specialPageAliases['nb'] = array(
-	'Code' => array( 'Kode' ),
-);
+$specialPageAliases['nb'] = [
+	'Code' => [ 'Kode' ],
+];
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
-$specialPageAliases['nds-nl'] = array(
-	'Code' => array( 'Kode_naokieken' ),
-	'RepoAdmin' => array( 'Repobeheer' ),
-);
+$specialPageAliases['nds-nl'] = [
+	'Code' => [ 'Kode_naokieken' ],
+	'RepoAdmin' => [ 'Repobeheer' ],
+];
 
 /** Dutch (Nederlands) */
-$specialPageAliases['nl'] = array(
-	'Code' => array( 'Codecontrole' ),
-	'RepoAdmin' => array( 'Repobeheer' ),
-);
+$specialPageAliases['nl'] = [
+	'Code' => [ 'Codecontrole' ],
+	'RepoAdmin' => [ 'Repobeheer' ],
+];
 
 /** Norwegian Nynorsk (norsk nynorsk) */
-$specialPageAliases['nn'] = array(
-	'Code' => array( 'Kode' ),
-);
+$specialPageAliases['nn'] = [
+	'Code' => [ 'Kode' ],
+];
 
 /** Punjabi (ਪੰਜਾਬੀ) */
-$specialPageAliases['pa'] = array(
-	'Code' => array( 'ਕੋਡ' ),
-);
+$specialPageAliases['pa'] = [
+	'Code' => [ 'ਕੋਡ' ],
+];
 
 /** Polish (polski) */
-$specialPageAliases['pl'] = array(
-	'Code' => array( 'Kod' ),
-	'RepoAdmin' => array( 'Administrowanie_repozytorium' ),
-);
+$specialPageAliases['pl'] = [
+	'Code' => [ 'Kod' ],
+	'RepoAdmin' => [ 'Administrowanie_repozytorium' ],
+];
 
 /** Brazilian Portuguese (português do Brasil) */
-$specialPageAliases['pt-br'] = array(
-	'Code' => array( 'Código', 'Revisão_de_código' ),
-	'RepoAdmin' => array( 'Administrador_do_repositório' ),
-);
+$specialPageAliases['pt-br'] = [
+	'Code' => [ 'Código', 'Revisão_de_código' ],
+	'RepoAdmin' => [ 'Administrador_do_repositório' ],
+];
 
 /** Russian (русский) */
-$specialPageAliases['ru'] = array(
-	'Code' => array( 'Код' ),
-);
+$specialPageAliases['ru'] = [
+	'Code' => [ 'Код' ],
+];
 
 /** Sanskrit (संस्कृतम्) */
-$specialPageAliases['sa'] = array(
-	'Code' => array( 'संकूटसङ्केतावलोकन' ),
-	'RepoAdmin' => array( 'रेपोप्रचालक' ),
-);
+$specialPageAliases['sa'] = [
+	'Code' => [ 'संकूटसङ्केतावलोकन' ],
+	'RepoAdmin' => [ 'रेपोप्रचालक' ],
+];
 
 /** Sicilian (sicilianu) */
-$specialPageAliases['scn'] = array(
-	'Code' => array( 'Codice' ),
-	'RepoAdmin' => array( 'AdminRepo' ),
-);
+$specialPageAliases['scn'] = [
+	'Code' => [ 'Codice' ],
+	'RepoAdmin' => [ 'AdminRepo' ],
+];
 
 /** Slovak (slovenčina) */
-$specialPageAliases['sk'] = array(
-	'Code' => array( 'Kód', 'KontrolaKódu' ),
-	'RepoAdmin' => array( 'SprávcaÚložiska' ),
-);
+$specialPageAliases['sk'] = [
+	'Code' => [ 'Kód', 'KontrolaKódu' ],
+	'RepoAdmin' => [ 'SprávcaÚložiska' ],
+];
 
 /** Swedish (svenska) */
-$specialPageAliases['sv'] = array(
-	'Code' => array( 'Kod', 'Kodgranskning' ),
-);
+$specialPageAliases['sv'] = [
+	'Code' => [ 'Kod', 'Kodgranskning' ],
+];
 
 /** Swahili (Kiswahili) */
-$specialPageAliases['sw'] = array(
-	'Code' => array( 'Kodi', 'Onyesha kodi' ),
-	'RepoAdmin' => array( 'TaarifuMkabidhi' ),
-);
+$specialPageAliases['sw'] = [
+	'Code' => [ 'Kodi', 'Onyesha kodi' ],
+	'RepoAdmin' => [ 'TaarifuMkabidhi' ],
+];
 
 /** Tagalog (Tagalog) */
-$specialPageAliases['tl'] = array(
-	'Code' => array( 'Kodigo', 'Pagsusuri_ng_kodigo' ),
-	'RepoAdmin' => array( 'Tagapangasiwa_ng_repositoryo' ),
-);
+$specialPageAliases['tl'] = [
+	'Code' => [ 'Kodigo', 'Pagsusuri_ng_kodigo' ],
+	'RepoAdmin' => [ 'Tagapangasiwa_ng_repositoryo' ],
+];
 
 /** Turkish (Türkçe) */
-$specialPageAliases['tr'] = array(
-	'Code' => array( 'Kod' ),
-	'RepoAdmin' => array( 'RepoHizmetli', 'RepoYönetici' ),
-);
+$specialPageAliases['tr'] = [
+	'Code' => [ 'Kod' ],
+	'RepoAdmin' => [ 'RepoHizmetli', 'RepoYönetici' ],
+];
 
 /** Ukrainian (українська) */
-$specialPageAliases['uk'] = array(
-	'Code' => array( 'Код' ),
-);
+$specialPageAliases['uk'] = [
+	'Code' => [ 'Код' ],
+];
 
 /** Venetian (vèneto) */
-$specialPageAliases['vec'] = array(
-	'Code' => array( 'Còdese' ),
-);
+$specialPageAliases['vec'] = [
+	'Code' => [ 'Còdese' ],
+];
 
 /** Veps (vepsän kel’) */
-$specialPageAliases['vep'] = array(
-	'Code' => array( 'Kod' ),
-);
+$specialPageAliases['vep'] = [
+	'Code' => [ 'Kod' ],
+];
 
 /** Vietnamese (Tiếng Việt) */
-$specialPageAliases['vi'] = array(
-	'Code' => array( 'Mã_nguồn', 'Mã', 'Duyệt_mã' ),
-	'RepoAdmin' => array( 'Quản_lý_kho', 'Quản_lí_kho' ),
-);
+$specialPageAliases['vi'] = [
+	'Code' => [ 'Mã_nguồn', 'Mã', 'Duyệt_mã' ],
+	'RepoAdmin' => [ 'Quản_lý_kho', 'Quản_lí_kho' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = array(
-	'Code' => array( '代码', '代码复核' ),
-	'RepoAdmin' => array( '信息库管理' ),
-);
+$specialPageAliases['zh-hans'] = [
+	'Code' => [ '代码', '代码复核' ],
+	'RepoAdmin' => [ '信息库管理' ],
+];
 
 /** Traditional Chinese (中文（繁體）‎) */
-$specialPageAliases['zh-hant'] = array(
-	'Code' => array( '程式碼', '程式碼審查' ),
-	'RepoAdmin' => array( '儲存庫管理' ),
-);
+$specialPageAliases['zh-hant'] = [
+	'Code' => [ '程式碼', '程式碼審查' ],
+	'RepoAdmin' => [ '儲存庫管理' ],
+];

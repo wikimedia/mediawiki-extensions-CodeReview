@@ -3,7 +3,6 @@
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="PSR2.Methods.MethodDeclaration.Underscore"/>
 		<exclude name="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase"/>
-		<exclude name="Generic.Arrays.DisallowLongArraySyntax.Found"/>
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>
