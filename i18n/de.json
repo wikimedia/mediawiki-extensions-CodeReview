@@ -225,6 +225,7 @@
 	"apihelp-query+codepaths-param-path": "Zu filterndes Pfad-Präfix.",
 	"apihelp-query+codepaths-example-1": "Pfade in MediaWiki unter /trunk/phase3 abrufen",
 	"apihelp-query+coderevisions-description": "Revisionen in CodeReview auflisten.",
+	"apihelp-query+coderevisions-summary": "Listet Revisionen in CodeReview auf.",
 	"apihelp-query+coderevisions-param-repo": "Name des Repositoriums.",
 	"apihelp-query+coderevisions-param-limit": "Wie viele Revisionen zurückgegeben werden sollen.",
 	"apihelp-query+coderevisions-param-path": "Nur Revisionen in diesen Pfaden anzeigen.",
