@@ -34,14 +34,11 @@ class SpecialRepoAdmin extends SpecialPage {
 	 * @param $subpage string
 	 */
 	public function execute( $subpage ) {
-		global $wgRequest, $wgUser;
+		global $wgRequest;
 
 		$this->setHeaders();
 
-		if ( !$this->userCanExecute( $wgUser ) ) {
-			$this->displayRestrictionError();
-			return;
-		}
+		$this->checkPermissions();
 
 		$repo = $wgRequest->getVal( 'repo', $subpage );
 		if ( $repo == '' ) {
