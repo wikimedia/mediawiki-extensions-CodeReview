@@ -185,5 +185,7 @@
 	"action-codereview-signoff": "approbar versiones",
 	"action-codereview-link-user": "ligar autores a usatores del wiki",
 	"action-codereview-associate": "gerer associationes de versiones",
-	"action-codereview-review-own": "marcar le proprie versiones como \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\""
+	"action-codereview-review-own": "marcar le proprie versiones como \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
+	"apihelp-query+codecomments-summary": "Listar commentos sur versiones in CodeReview.",
+	"apihelp-query+coderevisions-summary": "Listar versiones in CodeReview."
 }
