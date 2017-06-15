@@ -32,10 +32,7 @@ class SpecialCode extends SpecialPage {
 	public function execute( $subpage ) {
 		global $wgUseSiteCss;
 
-		if ( !$this->userCanExecute( $this->getUser() ) ) {
-			$this->displayRestrictionError();
-			return;
-		}
+		$this->checkPermissions();
 
 		$this->setHeaders();
 		// Base styles used for all code review UI actions.
