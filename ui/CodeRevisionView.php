@@ -421,7 +421,7 @@ class CodeRevisionView extends CodeView {
 		if ( $wgUser->isAllowed( 'codereview-set-status' ) ) {
 			return Xml::openElement( 'select', [ 'name' => 'wpStatus' ] ) .
 				self::buildStatusList( $this->mStatus, $this ) .
-				xml::closeElement( 'select' );
+				Xml::closeElement( 'select' );
 		} else {
 			return htmlspecialchars( $this->statusDesc( $this->mRev->getStatus() ) );
 		}
