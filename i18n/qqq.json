@@ -69,7 +69,7 @@
 	"code-author-unlinksuccess": "Parameters:\n* $1 - a link to author page. the link text is author name.",
 	"code-author-badtoken": "Used as error message if the edit-token doesn't match.",
 	"code-author-total": "This is a message shown above the list of contributors.\n\nAn example can be found at [[mw:Special:Code/MediaWiki/author]].\n\nParameters:\n* $1 - number of authors",
-	"code-author-lastcommit": "This is a column title in the list of contributors. An example can be found at http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author",
+	"code-author-lastcommit": "This is a column title in the list of contributors. An example can be found at https://www.mediawiki.org/wiki/Special:Code/MediaWiki/author",
 	"code-browsing-path": "Parameters:\n* $1 - list of links to repositories",
 	"code-field-id": "Used as field label.\n{{Related|Code-field}}\n{{Identical|Revision}}",
 	"code-field-author": "Used as field label.\n{{Related|Code-field}}\n{{Identical|Author}}",
