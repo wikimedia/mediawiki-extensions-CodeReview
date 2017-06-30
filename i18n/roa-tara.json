@@ -165,7 +165,7 @@
 	"repoadmin-edit-bug": "Percorse de Bugzilla:",
 	"repoadmin-edit-view": "Percorse d'u ViewVC:",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "L'archivije \"[[Special:Code/$1|$1]]\" ha state cangiate cu successe.",
+	"repoadmin-edit-sucess": "L'archivije \"[[Special:Code/$1|$1]]\" ha state cangiate.",
 	"repoadmin-nav": "amministrazione de l'archivije",
 	"right-repoadmin": "Gestisce le codece de l'archivije",
 	"right-codereview-use": "Ause de speciale:Codece",
@@ -178,7 +178,7 @@
 	"right-codereview-associate": "Gestisce le associaziune 'mbrà revisiune",
 	"right-codereview-review-own": "Signe le revisiune tune cumme \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "gestisce l'archivije de codece",
-	"action-codereview-use": "Ause de Special:Codece",
+	"action-codereview-use": "Ause de CodeReview",
 	"action-codereview-add-tag": "aggiunge tag nuève a le revisiune",
 	"action-codereview-remove-tag": "live le tag da le revisiune",
 	"action-codereview-post-comment": "aggiunge commende sus 'a revisione",
@@ -186,8 +186,5 @@
 	"action-codereview-signoff": "isse da le revisiune",
 	"action-codereview-link-user": "colleghe le auture a le utinde de uicchi",
 	"action-codereview-associate": "gestisce le associaziune d'a revisione",
-	"action-codereview-review-own": "signe le revisiune tune cumme \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Amministrature de SVN",
-	"group-svnadmins-member": "{{GENDER:$1|amministratore de SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Amministrature de SVN"
+	"action-codereview-review-own": "signe le revisiune tune cumme \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\""
 }
