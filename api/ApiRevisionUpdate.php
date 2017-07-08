@@ -30,7 +30,7 @@ class ApiRevisionUpdate extends ApiBase {
 			$this->checkUserRightsAny( 'codereview-use' );
 		} else {
 			if ( !$user->isAllowed( 'codereview-use' ) ) {
-				 $this->dieUsage( 'You don\'t have permission to update code', 'permissiondenied' );
+				$this->dieUsage( 'You don\'t have permission to update code', 'permissiondenied' );
 			}
 		}
 
@@ -51,8 +51,7 @@ class ApiRevisionUpdate extends ApiBase {
 		if (
 			!$wgCodeReviewInlineComments
 			&& isset( $params['patchline'] )
-		)
-		{
+		) {
 			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
 				$this->dieWithError(
 					'apierror-codereview-inlinecommentingdisabled', 'inlinecommentingdisabled' );

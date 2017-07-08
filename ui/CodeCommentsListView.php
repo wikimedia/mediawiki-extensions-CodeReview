@@ -38,7 +38,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 			$query['conds']['cc_user_text'] = User::newFromName( $this->mView->mAuthor )->getName();
 		}
 
-	    return $query;
+		return $query;
 	}
 
 	function getCountQuery() {

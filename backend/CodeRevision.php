@@ -516,7 +516,6 @@ class CodeRevision {
 
 				// Notify commenters and revision author of followup revision
 				foreach ( $users as $user ) {
-
 					/**
 					 * @var $user User
 					 */

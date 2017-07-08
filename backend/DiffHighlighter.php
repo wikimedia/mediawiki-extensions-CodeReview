@@ -95,9 +95,9 @@ class CodeDiffHighlighter {
 	function formatLine( $content, $class = null ) {
 		if ( $class === null ) {
 			return Html::rawElement( 'tr', $this->getLineIdAttr(),
-					  Html::element( 'td', [ 'class' => 'linenumbers' ], $this->left )
-					. Html::element( 'td', [ 'class' => 'linenumbers' ], $this->right )
-					. Html::rawElement( 'td', [], Html::element( 'span', [], $content ) )
+				Html::element( 'td', [ 'class' => 'linenumbers' ], $this->left ) .
+					Html::element( 'td', [ 'class' => 'linenumbers' ], $this->right ) .
+					Html::rawElement( 'td', [], Html::element( 'span', [], $content ) )
 			);
 		}
 

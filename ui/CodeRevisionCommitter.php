@@ -99,7 +99,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $wgUser );
 		}
 		// Add any signoffs
-		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff' ) )  {
+		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff' ) ) {
 			$this->mRev->addSignoff( $wgUser, $addSignoffs );
 		}
 		// Strike any signoffs

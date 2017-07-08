@@ -52,7 +52,7 @@ class CodeComment {
 				'cc_timestamp',
 				'cc_sortkey'
 			],
-			[ 'cc_id' => (int) $cc_id ],
+			[ 'cc_id' => (int)$cc_id ],
 			__METHOD__
 		);
 		return self::newFromRow( $rev, $row );
