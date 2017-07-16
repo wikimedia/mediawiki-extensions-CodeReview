@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ibrahim"
+			"Ibrahim",
+			"ToJack"
 		]
 	},
 	"code": "Баррасии Рамз",
@@ -65,6 +66,7 @@
 	"code-status-deferred": "дошташуда",
 	"code-pathsearch-legend": "Ҷустуҷӯи нусхаҳо дар ин махзан бар асоси масир",
 	"code-pathsearch-path": "Масир:",
+	"code-revfilter-cr_author": "Муаллиф = $1",
 	"code-rev-submit": "Захираи тағйирот",
 	"code-rev-submit-next": "Захира шавад ва баъдии ҳалнашуда",
 	"codereview-reply-link": "посух",
