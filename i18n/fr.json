@@ -206,7 +206,7 @@
 	"action-codereview-associate": "gérer les associations entre révisions",
 	"action-codereview-review-own": "marquer vos propres révisions comme \"{{int:code-status-ok}} ou \"{{int:code-status-resolved}}\"",
 	"apihelp-codediff-description": "Chercher la différence mise en forme du système de gestion de version CodeReview",
-	"apihelp-codediff-summary": "Récupérer la différence mise en forme du système de gestion de version CodeReview",
+	"apihelp-codediff-summary": "Récupérer la différence mise en forme, du système de gestion de version CodeReview.",
 	"apihelp-codediff-param-repo": "Nom du dépôt à analyser.",
 	"apihelp-codediff-param-rev": "ID de révision par rapport auquel chercher le diff.",
 	"apihelp-codediff-example-1": "Chercher un diff pour la révision 42080 de MédiaWiki",
