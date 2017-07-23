@@ -310,7 +310,7 @@ class CodeRepository {
 		$id = wfMessage( 'code-rev-id', $id )->text();
 
 		// If there is more than one repo, use the repo name as well.
-		$repos = CodeRepository::getRepoList();
+		$repos = self::getRepoList();
 		if ( count( $repos ) > 1 ) {
 			$id = $this->getName() . '.' . $id;
 		}

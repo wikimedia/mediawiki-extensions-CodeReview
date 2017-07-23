@@ -65,7 +65,7 @@ class CodeRevision {
 				array_unshift( $rev->paths, $first );
 			}
 
-			$rev->paths = CodeRevision::getPathFragments( $rev->paths );
+			$rev->paths = self::getPathFragments( $rev->paths );
 		}
 		$rev->commonPath = $common;
 
@@ -447,7 +447,7 @@ class CodeRevision {
 
 		// Update path tracking used for output and searching
 		if ( $this->paths ) {
-			CodeRevision::insertPaths( $dbw, $this->paths, $this->repoId, $this->id );
+			self::insertPaths( $dbw, $this->paths, $this->repoId, $this->id );
 		}
 
 		$affectedRevs = $this->getUniqueAffectedRevs();
@@ -499,7 +499,7 @@ class CodeRevision {
 			$url = $this->getCanonicalUrl();
 
 			foreach ( $res as $row ) {
-				$revision = CodeRevision::newFromRow( $this->repo, $row );
+				$revision = self::newFromRow( $this->repo, $row );
 				$users = $revision->getCommentingUsers();
 
 				$rowUrl = $revision->getCanonicalUrl();
