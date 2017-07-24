@@ -186,5 +186,11 @@
 	"action-codereview-signoff": "isse da le revisiune",
 	"action-codereview-link-user": "colleghe le auture a le utinde de uicchi",
 	"action-codereview-associate": "gestisce le associaziune d'a revisione",
-	"action-codereview-review-own": "signe le revisiune tune cumme \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\""
+	"action-codereview-review-own": "signe le revisiune tune cumme \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
+	"apihelp-query+codecomments-param-repo": "Nome de l'archivije.",
+	"apihelp-query+codecomments-param-limit": "Quanda commende addà turnà.",
+	"apihelp-query+coderevisions-description": "Elenghe de le revisiune jndr'à CodeReview.",
+	"apihelp-query+coderevisions-summary": "Elenghe de le revisiune jndr'à CodeReview.",
+	"apihelp-query+coderevisions-param-repo": "Nome de l'archivije.",
+	"apihelp-query+coderevisions-param-limit": "Quanda revisiune adda turnà."
 }
