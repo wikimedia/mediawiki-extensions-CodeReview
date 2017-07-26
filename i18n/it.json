@@ -12,7 +12,8 @@
 			"Santu",
 			"Stefano-c",
 			"Ximo17",
-			"Purodha"
+			"Purodha",
+			"Lucas2"
 		]
 	},
 	"code": "Versione del codice",
@@ -42,7 +43,7 @@
 	"code-status": "descrizione stati",
 	"code-tags": "tag",
 	"code-tags-no-tags": "Nessun tag è presente in questo repository.",
-	"code-authors-text": "Di seguito viene presentata una lista di autori relativi al repository, in ordine per nome di commit. Gli utenti wiki locali sono mostrati fra parentesi. I dati potrebbero essere recuperati dalla cache.",
+	"code-authors-text": "Di seguito è presentata una lista di autori relativi al repository, ordinati per nome di commit. Le utenze wiki locali sono mostrate fra parentesi. I dati potrebbero provenire dalla cache.",
 	"code-author-haslink": "Questo autore è collegato all'utente wiki $1",
 	"code-author-orphan": "L'utente SVN/autore $1 non è collegato ad alcun utente wiki",
 	"code-author-dolink": "Collegare questo autore a un utente wiki:",
