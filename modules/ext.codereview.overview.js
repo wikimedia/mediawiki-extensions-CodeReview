@@ -12,8 +12,8 @@ jQuery( function( $ ) {
 	"use strict";
 
 	// check if we're on a page with a useful list of revisions
-	if ( $( '#path' ).size() && $( 'table.TablePager' ).size() ) {
-		var portlet = $( '#p-namespaces' ).size() ? 'p-namespaces' : 'p-cactions';
+	if ( $( '#path' ).length && $( 'table.TablePager' ).length ) {
+		var portlet = $( '#p-namespaces' ).length ? 'p-namespaces' : 'p-cactions';
 		mw.util.addPortletLink(
 			portlet,
 			'#',
@@ -25,9 +25,9 @@ jQuery( function( $ ) {
 
 	$( '#ca-scapmap' ).click( function () {
 		var $tr = $( 'table.TablePager tr' );
-		if ( $tr.size() < 2 ) {
+		if ( $tr.length < 2 ) {
 			return;
-		} else if ( $( '#overviewmap' ).size() ) {
+		} else if ( $( '#overviewmap' ).length ) {
 			// We've already created it; maybe they just want to toggle it on and off
 			$( '#overviewmap' ).slideToggle();
 			return;
@@ -100,11 +100,11 @@ jQuery( function( $ ) {
 		}
 		sumtext.sort();
 		var $summary = $( '<div class="summary">' )
-			.text( 'Total revisions: ' + ( $tr.size() - 1 ) + '. [' + sumtext.join( ', ' ) + ']' );
+			.text( 'Total revisions: ' + ( $tr.length - 1 ) + '. [' + sumtext.join( ', ' ) + ']' );
 
 		$( '#overviewmap' )
 			.append( $summary )
-			.css( 'max-width', Math.floor( Math.sqrt( $tr.size() ) ) * 30 )
+			.css( 'max-width', Math.floor( Math.sqrt( $tr.length ) ) * 30 )
 			.slideDown();
 
 		// Add the hover popup
