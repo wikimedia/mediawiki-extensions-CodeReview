@@ -343,7 +343,7 @@ class CodeRevisionView extends CodeView {
 			if ( $action === 'd' ) {
 				if ( $rev > 1 ) {
 					$link = Linker::makeExternalLink( // last rev
-						"{$viewvc}{$safePath}?view=markup&pathrev=" . ( $rev -1 ),
+						"{$viewvc}{$safePath}?view=markup&pathrev=" . ( $rev - 1 ),
 						$path . $from );
 				} else {
 					$link = $safePath; // imported to SVN or something
