@@ -6,7 +6,8 @@
 			"Meno25",
 			"OsamaK",
 			"زكريا",
-			"Mido"
+			"Mido",
+			"ديفيد"
 		]
 	},
 	"code": "مراجعة الكود",
@@ -166,7 +167,7 @@
 	"repoadmin-edit-bug": "مسار بجزيللا:",
 	"repoadmin-edit-view": "مسار فيو في سي:",
 	"repoadmin-edit-button": "موافق",
-	"repoadmin-edit-sucess": "المستودع \"[[Special:Code/$1|$1]]\" تم تعديله بنجاح.",
+	"repoadmin-edit-sucess": "المستودع \"[[Special:Code/$1|$1]]\" تم تعديله.",
 	"repoadmin-nav": "إدارة المستودع",
 	"right-repoadmin": "التحكم بمستودعات الكود",
 	"right-codereview-use": "استخدام Special:Code",
@@ -179,6 +180,6 @@
 	"right-codereview-associate": "تدبير اقترانات المراجعات",
 	"right-codereview-review-own": "التعليم على مراجعاتك بانها \"{{int:code-status-ok}}\" أو \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "التحكم بمستودعات الكود",
-	"action-codereview-use": "استخدام Special:Code",
+	"action-codereview-use": "استخدام مراجعة الكود",
 	"apihelp-coderevisionupdate-param-repo": "اسم المستودع."
 }
