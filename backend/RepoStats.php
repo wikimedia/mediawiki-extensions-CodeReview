@@ -40,7 +40,7 @@ class RepoStats {
 	}
 
 	/**
-	 * @param $repo CodeRepository
+	 * @param CodeRepository $repo
 	 */
 	public function __construct( CodeRepository $repo ) {
 		$this->repo = $repo;
@@ -96,7 +96,7 @@ class RepoStats {
 	}
 
 	/**
-	 * @param $status string
+	 * @param string $status
 	 *
 	 * @return array
 	 */
@@ -120,7 +120,7 @@ class RepoStats {
 	}
 
 	/**
-	 * @param $path array|string path to get fixmes for
+	 * @param array|string $path path to get fixmes for
 	 * @return array
 	 */
 	private function getPathFixmes( $path ) {
@@ -128,7 +128,7 @@ class RepoStats {
 	}
 
 	/**
-	 * @param $path array|string path to get fixmes for
+	 * @param array|string $path path to get fixmes for
 	 * @return array
 	 */
 	private function getPathNews( $path ) {
@@ -136,8 +136,8 @@ class RepoStats {
 	}
 
 	/**
-	 * @param $path array|string
-	 * @param $status string
+	 * @param array|string $path
+	 * @param string $status
 	 * @return array
 	 */
 	private function getStatusPath( $path, $status ) {

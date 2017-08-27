@@ -28,7 +28,7 @@ class CodeReviewHooks {
 	 *
 	 * Only MySQL(/MariaDB) and SQLite are supported at the moment.
 	 *
-	 * @param $updater DatabaseUpdater
+	 * @param DatabaseUpdater $updater
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
@@ -117,8 +117,8 @@ class CodeReviewHooks {
 	 * current repository when we're on Special:Code, or to be more specific,
 	 * a subpage of a repository on Special:Code.
 	 *
-	 * @param $values array
-	 * @param $out OutputPage
+	 * @param array &$values
+	 * @param OutputPage $out
 	 * @return bool
 	 */
 	public static function onMakeGlobalVariablesScript( &$values, $out ) {
@@ -136,7 +136,7 @@ class CodeReviewHooks {
 	/**
 	 * For integration with the Renameuser extension.
 	 *
-	 * @param $renameUserSQL RenameuserSQL
+	 * @param RenameuserSQL $renameUserSQL
 	 * @return bool
 	 */
 	public static function onRenameUserSQL( $renameUserSQL ) {
@@ -156,7 +156,7 @@ class CodeReviewHooks {
 	/**
 	 * For integration with the UserMerge extension.
 	 *
-	 * @param array $updateFields
+	 * @param array &$updateFields
 	 * @return bool
 	 */
 	public static function onUserMergeAccountFields( &$updateFields ) {

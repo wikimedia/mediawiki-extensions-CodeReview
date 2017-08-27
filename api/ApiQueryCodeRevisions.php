@@ -107,9 +107,9 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	}
 
 	/**
-	 * @param $row
-	 * @param $repo CodeRepository
-	 * @param $result ApiResult
+	 * @param stdClass $row
+	 * @param CodeRepository $repo
+	 * @param ApiResult $result
 	 * @return array
 	 */
 	private function formatRow( $row, $repo, $result ) {
@@ -160,7 +160,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	}
 
 	/**
-	 * @param $rev CodeRevision
+	 * @param CodeRevision $rev
 	 * @return array
 	 */
 	protected function addReferenced( $rev ) {

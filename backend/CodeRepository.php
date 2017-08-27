@@ -93,7 +93,7 @@ class CodeRepository {
 	}
 
 	/**
-	 * @param $row
+	 * @param stdClass $row
 	 * @return CodeRepository
 	 */
 	static function newFromRow( $row ) {
@@ -158,7 +158,7 @@ class CodeRepository {
 	/**
 	 * Return a bug URL or false
 	 *
-	 * @param $bugId int|string
+	 * @param int|string $bugId
 	 * @return string|bool
 	 */
 	public function getBugPath( $bugId ) {
@@ -227,7 +227,7 @@ class CodeRepository {
 
 	/**
 	 * Get a list of all tags in use in the repository
-	 * @param $recache Bool whether to get clean data
+	 * @param bool $recache whether to get clean data
 	 * @return array
 	 */
 	public function getTagList( $recache = false ) {
@@ -431,7 +431,7 @@ class CodeRepository {
 
 	/**
 	 * Set diff cache (for import operations)
-	 * @param $codeRev CodeRevision
+	 * @param CodeRevision $codeRev
 	 */
 	public function setDiffCache( CodeRevision $codeRev ) {
 		global $wgMemc;

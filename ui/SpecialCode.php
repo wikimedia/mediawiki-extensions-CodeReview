@@ -27,7 +27,7 @@ class SpecialCode extends SpecialPage {
 	}
 
 	/**
-	 * @param $subpage string
+	 * @param string $subpage
 	 */
 	public function execute( $subpage ) {
 		global $wgUseSiteCss;

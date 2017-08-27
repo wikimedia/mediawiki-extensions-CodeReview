@@ -84,7 +84,7 @@ You missed a lot of points there and need to revert or fix your code
 
 	/**
 	 * Print the subject line.
-	 * @param $type string|int Either '', 2, 3 or 4
+	 * @param string|int $type Either '', 2, 3 or 4
 	 */
 	function printSubject( $type ) {
 		$repo = $this->EmailData['repo'];

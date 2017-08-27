@@ -31,7 +31,7 @@ class CodeRepoListView {
 
 	/**
 	 * @static
-	 * @param $repo CodeRepository
+	 * @param CodeRepository $repo
 	 * @return string
 	 */
 	public static function getNavItem( $repo ) {

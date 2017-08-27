@@ -20,7 +20,7 @@ class CodeComment {
 
 	/**
 	 * @param CodeRevision $rev
-	 * @param $row
+	 * @param stdClass $row
 	 * @return CodeComment
 	 */
 	static function newFromRow( $rev, $row ) {

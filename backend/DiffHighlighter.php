@@ -17,7 +17,7 @@ class CodeDiffHighlighter {
 	 * Main entry point. Given a diff text, highlight it
 	 * and wrap it in a div
 	 *
-	 * @param $text string Text to highlight
+	 * @param string $text Text to highlight
 	 * @return string
 	 */
 	function render( $text ) {
@@ -30,7 +30,7 @@ class CodeDiffHighlighter {
 	 * Given a bunch of text, split it into individual
 	 * lines, color them, then put it back into one big
 	 * string
-	 * @param $text string Text to split and highlight
+	 * @param string $text Text to split and highlight
 	 * @return string
 	 */
 	function splitLines( $text ) {
@@ -88,8 +88,8 @@ class CodeDiffHighlighter {
 	}
 
 	/**
-	 * @param $content string
-	 * @param $class string
+	 * @param string $content
+	 * @param string $class
 	 * @return string
 	 */
 	function formatLine( $content, $class = null ) {
@@ -180,7 +180,7 @@ class CodeDiffHighlighter {
 	/**
 	 * Turn a diff line into a properly formatted string suitable
 	 * for output
-	 * @param $line string Line from a diff
+	 * @param string $line Line from a diff
 	 * @return string
 	 */
 	function colorLine( $line ) {
@@ -193,7 +193,7 @@ class CodeDiffHighlighter {
 
 	/**
 	 * Take a line of a diff and apply the appropriate stylings
-	 * @param $line string Line to check
+	 * @param string $line Line to check
 	 * @return array
 	 */
 	function tagForLine( $line ) {
@@ -234,7 +234,7 @@ class CodeDiffHighlighter {
 	 *
 	 * NOTE: visibility is 'public' since the function covered by tests.
 	 *
-	 * @param $chunkHeader string a one line chunk as described above
+	 * @param string $chunkHeader a one line chunk as described above
 	 * @throws Exception
 	 * @return array with the four values above as an array
 	 */

@@ -403,7 +403,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $tags array
+	 * @param array $tags
 	 * @return string
 	 */
 	static function listTags( $tags ) {
@@ -553,9 +553,9 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $path
-	 * @param $rev
-	 * @param $message
+	 * @param string $path
+	 * @param string $rev
+	 * @param string $message
 	 * @return string
 	 */
 	protected function formatImgCell( $path, $rev, $message ) {
@@ -768,7 +768,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param $row
+	 * @param stdClass $row
 	 * @return string
 	 */
 	protected function formatReferenceInline( $row ) {

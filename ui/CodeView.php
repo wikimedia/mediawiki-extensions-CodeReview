@@ -90,7 +90,7 @@ abstract class CodeView {
 
 	/**
 	 * Formatted HTML array for properties display
-	 * @param $fields array 'propname' => HTML data
+	 * @param array $fields 'propname' => HTML data
 	 * @return string
 	 */
 	function formatMetaData( $fields ) {
@@ -124,7 +124,7 @@ abstract class SvnTablePager extends TablePager {
 	protected $mView;
 
 	/**
-	 * @param $view CodeView
+	 * @param CodeView $view
 	 */
 	function __construct( $view ) {
 		$this->mView = $view;

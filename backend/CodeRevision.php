@@ -19,7 +19,7 @@ class CodeRevision {
 	/**
 	 * @static
 	 * @param CodeRepository $repo
-	 * @param  $data
+	 * @param array $data
 	 * @return CodeRevision
 	 */
 	public static function newFromSvn( CodeRepository $repo, $data ) {
@@ -129,7 +129,7 @@ class CodeRevision {
 	 * @static
 	 * @throws Exception
 	 * @param CodeRepository $repo
-	 * @param  $row
+	 * @param stdClass $row
 	 * @return CodeRevision
 	 */
 	public static function newFromRow( CodeRepository $repo, $row ) {
@@ -159,7 +159,7 @@ class CodeRevision {
 	/**
 	 * Like getId(), but returns the result as a string, including prefix,
 	 * i.e. "r123" instead of 123.
-	 * @param $id
+	 * @param int|null $id
 	 * @return string
 	 */
 	public function getIdString( $id = null ) {
@@ -177,7 +177,7 @@ class CodeRevision {
 	 * confusing (e.g. in emails, page titles etc.). If only one repository is
 	 * defined then this returns the same as getIdString() as there is no ambiguity.
 	 *
-	 * @param $id int
+	 * @param int $id
 	 * @return string
 	 */
 	public function getIdStringUnique( $id = null ) {
@@ -216,7 +216,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @return
+	 * @return string
 	 */
 	public function getTimestamp() {
 		return $this->timestamp;
@@ -276,7 +276,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $key string
+	 * @param string $key
 	 * @return string
 	 */
 	private static function makeStateMessageKey( $key ) {
@@ -312,8 +312,8 @@ class CodeRevision {
 
 	/**
 	 * @throws Exception
-	 * @param $status String, value in CodeRevision::getPossibleStates
-	 * @param $user User
+	 * @param string $status value in CodeRevision::getPossibleStates
+	 * @param User $user
 	 * @return bool
 	 */
 	public function setStatus( $status, $user ) {
@@ -663,7 +663,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $text
+	 * @param string $text
 	 * @param null $parent
 	 * @return CodeComment
 	 */
@@ -674,8 +674,8 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $text string
-	 * @param $parent null
+	 * @param string $text
+	 * @param null $parent
 	 * @return int
 	 */
 	public function saveComment( $text, $parent = null ) {
@@ -700,8 +700,8 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $subject String
-	 * @param $body String
+	 * @param string $subject
+	 * @param string $body
 	 * @return void
 	 */
 	public function emailNotifyUsersOfChanges( $subject, $body ) {
@@ -755,8 +755,8 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $text string
-	 * @param $parent null|
+	 * @param string $text
+	 * @param null $parent
 	 * @return array
 	 */
 	protected function commentData( $text, $parent = null ) {
@@ -778,8 +778,8 @@ class CodeRevision {
 
 	/**
 	 * @throws Exception
-	 * @param  $parent
-	 * @param  $ts
+	 * @param null $parent
+	 * @param string $ts
 	 * @return string
 	 */
 	protected function threadedSortKey( $parent, $ts ) {
@@ -997,7 +997,7 @@ class CodeRevision {
 	 *
 	 * This function will silently refuse to add a reference from a revision to itself or from
 	 * revisions in its past (i.e. with lower revision IDs)
-	 * @param $revs array of revision IDs
+	 * @param array $revs array of revision IDs
 	 */
 	public function addReferencesFrom( $revs ) {
 		$data = [];
@@ -1025,7 +1025,7 @@ class CodeRevision {
 	/**
 	 * Same as addReferencesFrom(), but adds references from this revision to
 	 * the specified revisions.
-	 * @param $revs array of revision IDs
+	 * @param array $revs array of revision IDs
 	 */
 	public function addReferencesTo( $revs ) {
 		$data = [];
@@ -1044,7 +1044,7 @@ class CodeRevision {
 	/**
 	 * Remove references from the specified revisions to this revision. In the UI, this will
 	 * no longer show the specified revisions as follow-ups to this one.
-	 * @param $revs array of revision IDs
+	 * @param array $revs array of revision IDs
 	 */
 	public function removeReferencesFrom( $revs ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -1059,7 +1059,7 @@ class CodeRevision {
 	/**
 	 * Remove references to the specified revisions from this revision.
 	 *
-	 * @param $revs array of revision IDs
+	 * @param array $revs array of revision IDs
 	 */
 	public function removeReferencesTo( $revs ) {
 		$dbw = wfGetDB( DB_MASTER );
@@ -1073,7 +1073,7 @@ class CodeRevision {
 
 	/**
 	 * Get all sign-offs for this revision
-	 * @param $from int DB_SLAVE or DB_MASTER
+	 * @param int $from DB_SLAVE or DB_MASTER
 	 * @return array of CodeSignoff objects
 	 */
 	public function getSignoffs( $from = DB_SLAVE ) {
@@ -1098,8 +1098,8 @@ class CodeRevision {
 
 	/**
 	 * Add signoffs for this revision
-	 * @param $user User object for the user who did the sign-off
-	 * @param $flags array of flags (strings, see getPossibleFlags()). Each flag is added as
+	 * @param User $user User object for the user who did the sign-off
+	 * @param array $flags array of flags (strings, see getPossibleFlags()). Each flag is added as
 	 *   a separate sign-off
 	 */
 	public function addSignoff( $user, $flags ) {
@@ -1123,8 +1123,8 @@ class CodeRevision {
 	 * Strike a set of sign-offs by a given user. Any sign-offs in $ids not
 	 * by $user are silently ignored, as well as nonexistent IDs and
 	 * already-struck sign-offs.
-	 * @param $user User object
-	 * @param $ids array of sign-off IDs to strike
+	 * @param User $user User object
+	 * @param array $ids array of sign-off IDs to strike
 	 */
 	public function strikeSignoffs( $user, $ids ) {
 		foreach ( $ids as $id ) {
@@ -1160,9 +1160,9 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $addTags array
-	 * @param $removeTags array
-	 * @param $user User
+	 * @param array $addTags
+	 * @param array $removeTags
+	 * @param User $user
 	 */
 	public function changeTags( $addTags, $removeTags, $user = null ) {
 		// Get the current tags and see what changes
@@ -1211,7 +1211,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $tags Array
+	 * @param array $tags
 	 * @return array
 	 */
 	protected function normalizeTags( $tags ) {
@@ -1223,7 +1223,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $tags Array
+	 * @param array $tags
 	 * @return array
 	 */
 	protected function tagData( $tags ) {
@@ -1241,7 +1241,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $tag String
+	 * @param string $tag
 	 * @return bool
 	 */
 	public function normalizeTag( $tag ) {
@@ -1255,8 +1255,8 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param $tag String
-	 * @return  bool
+	 * @param string $tag
+	 * @return bool
 	 */
 	public function isValidTag( $tag ) {
 		return ( $this->normalizeTag( $tag ) !== false );
@@ -1325,7 +1325,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $path
+	 * @param string $path
 	 * @return array
 	 */
 	protected function getPathConds( $path ) {
@@ -1373,7 +1373,7 @@ class CodeRevision {
 	/**
 	 * Get the canonical URL of a revision. Constructs a Title for this revision
 	 * along the lines of [[Special:Code/RepoName/12345#c678]] and calls getCanonicalURL().
-	 * @param $commentId string|int
+	 * @param string|int $commentId
 	 * @return string
 	 */
 	public function getCanonicalUrl( $commentId = 0 ) {

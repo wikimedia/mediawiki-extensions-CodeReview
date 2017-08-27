@@ -31,7 +31,7 @@ class SpecialRepoAdmin extends SpecialPage {
 	}
 
 	/**
-	 * @param $subpage string
+	 * @param string $subpage
 	 */
 	public function execute( $subpage ) {
 		global $wgRequest;
@@ -65,8 +65,7 @@ class RepoAdminListView {
 	private $title;
 
 	/**
-	 * Constructor
-	 * @param $t Title object referring to Special:RepoAdmin
+	 * @param Title $t Title object referring to Special:RepoAdmin
 	 */
 	public function __construct( Title $t ) {
 		$this->title = $t;

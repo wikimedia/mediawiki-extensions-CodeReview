@@ -113,7 +113,7 @@ class WordCloud {
 	 * Default text callback for word display
 	 *
 	 * @param string $word
-	 * @param $sizeRange
+	 * @param string $sizeRange
 	 * @return string
 	 */
 	public function defaultTextCallback( $word, $sizeRange ) {

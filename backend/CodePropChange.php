@@ -18,7 +18,7 @@ class CodePropChange {
 
 	/**
 	 * @param CodeRevision $rev
-	 * @param $row
+	 * @param stdClass $row
 	 * @return CodePropChange
 	 */
 	static function newFromRow( $rev, $row ) {
@@ -27,7 +27,7 @@ class CodePropChange {
 
 	/**
 	 * @param CodeRevision $rev
-	 * @param $data
+	 * @param array $data
 	 * @return CodePropChange
 	 */
 	static function newFromData( $rev, $data ) {

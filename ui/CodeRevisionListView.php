@@ -14,7 +14,7 @@ class CodeRevisionListView extends CodeView {
 	protected $filters = [];
 
 	/**
-	 * @param $repo CodeRepository|String
+	 * @param CodeRepository|string $repo
 	 */
 	function __construct( $repo ) {
 		parent::__construct( $repo );
@@ -47,7 +47,7 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	/**
-	 * @param $path string
+	 * @param string $path
 	 * @return array
 	 */
 	public static function pathsToArray( $path ) {
@@ -55,7 +55,7 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	/**
-	 * @param $path string
+	 * @param string $path
 	 * @return string
 	 */
 	public static function preparePaths( $path ) {
@@ -224,7 +224,7 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	/**
-	 * @param $pager SvnTablePager
+	 * @param SvnTablePager $pager
 	 *
 	 * @return string
 	 */
