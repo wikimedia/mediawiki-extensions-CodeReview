@@ -50,7 +50,7 @@ class CodeReleaseNotes extends CodeView {
 
 	protected function showReleaseNotes() {
 		global $wgOut;
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$where = [];
 		if ( $this->mEndRev ) {
 			$where[] = 'cr_id BETWEEN ' . intval( $this->mStartRev ) . ' AND ' .

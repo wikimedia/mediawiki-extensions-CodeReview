@@ -45,7 +45,7 @@ class CodeSignoff {
 	 * @return bool Whether this sign-off has been struck
 	 */
 	public function isStruck() {
-		return $this->timestampStruck !== wfGetDB( DB_SLAVE )->getInfinity();
+		return $this->timestampStruck !== wfGetDB( DB_REPLICA )->getInfinity();
 	}
 
 	/**
@@ -123,7 +123,7 @@ class CodeSignoff {
 		if ( count( $parts ) != 3 ) {
 			return null;
 		}
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectRow(
 			'code_signoffs',
 			[

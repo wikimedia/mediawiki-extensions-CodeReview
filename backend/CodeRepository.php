@@ -48,7 +48,7 @@ class CodeRepository {
 	 * @return CodeRepository|null
 	 */
 	public static function newFromName( $name ) {
-		$dbw = wfGetDB( DB_SLAVE );
+		$dbw = wfGetDB( DB_REPLICA );
 		$row = $dbw->selectRow(
 			'code_repo',
 			[
@@ -73,7 +73,7 @@ class CodeRepository {
 	 * @return CodeRepository|null
 	 */
 	public static function newFromId( $id ) {
-		$dbw = wfGetDB( DB_SLAVE );
+		$dbw = wfGetDB( DB_REPLICA );
 		$row = $dbw->selectRow(
 			'code_repo',
 			[
@@ -110,7 +110,7 @@ class CodeRepository {
 	 * @return array
 	 */
 	static function getRepoList() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$options = [ 'ORDER BY' => 'repo_name' ];
 		$res = $dbr->select( 'code_repo', '*', [], __METHOD__, $options );
 		$repos = [];
@@ -173,7 +173,7 @@ class CodeRepository {
 	 * @return int
 	 */
 	public function getLastStoredRev() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectField(
 			'code_rev',
 			'MAX(cr_id)',
@@ -193,7 +193,7 @@ class CodeRepository {
 		if ( is_array( $authors ) ) {
 			return $authors;
 		}
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'code_rev',
 			[ 'cr_author', 'MAX(cr_timestamp) AS time' ],
@@ -237,7 +237,7 @@ class CodeRepository {
 		if ( is_array( $tags ) && !$recache ) {
 			return $tags;
 		}
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'code_tags',
 			[ 'ct_tag', 'COUNT(*) AS revs' ],
@@ -267,7 +267,7 @@ class CodeRepository {
 		if ( !$this->isValidRev( $id ) ) {
 			return null;
 		}
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectRow(
 			'code_rev',
 			'*',
@@ -368,7 +368,7 @@ class CodeRepository {
 		// If the diff hasn't already been retrieved from the cache, see if we can get
 		// it from the DB.
 		if ( !$data && $useCache != 'skipcache' ) {
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$row = $dbr->selectRow(
 				'code_rev',
 				[ 'cr_diff', 'cr_flags' ],
@@ -542,7 +542,7 @@ class CodeRepository {
 			return self::$userLinks[$author];
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$wikiUser = $dbr->selectField(
 			'code_authors',
 			'ca_user_text',
@@ -576,7 +576,7 @@ class CodeRepository {
 			return self::$authorLinks[$name];
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->selectField(
 			'code_authors',
 			'ca_author',

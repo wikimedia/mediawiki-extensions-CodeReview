@@ -64,7 +64,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		$revsSet = count( $params['revs'] );
 
 		if ( $revsSet ) {
-			$db = wfGetDB( DB_SLAVE );
+			$db = wfGetDB( DB_REPLICA );
 
 			$query = $pager->getQueryInfo();
 

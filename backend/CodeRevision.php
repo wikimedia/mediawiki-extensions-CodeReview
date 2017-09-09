@@ -643,7 +643,7 @@ class CodeRevision {
 	 * @return ResultWrapper
 	 */
 	public function getModifiedPaths() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		return $dbr->select(
 			'code_paths',
 			[ 'cp_path', 'cp_action' ],
@@ -808,7 +808,7 @@ class CodeRevision {
 	 * @return array
 	 */
 	public function getComments() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->select(
 			'code_comment',
 			[
@@ -836,7 +836,7 @@ class CodeRevision {
 	 * @return int
 	 */
 	public function getCommentCount() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->select( 'code_comment',
 			[ 'cc_id' ],
 			[
@@ -856,7 +856,7 @@ class CodeRevision {
 	 * @return array
 	 */
 	public function getPropChanges() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->select(
 			[ 'code_prop_changes', 'user' ],
 			[
@@ -886,7 +886,7 @@ class CodeRevision {
 	 * @return array
 	 */
 	public function getPropChangeUsers() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->select(
 			'code_prop_changes',
 			'DISTINCT(cpc_user)',
@@ -916,7 +916,7 @@ class CodeRevision {
 	 * @return array
 	 */
 	protected function getCommentingUsers() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'code_comment',
 			'DISTINCT(cc_user)',
@@ -944,7 +944,7 @@ class CodeRevision {
 	 */
 	public function getFollowupRevisions() {
 		$refs = [];
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			[ 'code_relations', 'code_rev' ],
 			[ 'cr_id', 'cr_status', 'cr_timestamp', 'cr_author', 'cr_message' ],
@@ -971,7 +971,7 @@ class CodeRevision {
 	 */
 	public function getFollowedUpRevisions() {
 		$refs = [];
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			[ 'code_relations', 'code_rev' ],
 			[ 'cr_id', 'cr_status', 'cr_timestamp', 'cr_author', 'cr_message' ],
@@ -1073,10 +1073,10 @@ class CodeRevision {
 
 	/**
 	 * Get all sign-offs for this revision
-	 * @param int $from DB_SLAVE or DB_MASTER
+	 * @param int $from DB_REPLICA or DB_MASTER
 	 * @return array of CodeSignoff objects
 	 */
-	public function getSignoffs( $from = DB_SLAVE ) {
+	public function getSignoffs( $from = DB_REPLICA ) {
 		$db = wfGetDB( $from );
 		$result = $db->select(
 			'code_signoffs',
@@ -1113,7 +1113,7 @@ class CodeRevision {
 				'cs_user_text' => $user->getName(),
 				'cs_flag' => $flag,
 				'cs_timestamp' => $dbw->timestamp(),
-				'cs_timestamp_struck' => wfGetDB( DB_SLAVE )->getInfinity()
+				'cs_timestamp_struck' => wfGetDB( DB_REPLICA )->getInfinity()
 			];
 		}
 		$dbw->insert( 'code_signoffs', $rows, __METHOD__, [ 'IGNORE' ] );
@@ -1140,7 +1140,7 @@ class CodeRevision {
 	 * @param int $from
 	 * @return array
 	 */
-	public function getTags( $from = DB_SLAVE ) {
+	public function getTags( $from = DB_REPLICA ) {
 		$db = wfGetDB( $from );
 		$result = $db->select(
 			'code_tags',
@@ -1267,7 +1267,7 @@ class CodeRevision {
 	 * @return bool|int
 	 */
 	public function getPrevious( $path = '' ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$encId = $dbr->addQuotes( $this->id );
 		$tables = [ 'code_rev' ];
 		if ( $path != '' ) {
@@ -1298,7 +1298,7 @@ class CodeRevision {
 	 * @return bool|int
 	 */
 	public function getNext( $path = '' ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$encId = $dbr->addQuotes( $this->id );
 		$tables = [ 'code_rev' ];
 		if ( $path != '' ) {
@@ -1343,7 +1343,7 @@ class CodeRevision {
 	 * @return bool|int
 	 */
 	public function getNextUnresolved( $path = '' ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$encId = $dbr->addQuotes( $this->id );
 		$tables = [ 'code_rev' ];
 		if ( $path != '' ) {

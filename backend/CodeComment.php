@@ -35,7 +35,7 @@ class CodeComment {
 	 * @return CodeComment
 	 */
 	static function newFromID( $cc_id, CodeRevision $rev ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectRow(
 			'code_comment',
 			[

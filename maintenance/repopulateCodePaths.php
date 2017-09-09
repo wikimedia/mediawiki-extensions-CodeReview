@@ -39,7 +39,7 @@ class RepopulateCodePaths extends Maintenance {
 
 		$revisions = range( $start, $end );
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$res = $dbr->select(
 			'code_paths',

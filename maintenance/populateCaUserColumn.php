@@ -38,7 +38,7 @@ class PopulateCaUserColumn extends Maintenance {
 			$this->error( "Repo '{$repoName}' is not a valid repository", true );
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$res = $dbr->select(
 			'code_authors',

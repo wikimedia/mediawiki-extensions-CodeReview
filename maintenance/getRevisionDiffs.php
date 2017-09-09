@@ -27,7 +27,7 @@ class GetRevisionDiffs extends Maintenance {
 			$this->error( "Repo '{$repoName}' is not a valid Repository", true );
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$res = $dbr->select(
 			'code_rev',

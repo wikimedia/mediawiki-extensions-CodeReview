@@ -94,7 +94,7 @@ class CodeRevisionListView extends CodeView {
 		}
 
 		// Get the total count across all pages
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$revCount = $this->getRevCount( $dbr );
 
 		$pager = $this->getPager();
@@ -147,7 +147,7 @@ class CodeRevisionListView extends CodeView {
 		$status = $wgRequest->getVal( 'wpStatus' );
 
 		// Grab data from the DB
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$revObjects = [];
 		$res = $dbr->select(
 			'code_rev', '*',
