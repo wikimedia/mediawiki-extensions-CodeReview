@@ -86,9 +86,9 @@ class SubversionPecl extends SubversionAdaptor {
 	 * It throws a warning if the repository does not exist.
 	 */
 	function canConnect() {
-		// wfSuppressWarnings();
+		// MediaWiki\suppressWarnings();
 		// $result = svn_info( $this->mRepoPath );
-		// wfRestoreWarnings();
+		// MediaWiki\restoreWarnings();
 		return true;
 	}
 
@@ -122,11 +122,11 @@ class SubversionPecl extends SubversionAdaptor {
 	}
 
 	function getLog( $path, $startRev = null, $endRev = null ) {
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$log = svn_log( $this->mRepoPath . $path,
 			$this->_rev( $startRev, SVN_REVISION_INITIAL ),
 			$this->_rev( $endRev, SVN_REVISION_HEAD ) );
-		wfRestoreWarnings();
+		MediaWiki\restoreWarnings();
 		return $log;
 	}
 }
