@@ -5,7 +5,8 @@
 			"Kobazulo",
 			"Theklan",
 			"පසිඳු කාවින්ද",
-			"Subi"
+			"Subi",
+			"Mikel Ibaiba"
 		]
 	},
 	"code": "Kode Berrikuspena",
@@ -86,7 +87,7 @@
 	"repoadmin-edit-bug": "Bugzilla bidea:",
 	"repoadmin-edit-view": "ViewVC bidea:",
 	"repoadmin-edit-button": "Ados",
-	"repoadmin-edit-sucess": "\"[[Special:Code/$1|$1]]\" biltegia arrakastaz aldtu da.",
+	"repoadmin-edit-sucess": "\"[[Special:Code/$1|$1]]\" biltegia aldatu da.",
 	"right-repoadmin": "Kudeatu kode biltegiak",
 	"right-codereview-add-tag": "Gehitu etiketa berriak aldaketei",
 	"right-codereview-remove-tag": "Kendu etiketak berrikuspenetatik",
