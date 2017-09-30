@@ -99,7 +99,7 @@
 	"code-rev-purge-link": "清除快取",
 	"code-rev-total": "結果總計：$1",
 	"code-rev-not-found": "修訂 '''$1''' 不存在！",
-	"code-rev-history-link": "歷史記錄",
+	"code-rev-history-link": "歷史",
 	"code-status-new": "新的",
 	"code-status-desc-new": "此修訂正等候操作 (預設狀態)。",
 	"code-status-fixme": "須修正",
