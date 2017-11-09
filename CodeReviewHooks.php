@@ -44,8 +44,8 @@ class CodeReviewHooks {
 				"$base/archives/code_relations_index.sql" );
 
 			if ( !$updater->updateRowExists( 'make cr_status varchar' ) ) {
-				$updater->addExtensionUpdate( [ 'modifyField', 'code_rev', 'cr_status',
-					"$base/archives/codereview-cr_status_varchar.sql", true ] );
+				$updater->modifyExtensionField( 'code_rev', 'cr_status',
+					"$base/archives/codereview-cr_status_varchar.sql" );
 			}
 
 			$updater->addExtensionTable( 'code_bugs', "$base/archives/code_bugs.sql" );
@@ -64,13 +64,13 @@ class CodeReviewHooks {
 				"$base/archives/code_prop_changes_author-index.sql" );
 
 			if ( !$updater->updateRowExists( 'make cp_action char' ) ) {
-				$updater->addExtensionUpdate( [ 'modifyField', 'code_paths', 'cp_action',
-					"$base/archives/codereview-cp_action_char.sql", true ] );
+				$updater->modifyExtensionField( 'code_paths', 'cp_action',
+					"$base/archives/codereview-cp_action_char.sql" );
 			}
 
 			if ( !$updater->updateRowExists( 'make cpc_attrib varchar' ) ) {
-				$updater->addExtensionUpdate( [ 'modifyField', 'code_prop_changes', 'cpc_attrib',
-					"$base/archives/codereview-cpc_attrib_varchar.sql", true ] );
+				$updater->modifyExtensionField( 'code_prop_changes', 'cpc_attrib',
+					"$base/archives/codereview-cpc_attrib_varchar.sql" );
 			}
 
 			$updater->addExtensionIndex( 'code_paths', 'repo_path',
@@ -79,14 +79,14 @@ class CodeReviewHooks {
 			$updater->addExtensionIndex( 'code_rev', 'cr_repo_status_author',
 				"$base/archives/code_revs_status_author-index.sql" );
 
-			$updater->addExtensionUpdate( [ 'dropField', 'code_comment', 'cc_review',
-				"$base/archives/code_drop_cc_review.sql", true ] );
+			$updater->dropExtensionField( 'code_comment', 'cc_review',
+				"$base/archives/code_drop_cc_review.sql" );
 
-			$updater->addExtensionUpdate( [ 'dropTable', 'code_test_suite',
-				"$base/archives/code_drop_test.sql", true ] );
+			$updater->dropExtensionTable( 'code_test_suite',
+				"$base/archives/code_drop_test.sql" );
 
-			$updater->addExtensionUpdate( [ 'addField', 'code_authors', 'ca_user',
-				"$base/archives/code_authors_add_ca_user.sql", true ] );
+			$updater->addExtensionField( 'code_authors', 'ca_user',
+				"$base/archives/code_authors_add_ca_user.sql" );
 
 			$updater->dropExtensionIndex(
 				'code_authors',
@@ -97,14 +97,14 @@ class CodeReviewHooks {
 		case 'sqlite':
 			$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" );
 			$updater->addExtensionTable( 'code_signoffs', "$base/archives/code_signoffs.sql" );
-			$updater->addExtensionUpdate( [ 'addField', 'code_signoffs', 'cs_user',
-				"$base/archives/code_signoffs_userid-sqlite.sql", true ] );
-			$updater->addExtensionUpdate( [ 'addField', 'code_signoffs', 'cs_timestamp_struck',
-				"$base/archives/code_signoffs_timestamp_struck.sql", true ] );
-			$updater->addExtensionUpdate( [ 'addIndex', 'code_paths', 'repo_path',
-				"$base/archives/codereview-repopath.sql", true ] );
-			$updater->addExtensionUpdate( [ 'addField', 'code_authors', 'ca_user',
-				"$base/archives/code_authors_add_ca_user.sql", true ] );
+			$updater->addExtensionField( 'code_signoffs', 'cs_user',
+				"$base/archives/code_signoffs_userid-sqlite.sql" );
+			$updater->addExtensionField( 'code_signoffs', 'cs_timestamp_struck',
+				"$base/archives/code_signoffs_timestamp_struck.sql" );
+			$updater->addExtensionIndex( 'code_paths', 'repo_path',
+				"$base/archives/codereview-repopath.sql" );
+			$updater->addExtensionField( 'code_authors', 'ca_user',
+				"$base/archives/code_authors_add_ca_user.sql" );
 			break;
 		case 'postgres':
 			// TODO
