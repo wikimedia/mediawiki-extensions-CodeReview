@@ -99,7 +99,6 @@ CREATE TABLE /*_*/code_authors (
  -- Note that multiple authors on the same repo may point to
  -- a single local user in some cases...
 CREATE UNIQUE INDEX /*i*/ca_user_text ON /*_*/code_authors (ca_user_text, ca_repo_id, ca_author);
-CREATE INDEX /*i*/ca_repo_author ON /*_*/code_authors (ca_repo_id, ca_author);
 
 --
 -- List of which files were changed in a given code revision.
