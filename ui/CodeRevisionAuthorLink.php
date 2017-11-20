@@ -17,6 +17,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 
 	function execute() {
 		global $wgRequest, $wgUser;
+
 		if ( !$wgUser->isAllowed( 'codereview-link-user' ) ) {
 			throw new PermissionsError( 'codereview-link-user' );
 		}
@@ -30,6 +31,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 
 	function doForm() {
 		global $wgOut, $wgUser;
+
 		$form = Xml::openElement( 'form', [ 'method' => 'post',
 			'action' => $this->getTitle()->getLocalURL(),
 			'name' => 'uluser', 'id' => 'mw-codeauthor-form1' ] );
@@ -50,12 +52,13 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 		}
 
 		$form .= Xml::inputLabel( wfMessage( 'code-author-name' )->text(),
-			'linktouser', 'username', 30, '' ) . ' ' .
+			'linktouser', 'username', 30, '', [ 'class' => 'mw-autocomplete-user' ] ) . ' ' .
 				Xml::submitButton( wfMessage( 'ok' )->text(), [ 'name' => 'newname' ] ) .
 				Xml::closeElement( 'fieldset' ) .
 				$additional .
 				Xml::closeElement( 'form' ) . "\n";
 
+		$wgOut->addModules( 'mediawiki.userSuggest' );
 		$wgOut->addHTML( $this->linkStatus() . $form );
 	}
 
