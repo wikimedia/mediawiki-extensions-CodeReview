@@ -841,10 +841,6 @@ class CodeRevisionView extends CodeView {
 			$permaLink = $linkRenderer->makeLink( $this->commentLink( $comment->id ), '#' );
 		}
 
-		$popts = $wgOut->parserOptions();
-		$popts->setEditSection( false );
-		$wgOut->parserOptions( $popts );
-
 		return Xml::openElement( 'div',
 			[
 				'class' => 'mw-codereview-comment',
