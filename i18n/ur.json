@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"BukhariSaeed"
 		]
 	},
 	"code-comments": "تبصرے",
@@ -15,6 +16,8 @@
 	"code-mycomments": "میرے تبصرے",
 	"code-authors": "مصنفین",
 	"code-author-name": "ایک صارف کا نام درج کریں:",
+	"code-author-link": "ربط؟",
+	"code-author-unlink": "بے ربط؟",
 	"code-field-id": "ترمیمی",
 	"code-field-author": "مصنف",
 	"code-field-user": "پر تبصرہ",
@@ -37,6 +40,7 @@
 	"code-status-new": "نئے",
 	"code-signoff-field-user": "صارف",
 	"code-signoff-field-date": "تاریخ",
+	"code-revfilter-cr_author": "مصنف = $1",
 	"codereview-batch-submit": "جمع کرائیں",
 	"codereview-reply-link": "جواب دیں",
 	"repoadmin": "ذخیرہ انتظامیہ",
