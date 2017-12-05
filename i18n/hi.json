@@ -143,8 +143,5 @@
 	"right-codereview-signoff": "संशोधन से साइन अफ़ हो जाएँ",
 	"right-codereview-link-user": "लेखकों को विकि सदस्यों से लिंक करें",
 	"right-codereview-associate": "संशोधन संघ को प्रबंधन करें",
-	"right-codereview-review-own": "अपना संशोधन को ठीक है या संकल्प की रूप में चिन्हित करें",
-	"group-svnadmins": "SVN प्रबन्धकगण",
-	"group-svnadmins-member": "{{GENDER:$1|SVN प्रबन्धक}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN प्रबन्धकगण"
+	"right-codereview-review-own": "अपना संशोधन को ठीक है या संकल्प की रूप में चिन्हित करें"
 }

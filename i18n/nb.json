@@ -5,7 +5,8 @@
 			"Event",
 			"Laaknor",
 			"Lokal Profil",
-			"Nghtwlkr"
+			"Nghtwlkr",
+			"Jon Harald Søby"
 		]
 	},
 	"code": "Kodegjennomgang",
@@ -179,8 +180,5 @@
 	"right-codereview-link-user": "Lenke forfattere til wikibrukere",
 	"right-codereview-associate": "Behandle revisjonsmerker",
 	"right-codereview-review-own": "Merk dine egne revisjoner som «{{int:code-status-ok}}» eller «{{int:code-status-resolved}}»",
-	"action-codereview-use": "bruk av Special:Code",
-	"group-svnadmins": "SVN administratorer",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-administrator}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN administratorer"
+	"action-codereview-use": "bruk av Special:Code"
 }

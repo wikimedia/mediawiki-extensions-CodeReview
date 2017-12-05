@@ -191,8 +191,5 @@
 	"action-codereview-set-status": "muuttaa koodimuutosten tilaa",
 	"action-codereview-signoff": "merkitä koodimuutos luetuksi tai testatuksi",
 	"action-codereview-link-user": "liittää kehittäjiä wiki-tunnuksiin",
-	"action-codereview-associate": "hallinnoida koodimuutosten ristiviittauksia",
-	"group-svnadmins": "SVN-ylläpitäjät",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-ylläpitäjä}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-ylläpitäjät"
+	"action-codereview-associate": "hallinnoida koodimuutosten ristiviittauksia"
 }

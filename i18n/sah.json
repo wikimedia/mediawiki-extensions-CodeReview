@@ -158,8 +158,5 @@
 	"right-codereview-set-status": "Барыллар стаатустарын уларытыы",
 	"right-codereview-signoff": "Барыллары бигэргэтии",
 	"right-codereview-link-user": "Ааптардары биикигэ бэлиэтэммит ааттары кытта сигээһин",
-	"right-codereview-associate": "Барыллары бөлөҕүнэн салайыы",
-	"group-svnadmins": "SVN дьаһабыллара",
-	"group-svnadmins-member": "SVN дьаһабыла",
-	"grouppage-svnadmins": "{{ns:project}}:SVN дьаһабыллара"
+	"right-codereview-associate": "Барыллары бөлөҕүнэн салайыы"
 }

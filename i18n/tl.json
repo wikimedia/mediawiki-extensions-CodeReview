@@ -187,10 +187,5 @@
 	"action-codereview-signoff": "lumagdang patapos sa mga rebisyon",
 	"action-codereview-link-user": "ikawing ang mga may-akda sa mga tagagamit ng wiki",
 	"action-codereview-associate": "pangasiwaan ang mga kaugnayan ng rebisyon",
-	"action-codereview-review-own": "markahan ang sarili mong mga rebisyon bilang \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Mga tagapangasiwa ng SVN",
-	"group-svnadmins-member": "{{GENDER:$1|tagapangasiwa ng SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Mga tagapangasiwa ng SVN",
-	"group-svnadmins.css": "/* Ang Mga Pilas ng Estilong Lumalagaslas (Cascading Style Sheets o CSS) na inilagay dito ay makakaapekto lamang sa mga tagapangasiwa ng SVN */",
-	"group-svnadmins.js": "/* Ang JavaScript na inilagay dito ay makakaapekto lamang sa mga tagapangasiwa ng SVN */"
+	"action-codereview-review-own": "markahan ang sarili mong mga rebisyon bilang \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\""
 }

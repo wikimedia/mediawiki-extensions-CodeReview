@@ -172,8 +172,5 @@
 	"right-codereview-signoff": "Схвалёваня ревізій",
 	"right-codereview-link-user": "Звязок авторів з вікі-хоснователями",
 	"right-codereview-associate": "Адміністрація одношінь міджі ревізіями",
-	"right-codereview-review-own": "Означованя властных ревізій як „{{int:code-status-ok}}“ або „{{int:code-status-resolved}}“",
-	"group-svnadmins": "SVN адміністраторы",
-	"group-svnadmins-member": "{{GENDER:$1|адміністратор|адміністраторка|адміністраторы}} SVN",
-	"grouppage-svnadmins": "{{ns:project}}:SVN адміністраторы"
+	"right-codereview-review-own": "Означованя властных ревізій як „{{int:code-status-ok}}“ або „{{int:code-status-resolved}}“"
 }

@@ -200,8 +200,5 @@
 	"action-codereview-signoff": "godkänna versioner",
 	"action-codereview-link-user": "länka författare till wiki-användare",
 	"action-codereview-associate": "hantera versionsassociationer",
-	"action-codereview-review-own": "märk dina egna versioner som \"{{int:code-status-ok}}\" eller \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "SVN-administratörer",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-administratör}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-administratörer"
+	"action-codereview-review-own": "märk dina egna versioner som \"{{int:code-status-ok}}\" eller \"{{int:code-status-resolved}}\""
 }

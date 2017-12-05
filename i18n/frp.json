@@ -174,8 +174,5 @@
 	"right-codereview-signoff": "Aprovar des rèvisions",
 	"right-codereview-link-user": "Liyér los ôtors ux usanciérs vouiqui",
 	"right-codereview-associate": "Administrar les associacions de rèvisions",
-	"right-codereview-review-own": "Marcar ses prôpres rèvisions coment OK ou ben Solucionâ",
-	"group-svnadmins": "Administrators SVN",
-	"group-svnadmins-member": "administrat{{GENDER:$1|or|rice}} SVN",
-	"grouppage-svnadmins": "{{ns:project}}:Administrators SVN"
+	"right-codereview-review-own": "Marcar ses prôpres rèvisions coment OK ou ben Solucionâ"
 }

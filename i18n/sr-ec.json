@@ -154,7 +154,5 @@
 	"right-codereview-add-tag": "додавање нових ознака на измене",
 	"right-codereview-remove-tag": "брисање ознака из измена",
 	"right-codereview-post-comment": "Додајте коментаре ревизијама",
-	"right-codereview-set-status": "Промени статус ревизије",
-	"group-svnadmins": "SVN администратори",
-	"group-svnadmins-member": "{{GENDER:$1|SVN администратор|SVN администраторка|SVN администратор}}"
+	"right-codereview-set-status": "Промени статус ревизије"
 }

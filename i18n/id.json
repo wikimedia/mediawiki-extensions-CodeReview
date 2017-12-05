@@ -171,8 +171,5 @@
 	"right-codereview-signoff": "Persetujuan revisi",
 	"right-codereview-link-user": "Pranala penulis ke wiki pengguna",
 	"right-codereview-associate": "Mengelola keterkaitan revisi",
-	"right-codereview-review-own": "Tandai suntingan Anda sendiri sebagai OK",
-	"group-svnadmins": "Pengurus SVN",
-	"group-svnadmins-member": "{{GENDER:$1|Pengurus SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Pengurus SVN"
+	"right-codereview-review-own": "Tandai suntingan Anda sendiri sebagai OK"
 }

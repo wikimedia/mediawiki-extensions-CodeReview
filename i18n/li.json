@@ -176,8 +176,5 @@
 	"right-codereview-signoff": "Versies goodkäöre",
 	"right-codereview-link-user": "Koppel sjrievers aan wikigebroekers",
 	"right-codereview-associate": "Koppeling toeveuge/ewegsjaffe",
-	"right-codereview-review-own": "Eige commits es OK of opgelos markere",
-	"group-svnadmins": "SVN-behierdes",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-behierder}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-behierders"
+	"right-codereview-review-own": "Eige commits es OK of opgelos markere"
 }

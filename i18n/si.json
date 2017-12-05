@@ -163,8 +163,5 @@
 	"action-codereview-set-status": "සංශෝධනවල තත්වය වෙනස් කරන්න",
 	"action-codereview-signoff": "සංශෝධන මත sign off",
 	"action-codereview-link-user": "විකි පරිශීලකයන් වෙත කතුවරුන් සම්බන්ධ කරන්න",
-	"action-codereview-associate": "සංශෝධන ආශ්‍රයන් කළමනාකරණය කරන්න",
-	"group-svnadmins": "පරිපාලකවරු",
-	"group-svnadmins-member": "{{GENDER:$1|SVN පරිපාලක}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN පරිපාලකවරු"
+	"action-codereview-associate": "සංශෝධන ආශ්‍රයන් කළමනාකරණය කරන්න"
 }

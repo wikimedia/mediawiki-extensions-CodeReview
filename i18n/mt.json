@@ -185,8 +185,5 @@
 	"action-codereview-signoff": "tapprova reviżjonijiet",
 	"action-codereview-link-user": "torbot awturi ma' utenti tal-wiki",
 	"action-codereview-associate": "tamministra l-assoċjazzjonijiet bejn reviżjonijiet",
-	"action-codereview-review-own": "timmarka r-reviżjonijiet proprji bħala \"{{int:code-status-ok}}\" jew \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Amministraturi SVN",
-	"group-svnadmins-member": "{{GENDER:$1|amministratur SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Amministraturi SVN"
+	"action-codereview-review-own": "timmarka r-reviżjonijiet proprji bħala \"{{int:code-status-ok}}\" jew \"{{int:code-status-resolved}}\""
 }

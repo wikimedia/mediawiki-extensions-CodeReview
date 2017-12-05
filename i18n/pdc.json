@@ -33,8 +33,5 @@
 	"repoadmin-edit-path": "Paad zum Repository:",
 	"repoadmin-edit-bug": "Paad zu Bugzilla:",
 	"repoadmin-edit-view": "Paad zu ViewVC:",
-	"repoadmin-edit-button": "OK",
-	"group-svnadmins": "SVN-Verwalter",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-Verwalter}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-Verwalter"
+	"repoadmin-edit-button": "OK"
 }

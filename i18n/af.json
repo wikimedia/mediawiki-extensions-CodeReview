@@ -143,7 +143,5 @@
 	"right-codereview-set-status": "Verander hersienings status",
 	"right-codereview-link-user": "Link skrywers na die wiki gebruikers",
 	"right-codereview-associate": "Bestuur hersiening verenigings",
-	"right-codereview-review-own": "Merk jou eie hersienings as OK of opgelos",
-	"group-svnadmins": "SVN-administrateurs",
-	"group-svnadmins-member": "SVN-administrateur"
+	"right-codereview-review-own": "Merk jou eie hersienings as OK of opgelos"
 }

@@ -171,8 +171,5 @@
 	"right-codereview-signoff": "Schváliť revízie",
 	"right-codereview-link-user": "Zviazať autorov s používateľmi wiki",
 	"right-codereview-associate": "Spravovať združenia revízií",
-	"right-codereview-review-own": "Označiť vlastné revízie ako OK",
-	"group-svnadmins": "správcovia SVN",
-	"group-svnadmins-member": "správca SVN",
-	"grouppage-svnadmins": "{{ns:project}}:Správcovia SVN"
+	"right-codereview-review-own": "Označiť vlastné revízie ako OK"
 }

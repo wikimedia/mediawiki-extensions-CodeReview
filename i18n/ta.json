@@ -103,8 +103,5 @@
 	"right-codereview-remove-tag": "பரிசீலனைகளிலிருந்து குறிச்சொற்களை நீக்கு",
 	"right-codereview-post-comment": "பரிசீலனைகளுக்கு கருத்துரைகளை சேர்",
 	"right-codereview-set-status": "பரிசீலனைகளுக்காண நிலைமையை மாற்று",
-	"right-codereview-link-user": "எழுத்தாளர்களை விக்கி பயனர்களுடன் இணை",
-	"group-svnadmins": "SVN நிர்வாகிகள்",
-	"group-svnadmins-member": "{{GENDER:$1|SVN நிர்வாகி}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN நிர்வாகிகள்"
+	"right-codereview-link-user": "எழுத்தாளர்களை விக்கி பயனர்களுடன் இணை"
 }

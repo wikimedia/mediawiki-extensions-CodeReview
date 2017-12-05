@@ -179,8 +179,5 @@
 	"action-codereview-remove-tag": "eliminați etichete de la versiuni",
 	"action-codereview-post-comment": "să adăugați comentarii la versiuni",
 	"action-codereview-set-status": "schimbați statutul versiunilor",
-	"action-codereview-review-own": "vă marcați propriile versiuni ca „{{int:code-status-ok}}” sau „{{int:code-status-resolved}}”",
-	"group-svnadmins": "Administratori SVN",
-	"group-svnadmins-member": "{{GENDER:$1|administrator SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Administratori SVN"
+	"action-codereview-review-own": "vă marcați propriile versiuni ca „{{int:code-status-ok}}” sau „{{int:code-status-resolved}}”"
 }

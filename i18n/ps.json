@@ -61,6 +61,5 @@
 	"codereview-email-body": "د \"$1\" کارن په $3 يوه تبصره کړې.\n\nبشپړه پته: $2\nد تبصرې لنډيز:\n\n$5\n\nتبصره:\n\n$4",
 	"code-stats": "شمارنې",
 	"repoadmin-new-button": "جوړول",
-	"repoadmin-edit-button": "ښه",
-	"group-svnadmins": "د SVN پازوالان"
+	"repoadmin-edit-button": "ښه"
 }

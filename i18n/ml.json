@@ -178,8 +178,5 @@
 	"action-codereview-signoff": "നാൾപ്പതിപ്പുകൾ അവസാനിപ്പിച്ചിറങ്ങുക",
 	"action-codereview-link-user": "രചയിതാക്കളെ വിക്കി ഉപയോക്താക്കളുമായി കണ്ണി ചേർക്കുക",
 	"action-codereview-associate": "നാൾപ്പതിപ്പ് ബന്ധങ്ങൾ പരിപാലിക്കുക",
-	"action-codereview-review-own": "താങ്കളുടെ സ്വന്തം പതിപ്പുകൾ \"{{int:code-status-ok}}\" എന്നോ \"{{int:code-status-resolved}}\" എന്നോ അടയാളപ്പെടുത്തുക",
-	"group-svnadmins": "എസ്.വി.എൻ. കാര്യനിർവ്വഹകർ",
-	"group-svnadmins-member": "{{GENDER:$1|എസ്.വി.എൻ. കാര്യനിർവാഹകൻ|എസ്.വി.എൻ. കാര്യനിർവാഹക}}",
-	"grouppage-svnadmins": "{{ns:project}}:എസ്.വി.എൻ. കാര്യനിർവാഹകർ"
+	"action-codereview-review-own": "താങ്കളുടെ സ്വന്തം പതിപ്പുകൾ \"{{int:code-status-ok}}\" എന്നോ \"{{int:code-status-resolved}}\" എന്നോ അടയാളപ്പെടുത്തുക"
 }

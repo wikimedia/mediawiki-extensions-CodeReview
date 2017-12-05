@@ -163,8 +163,5 @@
 	"action-codereview-post-comment": "afegeix comentaris a les revisions",
 	"action-codereview-set-status": "canvia l'estat de les revisions",
 	"action-codereview-signoff": "aprova les revisions",
-	"action-codereview-link-user": "enllaça autors a usuaris wiki",
-	"group-svnadmins": "administradors SVN",
-	"group-svnadmins-member": "{{GENDER:$1|admin de SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Administradors SVN"
+	"action-codereview-link-user": "enllaça autors a usuaris wiki"
 }

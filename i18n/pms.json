@@ -186,8 +186,5 @@
 	"action-codereview-signoff": "conclud le revision",
 	"action-codereview-link-user": "coleghé dj'autor a j'utent ëd la wiki",
 	"action-codereview-associate": "gestì j'associassion ëd revision",
-	"action-codereview-review-own": "marché toe pròpie revision com \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Aministrator SVN",
-	"group-svnadmins-member": "{{GENDER:$1|Aministrator SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Aministrator SVN"
+	"action-codereview-review-own": "marché toe pròpie revision com \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\""
 }

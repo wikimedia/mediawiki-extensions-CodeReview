@@ -185,8 +185,5 @@
 	"action-codereview-signoff": "wersije dopušćić",
 	"action-codereview-link-user": "awtorow z wikiwužiwarjemi zwjazać",
 	"action-codereview-associate": "wersijowe zwiski zrjadować",
-	"action-codereview-review-own": "swoje wersije jako \"{{int:code-status-ok}} abo \"{{int:code-status-resolved}}\" markěrować",
-	"group-svnadmins": "SVN-administratorojo",
-	"group-svnadmins-member": "{{GENDER:$1|SVN-administrator|SVN-administratorka}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN-administratorojo"
+	"action-codereview-review-own": "swoje wersije jako \"{{int:code-status-ok}} abo \"{{int:code-status-resolved}}\" markěrować"
 }

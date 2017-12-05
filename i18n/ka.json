@@ -130,8 +130,5 @@
 	"right-codereview-link-user": "ვიკიპროექტელებისა და რედაქციების კავშირი",
 	"action-codereview-use": "Special:Code-ის გამოყენება",
 	"action-codereview-set-status": "ვერსიის სტატუსის შეცვლა",
-	"action-codereview-review-own": "თქვენი საკუთარი რევიზიების მონიშვნა როგორც „{{int:code-status-ok}}“ ან „{{int:code-status-resolved}}“",
-	"group-svnadmins": "SVN ადმინისტრატორები",
-	"group-svnadmins-member": "{{GENDER:$1|SVN ადმინისტრატორი}}",
-	"grouppage-svnadmins": "{{ns:project}}:SVN ადმინისტრატორები"
+	"action-codereview-review-own": "თქვენი საკუთარი რევიზიების მონიშვნა როგორც „{{int:code-status-ok}}“ ან „{{int:code-status-resolved}}“"
 }

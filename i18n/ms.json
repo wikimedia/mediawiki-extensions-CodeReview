@@ -188,8 +188,5 @@
 	"action-codereview-signoff": "meluluskan semakan",
 	"action-codereview-link-user": "membuat pautan dari pengarang ke pengguna wiki",
 	"action-codereview-associate": "mengurus perkaitan semakan",
-	"action-codereview-review-own": "Menandai semakan sendiri sebagai \"{{int:code-status-ok}}\" atau \"{{int:code-status-resolved}}\"",
-	"group-svnadmins": "Penyelia SVN",
-	"group-svnadmins-member": "{{GENDER:$1|penyelia SVN}}",
-	"grouppage-svnadmins": "{{ns:project}}:Penyelia SVN"
+	"action-codereview-review-own": "Menandai semakan sendiri sebagai \"{{int:code-status-ok}}\" atau \"{{int:code-status-resolved}}\""
 }
