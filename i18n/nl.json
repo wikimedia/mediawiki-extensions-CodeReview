@@ -6,7 +6,8 @@
 			"SPQRobin",
 			"Siebrand",
 			"Jeleniccz",
-			"Mainframe98"
+			"Mainframe98",
+			"Mar(c)"
 		]
 	},
 	"code": "Codecontrole",
@@ -224,8 +225,8 @@
 	"apihelp-query+codecomments-param-prop": "Welke eigenschappen terug te geven. \"revision\" is een verouderde alias voor \"status\".",
 	"apihelp-query+codecomments-example-1": "Reacties voor de repository MediaWiki opvragen.",
 	"apihelp-query+codecomments-example-2": "Informatie over reacties voor de repository MediaWiki weergeven.",
-	"apihelp-query+codepaths-description": "Een lijst opvvagen met 10 paden in een gegeven repository, gebaseerd op het opgegeven padvoorvoegsel.",
-	"apihelp-query+codepaths-summary": "Een lijst opvragen met 10 paden in een gegeven repository, gebaseerd op het opgegeven padvoorvoegsel.",
+	"apihelp-query+codepaths-description": "Een lijst van 10 paden in een gegeven repository opvragen, gebaseerd op het opgegeven padvoorvoegsel.",
+	"apihelp-query+codepaths-summary": "Een lijst van 10 paden in een gegeven repository opvragen, gebaseerd op het opgegeven padvoorvoegsel.",
 	"apihelp-query+codepaths-param-repo": "Naam van de repository.",
 	"apihelp-query+codepaths-param-path": "Padvoorvoegsel om op te filteren.",
 	"apihelp-query+codepaths-example-1": "Paden onder /trunk/phase3 in de repository MediaWiki opvragen.",
