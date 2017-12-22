@@ -382,7 +382,7 @@ class CodeRevision {
 	/**
 	 * Quickie protection against huuuuuuuuge batch inserts
 	 *
-	 * @param DatabaseBase $db
+	 * @param \Wikimedia\Rdbms\IDatabase $db
 	 * @param string $table
 	 * @param array $data
 	 * @param string $method
@@ -546,7 +546,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param DatabaseBase $dbw DatabaseBase
+	 * @param \Wikimedia\Rdbms\IDatabase $dbw
 	 * @param array $paths
 	 * @param int $repoId
 	 * @param int $revId

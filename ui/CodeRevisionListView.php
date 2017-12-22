@@ -280,7 +280,7 @@ class CodeRevisionListView extends CodeView {
 	/**
 	 * Get total number of revisions for this revision view
 	 *
-	 * @param DatabaseBase $dbr
+	 * @param \Wikimedia\Rdbms\IDatabase $dbr
 	 * @return int Number of revisions
 	 */
 	function getRevCount( $dbr ) {
