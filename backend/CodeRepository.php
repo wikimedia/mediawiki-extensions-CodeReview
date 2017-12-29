@@ -597,7 +597,7 @@ class CodeRepository {
 	public static function getDiffErrorMessage( $diff ) {
 		global $wgCodeReviewMaxDiffPaths;
 
-		if ( is_integer( $diff ) ) {
+		if ( is_int( $diff ) ) {
 			switch ( $diff ) {
 				case self::DIFFRESULT_BadRevision:
 					return 'Bad revision';

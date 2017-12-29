@@ -496,7 +496,7 @@ class CodeRevisionView extends CodeView {
 		// If there isn't anything to diff, or if it's too large, don't AJAX load
 		if ( is_string( $diff ) && strlen( $diff ) > $wgCodeReviewMaxDiffSize ) {
 			return wfMessage( 'code-rev-diff-too-large' )->escaped();
-		} elseif ( is_integer( $diff )
+		} elseif ( is_int( $diff )
 			&& in_array( $diff, [
 				CodeRepository::DIFFRESULT_NothingToCompare, CodeRepository::DIFFRESULT_TooManyPaths
 			] )

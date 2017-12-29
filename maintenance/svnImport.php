@@ -178,7 +178,7 @@ class SvnImport extends Maintenance {
 				$repo->getRevision( $row->cr_id );
 				$diff = $repo->getDiff( $row->cr_id ); // trigger caching
 				$msg = "Diff r{$row->cr_id} ";
-				if ( is_integer( $diff ) ) {
+				if ( is_int( $diff ) ) {
 					$msg .= 'Skipped: ' . CodeRepository::getDiffErrorMessage( $diff );
 				} else {
 					$msg .= 'done';
