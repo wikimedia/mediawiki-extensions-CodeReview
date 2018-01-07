@@ -161,6 +161,7 @@ class SpecialCode extends SpecialPage {
 
 	/**
 	 * Only list me on Special:SpecialPages when configured.
+	 * @return bool
 	 */
 	public function isListed() {
 		return $this->getConfig()->get( 'CodeReviewListSpecialPage' );
