@@ -84,6 +84,7 @@ class SubversionPecl extends SubversionAdaptor {
 	 * Nobody ever bothered filling in the documentation on php.net though.
 	 * The function returns a big array of a bunch of info about the repository
 	 * It throws a warning if the repository does not exist.
+	 * @return true
 	 */
 	function canConnect() {
 		// MediaWiki\suppressWarnings();
