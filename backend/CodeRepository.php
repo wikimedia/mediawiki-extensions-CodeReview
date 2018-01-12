@@ -188,11 +188,13 @@ class CodeRepository {
 	 */
 	public function getAuthorList() {
 		global $wgMemc;
-		$key = wfMemcKey( 'codereview', 'authors', $this->getId() );
+
+		$key = $wgMemc->makeKey( 'codereview', 'authors', $this->getId() );
 		$authors = $wgMemc->get( $key );
 		if ( is_array( $authors ) ) {
 			return $authors;
 		}
+
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'code_rev',
@@ -205,6 +207,7 @@ class CodeRepository {
 				'LIMIT' => 500
 			]
 		);
+
 		$authors = [];
 		foreach ( $res as $row ) {
 			if ( $row->cr_author !== null ) {
@@ -214,7 +217,9 @@ class CodeRepository {
 				];
 			}
 		}
+
 		$wgMemc->set( $key, $authors, 3600 * 24 );
+
 		return $authors;
 	}
 
@@ -232,11 +237,13 @@ class CodeRepository {
 	 */
 	public function getTagList( $recache = false ) {
 		global $wgMemc;
-		$key = wfMemcKey( 'codereview', 'tags', $this->getId() );
+
+		$key = $wgMemc->makeKey( 'codereview', 'tags', $this->getId() );
 		$tags = $wgMemc->get( $key );
 		if ( is_array( $tags ) && !$recache ) {
 			return $tags;
 		}
+
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'code_tags',
@@ -249,11 +256,14 @@ class CodeRepository {
 				'LIMIT' => 500
 			]
 		);
+
 		$tags = [];
 		foreach ( $res as $row ) {
 			$tags[$row->ct_tag] = $row->revs;
 		}
+
 		$wgMemc->set( $key, $tags, 3600 * 3 );
+
 		return $tags;
 	}
 
@@ -355,7 +365,7 @@ class CodeRepository {
 
 		// Set up the cache key, which will be used both to check if already in the
 		// cache, and to write the final result to the cache.
-		$key = wfMemcKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
+		$key = $wgMemc->makeKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
 
 		// If not set to explicitly skip the cache, get the current diff from memcached
 		// directly.

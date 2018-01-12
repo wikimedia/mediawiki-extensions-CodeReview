@@ -25,7 +25,7 @@ class RepoStats {
 	public static function newFromRepo( CodeRepository $repo ) {
 		global $wgMemc, $wgCodeReviewRepoStatsCacheTime;
 
-		$key = wfMemcKey( 'codereview1', 'stats', $repo->getName() );
+		$key = $wgMemc->makeKey( 'codereview1', 'stats', $repo->getName() );
 		$stats = $wgMemc->get( $key );
 		wfDebug( "{$repo->getName()} repo stats: cache " );
 		if ( $stats ) {
