@@ -237,5 +237,6 @@
 	"apihelp-query+coderevisions-example-2": "Obtener información de revisiones en MediaWiki",
 	"apihelp-query+codetags-description": "Obtener una lista de etiquetas aplicadas a revisiones en un repositorio determinado.",
 	"apihelp-query+codetags-param-repo": "Nombre del repositorio.",
-	"apihelp-query+codetags-example-1": "Listar etiquetas en MediaWiki"
+	"apihelp-query+codetags-example-1": "Listar etiquetas en MediaWiki",
+	"apierror-invalidrepo": "El repositorio «$1» no es válido."
 }
