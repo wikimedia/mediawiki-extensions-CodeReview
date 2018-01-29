@@ -6,7 +6,8 @@
 			"Rancher",
 			"Јованвб",
 			"Жељко Тодоровић",
-			"Михајло Анђелковић"
+			"Михајло Анђелковић",
+			"Zoranzoki21"
 		]
 	},
 	"code": "Преглед кода",
@@ -127,8 +128,8 @@
 	"codereview-batch-submit": "Пошаљи",
 	"code-releasenotes": "белешке издања",
 	"code-release-legend": "Стварање белешки издања",
-	"code-release-startrev": "Почетна ревизија:",
-	"code-release-endrev": "Последња ревизија:",
+	"code-release-startrev": "Почетна измена:",
+	"code-release-endrev": "Последња измена:",
 	"codereview-subtitle": "За $1",
 	"codereview-reply-link": "одговори",
 	"codereview-overview-title": "Преглед",
