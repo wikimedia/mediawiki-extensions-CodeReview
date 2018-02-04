@@ -14,7 +14,8 @@
 			"Cwlin0416",
 			"LNDDYL",
 			"Liuxinyu970226",
-			"Tomchen1989"
+			"Tomchen1989",
+			"Kly"
 		]
 	},
 	"code": "程式碼審查",
@@ -177,7 +178,7 @@
 	"repoadmin-edit-bug": "Bugzilla 路徑：",
 	"repoadmin-edit-view": "ViewVC 路徑：",
 	"repoadmin-edit-button": "確定",
-	"repoadmin-edit-sucess": "儲存庫 \"[[Special:Code/$1|$1]]\" 已修改成功。",
+	"repoadmin-edit-sucess": "儲存庫 \"[[Special:Code/$1|$1]]\" 已修改。",
 	"repoadmin-nav": "儲存庫管理",
 	"right-repoadmin": "管理程式碼儲存庫",
 	"right-codereview-use": "使用 Special:Code",
@@ -190,7 +191,7 @@
 	"right-codereview-associate": "管理修訂關聯",
 	"right-codereview-review-own": "將自己的修訂標記為 \"{{int:code-status-ok}}\" 或 \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "管理程式碼儲存庫",
-	"action-codereview-use": "使用 Special:Code",
+	"action-codereview-use": "使用程式碼審查",
 	"action-codereview-add-tag": "新增標籤到修訂",
 	"action-codereview-remove-tag": "從修訂中移除標籤",
 	"action-codereview-post-comment": "增加修訂的意見",
@@ -228,5 +229,6 @@
 	"apihelp-query+coderevisions-example-2": "取得 MediaWiki 的修訂資訊",
 	"apihelp-query+codetags-description": "取得已套用至指定儲存庫修訂的標籤。",
 	"apihelp-query+codetags-param-repo": "儲存庫名稱。",
-	"apihelp-query+codetags-example-1": "MediaWiki 的標籤清單"
+	"apihelp-query+codetags-example-1": "MediaWiki 的標籤清單",
+	"apierror-invalidrepo": "無效儲存庫「$1」。"
 }
