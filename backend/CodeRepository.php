@@ -567,11 +567,11 @@ class CodeRepository {
 			$user = User::newFromName( $wikiUser );
 		}
 		if ( $user instanceof User ) {
-			$res = $user;
+			self::$userLinks[$author] = $user;
 		} else {
-			$res = false;
+			self::$userLinks[$author] = false;
 		}
-		return self::$userLinks[$author] = $res;
+		return self::$userLinks[$author];
 	}
 
 	/**
@@ -587,7 +587,7 @@ class CodeRepository {
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
-		$res = $dbr->selectField(
+		self::$authorLinks[$name] = $dbr->selectField(
 			'code_authors',
 			'ca_author',
 			[
@@ -596,7 +596,7 @@ class CodeRepository {
 			],
 			__METHOD__
 		);
-		return self::$authorLinks[$name] = $res;
+		return self::$authorLinks[$name];
 	}
 
 	/**
