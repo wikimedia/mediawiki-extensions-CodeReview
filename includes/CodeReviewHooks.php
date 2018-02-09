@@ -32,7 +32,7 @@ class CodeReviewHooks {
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
-		$base = __DIR__;
+		$base = __DIR__ . '/..';
 		switch ( $updater->getDB()->getType() ) {
 		case 'mysql':
 			// Initial install tables
