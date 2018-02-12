@@ -123,11 +123,11 @@ class SubversionPecl extends SubversionAdaptor {
 	}
 
 	function getLog( $path, $startRev = null, $endRev = null ) {
-		MediaWiki\suppressWarnings();
+		Wikimedia\suppressWarnings();
 		$log = svn_log( $this->mRepoPath . $path,
 			$this->_rev( $startRev, SVN_REVISION_INITIAL ),
 			$this->_rev( $endRev, SVN_REVISION_HEAD ) );
-		MediaWiki\restoreWarnings();
+		Wikimedia\restoreWarnings();
 		return $log;
 	}
 }
