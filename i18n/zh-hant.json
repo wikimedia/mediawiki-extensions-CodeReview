@@ -146,7 +146,7 @@
 	"code-release-endrev": "最終修訂：",
 	"codereview-subtitle": "於 $1",
 	"codereview-reply-link": "回覆",
-	"codereview-overview-title": "概況",
+	"codereview-overview-title": "概要",
 	"codereview-overview-desc": "以圖形化方式顯示此清單概況",
 	"codereview-email-subj": "[$1 $2]：已增加新的意見",
 	"codereview-email-body": "\"$1\" 發佈了一則 $3 的意見。\nURL：$2\n\n提交摘要：\n\n$5\n\n$1 的意見：\n\n$4",
