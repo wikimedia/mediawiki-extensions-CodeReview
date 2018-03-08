@@ -29,35 +29,22 @@ class ApiQueryCodeComments extends ApiQueryBase {
 	}
 
 	public function execute() {
-		// Before doing anything at all, let's check permissions
-		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
-			$this->checkUserRightsAny( 'codereview-use' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
-				$this->dieUsage( 'You don\'t have permission to view code comments', 'permissiondenied' );
-			}
-		}
+		$this->checkUserRightsAny( 'codereview-use' );
+
 		$params = $this->extractRequestParams();
 
 		$this->props = array_flip( $params['prop'] );
 		if ( isset( $this->props['revision'] ) ) {
-			if ( is_callable( [ $this, 'addDeprecation' ] ) ) {
-				$this->addDeprecation(
-					[ 'apiwarn-deprecation-withreplacement', 'ccprop=revision', 'ccprop=status' ],
-					'action=query&list=codecomments&ccprop=revision'
-				);
-			} else {
-				$this->setWarning( 'ccprop=revision has been deprecated in favor of ccprop=status' );
-			}
+			$this->addDeprecation(
+				[ 'apiwarn-deprecation-withreplacement', 'ccprop=revision', 'ccprop=status' ],
+				'action=query&list=codecomments&ccprop=revision'
+			);
 		}
 
 		$listview = new CodeCommentsListView( $params['repo'] );
 		if ( is_null( $listview->getRepo() ) ) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
-			} else {
-				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
-			}
+			$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
+
 		}
 		$pager = $listview->getPager();
 

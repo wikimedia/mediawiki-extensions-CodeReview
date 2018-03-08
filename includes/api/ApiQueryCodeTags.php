@@ -25,23 +25,13 @@ class ApiQueryCodeTags extends ApiQueryBase {
 	}
 
 	public function execute() {
-		// Before doing anything at all, let's check permissions
-		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
-			$this->checkUserRightsAny( 'codereview-use' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
-				$this->dieUsage( 'You don\'t have permission to view code tags', 'permissiondenied' );
-			}
-		}
+		$this->checkUserRightsAny( 'codereview-use' );
+
 		$params = $this->extractRequestParams();
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo instanceof CodeRepository ) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
-			} else {
-				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
-			}
+			$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 		}
 
 		$data = [];

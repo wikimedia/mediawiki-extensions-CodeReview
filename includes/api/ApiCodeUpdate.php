@@ -21,23 +21,13 @@
 class ApiCodeUpdate extends ApiBase {
 
 	public function execute() {
-		// Before doing anything at all, let's check permissions
-		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
-			$this->checkUserRightsAny( 'codereview-use' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
-				$this->dieUsage( 'You don\'t have permission to update code', 'permissiondenied' );
-			}
-		}
+		$this->checkUserRightsAny( 'codereview-use' );
+
 		$params = $this->extractRequestParams();
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
-			} else {
-				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
-			}
+			$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 		}
 
 		$svn = SubversionAdaptor::newFromRepo( $repo->getPath() );
@@ -54,7 +44,7 @@ class ApiCodeUpdate extends ApiBase {
 		$log = $svn->getLog( '', $lastStoredRev + 1, $params['rev'] );
 		if ( !$log ) {
 			// FIXME: When and how often does this happen?
-			// Should we use dieUsage() here instead?
+			// Should we use dieWithError() here instead?
 			ApiBase::dieDebug( __METHOD__, 'Something awry...' );
 		}
 
