@@ -73,7 +73,7 @@
 	"code-status-reverted": "გაუქმებულია",
 	"code-status-resolved": "მოგვარებულია",
 	"code-status-desc-resolved": "ვერსიას ჰქონდა პრობლემა, რომელიც შემდგომ ვერსიაში გამოსწორდა.",
-	"code-status-ok": "ok",
+	"code-status-ok": "კარგი",
 	"code-status-deferred": "გადატანილია",
 	"code-status-old": "ძველი",
 	"code-signoffs": "დადასტურებები",
