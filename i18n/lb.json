@@ -13,7 +13,7 @@
 	"code-change-status": "huet de \"Statut\" vun $1 geännert",
 	"code-change-tags": "huet '''Taggen''' fir $1 geännert",
 	"code-change-removed": "ewech geholl:",
-	"code-change-added": "dobäi gesat:",
+	"code-change-added": "derbäigesat:",
 	"code-old-status": "Ale Status",
 	"code-new-status": "Neie Status",
 	"code-prop-changes": "Logbuch vum Status an den Taggen",
