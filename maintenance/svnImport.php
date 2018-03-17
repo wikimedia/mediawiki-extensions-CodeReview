@@ -193,4 +193,4 @@ class SvnImport extends Maintenance {
 }
 
 $maintClass = 'SvnImport';
-require_once DO_MAINTENANCE;
+require_once RUN_MAINTENANCE_IF_MAIN;

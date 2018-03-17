@@ -86,4 +86,4 @@ class BulkStatusUpdate extends Maintenance {
 }
 
 $maintClass = 'BulkStatusUpdate';
-require_once DO_MAINTENANCE;
+require_once RUN_MAINTENANCE_IF_MAIN;

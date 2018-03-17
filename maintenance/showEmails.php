@@ -107,4 +107,4 @@ You missed a lot of points there and need to revert or fix your code
 }
 
 $maintClass = 'CodeReviewShowEmails';
-require_once DO_MAINTENANCE;
+require_once RUN_MAINTENANCE_IF_MAIN;
