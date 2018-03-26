@@ -22,33 +22,19 @@ class ApiCodeDiff extends ApiBase {
 	public function execute() {
 		global $wgCodeReviewMaxDiffSize;
 
-		// Before doing anything at all, let's check permissions
-		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
-			$this->checkUserRightsAny( 'codereview-use' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'codereview-use' ) ) {
-				$this->dieUsage( 'You don\'t have permission to view code diffs', 'permissiondenied' );
-			}
-		}
+		$this->checkUserRightsAny( 'codereview-use' );
+
 		$params = $this->extractRequestParams();
 
 		$repo = CodeRepository::newFromName( $params['repo'] );
 		if ( !$repo ) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
-			} else {
-				$this->dieUsage( "Invalid repo ``{$params['repo']}''", 'invalidrepo' );
-			}
+			$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 		}
 
 		$lastStoredRev = $repo->getLastStoredRev();
 
 		if ( $params['rev'] > $lastStoredRev ) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( [ 'apierror-nosuchrevid', $params['rev'] ] );
-			} else {
-				$this->dieUsage( "There is no revision with ID {$params['rev']}", 'nosuchrev' );
-			}
+			$this->dieWithError( [ 'apierror-nosuchrevid', $params['rev'] ] );
 		}
 
 		$diff = $repo->getDiff( $params['rev'] );
