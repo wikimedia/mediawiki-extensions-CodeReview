@@ -172,22 +172,41 @@ class RepoAdminRepoView {
 				[ 'repoadmin-edit-sucess', $this->repoName ] );
 			return;
 		}
-		$wgOut->addHTML(
-			Xml::fieldset( wfMessage( 'repoadmin-edit-legend', $this->repoName )->text() ) .
-			Xml::openElement(
-				'form', [ 'method' => 'post', 'action' => $this->title->getLocalURL() ]
-			) .
-			Xml::buildForm(
-				[
-					'repoadmin-edit-path' =>
-						Xml::input( 'wpRepoPath', 60, $repoPath, [ 'dir' => 'ltr' ] ),
-					'repoadmin-edit-bug' =>
-						Xml::input( 'wpBugPath', 60, $bugPath, [ 'dir' => 'ltr' ] ),
-					'repoadmin-edit-view' =>
-						Xml::input( 'wpViewPath', 60, $viewPath, [ 'dir' => 'ltr' ] ) ] ) .
-			Html::hidden( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) ) .
-			Xml::submitButton( wfMessage( 'repoadmin-edit-button' )->text() ) .
-			'</form></fieldset>'
-		);
+		$formDescriptor = [
+			'repoadmin-edit-path' => [
+				'type' => 'text',
+				'name' => 'wpRepoPath',
+				'size' => 60,
+				'default' => $repoPath,
+				'dir' => 'ltr',
+				'label-message' => 'repoadmin-edit-path'
+			],
+			'repoadmin-edit-bug' => [
+				'type' => 'text',
+				'name' => 'wpBugPath',
+				'size' => 60,
+				'default' => $bugPath,
+				'dir' => 'ltr',
+				'label-message' => 'repoadmin-edit-bug'
+			],
+			'repoadmin-edit-view' => [
+				'type' => 'text',
+				'name' => 'wpViewPath',
+				'size' => 60,
+				'default' => $viewPath,
+				'dir' => 'ltr',
+				'label-message' => 'repoadmin-edit-view'
+			]
+		];
+
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
+		$htmlForm
+			->addHiddenField( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) )
+			->setAction( $this->title->getLocalURL() )
+			->setMethod( 'post' )
+			->setSubmitTextMsg( 'repoadmin-edit-button' )
+			->setWrapperLegend( wfMessage( 'repoadmin-edit-legend', $this->repoName )->text() )
+			->prepareForm()
+			->displayForm( false );
 	}
 }
