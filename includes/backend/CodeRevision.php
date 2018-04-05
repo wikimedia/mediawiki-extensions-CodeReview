@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\Rdbms\ResultWrapper;
+
 class CodeRevision {
 	/**
 	 * Regex to match bug mentions in comments, commit summaries, etc
