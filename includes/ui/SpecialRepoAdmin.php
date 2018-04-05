@@ -76,18 +76,33 @@ class RepoAdminListView {
 	 * @return string
 	 */
 	private function getForm() {
-		global $wgScript;
-		return Xml::fieldset( wfMessage( 'repoadmin-new-legend' )->text() ) .
-			Xml::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] ) .
-			Html::hidden( 'title', $this->title->getPrefixedDBKey() ) .
-			Xml::inputLabel( wfMessage( 'repoadmin-new-label' )->text(), 'repo', 'repo' ) .
-			Xml::submitButton( wfMessage( 'repoadmin-new-button' )->text() ) .
-			'</form></fieldset>';
+		global $wgScript, $wgOut;
+
+		$formDescriptor = [
+			'repoadmin-label' => [
+				'type' => 'text',
+				'name' => 'repo',
+				'label-message' => 'repoadmin-new-label',
+				'id' => 'repo'
+			]
+		];
+
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
+		$htmlForm
+			->addHiddenField( 'title', $this->title->getPrefixedDBKey() )
+			->setAction( $wgScript )
+			->setMethod( 'get' )
+			->setSubmitTextMsg( 'repoadmin-new-button' )
+			->setWrapperLegendMsg( 'repoadmin-new-legend' )
+			->prepareForm()
+			->displayForm( false );
+
+		return true;
 	}
 
 	public function execute() {
 		global $wgOut;
-		$wgOut->addHTML( $this->getForm() );
+		$this->getForm();
 		$repos = CodeRepository::getRepoList();
 		if ( !count( $repos ) ) {
 			return;
