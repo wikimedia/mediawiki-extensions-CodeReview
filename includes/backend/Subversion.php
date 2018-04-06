@@ -37,20 +37,6 @@ abstract class SubversionAdaptor {
 
 	abstract function getDirList( $path, $rev = null );
 
-	/*
-	  array of array(
-		'rev' => 123,
-		'author' => 'myname',
-		'msg' => 'log message'
-		'date' => '8601 date',
-		'paths' => array(
-			array(
-				'action' => one of M, A, D, R
-				'path' => repo URL of file,
-			),
-			...
-		)
-	  */
 	abstract function getLog( $path, $startRev = null, $endRev = null );
 
 	protected function _rev( $rev, $default ) {

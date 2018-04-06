@@ -134,7 +134,6 @@ class CodeDiffHighlighter {
 		);
 	}
 
-	#### LINES HANDLERS ################################################
 	function handleLineDeletion( $line ) {
 		$this->left++;
 		return $this->formatLine( $line, 'del' );
@@ -171,7 +170,6 @@ class CodeDiffHighlighter {
 			Html::Element( 'td', [ 'colspan' => 3 ], $line )
 		);
 	}
-	#### END OF LINES HANDLERS #########################################
 
 	function getLineIdAttr() {
 		return [ 'id' => $this->lineNumber ];

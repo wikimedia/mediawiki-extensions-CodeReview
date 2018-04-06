@@ -1,7 +1,8 @@
 <?php
 
-// Special:Code/MediaWiki/author/johndoe/link
-
+/**
+ * Special:Code/MediaWiki/author/johndoe/link
+ */
 class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	function __construct( $repo, $author ) {
 		global $wgRequest;

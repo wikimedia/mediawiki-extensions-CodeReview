@@ -73,7 +73,7 @@ class SpecialCode extends SpecialPage {
 	/**
 	 * Get a view object from a sub page path.
 	 * @param string $subpage
-	 * @return CodeView|null - Null if no valid action could be found
+	 * @return CodeView|CodeRepoListView|null - Null if no valid action could be found
 	 */
 	private function getViewFrom( $subpage ) {
 		// Defines the classes to use for each view type.

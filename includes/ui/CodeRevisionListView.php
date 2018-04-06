@@ -1,6 +1,8 @@
 <?php
 
-// Special:Code/MediaWiki
+/**
+ * Special:Code/MediaWiki
+ */
 class CodeRevisionListView extends CodeView {
 	/**
 	 * @var CodeRepository
@@ -9,7 +11,7 @@ class CodeRevisionListView extends CodeView {
 	public $mPath, $batchForm;
 
 	/**
-	 * @var
+	 * @var string[]
 	 */
 	protected $filters = [];
 
@@ -270,9 +272,6 @@ class CodeRevisionListView extends CodeView {
 		return $ret;
 	}
 
-	/**
-	 * @return SvnRevTablePager
-	 */
 	function getPager() {
 		return new SvnRevTablePager( $this );
 	}
@@ -305,7 +304,9 @@ class CodeRevisionListView extends CodeView {
 	}
 }
 
-// Pager for CodeRevisionListView
+/**
+ * Pager for CodeRevisionListView
+ */
 class SvnRevTablePager extends SvnTablePager {
 	function getSVNPath() {
 		return $this->mView->mPath;

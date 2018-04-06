@@ -1,6 +1,8 @@
 <?php
 
-// Special:Code/MediaWiki/author
+/**
+ * Special:Code/MediaWiki/author
+ */
 class CodeAuthorListView extends CodeView {
 	function __construct( $repo ) {
 		parent::__construct( $repo );

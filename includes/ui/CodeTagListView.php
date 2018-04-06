@@ -1,6 +1,8 @@
 <?php
 
-// Special:Code/MediaWiki/tag
+/**
+ * Special:Code/MediaWiki/tag
+ */
 class CodeTagListView extends CodeView {
 	function __construct( $repo ) {
 		parent::__construct( $repo );
