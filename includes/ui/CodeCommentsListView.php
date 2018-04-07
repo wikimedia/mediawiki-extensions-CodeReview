@@ -1,13 +1,17 @@
 <?php
 
-// Special:Code/MediaWiki/comments
+/**
+ * Special:Code/MediaWiki/comments
+ */
 class CodeCommentsListView extends CodeRevisionListView {
 	function getPager() {
 		return new CodeCommentsTablePager( $this );
 	}
 }
 
-// Pager for CodeCommentsListView
+/**
+ * Pager for CodeCommentsListView
+ */
 class CodeCommentsTablePager extends SvnTablePager {
 	function isFieldSortable( $field ) {
 		return $field == 'cr_timestamp';

@@ -1,6 +1,8 @@
 <?php
 
-// Special:Code/MediaWiki/stats
+/**
+ * Special:Code/MediaWiki/stats
+ */
 class CodeRepoStatsView extends CodeView {
 	function __construct( $repo ) {
 		parent::__construct( $repo );

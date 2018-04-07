@@ -1,6 +1,8 @@
 <?php
 
-// Special:Code/MediaWiki/40696
+/**
+ * Special:Code/MediaWiki/40696
+ */
 class CodeRevisionView extends CodeView {
 	protected $showButtonsFormatReference = false, $showButtonsFormatSignoffs = false;
 	protected $referenceInputName = '';

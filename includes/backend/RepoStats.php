@@ -9,7 +9,6 @@ class RepoStats {
 
 	public $time;
 
-	// Statistics
 	public $revisions,
 		$authors,
 		$states,

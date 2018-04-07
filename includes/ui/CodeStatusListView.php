@@ -1,6 +1,8 @@
 <?php
 
-// Special:Code/MediaWiki/status
+/**
+ * Special:Code/MediaWiki/status
+ */
 class CodeStatusListView extends CodeView {
 	function __construct( $repo ) {
 		parent::__construct( $repo );

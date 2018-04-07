@@ -141,7 +141,11 @@ abstract class SvnTablePager extends TablePager {
 		return $this->formatValue( $name, $value );
 	}
 
-	// Note: this function is poorly factored in the parent class
+	/**
+	 * @note this function is poorly factored in the parent class
+	 * @param stdClass $row
+	 * @return string
+	 */
 	function formatRow( $row ) {
 		$css = "mw-codereview-status-{$row->cr_status}";
 		$s = "<tr class=\"$css\">\n";

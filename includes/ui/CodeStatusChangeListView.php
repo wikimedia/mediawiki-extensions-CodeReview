@@ -1,6 +1,8 @@
 <?php
 
-// Special:Code/MediaWiki
+/**
+ * Special:Code/MediaWiki
+ */
 class CodeStatusChangeListView extends CodeRevisionListView {
 	function getPager() {
 		return new CodeStatusChangeTablePager( $this );
@@ -11,7 +13,9 @@ class CodeStatusChangeListView extends CodeRevisionListView {
 	}
 }
 
-// Pager for CodeRevisionListView
+/**
+ * Pager for CodeRevisionListView
+ */
 class CodeStatusChangeTablePager extends SvnTablePager {
 
 	function isFieldSortable( $field ) {
