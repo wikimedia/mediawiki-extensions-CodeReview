@@ -134,7 +134,7 @@
 	"code-revfilter-cr_status": "状态 = $1",
 	"code-revfilter-cr_author": "作者= $1",
 	"code-revfilter-ct_tag": "标签 = $1",
-	"code-revfilter-clear": "清除筛选器",
+	"code-revfilter-clear": "清除过滤器",
 	"code-rev-submit": "保存更改",
 	"code-rev-submit-next": "保存，并处理下一条",
 	"code-rev-next": "下一条未解决",

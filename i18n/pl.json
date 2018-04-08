@@ -9,7 +9,8 @@
 			"Olgak85",
 			"Sp5uhe",
 			"Woytecr",
-			"Chrumps"
+			"Chrumps",
+			"Railfail536"
 		]
 	},
 	"code": "Podgląd kodu",
@@ -172,7 +173,7 @@
 	"repoadmin-edit-bug": "Ścieżka URL do Bugzilli",
 	"repoadmin-edit-view": "Ścieżka URL do ViewVC",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "Repozytorium „[[Special:Code/$1|$1]]” zostało pomyślnie zmodyfikowane.",
+	"repoadmin-edit-sucess": "Repozytorium „[[Special:Code/$1|$1]]” zostało zmodyfikowane.",
 	"repoadmin-nav": "administrowanie repozytorium",
 	"right-repoadmin": "Zarządzanie repozytoriami z kodami źródłowymi",
 	"right-codereview-use": "Korzystanie ze Special:Code",
