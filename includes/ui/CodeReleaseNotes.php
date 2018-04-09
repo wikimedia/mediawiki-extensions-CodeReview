@@ -30,22 +30,42 @@ class CodeReleaseNotes extends CodeView {
 	protected function showForm() {
 		global $wgOut, $wgScript;
 		$special = SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/releasenotes' );
-		$wgOut->addHTML(
-			Xml::openElement( 'form', [ 'action' => $wgScript, 'method' => 'get' ] ) .
-			'<fieldset><legend>' . wfMessage( 'code-release-legend' )->escaped() . '</legend>' .
-				Html::hidden( 'title', $special->getPrefixedDBkey() ) . '<b>' .
-				Xml::inputLabel( wfMessage( 'code-release-startrev' )->text(), 'startrev',
-					'startrev', 10, $this->mStartRev ) .
-				'</b>&#160;' .
-				Xml::inputLabel( wfMessage( 'code-release-endrev' )->text(), 'endrev', 'endrev', 10,
-					$this->mEndRev ) .
-				'&#160;' .
-				Xml::inputLabel( wfMessage( 'code-pathsearch-path' )->text(), 'path', 'path', 45,
-					$this->mPath ) .
-				'&#160;' .
-				Xml::submitButton( wfMessage( 'allpagessubmit' )->text() ) . "\n" .
-			'</fieldset>' . Xml::closeElement( 'form' )
-		);
+		$formDescriptor = [
+			'textbox1' => [
+				'type' => 'text',
+				'name' => 'startrev',
+				'id' => 'startrev',
+				'label' => wfMessage( 'code-release-startrev' )->text(),
+				'size' => 10,
+				'value' => $this->mStartRev
+			],
+			'textbox2' => [
+				'type' => 'text',
+				'name' => 'endrev',
+				'id' => 'endrev',
+				'label' => wfMessage( 'code-release-endrev' )->text(),
+				'size' => 10,
+				'value' => $this->mEndRev
+			],
+			'textbox3' => [
+				'type' => 'text',
+				'name' => 'path',
+				'id' => 'path',
+				'label' => wfMessage( 'code-pathsearch-path' )->text(),
+				'size' => 45,
+				'value' => $this->mPath
+			]
+		];
+
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
+		$htmlForm
+			->addHiddenField( 'title', $special->getPrefixedDBkey() )
+			->setMethod( 'get' )
+			->setAction( $wgScript )
+			->setSubmitText( wfMessage( 'allpagessubmit' )->text() )
+			->setWrapperLegend( wfMessage( 'code-release-legend' )->escaped() )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	protected function showReleaseNotes() {
