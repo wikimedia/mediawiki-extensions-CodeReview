@@ -11,6 +11,7 @@
 	"code-old-status": "Anciena stando",
 	"code-new-status": "Nova stando",
 	"code-authors": "autori",
+	"code-tags": "etiketi",
 	"code-tags-no-tags": "Nula etiketi existas en ica depozeyo.",
 	"code-author-link": "ligar?",
 	"code-author-unlink": "desligar?",
@@ -32,6 +33,7 @@
 	"code-revfilter-cr_status": "Stando = $1",
 	"code-revfilter-cr_author": "Autoro = $1",
 	"codereview-batch-submit": "Sendez",
+	"codereview-overview-desc": "Montrez grafikala rezumo di ica listo",
 	"codereview-email-subj": "[$1 $2]: Nova komento adjuntita",
 	"repoadmin-edit-button": "O.K."
 }
