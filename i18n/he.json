@@ -9,7 +9,7 @@
 		]
 	},
 	"code": "סקירת קוד",
-	"code-rev-title": "גרסה $1 – סקירת קוד",
+	"code-rev-title": "$1 – סקירת קוד",
 	"code-comments": "הערות",
 	"code-references": "גרסאות המשך",
 	"code-referenced": "גרסאות קודמות שגרסה זו ממשיכה",
@@ -22,7 +22,7 @@
 	"code-prop-changes": "יומן מצבים ותיוג",
 	"codereview-desc": "[[Special:Code|כלי סקירת קוד]] עם [[Special:RepoAdmin|תמיכה ב־Subversion]]",
 	"code-no-repo": "לא הוגדר מאגר!",
-	"code-create-repo": "עִברו לדף [[Special:RepoAdmin|RepoAdmin]] ליצירת מאגר",
+	"code-create-repo": "יש לעבור לדף [[Special:RepoAdmin|RepoAdmin]] ליצירת מאגר",
 	"code-need-repoadmin-rights": "נחוצה הרשאת \"מנהל מאגר\" כדי ליצור מאגר",
 	"code-need-group-with-rights": "אין שום קבוצה עם הרשאת מנהל מאגר. נא ליצור קבוצה כזו כדי להוסיף מאגר חדש.",
 	"code-repo-not-found": "המאגר '''$1''' לא קיים!",
