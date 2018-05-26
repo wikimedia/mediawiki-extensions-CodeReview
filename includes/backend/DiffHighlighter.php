@@ -89,7 +89,7 @@ class CodeDiffHighlighter {
 
 	/**
 	 * @param string $content
-	 * @param string $class
+	 * @param string|null $class
 	 * @return string
 	 */
 	function formatLine( $content, $class = null ) {

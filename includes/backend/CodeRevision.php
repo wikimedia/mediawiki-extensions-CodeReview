@@ -179,7 +179,7 @@ class CodeRevision {
 	 * confusing (e.g. in emails, page titles etc.). If only one repository is
 	 * defined then this returns the same as getIdString() as there is no ambiguity.
 	 *
-	 * @param int $id
+	 * @param int|null $id
 	 * @return string
 	 */
 	public function getIdStringUnique( $id = null ) {
@@ -1164,7 +1164,7 @@ class CodeRevision {
 	/**
 	 * @param array $addTags
 	 * @param array $removeTags
-	 * @param User $user
+	 * @param User|null $user
 	 */
 	public function changeTags( $addTags, $removeTags, $user = null ) {
 		// Get the current tags and see what changes
