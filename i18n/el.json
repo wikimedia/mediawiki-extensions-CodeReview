@@ -8,7 +8,8 @@
 			"Omnipaedista",
 			"Protnet",
 			"ZaDiak",
-			"Απεργός"
+			"Απεργός",
+			"Nikosgranturismogt"
 		]
 	},
 	"code": "Επιθεώρηση του κώδικα",
@@ -150,8 +151,10 @@
 	"code-stats-header": "Στατιστικά για το αποθηκευτήριο $1",
 	"code-stats-main": "Από τις $1, το αποθηκευτήριο περιέχει $2 {{PLURAL:$2|αναθεώρηση|αναθεωρήσεις}} από [[Special:Code/$3/author|$4 {{PLURAL:$4|συγγραφέα|συγγραφείς}}]].",
 	"code-stats-status-breakdown": "Αριθμός αναθεωρήσεων ανά κατάσταση",
+	"code-stats-fixme-path": "Θεωρήσεις Fixme για τη διαδρομή: $1",
 	"code-stats-new-breakdown": "Κατανομή των νέων αναθεωρήσεων ανά συγγραφέα",
 	"code-stats-new-breakdown-path": "Κατανομή νέων αναθεωρήσεων ανά διαδρομή",
+	"code-stats-new-path": "Νέες θεωρήσεις για τη διαδρομή: $1",
 	"code-stats-count": "Αριθμός αναθεωρήσεων",
 	"code-tooltip-withsummary": "r$1 [$2] σπό $3 - $4",
 	"code-tooltip-withoutsummary": "r$1 [$2] σπό $3",
@@ -164,7 +167,7 @@
 	"repoadmin-edit-bug": "Διαδρομή Bugzilla:",
 	"repoadmin-edit-view": "Διαδρομή ViewVC:",
 	"repoadmin-edit-button": "Εντάξει",
-	"repoadmin-edit-sucess": "Το αποθηκευτήριο \"[[Special:Code/$1|$1]]\" τροποποιήθηκε επιτυχώς.",
+	"repoadmin-edit-sucess": "Το αποθηκευτήριο \"[[Special:Code/$1|$1]]\" τροποποιήθηκε.",
 	"repoadmin-nav": "Διαχείριση του αποθηκευτηρίου",
 	"right-repoadmin": "Διαχείριση αποθηκευτηρίων κώδικα",
 	"right-codereview-use": "Χρήση του Special:Code",
@@ -176,9 +179,16 @@
 	"right-codereview-link-user": "Σύνδεση συγγραφέων με χρήστες wiki",
 	"right-codereview-associate": "Διαχειριστείτε τους συνδέσμους αναθεώρησης",
 	"action-repoadmin": "διαχείριση αποθετηρίων κώδικα",
-	"action-codereview-use": "χρήση του Ειδικό:Κώδικας",
+	"action-codereview-use": "χρησιμοποιήστε το CodeReview",
 	"action-codereview-add-tag": "προσθήκη νέων ετικετών σε αναθεωρήσεις",
 	"action-codereview-remove-tag": "απομάκρυνση ετικετών από αναθεωρήσεις",
 	"action-codereview-post-comment": "προσθήκη σχολίων σε αναθεωρήσεις",
-	"action-codereview-set-status": "αλλαγή κατάστασης αναθεωρήσεων"
+	"action-codereview-set-status": "αλλαγή κατάστασης αναθεωρήσεων",
+	"apihelp-coderevisionupdate-param-repo": "Όνομα του αποθηκευτηρίου",
+	"apihelp-query+codecomments-param-repo": "Όνομα του αποθηκευτηρίου.",
+	"apihelp-query+codecomments-param-limit": "Πόσα σχόλια να επιστραφούν.",
+	"apihelp-query+coderevisions-param-repo": "Όνομα του αποθηκευτηρίου.",
+	"apihelp-query+coderevisions-param-limit": "Πόσες αναθεωρήσεις να επιστραφούν.",
+	"apihelp-query+coderevisions-param-prop": "Ποιες ιδιότητες να επιστραφούν.",
+	"apihelp-query+codetags-param-repo": "Όνομα του αποθηκευτηρίου."
 }
