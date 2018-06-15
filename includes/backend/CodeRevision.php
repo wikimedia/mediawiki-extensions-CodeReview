@@ -1408,7 +1408,7 @@ class CodeRevision {
 			$this->repo->getName(),
 			$this->getIdString(),
 			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgUser->getName() ),
-			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgLang->truncate( $text, 100 ) ),
+			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgLang->truncateForVisual( $text, 100 ) ),
 			$url
 		);
 

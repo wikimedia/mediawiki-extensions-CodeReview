@@ -475,7 +475,7 @@ class SvnRevTablePager extends SvnTablePager {
 			return Xml::openElement( 'div', [ 'title' => (string)$value, 'dir' => 'ltr' ] ) .
 					$linkRenderer->makeLink(
 						SpecialPage::getTitleFor( 'Code', $title ),
-						$this->getLanguage()->truncate( (string)$value, 50 ),
+						$this->getLanguage()->truncateForVisual( (string)$value, 50 ),
 						[ 'title' => (string)$value ],
 						$options
 					) . '</div>';
