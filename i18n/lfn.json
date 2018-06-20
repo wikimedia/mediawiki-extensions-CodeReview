@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Malafaya"
+			"Malafaya",
+			"Mafcadio"
 		]
 	},
 	"code-authors": "autores",
+	"code-author-link": "lia?",
 	"code-field-author": "Autor",
 	"code-rev-author": "Autor:",
 	"repoadmin-new-button": "Crea",
