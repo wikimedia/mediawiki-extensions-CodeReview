@@ -452,7 +452,7 @@ class CodeRepository {
 		$svn = SubversionAdaptor::newFromRepo( $this->path );
 		$data = $svn->getDiff( '', $rev1, $rev2 );
 		// Store to cache
-		$key = wfMemcKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
+		$key = $wgMemc->makeKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
 		$wgMemc->set( $key, $data, 3600 * 24 * 3 );
 		// Permanent DB storage
 		$storedData = $data;
