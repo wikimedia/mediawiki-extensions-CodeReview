@@ -7,11 +7,12 @@
 			"Јованвб",
 			"Жељко Тодоровић",
 			"Михајло Анђелковић",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"BadDog"
 		]
 	},
-	"code": "Преглед кода",
-	"code-rev-title": "$1 – преглед кода",
+	"code": "Преглед кôда",
+	"code-rev-title": "$1 – преглед кôда",
 	"code-comments": "Коментари",
 	"code-references": "Накнадне измене",
 	"code-change-status": "променио '''статус''' за $1",
@@ -21,7 +22,7 @@
 	"code-old-status": "Стари статус",
 	"code-new-status": "Нови статус",
 	"code-prop-changes": "Историја статуса и ознака",
-	"codereview-desc": "[[Special:Code|Алатка за преглед кода]] с [[Special:RepoAdmin|подршком за Субверзију]]",
+	"codereview-desc": "[[Special:Code|Алатка за преглед кôда]] с [[Special:RepoAdmin|подршком за Субверзију]]",
 	"code-no-repo": "Ризница није подешена.",
 	"code-create-repo": "Идите на [[Special:RepoAdmin|RepoAdmin]] да направите ризницу",
 	"code-need-repoadmin-rights": "да бисте направили ризницу, потребна су вам администраторска права",
@@ -150,7 +151,7 @@
 	"repoadmin-edit-button": "У реду",
 	"repoadmin-edit-sucess": "Остава „[[Special:Code/$1|$1]]“ је успешно измењена.",
 	"repoadmin-nav": "администрација оставе",
-	"right-repoadmin": "управљање кодом остава",
+	"right-repoadmin": "управљање кôдом остава",
 	"right-codereview-use": "Коришћење Special:Code",
 	"right-codereview-add-tag": "додавање нових ознака на измене",
 	"right-codereview-remove-tag": "брисање ознака из измена",
