@@ -102,7 +102,12 @@
 			"dependencies": "jquery.spinner"
 		},
 		"ext.codereview.tooltips": {
+			"class": "CodeReviewTooltipsModule",
 			"scripts": "ext.codereview.tooltips.js",
+			"messages": [
+				"code-tooltip-withsummary",
+				"code-tooltip-withoutsummary"
+			],
 			"dependencies": "jquery.tipsy"
 		},
 		"ext.codereview.overview": {
@@ -155,9 +160,6 @@
 		"Code": "SpecialCode",
 		"RepoAdmin": "SpecialRepoAdmin"
 	},
-	"ExtensionFunctions": [
-		"CodeReviewHooks::onExtensionFunctions"
-	],
 	"AutoloadClasses": {
 		"ApiCodeUpdate": "includes/api/ApiCodeUpdate.php",
 		"ApiCodeDiff": "includes/api/ApiCodeDiff.php",
@@ -211,7 +213,8 @@
 		"SvnRevStatusTablePager": "includes/ui/CodeRevisionStatusView.php",
 		"SvnRevTagTablePager": "includes/ui/CodeRevisionTagView.php",
 		"CodeStatusChangeTablePager": "includes/ui/CodeStatusChangeListView.php",
-		"CodeReviewHooks": "includes/CodeReviewHooks.php"
+		"CodeReviewHooks": "includes/CodeReviewHooks.php",
+		"CodeReviewTooltipsModule": "includes/CodeReviewTooltipsModule.php"
 	},
 	"manifest_version": 1
 }

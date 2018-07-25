@@ -8,19 +8,6 @@
 class CodeReviewHooks {
 
 	/**
-	 * Add state messages to RL
-	 * @todo this should use a custom ResourceLoaderModule class instead
-	 */
-	public static function onExtensionFunctions() {
-		global $wgResourceModules;
-
-		$wgResourceModules['ext.codereview.tooltips']['messages'] = array_merge(
-			CodeRevision::getPossibleStateMessageKeys(),
-			[ 'code-tooltip-withsummary', 'code-tooltip-withoutsummary' ]
-		);
-	}
-
-	/**
 	 * Performs database updates (initial table creation on first install,
 	 * addition of new tables/fields/indexes for old installs that are being
 	 * upgraded) when the user runs the core MediaWiki updater script,
