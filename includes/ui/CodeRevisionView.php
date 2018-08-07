@@ -584,13 +584,10 @@ class CodeRevisionView extends CodeView {
 		global $wgOut;
 		$encRepo = Xml::encodeJsVar( $this->mRepo->getName() );
 		$encRev = Xml::encodeJsVar( $this->mRev->getId() );
-		$wgOut->addHTML( ResourceLoader::makeInlineScript(
-			"mw.loader.using( 'ext.codereview.loaddiff',
-				function() {
-					CodeReview.loadDiff($encRepo,$encRev);
-				}
-			);"
-		) );
+		$wgOut->addHTML( Html::inlineScript( ResourceLoader::makeInlineCodeWithModule(
+			'ext.codereview.loaddiff',
+			"CodeReview.loadDiff($encRepo,$encRev);"
+		) ) );
 		return wfMessage( 'code-load-diff' )->text();
 	}
 
