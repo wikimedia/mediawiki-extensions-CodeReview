@@ -28,6 +28,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		parent::__construct( $query, $moduleName, 'cr' );
 	}
 
+	/** @suppress SecurityCheck-SQLInjection See T201806 for more information */
 	public function execute() {
 		$this->getMain()->setCacheMode( 'anon-public-user-private' );
 
