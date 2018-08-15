@@ -32,6 +32,7 @@
 	"code-pathsearch-filter": "Montrez nur:",
 	"code-revfilter-cr_status": "Stando = $1",
 	"code-revfilter-cr_author": "Autoro = $1",
+	"code-revfilter-ct_tag": "Etiketo = $1",
 	"codereview-batch-submit": "Sendez",
 	"codereview-overview-desc": "Montrez grafikala rezumo di ica listo",
 	"codereview-email-subj": "[$1 $2]: Nova komento adjuntita",
