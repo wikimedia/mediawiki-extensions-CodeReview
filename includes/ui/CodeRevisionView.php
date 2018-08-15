@@ -28,7 +28,7 @@ class CodeRevisionView extends CodeView {
 
 		$this->mPreviewText = false;
 		# Search path for navigation links
-		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
+		$this->mPath = trim( $wgRequest->getVal( 'path' ) );
 		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
 			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path
 		}
