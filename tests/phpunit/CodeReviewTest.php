@@ -15,6 +15,9 @@ class CodeReviewTest extends MediaWikiTestCase {
 		return CodeRepository::newFromRow( $row );
 	}
 
+	/**
+	 * @covers CodeCommentLinkerWiki
+	 */
 	public function testCommentWikiFormatting() {
 		$repo = $this->createRepo();
 		$formatter = new CodeCommentLinkerWiki( $repo );
@@ -46,6 +49,9 @@ class CodeReviewTest extends MediaWikiTestCase {
 		// @codingStandardsIgnoreEnd
 	}
 
+	/**
+	 * @covers CodeRevision::getCanonicalUrl
+	 */
 	public function testCommentCanonicalUrl() {
 		# Fixture:
 		$repo = $this->createRepo();

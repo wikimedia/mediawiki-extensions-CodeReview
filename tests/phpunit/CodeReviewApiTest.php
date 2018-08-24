@@ -6,6 +6,7 @@
  *
  * @group medium
  * @group CodeReview
+ * @covers ApiCodeUpdate
  */
 class CodeReviewApiTest extends ApiTestCase {
 

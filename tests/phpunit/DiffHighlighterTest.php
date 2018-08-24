@@ -2,6 +2,7 @@
 
 /**
  * @group CodeReview
+ * @covers CodeDiffHighlighter
  */
 class CodeDiffHighlighterTest extends MediaWikiTestCase {
 	function testParseChunksFromWindowsDiff() {
