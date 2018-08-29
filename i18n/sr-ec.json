@@ -155,7 +155,7 @@
 	"right-codereview-use": "Коришћење Special:Code",
 	"right-codereview-add-tag": "додавање нових ознака на измене",
 	"right-codereview-remove-tag": "брисање ознака из измена",
-	"right-codereview-post-comment": "Додајте коментаре ревизијама",
+	"right-codereview-post-comment": "Додајте коментаре изменама",
 	"right-codereview-set-status": "промена стања измена",
 	"action-repoadmin": "управљате складиштима кодова",
 	"action-codereview-set-status": "промените стање измена"
