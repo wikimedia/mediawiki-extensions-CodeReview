@@ -35,8 +35,9 @@ class CodeAuthorListView extends CodeView {
 					$text .= " ([[$title|$name]])";
 				}
 				$wgOut->addWikiText( $text );
+				$timeDate = htmlspecialchars( $wgLang->timeanddate( $committer['lastcommit'], true ) );
 				$wgOut->addHTML(
-					"</td><td>{$wgLang->timeanddate( $committer['lastcommit'], true )}</td></tr>"
+					"</td><td>{$timeDate}</td></tr>"
 				);
 			}
 		}

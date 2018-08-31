@@ -1165,6 +1165,7 @@ class CodeRevision {
 	 * @param array $addTags
 	 * @param array $removeTags
 	 * @param User|null $user
+	 * @suppress SecurityCheck-SQLInjection See T201806 for more information
 	 */
 	public function changeTags( $addTags, $removeTags, $user = null ) {
 		// Get the current tags and see what changes
