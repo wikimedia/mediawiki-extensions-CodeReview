@@ -14,7 +14,8 @@
 			"Whym",
 			"青子守歌",
 			"Rxy",
-			"Otokoume"
+			"Otokoume",
+			"Kkairri"
 		]
 	},
 	"code": "コードレビュー",
@@ -198,5 +199,6 @@
 	"action-codereview-signoff": "リビジョンでサインオフ",
 	"action-codereview-link-user": "作者とウィキ利用者をリンク",
 	"action-codereview-associate": "版のつながりを管理",
-	"action-codereview-review-own": "自分のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける"
+	"action-codereview-review-own": "自分のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける",
+	"apihelp-query+coderevisions-param-prop": "返すプロパティ:"
 }
