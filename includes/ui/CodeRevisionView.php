@@ -588,7 +588,7 @@ class CodeRevisionView extends CodeView {
 			'ext.codereview.loaddiff',
 			"CodeReview.loadDiff($encRepo,$encRev);"
 		) ) );
-		return wfMessage( 'code-load-diff' )->text();
+		return wfMessage( 'code-load-diff' )->escaped();
 	}
 
 	/**
