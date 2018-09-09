@@ -30,7 +30,6 @@ class CodeRepoListView {
 	}
 
 	/**
-	 * @static
 	 * @param CodeRepository $repo
 	 * @return string
 	 */

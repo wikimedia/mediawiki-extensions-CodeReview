@@ -79,7 +79,6 @@ abstract class CodeCommentLinker {
 	abstract function makeExternalLink( $url, $text );
 
 	/**
-	 * @abstract
 	 * @param Title $title
 	 * @param string $text
 	 * @return string

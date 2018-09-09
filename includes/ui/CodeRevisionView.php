@@ -430,7 +430,6 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @static
 	 * @param string $status
 	 * @param CodeView $view
 	 * @return string

@@ -600,7 +600,6 @@ class CodeRepository {
 	}
 
 	/**
-	 * @static
 	 * @param int|string $diff Error code (int) or diff text (string), as returned from getDiff()
 	 * @return string (error message, or empty string if valid diff)
 	 */

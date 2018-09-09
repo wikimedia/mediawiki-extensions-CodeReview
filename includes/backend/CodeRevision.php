@@ -19,7 +19,6 @@ class CodeRevision {
 	protected $repoId, $id, $author, $timestamp, $message, $paths, $status, $oldStatus, $commonPath;
 
 	/**
-	 * @static
 	 * @param CodeRepository $repo
 	 * @param array $data
 	 * @return CodeRevision
@@ -95,7 +94,6 @@ class CodeRevision {
 	}
 
 	/**
-	 * @static
 	 * @param array $paths
 	 * @return array
 	 */
@@ -128,7 +126,6 @@ class CodeRevision {
 	}
 
 	/**
-	 * @static
 	 * @throws Exception
 	 * @param CodeRepository $repo
 	 * @param stdClass $row
