@@ -8,7 +8,6 @@ require_once "$IP/maintenance/Maintenance.php";
 
 class SvnImport extends Maintenance {
 
-	/* Initialize various stuff to make this a useful command line script */
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = 'Import revisions to Code Review from a Subversion repo';
