@@ -149,8 +149,8 @@
 	"repoadmin-nav": "administracija ostave",
 	"right-repoadmin": "upravljanje kodom ostava",
 	"right-codereview-use": "Korišćenje Special:Code",
-	"right-codereview-add-tag": "Dodajte tagove revizijama",
-	"right-codereview-remove-tag": "Brišite tagove sa revizija",
-	"right-codereview-post-comment": "Dodajte komentare revizijama",
-	"right-codereview-set-status": "Promeni status revizije"
+	"right-codereview-add-tag": "Dodajte tagove izmenama",
+	"right-codereview-remove-tag": "Brišite tagove sa izmena",
+	"right-codereview-post-comment": "Dodajte komentare izmenama",
+	"right-codereview-set-status": "Promeni status izmene"
 }
