@@ -4,7 +4,8 @@
 			"Michaello",
 			"Milicevic01",
 			"Rancher",
-			"Жељко Тодоровић"
+			"Жељко Тодоровић",
+			"Zoranzoki21"
 		]
 	},
 	"code": "Pregled koda",
@@ -50,7 +51,7 @@
 	"code-field-id": "Izmena",
 	"code-field-author": "Autor",
 	"code-field-user": "Komentator",
-	"code-field-message": "Pošalji opis",
+	"code-field-message": "Rezime",
 	"code-field-status": "Status",
 	"code-field-status-description": "Opis stanja",
 	"code-field-timestamp": "Datum",
