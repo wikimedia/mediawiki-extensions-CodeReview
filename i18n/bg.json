@@ -5,7 +5,8 @@
 			"Spiritia",
 			"Turin",
 			"පසිඳු කාවින්ද",
-			"StanProg"
+			"StanProg",
+			"Vlad5250"
 		]
 	},
 	"code": "Преглед на кода",
@@ -127,5 +128,6 @@
 	"right-codereview-post-comment": "Добавяне на коментари към версиите",
 	"right-codereview-set-status": "Променяне на статута на версиите",
 	"right-codereview-link-user": "Свързване на имената на авторите с имена на уики потребители",
-	"right-codereview-review-own": "Отбелязване на версиите като „{{int:code-status-ok}}“ или „{{int:code-status-resolved}}“"
+	"right-codereview-review-own": "Отбелязване на версиите като „{{int:code-status-ok}}“ или „{{int:code-status-resolved}}“",
+	"action-codereview-use": "употреба на CodeReview"
 }
