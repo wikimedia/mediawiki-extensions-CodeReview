@@ -73,9 +73,9 @@ class SubversionPecl extends SubversionAdaptor {
 	 * @return true
 	 */
 	function canConnect() {
-		// MediaWiki\suppressWarnings();
+		// Wikimedia\suppressWarnings();
 		// $result = svn_info( $this->mRepoPath );
-		// MediaWiki\restoreWarnings();
+		// Wikimedia\restoreWarnings();
 		return true;
 	}
 
