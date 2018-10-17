@@ -112,7 +112,7 @@ class RepoAdminListView {
 			$name = $repo->getName();
 			$text .= "* [[Special:RepoAdmin/$name|$name]]\n";
 		}
-		$wgOut->addWikiText( $text );
+		$wgOut->addWikiTextAsInterface( $text );
 	}
 }
 

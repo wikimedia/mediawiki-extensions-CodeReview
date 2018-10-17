@@ -17,7 +17,7 @@ class CodeAuthorListView extends CodeView {
 		$text .= '<strong>' . wfMessage( 'code-author-total' )
 			->numParams( $this->mRepo->getAuthorCount() )->text() . "</strong>\n";
 
-		$wgOut->addWikiText( $text );
+		$wgOut->addWikiTextAsInterface( $text );
 
 		$wgOut->addHTML( '<table class="wikitable">'
 				. '<tr><th>' . wfMessage( 'code-field-author' )->escaped()
@@ -34,7 +34,7 @@ class CodeAuthorListView extends CodeView {
 					$name = htmlspecialchars( $user->getName() );
 					$text .= " ([[$title|$name]])";
 				}
-				$wgOut->addWikiText( $text );
+				$wgOut->addWikiTextAsInterface( $text );
 				$timeDate = htmlspecialchars( $wgLang->timeanddate( $committer['lastcommit'], true ) );
 				$wgOut->addHTML(
 					"</td><td>{$timeDate}</td></tr>"

@@ -26,7 +26,7 @@ class CodeRepoListView {
 		foreach ( $repos as $repo ) {
 			$text .= '* ' . self::getNavItem( $repo ) . "\n";
 		}
-		$wgOut->addWikiText( $text );
+		$wgOut->addWikiTextAsInterface( $text );
 	}
 
 	/**
