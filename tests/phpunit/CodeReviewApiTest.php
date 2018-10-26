@@ -66,7 +66,7 @@ class CodeReviewApiTest extends ApiTestCase {
 	 * Send a backtrace:
 	 * Exception: Empty $mTitle in OutputPage::parse
 	 * Caused because our wgOut object does not have a title thus a call to
-	 * $wgOut->parse() backtrace :b
+	 * $wgOut->parseAsContent() backtrace :b
 	 */
 	function testAddInlineComment() {
 		$this->doApiRequest( [

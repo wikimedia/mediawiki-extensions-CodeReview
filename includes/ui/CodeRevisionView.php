@@ -850,7 +850,7 @@ class CodeRevisionView extends CodeView {
 			$this->commentReplyLink( $comment->id ) .
 			'</div>' .
 			'<div class="mw-codereview-comment-text mw-content-' . $wgContLang->getDir() . '">' .
-			$wgOut->parse( $this->codeCommentLinkerWiki->link( $comment->text ) ) .
+			$wgOut->parseAsContent( $this->codeCommentLinkerWiki->link( $comment->text ) ) .
 			'</div>' .
 			$replyForm .
 			'</div>';
