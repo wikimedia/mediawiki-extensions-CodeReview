@@ -4,7 +4,7 @@
  * Special:Code/MediaWiki/comments
  */
 class CodeCommentsListView extends CodeRevisionListView {
-	function getPager() {
+	public function getPager() {
 		return new CodeCommentsTablePager( $this );
 	}
 }
@@ -13,15 +13,15 @@ class CodeCommentsListView extends CodeRevisionListView {
  * Pager for CodeCommentsListView
  */
 class CodeCommentsTablePager extends SvnTablePager {
-	function isFieldSortable( $field ) {
+	public function isFieldSortable( $field ) {
 		return $field == 'cr_timestamp';
 	}
 
-	function getDefaultSort() {
+	public function getDefaultSort() {
 		return 'cc_timestamp';
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$query = [
 			'tables' => [ 'code_comment', 'code_rev' ],
 			'fields' => array_keys( $this->getFieldNames() ),
@@ -45,7 +45,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		return $query;
 	}
 
-	function getCountQuery() {
+	public function getCountQuery() {
 		$query = $this->getQueryInfo();
 
 		$query['fields'] = [ 'COUNT( DISTINCT cc_id ) AS rev_count' ];
@@ -53,7 +53,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		return $query;
 	}
 
-	function getFieldNames() {
+	public function getFieldNames() {
 		return [
 			'cc_timestamp' => $this->msg( 'code-field-timestamp' )->text(),
 			'cc_user_text' => $this->msg( 'code-field-user' )->text(),
@@ -64,7 +64,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		];
 	}
 
-	function formatValue( $name, $value ) {
+	public function formatValue( $name, $value ) {
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		switch ( $name ) {
 		case 'cc_rev_id':
@@ -92,7 +92,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		throw new Exception( '$name is invalid input.' );
 	}
 
-	function getTitle() {
+	public function getTitle() {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/comments' );
 	}
 }

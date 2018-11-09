@@ -4,11 +4,11 @@
  * Special:Code/MediaWiki/stats
  */
 class CodeRepoStatsView extends CodeView {
-	function __construct( $repo ) {
+	public function __construct( $repo ) {
 		parent::__construct( $repo );
 	}
 
-	function execute() {
+	public function execute() {
 		global $wgOut, $wgLang;
 
 		$stats = RepoStats::newFromRepo( $this->mRepo );
@@ -64,7 +64,7 @@ class CodeRepoStatsView extends CodeView {
 	 * @param string $status
 	 * @param array $array
 	 */
-	function writeStatusPathTable( $status, $array ) {
+	private function writeStatusPathTable( $status, $array ) {
 		global $wgOut;
 
 		$wgOut->wrapWikiMsg( "<h3 id=\"stats-$status-path\">$1</h3>",
@@ -81,7 +81,7 @@ class CodeRepoStatsView extends CodeView {
 	 * @param string $status
 	 * @param array $array
 	 */
-	function writeAuthorStatusTable( $status, $array ) {
+	private function writeAuthorStatusTable( $status, $array ) {
 		global $wgOut;
 		$wgOut->wrapWikiMsg( "<h3 id=\"stats-{$status}\">$1</h3>",
 			"code-stats-{$status}-breakdown" );
@@ -93,7 +93,7 @@ class CodeRepoStatsView extends CodeView {
 	 * @param array $array
 	 * @param array $options
 	 */
-	function writeAuthorTable( $status, $array, $options = [] ) {
+	private function writeAuthorTable( $status, $array, $options = [] ) {
 		global $wgOut, $wgLang;
 
 		$repoName = $this->mRepo->getName();

@@ -20,7 +20,7 @@ class CodeDiffHighlighter {
 	 * @param string $text Text to highlight
 	 * @return string
 	 */
-	function render( $text ) {
+	public function render( $text ) {
 		return '<table class="mw-codereview-diff">' .
 			$this->splitLines( $text ) .
 			"</table>\n";
@@ -33,7 +33,7 @@ class CodeDiffHighlighter {
 	 * @param string $text Text to split and highlight
 	 * @return string
 	 */
-	function splitLines( $text ) {
+	public function splitLines( $text ) {
 		return implode( "\n",
 			array_map( [ $this, 'parseLine' ],
 				explode( "\n", $text ) ) );
@@ -45,7 +45,7 @@ class CodeDiffHighlighter {
 	 * @param string $line Diff line to parse
 	 * @return string HTML table line (with <tr></tr>)
 	 */
-	function parseLine( $line ) {
+	public function parseLine( $line ) {
 		$this->lineNumber++;
 
 		if ( $line === '' ) {
@@ -92,7 +92,7 @@ class CodeDiffHighlighter {
 	 * @param string|null $class
 	 * @return string
 	 */
-	function formatLine( $content, $class = null ) {
+	public function formatLine( $content, $class = null ) {
 		if ( $class === null ) {
 			return Html::rawElement( 'tr', $this->getLineIdAttr(),
 				Html::element( 'td', [ 'class' => 'linenumbers' ], $this->left ) .
@@ -134,17 +134,17 @@ class CodeDiffHighlighter {
 		);
 	}
 
-	function handleLineDeletion( $line ) {
+	public function handleLineDeletion( $line ) {
 		$this->left++;
 		return $this->formatLine( $line, 'del' );
 	}
 
-	function handleLineAddition( $line ) {
+	public function handleLineAddition( $line ) {
 		$this->right++;
 		return $this->formatLine( $line, 'ins' );
 	}
 
-	function handleChunkDelimiter( $line ) {
+	public function handleChunkDelimiter( $line ) {
 		$this->chunk++;
 
 		list(
@@ -157,13 +157,13 @@ class CodeDiffHighlighter {
 		return self::formatLine( $line, 'chunkdelimiter' );
 	}
 
-	function handleUnchanged( $line ) {
+	public function handleUnchanged( $line ) {
 		$this->left++;
 		$this->right++;
 		return $this->formatLine( $line, 'unchanged' );
 	}
 
-	function handleLineFile( $line ) {
+	public function handleLineFile( $line ) {
 		$this->chunk = 0;
 		return Html::rawElement( 'tr',
 			array_merge( $this->getLineIdAttr(), [ 'class' => 'patchedfile' ] ),
@@ -171,7 +171,7 @@ class CodeDiffHighlighter {
 		);
 	}
 
-	function getLineIdAttr() {
+	public function getLineIdAttr() {
 		return [ 'id' => $this->lineNumber ];
 	}
 
@@ -181,7 +181,7 @@ class CodeDiffHighlighter {
 	 * @param string $line Line from a diff
 	 * @return string
 	 */
-	function colorLine( $line ) {
+	public function colorLine( $line ) {
 		if ( $line == '' ) {
 			return ''; // don't create bogus spans
 		}
@@ -194,7 +194,7 @@ class CodeDiffHighlighter {
 	 * @param string $line Line to check
 	 * @return array
 	 */
-	function tagForLine( $line ) {
+	public function tagForLine( $line ) {
 		static $default = [ 'td', [] ];
 		static $tags = [
 			'-' => [ 'td', [ 'class' => 'del' ] ],
@@ -236,7 +236,7 @@ class CodeDiffHighlighter {
 	 * @throws Exception
 	 * @return array with the four values above as an array
 	 */
-	static function parseChunkDelimiter( $chunkHeader ) {
+	public static function parseChunkDelimiter( $chunkHeader ) {
 		$chunkHeader = rtrim( $chunkHeader );
 
 		# regex snippet to capture a number

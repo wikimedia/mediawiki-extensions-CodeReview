@@ -1,7 +1,7 @@
 <?php
 
 class CodeRevisionCommitter extends CodeRevisionView {
-	function execute() {
+	public function execute() {
 		global $wgRequest, $wgOut, $wgUser;
 
 		if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {

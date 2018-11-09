@@ -96,7 +96,7 @@ class CodeRepository {
 	 * @param stdClass $row
 	 * @return CodeRepository
 	 */
-	static function newFromRow( $row ) {
+	public static function newFromRow( $row ) {
 		return new CodeRepository(
 			intval( $row->repo_id ),
 			$row->repo_name,
@@ -109,7 +109,7 @@ class CodeRepository {
 	/**
 	 * @return array
 	 */
-	static function getRepoList() {
+	public static function getRepoList() {
 		$dbr = wfGetDB( DB_REPLICA );
 		$options = [ 'ORDER BY' => 'repo_name' ];
 		$res = $dbr->select( 'code_repo', '*', [], __METHOD__, $options );

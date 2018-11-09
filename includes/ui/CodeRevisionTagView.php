@@ -1,7 +1,7 @@
 <?php
 
 class CodeRevisionTagView extends CodeRevisionListView {
-	function __construct( $repo, $tag ) {
+	public function __construct( $repo, $tag ) {
 		$this->mTag = $tag;
 
 		if ( $this->mTag ) {
@@ -10,22 +10,22 @@ class CodeRevisionTagView extends CodeRevisionListView {
 		parent::__construct( $repo );
 	}
 
-	function getPager() {
+	public function getPager() {
 		return new SvnRevTagTablePager( $this, $this->mTag );
 	}
 }
 
 class SvnRevTagTablePager extends SvnRevTablePager {
-	function __construct( $view, $tag ) {
+	public function __construct( $view, $tag ) {
 		parent::__construct( $view );
 		$this->mTag = $tag;
 	}
 
-	function getDefaultSort() {
+	public function getDefaultSort() {
 		return 'ct_rev_id';
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$info = parent::getQueryInfo();
 
 		if ( $this->mView->mPath ) {
@@ -43,7 +43,7 @@ class SvnRevTagTablePager extends SvnRevTablePager {
 		return $info;
 	}
 
-	function getTitle() {
+	public function getTitle() {
 		$repo = $this->mRepo->getName();
 		return SpecialPage::getTitleFor( 'Code', "$repo/tag/$this->mTag" );
 	}

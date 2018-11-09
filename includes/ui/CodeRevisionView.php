@@ -12,7 +12,7 @@ class CodeRevisionView extends CodeView {
 	 * @param string|CodeRevision $rev
 	 * @param null $replyTarget
 	 */
-	function __construct( $repo, $rev, $replyTarget = null ) {
+	public function __construct( $repo, $rev, $replyTarget = null ) {
 		parent::__construct( $repo );
 		global $wgRequest;
 
@@ -83,7 +83,7 @@ class CodeRevisionView extends CodeView {
 		return array_map( [ $this, 'ltrimIntval' ], explode( ',', $input ) );
 	}
 
-	function execute() {
+	public function execute() {
 		global $wgOut, $wgLang;
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
@@ -408,7 +408,7 @@ class CodeRevisionView extends CodeView {
 	 * @param array $tags
 	 * @return string
 	 */
-	static function listTags( $tags ) {
+	private static function listTags( $tags ) {
 		if ( empty( $tags ) ) {
 			return '';
 		}
@@ -434,7 +434,7 @@ class CodeRevisionView extends CodeView {
 	 * @param CodeView $view
 	 * @return string
 	 */
-	static function buildStatusList( $status, $view ) {
+	public static function buildStatusList( $status, $view ) {
 		$states = CodeRevision::getPossibleStates();
 		$out = '';
 		foreach ( $states as $state ) {
@@ -450,7 +450,7 @@ class CodeRevisionView extends CodeView {
 	 * @param array $removeTags
 	 * @return string
 	 */
-	static function addTagForm( $addTags, $removeTags ) {
+	public static function addTagForm( $addTags, $removeTags ) {
 		return '<div><table><tr><td>' .
 			Xml::inputLabel( wfMessage( 'code-rev-tag-add' )->text(), 'wpTag', 'wpTag', 20,
 				self::listTags( $addTags ) ) . '</td><td>&#160;</td><td>' .

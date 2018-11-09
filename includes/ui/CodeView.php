@@ -34,7 +34,7 @@ abstract class CodeView {
 	 */
 	public $mStatus;
 
-	function __construct( $repo ) {
+	public function __construct( $repo ) {
 		$this->mRepo = ( $repo instanceof CodeRepository )
 			? $repo
 			: CodeRepository::newFromName( $repo );
@@ -43,32 +43,32 @@ abstract class CodeView {
 		$this->codeCommentLinkerWiki = new CodeCommentLinkerWiki( $this->mRepo );
 	}
 
-	function validPost( $permission ) {
+	public function validPost( $permission ) {
 		global $wgRequest, $wgUser;
 		return $wgRequest->wasPosted()
 			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
 			&& $wgUser->isAllowed( $permission );
 	}
 
-	abstract function execute();
+	abstract public function execute();
 
-	function authorLink( $author, $extraParams = [] ) {
+	public function authorLink( $author, $extraParams = [] ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/author/$author" );
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		return $linkRenderer->makeLink( $special, $author, [], $extraParams );
 	}
 
-	function statusDesc( $status ) {
+	public function statusDesc( $status ) {
 		return wfMessage( "code-status-$status" )->text();
 	}
 
-	function formatMessage( $text ) {
+	public function formatMessage( $text ) {
 		$text = nl2br( htmlspecialchars( $text ) );
 		return $this->codeCommentLinkerHtml->link( $text );
 	}
 
-	function messageFragment( $value ) {
+	public function messageFragment( $value ) {
 		global $wgLang;
 		$message = trim( $value );
 		$lines = explode( "\n", $message, 2 );
@@ -93,7 +93,7 @@ abstract class CodeView {
 	 * @param array $fields 'propname' => HTML data
 	 * @return string
 	 */
-	function formatMetaData( $fields ) {
+	public function formatMetaData( $fields ) {
 		$html = '<table class="mw-codereview-meta">';
 		foreach ( $fields as $label => $data ) {
 			$html .= "<tr><td>" . wfMessage( $label )->escaped() . "</td><td>$data</td></tr>\n";
@@ -104,7 +104,7 @@ abstract class CodeView {
 	/**
 	 * @return bool|CodeRepository
 	 */
-	function getRepo() {
+	public function getRepo() {
 		if ( $this->mRepo ) {
 			return $this->mRepo;
 		}
@@ -126,18 +126,18 @@ abstract class SvnTablePager extends TablePager {
 	/**
 	 * @param CodeView $view
 	 */
-	function __construct( $view ) {
+	public function __construct( $view ) {
 		$this->mView = $view;
 		$this->mRepo = $view->mRepo;
 		$this->mDefaultDirection = true;
 		parent::__construct();
 	}
 
-	function isFieldSortable( $field ) {
+	public function isFieldSortable( $field ) {
 		return $field == $this->getDefaultSort();
 	}
 
-	function formatRevValue( $name, $value, $row ) {
+	public function formatRevValue( $name, $value, $row ) {
 		return $this->formatValue( $name, $value );
 	}
 
@@ -146,7 +146,7 @@ abstract class SvnTablePager extends TablePager {
 	 * @param stdClass $row
 	 * @return string
 	 */
-	function formatRow( $row ) {
+	public function formatRow( $row ) {
 		$css = "mw-codereview-status-{$row->cr_status}";
 		$s = "<tr class=\"$css\">\n";
 		// Some of this stolen from Pager.php...sigh
@@ -165,7 +165,7 @@ abstract class SvnTablePager extends TablePager {
 		return $s;
 	}
 
-	function getStartBody() {
+	public function getStartBody() {
 		$this->getOutput()->addModules( 'ext.codereview.overview' );
 		return parent::getStartBody();
 	}

@@ -4,11 +4,11 @@
  * Special:Code/MediaWiki
  */
 class CodeStatusChangeListView extends CodeRevisionListView {
-	function getPager() {
+	public function getPager() {
 		return new CodeStatusChangeTablePager( $this );
 	}
 
-	function getRevCount( $dbr ) {
+	protected function getRevCount( $dbr ) {
 		return -1;
 	}
 }
@@ -18,15 +18,15 @@ class CodeStatusChangeListView extends CodeRevisionListView {
  */
 class CodeStatusChangeTablePager extends SvnTablePager {
 
-	function isFieldSortable( $field ) {
+	public function isFieldSortable( $field ) {
 		return $field == 'cpc_timestamp';
 	}
 
-	function getDefaultSort() {
+	public function getDefaultSort() {
 		return 'cpc_timestamp';
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$query = [
 			'tables' => [ 'code_prop_changes', 'code_rev' ],
 			'fields' => array_keys( $this->getFieldNames() ),
@@ -51,7 +51,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		return $query;
 	}
 
-	function getFieldNames() {
+	public function getFieldNames() {
 		return [
 			'cpc_timestamp' => $this->msg( 'code-field-timestamp' )->text(),
 			'cpc_user_text' => $this->msg( 'code-field-user' )->text(),
@@ -64,7 +64,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		];
 	}
 
-	function formatValue( $name, $value ) {
+	public function formatValue( $name, $value ) {
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		// Give grep a chance to find the usages:
 		// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
@@ -98,7 +98,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		throw new Exception( '$name is invalid input.' );
 	}
 
-	function getTitle() {
+	public function getTitle() {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/statuschanges' );
 	}
 }

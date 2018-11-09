@@ -14,7 +14,7 @@ class CodeComment {
 	/**
 	 * @param CodeRevision $rev
 	 */
-	function __construct( $rev ) {
+	public function __construct( $rev ) {
 		$this->rev = $rev;
 	}
 
@@ -23,7 +23,7 @@ class CodeComment {
 	 * @param stdClass $row
 	 * @return CodeComment
 	 */
-	static function newFromRow( $rev, $row ) {
+	public static function newFromRow( $rev, $row ) {
 		return self::newFromData( $rev, get_object_vars( $row ) );
 	}
 
@@ -34,7 +34,7 @@ class CodeComment {
 	 * attached
 	 * @return CodeComment
 	 */
-	static function newFromID( $cc_id, CodeRevision $rev ) {
+	public static function newFromID( $cc_id, CodeRevision $rev ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		$row = $dbr->selectRow(
 			'code_comment',
@@ -63,7 +63,7 @@ class CodeComment {
 	 * @param array $data
 	 * @return CodeComment
 	 */
-	static function newFromData( $rev, $data ) {
+	public static function newFromData( $rev, $data ) {
 		$comment = new CodeComment( $rev );
 		$comment->id = intval( $data['cc_id'] );
 		$comment->text = $data['cc_text']; // @todo FIXME
@@ -77,7 +77,7 @@ class CodeComment {
 	/**
 	 * @return int
 	 */
-	function threadDepth() {
+	public function threadDepth() {
 		$timestamps = explode( ',', $this->sortkey );
 		return count( $timestamps );
 	}

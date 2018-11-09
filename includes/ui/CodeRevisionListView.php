@@ -18,7 +18,7 @@ class CodeRevisionListView extends CodeView {
 	/**
 	 * @param CodeRepository|string $repo
 	 */
-	function __construct( $repo ) {
+	public function __construct( $repo ) {
 		parent::__construct( $repo );
 		global $wgRequest;
 
@@ -77,7 +77,7 @@ class CodeRevisionListView extends CodeView {
 		return implode( '|', $this->mPath );
 	}
 
-	function execute() {
+	public function execute() {
 		global $wgOut, $wgUser, $wgRequest;
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
@@ -140,7 +140,7 @@ class CodeRevisionListView extends CodeView {
 		$wgOut->addHTML( Xml::closeElement( 'form' ) . $pathForm );
 	}
 
-	function doBatchChange() {
+	private function doBatchChange() {
 		global $wgRequest, $wgUser, $wgOut;
 
 		$revisions = $wgRequest->getArray( 'wpRevisionSelected' );
@@ -230,7 +230,7 @@ class CodeRevisionListView extends CodeView {
 	 *
 	 * @return string
 	 */
-	function showForm( $pager ) {
+	private function showForm( $pager ) {
 		global $wgScript;
 
 		$states = CodeRevision::getPossibleStates();
@@ -272,7 +272,7 @@ class CodeRevisionListView extends CodeView {
 		return $ret;
 	}
 
-	function getPager() {
+	public function getPager() {
 		return new SvnRevTablePager( $this );
 	}
 
@@ -282,7 +282,7 @@ class CodeRevisionListView extends CodeView {
 	 * @param \Wikimedia\Rdbms\IDatabase $dbr
 	 * @return int Number of revisions
 	 */
-	function getRevCount( $dbr ) {
+	protected function getRevCount( $dbr ) {
 		$query = $this->getPager()->getCountQuery();
 
 		$result = $dbr->selectRow( $query['tables'],
@@ -299,7 +299,7 @@ class CodeRevisionListView extends CodeView {
 		}
 	}
 
-	function getRepo() {
+	public function getRepo() {
 		return $this->mRepo;
 	}
 }
@@ -308,15 +308,15 @@ class CodeRevisionListView extends CodeView {
  * Pager for CodeRevisionListView
  */
 class SvnRevTablePager extends SvnTablePager {
-	function getSVNPath() {
+	public function getSVNPath() {
 		return $this->mView->mPath;
 	}
 
-	function getDefaultSort() {
+	public function getDefaultSort() {
 		return count( $this->mView->mPath ) ? 'cp_rev_id' : 'cr_id';
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$defaultSort = $this->getDefaultSort();
 		// Path-based query...
 		if ( $defaultSort === 'cp_rev_id' ) {
@@ -362,7 +362,7 @@ class SvnRevTablePager extends SvnTablePager {
 		return $query;
 	}
 
-	function getCountQuery() {
+	public function getCountQuery() {
 		$query = $this->getQueryInfo();
 
 		$query['fields'] = [ 'COUNT( DISTINCT cr_id ) AS rev_count' ];
@@ -370,7 +370,7 @@ class SvnRevTablePager extends SvnTablePager {
 		return $query;
 	}
 
-	function getSelectFields() {
+	public function getSelectFields() {
 		return array_unique(
 			[ $this->getDefaultSort(),
 				'cr_id',
@@ -384,7 +384,7 @@ class SvnRevTablePager extends SvnTablePager {
 			] );
 	}
 
-	function getFieldNames() {
+	public function getFieldNames() {
 		$fields = [
 			'cr_id' => $this->msg( 'code-field-id' )->text(),
 			'cr_status' => $this->msg( 'code-field-status' )->text(),
@@ -401,11 +401,11 @@ class SvnRevTablePager extends SvnTablePager {
 		return $fields;
 	}
 
-	function formatValue( $name, $value ) {
+	public function formatValue( $name, $value ) {
 		// unused
 	}
 
-	function formatRevValue( $name, $value, $row ) {
+	public function formatRevValue( $name, $value, $row ) {
 		$pathQuery = count( $this->mView->mPath )
 			? [ 'path' => $this->mView->getPathsAsString() ] : [];
 
@@ -487,7 +487,7 @@ class SvnRevTablePager extends SvnTablePager {
 	/**
 	 * @return Title
 	 */
-	function getTitle() {
+	public function getTitle() {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() );
 	}
 }

@@ -12,7 +12,7 @@ class CodePropChange {
 	/**
 	 * @param CodeRevision $rev
 	 */
-	function __construct( $rev ) {
+	public function __construct( $rev ) {
 		$this->rev = $rev;
 	}
 
@@ -21,7 +21,7 @@ class CodePropChange {
 	 * @param stdClass $row
 	 * @return CodePropChange
 	 */
-	static function newFromRow( $rev, $row ) {
+	public static function newFromRow( $rev, $row ) {
 		return self::newFromData( $rev, get_object_vars( $row ) );
 	}
 
@@ -30,7 +30,7 @@ class CodePropChange {
 	 * @param array $data
 	 * @return CodePropChange
 	 */
-	static function newFromData( $rev, $data ) {
+	public static function newFromData( $rev, $data ) {
 		$change = new CodePropChange( $rev );
 		$change->attrib = $data['cpc_attrib'];
 		$change->removed = $data['cpc_removed'];
