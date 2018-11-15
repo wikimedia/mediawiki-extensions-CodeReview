@@ -12,7 +12,8 @@
 			"Waldir",
 			"Fúlvio",
 			"Polyethylen",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Jdforrester"
 		]
 	},
 	"code": "Revisão de Código",
@@ -229,7 +230,7 @@
 	"apihelp-query+codecomments-param-start": "Data e hora a partir da qual será começada a listagem.",
 	"apihelp-query+codecomments-param-prop": "As propriedades que serão devolvidas. ''revision'' (revisão) é um nome alternativo obsoleto para ''status'' (estado).",
 	"apihelp-query+codecomments-example-1": "Listar os comentários do repositório MediaWiki",
-	"apihelp-query+codecomments-example-2": "Mostrar informação para os comentários do repositório mediaWiki",
+	"apihelp-query+codecomments-example-2": "Mostrar informação para os comentários do repositório MediaWiki",
 	"apihelp-query+codepaths-description": "Obter uma lista de 10 caminhos num dado repositório, com base no prefixo do caminho de entrada.",
 	"apihelp-query+codepaths-summary": "Obter uma lista de 10 caminhos num dado repositório, com base no prefixo do caminho de entrada.",
 	"apihelp-query+codepaths-param-repo": "Nome do repositório.",
