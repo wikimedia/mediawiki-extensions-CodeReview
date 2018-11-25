@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bjankuloski06",
-			"Brest"
+			"Brest",
+			"Vlad5250"
 		]
 	},
 	"code": "Проверка на кодот",
@@ -219,7 +220,7 @@
 	"apihelp-query+codecomments-param-start": "Од кој датум и време да почне исписот.",
 	"apihelp-query+codecomments-param-prop": "Кои својства да се даваат. преработка е застарен истозначник за состојба.",
 	"apihelp-query+codecomments-example-1": "Испиши коментари на складиштето на МедијаВики",
-	"apihelp-query+codecomments-example-2": "Прикажни информации за коментарите на складиштето на МедијаВики",
+	"apihelp-query+codecomments-example-2": "Прикажи информации за коментарите на складиштето на МедијаВики",
 	"apihelp-query+codepaths-description": "Дај список на 10 патеки во дадено складиште, според претставката на вносната патека.",
 	"apihelp-query+codepaths-summary": "Дај список на 10 патеки во дадено складиште, според претставката на вносната патека.",
 	"apihelp-query+codepaths-param-repo": "Назив на складиштето.",
