@@ -147,7 +147,7 @@ class RepoAdminRepoView {
 		$this->repo = CodeRepository::newFromName( $repo );
 	}
 
-	function execute() {
+	public function execute() {
 		global $wgOut, $wgRequest, $wgUser;
 		$repoExists = (bool)$this->repo;
 		$repoPath = $wgRequest->getVal( 'wpRepoPath', $repoExists ? $this->repo->getPath() : '' );

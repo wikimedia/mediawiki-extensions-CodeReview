@@ -15,7 +15,7 @@ class CodeReviewApiTest extends ApiTestCase {
 	/** array of common parameters used to query API */
 	private $commonApiData;
 
-	function setUp() {
+	protected function setUp() {
 		parent::setUp();
 		$this->doLogin();
 		$this->createRepo();
@@ -25,7 +25,7 @@ class CodeReviewApiTest extends ApiTestCase {
 		];
 	}
 
-	function tearDown() {
+	protected function tearDown() {
 		parent::tearDown();
 		// TODO:
 		// $this->destroyRepo();
@@ -68,7 +68,7 @@ class CodeReviewApiTest extends ApiTestCase {
 	 * Caused because our wgOut object does not have a title thus a call to
 	 * $wgOut->parseAsContent() backtrace :b
 	 */
-	function testAddInlineComment() {
+	public function testAddInlineComment() {
 		$this->doApiRequest( [
 			'action' => 'coderevisionupdate',
 			'rev' => 777,

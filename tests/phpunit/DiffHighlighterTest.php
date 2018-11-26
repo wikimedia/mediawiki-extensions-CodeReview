@@ -5,7 +5,7 @@
  * @covers CodeDiffHighlighter
  */
 class CodeDiffHighlighterTest extends MediaWikiTestCase {
-	function testParseChunksFromWindowsDiff() {
+	public function testParseChunksFromWindowsDiff() {
 		try {
 			CodeDiffHighlighter::parseChunkDelimiter(
 				"@@ -1,3 +1,4 @@\r\n"
@@ -17,7 +17,7 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 		}
 	}
 
-	function testParseChunksFromUnixDiff() {
+	public function testParseChunksFromUnixDiff() {
 		try {
 			CodeDiffHighlighter::parseChunkDelimiter(
 				"@@ -1,3 +1,4 @@\n"
@@ -32,14 +32,14 @@ class CodeDiffHighlighterTest extends MediaWikiTestCase {
 	/**
 	 * @dataProvider provideUnifiedDiffChunksDelimiters
 	 */
-	function testParseChunkDelimiters( $expected, $delimiter ) {
+	public function testParseChunkDelimiters( $expected, $delimiter ) {
 		$this->assertEquals(
 			$expected,
 			CodeDiffHighlighter::parseChunkDelimiter( $delimiter )
 		);
 	}
 
-	function provideUnifiedDiffChunksDelimiters() {
+	public function provideUnifiedDiffChunksDelimiters() {
 		return [ /* expected array, chunk delimiter */
 			[
 				[ 1, 3, 1, 4 ],

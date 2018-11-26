@@ -86,7 +86,7 @@ You missed a lot of points there and need to revert or fix your code
 	 * Print the subject line.
 	 * @param string|int $type Either '', 2, 3 or 4
 	 */
-	function printSubject( $type ) {
+	private function printSubject( $type ) {
 		$repo = $this->EmailData['repo'];
 		if ( $type == 2 ) {
 			$rev = $this->EmailData['prevrev'];
@@ -101,7 +101,7 @@ You missed a lot of points there and need to revert or fix your code
 		);
 	}
 
-	function printRule() {
+	private function printRule() {
 		print "===============================================\n";
 	}
 }

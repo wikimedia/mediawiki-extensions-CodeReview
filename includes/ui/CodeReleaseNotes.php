@@ -1,7 +1,7 @@
 <?php
 
 class CodeReleaseNotes extends CodeView {
-	function __construct( $repo ) {
+	public function __construct( $repo ) {
 		global $wgRequest;
 		parent::__construct( $repo );
 		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
@@ -13,7 +13,7 @@ class CodeReleaseNotes extends CodeView {
 		$this->mEndRev = $wgRequest->getIntOrNull( 'endrev' );
 	}
 
-	function execute() {
+	public function execute() {
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();

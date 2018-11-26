@@ -1,17 +1,17 @@
 <?php
 
 class CodeRevisionAuthorView extends CodeRevisionListView {
-	function __construct( $repo, $author ) {
+	public function __construct( $repo, $author ) {
 		parent::__construct( $repo );
 		$this->mAuthor = $author;
 		$this->mUser = $this->mRepo->authorWikiUser( $author );
 	}
 
-	function getPager() {
+	public function getPager() {
 		return new SvnRevAuthorTablePager( $this, $this->mAuthor );
 	}
 
-	function linkStatus() {
+	public function linkStatus() {
 		if ( !$this->mUser ) {
 			return wfMessage( 'code-author-orphan' )->rawParams( $this->authorLink( $this->mAuthor ) )
 				->escaped();
@@ -27,7 +27,7 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 			) )->escaped();
 	}
 
-	function execute() {
+	public function execute() {
 		global $wgOut, $wgUser;
 
 		$linkInfo = $this->linkStatus();
@@ -58,18 +58,18 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 }
 
 class SvnRevAuthorTablePager extends SvnRevTablePager {
-	function __construct( $view, $author ) {
+	public function __construct( $view, $author ) {
 		parent::__construct( $view );
 		$this->mAuthor = $author;
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$info = parent::getQueryInfo();
 		$info['conds']['cr_author'] = $this->mAuthor; // fixme: normalize input?
 		return $info;
 	}
 
-	function getTitle() {
+	public function getTitle() {
 		$repo = $this->mRepo->getName();
 		return SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor" );
 	}

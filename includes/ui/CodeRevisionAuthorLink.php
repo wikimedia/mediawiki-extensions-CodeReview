@@ -4,19 +4,19 @@
  * Special:Code/MediaWiki/author/johndoe/link
  */
 class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
-	function __construct( $repo, $author ) {
+	public function __construct( $repo, $author ) {
 		global $wgRequest;
 		parent::__construct( $repo, $author );
 		$this->mTarget = $wgRequest->getVal( 'linktouser' );
 	}
 
-	function getTitle() {
+	public function getTitle() {
 		$repo = $this->mRepo->getName();
 		$auth = $this->mAuthor;
 		return SpecialPage::getTitleFor( 'Code', "$repo/author/$auth/link" );
 	}
 
-	function execute() {
+	public function execute() {
 		global $wgRequest, $wgUser;
 
 		if ( !$wgUser->isAllowed( 'codereview-link-user' ) ) {
@@ -30,7 +30,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 		}
 	}
 
-	function doForm() {
+	private function doForm() {
 		global $wgOut, $wgUser;
 
 		$form = Xml::openElement( 'form', [ 'method' => 'post',
@@ -63,7 +63,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 		$wgOut->addHTML( $this->linkStatus() . $form );
 	}
 
-	function doSubmit() {
+	private function doSubmit() {
 		global $wgOut, $wgRequest, $wgUser;
 		// Link an author to a wiki user
 

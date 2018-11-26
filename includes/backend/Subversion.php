@@ -25,19 +25,19 @@ abstract class SubversionAdaptor {
 	/**
 	 * @param string $repoPath Path to SVN Repo
 	 */
-	function __construct( $repoPath ) {
+	public function __construct( $repoPath ) {
 		$this->mRepoPath = $repoPath;
 	}
 
-	abstract function canConnect();
+	abstract public function canConnect();
 
-	abstract function getFile( $path, $rev = null );
+	abstract public function getFile( $path, $rev = null );
 
-	abstract function getDiff( $path, $rev1, $rev2 );
+	abstract public function getDiff( $path, $rev1, $rev2 );
 
-	abstract function getDirList( $path, $rev = null );
+	abstract public function getDirList( $path, $rev = null );
 
-	abstract function getLog( $path, $startRev = null, $endRev = null );
+	abstract public function getLog( $path, $startRev = null, $endRev = null );
 
 	protected function _rev( $rev, $default ) {
 		if ( $rev === null ) {
@@ -53,7 +53,7 @@ abstract class SubversionAdaptor {
  */
 class SubversionPecl extends SubversionAdaptor {
 
-	function __construct( $repoPath ) {
+	public function __construct( $repoPath ) {
 		parent::__construct( $repoPath );
 		global $wgSubversionUser, $wgSubversionPassword;
 		if ( $wgSubversionUser ) {
@@ -72,18 +72,18 @@ class SubversionPecl extends SubversionAdaptor {
 	 * It throws a warning if the repository does not exist.
 	 * @return true
 	 */
-	function canConnect() {
+	public function canConnect() {
 		// Wikimedia\suppressWarnings();
 		// $result = svn_info( $this->mRepoPath );
 		// Wikimedia\restoreWarnings();
 		return true;
 	}
 
-	function getFile( $path, $rev = null ) {
+	public function getFile( $path, $rev = null ) {
 		return svn_cat( $this->mRepoPath . $path, $rev );
 	}
 
-	function getDiff( $path, $rev1, $rev2 ) {
+	public function getDiff( $path, $rev1, $rev2 ) {
 		list( $fout, $ferr ) = svn_diff(
 			$this->mRepoPath . $path, $rev1,
 			$this->mRepoPath . $path, $rev2 );
@@ -103,12 +103,12 @@ class SubversionPecl extends SubversionAdaptor {
 		}
 	}
 
-	function getDirList( $path, $rev = null ) {
+	public function getDirList( $path, $rev = null ) {
 		return svn_ls( $this->mRepoPath . $path,
 			$this->_rev( $rev, SVN_REVISION_HEAD ) );
 	}
 
-	function getLog( $path, $startRev = null, $endRev = null ) {
+	public function getLog( $path, $startRev = null, $endRev = null ) {
 		Wikimedia\suppressWarnings();
 		$log = svn_log( $this->mRepoPath . $path,
 			$this->_rev( $startRev, SVN_REVISION_INITIAL ),
@@ -124,7 +124,7 @@ class SubversionPecl extends SubversionAdaptor {
 class SubversionShell extends SubversionAdaptor {
 	const MIN_MEMORY = 204800;
 
-	function __construct( $repo ) {
+	public function __construct( $repo ) {
 		parent::__construct( $repo );
 		global $wgMaxShellMemory;
 		if ( $wgMaxShellMemory < self::MIN_MEMORY ) {
@@ -133,7 +133,7 @@ class SubversionShell extends SubversionAdaptor {
 		}
 	}
 
-	function canConnect() {
+	public function canConnect() {
 		$command = sprintf(
 			'svn info %s %s',
 			$this->getExtraArgs(),
@@ -150,7 +150,7 @@ class SubversionShell extends SubversionAdaptor {
 		}
 	}
 
-	function getFile( $path, $rev = null ) {
+	public function getFile( $path, $rev = null ) {
 		if ( $rev ) {
 			$path .= "@$rev";
 		}
@@ -162,7 +162,7 @@ class SubversionShell extends SubversionAdaptor {
 		return wfShellExec( $command );
 	}
 
-	function getDiff( $path, $rev1, $rev2 ) {
+	public function getDiff( $path, $rev1, $rev2 ) {
 		$command = sprintf(
 			'svn diff -r%d:%d %s %s',
 			intval( $rev1 ),
@@ -174,7 +174,7 @@ class SubversionShell extends SubversionAdaptor {
 		return wfShellExec( $command );
 	}
 
-	function getLog( $path, $startRev = null, $endRev = null ) {
+	public function getLog( $path, $startRev = null, $endRev = null ) {
 		$lang = wfIsWindows() ? '' : 'LC_ALL=en_US.utf-8 ';
 		$command = sprintf(
 			"{$lang}svn log -v -r%s:%s %s %s",
@@ -273,7 +273,7 @@ class SubversionShell extends SubversionAdaptor {
 		return $out;
 	}
 
-	function getDirList( $path, $rev = null ) {
+	public function getDirList( $path, $rev = null ) {
 		$command = sprintf(
 			'svn list --xml -r%s %s %s',
 			wfEscapeShellArg( $this->_rev( $rev, 'HEAD' ) ),
@@ -340,22 +340,22 @@ class SubversionShell extends SubversionAdaptor {
  * Using a remote JSON proxy
  */
 class SubversionProxy extends SubversionAdaptor {
-	function __construct( $repo, $proxy, $timeout = 30 ) {
+	public function __construct( $repo, $proxy, $timeout = 30 ) {
 		parent::__construct( $repo );
 		$this->mProxy = $proxy;
 		$this->mTimeout = $timeout;
 	}
 
-	function canConnect() {
+	public function canConnect() {
 		// TODO!
 		return true;
 	}
 
-	function getFile( $path, $rev = null ) {
+	public function getFile( $path, $rev = null ) {
 		throw new Exception( 'NYI' );
 	}
 
-	function getDiff( $path, $rev1, $rev2 ) {
+	public function getDiff( $path, $rev1, $rev2 ) {
 		return $this->_proxy( [
 			'action' => 'diff',
 			'base' => $this->mRepoPath,
@@ -365,7 +365,7 @@ class SubversionProxy extends SubversionAdaptor {
 		] );
 	}
 
-	function getLog( $path, $startRev = null, $endRev = null ) {
+	public function getLog( $path, $startRev = null, $endRev = null ) {
 		return $this->_proxy( [
 			'action' => 'log',
 			'base' => $this->mRepoPath,
@@ -375,7 +375,7 @@ class SubversionProxy extends SubversionAdaptor {
 		] );
 	}
 
-	function getDirList( $path, $rev = null ) {
+	public function getDirList( $path, $rev = null ) {
 		return $this->_proxy( [
 			'action' => 'list',
 			'base' => $this->mRepoPath,
