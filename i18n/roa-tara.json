@@ -197,5 +197,8 @@
 	"apihelp-query+coderevisions-description": "Elenghe de le revisiune jndr'à CodeReview.",
 	"apihelp-query+coderevisions-summary": "Elenghe de le revisiune jndr'à CodeReview.",
 	"apihelp-query+coderevisions-param-repo": "Nome de l'archivije.",
-	"apihelp-query+coderevisions-param-limit": "Quanda revisiune adda turnà."
+	"apihelp-query+coderevisions-param-limit": "Quanda revisiune adda turnà.",
+	"apihelp-query+codetags-param-repo": "Nome de l'archivije.",
+	"apihelp-query+codetags-example-1": "Elenghe le tag jndr'à MediaUicchi",
+	"apierror-invalidrepo": "Archivije invalide \"$1\"."
 }
