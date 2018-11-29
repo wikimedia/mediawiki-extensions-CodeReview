@@ -9,7 +9,8 @@
 			"Str4nd",
 			"Tarmo",
 			"ZeiP",
-			"Pxos"
+			"Pxos",
+			"Valtlait"
 		]
 	},
 	"code": "Koodintarkistus",
@@ -142,13 +143,13 @@
 	"codereview-overview-title": "Yhteenveto",
 	"codereview-overview-desc": "Näytä graafinen yhteenveto tästä luettelosta",
 	"codereview-email-subj": "[$1 $2]: Uusi kommentti lisätty",
-	"codereview-email-body": "\"$1\" jättin kommentin kohteesta $3.\nURL: $2\n\nYhteenveto kohteen $3 kommentista:\n\n$5\n\nKäyttäjän $1 kommentti:\n\n$4",
+	"codereview-email-body": "”$1” jättin kommentin kohteesta $3.\nURL: $2\n\nYhteenveto kohteen $3 kommentista:\n\n$5\n\nKäyttäjän $1 kommentti:\n\n$4",
 	"codereview-email-subj2": "[$1 $2]: Myöhemmät muutokset",
 	"codereview-email-body2": "Käyttäjä $1 teki jatkomuutoksia koodimuutokseen $2.\nOsoite: $5\n\nYhteenveto muutoksista $2 oli:\n\n$6\n\nJatkomuutosten osoite: $3\nJatkomuutoksen yhteenveto käyttäjältä $1:\n\n$4",
 	"codereview-email-subj3": "[$1 $2]: Koodimuutoksen tila muuttunut",
 	"codereview-email-body3": "$1 muutti koodimuutoksen $2 tilaksi: $4\nOsoite: $5\n\nVanha tila: $3\nUusi tila: $4\n\nVersion $2 yhteenveto oli:\n\n$6",
 	"codereview-email-subj4": "[$1 $2]: Uusi kommentti ja koodimuutoksen tila muuttunut",
-	"codereview-email-body4": "\"$1\" muutti version $2 tilaksi \"$4\" ja kommentoi sitä.\nURL: $5\n\nVanha tila: $3\nUusi tila: $4\n\nKommentin yhteenveto versiolle $2:\n\n$7\n\nKäyttäjän $1 kommentti:\n\n$6",
+	"codereview-email-body4": "”$1” muutti version $2 tilaksi ”$4” ja kommentoi sitä.\nURL: $5\n\nVanha tila: $3\nUusi tila: $4\n\nKommentin yhteenveto versiolle $2:\n\n$7\n\nKäyttäjän $1 kommentti:\n\n$6",
 	"code-stats": "tilastot",
 	"code-stats-header": "Versionhallinnan $1 tilastot",
 	"code-stats-main": "$1 versionhallinnassa oli {{PLURAL:$2|yksi muokkaus|$2 muokkausta}} [[Special:Code/$3/author|$4 {{PLURAL:$4|käyttäjältä|eri käyttäjältä}}]].",
