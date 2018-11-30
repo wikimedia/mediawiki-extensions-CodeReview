@@ -4,7 +4,8 @@
 			"Blahma",
 			"Castelobranco",
 			"Yekrats",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"YvesNevelsteen"
 		]
 	},
 	"code": "Kontrolo de Programkodo",
@@ -100,7 +101,7 @@
 	"code-status-ok": "Ek!",
 	"code-status-desc-ok": "Revizio plene kontrolita kaj kontrolanto estas pozitiva ke ĝi estas bona ĉiel.",
 	"code-status-deferred": "prokrastita",
-	"code-status-desc-deferred": "Revizio ne nepras kontroladon.",
+	"code-status-desc-deferred": "Revizio ne devigas kontroladon.",
 	"code-status-old": "malnova",
 	"code-status-desc-old": "Malnova revizio kun eblaj cimoj kiuj ne sufiĉe gravas kontroli ilin.",
 	"code-signoffs": "Aprobadoj",
