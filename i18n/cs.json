@@ -46,7 +46,7 @@
 	"code-author-link": "svázat?",
 	"code-author-unlink": "zrušit vazbu?",
 	"code-author-unlinksuccess": "Vazba autora $1 byla zrušena",
-	"code-author-badtoken": "Při provádění operace došlo k chybě sezení.",
+	"code-author-badtoken": "Při provádění operace došlo k chybě relace.",
 	"code-author-total": "Celkový počet autorů: $1",
 	"code-author-lastcommit": "Datum posledního commitu",
 	"code-browsing-path": "Procházení revizemi v '''$1'''",
