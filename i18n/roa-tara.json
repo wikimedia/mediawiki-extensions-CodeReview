@@ -191,6 +191,8 @@
 	"apihelp-coderevisionupdate-param-rev": "Numere ID d'a revisione.",
 	"apihelp-coderevisionupdate-param-comment": "Commende da aggiungere 'a revisione.",
 	"apihelp-coderevisionupdate-param-status": "State da 'mbostà 'a revisione.",
+	"apihelp-coderevisionupdate-param-addtags": "Tag da aggiungere a 'a revisione.",
+	"apihelp-coderevisionupdate-param-removetags": "Tag da luà da 'a revisione.",
 	"apihelp-query+codecomments-param-repo": "Nome de l'archivije.",
 	"apihelp-query+codecomments-param-limit": "Quanda commende addà turnà.",
 	"apihelp-query+codecomments-param-start": "Orarie da addò accumenzà l'elenghe.",
