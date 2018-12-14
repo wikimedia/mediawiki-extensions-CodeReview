@@ -104,7 +104,7 @@
 	"code-status-old": "luma",
 	"code-status-desc-old": "Ang lumang rebisyon ay may maaaring maging mga depekto subalit hindi naaangkupan ng pagsisikap para suriin sila.",
 	"code-signoffs": "Mga paglalagda ng pagtatapos",
-	"code-signoff-legend": "Idagdag ang paglagda ng pagtatapos",
+	"code-signoff-legend": "Idagdag ang pag-sign-off",
 	"code-signoff-submit": "Lumagdang patapos",
 	"code-signoff-strike": "Pangibabawan ng guhit ang napiling paglalagdang patapos",
 	"code-signoff-signoff": "Sign-off sa rebisyong ito bilang:",
