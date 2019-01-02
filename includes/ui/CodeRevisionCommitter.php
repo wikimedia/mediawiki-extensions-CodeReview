@@ -71,7 +71,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 */
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
 						$addReferences, $removeReferences, $commentText,
-						$parent = null, $addReferenced, $removeReferenced
+						$parent, $addReferenced, $removeReferenced
 					) {
 		if ( !$this->mRev ) {
 			return false;
