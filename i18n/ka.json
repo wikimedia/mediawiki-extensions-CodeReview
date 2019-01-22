@@ -7,7 +7,8 @@
 			"ITshnik",
 			"Malafaya",
 			"Nodar Kherkheulidze",
-			"გიორგიმელა"
+			"გიორგიმელა",
+			"Mehman97"
 		]
 	},
 	"code": "კოდის შემოწმება",
@@ -57,6 +58,7 @@
 	"code-rev-status": "სტატუსი:",
 	"code-rev-status-set": "სტატუსის შეცვლა",
 	"code-rev-tags": "ღილაკები:",
+	"code-rev-tag-add": "დაამატეთ ახსნა:",
 	"code-rev-tag-remove": "წაშალეთ მინიშნებები:",
 	"code-rev-comment-by": "$1-ს კომენტარი",
 	"code-rev-comment-preview": "წინასწარ",
