@@ -214,6 +214,7 @@
 	"apihelp-codeupdate-param-rev": "Zu aktualisierende Revisionskennnummer.",
 	"apihelp-codeupdate-example-1": "Daten für die MediaWiki-Revision 42080 aktualisieren",
 	"apihelp-query+codecomments-description": "Kommentare zu Revisionen in CodeReview auflisten.",
+	"apihelp-query+codecomments-summary": "Listet Kommentare zu Revisionen in CodeReview auf.",
 	"apihelp-query+codecomments-param-repo": "Name des Repositoriums.",
 	"apihelp-query+codecomments-param-limit": "Wie viele Kommentare zurückgegeben werden sollen.",
 	"apihelp-query+codecomments-param-start": "Zeitstempel, bei dem die Auflistung beginnen soll.",
