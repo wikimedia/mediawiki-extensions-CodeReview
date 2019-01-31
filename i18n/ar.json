@@ -126,7 +126,7 @@
 	"code-revfilter-ct_tag": "الوسم = $1",
 	"code-revfilter-clear": "أفرغ المرشح",
 	"code-rev-submit": "حفظ التغييرات",
-	"code-rev-submit-next": "احفظ وغير المحلولة التالية",
+	"code-rev-submit-next": "حفظ والذهاب للتالية غير المحلولة",
 	"code-rev-next": "المشكلة التالية",
 	"code-batch-status": "غير الحالة:",
 	"code-batch-tags": "غير الوسوم:",
