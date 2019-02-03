@@ -196,6 +196,7 @@
 	"apihelp-codediff-param-rev": "Revisionskennung, von der der Unterschied abgerufen werden soll.",
 	"apihelp-codediff-example-1": "Ruft einen Unterschied für die MediaWiki-Revision 42080 ab",
 	"apihelp-coderevisionupdate-description": "Überträgt Kommentare, neue Status und Tags in eine Revision.",
+	"apihelp-coderevisionupdate-summary": "Übermittelt Kommentare, den neuen Status und Markierungen einer Revision.",
 	"apihelp-coderevisionupdate-param-repo": "Name des Repositoriums.",
 	"apihelp-coderevisionupdate-param-rev": "Revisionskennnummer.",
 	"apihelp-coderevisionupdate-param-comment": "Kommentar, der zur Revision hinzugefügt werden soll.",
