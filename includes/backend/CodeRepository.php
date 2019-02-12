@@ -268,10 +268,11 @@ class CodeRepository {
 	}
 
 	/**
-	 * Load a particular revision out of the DB
+	 * Load a particular revision out of the DB.
+	 *
 	 * @param int|string $id
+	 * @return CodeRevision|null
 	 * @throws Exception
-	 * @return CodeRevision
 	 */
 	public function getRevision( $id ) {
 		if ( !$this->isValidRev( $id ) ) {
@@ -288,7 +289,7 @@ class CodeRepository {
 			__METHOD__
 		);
 		if ( !$row ) {
-			throw new Exception( 'Failed to load expected revision data' );
+			return null;
 		}
 		return CodeRevision::newFromRow( $this, $row );
 	}
