@@ -113,7 +113,7 @@
 	"code-release-endrev": "Revizyonê penî:",
 	"codereview-subtitle": "Qandê $1",
 	"codereview-reply-link": "cewab bide",
-	"codereview-overview-title": "Hera weynayis",
+	"codereview-overview-title": "Serqayt",
 	"codereview-email-subj": "[$1 $2]: Xulasayê newî de biyo",
 	"codereview-email-body": "Rıştış dê \"$1\" sera vatışê $3'i.\nGRE: $2\n\nXulasay komiti $3:\n\n$5\n\nVatışê $1'i:\n\n$4",
 	"codereview-email-subj2": "[$1 $2]: Vurnayîşan kontrol bike",
