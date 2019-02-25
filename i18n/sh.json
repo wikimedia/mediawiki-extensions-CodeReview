@@ -2,10 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"OC Ripper",
-			"Conquistador"
+			"Conquistador",
+			"Vlad5250"
 		]
 	},
 	"code-rev-comment-preview": "Pregled",
 	"code-rev-inline-preview": "Pregled",
-	"codereview-batch-submit": "Unesi"
+	"codereview-batch-submit": "Unesi",
+	"action-codereview-use": "korištenje Provjere koda",
+	"action-codereview-add-tag": "dodavanje nove oznake za revizije",
+	"action-codereview-remove-tag": "uklanjanje oznake za revizije",
+	"action-codereview-post-comment": "dodavanje komentara na reviziju",
+	"action-codereview-set-status": "promjena statusa revizija",
+	"action-codereview-signoff": "završi izmjene revizija",
+	"action-codereview-link-user": "povezivanje autora sa suradnikom",
+	"action-codereview-associate": "upravljanje pridruženim revizijama",
+	"action-codereview-review-own": "označavanje vlastitih izmjena kao \"{{int:code-status-ok}}\" ili \"{{int:code-status-resolved}}\""
 }
