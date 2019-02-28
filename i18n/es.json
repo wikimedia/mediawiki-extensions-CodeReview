@@ -198,7 +198,7 @@
 	"right-codereview-associate": "Administrar las asociaciones de revisión",
 	"right-codereview-review-own": "Marcar tus propias revisiones como \"{{int:code-status-ok}}\" o \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "administrar repositorios de código",
-	"action-codereview-use": "usar Especial:Código",
+	"action-codereview-use": "utilizar CodeReview",
 	"action-codereview-add-tag": "añadir nuevas etiquetas a las revisiones",
 	"action-codereview-remove-tag": "eliminar etiquetas de las revisiones",
 	"action-codereview-post-comment": "añadir comentarios a las revisiones",
