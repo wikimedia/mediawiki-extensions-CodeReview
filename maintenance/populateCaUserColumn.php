@@ -92,5 +92,5 @@ class PopulateCaUserColumn extends Maintenance {
 	}
 }
 
-$maintClass = 'PopulateCaUserColumn';
+$maintClass = PopulateCaUserColumn::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

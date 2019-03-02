@@ -191,5 +191,5 @@ class SvnImport extends Maintenance {
 	}
 }
 
-$maintClass = 'SvnImport';
+$maintClass = SvnImport::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

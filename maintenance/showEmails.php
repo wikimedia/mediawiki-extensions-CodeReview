@@ -106,5 +106,5 @@ You missed a lot of points there and need to revert or fix your code
 	}
 }
 
-$maintClass = 'CodeReviewShowEmails';
+$maintClass = CodeReviewShowEmails::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

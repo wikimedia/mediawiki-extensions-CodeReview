@@ -68,5 +68,5 @@ class RepopulateCodePaths extends Maintenance {
 	}
 }
 
-$maintClass = 'RepopulateCodePaths';
+$maintClass = RepopulateCodePaths::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

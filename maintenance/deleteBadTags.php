@@ -31,5 +31,5 @@ class DeleteBadTags extends Maintenance {
 	}
 }
 
-$maintClass = 'DeleteBadTags';
+$maintClass = DeleteBadTags::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

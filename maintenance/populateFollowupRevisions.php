@@ -75,5 +75,5 @@ class PopulateFollowupRevisions extends Maintenance {
 	}
 }
 
-$maintClass = 'PopulateFollowupRevisions';
+$maintClass = PopulateFollowupRevisions::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
