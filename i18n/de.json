@@ -223,6 +223,7 @@
 	"apihelp-query+codecomments-example-1": "Kommentare auf dem Repositorium MediaWiki auflisten",
 	"apihelp-query+codecomments-example-2": "Informationen für Kommentare auf dem Repositorium MediaWiki anzeigen",
 	"apihelp-query+codepaths-description": "Ruft eine Liste mit 10 Pfaden in einem angegebenen Repositorium ab, basierend auf dem Eingabe-Pfad-Präfix.",
+	"apihelp-query+codepaths-summary": "Ruft eine Liste der 10 Pfade in einem angegebenen Repositorium ab, basierend auf dem eingegebenen Pfadpräfix.",
 	"apihelp-query+codepaths-param-repo": "Name des Repositoriums.",
 	"apihelp-query+codepaths-param-path": "Zu filterndes Pfad-Präfix.",
 	"apihelp-query+codepaths-example-1": "Pfade in MediaWiki unter /trunk/phase3 abrufen",
