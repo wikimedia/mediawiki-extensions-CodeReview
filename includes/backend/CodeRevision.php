@@ -701,19 +701,16 @@ class CodeRevision {
 	/**
 	 * @param string $subject
 	 * @param string $body
+	 * @param string|array ...$args
 	 * @return void
 	 */
-	public function emailNotifyUsersOfChanges( $subject, $body ) {
+	public function emailNotifyUsersOfChanges( $subject, $body, ...$args ) {
 		// Give email notices to committer and commenters
 		global $wgCodeReviewENotif, $wgEnableEmail, $wgCodeReviewCommentWatcherEmail,
 			$wgCodeReviewCommentWatcherName, $wgUser;
 		if ( !$wgCodeReviewENotif || !$wgEnableEmail ) {
 			return;
 		}
-
-		$args = func_get_args();
-		array_shift( $args ); // Drop $subject
-		array_shift( $args ); // Drop $body
 
 		// Make list of users to send emails to
 		$users = $this->getCommentingUsers();
