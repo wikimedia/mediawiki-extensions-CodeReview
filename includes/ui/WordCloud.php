@@ -53,7 +53,7 @@ class WordCloud {
 		foreach ( $words as $word => $rank ) {
 			$this->addWord( $word, $rank );
 		}
-		$this->callback = $callback ? $callback : [ $this, 'defaultTextCallback' ];
+		$this->callback = $callback ?: [ $this, 'defaultTextCallback' ];
 	}
 
 	/**

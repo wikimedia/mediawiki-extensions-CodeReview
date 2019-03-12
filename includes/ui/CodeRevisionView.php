@@ -328,7 +328,7 @@ class CodeRevisionView extends CodeView {
 		// Find any ' (from x)' from rename comment in the path.
 		$matches = [];
 		preg_match( '/ \([^\)]+\)$/', $path, $matches );
-		$from = isset( $matches[0] ) ? $matches[0] : '';
+		$from = $matches[0] ?? '';
 		// Remove ' (from x)' from rename comment in the path.
 		$path = preg_replace( '/ \([^\)]+\)$/', '', $path );
 		$viewvc = $this->mRepo->getViewVcBase();

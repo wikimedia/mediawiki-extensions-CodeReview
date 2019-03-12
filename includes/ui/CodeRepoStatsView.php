@@ -31,7 +31,7 @@ class CodeRepoStatsView extends CodeView {
 				. wfMessage( 'code-stats-count' )->escaped() . '</th></tr>' );
 			$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 			foreach ( CodeRevision::getPossibleStates() as $state ) {
-				$rawCount = isset( $stats->states[$state] ) ? $stats->states[$state] : 0;
+				$rawCount = $stats->states[$state] ?? 0;
 				$count = htmlspecialchars( $wgLang->formatNum( $rawCount ) );
 				$link = $linkRenderer->makeLink(
 					SpecialPage::getTitleFor( 'Code', $repoName . '/status/' . $state ),

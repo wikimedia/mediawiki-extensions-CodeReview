@@ -37,7 +37,7 @@ class CodePropChange {
 		$change->added = $data['cpc_added'];
 		$change->user = $data['cpc_user'];
 		// We'd prefer the up to date user table name
-		$change->userText = isset( $data['user_name'] ) ? $data['user_name'] : $data['cpc_user_text'];
+		$change->userText = $data['user_name'] ?? $data['cpc_user_text'];
 		$change->timestamp = wfTimestamp( TS_MW, $data['cpc_timestamp'] );
 		return $change;
 	}
