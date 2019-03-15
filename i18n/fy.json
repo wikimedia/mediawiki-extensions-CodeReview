@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Robin0van0der0vliet",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"PiefPafPier"
 		]
 	},
 	"code-rev-history-link": "skiednis",
 	"code-status-new": "nij",
 	"code-status-ok": "ok",
-	"code-signoff-field-user": "Brûker",
+	"code-signoff-field-user": "Meidogger",
 	"codereview-batch-submit": "Ferstjoere",
 	"repoadmin-new-button": "Oanmeitsje",
 	"repoadmin-edit-button": "OK"
