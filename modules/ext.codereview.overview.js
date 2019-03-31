@@ -1,8 +1,8 @@
 /* Scap roadmap viewer, version [0.0.7]
- * Originally from: http://www.mediawiki.org/wiki/User:Splarka/scapmap.js
+ * Originally from: https://www.mediawiki.org/wiki/User:Splarka/scapmap.js
  *
  *
- * Loads on, for example: http://www.mediawiki.org/wiki/Special:Code/MediaWiki
+ * Loads on, for example: https://www.mediawiki.org/wiki/Special:Code/MediaWiki
  * Click [overview] to generate map.
  * Text in the "path" input box is stripped from the path line in the summary.
  * Clicking a colored box takes you to that relevant line, and a backlink is created in the id column on focus.
