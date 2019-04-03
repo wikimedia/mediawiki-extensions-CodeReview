@@ -513,6 +513,10 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function formatImgDiff() {
 		global $wgCodeReviewImgRegex;
+		$viewvc = $this->mRepo->getViewVcBase();
+		if ( !$viewvc ) {
+			return '';
+		}
 		// Get image diffs
 		$imgDiffs = $html = '';
 		$modifiedPaths = $this->mRev->getModifiedPaths();
@@ -527,7 +531,7 @@ class CodeRevisionView extends CodeView {
 						? 'code-rev-modified-d' : 'code-rev-modified-r';
 					// Link to old image
 					$imgDiffs .= $this->formatImgCell(
-						$row->cp_path, $this->mRev->getPrevious(), $action );
+						$viewvc, $row->cp_path, $this->mRev->getPrevious(), $action );
 				}
 				if ( $row->cp_action !== 'D' ) { // new
 					// What was done to it?
@@ -535,7 +539,7 @@ class CodeRevisionView extends CodeView {
 						? 'code-rev-modified-a' : 'code-rev-modified-m';
 					// Link to new image
 					$imgDiffs .= $this->formatImgCell(
-						$row->cp_path, $this->mRev->getId(), $action );
+						$viewvc, $row->cp_path, $this->mRev->getId(), $action );
 				}
 				$imgDiffs .= "</tr></table>\n";
 			}
@@ -548,13 +552,13 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
+	 * @param string $viewvc
 	 * @param string $path
 	 * @param string $rev
 	 * @param string $message
 	 * @return string
 	 */
-	protected function formatImgCell( $path, $rev, $message ) {
-		$viewvc = $this->mRepo->getViewVcBase();
+	protected function formatImgCell( $viewvc, $path, $rev, $message ) {
 		$safePath = wfUrlEncode( $path );
 		$url = "{$viewvc}{$safePath}?&pathrev=$rev&revision=$rev";
 
