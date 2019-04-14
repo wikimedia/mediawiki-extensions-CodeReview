@@ -10,7 +10,8 @@
 			"Tarmo",
 			"ZeiP",
 			"Pxos",
-			"Valtlait"
+			"Valtlait",
+			"Pyscowicz"
 		]
 	},
 	"code": "Koodintarkistus",
@@ -185,7 +186,7 @@
 	"right-codereview-associate": "Hallinnoida koodimuutosten ristiviittauksia",
 	"right-codereview-review-own": "Merkitä omat koodimuutokset tilaan ”{{int:code-status-ok}}” tai ”{{int:code-status-resolved}}”",
 	"action-repoadmin": "hallinnoida koodivarastoja",
-	"action-codereview-use": "käyttää toimintosivua Special:Code",
+	"action-codereview-use": "käyttää CodeReviewiä",
 	"action-codereview-add-tag": "lisätä uusia merkintöjä koodimuutoksiin",
 	"action-codereview-remove-tag": "poistaa merkintöjä koodimuutoksista",
 	"action-codereview-post-comment": "lisätä kommentteja koodimuutoksiin",
