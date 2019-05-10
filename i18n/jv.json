@@ -170,7 +170,7 @@
 	"right-codereview-review-own": "Tandhai benahan Sampéyan dhéwé minangka \"{{int:code-status-ok}}\" utawa \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "tata panyimpenyan kodhé",
 	"action-codereview-use": "panganggoan Kusus:Kodhé",
-	"action-codereview-add-tag": "tambahaké tandha anyar nèng benahan",
+	"action-codereview-add-tag": "Wuwuh tenger anyar ing révisi",
 	"action-codereview-remove-tag": "busak tandha saka benahan",
 	"action-codereview-post-comment": "tambah tanggepan ngenani owahan",
 	"action-codereview-set-status": "ganti status benahan",
