@@ -119,7 +119,7 @@
 	"code-stats-header": "ఖజానా $1 గణాంకాలు",
 	"code-stats-main": "$1 నాటికి, ఖజానాలో [[Special:Code/$3/author|$4 {{PLURAL:$4|కర్త|కర్తలు}}]] చేసిన $2 {{PLURAL:$2|కూర్పు|కూర్పులు}} ఉన్నాయి.",
 	"code-stats-status-breakdown": "ఒక్కో స్థితికి ఉన్న కూర్పుల సంఖ్య",
-	"code-stats-count": "కూర్పుల యొక్క సంఖ్య",
+	"code-stats-count": "కూర్పుల సంఖ్య",
 	"repoadmin": "ఖజానా నిర్వహణ",
 	"repoadmin-new-legend": "ఓ కొత్త ఖజానాను సృష్టించండి",
 	"repoadmin-new-label": "ఖజానా పేరు:",
