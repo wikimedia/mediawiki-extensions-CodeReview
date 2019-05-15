@@ -5,7 +5,8 @@
 			"KlaudiuMihaila",
 			"Mihai",
 			"Minisarm",
-			"Stelistcristi"
+			"Stelistcristi",
+			"Andrei Stroe"
 		]
 	},
 	"code": "Revizualizare cod",
@@ -163,7 +164,7 @@
 	"repoadmin-edit-bug": "Cale Bugzilla:",
 	"repoadmin-edit-view": "Cale ViewVC:",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "Arhiva „[[Special:Code/$1|$1]]” a fost modificată cu succes.",
+	"repoadmin-edit-sucess": "Arhiva „[[Special:Code/$1|$1]]” a fost modificată.",
 	"repoadmin-nav": "administrarea depozitului",
 	"right-repoadmin": "Gestionați codurile arhivelor",
 	"right-codereview-use": "Utilizarea Special:Code",
