@@ -893,7 +893,7 @@ class CodeRevisionView extends CodeView {
 		global $wgUser;
 		if ( $this->mPreviewText !== false && $parent === $this->mReplyTarget ) {
 			$preview = $this->previewComment( $this->mPreviewText );
-			$text = htmlspecialchars( $this->mPreviewText );
+			$text = $this->mPreviewText;
 		} else {
 			$preview = '';
 			$text = $this->text;
@@ -913,7 +913,7 @@ class CodeRevisionView extends CodeView {
 				'id' => "wpReplyTo{$parent}",
 				'cols' => 40,
 				'rows' => 10 ] ) .
-			$text .
+			htmlspecialchars( $text ) .
 			'</textarea>' .
 			'</div>' .
 			'</div>';
