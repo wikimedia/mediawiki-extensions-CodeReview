@@ -49,7 +49,7 @@
 	"code-authors": "auteurs",
 	"code-status": "états",
 	"code-tags": "balises",
-	"code-tags-no-tags": "Aucun tag n’existe dans ce dépôt.",
+	"code-tags-no-tags": "Aucune balise n’existe dans ce dépôt.",
 	"code-authors-text": "La liste ci-dessous présente les auteurs de dépôts triés par nom. Les comptes du wiki local sont affichés entre parenthèses. Les données peuvent provenir d’une mémoire tampon.",
 	"code-author-haslink": "Cet auteur est lié au compte $1 de ce wiki",
 	"code-author-orphan": "L’utilisateur SVN/auteur $1 n’est pas lié à un compte wiki",
