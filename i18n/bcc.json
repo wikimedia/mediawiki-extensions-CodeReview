@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mostafadaneshvar",
-			"Oldstoneage"
+			"Oldstoneage",
+			"Sultanselim baloch"
 		]
 	},
 	"code": "باز بینی کد",
@@ -27,7 +28,7 @@
 	"code-rev-repo": "مخزن:",
 	"code-rev-rev": "نسخة:",
 	"code-rev-modified-a": "هوربوت",
-	"code-rev-modified-r": "جاه په جاه بوت",
+	"code-rev-modified-r": "جاه په جاه بیت!",
 	"code-rev-modified-d": "حذف بوت",
 	"code-rev-modified-m": "عوض بوت",
 	"code-status-new": "نوکین",
