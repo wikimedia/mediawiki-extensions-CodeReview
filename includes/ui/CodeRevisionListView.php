@@ -63,11 +63,11 @@ class CodeRevisionListView extends CodeView {
 	public static function preparePaths( $path ) {
 		$path = trim( $path );
 		$path = rtrim( $path, '/' );
-		$path = htmlspecialchars( $path );
-		if ( strlen( $path ) && $path[0] !== '/' ) {
-			$path = "/{$path}"; // make sure this is a valid path
+		$escPath = htmlspecialchars( $path );
+		if ( strlen( $escPath ) && $escPath[0] !== '/' ) {
+			$escPath = "/{$escPath}"; // make sure this is a valid path
 		}
-		return $path;
+		return $escPath;
 	}
 
 	/**

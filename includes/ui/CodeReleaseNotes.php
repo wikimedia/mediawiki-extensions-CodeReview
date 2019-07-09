@@ -63,11 +63,14 @@ class CodeReleaseNotes extends CodeView {
 			->setMethod( 'get' )
 			->setAction( $wgScript )
 			->setSubmitText( wfMessage( 'allpagessubmit' )->text() )
-			->setWrapperLegend( wfMessage( 'code-release-legend' )->escaped() )
+			->setWrapperLegend( wfMessage( 'code-release-legend' )->text() )
 			->prepareForm()
 			->displayForm( false );
 	}
 
+	/**
+	 * @suppress SecurityCheck-XSS Seems a false positive
+	 */
 	protected function showReleaseNotes() {
 		global $wgOut;
 		$dbr = wfGetDB( DB_REPLICA );

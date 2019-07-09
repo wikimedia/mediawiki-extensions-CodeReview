@@ -64,8 +64,8 @@ abstract class CodeView {
 	}
 
 	public function formatMessage( $text ) {
-		$text = nl2br( htmlspecialchars( $text ) );
-		return $this->codeCommentLinkerHtml->link( $text );
+		$escText = nl2br( htmlspecialchars( $text ) );
+		return $this->codeCommentLinkerHtml->link( $escText );
 	}
 
 	public function messageFragment( $value ) {
