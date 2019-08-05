@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\ResultWrapper;
 
 class CodeRevision {
@@ -1244,8 +1245,8 @@ class CodeRevision {
 	public function normalizeTag( $tag ) {
 		$title = Title::newFromText( $tag );
 		if ( $title ) {
-			global $wgContLang;
-			return $wgContLang->lc( $title->getDBkey() );
+			$contLang = MediaWikiServices::getInstance()->getContentLanguage();
+			return $contLang->lc( $title->getDBkey() );
 		}
 
 		return false;

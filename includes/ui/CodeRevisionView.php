@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Special:Code/MediaWiki/40696
  */
@@ -825,7 +827,10 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	public function formatComment( $comment, $replyForm = '' ) {
-		global $wgOut, $wgLang, $wgContLang;
+		global $wgOut, $wgLang;
+
+		$services = MediaWikiServices::getInstance();
+		$dir = $services->getContentLanguage()->getDir();
 
 		if ( $comment->id === 0 ) {
 			$linkId = 'cpreview';
@@ -833,7 +838,7 @@ class CodeRevisionView extends CodeView {
 				wfMessage( 'code-rev-inline-preview' )->escaped() . '</strong> ';
 		} else {
 			$linkId = 'c' . intval( $comment->id );
-			$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+			$linkRenderer = $services->getLinkRenderer();
 			$permaLink = $linkRenderer->makeLink( $this->commentLink( $comment->id ), '#' );
 		}
 
@@ -853,7 +858,7 @@ class CodeRevisionView extends CodeView {
 			' ' .
 			$this->commentReplyLink( $comment->id ) .
 			'</div>' .
-			'<div class="mw-codereview-comment-text mw-content-' . $wgContLang->getDir() . '">' .
+			'<div class="mw-codereview-comment-text mw-content-' . htmlspecialchars( $dir ) . '">' .
 			$wgOut->parseAsContent( $this->codeCommentLinkerWiki->link( $comment->text ) ) .
 			'</div>' .
 			$replyForm .
