@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geopoet"
+			"Geopoet",
+			"Brazal.dang"
 		]
 	},
 	"code": "Rikisa nin Kodigo",
@@ -177,7 +178,7 @@
 	"right-codereview-associate": "Manihoon an mga asosasyon nin rebisyon",
 	"right-codereview-review-own": "Markahan an saimong sadireng mga rebisyon bilang \"{{int:code-status-ok}}\" o baya \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "manihoon an kodigo nin mga repositoryo",
-	"action-codereview-use": "gamit kan Espesyal:Kodigo",
+	"action-codereview-use": "gamiton an Espesyal:Kodigo",
 	"action-codereview-add-tag": "magdugang nin baguhon na mga tatak sa mga rebisyon",
 	"action-codereview-remove-tag": "tangkason an mga tatak gikan sa mga rebisyon",
 	"action-codereview-post-comment": "magdugang nin mga komento sa mga rebisyon",
