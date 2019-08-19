@@ -15,8 +15,8 @@ require_once "$IP/maintenance/Maintenance.php";
 class PopulateCaUserColumn extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Populates the code_authors.ca_user column so that Renameuser ' .
-			'doesn\'t get confused.';
+		$this->addDescription( 'Populates the code_authors.ca_user column so that Renameuser ' .
+			'doesn\'t get confused.' );
 		$this->addOption( 'repo', 'The name of the repository. Cannot be all.', true, true );
 
 		$this->requireExtension( 'CodeReview' );

@@ -9,7 +9,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class GetRevisionDiffs extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Populates the cr_diff column (where possible) for all rows in a repo';
+		$this->addDescription( 'Populates the cr_diff column (where possible) for all rows in a repo' );
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 
 		$this->requireExtension( 'CodeReview' );

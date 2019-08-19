@@ -9,7 +9,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class DeleteBadTags extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Delete empty Code Review tags';
+		$this->addDescription( 'Delete empty Code Review tags' );
 		$this->addOption( 'dry-run', 'Don\'t actually delete bad tags, just compile statistics.' );
 		$this->requireExtension( 'CodeReview' );
 	}

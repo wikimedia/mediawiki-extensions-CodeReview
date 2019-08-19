@@ -10,7 +10,7 @@ class BulkStatusUpdate extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Updates a range of revisions to a specific status';
+		$this->addDescription( 'Updates a range of revisions to a specific status' );
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 		$this->addArg( 'revisions', 'The revisions to set status for. Format: start:end' );
 		$this->addArg( 'status', "Code States: 'new', 'fixme', 'reverted', "

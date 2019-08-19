@@ -9,8 +9,8 @@ require_once "$IP/maintenance/Maintenance.php";
 class PopulateFollowupRevisions extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Populates followup revisions. Useful for setting them on old ' .
-			'revisions, without reimporting';
+		$this->addDescription( 'Populates followup revisions. Useful for setting them on old ' .
+			'revisions, without reimporting' );
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 		$this->addArg( 'revisions',
 			'The revisions to set followups revisions for. Format: start:end' );

@@ -8,7 +8,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class RepopulateCodePaths extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Rebuilds all code paths to support more efficient searching';
+		$this->addDescription( 'Rebuilds all code paths to support more efficient searching' );
 		$this->addArg( 'repo', 'The name of the repo. Cannot be all.' );
 		$this->addArg( 'revisions', 'The revisions to set status for. Format: start:end' );
 

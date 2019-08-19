@@ -31,7 +31,7 @@ You missed a lot of points there and need to revert or fix your code
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Show example emails for CodeReview';
+		$this->addDescription( 'Show example emails for CodeReview' );
 
 		$this->requireExtension( 'CodeReview' );
 	}

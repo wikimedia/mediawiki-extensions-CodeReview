@@ -10,7 +10,7 @@ class SvnImport extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Import revisions to Code Review from a Subversion repo';
+		$this->addDescription( 'Import revisions to Code Review from a Subversion repo' );
 		$this->addOption( 'precache', 'Pre-cache diffs for last N revisions. ' .
 			'May be a positive integer, 0 (for none) or \'all\'.  Default is 0', false, true );
 		$this->addArg( 'repo', 'The name of the repo. Use \'all\' to import from all defined repos' );
