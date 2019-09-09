@@ -76,7 +76,7 @@
 	"codereview-reply-link": "erantzun",
 	"codereview-overview-title": "Ikuspegi orokorra",
 	"codereview-email-subj": "[$1 $2]: Iruzkin berria gehitu da",
-	"codereview-email-body": "\"$1\" lankideak $3(e)n iruzkin bat gehitu du.\n\nHelbide osoa: $2\n\nIruzkina:\n\n$4",
+	"codereview-email-body": "\"$1\" lankideak $3(e)n iruzkin bat gehitu du.\n\nLaburpena: $3\n\n$5\n\n$1(e)n iruzkina:\n\n$4",
 	"code-stats": "Estatistikak",
 	"repoadmin": "Biltegiaren Administrazioa",
 	"repoadmin-new-legend": "Biltegi berri bat sortu",
