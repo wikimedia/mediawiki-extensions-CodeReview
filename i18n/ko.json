@@ -10,7 +10,8 @@
 			"아라",
 			"Mooozi",
 			"Revi",
-			"Ykhwong"
+			"Ykhwong",
+			"Nuevo Paso"
 		]
 	},
 	"code": "코드 검토",
@@ -146,7 +147,7 @@
 	"codereview-email-subj": "[$1 $2]: 새 의견이 추가되었습니다",
 	"codereview-email-body": "\"$1\"님이 $3 판에 의견을 게시했습니다.\nURL: $2\n\n$3 판에 대한 요약:\n\n$5\n\n내용:\n\n$4",
 	"codereview-email-subj2": "[$1 $2]: 추적된 바뀜 사항",
-	"codereview-email-body2": "\"$1\"님이 $2에 추적 바뀜을 만들었습니다.\nURL: $5\n\n추적에 대한 요약: $2\n\n$6\n\n추적 URL: $3\n\"$1\"님에 의한 추적 요약:\n\n$4",
+	"codereview-email-body2": "\"$1\" 님이 $2에 추적 바뀜을 만들었습니다.\nURL: $5\n\n추적에 대한 요약: $2\n\n$6\n\n추적 URL: $3\n\"$1\" 님에 의한 추적 요약:\n\n$4",
 	"codereview-email-subj3": "[$1 $2]: 판 상태가 바뀌었습니다",
 	"codereview-email-body3": "\"$1\"님이 $2 판의 상태를 \"$4\"로 바꾸었습니다\nURL: $5\n\n이전 상태: $3\n바뀐 상태: $4\n\n$2 판에 대한 커밋 요약:\n\n$6",
 	"codereview-email-subj4": "[$1 $2]: 새 댓글이 추가되었고 판 상태가 바뀌었습니다",
