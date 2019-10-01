@@ -10,5 +10,6 @@
 	"code-rev-repo": "Repositorium:",
 	"code-rev-rev": "Versie:",
 	"code-rev-rev-viewvc": "in ViewVC",
+	"code-batch-tags": "Etiket wysigen:",
 	"code-stats": "staotistieken"
 }
