@@ -1,7 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
-use Wikimedia\Rdbms\ResultWrapper;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class CodeRevision {
 	/**
@@ -640,7 +640,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @return ResultWrapper
+	 * @return IResultWrapper
 	 */
 	public function getModifiedPaths() {
 		$dbr = wfGetDB( DB_REPLICA );
