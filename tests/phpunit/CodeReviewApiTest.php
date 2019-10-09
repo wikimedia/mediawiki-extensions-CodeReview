@@ -15,7 +15,7 @@ class CodeReviewApiTest extends ApiTestCase {
 	/** array of common parameters used to query API */
 	private $commonApiData;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$this->doLogin();
 		$this->createRepo();
@@ -25,7 +25,7 @@ class CodeReviewApiTest extends ApiTestCase {
 		];
 	}
 
-	protected function tearDown() {
+	protected function tearDown() : void {
 		parent::tearDown();
 		// TODO:
 		// $this->destroyRepo();
