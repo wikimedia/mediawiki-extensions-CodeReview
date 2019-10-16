@@ -9,6 +9,7 @@
 	"code-change-status": "хийцина '''хьал''' r$1",
 	"code-change-tags": "хийцина '''билгалонаш''' цу r$1",
 	"code-change-removed": "дӀаяьккхина:",
+	"code-prop-changes": "Статусийн а, билгалонийн а тептар",
 	"code-load-diff": "Терниш чудахар...",
 	"code-authors": "Автораш",
 	"code-tags": "билгалонаш",
