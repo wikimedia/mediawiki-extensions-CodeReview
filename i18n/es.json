@@ -103,7 +103,7 @@
 	"code-rev-comment-preview": "Previsualización",
 	"code-rev-inline-preview": "Previsualización:",
 	"code-rev-diff": "Diferencias",
-	"code-rev-diff-link": "dif",
+	"code-rev-diff-link": "difs.",
 	"code-rev-diff-too-large": "El diff es demasiado grande para ser mostrado.",
 	"code-rev-purge-link": "purgar",
 	"code-rev-total": "Número total de resultados: $1",
