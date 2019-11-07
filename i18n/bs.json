@@ -4,7 +4,8 @@
 			"CERminator",
 			"Smooth O",
 			"KWiki",
-			"Srdjan m"
+			"Srdjan m",
+			"Obsuser"
 		]
 	},
 	"code": "Provjera koda",
@@ -137,7 +138,7 @@
 	"codereview-overview-desc": "Prikaži grafički pregled ovog spiska",
 	"codereview-email-subj": "[$1 $2]: Dodan novi komentar",
 	"codereview-email-body": "Korisnik \"$1\" je napravio komentar na $3.\n\nPuni URL: $2\nPoslani sažetak:\n\n$5\n\nKomentar:\n\n$4",
-	"codereview-email-subj2": "[$1 $2]: Slijedeće izmjene",
+	"codereview-email-subj2": "[$1 $2]: Sljedeće izmjene",
 	"codereview-email-body2": "Korisnik \"$1\" je izvršio povezane izmjene na $2.\n\nPuni URL za povezane revizije: $5\nNapravljeni sažetak:\n\n$6\n\nPuni URL: $3\nNapravljeni sažetak:\n\n$4",
 	"codereview-email-subj3": "[$1 $2]: Promjena stanja revizije",
 	"codereview-email-body3": "Korisnik \"$1\" je promijenio stanje od $2.\n\nStaro stanje: $3\nNovo stanje: $4\n\nPuni URL: $5\nNapravljeni sažetak:\n\n$6",
