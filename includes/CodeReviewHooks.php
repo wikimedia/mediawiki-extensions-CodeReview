@@ -18,7 +18,7 @@ class CodeReviewHooks {
 	 * @param DatabaseUpdater $updater
 	 * @return bool
 	 */
-	public static function onLoadExtensionSchemaUpdates( $updater ) {
+	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		$base = __DIR__ . '/..';
 		switch ( $updater->getDB()->getType() ) {
 		case 'mysql':
