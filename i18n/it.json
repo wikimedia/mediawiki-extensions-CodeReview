@@ -131,7 +131,7 @@
 	"code-revfilter-cr_author": "Autore = $1",
 	"code-revfilter-ct_tag": "Tag = $1",
 	"code-revfilter-clear": "Cancella filtro",
-	"code-rev-submit": "Salva le modifiche",
+	"code-rev-submit": "Salva modifiche",
 	"code-rev-submit-next": "Salva e vai alla prossima situazione irrisolta",
 	"code-rev-next": "Prossimo irrisolto",
 	"code-batch-status": "Modifica stato:",
