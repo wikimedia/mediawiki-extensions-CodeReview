@@ -259,5 +259,5 @@
 	"apihelp-query+codetags-param-repo": "Nom du dépôt.",
 	"apihelp-query+codetags-example-1": "Lister les balises dans MediaWiki",
 	"apierror-invalidrepo": "Zone de dépot invalide « $1 ».",
-	"apierror-codereview-inlinecommentingdisabled": "Pas possible d'associer un commentaire sur un diff lorsque des commentaires en ligne sont désactivés (<var>$wgCodeReviewInlineComments</var> est à faux)."
+	"apierror-codereview-inlinecommentingdisabled": "Pas possible d’associer un commentaire sur un diff lorsque des commentaires en ligne sont désactivés (<var>$wgCodeReviewInlineComments</var> est à faux)."
 }
