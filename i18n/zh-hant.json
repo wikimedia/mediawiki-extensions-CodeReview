@@ -15,7 +15,8 @@
 			"LNDDYL",
 			"Liuxinyu970226",
 			"Tomchen1989",
-			"Kly"
+			"Kly",
+			"Xiplus"
 		]
 	},
 	"code": "程式碼審查",
@@ -199,7 +200,7 @@
 	"action-codereview-signoff": "簽署修訂",
 	"action-codereview-link-user": "連結作者到 Wiki 使用者",
 	"action-codereview-associate": "管理修訂關聯",
-	"action-codereview-review-own": "將自己的修訂標記為 \"{{int:code-status-ok}}\" 或 \"{{int:code-status-resolved}}\"",
+	"action-codereview-review-own": "將自己的修訂標記為「{{int:code-status-ok}}」或「{{int:code-status-resolved}}」",
 	"apihelp-codediff-description": "自 CodeReview 的後端修訂控制系統取得格式化的 diif。",
 	"apihelp-codediff-summary": "自 CodeReview 的後端修訂控制系統取得格式化的 diif。",
 	"apihelp-codediff-param-repo": "要查看的版本庫名稱。",
