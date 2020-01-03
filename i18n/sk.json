@@ -5,7 +5,8 @@
 			"Jkjk",
 			"Mormegil",
 			"Pitr2311",
-			"Sudo77(new)"
+			"Sudo77(new)",
+			"Luky001"
 		]
 	},
 	"code": "Kontrola kódu",
@@ -160,7 +161,7 @@
 	"repoadmin-edit-bug": "Cesta k Bugzille:",
 	"repoadmin-edit-view": "Cesta k ViewVC:",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "Úložisko „[[Special:Code/$1|$1]]” bolo úspešne zmenené.",
+	"repoadmin-edit-sucess": "Úložisko „[[Special:Code/$1|$1]]” bolo zmenené.",
 	"repoadmin-nav": "Správa úložiska",
 	"right-repoadmin": "Spravovať úložiská kódu",
 	"right-codereview-use": "Použitie Special:Code",
