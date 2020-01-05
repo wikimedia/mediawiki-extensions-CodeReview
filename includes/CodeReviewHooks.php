@@ -16,7 +16,6 @@ class CodeReviewHooks {
 	 * Only MySQL(/MariaDB) and SQLite are supported at the moment.
 	 *
 	 * @param DatabaseUpdater $updater
-	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		$base = __DIR__ . '/..';
@@ -97,7 +96,6 @@ class CodeReviewHooks {
 			// TODO
 			break;
 		}
-		return true;
 	}
 
 	/**
@@ -107,7 +105,6 @@ class CodeReviewHooks {
 	 *
 	 * @param array &$values
 	 * @param OutputPage $out
-	 * @return bool
 	 */
 	public static function onMakeGlobalVariablesScript( &$values, $out ) {
 		# Bleugh, this is horrible
@@ -118,20 +115,17 @@ class CodeReviewHooks {
 				$values['wgCodeReviewRepository'] = $bits[1];
 			}
 		}
-		return true;
 	}
 
 	/**
 	 * For integration with the Renameuser extension.
 	 *
 	 * @param RenameuserSQL $renameUserSQL
-	 * @return bool
 	 */
 	public static function onRenameUserSQL( $renameUserSQL ) {
 		foreach ( self::$userTables as $table => $fields ) {
 			$renameUserSQL->tables[$table] = $fields;
 		}
-		return true;
 	}
 
 	private static $userTables = [
@@ -145,13 +139,11 @@ class CodeReviewHooks {
 	 * For integration with the UserMerge extension.
 	 *
 	 * @param array &$updateFields
-	 * @return bool
 	 */
 	public static function onUserMergeAccountFields( &$updateFields ) {
 		// array( tableName, idField, textField )
 		foreach ( self::$userTables as $table => $fields ) {
 			$updateFields[] = [ $table, $fields[1], $fields[0] ];
 		}
-		return true;
 	}
 }
