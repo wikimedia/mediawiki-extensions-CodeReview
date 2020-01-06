@@ -6,7 +6,8 @@
 			"Mormegil",
 			"Pitr2311",
 			"Sudo77(new)",
-			"Luky001"
+			"Luky001",
+			"TomášPolonec"
 		]
 	},
 	"code": "Kontrola kódu",
@@ -150,7 +151,7 @@
 	"code-stats-header": "Štatistika úložiska $1",
 	"code-stats-main": "$1, úložisko má $2 {{PLURAL:$2|revíziu|revízie|revízií}} od [[Special:Code/$3/author|$4 {{PLURAL:$4|autora|autorov}}]].",
 	"code-stats-status-breakdown": "Počet revízií na stav",
-	"code-stats-fixme-breakdown": "Rozloženie fixme podľa autora",
+	"code-stats-fixme-breakdown": "Rozdelenie verzií na opravu podľa autora",
 	"code-stats-count": "Počet revízií",
 	"repoadmin": "Správa úložiska",
 	"repoadmin-new-legend": "Vytvoriť nové úložisko",
@@ -172,5 +173,5 @@
 	"right-codereview-signoff": "Schváliť revízie",
 	"right-codereview-link-user": "Zviazať autorov s používateľmi wiki",
 	"right-codereview-associate": "Spravovať združenia revízií",
-	"right-codereview-review-own": "Označiť vlastné revízie ako OK"
+	"right-codereview-review-own": "Označiť vlastné revízie ako „{{int:code-status-ok}}“ or „{{int:code-status-resolved}}“"
 }
