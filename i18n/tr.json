@@ -235,5 +235,16 @@
 	"apihelp-query+coderevisions-summary": "CodeReview'daki düzeltmeleri listeleyin.",
 	"apihelp-query+coderevisions-param-repo": "Deponun adı.",
 	"apihelp-query+coderevisions-param-limit": "Geri dönmek için kaç düzeltme.",
-	"apihelp-query+coderevisions-param-path": "Yalnızca bu yollardaki düzeltmeleri göster."
+	"apihelp-query+coderevisions-param-path": "Yalnızca bu yollardaki düzeltmeleri göster.",
+	"apihelp-query+coderevisions-param-start": "Adresinde listeye başlamak için zaman damgası.",
+	"apihelp-query+coderevisions-param-revs": "Hakkında bilgi almak için düzeltme listesi. $1start geçersiz kılar.",
+	"apihelp-query+coderevisions-param-prop": "Hangi özelliklerin döndürüleceği.",
+	"apihelp-query+coderevisions-example-1": "MediaWiki'deki düzeltmeleri listele",
+	"apihelp-query+coderevisions-example-2": "MediaWiki'deki düzeltmeler için bilgi getir",
+	"apihelp-query+codetags-description": "Belirli bir depodaki düzeltmelere uygulanan etiketlerin listesini alın.",
+	"apihelp-query+codetags-summary": "Belirli bir depodaki düzeltmelere uygulanan etiketlerin listesini alın.",
+	"apihelp-query+codetags-param-repo": "Deponun adı.",
+	"apihelp-query+codetags-example-1": "MediaWiki'de liste etiketleri",
+	"apierror-invalidrepo": "Geçersiz repo \"$1\".",
+	"apierror-codereview-inlinecommentingdisabled": "Satır içi yorum devre dışı bırakıldığında farka yorum eklenemez (<var>$wgCodeReviewInlineComments</var> yanlıştır)."
 }
