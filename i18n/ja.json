@@ -200,5 +200,6 @@
 	"action-codereview-link-user": "作者からウィキ利用者へのリンク",
 	"action-codereview-associate": "リビジョンのつながりの管理",
 	"action-codereview-review-own": "自分のリビジョンに「{{int:code-status-ok}}」または「{{int:code-status-resolved}}」の印を付ける",
+	"apihelp-codeupdate-param-repo": "更新するリポジトリの名前。",
 	"apihelp-query+coderevisions-param-prop": "返すプロパティ:"
 }
