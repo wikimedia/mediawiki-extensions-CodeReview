@@ -70,7 +70,8 @@ class ApiRevisionUpdate extends ApiBase {
 			$params['comment'],
 			null,
 			$params['addreferenced'],
-			$params['removereferenced']
+			$params['removereferenced'],
+			$user
 		);
 
 		// Forge a response object

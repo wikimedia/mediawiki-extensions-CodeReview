@@ -148,15 +148,16 @@ class RepoAdminRepoView {
 	}
 
 	public function execute() {
-		global $wgOut, $wgRequest, $wgUser;
+		global $wgOut, $wgRequest;
 		$repoExists = (bool)$this->repo;
+		$user = $this->getUser();
 		$repoPath = $wgRequest->getVal( 'wpRepoPath', $repoExists ? $this->repo->getPath() : '' );
 		$bugPath = $wgRequest->getVal( 'wpBugPath',
 			$repoExists ? $this->repo->getBugzillaBase() : '' );
 		$viewPath = $wgRequest->getVal( 'wpViewPath',
 			$repoExists ? $this->repo->getViewVcBase() : '' );
 		if ( $wgRequest->wasPosted()
-			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName )
+			&& $user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName )
 		) {
 			// @todo log
 			$dbw = wfGetDB( DB_MASTER );
@@ -216,7 +217,7 @@ class RepoAdminRepoView {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
 		$htmlForm
-			->addHiddenField( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) )
+			->addHiddenField( 'wpEditToken', $user->getEditToken( $this->repoName ) )
 			->setAction( $this->title->getLocalURL() )
 			->setMethod( 'post' )
 			->setSubmitTextMsg( 'repoadmin-edit-button' )
