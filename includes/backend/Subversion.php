@@ -324,6 +324,7 @@ class SubversionShell extends SubversionAdaptor {
 
 	/**
 	 * Returns a string of extra arguments to be passed into the shell commands
+	 * @return string
 	 */
 	private function getExtraArgs() {
 		global $wgSubversionOptions, $wgSubversionUser, $wgSubversionPassword;
@@ -386,7 +387,7 @@ class SubversionProxy extends SubversionAdaptor {
 
 	protected function _proxy( $params ) {
 		foreach ( $params as $key => $val ) {
-			if ( is_null( $val ) ) {
+			if ( $val === null ) {
 				// Don't pass nulls to remote
 				unset( $params[$key] );
 			}

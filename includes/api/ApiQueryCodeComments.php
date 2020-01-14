@@ -42,13 +42,13 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		}
 
 		$listview = new CodeCommentsListView( $params['repo'] );
-		if ( is_null( $listview->getRepo() ) ) {
+		if ( $listview->getRepo() === null ) {
 			$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 
 		}
 		$pager = $listview->getPager();
 
-		if ( !is_null( $params['start'] ) ) {
+		if ( $params['start'] !== null ) {
 			$pager->setOffset( $this->getDB()->timestamp( $params['start'] ) );
 		}
 		$limit = $params['limit'];

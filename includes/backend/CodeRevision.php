@@ -1011,7 +1011,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param  $data
+	 * @param array $data
 	 * @return void
 	 */
 	private function addReferences( $data ) {
@@ -1394,7 +1394,7 @@ class CodeRevision {
 	 */
 	protected function sendCommentToUDP( $commentId, $text, $url = null ) {
 		global $wgLang, $wgUser;
-		if ( is_null( $url ) ) {
+		if ( $url === null ) {
 			$url = $this->getCanonicalUrl( $commentId );
 		}
 

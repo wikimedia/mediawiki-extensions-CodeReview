@@ -57,7 +57,7 @@ class SvnImport extends Maintenance {
 	/**
 	 * Import a repository in the local database.
 	 * @param string $repoName Local name of repository
-	 * @param int $start Revision to begin the import from
+	 * @param int|null $start Revision to begin the import from
 	 *   (Default: null, means last stored revision);
 	 * @param int $cacheSize
 	 * @return void

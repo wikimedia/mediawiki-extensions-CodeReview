@@ -66,7 +66,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 				__METHOD__, $query['options'], $query['join_conds'] );
 
 		} else {
-			if ( !is_null( $params['start'] ) ) {
+			if ( $params['start'] !== null ) {
 				$pager->setOffset( $params['start'] );
 			}
 
