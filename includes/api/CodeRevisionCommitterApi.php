@@ -9,10 +9,10 @@ class CodeRevisionCommitterApi extends CodeRevisionCommitter {
 	 * Check whether the user has the correct permissions for the action
 	 *
 	 * @param String $permission
+	 * @param User $user
 	 * @return bool
 	 */
-	public function validPost( $permission ) {
-		global $wgUser;
-		return $wgUser->isAllowed( $permission );
+	public function validPost( $permission, User $user ) {
+		return $user->isAllowed( $permission );
 	}
 }

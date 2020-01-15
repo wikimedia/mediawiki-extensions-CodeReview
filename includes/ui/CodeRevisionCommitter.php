@@ -86,14 +86,16 @@ class CodeRevisionCommitter extends CodeRevisionView {
 
 		// Change the status if allowed
 		$statusChanged = false;
-		if ( $this->mRev->isValidStatus( $status ) && $this->validPost( 'codereview-set-status' ) ) {
+		if ( $this->mRev->isValidStatus( $status ) &&
+			$this->validPost( 'codereview-set-status', $user )
+		) {
 			$statusChanged = $this->mRev->setStatus( $status, $user );
 		}
 		$validAddTags = $validRemoveTags = [];
-		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag' ) ) {
+		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag', $user ) ) {
 			$validAddTags = $addTags;
 		}
-		if ( count( $removeTags ) && $this->validPost( 'codereview-remove-tag' ) ) {
+		if ( count( $removeTags ) && $this->validPost( 'codereview-remove-tag', $user ) ) {
 			$validRemoveTags = $removeTags;
 		}
 		// If allowed to change any tags, then do so
@@ -101,34 +103,36 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $user );
 		}
 		// Add any signoffs
-		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff' ) ) {
+		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff', $user ) ) {
 			$this->mRev->addSignoff( $user, $addSignoffs );
 		}
 		// Strike any signoffs
-		if ( count( $strikeSignoffs ) && $this->validPost( 'codereview-signoff' ) ) {
+		if ( count( $strikeSignoffs ) && $this->validPost( 'codereview-signoff', $user ) ) {
 			$this->mRev->strikeSignoffs( $user, $strikeSignoffs );
 		}
 		// Add reference if requested
-		if ( count( $addReferences ) && $this->validPost( 'codereview-associate' ) ) {
+		if ( count( $addReferences ) && $this->validPost( 'codereview-associate', $user ) ) {
 			$this->mRev->addReferencesFrom( $addReferences );
 		}
 		// Remove references if requested
-		if ( count( $removeReferences ) && $this->validPost( 'codereview-associate' ) ) {
+		if ( count( $removeReferences ) &&
+			$this->validPost( 'codereview-associate', $user )
+		) {
 			$this->mRev->removeReferencesFrom( $removeReferences );
 		}
 		// Add reference if requested
-		if ( count( $addReferenced ) && $this->validPost( 'codereview-associate' ) ) {
+		if ( count( $addReferenced ) && $this->validPost( 'codereview-associate', $user ) ) {
 			$this->mRev->addReferencesTo( $addReferenced );
 		}
 		// Remove references if requested
-		if ( count( $removeReferenced ) && $this->validPost( 'codereview-associate' ) ) {
+		if ( count( $removeReferenced ) && $this->validPost( 'codereview-associate', $user ) ) {
 			$this->mRev->removeReferencesTo( $removeReferenced );
 		}
 
 		// Add any comments
 		$commentAdded = false;
 		$commentId = 0;
-		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment' ) ) {
+		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment', $user ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
 			$commentId = $this->mRev->saveComment( $commentText, $parent );
 
