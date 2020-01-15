@@ -43,11 +43,11 @@ abstract class CodeView {
 		$this->codeCommentLinkerWiki = new CodeCommentLinkerWiki( $this->mRepo );
 	}
 
-	public function validPost( $permission ) {
-		global $wgRequest, $wgUser;
+	public function validPost( $permission, User $user ) {
+		global $wgRequest;
 		return $wgRequest->wasPosted()
-			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
-			&& $wgUser->isAllowed( $permission );
+			&& $user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
+			&& $user->isAllowed( $permission );
 	}
 
 	abstract public function execute();
