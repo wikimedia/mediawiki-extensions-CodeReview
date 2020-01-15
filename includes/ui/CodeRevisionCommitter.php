@@ -2,9 +2,10 @@
 
 class CodeRevisionCommitter extends CodeRevisionView {
 	public function execute() {
-		global $wgRequest, $wgOut, $wgUser;
+		global $wgRequest, $wgOut;
 
-		if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+		$user = RequestContext::getMain()->getUser();
+		if ( !$user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 			$wgOut->addHTML( '<strong>' . wfMessage( 'sessionfailure' )->escaped() . '</strong>' );
 			parent::execute();
 			return;
@@ -25,7 +26,8 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$this->text,
 			$wgRequest->getIntOrNull( 'wpParent' ),
 			$this->mAddReferenced,
-			$this->mRemoveReferenced
+			$this->mRemoveReferenced,
+			$user
 		);
 
 		$redirTarget = null;
@@ -67,17 +69,17 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @param null|int $parent What the parent comment is (if a subcomment)
 	 * @param array $addReferenced
 	 * @param array $removeReferenced
+	 * @param User $user
 	 * @return int Comment ID if added, else 0
 	 */
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
 						$addReferences, $removeReferences, $commentText,
-						$parent, $addReferenced, $removeReferenced
+						$parent, $addReferenced, $removeReferenced,
+						User $user
 					) {
 		if ( !$this->mRev ) {
 			return false;
 		}
-
-		global $wgUser;
 
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->startAtomic( __METHOD__ );
@@ -85,7 +87,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		// Change the status if allowed
 		$statusChanged = false;
 		if ( $this->mRev->isValidStatus( $status ) && $this->validPost( 'codereview-set-status' ) ) {
-			$statusChanged = $this->mRev->setStatus( $status, $wgUser );
+			$statusChanged = $this->mRev->setStatus( $status, $user );
 		}
 		$validAddTags = $validRemoveTags = [];
 		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag' ) ) {
@@ -96,15 +98,15 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		}
 		// If allowed to change any tags, then do so
 		if ( count( $validAddTags ) || count( $validRemoveTags ) ) {
-			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $wgUser );
+			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $user );
 		}
 		// Add any signoffs
 		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff' ) ) {
-			$this->mRev->addSignoff( $wgUser, $addSignoffs );
+			$this->mRev->addSignoff( $user, $addSignoffs );
 		}
 		// Strike any signoffs
 		if ( count( $strikeSignoffs ) && $this->validPost( 'codereview-signoff' ) ) {
-			$this->mRev->strikeSignoffs( $wgUser, $strikeSignoffs );
+			$this->mRev->strikeSignoffs( $user, $strikeSignoffs );
 		}
 		// Add reference if requested
 		if ( count( $addReferences ) && $this->validPost( 'codereview-associate' ) ) {
@@ -139,17 +141,17 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$url = $this->mRev->getCanonicalUrl( $commentId );
 			if ( $statusChanged && $commentAdded ) {
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj4', 'codereview-email-body4',
-					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
+					$user->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
 					$this->mRev->getStatus(), $url, $this->text, $this->mRev->getMessage()
 				);
 			} elseif ( $statusChanged ) {
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj3', 'codereview-email-body3',
-					$wgUser->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
+					$user->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
 					$this->mRev->getStatus(), $url, $this->mRev->getMessage()
 				);
 			} elseif ( $commentAdded ) {
 				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj', 'codereview-email-body',
-					$wgUser->getName(), $url, $this->mRev->getIdStringUnique(), $this->text,
+					$user->getName(), $url, $this->mRev->getIdStringUnique(), $this->text,
 					$this->mRev->getMessage()
 				);
 			}
