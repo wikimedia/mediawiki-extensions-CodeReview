@@ -4,10 +4,6 @@
  * Special:Code/MediaWiki/status
  */
 class CodeStatusListView extends CodeView {
-	public function __construct( $repo ) {
-		parent::__construct( $repo );
-	}
-
 	public function execute() {
 		global $wgOut;
 
