@@ -63,7 +63,7 @@ class SpecialCode extends SpecialPage {
 				$out->setSubtitle(
 					$this->msg(
 						'codereview-subtitle',
-						CodeRepoListView::getNavItem( $repo )
+						CodeRepoListView::getNavItem( $repo, $this->getUser() )
 					)->parseAsBlock()
 				);
 			}

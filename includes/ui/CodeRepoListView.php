@@ -5,10 +5,9 @@
  */
 class CodeRepoListView {
 	public function execute() {
-		global $wgOut;
+		global $wgOut, $wgUser;
 		$repos = CodeRepository::getRepoList();
 		if ( !count( $repos ) ) {
-			global $wgUser;
 			$wgOut->addWikiMsg( 'code-no-repo' );
 
 			if ( $wgUser->isAllowed( 'repoadmin' ) ) {
@@ -24,31 +23,32 @@ class CodeRepoListView {
 		}
 		$text = '';
 		foreach ( $repos as $repo ) {
-			$text .= '* ' . self::getNavItem( $repo ) . "\n";
+			$text .= '* ' . self::getNavItem( $repo, $wgUser ) . "\n";
 		}
 		$wgOut->addWikiTextAsInterface( $text );
 	}
 
 	/**
 	 * @param CodeRepository $repo
+	 * @param User $user
 	 * @return string
 	 */
-	public static function getNavItem( $repo ) {
-		global $wgLang, $wgUser;
+	public static function getNavItem( $repo, User $user ) {
+		global $wgLang;
 		$name = $repo->getName();
 
 		$code = SpecialPage::getTitleFor( 'Code', $name );
 		$links[] = "[[$code/comments|" . wfMessage( 'code-notes' )->escaped() . ']]';
 		$links[] = "[[$code/statuschanges|" . wfMessage( 'code-statuschanges' )->escaped() . ']]';
-		if ( $wgUser->getId() ) {
-			$author = $repo->wikiUserAuthor( $wgUser->getName() );
+		if ( $user->getId() ) {
+			$author = $repo->wikiUserAuthor( $user->getName() );
 			if ( $author !== false ) {
 				$links[] = "[[$code/author/$author|" . wfMessage( 'code-mycommits' )->escaped() . ']]';
 			}
 		}
 
-		if ( $wgUser->isAllowed( 'codereview-post-comment' ) ) {
-			$userName = $wgUser->getName();
+		if ( $user->isAllowed( 'codereview-post-comment' ) ) {
+			$userName = $user->getName();
 			$links[] = "[[$code/comments/author/$userName|" . wfMessage( 'code-mycomments' )->escaped() .
 				']]';
 		}
@@ -58,7 +58,7 @@ class CodeRepoListView {
 		$links[] = "[[$code/status|" . wfMessage( 'code-status' )->escaped() . ']]';
 		$links[] = "[[$code/releasenotes|" . wfMessage( 'code-releasenotes' )->escaped() . ']]';
 		$links[] = "[[$code/stats|" . wfMessage( 'code-stats' )->escaped() . ']]';
-		if ( $wgUser->isAllowed( 'repoadmin' ) ) {
+		if ( $user->isAllowed( 'repoadmin' ) ) {
 			$links[] = "[[Special:RepoAdmin/$name|" . wfMessage( 'repoadmin-nav' )->escaped() . ']]';
 		}
 		$text = "'''[[$code|$name]]''' " .
