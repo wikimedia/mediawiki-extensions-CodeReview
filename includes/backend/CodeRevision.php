@@ -374,7 +374,7 @@ class CodeRevision {
 			);
 		}
 
-		$this->sendStatusToUDP( $status, $this->oldStatus );
+		$this->sendStatusToUDP( $status, $this->oldStatus, $user );
 
 		return true;
 	}
@@ -696,7 +696,7 @@ class CodeRevision {
 
 		$url = $this->getCanonicalUrl( $commentId );
 
-		$this->sendCommentToUDP( $commentId, $text, $url );
+		$this->sendCommentToUDP( $commentId, $text, $user, $url );
 
 		return $commentId;
 	}
@@ -1391,11 +1391,12 @@ class CodeRevision {
 	/**
 	 * @param string $commentId
 	 * @param string $text
+	 * @param User $user
 	 * @param null|string $url
 	 * @return void
 	 */
-	protected function sendCommentToUDP( $commentId, $text, $url = null ) {
-		global $wgLang, $wgUser;
+	protected function sendCommentToUDP( $commentId, $text, User $user, $url = null ) {
+		global $wgLang;
 		if ( $url === null ) {
 			$url = $this->getCanonicalUrl( $commentId );
 		}
@@ -1405,7 +1406,7 @@ class CodeRevision {
 			wfMessage( 'code-rev-message' )->text(),
 			$this->repo->getName(),
 			$this->getIdString(),
-			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgUser->getName() ),
+			IRCColourfulRCFeedFormatter::cleanupForIRC( $user->getName() ),
 			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgLang->truncateForVisual( $text, 100 ) ),
 			$url
 		);
@@ -1416,9 +1417,9 @@ class CodeRevision {
 	/**
 	 * @param string $status
 	 * @param string $oldStatus
+	 * @param User $user
 	 */
-	protected function sendStatusToUDP( $status, $oldStatus ) {
-		global $wgUser;
+	protected function sendStatusToUDP( $status, $oldStatus, User $user ) {
 		$url = $this->getCanonicalUrl();
 
 		// Give grep a chance to find the usages:
@@ -1428,7 +1429,7 @@ class CodeRevision {
 			"%s \00314(%s)\00303 %s\003 %s: \00315%s\003 -> \00310%s\003%s",
 			wfMessage( 'code-rev-status' )->text(),
 			$this->repo->getName(),
-			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgUser->getName() ),
+			IRCColourfulRCFeedFormatter::cleanupForIRC( $user->getName() ),
 			// Remove three apostrophes as they are intended for the parser
 			str_replace(
 				"'''",
