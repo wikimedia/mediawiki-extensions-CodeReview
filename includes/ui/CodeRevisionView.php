@@ -814,10 +814,11 @@ class CodeRevisionView extends CodeView {
 
 	/**
 	 * @param string $text
+	 * @param User $user
 	 * @return string
 	 */
-	protected function previewComment( $text ) {
-		$comment = $this->mRev->previewComment( $text );
+	protected function previewComment( $text, User $user ) {
+		$comment = $this->mRev->previewComment( $text, $user );
 		return $this->formatComment( $comment );
 	}
 
@@ -897,7 +898,7 @@ class CodeRevisionView extends CodeView {
 	protected function postCommentForm( $parent = null ) {
 		global $wgUser;
 		if ( $this->mPreviewText !== false && $parent === $this->mReplyTarget ) {
-			$preview = $this->previewComment( $this->mPreviewText );
+			$preview = $this->previewComment( $this->mPreviewText, $wgUser );
 			$text = $this->mPreviewText;
 		} else {
 			$preview = '';

@@ -664,27 +664,29 @@ class CodeRevision {
 
 	/**
 	 * @param string $text
+	 * @param User $user
 	 * @param null $parent
 	 * @return CodeComment
 	 */
-	public function previewComment( $text, $parent = null ) {
-		$data = $this->commentData( rtrim( $text ), $parent );
+	public function previewComment( $text, User $user, $parent = null ) {
+		$data = $this->commentData( rtrim( $text ), $user, $parent );
 		$data['cc_id'] = null;
 		return CodeComment::newFromData( $this, $data );
 	}
 
 	/**
 	 * @param string $text
+	 * @param User $user
 	 * @param null $parent
 	 * @return int
 	 */
-	public function saveComment( $text, $parent = null ) {
+	public function saveComment( $text, User $user, $parent = null ) {
 		$text = rtrim( $text );
 		if ( !strlen( $text ) ) {
 			return 0;
 		}
 		$dbw = wfGetDB( DB_MASTER );
-		$data = $this->commentData( $text, $parent );
+		$data = $this->commentData( $text, $user, $parent );
 
 		$dbw->startAtomic( __METHOD__ );
 		$data['cc_id'] = $dbw->nextSequenceValue( 'code_comment_cc_id' );
@@ -753,11 +755,11 @@ class CodeRevision {
 
 	/**
 	 * @param string $text
+	 * @param User $user
 	 * @param null $parent
 	 * @return array
 	 */
-	protected function commentData( $text, $parent = null ) {
-		global $wgUser;
+	protected function commentData( $text, User $user, $parent = null ) {
 		$dbw = wfGetDB( DB_MASTER );
 		$ts = wfTimestamp( TS_MW );
 		$sortkey = $this->threadedSortkey( $parent, $ts );
@@ -766,8 +768,8 @@ class CodeRevision {
 			'cc_rev_id' => $this->id,
 			'cc_text' => $text,
 			'cc_parent' => $parent,
-			'cc_user' => $wgUser->getId(),
-			'cc_user_text' => $wgUser->getName(),
+			'cc_user' => $user->getId(),
+			'cc_user_text' => $user->getName(),
 			'cc_timestamp' => $dbw->timestamp( $ts ),
 			'cc_sortkey' => $sortkey
 		];
