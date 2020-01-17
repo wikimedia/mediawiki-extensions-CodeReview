@@ -4,7 +4,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	public function execute() {
 		global $wgRequest, $wgOut;
 
-		$user = RequestContext::getMain()->getUser();
+		$user = $this->user;
 		if ( !$user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 			$wgOut->addHTML( '<strong>' . wfMessage( 'sessionfailure' )->escaped() . '</strong>' );
 			parent::execute();

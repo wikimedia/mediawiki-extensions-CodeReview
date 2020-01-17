@@ -109,6 +109,8 @@ class SpecialCode extends SpecialPage {
 				return $view;
 			}
 
+			$user = $this->getUser();
+
 			switch ( count( $params ) ) {
 			case 1:
 				$view = new CodeRevisionListView( $repo );
@@ -125,11 +127,11 @@ class SpecialCode extends SpecialPage {
 				} elseif ( $request->wasPosted() && !$request->getCheck( 'wpPreview' ) ) {
 					# This is not really a view, but we return it nonetheless.
 					# Add any tags, Set status, Adds comments
-					$view = new CodeRevisionCommitter( $repo, $params[1] );
+					$view = new CodeRevisionCommitter( $repo, $user, $params[1] );
 				} elseif ( empty( $params[1] ) ) {
 					$view = new CodeRevisionListView( $repo );
 				} else {
-					$view = new CodeRevisionView( $repo, $params[1] );
+					$view = new CodeRevisionView( $repo, $user, $params[1] );
 				}
 				break;
 			case 4:
@@ -146,7 +148,7 @@ class SpecialCode extends SpecialPage {
 				// @todo FIXME: Fall through or not?
 			default:
 				if ( $params[2] == 'reply' ) {
-					$view = new CodeRevisionView( $repo, $params[1], $params[3] );
+					$view = new CodeRevisionView( $repo, $user, $params[1], $params[3] );
 					break;
 				}
 				return null;

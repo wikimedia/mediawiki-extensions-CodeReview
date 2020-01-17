@@ -8,16 +8,19 @@ use MediaWiki\MediaWikiServices;
 class CodeRevisionView extends CodeView {
 	protected $showButtonsFormatReference = false, $showButtonsFormatSignoffs = false;
 	protected $referenceInputName = '';
+	protected $user;
 
 	/**
 	 * @param string|CodeRepository $repo
 	 * @param string|CodeRevision $rev
+	 * @param User $user
 	 * @param null $replyTarget
 	 */
-	public function __construct( $repo, $rev, $replyTarget = null ) {
+	public function __construct( $repo, $rev, User $user, $replyTarget = null ) {
 		parent::__construct( $repo );
 		global $wgRequest;
 
+		$this->user = $user;
 		if ( $rev instanceof CodeRevision ) {
 			$this->mRevId = $rev->getId();
 			$this->mRev = $rev;
@@ -86,7 +89,7 @@ class CodeRevisionView extends CodeView {
 	}
 
 	public function execute() {
-		global $wgOut, $wgLang, $wgUser;
+		global $wgOut, $wgLang;
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();
@@ -110,6 +113,8 @@ class CodeRevisionView extends CodeView {
 			$wgOut->redirect( $redirectOnPost );
 			return;
 		}
+
+		$user = $this->user;
 
 		$pageTitle = $this->mRepo->getName() . wfMessage( 'word-separator' )->text() .
 			$this->mRev->getIdString();
@@ -136,7 +141,7 @@ class CodeRevisionView extends CodeView {
 		if ( $paths ) {
 			$paths = "<div class='mw-codereview-paths mw-content-ltr'><ul>\n$paths</ul></div>\n";
 		}
-		$comments = $this->formatComments( $wgUser );
+		$comments = $this->formatComments( $user );
 		$commentsLink = '';
 		if ( $comments ) {
 			$commentsLink = " (<a href=\"#code-comments\">" .
@@ -174,7 +179,7 @@ class CodeRevisionView extends CodeView {
 		$html .= Xml::openElement( 'form',
 			[ 'action' => $special->getLocalURL(), 'method' => 'post' ] );
 
-		$canPostComments = $this->canPostComments( $wgUser );
+		$canPostComments = $this->canPostComments( $user );
 		if ( $canPostComments ) {
 			$html .= $this->addActionButtons();
 		}
@@ -200,7 +205,7 @@ class CodeRevisionView extends CodeView {
 		}
 
 		# Show sign-offs
-		$userCanSignoff = $wgUser->isAllowed( 'codereview-signoff' ) && !$wgUser->isBlocked();
+		$userCanSignoff = $user->isAllowed( 'codereview-signoff' ) && !$user->isBlocked();
 		$signOffs = $this->mRev->getSignoffs();
 		if ( count( $signOffs ) || $userCanSignoff ) {
 			$html .= "<h2 id='code-signoffs'>" . wfMessage( 'code-signoffs' )->escaped() .
@@ -208,7 +213,7 @@ class CodeRevisionView extends CodeView {
 		}
 
 		# Show code relations
-		$userCanAssociate = $wgUser->isAllowed( 'codereview-associate' ) && !$wgUser->isBlocked();
+		$userCanAssociate = $user->isAllowed( 'codereview-associate' ) && !$user->isBlocked();
 		$references = $this->mRev->getFollowupRevisions();
 		if ( count( $references ) || $userCanAssociate ) {
 			$html .= "<h2 id='code-references'>" . wfMessage( 'code-references' )->escaped() .
@@ -279,9 +284,9 @@ class CodeRevisionView extends CodeView {
 	}
 
 	protected function checkPostings() {
-		global $wgRequest, $wgUser;
+		global $wgRequest;
 		if ( $wgRequest->wasPosted()
-			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
+			&& $this->user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
 		) {
 			// Look for a posting...
 			$text = $wgRequest->getText( "wpReply{$this->mReplyTarget}" );
@@ -356,7 +361,6 @@ class CodeRevisionView extends CodeView {
 	}
 
 	protected function tagForm() {
-		global $wgUser;
 		$tags = $this->mRev->getTags();
 		$list = '';
 		if ( count( $tags ) ) {
@@ -366,7 +370,7 @@ class CodeRevisionView extends CodeView {
 					$tags )
 			) . '&#160;';
 		}
-		if ( $wgUser->isAllowed( 'codereview-add-tag' ) ) {
+		if ( $this->user->isAllowed( 'codereview-add-tag' ) ) {
 			$list .= $this->addTagForm( $this->mAddTags, $this->mRemoveTags );
 		}
 		return $list;
@@ -406,8 +410,7 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	protected function statusForm() {
-		global $wgUser;
-		if ( $wgUser->isAllowed( 'codereview-set-status' ) ) {
+		if ( $this->user->isAllowed( 'codereview-set-status' ) ) {
 			return Xml::openElement( 'select', [ 'name' => 'wpStatus' ] ) .
 				self::buildStatusList( $this->mStatus, $this ) .
 				Xml::closeElement( 'select' );
@@ -886,14 +889,14 @@ class CodeRevisionView extends CodeView {
 	}
 
 	protected function postCommentForm( $parent = null ) {
-		global $wgUser;
+		$user = $this->user;
 
-		if ( !$this->canPostComments( $wgUser ) ) {
+		if ( !$this->canPostComments( $user ) ) {
 			return '';
 		}
 
 		if ( $this->mPreviewText !== false && $parent === $this->mReplyTarget ) {
-			$preview = $this->previewComment( $this->mPreviewText, $wgUser );
+			$preview = $this->previewComment( $this->mPreviewText, $user );
 			$text = $this->mPreviewText;
 		} else {
 			$preview = '';
@@ -902,7 +905,7 @@ class CodeRevisionView extends CodeView {
 
 		return '<div class="mw-codereview-post-comment">' .
 			$preview .
-			Html::hidden( 'wpEditToken', $wgUser->getEditToken() ) .
+			Html::hidden( 'wpEditToken', $user->getEditToken() ) .
 			Html::hidden( 'path', $this->mPath ) .
 			( $parent ? Html::hidden( 'wpParent', $parent ) : '' ) .
 			'<div>' .
@@ -957,12 +960,11 @@ class CodeRevisionView extends CodeView {
 	 */
 	protected function getUserSignoffs( $signOffs ) {
 		$ret = [];
-		global $wgUser;
 		/**
 		 * @var $s CodeSignoff
 		 */
 		foreach ( $signOffs as $s ) {
-			if ( $s->userText == $wgUser->getName() && !$s->isStruck() ) {
+			if ( $s->userText == $this->user->getName() && !$s->isStruck() ) {
 				$ret[$s->flag] = true;
 			}
 		}
