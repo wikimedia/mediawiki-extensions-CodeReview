@@ -4,10 +4,14 @@
  * Special:Code/MediaWiki/author/johndoe/link
  */
 class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
-	public function __construct( $repo, $author ) {
+	/** @var User */
+	private $user;
+
+	public function __construct( $repo, $author, User $user ) {
 		global $wgRequest;
 		parent::__construct( $repo, $author );
 		$this->mTarget = $wgRequest->getVal( 'linktouser' );
+		$this->user = $user;
 	}
 
 	public function getTitle() {
@@ -17,9 +21,9 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	}
 
 	public function execute() {
-		global $wgRequest, $wgUser;
+		global $wgRequest;
 
-		if ( !$wgUser->isAllowed( 'codereview-link-user' ) ) {
+		if ( !$this->user->isAllowed( 'codereview-link-user' ) ) {
 			throw new PermissionsError( 'codereview-link-user' );
 		}
 
@@ -31,13 +35,13 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	}
 
 	private function doForm() {
-		global $wgOut, $wgUser;
+		global $wgOut;
 
 		$form = Xml::openElement( 'form', [ 'method' => 'post',
 			'action' => $this->getTitle()->getLocalURL(),
 			'name' => 'uluser', 'id' => 'mw-codeauthor-form1' ] );
 
-		$form .= Html::hidden( 'linktoken', $wgUser->getEditToken( 'link' ) );
+		$form .= Html::hidden( 'linktoken', $this->user->getEditToken( 'link' ) );
 		$form .= Xml::openElement( 'fieldset' );
 
 		$additional = '';
@@ -64,10 +68,10 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	}
 
 	private function doSubmit() {
-		global $wgOut, $wgRequest, $wgUser;
+		global $wgOut, $wgRequest;
 		// Link an author to a wiki user
 
-		if ( !$wgUser->matchEditToken( $wgRequest->getVal( 'linktoken' ), 'link' ) ) {
+		if ( !$this->user->matchEditToken( $wgRequest->getVal( 'linktoken' ), 'link' ) ) {
 			$wgOut->addWikiMsg( 'code-author-badtoken' );
 			return;
 		}

@@ -134,7 +134,7 @@ class SpecialCode extends SpecialPage {
 				break;
 			case 4:
 				if ( $params[1] === 'author' && $params[3] === 'link' ) {
-					$view = new CodeRevisionAuthorLink( $repo, $params[2] );
+					$view = new CodeRevisionAuthorLink( $repo, $params[2], $this->getUser() );
 					break;
 				} elseif ( $params[1] === 'comments' ) {
 					$view = new CodeCommentsAuthorListView( $repo, $params[3] );
