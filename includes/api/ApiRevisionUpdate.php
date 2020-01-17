@@ -83,7 +83,7 @@ class ApiRevisionUpdate extends ApiBase {
 			// HTML Formatted comment
 			$view = new CodeRevisionView( $repo, $rev );
 			$comment = CodeComment::newFromID( $commentID, $rev );
-			$r['HTML'] = $view->formatComment( $comment );
+			$r['HTML'] = $view->formatComment( $comment, $user );
 		}
 
 		$this->getResult()->addValue( null, $this->getModuleName(), $r );
