@@ -91,7 +91,7 @@ class CodeRevisionListView extends CodeView {
 		if ( $wgRequest->wasPosted() && count( $revisions )
 			&& $wgUser->matchEditToken( $editToken )
 		) {
-			$this->doBatchChange();
+			$this->doBatchChange( $wgUser );
 			return;
 		}
 
@@ -133,15 +133,15 @@ class CodeRevisionListView extends CodeView {
 		);
 		if ( $this->batchForm ) {
 			$wgOut->addHTML(
-				$this->buildBatchInterface( $pager )
+				$this->buildBatchInterface( $pager, $wgUser )
 			);
 		}
 
 		$wgOut->addHTML( Xml::closeElement( 'form' ) . $pathForm );
 	}
 
-	private function doBatchChange() {
-		global $wgRequest, $wgUser, $wgOut;
+	private function doBatchChange( User $user ) {
+		global $wgRequest, $wgOut;
 
 		$revisions = $wgRequest->getArray( 'wpRevisionSelected' );
 		$removeTags = $wgRequest->getVal( 'wpRemoveTag' );
@@ -160,20 +160,20 @@ class CodeRevisionListView extends CodeView {
 			$revObjects[] = CodeRevision::newFromRow( $this->mRepo, $row );
 		}
 
-		if ( $wgUser->isAllowed( 'codereview-add-tag' ) &&
+		if ( $user->isAllowed( 'codereview-add-tag' ) &&
 				$addTags || $removeTags ) {
 			$addTags = array_map( 'trim', explode( ",", $addTags ) );
 			$removeTags = array_map( 'trim', explode( ",", $removeTags ) );
 
 			foreach ( $revObjects as $rev ) {
-				$rev->changeTags( $addTags, $removeTags, $wgUser );
+				$rev->changeTags( $addTags, $removeTags, $user );
 			}
 		}
 
-		if ( $wgUser->isAllowed( 'codereview-set-status' ) &&
+		if ( $user->isAllowed( 'codereview-set-status' ) &&
 				$revObjects && CodeRevision::isValidStatus( $status ) ) {
 			foreach ( $revObjects as $rev ) {
-				$rev->setStatus( $status, $wgUser );
+				$rev->setStatus( $status, $user );
 			}
 		}
 
@@ -191,14 +191,13 @@ class CodeRevisionListView extends CodeView {
 
 	/**
 	 * @param SvnRevTablePager $pager
+	 * @param User $user
 	 * @return string
 	 */
-	protected function buildBatchInterface( $pager ) {
-		global $wgUser;
-
+	protected function buildBatchInterface( $pager, User $user ) {
 		$changeFields = [];
 
-		if ( $wgUser->isAllowed( 'codereview-set-status' ) ) {
+		if ( $user->isAllowed( 'codereview-set-status' ) ) {
 			$changeFields['code-batch-status'] =
 				Xml::tags( 'select', [ 'name' => 'wpStatus' ],
 					Xml::tags( 'option',
@@ -208,7 +207,7 @@ class CodeRevisionListView extends CodeView {
 				);
 		}
 
-		if ( $wgUser->isAllowed( 'codereview-add-tag' ) ) {
+		if ( $user->isAllowed( 'codereview-add-tag' ) ) {
 			$changeFields['code-batch-tags'] = CodeRevisionView::addTagForm( '', '' );
 		}
 
@@ -220,7 +219,7 @@ class CodeRevisionListView extends CodeView {
 				Xml::buildForm( $changeFields, 'codereview-batch-submit' ) );
 
 		$changeInterface .= $pager->getHiddenFields();
-		$changeInterface .= Html::hidden( 'wpBatchChangeEditToken', $wgUser->getEditToken() );
+		$changeInterface .= Html::hidden( 'wpBatchChangeEditToken', $user->getEditToken() );
 
 		return $changeInterface;
 	}
