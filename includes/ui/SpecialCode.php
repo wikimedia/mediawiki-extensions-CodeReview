@@ -131,7 +131,7 @@ class SpecialCode extends SpecialPage {
 				} elseif ( empty( $params[1] ) ) {
 					$view = new CodeRevisionListView( $repo );
 				} else {
-					$view = new CodeRevisionView( $repo, $user, $params[1] );
+					$view = new CodeRevisionView( $repo, $params[1], $user );
 				}
 				break;
 			case 4:
@@ -148,7 +148,7 @@ class SpecialCode extends SpecialPage {
 				// @todo FIXME: Fall through or not?
 			default:
 				if ( $params[2] == 'reply' ) {
-					$view = new CodeRevisionView( $repo, $user, $params[1], $params[3] );
+					$view = new CodeRevisionView( $repo, $params[1], $user, $params[3] );
 					break;
 				}
 				return null;
