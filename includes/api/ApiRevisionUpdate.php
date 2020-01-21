@@ -81,7 +81,7 @@ class ApiRevisionUpdate extends ApiBase {
 			// id inserted
 			$r['commentid'] = intval( $commentID );
 			// HTML Formatted comment
-			$view = new CodeRevisionView( $repo, $user, $rev );
+			$view = new CodeRevisionView( $repo, $rev, $user );
 			$comment = CodeComment::newFromID( $commentID, $rev );
 			$r['HTML'] = $view->formatComment( $comment, $user );
 		}
