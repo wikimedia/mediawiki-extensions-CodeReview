@@ -78,20 +78,22 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	public function execute() {
-		global $wgOut, $wgUser, $wgRequest;
+		global $wgOut, $wgRequest;
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();
 			return;
 		}
 
+		$user = RequestContext::getMain()->getUser();
+
 		// Check for batch change requests.
 		$editToken = $wgRequest->getVal( 'wpBatchChangeEditToken' );
 		$revisions = $wgRequest->getArray( 'wpRevisionSelected' );
 		if ( $wgRequest->wasPosted() && count( $revisions )
-			&& $wgUser->matchEditToken( $editToken )
+			&& $user->matchEditToken( $editToken )
 		) {
-			$this->doBatchChange( $wgUser );
+			$this->doBatchChange( $user );
 			return;
 		}
 
@@ -103,8 +105,8 @@ class CodeRevisionListView extends CodeView {
 		$pathForm = $this->showForm( $pager );
 
 		// Build batch change interface as needed
-		$this->batchForm = $wgUser->isAllowed( 'codereview-set-status' ) ||
-			$wgUser->isAllowed( 'codereview-add-tag' );
+		$this->batchForm = $user->isAllowed( 'codereview-set-status' ) ||
+			$user->isAllowed( 'codereview-add-tag' );
 
 		$navBar = $pager->getNavigationBar();
 
@@ -133,7 +135,7 @@ class CodeRevisionListView extends CodeView {
 		);
 		if ( $this->batchForm ) {
 			$wgOut->addHTML(
-				$this->buildBatchInterface( $pager, $wgUser )
+				$this->buildBatchInterface( $pager, $user )
 			);
 		}
 

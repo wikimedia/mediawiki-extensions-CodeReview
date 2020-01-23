@@ -5,12 +5,13 @@
  */
 class CodeRepoListView {
 	public function execute() {
-		global $wgOut, $wgUser;
+		global $wgOut;
 		$repos = CodeRepository::getRepoList();
+		$user = RequestContext::getMain()->getUser();
 		if ( !count( $repos ) ) {
 			$wgOut->addWikiMsg( 'code-no-repo' );
 
-			if ( $wgUser->isAllowed( 'repoadmin' ) ) {
+			if ( $user->isAllowed( 'repoadmin' ) ) {
 				$wgOut->addWikiMsg( 'code-create-repo' );
 			} else {
 				$wgOut->addWikiMsg( 'code-need-repoadmin-rights' );
@@ -23,7 +24,7 @@ class CodeRepoListView {
 		}
 		$text = '';
 		foreach ( $repos as $repo ) {
-			$text .= '* ' . self::getNavItem( $repo, $wgUser ) . "\n";
+			$text .= '* ' . self::getNavItem( $repo, $user ) . "\n";
 		}
 		$wgOut->addWikiTextAsInterface( $text );
 	}

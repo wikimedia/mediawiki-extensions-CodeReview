@@ -28,14 +28,14 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 	}
 
 	public function execute() {
-		global $wgOut, $wgUser;
+		global $wgOut;
 
 		$linkInfo = $this->linkStatus();
 
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		// Give grep a chance to find the usages:
 		// code-author-link, code-author-unlink
-		if ( $wgUser->isAllowed( 'codereview-link-user' ) ) {
+		if ( RequestContext::getMain()->getUser()->isAllowed( 'codereview-link-user' ) ) {
 			$repo = $this->mRepo->getName();
 			$page = SpecialPage::getTitleFor( 'Code', "$repo/author/$this->mAuthor/link" );
 			$linkInfo .= ' (' . $linkRenderer->makeLink( $page,
