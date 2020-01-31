@@ -4,7 +4,8 @@
 			"Bhawani Gautam",
 			"Bhawani Gautam Rhk",
 			"RajeshPandey",
-			"राम प्रसाद जोशी"
+			"राम प्रसाद जोशी",
+			"पर्वत सुबेदी"
 		]
 	},
 	"code-comments": "टिप्पणीहरू",
@@ -19,5 +20,6 @@
 	"code-status-new": "नयाँ",
 	"code-status-ok": "हुन्छ",
 	"code-signoff-field-user": "प्रयोगकर्ता",
-	"code-rev-submit": "परिवर्तन सङ्ग्रह गर्ने"
+	"code-rev-submit": "परिवर्तन सङ्ग्रह गर्ने",
+	"code-stats": "तथ्याङ्कहरू"
 }
