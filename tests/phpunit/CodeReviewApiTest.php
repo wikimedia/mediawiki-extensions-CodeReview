@@ -17,7 +17,6 @@ class CodeReviewApiTest extends ApiTestCase {
 
 	protected function setUp() : void {
 		parent::setUp();
-		$this->doLogin();
 		$this->createRepo();
 		$this->commonApiData = [
 			'repo' => 'Test',
@@ -69,11 +68,12 @@ class CodeReviewApiTest extends ApiTestCase {
 	 * $wgOut->parseAsContent() backtrace :b
 	 */
 	public function testAddInlineComment() {
+		$user = $this->getTestSysop()->getUser();
 		$this->doApiRequest( [
 			'action' => 'coderevisionupdate',
 			'rev' => 777,
 			'comment' => 'Awesome comment',
 
-		] + $this->commonApiData );
+		] + $this->commonApiData, null, false, $user );
 	}
 }
