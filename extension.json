@@ -71,18 +71,10 @@
 		"codetags": "ApiQueryCodeTags"
 	},
 	"Hooks": {
-		"MakeGlobalVariablesScript": [
-			"CodeReviewHooks::onMakeGlobalVariablesScript"
-		],
-		"LoadExtensionSchemaUpdates": [
-			"CodeReviewHooks::onLoadExtensionSchemaUpdates"
-		],
-		"RenameUserSQL": [
-			"CodeReviewHooks::onRenameUserSQL"
-		],
-		"UserMergeAccountFields": [
-			"CodeReviewHooks::onUserMergeAccountFields"
-		]
+		"MakeGlobalVariablesScript": "CodeReviewHooks::onMakeGlobalVariablesScript",
+		"LoadExtensionSchemaUpdates": "CodeReviewHooks::onLoadExtensionSchemaUpdates",
+		"RenameUserSQL": "CodeReviewHooks::onRenameUserSQL",
+		"UserMergeAccountFields": "CodeReviewHooks::onUserMergeAccountFields"
 	},
 	"MessagesDirs": {
 		"CodeReview": [
