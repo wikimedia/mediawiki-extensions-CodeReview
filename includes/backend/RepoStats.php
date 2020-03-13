@@ -1,4 +1,5 @@
 <?php
+use MediaWiki\MediaWikiServices;
 
 class RepoStats {
 
@@ -17,24 +18,48 @@ class RepoStats {
 
 	public $fixmesPerPath, $newPerPath;
 
+	/** @var string[] */
+	private static $cacheFields = [
+		'time',
+		'revisions',
+		'authors',
+		'states',
+		'fixmes',
+		'new',
+		'fixmesPerPath',
+		'newPerPath'
+	];
+
 	/**
 	 * @param CodeRepository $repo
 	 * @return RepoStats
 	 */
 	public static function newFromRepo( CodeRepository $repo ) {
-		global $wgMemc, $wgCodeReviewRepoStatsCacheTime;
+		global $wgCodeReviewRepoStatsCacheTime;
 
-		$key = $wgMemc->makeKey( 'codereview1', 'stats', $repo->getName() );
-		$stats = $wgMemc->get( $key );
-		wfDebug( "{$repo->getName()} repo stats: cache " );
-		if ( $stats ) {
-			wfDebug( "hit\n" );
-			return $stats;
-		}
-		wfDebug( "miss\n" );
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+
+		$data = $cache->getWithSetCallback(
+			$cache->makeKey( 'codereview-stats', $repo->getName() ),
+			$wgCodeReviewRepoStatsCacheTime,
+			function () use ( $repo ) {
+				$freshStats = new RepoStats( $repo );
+				$freshStats->generate();
+
+				$map = [];
+				foreach ( self::$cacheFields as $field ) {
+					$map[$field] = $freshStats->$field;
+				}
+
+				return $map;
+			}
+		);
+
 		$stats = new RepoStats( $repo );
-		$stats->generate();
-		$wgMemc->set( $key, $stats, $wgCodeReviewRepoStatsCacheTime );
+		foreach ( self::$cacheFields as $field ) {
+			$stats->$field = $data[$field];
+		}
+
 		return $stats;
 	}
 

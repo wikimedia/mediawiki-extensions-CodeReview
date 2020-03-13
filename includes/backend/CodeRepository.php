@@ -1,4 +1,5 @@
 <?php
+use MediaWiki\MediaWikiServices;
 
 /**
  * Core class for interacting with a repository of code.
@@ -187,40 +188,39 @@ class CodeRepository {
 	 * @return array
 	 */
 	public function getAuthorList() {
-		global $wgMemc;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$method = __METHOD__;
 
-		$key = $wgMemc->makeKey( 'codereview', 'authors', $this->getId() );
-		$authors = $wgMemc->get( $key );
-		if ( is_array( $authors ) ) {
-			return $authors;
-		}
+		return $cache->getWithSetCallback(
+			$cache->makeKey( 'codereview-authors', $this->getId() ),
+			$cache::TTL_DAY,
+			function () use ( $method ) {
+				$dbr = wfGetDB( DB_REPLICA );
+				$res = $dbr->select(
+					'code_rev',
+					[ 'cr_author', 'MAX(cr_timestamp) AS time' ],
+					[ 'cr_repo_id' => $this->getId() ],
+					$method,
+					[
+						'GROUP BY' => 'cr_author',
+						'ORDER BY' => 'cr_author',
+						'LIMIT' => 500
+					]
+				);
 
-		$dbr = wfGetDB( DB_REPLICA );
-		$res = $dbr->select(
-			'code_rev',
-			[ 'cr_author', 'MAX(cr_timestamp) AS time' ],
-			[ 'cr_repo_id' => $this->getId() ],
-			__METHOD__,
-			[
-				'GROUP BY' => 'cr_author',
-				'ORDER BY' => 'cr_author',
-				'LIMIT' => 500
-			]
-		);
+				$authors = [];
+				foreach ( $res as $row ) {
+					if ( $row->cr_author !== null ) {
+						$authors[] = [
+							'author' => $row->cr_author,
+							'lastcommit' => $row->time
+						];
+					}
+				}
 
-		$authors = [];
-		foreach ( $res as $row ) {
-			if ( $row->cr_author !== null ) {
-				$authors[] = [
-					'author' => $row->cr_author,
-					'lastcommit' => $row->time
-				];
+				return $authors;
 			}
-		}
-
-		$wgMemc->set( $key, $authors, 3600 * 24 );
-
-		return $authors;
+		);
 	}
 
 	/**
@@ -236,35 +236,35 @@ class CodeRepository {
 	 * @return array
 	 */
 	public function getTagList( $recache = false ) {
-		global $wgMemc;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$method = __METHOD__;
 
-		$key = $wgMemc->makeKey( 'codereview', 'tags', $this->getId() );
-		$tags = $wgMemc->get( $key );
-		if ( is_array( $tags ) && !$recache ) {
-			return $tags;
-		}
+		return $cache->getWithSetCallback(
+			$cache->makeKey( 'codereview-tags', $this->getId() ),
+			$cache::TTL_DAY,
+			function () use ( $method ) {
+				$dbr = wfGetDB( DB_REPLICA );
+				$res = $dbr->select(
+					'code_tags',
+					[ 'ct_tag', 'COUNT(*) AS revs' ],
+					[ 'ct_repo_id' => $this->getId() ],
+					$method,
+					[
+						'GROUP BY' => 'ct_tag',
+						'ORDER BY' => 'revs DESC',
+						'LIMIT' => 500
+					]
+				);
 
-		$dbr = wfGetDB( DB_REPLICA );
-		$res = $dbr->select(
-			'code_tags',
-			[ 'ct_tag', 'COUNT(*) AS revs' ],
-			[ 'ct_repo_id' => $this->getId() ],
-			__METHOD__,
-			[
-				'GROUP BY' => 'ct_tag',
-				'ORDER BY' => 'revs DESC',
-				'LIMIT' => 500
-			]
+				$tags = [];
+				foreach ( $res as $row ) {
+					$tags[$row->ct_tag] = $row->revs;
+				}
+
+				return $tags;
+			},
+			[ 'minAsOf' => $recache ? INF : $cache::MIN_TIMESTAMP_NONE ]
 		);
-
-		$tags = [];
-		foreach ( $res as $row ) {
-			$tags[$row->ct_tag] = $row->revs;
-		}
-
-		$wgMemc->set( $key, $tags, 3600 * 3 );
-
-		return $tags;
 	}
 
 	/**
@@ -336,7 +336,7 @@ class CodeRepository {
 	 * @return string|int The diff text on success, a DIFFRESULT_* constant on failure.
 	 */
 	public function getDiff( $rev, $useCache = '' ) {
-		global $wgMemc, $wgCodeReviewMaxDiffPaths;
+		global $wgCodeReviewMaxDiffPaths;
 
 		$data = null;
 
@@ -350,11 +350,13 @@ class CodeRepository {
 		} else {
 			// Check that there is at least one, and at most $wgCodeReviewMaxDiffPaths
 			// paths changed in this revision.
-
 			$paths = $revision->getModifiedPaths();
 			if ( !$paths->numRows() ) {
 				$data = self::DIFFRESULT_NothingToCompare;
-			} elseif ( $wgCodeReviewMaxDiffPaths > 0 && $paths->numRows() > $wgCodeReviewMaxDiffPaths ) {
+			} elseif (
+				$wgCodeReviewMaxDiffPaths > 0 &&
+				$paths->numRows() > $wgCodeReviewMaxDiffPaths
+			) {
 				$data = self::DIFFRESULT_TooManyPaths;
 			}
 		}
@@ -364,51 +366,52 @@ class CodeRepository {
 			return $data;
 		}
 
-		// Set up the cache key, which will be used both to check if already in the
-		// cache, and to write the final result to the cache.
-		$key = $wgMemc->makeKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$method = __METHOD__;
 
-		// If not set to explicitly skip the cache, get the current diff from memcached
-		// directly.
-		if ( $useCache === 'skipcache' ) {
-			$data = null;
-		} else {
-			$data = $wgMemc->get( $key );
-		}
+		return $cache->getWithSetCallback(
+			// Set up the cache key, which will be used both to check if already in the
+			// cache, and to write the final result to the cache.
+			$cache->makeKey( 'svn-diff', md5( $this->path ), $rev1, $rev2 ),
+			$cache::TTL_DAY,
+			function ( $oldValue, &$ttl ) use ( $rev, $rev1, $rev2, $useCache, $cache, $method ) {
+				// Check permanent DB storage cache
+				if ( $useCache !== 'skipcache' ) {
+					$dbr = wfGetDB( DB_REPLICA );
+					$row = $dbr->selectRow(
+						'code_rev',
+						[ 'cr_diff', 'cr_flags' ],
+						[ 'cr_repo_id' => $this->id, 'cr_id' => $rev, 'cr_diff IS NOT NULL' ],
+						$method
+					);
 
-		// If the diff hasn't already been retrieved from the cache, see if we can get
-		// it from the DB.
-		if ( !$data && $useCache != 'skipcache' ) {
-			$dbr = wfGetDB( DB_REPLICA );
-			$row = $dbr->selectRow(
-				'code_rev',
-				[ 'cr_diff', 'cr_flags' ],
-				[ 'cr_repo_id' => $this->id, 'cr_id' => $rev, 'cr_diff IS NOT NULL' ],
-				__METHOD__
-			);
-			if ( $row ) {
-				$flags = explode( ',', $row->cr_flags );
-				$data = $row->cr_diff;
-				// If the text was fetched without an error, convert it
-				if ( $data !== false && in_array( 'gzip', $flags ) ) {
-					# Deal with optional compression of archived pages.
-					# This can be done periodically via maintenance/compressOld.php, and
-					# as pages are saved if $wgCompressRevisions is set.
-					$data = gzinflate( $data );
+					if ( $row ) {
+						$flags = explode( ',', $row->cr_flags );
+						// If the text was fetched without an error, convert it
+						if ( in_array( 'gzip', $flags ) ) {
+							# Deal with optional compression of archived pages.
+							# This can be done periodically via maintenance/compressOld.php, and
+							# as pages are saved if $wgCompressRevisions is set.
+							$data = gzinflate( $row->cr_diff );
+						} else {
+							$data = $row->cr_diff;
+						}
+
+						if ( is_string( $data ) ) {
+							return $data;
+						}
+					}
 				}
-			}
-		}
 
-		// If the data was not already in the cache or in the DB, we need to retrieve
-		// it from SVN.
-		if ( !$data ) {
-			// If the calling code is forcing a cache check, report that it wasn't
-			// in the cache.
-			if ( $useCache === 'cached' ) {
-				$data = self::DIFFRESULT_NotInCache;
+				// If the data was not already in the cache nor in the DB, retrieve it from SVN
+				if ( $useCache === 'cached' ) {
+					// If the calling code is forcing a cache check, report that it wasn't in cache
+					$ttl = $cache::TTL_UNCACHEABLE;
 
-			// Otherwise, retrieve the diff using SubversionAdaptor.
-			} else {
+					return self::DIFFRESULT_NotInCache;
+				}
+
+				// Otherwise, retrieve the diff using SubversionAdaptor
 				$svn = SubversionAdaptor::newFromRepo( $this->path );
 				$data = $svn->getDiff( '', $rev1, $rev2 );
 
@@ -416,28 +419,28 @@ class CodeRepository {
 				// TODO: Currently we can't tell the difference between an SVN/connection
 				// failure and an empty diff. See if we can remedy this!
 				if ( $data == '' ) {
-					$data = self::DIFFRESULT_NoDataReturned;
-				} else {
-					// Otherwise, store the resulting diff to both the temporary cache and
-					// permanent DB storage.
-					// Store to cache
-					$wgMemc->set( $key, $data, 3600 * 24 * 3 );
+					$ttl = $cache::TTL_UNCACHEABLE;
 
-					// Permanent DB storage
-					$storedData = $data;
-					$flags = Revision::compressRevisionText( $storedData );
-					$dbw = wfGetDB( DB_MASTER );
-					$dbw->update(
-						'code_rev',
-						[ 'cr_diff' => $storedData, 'cr_flags' => $flags ],
-						[ 'cr_repo_id' => $this->id, 'cr_id' => $rev ],
-						__METHOD__
-					);
+					return self::DIFFRESULT_NoDataReturned;
 				}
-			}
-		}
 
-		return $data;
+				// Backfill permanent DB storage cache
+				$storedData = $data;
+				$flags = Revision::compressRevisionText( $storedData );
+
+				$dbw = wfGetDB( DB_MASTER );
+				$dbw->update(
+					'code_rev',
+					[ 'cr_diff' => $storedData, 'cr_flags' => $flags ],
+					[ 'cr_repo_id' => $this->id, 'cr_id' => $rev ],
+					$method
+				);
+
+				return $data;
+			},
+			// If not set to explicitly skip the cache, get the current diff from memcached
+			[ 'minTime' => ( $useCache === 'skipcache' ) ? INF : $cache::MIN_TIMESTAMP_NONE ]
+		);
 	}
 
 	/**
@@ -445,16 +448,20 @@ class CodeRepository {
 	 * @param CodeRevision $codeRev
 	 */
 	public function setDiffCache( CodeRevision $codeRev ) {
-		global $wgMemc;
-
 		$rev1 = $codeRev->getId() - 1;
 		$rev2 = $codeRev->getId();
 
-		$svn = SubversionAdaptor::newFromRepo( $this->path );
-		$data = $svn->getDiff( '', $rev1, $rev2 );
-		// Store to cache
-		$key = $wgMemc->makeKey( 'svn', md5( $this->path ), 'diff', $rev1, $rev2 );
-		$wgMemc->set( $key, $data, 3600 * 24 * 3 );
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$data = $cache->getWithSetCallback(
+			$cache->makeKey( 'svn-diff', md5( $this->path ), $rev1, $rev2 ),
+			3 * $cache::TTL_DAY,
+			function () use ( $rev1, $rev2 ) {
+				$svn = SubversionAdaptor::newFromRepo( $this->path );
+
+				return $svn->getDiff( '', $rev1, $rev2 );
+			}
+		);
+
 		// Permanent DB storage
 		$storedData = $data;
 		$flags = Revision::compressRevisionText( $storedData );
