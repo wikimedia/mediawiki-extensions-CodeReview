@@ -199,7 +199,7 @@
 		"RepoAdminListView": "includes/ui/RepoAdminListView.php",
 		"RepoAdminRepoView": "includes/ui/RepoAdminRepoView.php",
 		"WordCloud": "includes/ui/WordCloud.php",
-		"SvnRevTablePager": "includes/ui/CodeRevisionListView.php",
+		"SvnRevTablePager": "includes/ui/SvnRevTablePager.php",
 		"CodeCommentsTablePager": "includes/ui/CodeCommentsTablePager.php",
 		"SvnRevAuthorTablePager": "includes/ui/CodeRevisionAuthorView.php",
 		"SvnRevStatusTablePager": "includes/ui/SvnRevStatusTablePager.php",
