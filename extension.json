@@ -200,7 +200,7 @@
 		"RepoAdminRepoView": "includes/ui/SpecialRepoAdmin.php",
 		"WordCloud": "includes/ui/WordCloud.php",
 		"SvnRevTablePager": "includes/ui/CodeRevisionListView.php",
-		"CodeCommentsTablePager": "includes/ui/CodeCommentsListView.php",
+		"CodeCommentsTablePager": "includes/ui/CodeCommentsTablePager.php",
 		"SvnRevAuthorTablePager": "includes/ui/CodeRevisionAuthorView.php",
 		"SvnRevStatusTablePager": "includes/ui/CodeRevisionStatusView.php",
 		"SvnRevTagTablePager": "includes/ui/CodeRevisionTagView.php",
