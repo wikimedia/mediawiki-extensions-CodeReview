@@ -164,7 +164,7 @@
 		"SubversionAdaptor": "includes/backend/Subversion.php",
 		"SubversionPecl": "includes/backend/SubversionPecl.php",
 		"SubversionShell": "includes/backend/SubversionShell.php",
-		"SubversionProxy": "includes/backend/Subversion.php",
+		"SubversionProxy": "includes/backend/SubversionProxy.php",
 		"CodeDiffHighlighter": "includes/backend/DiffHighlighter.php",
 		"CodeRepository": "includes/backend/CodeRepository.php",
 		"CodeRevision": "includes/backend/CodeRevision.php",
