@@ -202,7 +202,7 @@
 		"SvnRevTablePager": "includes/ui/CodeRevisionListView.php",
 		"CodeCommentsTablePager": "includes/ui/CodeCommentsTablePager.php",
 		"SvnRevAuthorTablePager": "includes/ui/CodeRevisionAuthorView.php",
-		"SvnRevStatusTablePager": "includes/ui/CodeRevisionStatusView.php",
+		"SvnRevStatusTablePager": "includes/ui/SvnRevStatusTablePager.php",
 		"SvnRevTagTablePager": "includes/ui/SvnRevTagTablePager.php",
 		"CodeStatusChangeTablePager": "includes/ui/CodeStatusChangeTablePager.php",
 		"CodeReviewHooks": "includes/CodeReviewHooks.php",
