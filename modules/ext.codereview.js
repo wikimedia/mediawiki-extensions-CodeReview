@@ -8,7 +8,7 @@ jQuery( function( $ ) {
 					var currentText = $this.val(),
 						currentTags = currentText.split( /, */ ),
 						lastTag, doneTags;
-					if( currentTags.length === 0 ){
+					if ( currentTags.length === 0 ) {
 						lastTag = doneTags = '';
 					} else {
 						lastTag = currentTags.pop();
