@@ -171,7 +171,7 @@
 		"CodeComment": "includes/backend/CodeComment.php",
 		"CodeCommentLinker": "includes/backend/CodeCommentLinker.php",
 		"CodeCommentLinkerHtml": "includes/backend/CodeCommentLinkerHtml.php",
-		"CodeCommentLinkerWiki": "includes/backend/CodeCommentLinker.php",
+		"CodeCommentLinkerWiki": "includes/backend/CodeCommentLinkerWiki.php",
 		"CodePropChange": "includes/backend/CodePropChange.php",
 		"CodeSignoff": "includes/backend/CodeSignoff.php",
 		"RepoStats": "includes/backend/RepoStats.php",
