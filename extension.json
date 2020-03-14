@@ -162,7 +162,7 @@
 		"ApiQueryCodeTags": "includes/api/ApiQueryCodeTags.php",
 		"CodeRevisionCommitterApi": "includes/api/CodeRevisionCommitterApi.php",
 		"SubversionAdaptor": "includes/backend/Subversion.php",
-		"SubversionPecl": "includes/backend/Subversion.php",
+		"SubversionPecl": "includes/backend/SubversionPecl.php",
 		"SubversionShell": "includes/backend/Subversion.php",
 		"SubversionProxy": "includes/backend/Subversion.php",
 		"CodeDiffHighlighter": "includes/backend/DiffHighlighter.php",
