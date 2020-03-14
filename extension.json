@@ -163,7 +163,7 @@
 		"CodeRevisionCommitterApi": "includes/api/CodeRevisionCommitterApi.php",
 		"SubversionAdaptor": "includes/backend/Subversion.php",
 		"SubversionPecl": "includes/backend/SubversionPecl.php",
-		"SubversionShell": "includes/backend/Subversion.php",
+		"SubversionShell": "includes/backend/SubversionShell.php",
 		"SubversionProxy": "includes/backend/Subversion.php",
 		"CodeDiffHighlighter": "includes/backend/DiffHighlighter.php",
 		"CodeRepository": "includes/backend/CodeRepository.php",
