@@ -22,7 +22,7 @@ class CodeReviewHooks {
 		switch ( $updater->getDB()->getType() ) {
 		case 'mysql':
 			// Initial install tables
-			$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" );
+			$updater->addExtensionTable( 'code_rev', "$base/sql/codereview.sql" );
 
 			$updater->addExtensionField( 'code_rev', 'cr_diff',
 				"$base/archives/codereview-cr_diff.sql" );
@@ -81,7 +81,7 @@ class CodeReviewHooks {
 			);
 			break;
 		case 'sqlite':
-			$updater->addExtensionTable( 'code_rev', "$base/codereview.sql" );
+			$updater->addExtensionTable( 'code_rev', "$base/sql/codereview.sql" );
 			$updater->addExtensionTable( 'code_signoffs', "$base/archives/code_signoffs.sql" );
 			$updater->addExtensionField( 'code_signoffs', 'cs_user',
 				"$base/archives/code_signoffs_userid-sqlite.sql" );
