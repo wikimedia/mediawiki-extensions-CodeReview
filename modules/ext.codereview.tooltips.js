@@ -1,5 +1,5 @@
-var CodeTooltipsInit = function() {
-	$( 'a[href]' ).each( function() {
+var CodeTooltipsInit = function () {
+	$( 'a[href]' ).each( function () {
 		if ( $( this ).parent().is( '.TablePager_col_cr_id' ) ) {
 			// Tooltips are unnecessary and annoying in revision lists
 			return;
@@ -24,20 +24,20 @@ var CodeTooltipsInit = function() {
 				action: 'query',
 				list: 'coderevisions',
 				crprop: 'revid|message|status|author',
-				crrepo: matches[1],
-				crrevs: matches[2],
+				crrepo: matches[ 1 ],
+				crrevs: matches[ 2 ],
 				crlimit: '1'
 			};
-			$el.tipsy( { fade: true, gravity: 'sw', html:true } );
+			$el.tipsy( { fade: true, gravity: 'sw', html: true } );
 			$.getJSON(
 				mw.config.get( 'wgScriptPath' ) + '/api.php',
 				reqData,
-				function( data ) {
+				function ( data ) {
 					if ( !data || !data.query || !data.query.coderevisions ) {
 						return;
 					}
-					var rev = data.query.coderevisions[0],
-						text = rev['*'].length > 82 ? rev['*'].substr(0,80) + '...' : rev['*'];
+					var rev = data.query.coderevisions[ 0 ],
+						text = rev[ '*' ].length > 82 ? rev[ '*' ].substr( 0, 80 ) + '...' : rev[ '*' ];
 
 					text = mw.html.escape( text );
 					text = text.replace( /\n/g, '<br/>' );
@@ -49,10 +49,10 @@ var CodeTooltipsInit = function() {
 					// Give grep a chance to find the usages:
 					// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
 					// code-status-ok, code-status-deferred, code-status-old
-					if ( rev['*'] ) {
-						tip += mw.msg( 'code-tooltip-withsummary', matches[2], mw.msg( 'code-status-' + status ), author, text );
+					if ( rev[ '*' ] ) {
+						tip += mw.msg( 'code-tooltip-withsummary', matches[ 2 ], mw.msg( 'code-status-' + status ), author, text );
 					} else {
-						tip += mw.msg( 'code-tooltip-withoutsummary', matches[2], mw.msg( 'code-status-' + status ), author );
+						tip += mw.msg( 'code-tooltip-withoutsummary', matches[ 2 ], mw.msg( 'code-status-' + status ), author );
 					}
 					tip += '</div>';
 					$el.attr( 'title', tip );
@@ -67,7 +67,7 @@ var CodeTooltipsInit = function() {
 		// We want to avoid doing API calls just because someone accidentally moves the mouse
 		// over a link, so we only want to do an API call after the mouse has been on a link
 		// for 250ms.
-		$( this ).mouseenter( function() {
+		$( this ).on( 'mouseenter', function () {
 			var that = this,
 				timerID = $( this ).data( 'codeTooltipTimer' );
 
@@ -75,12 +75,15 @@ var CodeTooltipsInit = function() {
 				// Clear the running timer
 				clearTimeout( timerID );
 			}
-			timerID = setTimeout( function() { showTooltip.apply( that ); }, 250 );
+			timerID = setTimeout( function () {
+				showTooltip.apply( that );
+			}, 250
+			);
 			$( this ).data( 'codeTooltipTimer', timerID );
 		} );
 		// take care of cases when louse leaves our link while we load stuff from API.
 		// We shouldn't display the tooltip in such case.
-		$( this ).mouseleave( function() {
+		$( this ).on( 'mouseleave', function () {
 			var $el = $( this ),
 				timerID = $el.data( 'codeTooltipTimer' );
 

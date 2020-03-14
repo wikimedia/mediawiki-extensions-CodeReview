@@ -1,10 +1,10 @@
-jQuery( function( $ ) {
-	"use strict";
-    // Animate the add-tags input to suggest existing tabs
+jQuery( function () {
+	'use strict';
+	// Animate the add-tags input to suggest existing tabs
 	$( '#wpTag' ).suggestions( {
-		fetch: function() {
+		fetch: function () {
 			var $this = $( this ),
-				doUpdate = function() {
+				doUpdate = function () {
 					var currentText = $this.val(),
 						currentTags = currentText.split( /, */ ),
 						lastTag, doneTags;
@@ -13,30 +13,29 @@ jQuery( function( $ ) {
 					} else {
 						lastTag = currentTags.pop();
 						doneTags = currentTags.length > 0 ?
-							currentTags.join( ', ' ) + ', '
-							: '';
+							currentTags.join( ', ' ) + ', ' :
+							'';
 					}
 
 					var tags = $this.data( 'suggestions' ),
 						suggestions = [];
 
-					for( var i in tags ){
+					for ( var i in tags ) {
 						// Don't suggest a tag that's already been added
 						var good = true;
-						for ( var j in currentTags ){
-							if ( currentTags[j] === tags[i] ){
+						for ( var j in currentTags ) {
+							if ( currentTags[ j ] === tags[ i ] ) {
 								good = false;
 							}
 						}
-						if ( good && ( '' + tags[i] ).indexOf( lastTag ) !== -1 ) {
-							suggestions.push( doneTags + tags[i] );
+						if ( good && ( String( tags[ i ] ) ).indexOf( lastTag ) !== -1 ) {
+							suggestions.push( doneTags + tags[ i ] );
 						}
 					}
 
 					$this.suggestions( 'suggestions', suggestions );
-				};
-
-			var request;
+				},
+				request;
 			if ( $( this ).data( 'suggestions' ) ) {
 				doUpdate();
 			} else if ( $( this ).data( 'request' ) ) {
@@ -47,16 +46,16 @@ jQuery( function( $ ) {
 					mw.config.get( 'wgScriptPath' ) + '/api.php',
 					{
 						action: 'query',
-						list:   'codetags',
+						list: 'codetags',
 						ctrepo: mw.config.get( 'wgCodeReviewRepository' ),
 						format: 'json'
 					},
-					function( data ) {
+					function ( data ) {
 						if ( data && 'query' in data && 'codetags' in data.query ) {
-							var d = data.query.codetags;
-							var tags = [];
-							for ( var i in d ){
-								tags.push( d[i].name );
+							var d = data.query.codetags,
+								tags = [];
+							for ( var i in d ) {
+								tags.push( d[ i ].name );
 							}
 							$this.data( 'suggestions', tags );
 							// Go again
@@ -73,16 +72,16 @@ jQuery( function( $ ) {
 			// have never been set
 			if ( request && $.isFunction( request.abort ) ) {
 				request.abort();
-				$(this).removeData( 'request' );
+				$( this ).removeData( 'request' );
 			}
 		},
 		delay: 0,
 		positionFromLeft: $( 'body' ).hasClass( 'rtl' ),
 		highlightInput: true
 	} )
-	.on( 'paste cut drop', function() {
+		.on( 'paste cut drop', function () {
 		// make sure paste and cut events from the mouse and drag&drop events
 		// trigger the keypress handler and cause the suggestions to update
-		$( this ).trigger( 'keypress' );
-	} );
-});
+			$( this ).trigger( 'keypress' );
+		} );
+} );

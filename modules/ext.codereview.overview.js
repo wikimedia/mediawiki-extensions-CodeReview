@@ -8,8 +8,8 @@
  * Clicking a colored box takes you to that relevant line, and a backlink is created in the id column on focus.
  * Hovering over a colored box pops up a little info packet box.
  */
-jQuery( function( $ ) {
-	"use strict";
+jQuery( function () {
+	'use strict';
 
 	// check if we're on a page with a useful list of revisions
 	if ( $( '#path' ).length && $( 'table.TablePager' ).length ) {
@@ -23,7 +23,7 @@ jQuery( function( $ ) {
 		);
 	}
 
-	$( '#ca-scapmap' ).click( function () {
+	$( '#ca-scapmap' ).on( 'click', function () {
 		var $tr = $( 'table.TablePager tr' );
 		if ( $tr.length < 2 ) {
 			return;
@@ -38,49 +38,48 @@ jQuery( function( $ ) {
 		$( '#contentSub' ).after( $( '<div id="overviewmap">' ) );
 		$( '#overviewmap' ).slideUp( 0 );
 
-		var vpath = $( '#path' ).val();
-		var totals = {};
-		$tr.each( function( i ) {
-			var status = false;
+		var vpath = $( '#path' ).val(),
+			totals = {};
+		$tr.each( function ( i ) {
+			var status = false,
+				trc = $( this ).attr( 'class' );
 
-			var trc = $( this ).attr( 'class' );
 			if ( !trc || !trc.length ) {
 				return;
 			} else {
 				trc = trc.split( ' ' );
 			}
 			for ( var j = 0; j < trc.length; j++ ) {
-				if ( trc[j].substring( 0, 21 ) === 'mw-codereview-status-' ) {
-					status = trc[j].substring( 21 );
+				if ( trc[ j ].substring( 0, 21 ) === 'mw-codereview-status-' ) {
+					status = trc[ j ].substring( 21 );
 				}
 			}
-			var $td = $( 'td', $( this ) );
-
-			var statusname = $td.filter( '.TablePager_col_cr_status' ).text();
+			var $td = $( 'td', $( this ) ),
+				statusname = $td.filter( '.TablePager_col_cr_status' ).text();
 
 			if ( !statusname || !status ) {
 				return;
 			}
 
 			var rev = $td.filter( '.TablePager_col_cr_id, .TablePager_col_cp_rev_id' ).text();
-			overviewPopupData[i] = {
-				'status': status,
-				'statusname': statusname,
-				'notes': $td.filter( '.TablePager_col_comments' ).text(),
-				'author': $td.filter( '.TablePager_col_cr_author' ).text(),
-				'rev': rev
+			overviewPopupData[ i ] = {
+				status: status,
+				statusname: statusname,
+				notes: $td.filter( '.TablePager_col_comments' ).text(),
+				author: $td.filter( '.TablePager_col_cr_author' ).text(),
+				rev: rev
 			};
 
 			var path = $td.filter( '.TablePager_col_cr_path' ).text();
 			if ( path && path.indexOf( vpath ) === 0 && path !== vpath && vpath !== '' ) {
 				path = '\u2026' + path.substring( vpath.length );
 			}
-			overviewPopupData[i].path = path;
+			overviewPopupData[ i ].path = path;
 
-			if ( !totals[statusname] ) {
-				totals[statusname] = 0;
+			if ( !totals[ statusname ] ) {
+				totals[ statusname ] = 0;
 			}
-			totals[statusname]++;
+			totals[ statusname ]++;
 
 			$( this ).attr( 'id', 'TablePager-row-' + rev );
 
@@ -93,10 +92,9 @@ jQuery( function( $ ) {
 
 		var sumtext = [];
 		for ( var i in totals ) {
-			if ( typeof i !== 'string' || typeof totals[i] !== 'number' ) {
-				continue;
+			if ( typeof i !== 'string' || typeof totals[ i ] !== 'number' ) {
+				sumtext.push( i + ': ' + totals[ i ] );
 			}
-			sumtext.push( i + ': ' + totals[i] );
 		}
 		sumtext.sort();
 		var $summary = $( '<div class="summary">' )
@@ -109,24 +107,24 @@ jQuery( function( $ ) {
 
 		// Add the hover popup
 		$( '#overviewmap > a' )
-			.mouseenter( function () {
+			.on( 'mouseenter', function () {
 
-			var $el = $( this );
+				var $el = $( this );
 				if ( $el.data( 'overviewPopup' ) ) {
 					return; // already processed
 				}
-				$el.tipsy( { fade: true, gravity: 'sw', html:true } );
-				var id = parseInt( $( this ).attr( 'id' ).replace( /box\-/i, '' ) );
+				$el.tipsy( { fade: true, gravity: 'sw', html: true } );
+				var id = parseInt( $( this ).attr( 'id' ).replace( /box\-/i, '' ) ),
 
-				var $popup = $(
-					'<div id="overviewpop">' +
-					'<div>Rev: r<span id="overviewpop-rev">' + overviewPopupData[id].rev +
-					'</span> (<span id="overviewpop-status">' + overviewPopupData[id].status + '</span>)</div>' +
-					'<div>Number of notes: <span id="overviewpop-notes">' + overviewPopupData[id].notes + '</span></div>' +
-					'<div>Path: <span id="overviewpop-path">' + overviewPopupData[id].path + '</span></div>' +
-					'<div>Author: <span id="overviewpop-author">' + overviewPopupData[id].author + '</span></div>' +
+					$popup = $(
+						'<div id="overviewpop">' +
+					'<div>Rev: r<span id="overviewpop-rev">' + overviewPopupData[ id ].rev +
+					'</span> (<span id="overviewpop-status">' + overviewPopupData[ id ].status + '</span>)</div>' +
+					'<div>Number of notes: <span id="overviewpop-notes">' + overviewPopupData[ id ].notes + '</span></div>' +
+					'<div>Path: <span id="overviewpop-path">' + overviewPopupData[ id ].path + '</span></div>' +
+					'<div>Author: <span id="overviewpop-author">' + overviewPopupData[ id ].author + '</span></div>' +
 					'</div>'
-				);
+					);
 				$el.attr( 'title', $popup.html() );
 				$el.data( 'codeTooltip', true );
 				$el.tipsy( 'show' );
