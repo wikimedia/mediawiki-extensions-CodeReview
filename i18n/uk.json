@@ -187,7 +187,7 @@
 	"right-codereview-set-status": "Зміна статусу редакцій",
 	"right-codereview-signoff": "Підтвердження змін",
 	"right-codereview-link-user": "Зв'язок авторів з користувачами вікі-проекту",
-	"right-codereview-associate": "Управління пов'язаними редагуваннями",
+	"right-codereview-associate": "Керування асоціаціями версій",
 	"right-codereview-review-own": "Помітити власні версії як «{{int:code-status-ok}}» чи «{{int:code-status-resolved}}»",
 	"action-repoadmin": "керування репозиторієм коду",
 	"action-codereview-use": "використання CodeReview",
