@@ -294,7 +294,7 @@ class CodeRevision {
 
 	/**
 	 * Returns whether the provided status is valid
-	 * @param String $status
+	 * @param string $status
 	 * @return bool
 	 */
 	public static function isValidStatus( $status ) {
@@ -303,7 +303,7 @@ class CodeRevision {
 
 	/**
 	 * Returns whether the provided status is protected
-	 * @param String $status
+	 * @param string $status
 	 * @return bool
 	 */
 	public static function isProtectedStatus( $status ) {

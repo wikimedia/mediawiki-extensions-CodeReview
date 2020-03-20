@@ -8,7 +8,7 @@ class CodeRevisionCommitterApi extends CodeRevisionCommitter {
 	/**
 	 * Check whether the user has the correct permissions for the action
 	 *
-	 * @param String $permission
+	 * @param string $permission
 	 * @param User $user
 	 * @return bool
 	 */
