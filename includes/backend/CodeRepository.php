@@ -366,7 +366,9 @@ class CodeRepository {
 			return $data;
 		}
 
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$services = MediaWikiServices::getInstance();
+		$cache = $services->getMainWANObjectCache();
+		$blobStore = $services->getBlobStore();
 		$method = __METHOD__;
 
 		return $cache->getWithSetCallback(
@@ -374,7 +376,9 @@ class CodeRepository {
 			// cache, and to write the final result to the cache.
 			$cache->makeKey( 'svn-diff', md5( $this->path ), $rev1, $rev2 ),
 			$cache::TTL_DAY,
-			function ( $oldValue, &$ttl ) use ( $rev, $rev1, $rev2, $useCache, $cache, $method ) {
+			function ( $oldValue, &$ttl ) use (
+				$rev, $rev1, $rev2, $useCache, $cache, $method, $blobStore
+			) {
 				// Check permanent DB storage cache
 				if ( $useCache !== 'skipcache' ) {
 					$dbr = wfGetDB( DB_REPLICA );
@@ -426,7 +430,7 @@ class CodeRepository {
 
 				// Backfill permanent DB storage cache
 				$storedData = $data;
-				$flags = Revision::compressRevisionText( $storedData );
+				$flags = $blobStore->compressData( $storedData );
 
 				$dbw = wfGetDB( DB_MASTER );
 				$dbw->update(
@@ -451,7 +455,8 @@ class CodeRepository {
 		$rev1 = $codeRev->getId() - 1;
 		$rev2 = $codeRev->getId();
 
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$services = MediaWikiServices::getInstance();
+		$cache = $services->getMainWANObjectCache();
 		$data = $cache->getWithSetCallback(
 			$cache->makeKey( 'svn-diff', md5( $this->path ), $rev1, $rev2 ),
 			3 * $cache::TTL_DAY,
@@ -464,7 +469,7 @@ class CodeRepository {
 
 		// Permanent DB storage
 		$storedData = $data;
-		$flags = Revision::compressRevisionText( $storedData );
+		$flags = $services->getBlobStore()->compressData( $storedData );
 		$dbw = wfGetDB( DB_MASTER );
 		$dbw->update(
 			'code_rev',
