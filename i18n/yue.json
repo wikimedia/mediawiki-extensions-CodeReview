@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"code": "代碼複查",
 	"code-rev-title": "$1 - 代碼複查",
 	"code-comments": "註解",

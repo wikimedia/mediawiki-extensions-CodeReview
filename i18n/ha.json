@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"code-rev-message": "Bahasi:",
 	"repoadmin-new-button": "Ƙirƙira"
 }

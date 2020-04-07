@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"code-field-author": "Autore",
 	"code-rev-author": "Autore:",
 	"code-rev-history-link": "cronolugia"
