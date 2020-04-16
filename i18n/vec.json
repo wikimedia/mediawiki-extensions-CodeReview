@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Candalua"
+			"Candalua",
+			"Fierodelveneto"
 		]
 	},
 	"code": "Revision del codice",
@@ -58,7 +59,7 @@
 	"code-rev-rev-viewvc": "su ViewVC",
 	"code-rev-paths": "Percorsi modificài:",
 	"code-rev-modified-a": "zontà",
-	"code-rev-modified-r": "rinpiazà",
+	"code-rev-modified-r": "rinpiasà",
 	"code-rev-modified-d": "scancelà",
 	"code-rev-modified-m": "canbià",
 	"code-rev-imagediff": "Canbiamenti a l'imagine",
