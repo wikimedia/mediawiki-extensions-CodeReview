@@ -1,6 +1,5 @@
 <?php
 
-
 abstract class SubversionAdaptor {
 	/**
 	 * @var string
