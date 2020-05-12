@@ -17,44 +17,92 @@
 	},
 	"type": "specialpage",
 	"config": {
-		"CodeReviewMaxDiffSize": 500000,
-		"CodeReviewShuffleTagCloud": false,
-		"CodeReviewImportBatchSize": 400,
-		"SubversionUser": false,
-		"CodeReviewMaxDiffPaths": 20,
-		"CodeReviewFlags": [
-			"inspected",
-			"tested"
-		],
-		"CodeReviewImgRegex": "/\\.(png|jpg|jpeg|gif)$/i",
-		"SubversionProxyTimeout": 30,
-		"SubversionProxy": false,
-		"SubversionPassword": false,
-		"CodeReviewCommentWatcherName": "CodeReview comments list",
-		"SubversionOptions": "--non-interactive --trust-server-cert",
-		"CodeReviewDisableFollowUpNotification": false,
-		"CodeReviewRepoStatsCacheTime": 21600,
-		"CodeReviewProtectedStates": [
-			"ok",
-			"resolved"
-		],
-		"CodeReviewCommentWatcherEmail": false,
-		"CodeReviewENotif": false,
-		"CodeReviewStates": [
-			"new",
-			"fixme",
-			"reverted",
-			"resolved",
-			"ok",
-			"deferred",
-			"old"
-		],
-		"CodeReviewDeferredPaths": {},
-		"CodeReviewAutoTagPath": {},
-		"CodeReviewFixmePerPath": {},
-		"CodeReviewNewPerPath": {},
-		"CodeReviewRC": [],
-		"CodeReviewListSpecialPage": true
+		"CodeReviewMaxDiffSize": {
+			"value": 500000
+		},
+		"CodeReviewShuffleTagCloud": {
+			"value": false
+		},
+		"CodeReviewImportBatchSize": {
+			"value": 400
+		},
+		"SubversionUser": {
+			"value": false
+		},
+		"CodeReviewMaxDiffPaths": {
+			"value": 20
+		},
+		"CodeReviewFlags": {
+			"value": [
+				"inspected",
+				"tested"
+			]
+		},
+		"CodeReviewImgRegex": {
+			"value": "/\\.(png|jpg|jpeg|gif)$/i"
+		},
+		"SubversionProxyTimeout": {
+			"value": 30
+		},
+		"SubversionProxy": {
+			"value": false
+		},
+		"SubversionPassword": {
+			"value": false
+		},
+		"CodeReviewCommentWatcherName": {
+			"value": "CodeReview comments list"
+		},
+		"SubversionOptions": {
+			"value": "--non-interactive --trust-server-cert"
+		},
+		"CodeReviewDisableFollowUpNotification": {
+			"value": false
+		},
+		"CodeReviewRepoStatsCacheTime": {
+			"value": 21600
+		},
+		"CodeReviewProtectedStates": {
+			"value": [
+				"ok",
+				"resolved"
+			]
+		},
+		"CodeReviewCommentWatcherEmail": {
+			"value": false
+		},
+		"CodeReviewENotif": {
+			"value": false
+		},
+		"CodeReviewStates": {
+			"value": [
+				"new",
+				"fixme",
+				"reverted",
+				"resolved",
+				"ok",
+				"deferred",
+				"old"
+			]
+		},
+		"CodeReviewDeferredPaths": {
+			"value": []
+		},
+		"CodeReviewAutoTagPath": {
+			"value": []
+		},
+		"CodeReviewFixmePerPath": {
+			"value": []
+		},
+		"CodeReviewNewPerPath": {
+			"value": []
+		},
+		"CodeReviewRC": {
+			"value": []
+		},
+		"CodeReviewListSpecialPage": {
+			"value": true
+		}
 	},
 	"ExtensionMessagesFiles": {
 		"CodeReviewAliases": "CodeReview.alias.php"
@@ -208,5 +256,5 @@
 		"CodeReviewHooks": "includes/CodeReviewHooks.php",
 		"CodeReviewTooltipsModule": "includes/CodeReviewTooltipsModule.php"
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
