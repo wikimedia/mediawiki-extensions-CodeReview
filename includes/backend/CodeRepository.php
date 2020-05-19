@@ -5,11 +5,11 @@ use MediaWiki\MediaWikiServices;
  * Core class for interacting with a repository of code.
  */
 class CodeRepository {
-	const DIFFRESULT_BadRevision = 0;
-	const DIFFRESULT_NothingToCompare = 1;
-	const DIFFRESULT_TooManyPaths = 2;
-	const DIFFRESULT_NoDataReturned = 3;
-	const DIFFRESULT_NotInCache = 4;
+	public const DIFFRESULT_BadRevision = 0;
+	public const DIFFRESULT_NothingToCompare = 1;
+	public const DIFFRESULT_TooManyPaths = 2;
+	public const DIFFRESULT_NoDataReturned = 3;
+	public const DIFFRESULT_NotInCache = 4;
 
 	/**
 	 * Local cache of Wiki user -> SVN user mappings

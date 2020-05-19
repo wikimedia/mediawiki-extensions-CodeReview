@@ -4,7 +4,7 @@
  * Using the thingy-bobber
  */
 class SubversionShell extends SubversionAdaptor {
-	const MIN_MEMORY = 204800;
+	private const MIN_MEMORY = 204800;
 
 	public function __construct( $repo ) {
 		parent::__construct( $repo );

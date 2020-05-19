@@ -10,7 +10,7 @@ class CodeRevision {
 	 * Examples:
 	 * bug 1234, bug1234, bug #1234, bug#1234
 	 */
-	const BugReference = '/\bbug ?#?(\d+)\b/i';
+	public const BugReference = '/\bbug ?#?(\d+)\b/i';
 
 	/**
 	 * @var CodeRepository
