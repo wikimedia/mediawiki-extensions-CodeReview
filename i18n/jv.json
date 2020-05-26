@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diki Ananta",
 			"NoiX180",
 			"Pras"
 		]
@@ -32,13 +33,13 @@
 	"code-tags": "tandha (''tag'')",
 	"code-tags-no-tags": "Ora ana tag nèng panyimpenan iki.",
 	"code-authors-text": "Ngisor iki daptar panganggit repo miturut jeneng komit. Akun wiki lokal ditudhuhaké nèng tandha kurung. Datané mungkin disinggahaké.",
-	"code-author-haslink": "Pangarang iki kahubung menyang panganggo wiki $1",
-	"code-author-orphan": "Panganggo/Panganggit SVN $1 ora nduwé pranala karo akun wiki",
-	"code-author-dolink": "Hubungaké pangarang iki menyang sawijining panganggo wiki",
-	"code-author-alterlink": "Owahi panganggo wiki kang kagayut menyang juru ngarang iki:",
-	"code-author-orunlink": "Utawa copot hubungan (''unlink'') panganggo wiki iki",
-	"code-author-name": "Lebokaké jeneng panganggo",
-	"code-author-success": "Pangarang $1 wis kahubungaké (''linked'') menyang panganggo wiki $2",
+	"code-author-haslink": "Pangarang iki kahubung menyang naraguna wiki $1",
+	"code-author-orphan": "Naraguna/Panganggit SVN $1 ora nduwé pranala karo akun wiki",
+	"code-author-dolink": "Hubungaké pangarang iki menyang sawijining naraguna wiki",
+	"code-author-alterlink": "Owahi naraguna wiki kang kagayut menyang juru ngarang iki:",
+	"code-author-orunlink": "Utawa copot hubungan (''unlink'') naraguna wiki iki",
+	"code-author-name": "Lebokaké jeneng naraguna:",
+	"code-author-success": "Pangarang $1 wis kahubungaké (''linked'') menyang naraguna wiki $2",
 	"code-author-link": "hubungan?/sambungan?",
 	"code-author-unlink": "copot hubungan (''unlink'')?",
 	"code-author-unlinksuccess": "Pangarang $1 wis di copot-hubung (''unlink'')",
@@ -105,7 +106,7 @@
 	"code-signoff-signoff": "Tandha tangani owahan iki minangka:",
 	"code-signoff-flag-inspected": "Diinspèksi",
 	"code-signoff-flag-tested": "Dijajal",
-	"code-signoff-field-user": "Panganggo",
+	"code-signoff-field-user": "Naraguna",
 	"code-signoff-field-flag": "Tenger",
 	"code-signoff-field-date": "Tanggal",
 	"code-signoff-struckdate": "$1 (ngenani $2)",
@@ -159,13 +160,13 @@
 	"repoadmin-edit-sucess": "Panyimpenan (''repository'') \"[[Special:Code/$1|$1]]\" wis kasil dimodhifikasi.",
 	"repoadmin-nav": "administrasi panyimpenan",
 	"right-repoadmin": "Tata kodhe panyimpenan",
-	"right-codereview-use": "Panganggoan Kusus:Kodhé",
+	"right-codereview-use": "Panganggoan Mirunggan:Kodhé",
 	"right-codereview-add-tag": "Tambahaké tandha anyar ing révisi",
 	"right-codereview-remove-tag": "Busak tandha saka révisi",
 	"right-codereview-post-comment": "Tambahaké komentar ing révisi",
 	"right-codereview-set-status": "Owahi status révisi",
 	"right-codereview-signoff": "Spakati benahan",
-	"right-codereview-link-user": "Hubungaké pangarang menyang panganggo wiki",
+	"right-codereview-link-user": "Hubungaké pangarang menyang naraguna wiki",
 	"right-codereview-associate": "Tata asosiasi benahan",
 	"right-codereview-review-own": "Tandhai benahan Sampéyan dhéwé minangka \"{{int:code-status-ok}}\" utawa \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "tata panyimpenyan kodhé",
@@ -175,7 +176,7 @@
 	"action-codereview-post-comment": "tambah tanggepan ngenani owahan",
 	"action-codereview-set-status": "ganti status benahan",
 	"action-codereview-signoff": "spakati benahan",
-	"action-codereview-link-user": "hubungaké panganggit karo panganggo wiki",
+	"action-codereview-link-user": "hubungaké panganggit karo naraguna wiki",
 	"action-codereview-associate": "tata asosiasi benahan",
 	"action-codereview-review-own": "tandhai benahan Sampéyan dhéwé minangka \"{{int:code-status-ok}}\" utawa \"{{int:code-status-resolved}}\""
 }
