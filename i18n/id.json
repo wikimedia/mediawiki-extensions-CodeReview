@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bennylin",
+			"Diki Ananta",
 			"Farras",
 			"Irwangatot",
 			"IvanLanin",
@@ -37,7 +38,7 @@
 	"code-tags-no-tags": "Tidak ada tag di repositori ini.",
 	"code-authors-text": "Berikut adalah daftar penulis repo diurutkan menurut nama pelaksana. Akun wiki lokal ditampilkan dalam tanda kurung. Data mungkin disinggahkan.",
 	"code-author-haslink": "Penulis ini terhubung ke pengguna wiki $1",
-	"code-author-orphan": "Penulis ini tidak terhubung dengan akun wiki",
+	"code-author-orphan": "Pengguna SVN/Penulis $1 tidak terhubung dengan akun wiki",
 	"code-author-dolink": "Kaitkan penulis ke Wiki pengguna:",
 	"code-author-alterlink": "Ubah hubungan wiki pengguna ke penulis ini:",
 	"code-author-orunlink": "Atau buang kaitan wiki pengguna ini:",
@@ -118,7 +119,7 @@
 	"code-signoff-struckdate": "$1 (dicoret $2)",
 	"code-pathsearch-legend": "Cari revisi di jejak penyimpanan ini:",
 	"code-pathsearch-path": "Jalan:",
-	"code-pathsearch-filter": "Penerapan filter:",
+	"code-pathsearch-filter": "Hanya tunjukkan:",
 	"code-revfilter-cr_status": "Status = $1",
 	"code-revfilter-cr_author": "Penulis = $1",
 	"code-revfilter-ct_tag": "Penanda = $1",
@@ -147,7 +148,7 @@
 	"code-stats-header": "Statistik repositori $1",
 	"code-stats-main": "Pada $1, penyimpanan ini memiliki $2 {{PLURAL:$2|revisi|revisi}} oleh [[Special:Code/$3/author|$4 {{PLURAL:$4|pemilik|pemilik}}]].",
 	"code-stats-status-breakdown": "Jumlah revisi per kondisi",
-	"code-stats-fixme-breakdown": "Perincian fixme per pemilik",
+	"code-stats-fixme-breakdown": "Perincian revisi fixme per pemilik",
 	"code-stats-count": "Jumlah revisi",
 	"code-tooltip-withsummary": "r$1 [$2] oleh $3 - $4",
 	"code-tooltip-withoutsummary": "r$1 [$2] oleh $3",
@@ -160,7 +161,7 @@
 	"repoadmin-edit-bug": "Jejak Bugzilla:",
 	"repoadmin-edit-view": "Jejak ViewV:",
 	"repoadmin-edit-button": "OK",
-	"repoadmin-edit-sucess": "Penyimpanan \"[[Special:Code/$1|$1]]\"  selesai diubah.",
+	"repoadmin-edit-sucess": "Penyimpanan \"[[Special:Code/$1|$1]]\" selesai diubah.",
 	"repoadmin-nav": "administrasi repositori",
 	"right-repoadmin": "Pengelolaan kode penyimpanan",
 	"right-codereview-use": "Penggunaan Khusus:Kode",
@@ -171,5 +172,5 @@
 	"right-codereview-signoff": "Persetujuan revisi",
 	"right-codereview-link-user": "Pranala penulis ke wiki pengguna",
 	"right-codereview-associate": "Mengelola keterkaitan revisi",
-	"right-codereview-review-own": "Tandai suntingan Anda sendiri sebagai OK"
+	"right-codereview-review-own": "Tandai suntingan Anda sendiri sebagai \"{{int:code-status-ok}}\" atau \"{{int:code-status-resolved}}\""
 }
