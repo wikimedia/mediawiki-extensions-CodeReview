@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -108,6 +110,8 @@ class SvnImport extends Maintenance {
 			return;
 		}
 
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+
 		while ( true ) {
 			$log = $svn->getLog( '', $start, $start + $chunkSize - 1 );
 			if ( empty( $log ) ) {
@@ -140,7 +144,7 @@ class SvnImport extends Maintenance {
 					$codeRev->getAuthor(),
 					$revSpeed ) );
 			}
-			wfWaitForSlaves( 5 );
+			$lbFactory->waitForReplication( [ 'ifWritesSince' => 5 ] );
 		}
 
 		if ( $cacheSize !== 0 ) {

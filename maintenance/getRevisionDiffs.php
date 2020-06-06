@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -28,6 +30,7 @@ class GetRevisionDiffs extends Maintenance {
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
 		$res = $dbr->select(
 			'code_rev',
@@ -54,7 +57,7 @@ class GetRevisionDiffs extends Maintenance {
 			}
 
 			if ( ++$count % 100 == 0 ) {
-				wfWaitForSlaves();
+				$lbFactory->waitForReplication();
 			}
 		}
 		$this->output( "Done!\n" );
