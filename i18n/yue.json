@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Moon0319"
+		]
 	},
 	"code": "代碼複查",
 	"code-rev-title": "$1 - 代碼複查",
@@ -29,8 +31,8 @@
 	"code-author-orunlink": "或者唔連結呢一位wiki用戶：",
 	"code-author-name": "輸入一個用戶名：",
 	"code-author-success": "作者$1已經連結到wiki用戶$2",
-	"code-author-link": "連結？",
-	"code-author-unlink": "唔連結？",
+	"code-author-link": "拎？",
+	"code-author-unlink": "唔拎？",
 	"code-author-unlinksuccess": "作者$1已經唔再連結",
 	"code-field-id": "修訂",
 	"code-field-author": "作者",
