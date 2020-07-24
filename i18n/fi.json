@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"01miki10",
 			"Cimon Avaro",
 			"Crt",
 			"Nedergard",
@@ -46,7 +47,7 @@
 	"code-author-dolink": "Kytke tämä tekijä wiki-käyttäjään:",
 	"code-author-alterlink": "Vaihda tähän tekijään kytketty wiki-käyttäjä:",
 	"code-author-orunlink": "Tai irrota tämä wiki-käyttäjä:",
-	"code-author-name": "Käyttäjätunnus:",
+	"code-author-name": "Käyttäjänimi:",
 	"code-author-success": "Tekijä $1 on kytketty wiki-käyttäjään $2",
 	"code-author-link": "kytke?",
 	"code-author-unlink": "irrota?",
