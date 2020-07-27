@@ -72,6 +72,8 @@
 	"code-status-resolved": "解決咗",
 	"code-status-ok": "好",
 	"code-status-deferred": "押後咗",
+	"code-signoff-field-flag": "旗仔",
+	"code-signoff-field-date": "日期",
 	"code-pathsearch-legend": "跟路徑搵呢個檔案庫嘅修訂",
 	"code-pathsearch-path": "路徑：",
 	"code-rev-submit": "保存更改",
