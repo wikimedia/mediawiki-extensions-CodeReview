@@ -79,6 +79,10 @@ class CodeRevisionListView extends CodeView {
 
 	public function execute() {
 		global $wgOut, $wgRequest;
+
+		// Todo inject instead of accessing the global
+		$output = $wgOut;
+
 		if ( !$this->mRepo ) {
 			$view = new CodeRepoListView();
 			$view->execute();
@@ -93,7 +97,7 @@ class CodeRevisionListView extends CodeView {
 		if ( $wgRequest->wasPosted() && count( $revisions )
 			&& $user->matchEditToken( $editToken )
 		) {
-			$this->doBatchChange( $user );
+			$this->doBatchChange( $output, $user );
 			return;
 		}
 
@@ -110,21 +114,21 @@ class CodeRevisionListView extends CodeView {
 
 		$navBar = $pager->getNavigationBar();
 
-		$wgOut->addHTML( $pathForm );
+		$output->addHTML( $pathForm );
 
-		$wgOut->addHTML(
+		$output->addHTML(
 			$navBar .
 			'<table><tr><td>' . $pager->getLimitForm() . '</td>'
 		);
 		if ( $revCount !== -1 ) {
-			$wgOut->addHTML(
+			$output->addHTML(
 				'<td>&#160;<strong>' .
 					wfMessage( 'code-rev-total' )->numParams( $revCount )->escaped() .
 					'</strong></td>'
 			);
 		}
 
-		$wgOut->addHTML(
+		$output->addHTML(
 			'</tr></table>' .
 			Xml::openElement( 'form',
 				[ 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'post' ]
@@ -134,16 +138,16 @@ class CodeRevisionListView extends CodeView {
 			$navBar
 		);
 		if ( $this->batchForm ) {
-			$wgOut->addHTML(
+			$output->addHTML(
 				$this->buildBatchInterface( $pager, $user )
 			);
 		}
 
-		$wgOut->addHTML( Xml::closeElement( 'form' ) . $pathForm );
+		$output->addHTML( Xml::closeElement( 'form' ) . $pathForm );
 	}
 
-	private function doBatchChange( User $user ) {
-		global $wgRequest, $wgOut;
+	private function doBatchChange( OutputPage $output, User $user ) {
+		global $wgRequest;
 
 		$revisions = $wgRequest->getArray( 'wpRevisionSelected' );
 		$removeTags = $wgRequest->getVal( 'wpRemoveTag' );
@@ -188,7 +192,7 @@ class CodeRevisionListView extends CodeView {
 			}
 		}
 
-		$wgOut->redirect( $this->getPager()->getTitle()->getFullURL( $fields ) );
+		$output->redirect( $this->getPager()->getTitle()->getFullURL( $fields ) );
 	}
 
 	/**

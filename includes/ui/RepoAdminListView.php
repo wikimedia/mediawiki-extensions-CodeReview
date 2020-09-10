@@ -19,10 +19,11 @@ class RepoAdminListView {
 
 	/**
 	 * Get "create new repo" form
+	 * @param OutputPage $output
 	 * @return string
 	 */
-	private function getForm() {
-		global $wgScript, $wgOut;
+	private function getForm( OutputPage $output ) {
+		global $wgScript;
 
 		$formDescriptor = [
 			'repoadmin-label' => [
@@ -33,7 +34,7 @@ class RepoAdminListView {
 			]
 		];
 
-		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $output->getContext() );
 		$htmlForm
 			->addHiddenField( 'title', $this->title->getPrefixedDBKey() )
 			->setAction( $wgScript )
@@ -48,7 +49,11 @@ class RepoAdminListView {
 
 	public function execute() {
 		global $wgOut;
-		$this->getForm();
+
+		// Todo inject instead of accessing the global
+		$output = $wgOut;
+
+		$this->getForm( $output );
 		$repos = CodeRepository::getRepoList();
 		if ( !count( $repos ) ) {
 			return;
@@ -58,6 +63,6 @@ class RepoAdminListView {
 			$name = $repo->getName();
 			$text .= "* [[Special:RepoAdmin/$name|$name]]\n";
 		}
-		$wgOut->addWikiTextAsInterface( $text );
+		$output->addWikiTextAsInterface( $text );
 	}
 }
