@@ -702,15 +702,16 @@ class CodeRevision {
 	}
 
 	/**
+	 * @param User $changeUser Whoever made the changes
 	 * @param string $subject
 	 * @param string $body
 	 * @param string|array ...$args
 	 * @return void
 	 */
-	public function emailNotifyUsersOfChanges( $subject, $body, ...$args ) {
+	public function emailNotifyUsersOfChanges( User $changeUser, $subject, $body, ...$args ) {
 		// Give email notices to committer and commenters
 		global $wgCodeReviewENotif, $wgEnableEmail, $wgCodeReviewCommentWatcherEmail,
-			$wgCodeReviewCommentWatcherName, $wgUser;
+			$wgCodeReviewCommentWatcherName;
 		if ( !$wgCodeReviewENotif || !$wgEnableEmail ) {
 			return;
 		}
@@ -734,7 +735,7 @@ class CodeRevision {
 		 */
 		foreach ( $users as $id => $user ) {
 			// No sense in notifying this commenter
-			if ( $wgUser->getId() == $user->getId() ) {
+			if ( $changeUser->getId() == $user->getId() ) {
 				continue;
 			}
 

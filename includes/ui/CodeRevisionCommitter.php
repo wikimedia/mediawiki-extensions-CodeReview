@@ -144,18 +144,39 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		if ( $statusChanged || $commentAdded ) {
 			$url = $this->mRev->getCanonicalUrl( $commentId );
 			if ( $statusChanged && $commentAdded ) {
-				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj4', 'codereview-email-body4',
-					$user->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
-					$this->mRev->getStatus(), $url, $this->text, $this->mRev->getMessage()
+				$this->mRev->emailNotifyUsersOfChanges(
+					$user,
+					'codereview-email-subj4',
+					'codereview-email-body4',
+					$user->getName(),
+					$this->mRev->getIdStringUnique(),
+					$this->mRev->getOldStatus(),
+					$this->mRev->getStatus(),
+					$url,
+					$this->text,
+					$this->mRev->getMessage()
 				);
 			} elseif ( $statusChanged ) {
-				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj3', 'codereview-email-body3',
-					$user->getName(), $this->mRev->getIdStringUnique(), $this->mRev->getOldStatus(),
-					$this->mRev->getStatus(), $url, $this->mRev->getMessage()
+				$this->mRev->emailNotifyUsersOfChanges(
+					$user,
+					'codereview-email-subj3',
+					'codereview-email-body3',
+					$user->getName(),
+					$this->mRev->getIdStringUnique(),
+					$this->mRev->getOldStatus(),
+					$this->mRev->getStatus(),
+					$url,
+					$this->mRev->getMessage()
 				);
 			} elseif ( $commentAdded ) {
-				$this->mRev->emailNotifyUsersOfChanges( 'codereview-email-subj', 'codereview-email-body',
-					$user->getName(), $url, $this->mRev->getIdStringUnique(), $this->text,
+				$this->mRev->emailNotifyUsersOfChanges(
+					$user,
+					'codereview-email-subj',
+					'codereview-email-body',
+					$user->getName(),
+					$url,
+					$this->mRev->getIdStringUnique(),
+					$this->text,
 					$this->mRev->getMessage()
 				);
 			}
