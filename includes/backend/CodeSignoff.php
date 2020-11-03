@@ -93,7 +93,7 @@ class CodeSignoff {
 	/**
 	 * Create a CodeSignoff object from a revision and a database row object
 	 * @param CodeRevision $rev CodeRevision object the signoff belongs to
-	 * @param object $row Database row with cs_* fields from code_signoffs
+	 * @param stdClass $row Database row with cs_* fields from code_signoffs
 	 * @return CodeSignoff
 	 */
 	public static function newFromRow( $rev, $row ) {

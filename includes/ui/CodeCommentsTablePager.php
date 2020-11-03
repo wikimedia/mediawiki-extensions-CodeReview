@@ -71,7 +71,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 				$this->mView->statusDesc( $value )
 			);
 		case 'cc_user_text':
-			return Linker::userLink( - 1, $value );
+			return Linker::userLink( -1, $value );
 		case 'cr_message':
 			return $this->mView->messageFragment( $value );
 		case 'cc_text':

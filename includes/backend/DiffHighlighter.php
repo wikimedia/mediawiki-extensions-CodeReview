@@ -4,13 +4,13 @@
  * Highlight a SVN diff for easier readibility
  */
 class CodeDiffHighlighter {
-	/* chunk line count for the original file */
+	/** @var int chunk line count for the original file */
 	protected $left = 0;
-	/* chunk line count for the changed file */
+	/** @var int chunk line count for the changed file */
 	protected $right = 0;
-	/* number of chunks */
+	/** @var int number of chunks */
 	protected $chunk = 0;
-	/* line number inside patch */
+	/** @var int line number inside patch */
 	protected $lineNumber = 0;
 
 	/**

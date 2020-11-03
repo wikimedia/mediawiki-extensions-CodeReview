@@ -46,12 +46,25 @@ var CodeTooltipsInit = function () {
 						author = mw.html.escape( rev.author ),
 						tip = '<div class="mw-codereview-status-' + status + '" style="padding:5px 8px 4px; margin:-5px -8px -4px;">';
 
-					// Give grep a chance to find the usages:
-					// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
-					// code-status-ok, code-status-deferred, code-status-old
 					if ( rev[ '*' ] ) {
+						// Messages used here
+						// * code-status-new
+						// * code-status-fixme
+						// * code-status-reverted
+						// * code-status-resolved,
+						// * code-status-ok
+						// * code-status-deferred
+						// * code-status-old
 						tip += mw.msg( 'code-tooltip-withsummary', matches[ 2 ], mw.msg( 'code-status-' + status ), author, text );
 					} else {
+						// Messages used here
+						// * code-status-new
+						// * code-status-fixme
+						// * code-status-reverted
+						// * code-status-resolved,
+						// * code-status-ok
+						// * code-status-deferred
+						// * code-status-old
 						tip += mw.msg( 'code-tooltip-withoutsummary', matches[ 2 ], mw.msg( 'code-status-' + status ), author );
 					}
 					tip += '</div>';

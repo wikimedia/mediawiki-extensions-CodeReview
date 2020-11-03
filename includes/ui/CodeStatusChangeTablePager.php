@@ -73,7 +73,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 					$this->mRepo->getName() . '/status/' . $value ),
 				$this->mView->statusDesc( $value ) );
 		case 'cpc_user_text':
-			return Linker::userLink( - 1, $value );
+			return Linker::userLink( -1, $value );
 		case 'cpc_removed':
 			return $this->msg( $value ? "code-status-$value" : 'code-status-new' )->escaped();
 		case 'cpc_added':
