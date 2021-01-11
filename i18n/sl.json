@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dbc334"
+			"Dbc334",
+			"Eleassar"
 		]
 	},
 	"code": "Pregled kode",
@@ -36,7 +37,7 @@
 	"code-author-orphan": "Uporabnik SVN/Avtor $1 ni povezan z wikiračunom",
 	"code-author-dolink": "Poveži tega avtorja z wikiuporabnikom:",
 	"code-author-alterlink": "Spremeni wikiuporabnika, povezanega s tem avtorjem:",
-	"code-author-orunlink": "Ali odstrani povezavo tega wikiuporabnika:",
+	"code-author-orunlink": "Ali odstranite povezavo do tega wikiuporabnika:",
 	"code-author-name": "Vnesite uporabniško ime:",
 	"code-author-success": "Avtor $1 je bil povezan z wikiuporabnikom $2",
 	"code-author-link": "povežem?",
