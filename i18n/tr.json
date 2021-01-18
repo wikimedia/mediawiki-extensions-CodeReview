@@ -43,7 +43,7 @@
 	"code-authors-text": "Aşağıda taahhüt adına göre repo yazarlarının bir listesi bulunmaktadır. Yerel viki hesapları parantez içinde gösterilir. Veriler önbelleğe alınabilir.",
 	"code-author-haslink": "Bu yazar $1 viki kullanıcısına bağlıdır",
 	"code-author-orphan": "SVN kullanıcısı/Yazar $1 viki hesabıyla bağlantısı yok",
-	"code-author-dolink": "Bu yazarı bir wiki kullanıcısına bağlayın:",
+	"code-author-dolink": "Bu yazarı bir viki kullanıcısına bağlayın:",
 	"code-author-alterlink": "Bu yazara bağlı viki kullanıcısını değiştirin:",
 	"code-author-orunlink": "Veya bu viki kullanıcısını bağlantıyı kaldırın:",
 	"code-author-name": "Bir kullanıcı adı girin:",
