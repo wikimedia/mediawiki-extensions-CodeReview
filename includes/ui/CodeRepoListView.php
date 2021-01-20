@@ -1,4 +1,5 @@
 <?php
+use MediaWiki\MediaWikiServices;
 
 /**
  * Class for showing the list of repositories, if none was specified
@@ -8,6 +9,8 @@ class CodeRepoListView {
 		global $wgOut;
 		$repos = CodeRepository::getRepoList();
 		$user = RequestContext::getMain()->getUser();
+		$services = MediaWikiServices::getInstance();
+		$groupPermissionsLookup = $services->getGroupPermissionsLookup();
 		if ( !count( $repos ) ) {
 			$wgOut->addWikiMsg( 'code-no-repo' );
 
@@ -16,7 +19,7 @@ class CodeRepoListView {
 			} else {
 				$wgOut->addWikiMsg( 'code-need-repoadmin-rights' );
 
-				if ( !count( User::getGroupsWithPermission( 'repoadmin' ) ) ) {
+				if ( !count( $groupPermissionsLookup->getGroupsWithPermission( 'repoadmin' ) ) ) {
 					$wgOut->addWikiMsg( 'code-need-group-with-rights' );
 				}
 			}
