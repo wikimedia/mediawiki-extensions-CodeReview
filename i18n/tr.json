@@ -8,6 +8,7 @@
 			"SaldırganSincap",
 			"Srhat",
 			"Suelnur",
+			"Uncitoyen",
 			"Vito Genovese",
 			"Watermelon juice",
 			"Ömer Berkay"
@@ -105,7 +106,7 @@
 	"code-status-resolved": "çözüldü",
 	"code-status-desc-resolved": "Revizyonun, daha sonraki bir revizyonla ele alınan bir sorunu vardı.",
 	"code-status-ok": "tamam",
-	"code-status-desc-ok": "Revizyon tamamen incelendi ve incelenen, her yönden iyi olduğundan emindir.",
+	"code-status-desc-ok": "Revizyon tamamen gözden geçirildi ve gözden geçiren her şekilde iyi olduğundan emin.",
 	"code-status-deferred": "ertelendi",
 	"code-status-desc-deferred": "Revizyonun incelenmesi gerekmez.",
 	"code-status-old": "eski",
