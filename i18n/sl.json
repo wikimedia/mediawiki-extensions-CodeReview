@@ -39,7 +39,7 @@
 	"code-author-alterlink": "Spremeni wikiuporabnika, povezanega s tem avtorjem:",
 	"code-author-orunlink": "Ali odstranite povezavo do tega wikiuporabnika:",
 	"code-author-name": "Vnesite uporabniško ime:",
-	"code-author-success": "Avtor $1 je bil povezan z wikiuporabnikom $2",
+	"code-author-success": "Avtor $1 je povezan z wikiuporabnikom $2",
 	"code-author-link": "povežem?",
 	"code-author-unlink": "odstranim povezavo?",
 	"code-author-unlinksuccess": "Avtorju $1 je bila odstranjena povezava",
