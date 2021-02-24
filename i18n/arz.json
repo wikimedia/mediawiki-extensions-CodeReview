@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ghaly",
+			"HitomiAkane",
 			"Meno25",
 			"Ramsis II"
 		]
@@ -74,7 +75,7 @@
 	"code-releasenotes": "ملاحظات الإصدار",
 	"code-release-legend": "توليد ملاحظات الإصدار",
 	"code-release-startrev": "مراجعة البداية:",
-	"code-release-endrev": "آخر مراجعة:",
+	"code-release-endrev": "آخر مراجعه:",
 	"codereview-subtitle": "لـ $1",
 	"codereview-reply-link": "رد",
 	"codereview-email-subj": "[$1 $2]: تعليق جديد تمت إضافته",
