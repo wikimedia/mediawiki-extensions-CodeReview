@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Andrei Stroe",
+			"Andreyyshore",
 			"Firilacroco",
 			"KlaudiuMihaila",
 			"Mihai",
@@ -124,7 +125,7 @@
 	"code-revfilter-ct_tag": "Etichetă = $1",
 	"code-revfilter-clear": "Curăță filtru",
 	"code-rev-submit": "Salvează schimbări",
-	"code-rev-submit-next": "Salvaţi & următoare nerezolvată",
+	"code-rev-submit-next": "Salvați & următoare nerezolvată",
 	"code-rev-next": "Următoarea în așteptare",
 	"code-batch-status": "Schimbă statut:",
 	"code-batch-tags": "Schimbă etichete:",
