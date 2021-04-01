@@ -69,7 +69,7 @@
 			]
 		},
 		"CodeReviewCommentWatcherEmail": {
-			"value": false
+			"value": ""
 		},
 		"CodeReviewENotif": {
 			"value": false
