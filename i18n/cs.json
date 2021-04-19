@@ -169,7 +169,7 @@
 	"repoadmin-edit-path": "Cesta k úložišti:",
 	"repoadmin-edit-bug": "Cesta k Bugzille:",
 	"repoadmin-edit-view": "Cesta k ViewVC:",
-	"repoadmin-edit-button": "O. k.",
+	"repoadmin-edit-button": "OK",
 	"repoadmin-edit-sucess": "Úložiště „[[Special:Code/$1|$1]]“ bylo úspěšně změněno.",
 	"repoadmin-nav": "správa úložiště",
 	"right-repoadmin": "Správa úložišť kódu",
