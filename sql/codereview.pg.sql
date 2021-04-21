@@ -53,7 +53,7 @@ CREATE TABLE code_authors (
   unique (ca_user_text, ca_repo_id, ca_author)
 );
 
-CREATE TYPE code_path_action AS ENUM ('M', 'A', 'D', 'R');
+CREATE TYPE code_path_action AS ENUM ('M', 'A', 'D', 'R', 'N');
 CREATE TABLE code_paths (
   cp_repo_id INTEGER NOT NULL,
   cp_rev_id INTEGER NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE code_tags (
 
   primary key (ct_repo_id,ct_rev_id,ct_tag)
 );
-CREATE INDEX ct_repo_tag ON code_tage (ct_repo_id,ct_tag,ct_rev_id);
+CREATE INDEX ct_repo_tag ON code_tags (ct_repo_id,ct_tag,ct_rev_id);
 
 CREATE SEQUENCE cc_id_seq;
 CREATE TABLE code_comment (

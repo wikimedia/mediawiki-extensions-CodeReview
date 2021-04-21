@@ -93,7 +93,9 @@ class CodeReviewHooks {
 				"$base/archives/code_authors_add_ca_user.sql" );
 			break;
 		case 'postgres':
-			// TODO
+			// Initial install tables
+			$updater->addExtensionTable( 'code_rev', "$base/sql/codereview.pg.sql" );
+			$updater->addExtensionTable( 'code_signoffs', "$base/archives/code_signoffs.pg.sql" );
 			break;
 		}
 	}

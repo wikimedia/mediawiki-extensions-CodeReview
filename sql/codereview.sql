@@ -114,7 +114,7 @@ CREATE TABLE /*_*/code_paths (
   -- '/trunk/phase3/RELEASE_NOTES'
   cp_path varchar(255) not null,
 
-  -- Update type: Modify (M), Add (A), Delete (D), Replace (R)
+  -- Update type: Modify (M), Add (A), Delete (D), Replace (R), No-op (N)
   cp_action char(1) not null,
 
   primary key (cp_repo_id, cp_rev_id, cp_path)
