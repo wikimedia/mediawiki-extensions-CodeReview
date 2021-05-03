@@ -15,7 +15,7 @@ class DeleteBadTags extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->begin( __METHOD__ );
 		$dbw->delete( 'code_tags', [ 'ct_tag' => '' ], __METHOD__ );
 		$count = $dbw->affectedRows();

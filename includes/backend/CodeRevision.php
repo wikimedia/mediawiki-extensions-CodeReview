@@ -335,7 +335,7 @@ class CodeRevision {
 		}
 
 		// Get the old status from the master
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$this->oldStatus = $dbw->selectField(
 			'code_rev',
 			'cr_status',
@@ -407,7 +407,7 @@ class CodeRevision {
 	 * @return void
 	 */
 	public function save() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
 		$dbw->insert(
@@ -599,7 +599,7 @@ class CodeRevision {
 	 * @return array
 	 */
 	public function getAffectedBugRevs() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		// Update bug references table...
 		$affectedBugs = [];
@@ -685,7 +685,7 @@ class CodeRevision {
 		if ( !strlen( $text ) ) {
 			return 0;
 		}
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$data = $this->commentData( $text, $user, $parent );
 
 		$dbw->startAtomic( __METHOD__ );
@@ -761,7 +761,7 @@ class CodeRevision {
 	 * @return array
 	 */
 	protected function commentData( $text, User $user, $parent = null ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$ts = wfTimestamp( TS_MW );
 		$sortkey = $this->threadedSortkey( $parent, $ts );
 		return [
@@ -786,7 +786,7 @@ class CodeRevision {
 		if ( $parent ) {
 			// We construct a threaded sort key by concatenating the timestamps
 			// of all our parent comments
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			$parentKey = $dbw->selectField(
 				'code_comment',
 				'cc_sortkey',
@@ -1018,7 +1018,7 @@ class CodeRevision {
 	 * @return void
 	 */
 	private function addReferences( $data ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->insert( 'code_relations', $data, __METHOD__, [ 'IGNORE' ] );
 	}
 
@@ -1047,7 +1047,7 @@ class CodeRevision {
 	 * @param array $revs array of revision IDs
 	 */
 	public function removeReferencesFrom( $revs ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete( 'code_relations', [
 				'cf_repo_id' => $this->getRepoId(),
 				'cf_from' => $revs,
@@ -1062,7 +1062,7 @@ class CodeRevision {
 	 * @param array $revs array of revision IDs
 	 */
 	public function removeReferencesTo( $revs ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete( 'code_relations', [
 				'cf_repo_id' => $this->getRepoId(),
 				'cf_from' => $this->getId(),
@@ -1103,7 +1103,7 @@ class CodeRevision {
 	 *   a separate sign-off
 	 */
 	public function addSignoff( $user, $flags ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$rows = [];
 		foreach ( (array)$flags as $flag ) {
 			$rows[] = [
@@ -1167,14 +1167,14 @@ class CodeRevision {
 	 */
 	public function changeTags( $addTags, $removeTags, $user = null ) {
 		// Get the current tags and see what changes
-		$tagsNow = $this->getTags( DB_MASTER );
+		$tagsNow = $this->getTags( DB_PRIMARY );
 		// Normalize our input tags
 		$addTags = $this->normalizeTags( $addTags );
 		$removeTags = $this->normalizeTags( $removeTags );
 		$addTags = array_diff( $addTags, $tagsNow );
 		$removeTags = array_intersect( $removeTags, $tagsNow );
 		// Do the queries
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		if ( $addTags ) {
 			$dbw->insert(
 				'code_tags',

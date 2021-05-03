@@ -81,7 +81,7 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			return false;
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
 		// Change the status if allowed

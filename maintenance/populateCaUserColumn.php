@@ -61,7 +61,7 @@ class PopulateCaUserColumn extends Maintenance {
 		// actually doing stuff, too, instead of goofing off
 		$this->output( "{$numRows} authors with ca_user = 0 in the table...\n" );
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$this->beginTransaction( $dbw, __METHOD__ );
 
 		foreach ( $res as $row ) {

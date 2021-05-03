@@ -44,7 +44,7 @@ class RepoAdminRepoView {
 			&& $user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName )
 		) {
 			// @todo log
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			if ( $repoExists ) {
 				$dbw->update(
 					'code_repo',

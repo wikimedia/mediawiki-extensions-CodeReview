@@ -48,7 +48,7 @@ class RepopulateCodePaths extends Maintenance {
 			__METHOD__
 		);
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$this->beginTransaction( $dbw, __METHOD__ );
 
 		foreach ( $res as $row ) {

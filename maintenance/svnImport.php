@@ -148,7 +148,7 @@ class SvnImport extends Maintenance {
 		}
 
 		if ( $cacheSize !== 0 ) {
-			$dbw = wfGetDB( DB_MASTER );
+			$dbw = wfGetDB( DB_PRIMARY );
 			$options = [ 'ORDER BY' => 'cr_id DESC' ];
 
 			if ( $cacheSize == 'all' ) {

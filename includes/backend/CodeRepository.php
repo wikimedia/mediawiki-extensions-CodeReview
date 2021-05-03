@@ -432,7 +432,7 @@ class CodeRepository {
 				$storedData = $data;
 				$flags = $blobStore->compressData( $storedData );
 
-				$dbw = wfGetDB( DB_MASTER );
+				$dbw = wfGetDB( DB_PRIMARY );
 				$dbw->update(
 					'code_rev',
 					[ 'cr_diff' => $storedData, 'cr_flags' => $flags ],
@@ -470,7 +470,7 @@ class CodeRepository {
 		// Permanent DB storage
 		$storedData = $data;
 		$flags = $services->getBlobStore()->compressData( $storedData );
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->update(
 			'code_rev',
 			[ 'cr_diff' => $storedData, 'cr_flags' => $flags ],
@@ -501,7 +501,7 @@ class CodeRepository {
 		if ( !$userId ) {
 			return false;
 		}
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		// Insert in the auther -> user link row.
 		// Skip existing rows.
 		$dbw->insert(
@@ -540,7 +540,7 @@ class CodeRepository {
 	 * @return bool success
 	 */
 	public function unlinkUser( $author ) {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->delete(
 			'code_authors',
 			[

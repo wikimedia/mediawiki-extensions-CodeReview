@@ -42,7 +42,7 @@ class RepoStats {
 		$data = $cache->getWithSetCallback(
 			$cache->makeKey( 'codereview-stats', $repo->getName() ),
 			$wgCodeReviewRepoStatsCacheTime,
-			function () use ( $repo ) {
+			static function () use ( $repo ) {
 				$freshStats = new RepoStats( $repo );
 				$freshStats->generate();
 

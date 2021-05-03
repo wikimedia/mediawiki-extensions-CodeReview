@@ -63,7 +63,7 @@ class CodeSignoff {
 		if ( $this->isStruck() ) {
 			return;
 		}
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->update(
 			'code_signoffs',
 			[ 'cs_timestamp_struck' => $dbw->timestamp() ],
