@@ -334,7 +334,7 @@ class CodeRevision {
 			}
 		}
 
-		// Get the old status from the master
+		// Get the old status from the primary database
 		$dbw = wfGetDB( DB_PRIMARY );
 		$this->oldStatus = $dbw->selectField(
 			'code_rev',
@@ -1073,7 +1073,7 @@ class CodeRevision {
 
 	/**
 	 * Get all sign-offs for this revision
-	 * @param int $from DB_REPLICA or DB_MASTER
+	 * @param int $from DB_REPLICA or DB_PRIMARY
 	 * @return array of CodeSignoff objects
 	 */
 	public function getSignoffs( $from = DB_REPLICA ) {
