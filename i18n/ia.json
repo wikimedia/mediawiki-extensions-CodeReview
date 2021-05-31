@@ -135,7 +135,7 @@
 	"codereview-overview-title": "Summario",
 	"codereview-overview-desc": "Monstrar un summario graphic de iste lista",
 	"codereview-email-subj": "[$1] [v$2]: Nove commento addite",
-	"codereview-email-body": "Le usator \"$1\" publicava un commento super $3.\n\nAdresse URL complete: $2\nSummario del commit:\n\n$5\n\nCommento:\n\n$4",
+	"codereview-email-body": "\"$1\" ha publicate un commento sur $3.\n\nURL: $2\n\nSummario del commit pro $3:\n\n$5\n\nLe commento de $1:\n\n$4",
 	"codereview-email-subj2": "[$1] [v$2]: Modificationes subsequente",
 	"codereview-email-body2": "Le usator \"$1\" faceva cambios subsequente a $2.\n\nURL complete del version subsequente: $5\nSummario del commit:\n\n$6\n\nURL complete: $3\nSummario del commit:\n\n$4",
 	"codereview-email-subj3": "[$1 $2]: Stato del version cambiate",
