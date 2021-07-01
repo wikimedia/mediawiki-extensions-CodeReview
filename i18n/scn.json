@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Aushulz",
 			"Gmelfi",
 			"Pippinu",
@@ -70,6 +71,7 @@
 	"code-signoff-field-user": "Utenti",
 	"code-pathsearch-legend": "Cerca li rivisioni nti stu dipòsitu classificati pî pircursa",
 	"code-pathsearch-path": "Pircursu:",
+	"code-revfilter-cr_status": "Statu = $1",
 	"code-revfilter-clear": "Pulizzìa firtru",
 	"code-rev-submit": "Canci di assignazzioni",
 	"code-rev-submit-next": "Assignazzioni & pròssimi nun risurvuti",
