@@ -18,7 +18,6 @@
 		"no-redeclare": "off",
 		"no-undef": "off",
 		"no-useless-escape": "off",
-		"one-var": "off",
 		"vars-on-top": "off"
 	}
 }
