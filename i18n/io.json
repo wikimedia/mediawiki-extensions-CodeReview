@@ -26,6 +26,8 @@
 	"code-rev-message": "Komento:",
 	"code-rev-tags": "Etiketi:",
 	"code-rev-comment-by": "Komento per $1",
+	"code-rev-comment-preview": "Previdar",
+	"code-rev-inline-preview": "Previdado:",
 	"code-rev-diff": "Diferi",
 	"code-rev-diff-link": "dif.",
 	"code-status-new": "nova",
