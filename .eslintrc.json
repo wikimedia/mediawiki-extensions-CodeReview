@@ -17,7 +17,6 @@
 		"no-jquery/no-slide": "off",
 		"no-redeclare": "off",
 		"no-undef": "off",
-		"no-useless-escape": "off",
-		"vars-on-top": "off"
+		"no-useless-escape": "off"
 	}
 }
