@@ -79,6 +79,7 @@
 	"codereview-reply-link": "Arrispunni",
 	"codereview-email-subj": "[$1 $2]: Cummentu novu jiunchiutu",
 	"codereview-email-body": "«$1» lassau nu cummentu nta $3.\nURL: $2\n\nRiassuntu dû cuntribbutu a' $3:\n\n$5\n\nCummentu di $1:\n\n$4",
+	"code-stats": "statìstichi",
 	"repoadmin": "Amministrazzioni dî dipòsiti",
 	"repoadmin-new-legend": "Crèa nu dipòsitu novu",
 	"repoadmin-new-label": "Nomu dû dipòsitu:",
