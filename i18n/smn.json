@@ -10,5 +10,6 @@
 	"code-rev-date": "Peivim:",
 	"code-rev-tags": "Kilgoleh:",
 	"code-signoff-field-date": "Peivim",
-	"code-revfilter-ct_tag": "Kilgool = $1"
+	"code-revfilter-ct_tag": "Kilgool = $1",
+	"code-stats": "lovottuvah"
 }
