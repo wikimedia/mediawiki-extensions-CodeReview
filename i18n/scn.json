@@ -13,7 +13,7 @@
 	"code-comments": "Cummenti",
 	"code-change-status": "canciau lu '''statu''' di $1",
 	"code-change-tags": "canciau l''''etichetti''' di $1",
-	"code-change-removed": "rimuvutu:",
+	"code-change-removed": "livatu:",
 	"code-change-added": "junciutu:",
 	"code-prop-changes": "Status & log di tagging",
 	"codereview-desc": "[[Special:Code|Stigghi pâ rivisioni dû codici]] cu [[Special:RepoAdmin|Supportu di suvvirsioni]]",
