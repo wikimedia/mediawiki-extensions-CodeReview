@@ -1,8 +1,26 @@
 {
 	"@metadata": {
 		"authors": [
+			"Malikxan",
 			"Sociologist"
 		]
 	},
+	"code": "Kodni qayta koʻrib chiqish",
+	"code-rev-title": "$1 - Kodni qayta koʻrib chiqish",
+	"code-comments": "Izohlar",
+	"code-change-removed": "olib tashlandi:",
+	"code-change-added": "qoʻshildi:",
+	"code-old-status": "Eski status",
+	"code-new-status": "Yangi status",
+	"code-mycomments": "izohlarim",
+	"code-authors": "mualliflar",
+	"code-tags": "teglar",
+	"code-author-name": "Foydalanuvchi nomini kiriting:",
+	"code-field-author": "Muallif",
+	"code-field-timestamp": "Sana",
+	"code-field-comments": "Izohlar",
+	"code-field-path": "Yoʻl",
+	"code-field-text": "Izoh",
+	"code-field-select": "Tanlash",
 	"code-rev-submit": "Oʻzgarishlarni saqlash"
 }
