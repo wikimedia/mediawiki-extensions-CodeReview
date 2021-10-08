@@ -202,5 +202,7 @@
 	"action-codereview-link-user": "پیوند کردن نویسندگان به کاربران ویکی",
 	"action-codereview-associate": "مدیریت نسخه‌های مرتبط",
 	"action-codereview-review-own": "نسخه‌های خود را به عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
+	"apihelp-coderevisionupdate-param-repo": "نام مخزن",
+	"apihelp-coderevisionupdate-param-rev": "شماره شناسهٔ نسخه",
 	"apihelp-codeupdate-param-repo": "نام مخزن برای روزآمدسازی"
 }
