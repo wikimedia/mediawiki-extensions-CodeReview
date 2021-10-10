@@ -40,7 +40,7 @@ class SvnRevTablePager extends SvnTablePager {
 				'tables' => [ 'code_rev', 'code_comment' ],
 				'fields' => $this->getSelectFields(),
 				'conds' => [ 'cr_repo_id' => $this->mRepo->getId() ],
-				'options' => [ 'GROUP BY' => $defaultSort ],
+				'options' => [ 'GROUP BY' => $defaultSort . ', cr_repo_id' ],
 				'join_conds' => [
 					'code_comment' => [ 'LEFT JOIN',
 						'cc_repo_id = cr_repo_id AND cc_rev_id = cr_id' ],
