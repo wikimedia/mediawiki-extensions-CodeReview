@@ -4,7 +4,7 @@
  * @group CodeReview
  * @covers CodeDiffHighlighter
  */
-class CodeDiffHighlighterTest extends MediaWikiTestCase {
+class CodeDiffHighlighterTest extends MediaWikiIntegrationTestCase {
 	public function testParseChunksFromWindowsDiff() {
 		try {
 			CodeDiffHighlighter::parseChunkDelimiter(

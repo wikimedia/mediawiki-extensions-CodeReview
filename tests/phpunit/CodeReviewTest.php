@@ -3,7 +3,7 @@
 /**
  * @group CodeReview
  */
-class CodeReviewTest extends MediaWikiTestCase {
+class CodeReviewTest extends MediaWikiIntegrationTestCase {
 	private function createRepo() {
 		$row = new stdClass();
 		$row->repo_id = 1;
