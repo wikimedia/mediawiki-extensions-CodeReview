@@ -62,5 +62,10 @@
 	"codereview-overview-desc": "Montrez grafikala rezumo di ica listo",
 	"codereview-email-subj": "[$1 $2]: Nova komento adjuntita",
 	"repoadmin-new-button": "Kreez",
-	"repoadmin-edit-button": "O.K."
+	"repoadmin-edit-button": "O.K.",
+	"right-codereview-remove-tag": "Efacar etiketi de revizuri",
+	"right-codereview-post-comment": "Adjuntez komento che revizi",
+	"right-codereview-set-status": "Modifikar stando di revizi",
+	"action-codereview-remove-tag": "efacez etiketi de revizuri",
+	"action-codereview-set-status": "changez stando di revizo"
 }
