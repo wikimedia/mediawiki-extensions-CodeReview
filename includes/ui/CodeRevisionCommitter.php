@@ -1,11 +1,16 @@
 <?php
 
+use MediaWiki\Permissions\Authority;
+
 class CodeRevisionCommitter extends CodeRevisionView {
 	public function execute() {
-		global $wgRequest, $wgOut;
+		global $wgOut;
 
-		$user = $this->user;
-		if ( !$user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+		$performer = $this->performer;
+		$context = RequestContext::getMain();
+		$request = $context->getRequest();
+		$userToken = $context->getCsrfTokenSet();
+		if ( !$userToken->matchToken( $request->getVal( 'wpEditToken' ) ) ) {
 			$wgOut->addHTML( '<strong>' . wfMessage( 'sessionfailure' )->escaped() . '</strong>' );
 			parent::execute();
 			return;
@@ -24,10 +29,10 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$this->mAddReferences,
 			$this->mRemoveReferences,
 			$this->text,
-			$wgRequest->getIntOrNull( 'wpParent' ),
+			$request->getIntOrNull( 'wpParent' ),
 			$this->mAddReferenced,
 			$this->mRemoveReferenced,
-			$user
+			$performer
 		);
 
 		$redirTarget = null;
@@ -69,13 +74,13 @@ class CodeRevisionCommitter extends CodeRevisionView {
 	 * @param null|int $parent What the parent comment is (if a subcomment)
 	 * @param array $addReferenced
 	 * @param array $removeReferenced
-	 * @param User $user
+	 * @param Authority $performer
 	 * @return int Comment ID if added, else 0
 	 */
 	public function revisionUpdate( $status, $addTags, $removeTags, $addSignoffs, $strikeSignoffs,
 						$addReferences, $removeReferences, $commentText,
 						$parent, $addReferenced, $removeReferenced,
-						User $user
+						Authority $performer
 					) {
 		if ( !$this->mRev ) {
 			return false;
@@ -87,54 +92,54 @@ class CodeRevisionCommitter extends CodeRevisionView {
 		// Change the status if allowed
 		$statusChanged = false;
 		if ( $this->mRev->isValidStatus( $status ) &&
-			$this->validPost( 'codereview-set-status', $user )
+			$this->validPost( 'codereview-set-status', $performer )
 		) {
-			$statusChanged = $this->mRev->setStatus( $status, $user );
+			$statusChanged = $this->mRev->setStatus( $status, $performer );
 		}
 		$validAddTags = $validRemoveTags = [];
-		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag', $user ) ) {
+		if ( count( $addTags ) && $this->validPost( 'codereview-add-tag', $performer ) ) {
 			$validAddTags = $addTags;
 		}
-		if ( count( $removeTags ) && $this->validPost( 'codereview-remove-tag', $user ) ) {
+		if ( count( $removeTags ) && $this->validPost( 'codereview-remove-tag', $performer ) ) {
 			$validRemoveTags = $removeTags;
 		}
 		// If allowed to change any tags, then do so
 		if ( count( $validAddTags ) || count( $validRemoveTags ) ) {
-			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $user );
+			$this->mRev->changeTags( $validAddTags, $validRemoveTags, $performer );
 		}
 		// Add any signoffs
-		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff', $user ) ) {
-			$this->mRev->addSignoff( $user, $addSignoffs );
+		if ( count( $addSignoffs ) && $this->validPost( 'codereview-signoff', $performer ) ) {
+			$this->mRev->addSignoff( $performer, $addSignoffs );
 		}
 		// Strike any signoffs
-		if ( count( $strikeSignoffs ) && $this->validPost( 'codereview-signoff', $user ) ) {
-			$this->mRev->strikeSignoffs( $user, $strikeSignoffs );
+		if ( count( $strikeSignoffs ) && $this->validPost( 'codereview-signoff', $performer ) ) {
+			$this->mRev->strikeSignoffs( $performer, $strikeSignoffs );
 		}
 		// Add reference if requested
-		if ( count( $addReferences ) && $this->validPost( 'codereview-associate', $user ) ) {
+		if ( count( $addReferences ) && $this->validPost( 'codereview-associate', $performer ) ) {
 			$this->mRev->addReferencesFrom( $addReferences );
 		}
 		// Remove references if requested
 		if ( count( $removeReferences ) &&
-			$this->validPost( 'codereview-associate', $user )
+			$this->validPost( 'codereview-associate', $performer )
 		) {
 			$this->mRev->removeReferencesFrom( $removeReferences );
 		}
 		// Add reference if requested
-		if ( count( $addReferenced ) && $this->validPost( 'codereview-associate', $user ) ) {
+		if ( count( $addReferenced ) && $this->validPost( 'codereview-associate', $performer ) ) {
 			$this->mRev->addReferencesTo( $addReferenced );
 		}
 		// Remove references if requested
-		if ( count( $removeReferenced ) && $this->validPost( 'codereview-associate', $user ) ) {
+		if ( count( $removeReferenced ) && $this->validPost( 'codereview-associate', $performer ) ) {
 			$this->mRev->removeReferencesTo( $removeReferenced );
 		}
 
 		// Add any comments
 		$commentAdded = false;
 		$commentId = 0;
-		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment', $user ) ) {
+		if ( strlen( $commentText ) && $this->validPost( 'codereview-post-comment', $performer ) ) {
 			// $isPreview = $wgRequest->getCheck( 'wpPreview' );
-			$commentId = $this->mRev->saveComment( $commentText, $user, $parent );
+			$commentId = $this->mRev->saveComment( $commentText, $performer, $parent );
 
 			$commentAdded = ( $commentId !== 0 );
 		}
@@ -145,10 +150,10 @@ class CodeRevisionCommitter extends CodeRevisionView {
 			$url = $this->mRev->getCanonicalUrl( $commentId );
 			if ( $statusChanged && $commentAdded ) {
 				$this->mRev->emailNotifyUsersOfChanges(
-					$user,
+					$performer,
 					'codereview-email-subj4',
 					'codereview-email-body4',
-					$user->getName(),
+					$performer->getUser()->getName(),
 					$this->mRev->getIdStringUnique(),
 					$this->mRev->getOldStatus(),
 					$this->mRev->getStatus(),
@@ -158,10 +163,10 @@ class CodeRevisionCommitter extends CodeRevisionView {
 				);
 			} elseif ( $statusChanged ) {
 				$this->mRev->emailNotifyUsersOfChanges(
-					$user,
+					$performer,
 					'codereview-email-subj3',
 					'codereview-email-body3',
-					$user->getName(),
+					$performer->getUser()->getName(),
 					$this->mRev->getIdStringUnique(),
 					$this->mRev->getOldStatus(),
 					$this->mRev->getStatus(),
@@ -170,10 +175,10 @@ class CodeRevisionCommitter extends CodeRevisionView {
 				);
 			} elseif ( $commentAdded ) {
 				$this->mRev->emailNotifyUsersOfChanges(
-					$user,
+					$performer,
 					'codereview-email-subj',
 					'codereview-email-body',
-					$user->getName(),
+					$performer->getUser()->getName(),
 					$url,
 					$this->mRev->getIdStringUnique(),
 					$this->text,

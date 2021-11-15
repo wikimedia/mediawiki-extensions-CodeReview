@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\Authority;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class CodeRevision {
@@ -313,10 +314,10 @@ class CodeRevision {
 	/**
 	 * @throws Exception
 	 * @param string $status value in CodeRevision::getPossibleStates
-	 * @param User $user
+	 * @param Authority $performer
 	 * @return bool
 	 */
-	public function setStatus( $status, $user ) {
+	public function setStatus( $status, $performer ) {
 		if ( !$this->isValidStatus( $status ) ) {
 			throw new Exception( 'Tried to save invalid code revision status' );
 		}
@@ -326,7 +327,7 @@ class CodeRevision {
 		// Obviously only works if user accounts are tied!
 		$wikiUser = $this->getWikiUser();
 		if ( self::isProtectedStatus( $status )
-			&& $wikiUser && $user->getName() == $wikiUser->getName()
+			&& $wikiUser && $performer->getUser()->getName() == $wikiUser->getName()
 		) {
 			// allow the user to review their own code if required
 			if ( !$wikiUser->isAllowed( 'codereview-review-own' ) ) {
@@ -357,7 +358,7 @@ class CodeRevision {
 			__METHOD__
 		);
 		// Log this change
-		if ( $user && $user->getId() ) {
+		if ( $performer && $performer->getUser()->getId() ) {
 			$dbw->insert(
 				'code_prop_changes',
 				[
@@ -367,14 +368,14 @@ class CodeRevision {
 					'cpc_removed'   => $this->oldStatus,
 					'cpc_added'     => $status,
 					'cpc_timestamp' => $dbw->timestamp(),
-					'cpc_user'      => $user->getId(),
-					'cpc_user_text' => $user->getName()
+					'cpc_user'      => $performer->getUser()->getId(),
+					'cpc_user_text' => $performer->getUser()->getName()
 				],
 				__METHOD__
 			);
 		}
 
-		$this->sendStatusToUDP( $status, $this->oldStatus, $user );
+		$this->sendStatusToUDP( $status, $this->oldStatus, $performer );
 
 		return true;
 	}
@@ -664,29 +665,29 @@ class CodeRevision {
 
 	/**
 	 * @param string $text
-	 * @param User $user
+	 * @param Authority $performer
 	 * @param null $parent
 	 * @return CodeComment
 	 */
-	public function previewComment( $text, User $user, $parent = null ) {
-		$data = $this->commentData( rtrim( $text ), $user, $parent );
+	public function previewComment( $text, Authority $performer, $parent = null ) {
+		$data = $this->commentData( rtrim( $text ), $performer, $parent );
 		$data['cc_id'] = null;
 		return CodeComment::newFromData( $this, $data );
 	}
 
 	/**
 	 * @param string $text
-	 * @param User $user
+	 * @param Authority $performer
 	 * @param null $parent
 	 * @return int
 	 */
-	public function saveComment( $text, User $user, $parent = null ) {
+	public function saveComment( $text, Authority $performer, $parent = null ) {
 		$text = rtrim( $text );
 		if ( !strlen( $text ) ) {
 			return 0;
 		}
 		$dbw = wfGetDB( DB_PRIMARY );
-		$data = $this->commentData( $text, $user, $parent );
+		$data = $this->commentData( $text, $performer, $parent );
 
 		$dbw->startAtomic( __METHOD__ );
 		$data['cc_id'] = $dbw->nextSequenceValue( 'code_comment_cc_id' );
@@ -696,19 +697,19 @@ class CodeRevision {
 
 		$url = $this->getCanonicalUrl( $commentId );
 
-		$this->sendCommentToUDP( $commentId, $text, $user, $url );
+		$this->sendCommentToUDP( $commentId, $text, $performer, $url );
 
 		return $commentId;
 	}
 
 	/**
-	 * @param User $changeUser Whoever made the changes
+	 * @param Authority $performer Whoever made the changes
 	 * @param string $subject
 	 * @param string $body
 	 * @param string|array ...$args
 	 * @return void
 	 */
-	public function emailNotifyUsersOfChanges( User $changeUser, $subject, $body, ...$args ) {
+	public function emailNotifyUsersOfChanges( Authority $performer, $subject, $body, ...$args ) {
 		// Give email notices to committer and commenters
 		global $wgCodeReviewENotif, $wgEnableEmail, $wgCodeReviewCommentWatcherEmail,
 			$wgCodeReviewCommentWatcherName;
@@ -735,7 +736,7 @@ class CodeRevision {
 		 */
 		foreach ( $users as $id => $user ) {
 			// No sense in notifying this commenter
-			if ( $changeUser->getId() == $user->getId() ) {
+			if ( $changeUser->getUser()->getId() == $user->getId() ) {
 				continue;
 			}
 
@@ -756,11 +757,11 @@ class CodeRevision {
 
 	/**
 	 * @param string $text
-	 * @param User $user
+	 * @param Authority $performer
 	 * @param null $parent
 	 * @return array
 	 */
-	protected function commentData( $text, User $user, $parent = null ) {
+	protected function commentData( $text, Authority $performer, $parent = null ) {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$ts = wfTimestamp( TS_MW );
 		$sortkey = $this->threadedSortkey( $parent, $ts );
@@ -769,8 +770,8 @@ class CodeRevision {
 			'cc_rev_id' => $this->id,
 			'cc_text' => $text,
 			'cc_parent' => $parent,
-			'cc_user' => $user->getId(),
-			'cc_user_text' => $user->getName(),
+			'cc_user' => $performer->getUser()->getId(),
+			'cc_user_text' => $performer->getUser()->getName(),
 			'cc_timestamp' => $dbw->timestamp( $ts ),
 			'cc_sortkey' => $sortkey
 		];
@@ -1098,19 +1099,19 @@ class CodeRevision {
 
 	/**
 	 * Add signoffs for this revision
-	 * @param User $user User object for the user who did the sign-off
+	 * @param Authority $performer Authority object for the user who did the sign-off
 	 * @param array $flags array of flags (strings, see getPossibleFlags()). Each flag is added as
 	 *   a separate sign-off
 	 */
-	public function addSignoff( $user, $flags ) {
+	public function addSignoff( $performer, $flags ) {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$rows = [];
 		foreach ( (array)$flags as $flag ) {
 			$rows[] = [
 				'cs_repo_id' => $this->repoId,
 				'cs_rev_id' => $this->id,
-				'cs_user' => $user->getID(),
-				'cs_user_text' => $user->getName(),
+				'cs_user' => $performer->getUser()->getId(),
+				'cs_user_text' => $performer->getUser()->getName(),
 				'cs_flag' => $flag,
 				'cs_timestamp' => $dbw->timestamp(),
 				'cs_timestamp_struck' => wfGetDB( DB_REPLICA )->getInfinity()
@@ -1123,14 +1124,14 @@ class CodeRevision {
 	 * Strike a set of sign-offs by a given user. Any sign-offs in $ids not
 	 * by $user are silently ignored, as well as nonexistent IDs and
 	 * already-struck sign-offs.
-	 * @param User $user User object
+	 * @param Authority $performer Authority object
 	 * @param array $ids array of sign-off IDs to strike
 	 */
-	public function strikeSignoffs( $user, $ids ) {
+	public function strikeSignoffs( $performer, $ids ) {
 		foreach ( $ids as $id ) {
 			$signoff = CodeSignoff::newFromId( $this, $id );
 			// Only allow striking own signoffs
-			if ( $signoff && $signoff->userText === $user->getName() ) {
+			if ( $signoff && $signoff->userText === $performer->getUser()->getName() ) {
 				$signoff->strike();
 			}
 		}
@@ -1162,10 +1163,10 @@ class CodeRevision {
 	/**
 	 * @param array $addTags
 	 * @param array $removeTags
-	 * @param User|null $user
+	 * @param Authority|null $performer
 	 * @suppress SecurityCheck-SQLInjection See T201806 for more information
 	 */
-	public function changeTags( $addTags, $removeTags, $user = null ) {
+	public function changeTags( $addTags, $removeTags, $performer = null ) {
 		// Get the current tags and see what changes
 		$tagsNow = $this->getTags( DB_PRIMARY );
 		// Normalize our input tags
@@ -1194,7 +1195,7 @@ class CodeRevision {
 			);
 		}
 		// Log this change
-		if ( ( $removeTags || $addTags ) && $user && $user->getId() ) {
+		if ( ( $removeTags || $addTags ) && $performer && $performer->getUser()->getId() ) {
 			$dbw->insert( 'code_prop_changes',
 				[
 					'cpc_repo_id'   => $this->getRepoId(),
@@ -1203,8 +1204,8 @@ class CodeRevision {
 					'cpc_removed'   => implode( ',', $removeTags ),
 					'cpc_added'     => implode( ',', $addTags ),
 					'cpc_timestamp' => $dbw->timestamp(),
-					'cpc_user'      => $user->getId(),
-					'cpc_user_text' => $user->getName()
+					'cpc_user'      => $performer->getUser()->getId(),
+					'cpc_user_text' => $performer->getUser()->getName()
 				],
 				__METHOD__
 			);
@@ -1392,11 +1393,11 @@ class CodeRevision {
 	/**
 	 * @param string $commentId
 	 * @param string $text
-	 * @param User $user
+	 * @param Authority $performer
 	 * @param null|string $url
 	 * @return void
 	 */
-	protected function sendCommentToUDP( $commentId, $text, User $user, $url = null ) {
+	protected function sendCommentToUDP( $commentId, $text, Authority $performer, $url = null ) {
 		global $wgLang;
 		if ( $url === null ) {
 			$url = $this->getCanonicalUrl( $commentId );
@@ -1407,7 +1408,7 @@ class CodeRevision {
 			wfMessage( 'code-rev-message' )->text(),
 			$this->repo->getName(),
 			$this->getIdString(),
-			IRCColourfulRCFeedFormatter::cleanupForIRC( $user->getName() ),
+			IRCColourfulRCFeedFormatter::cleanupForIRC( $performer->getUser()->getName() ),
 			IRCColourfulRCFeedFormatter::cleanupForIRC( $wgLang->truncateForVisual( $text, 100 ) ),
 			$url
 		);
@@ -1418,9 +1419,9 @@ class CodeRevision {
 	/**
 	 * @param string $status
 	 * @param string $oldStatus
-	 * @param User $user
+	 * @param Authority $performer
 	 */
-	protected function sendStatusToUDP( $status, $oldStatus, User $user ) {
+	protected function sendStatusToUDP( $status, $oldStatus, Authority $performer ) {
 		$url = $this->getCanonicalUrl();
 
 		// Give grep a chance to find the usages:
@@ -1430,7 +1431,7 @@ class CodeRevision {
 			"%s \00314(%s)\00303 %s\003 %s: \00315%s\003 -> \00310%s\003%s",
 			wfMessage( 'code-rev-status' )->text(),
 			$this->repo->getName(),
-			IRCColourfulRCFeedFormatter::cleanupForIRC( $user->getName() ),
+			IRCColourfulRCFeedFormatter::cleanupForIRC( $performer->getUser()->getName() ),
 			// Remove three apostrophes as they are intended for the parser
 			str_replace(
 				"'''",

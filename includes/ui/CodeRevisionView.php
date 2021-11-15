@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\Authority;
 
 /**
  * Special:Code/MediaWiki/40696
@@ -8,19 +9,19 @@ use MediaWiki\MediaWikiServices;
 class CodeRevisionView extends CodeView {
 	protected $showButtonsFormatReference = false, $showButtonsFormatSignoffs = false;
 	protected $referenceInputName = '';
-	protected $user;
+	protected $performer;
 
 	/**
 	 * @param string|CodeRepository $repo
 	 * @param string|CodeRevision $rev
-	 * @param User $user
+	 * @param Authority $performer
 	 * @param null $replyTarget
 	 */
-	public function __construct( $repo, $rev, User $user, $replyTarget = null ) {
+	public function __construct( $repo, $rev, Authority $performer, $replyTarget = null ) {
 		parent::__construct( $repo );
 		global $wgRequest;
 
-		$this->user = $user;
+		$this->performer = $performer;
 		if ( $rev instanceof CodeRevision ) {
 			$this->mRevId = $rev->getId();
 			$this->mRev = $rev;
@@ -114,7 +115,7 @@ class CodeRevisionView extends CodeView {
 			return;
 		}
 
-		$user = $this->user;
+		$performer = $this->performer;
 
 		$pageTitle = $this->mRepo->getName() . wfMessage( 'word-separator' )->text() .
 			$this->mRev->getIdString();
@@ -141,7 +142,7 @@ class CodeRevisionView extends CodeView {
 		if ( $paths ) {
 			$paths = "<div class='mw-codereview-paths mw-content-ltr'><ul>\n$paths</ul></div>\n";
 		}
-		$comments = $this->formatComments( $user );
+		$comments = $this->formatComments( $performer );
 		$commentsLink = '';
 		if ( $comments ) {
 			$commentsLink = " (<a href=\"#code-comments\">" .
@@ -179,7 +180,7 @@ class CodeRevisionView extends CodeView {
 		$html .= Xml::openElement( 'form',
 			[ 'action' => $special->getLocalURL(), 'method' => 'post' ] );
 
-		$canPostComments = $this->canPostComments( $user );
+		$canPostComments = $this->canPostComments( $performer );
 		if ( $canPostComments ) {
 			$html .= $this->addActionButtons();
 		}
@@ -205,7 +206,7 @@ class CodeRevisionView extends CodeView {
 		}
 
 		# Show sign-offs
-		$userCanSignoff = $user->isAllowed( 'codereview-signoff' ) && !$user->isBlocked();
+		$userCanSignoff = $performer->isAllowed( 'codereview-signoff' ) && !$performer->getBlock();
 		$signOffs = $this->mRev->getSignoffs();
 		if ( count( $signOffs ) || $userCanSignoff ) {
 			$html .= "<h2 id='code-signoffs'>" . wfMessage( 'code-signoffs' )->escaped() .
@@ -213,7 +214,7 @@ class CodeRevisionView extends CodeView {
 		}
 
 		# Show code relations
-		$userCanAssociate = $user->isAllowed( 'codereview-associate' ) && !$user->isBlocked();
+		$userCanAssociate = $performer->isAllowed( 'codereview-associate' ) && !$performer->getBlock();
 		$references = $this->mRev->getFollowupRevisions();
 		if ( count( $references ) || $userCanAssociate ) {
 			$html .= "<h2 id='code-references'>" . wfMessage( 'code-references' )->escaped() .
@@ -285,8 +286,9 @@ class CodeRevisionView extends CodeView {
 
 	protected function checkPostings() {
 		global $wgRequest;
+		$userToken = RequestContext::getMain()->getCsrfTokenSet();
 		if ( $wgRequest->wasPosted()
-			&& $this->user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
+			&& $userToken->matchToken( $wgRequest->getVal( 'wpEditToken' ) )
 		) {
 			// Look for a posting...
 			$text = $wgRequest->getText( "wpReply{$this->mReplyTarget}" );
@@ -300,11 +302,11 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param User $user
+	 * @param Authority $performer
 	 * @return bool
 	 */
-	protected function canPostComments( User $user ) {
-		return $user->isAllowed( 'codereview-post-comment' ) && !$user->isBlocked();
+	protected function canPostComments( Authority $performer ) {
+		return $performer->isAllowed( 'codereview-post-comment' ) && !$performer->getBlock();
 	}
 
 	protected function formatPathLine( $path, $action ) {
@@ -370,7 +372,7 @@ class CodeRevisionView extends CodeView {
 					$tags )
 			) . '&#160;';
 		}
-		if ( $this->user->isAllowed( 'codereview-add-tag' ) ) {
+		if ( $this->performer->isAllowed( 'codereview-add-tag' ) ) {
 			$list .= $this->addTagForm( $this->mAddTags, $this->mRemoveTags );
 		}
 		return $list;
@@ -410,7 +412,7 @@ class CodeRevisionView extends CodeView {
 	 * @return string
 	 */
 	protected function statusForm() {
-		if ( $this->user->isAllowed( 'codereview-set-status' ) ) {
+		if ( $this->performer->isAllowed( 'codereview-set-status' ) ) {
 			return Xml::openElement( 'select', [ 'name' => 'wpStatus' ] ) .
 				self::buildStatusList( $this->mStatus, $this ) .
 				Xml::closeElement( 'select' );
@@ -612,12 +614,12 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param User $user
+	 * @param Authority $performer
 	 * @return bool|string
 	 */
-	protected function formatComments( User $user ) {
-		$comments = array_map( function ( $comment ) use ( $user ) {
-			return $this->formatCommentInline( $comment, $user );
+	protected function formatComments( Authority $performer ) {
+		$comments = array_map( function ( $comment ) use ( $performer ) {
+			return $this->formatCommentInline( $comment, $performer );
 		}, $this->mRev->getComments() );
 		$comments = implode( "\n", $comments );
 		if ( !$this->mReplyTarget ) {
@@ -697,15 +699,15 @@ class CodeRevisionView extends CodeView {
 
 	/**
 	 * @param CodeComment $comment
-	 * @param User $user
+	 * @param Authority $performer
 	 * @return string
 	 */
-	protected function formatCommentInline( $comment, User $user ) {
+	protected function formatCommentInline( $comment, Authority $performer ) {
 		if ( $comment->id === $this->mReplyTarget ) {
-			return $this->formatComment( $comment, $user,
+			return $this->formatComment( $comment, $performer,
 				$this->postCommentForm( $comment->id ) );
 		} else {
-			return $this->formatComment( $comment, $user );
+			return $this->formatComment( $comment, $performer );
 		}
 	}
 
@@ -805,21 +807,21 @@ class CodeRevisionView extends CodeView {
 
 	/**
 	 * @param string $text
-	 * @param User $user
+	 * @param Authority $performer
 	 * @return string
 	 */
-	protected function previewComment( $text, User $user ) {
-		$comment = $this->mRev->previewComment( $text, $user );
-		return $this->formatComment( $comment, $user );
+	protected function previewComment( $text, Authority $performer ) {
+		$comment = $this->mRev->previewComment( $text, $performer );
+		return $this->formatComment( $comment, $performer );
 	}
 
 	/**
 	 * @param CodeComment $comment
-	 * @param User $user
+	 * @param Authority $performer
 	 * @param string $replyForm
 	 * @return string
 	 */
-	public function formatComment( $comment, User $user, $replyForm = '' ) {
+	public function formatComment( $comment, Authority $performer, $replyForm = '' ) {
 		global $wgOut, $wgLang;
 
 		$services = MediaWikiServices::getInstance();
@@ -849,7 +851,7 @@ class CodeRevisionView extends CodeView {
 			' &#160; ' .
 			$wgLang->timeanddate( $comment->timestamp, true ) .
 			' ' .
-			$this->commentReplyLink( $user, $comment->id ) .
+			$this->commentReplyLink( $performer, $comment->id ) .
 			'</div>' .
 			'<div class="mw-codereview-comment-text mw-content-' . htmlspecialchars( $dir ) . '">' .
 			$wgOut->parseAsContent( $this->codeCommentLinkerWiki->link( $comment->text ) ) .
@@ -871,12 +873,12 @@ class CodeRevisionView extends CodeView {
 	}
 
 	/**
-	 * @param User $user
+	 * @param Authority $performer
 	 * @param int $id
 	 * @return string
 	 */
-	protected function commentReplyLink( User $user, $id ) {
-		if ( !$this->canPostComments( $user ) ) {
+	protected function commentReplyLink( Authority $performer, $id ) {
+		if ( !$this->canPostComments( $performer ) ) {
 			return '';
 		}
 		$repo = $this->mRepo->getName();
@@ -889,14 +891,15 @@ class CodeRevisionView extends CodeView {
 	}
 
 	protected function postCommentForm( $parent = null ) {
-		$user = $this->user;
+		$performer = $this->performer;
+		$userToken = RequestContext::getMain()->getCsrfTokenSet();
 
-		if ( !$this->canPostComments( $user ) ) {
+		if ( !$this->canPostComments( $performer ) ) {
 			return '';
 		}
 
 		if ( $this->mPreviewText !== false && $parent === $this->mReplyTarget ) {
-			$preview = $this->previewComment( $this->mPreviewText, $user );
+			$preview = $this->previewComment( $this->mPreviewText, $performer );
 			$text = $this->mPreviewText;
 		} else {
 			$preview = '';
@@ -905,7 +908,7 @@ class CodeRevisionView extends CodeView {
 
 		return '<div class="mw-codereview-post-comment">' .
 			$preview .
-			Html::hidden( 'wpEditToken', $user->getEditToken() ) .
+			Html::hidden( 'wpEditToken', $userToken->getToken() ) .
 			Html::hidden( 'path', $this->mPath ) .
 			( $parent ? Html::hidden( 'wpParent', $parent ) : '' ) .
 			'<div>' .
@@ -964,7 +967,7 @@ class CodeRevisionView extends CodeView {
 		 * @var $s CodeSignoff
 		 */
 		foreach ( $signOffs as $s ) {
-			if ( $s->userText == $this->user->getName() && !$s->isStruck() ) {
+			if ( $s->userText == $this->performer->getUser()->getName() && !$s->isStruck() ) {
 				$ret[$s->flag] = true;
 			}
 		}

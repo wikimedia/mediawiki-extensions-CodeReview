@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Permissions\Authority;
+
 /**
  * Extended by CodeRevisionListView and CodeRevisionView
  */
@@ -43,11 +45,13 @@ abstract class CodeView {
 		$this->codeCommentLinkerWiki = new CodeCommentLinkerWiki( $this->mRepo );
 	}
 
-	public function validPost( $permission, User $user ) {
-		global $wgRequest;
-		return $wgRequest->wasPosted()
-			&& $user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
-			&& $user->isAllowed( $permission );
+	public function validPost( $permission, Authority $performer ) {
+		$context = RequestContext::getMain();
+		$request = $context->getRequest();
+		$userToken = $context->getCsrfTokenSet();
+		return $request->wasPosted()
+			&& $userToken->matchToken( $request->getVal( 'wpEditToken' ) )
+			&& $performer->isAllowed( $permission );
 	}
 
 	abstract public function execute();
