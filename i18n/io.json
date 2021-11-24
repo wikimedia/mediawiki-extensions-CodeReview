@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joao Xavier",
-			"Malafaya"
+			"Malafaya",
+			"JSantos"
 		]
 	},
 	"code-comments": "Komenti",
@@ -11,19 +12,31 @@
 	"code-old-status": "Anciena stando",
 	"code-new-status": "Nova stando",
 	"code-prop-changes": "Protokolo pri stando ed etiketi",
+	"codereview-desc": "[[Special:Code|Utensilo por revizar kodexo]] kun [[Special:RepoAdmin|suporto a ''Subversion'']]",
 	"code-authors": "autori",
 	"code-tags": "etiketi",
 	"code-tags-no-tags": "Nula etiketi existas en ica depozeyo.",
 	"code-author-link": "ligar?",
 	"code-author-unlink": "desligar?",
+	"code-field-id": "Revizo",
 	"code-field-author": "Autoro",
+	"code-field-user": "Komentero",
 	"code-field-message": "Rezumo pri eniro",
 	"code-field-status": "Stando",
 	"code-field-status-description": "Stando-deskripto",
 	"code-field-timestamp": "Dato",
+	"code-field-comments": "Komenti",
+	"code-field-path": "Voyo",
+	"code-field-text": "Noto",
+	"code-field-select": "Selektado",
 	"code-rev-author": "Autoro:",
 	"code-rev-date": "Dato:",
 	"code-rev-message": "Komento:",
+	"code-rev-repo": "Depozeyo:",
+	"code-rev-rev": "Revizuro:",
+	"code-rev-paths": "Modifikita parti:",
+	"code-rev-modified-d": "efacita",
+	"code-rev-status": "Stando:",
 	"code-rev-tags": "Etiketi:",
 	"code-rev-comment-by": "Komento per $1",
 	"code-rev-comment-preview": "Previdar",
@@ -37,6 +50,9 @@
 	"code-status-resolved": "solvita",
 	"code-status-ok": "o.k.",
 	"code-status-old": "anciena",
+	"code-signoff-field-user": "Uzero",
+	"code-signoff-field-date": "Dato",
+	"code-pathsearch-path": "Voyoː",
 	"code-pathsearch-filter": "Montrez nur:",
 	"code-revfilter-cr_status": "Stando = $1",
 	"code-revfilter-cr_author": "Autoro = $1",
@@ -46,5 +62,10 @@
 	"codereview-overview-desc": "Montrez grafikala rezumo di ica listo",
 	"codereview-email-subj": "[$1 $2]: Nova komento adjuntita",
 	"repoadmin-new-button": "Kreez",
-	"repoadmin-edit-button": "O.K."
+	"repoadmin-edit-button": "O.K.",
+	"right-codereview-remove-tag": "Efacar etiketi de revizuri",
+	"right-codereview-post-comment": "Adjuntez komento che revizi",
+	"right-codereview-set-status": "Modifikar stando di revizi",
+	"action-codereview-remove-tag": "efacez etiketi de revizuri",
+	"action-codereview-set-status": "changez stando di revizo"
 }
