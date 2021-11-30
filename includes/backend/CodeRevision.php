@@ -410,6 +410,7 @@ class CodeRevision {
 	public function save() {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 
 		$dbw->insert(
 			'code_rev',
@@ -529,7 +530,7 @@ class CodeRevision {
 
 					if ( $user->canReceiveEmail() ) {
 						// Send message in receiver's language
-						$lang = $user->getOption( 'language' );
+						$lang = $userOptionsLookup->getOption( $user, 'language' );
 						$user->sendMail(
 							wfMessage( 'codereview-email-subj2', $this->repo->getName(),
 								$this->getIdString( $row->cr_id ) )->inLanguage( $lang )->text(),
@@ -713,6 +714,7 @@ class CodeRevision {
 		// Give email notices to committer and commenters
 		global $wgCodeReviewENotif, $wgEnableEmail, $wgCodeReviewCommentWatcherEmail,
 			$wgCodeReviewCommentWatcherName;
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 		if ( !$wgCodeReviewENotif || !$wgEnableEmail ) {
 			return;
 		}
@@ -744,7 +746,7 @@ class CodeRevision {
 			// This is ugly
 			if ( $id == 0 || $user->canReceiveEmail() ) {
 				// Send message in receiver's language
-				$lang = $user->getOption( 'language' );
+				$lang = $userOptionsLookup->getOption( $user, 'language' );
 
 				$localSubject = wfMessage( $subject, $this->repo->getName(), $this->getIdString() )
 					->inLanguage( $lang )->text();
