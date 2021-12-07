@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"code": "კოდიშ გინოჯინა",
+	"code-rev-title": "$1 – კოდიშ გინოჯინა",
+	"code-comments": "კომენტარეფი:",
+	"code-change-removed": "ლასირი რე:",
+	"code-change-added": "ქეგიაძინჷ:",
+	"code-old-status": "ჯვეში სტატუსი",
+	"code-new-status": "ახალი სტატუსი",
+	"code-prop-changes": "სტატუსეფიშ დო მოღანკუეფიშ ჟურნალი"
+}

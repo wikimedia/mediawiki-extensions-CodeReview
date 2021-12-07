@@ -93,7 +93,7 @@
 	"code-status-desc-new": "Phiên bản đang chờ xử lý (trạng thái mặc định).",
 	"code-status-fixme": "cần sửa",
 	"code-status-desc-fixme": "Thay đổi đã gây lỗi hoặc bị hư hỏng. Nó cần được sửa chữa hoặc lùi lại.",
-	"code-status-reverted": "khôi phục",
+	"code-status-reverted": "phục hồi",
 	"code-status-desc-reverted": "Phiên bản được thay thế bằng một phiên bản sau.",
 	"code-status-resolved": "đã giải",
 	"code-status-desc-resolved": "Phiên bản có một vấn đề đã được giải quyết bởi một phiên bản sau.",
