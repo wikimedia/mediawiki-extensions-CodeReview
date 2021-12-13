@@ -16,7 +16,8 @@
 			"Rotsee",
 			"Skalman",
 			"Tobulos1",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Sabelöga"
 		]
 	},
 	"code": "Kodgranskning",
@@ -150,13 +151,13 @@
 	"codereview-overview-title": "Översikt",
 	"codereview-overview-desc": "Visa en grafisk översikt av denna lista",
 	"codereview-email-subj": "[$1 $2]: Ny kommentar tillagd",
-	"codereview-email-body": "Användaren \"$1\" postade en kommenter på $3\n\nFullständig URL: $2\nBidragssammanfattning:\n\n$5\n\n\nKommentar:\n\n$4:",
+	"codereview-email-body": "\"$1\" postade en kommentar på $3.\nURL: $2\n\nBidragssammanfattning:\n\n$5\n\n\nKommentar:\n\n$4:",
 	"codereview-email-subj2": "[$1 $2]: Uppföljande ändringar",
-	"codereview-email-body2": "\"$1\" gjorde uppföljande ändringar till $2.\nURL: $5\n\nBidragssammanfattning för uppföljd version $2:\n\n$6\n\nUppföljnings-URL:  $3\nBidragssammanfattning för uppföljning av \"$1\":\n\n$4",
+	"codereview-email-body2": "\"$1\" gjorde uppföljande ändringar till $2.\nURL: $5\n\nBidragssammanfattning för uppföljd version $2:\n\n$6\n\nUppföljnings-URL: $3\nBidragssammanfattning för uppföljning av \"$1\":\n\n$4",
 	"codereview-email-subj3": "[$1 $2]: Versionsstatus ändrad",
-	"codereview-email-body3": "Användare ''$1'' ändrade statusen för $2.\n\nGammal status: $3\nNy status: $4\n\nFullständig URL: $5\nBidragssammanfattning:\n\n$6",
+	"codereview-email-body3": "\"$1\" ändrade statusen för $2 till \"$4\"\nURL: $5\n\nGammal status: $3\nNy status: $4\n\nBidragssammanfattning för $2:\n\n$6",
 	"codereview-email-subj4": "[$1 $2]: Ny kommentar tillagd, och versionsstatus ändrad",
-	"codereview-email-body4": "Användare \"$1\" ändrade statusen för $2.\n\nGammal status: $3\nNy status: $4\n\nAnvändare \"$1\" postade också en kommentar på $2.\n\nFullständig URL: $5\nBidragssammanfattning:\n\n$7\n\n\nKommentar:\n\n$6",
+	"codereview-email-body4": "\"$1\" ändrade statusen för $2 till \"$4\" och kommenterade på det.\nURL: $5\n\nGammal status: $3\nNy status: $4\n\nBidragssammanfattning:\n\n$7\n\n\nKommentar:\n\n$6",
 	"code-stats": "statistik",
 	"code-stats-header": "Statistik för centralförvaret $1",
 	"code-stats-main": "$1 hade centralförvaret {{PLURAL:$2|en version|$2 versioner}} av [[Special:Code/$3/author|$4 författare]].",

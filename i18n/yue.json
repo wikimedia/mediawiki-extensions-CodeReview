@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Moon0319"
+		]
 	},
 	"code": "代碼複查",
 	"code-rev-title": "$1 - 代碼複查",
@@ -15,7 +17,7 @@
 	"code-prop-changes": "狀態同標籤紀錄",
 	"codereview-desc": "帶有[[Special:RepoAdmin|Subversion支援]]嘅[[Special:Code|代碼複查工具]]",
 	"code-no-repo": "無檔案庫設定！",
-	"code-load-diff": "載入差異中…",
+	"code-load-diff": "撈緊差異…",
 	"code-notes": "之前嘅註解",
 	"code-statuschanges": "狀態變動",
 	"code-authors": "作者",
@@ -29,8 +31,8 @@
 	"code-author-orunlink": "或者唔連結呢一位wiki用戶：",
 	"code-author-name": "輸入一個用戶名：",
 	"code-author-success": "作者$1已經連結到wiki用戶$2",
-	"code-author-link": "連結？",
-	"code-author-unlink": "唔連結？",
+	"code-author-link": "拎？",
+	"code-author-unlink": "唔拎？",
 	"code-author-unlinksuccess": "作者$1已經唔再連結",
 	"code-field-id": "修訂",
 	"code-field-author": "作者",
@@ -45,7 +47,7 @@
 	"code-rev-author": "作者：",
 	"code-rev-date": "日期：",
 	"code-rev-message": "意見：",
-	"code-rev-repo": "檔案庫：",
+	"code-rev-repo": "快勞庫：",
 	"code-rev-rev": "修訂：",
 	"code-rev-rev-viewvc": "響ViewVC",
 	"code-rev-paths": "修改咗嘅路徑：",
@@ -70,6 +72,8 @@
 	"code-status-resolved": "解決咗",
 	"code-status-ok": "好",
 	"code-status-deferred": "押後咗",
+	"code-signoff-field-flag": "旗仔",
+	"code-signoff-field-date": "日期",
 	"code-pathsearch-legend": "跟路徑搵呢個檔案庫嘅修訂",
 	"code-pathsearch-path": "路徑：",
 	"code-rev-submit": "保存更改",
@@ -90,6 +94,7 @@
 	"codereview-email-body2": "用戶 \"$1\" 響 $2 整咗後繼更改。\n\n完整URL：$3\n\n遞交摘要：\n\n$4",
 	"codereview-email-subj3": "[$1 $2]：自動測試偵測到表達式問題",
 	"codereview-email-body3": "自動測試發現到響 $1 嘅改動之中出咗表達式問題。\n\n完整URL：$2\n\n遞交摘要：\n\n$3",
+	"code-stats": "統計資料",
 	"repoadmin": "檔案室庫管理",
 	"repoadmin-new-legend": "開一個新檔案庫",
 	"repoadmin-new-label": "檔案庫名：",

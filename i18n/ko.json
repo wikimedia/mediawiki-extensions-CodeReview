@@ -128,7 +128,7 @@
 	"code-revfilter-cr_status": "상태 = $1",
 	"code-revfilter-cr_author": "저자 = $1",
 	"code-revfilter-ct_tag": "태그 = $1",
-	"code-revfilter-clear": "필터 지움",
+	"code-revfilter-clear": "필터 지우기",
 	"code-rev-submit": "바뀜 저장",
 	"code-rev-submit-next": "저장 및 다음 미해결된 문서로",
 	"code-rev-next": "다음 해결되지 않음",

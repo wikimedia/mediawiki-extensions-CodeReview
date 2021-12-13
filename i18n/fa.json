@@ -16,7 +16,8 @@
 			"Reza1615",
 			"Sahim",
 			"Wayiran",
-			"ZxxZxxZ"
+			"ZxxZxxZ",
+			"Jeeputer"
 		]
 	},
 	"code": "مرور کد",
@@ -192,7 +193,7 @@
 	"right-codereview-associate": "مدیریت انجمن‌های نسخه‌ها",
 	"right-codereview-review-own": "نسخه‌های خود را به عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
 	"action-repoadmin": "مدیریت مخازن کد",
-	"action-codereview-use": "استفاده از ویژه:کد",
+	"action-codereview-use": "استفاده از CodeReview",
 	"action-codereview-add-tag": "افزودن برچسب‌های تازه به نسخه‌ها",
 	"action-codereview-remove-tag": "برداشتن برچسب از نسخه‌ها",
 	"action-codereview-post-comment": "افزودن توضیحات به نسخه‌ها",
@@ -201,5 +202,7 @@
 	"action-codereview-link-user": "پیوند کردن نویسندگان به کاربران ویکی",
 	"action-codereview-associate": "مدیریت نسخه‌های مرتبط",
 	"action-codereview-review-own": "نسخه‌های خود را به عنوان «{{int:code-status-ok}}» یا «{{int:code-status-resolved}}» علامت‌گذاری کنید",
+	"apihelp-coderevisionupdate-param-repo": "نام مخزن",
+	"apihelp-coderevisionupdate-param-rev": "شماره شناسهٔ نسخه",
 	"apihelp-codeupdate-param-repo": "نام مخزن برای روزآمدسازی"
 }

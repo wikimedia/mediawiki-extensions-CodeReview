@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bishnu Saikia",
-			"Gitartha.bordoloi"
+			"Gitartha.bordoloi",
+			"Simbu123"
 		]
 	},
 	"code-authors": "লেখকসকল",
@@ -21,6 +22,7 @@
 	"code-signoff-field-user": "সদস্য",
 	"code-signoff-field-date": "তাৰিখ",
 	"codereview-batch-submit": "দাখিল কৰক",
+	"code-stats": "পৰিসংখ্যা",
 	"repoadmin-new-button": "সৃষ্টি কৰক",
 	"repoadmin-edit-button": "বাৰু"
 }

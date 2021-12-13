@@ -6,7 +6,8 @@
 			"Mikel Ibaiba",
 			"Subi",
 			"Theklan",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Xabier Armendaritz"
 		]
 	},
 	"code": "Kode Berrikuspena",
@@ -24,7 +25,7 @@
 	"code-tags": "etiketak",
 	"code-author-name": "Idatzi erabiltzaile izen bat:",
 	"code-author-link": "lotu?",
-	"code-author-unlink": "lotura kendu?",
+	"code-author-unlink": "kendu esteka?",
 	"code-field-id": "Berrikuspena",
 	"code-field-author": "Egilea",
 	"code-field-user": "Iruzkina egin duena",

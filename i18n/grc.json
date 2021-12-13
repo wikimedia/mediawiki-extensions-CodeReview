@@ -3,7 +3,8 @@
 		"authors": [
 			"Crazymadlover",
 			"Omnipaedista",
-			"Protnet"
+			"Protnet",
+			"PastelKos"
 		]
 	},
 	"code": "Ἐπιθεωρεῖν τὸν Κώδικα",
@@ -22,13 +23,13 @@
 	"code-status": "καταστάσεις",
 	"code-tags": "προσαρτήματα",
 	"code-authors-text": "Κάτωθι ἐστὶ καταλογή τις δημιουργῶν τῆς ἀποθήκης κατατάξει τῶν πλείω προσφάτων καταθέσεων. Τοπικοὶ βικι-λογισμοὶ δείκνυνται ἐν παρενθέσεσιν.",
-	"code-author-haslink": "Ὅδε ὁ δημιουργὸς συνδεδεμένος ἐστὶ μετὰ τοῦ βικι-χρωμένου $1",
+	"code-author-haslink": "Ὅδε ὁ δημιουργὸς συνδεδεμένος ἐστὶ μετὰ τοῦ οὐικι-χρωμένου $1",
 	"code-author-orphan": "Ὅδε ὁ χρώμενος οὐκ ἔχει σύνδεσμον μετὰ βικι-λογισμοῦ τινός",
-	"code-author-dolink": "Συνδεῖσθαι τόνδε τὸν δημιουργὸν μετὰ βικι-χρωμένου τινός:",
-	"code-author-alterlink": "Ἀλλάττειν βικι-χρώμενον τὸν συνδεδεμένον μετὰ τοῦδε τοῦ χρωμένου:",
+	"code-author-dolink": "Συνδεῖσθαι τόνδε τὸν δημιουργὸν μετὰ οὐικι-χρωμένου τινός:",
+	"code-author-alterlink": "Ἀλλάττειν οὐικι-χρώμενον τὸν συνδεδεμένον μετὰ τοῦδε τοῦ χρωμένου:",
 	"code-author-orunlink": "Ἢ ἀποδιασυνδεῖσθαι τόνδε τὸν χρώμενον:",
 	"code-author-name": "Εὶσάγειν ὄνομα χρωμένου τι:",
-	"code-author-success": "Ὁ δημιουργὸς $1 διασυνδεδεμένος ἐστὶ μετὰ τοῦ βικι-χρωμένου $2",
+	"code-author-success": "Ὁ δημιουργὸς $1 διασυνδεδεμένος ἐστὶ μετὰ τοῦ οὐικι-χρωμένου $2",
 	"code-author-link": "συνδεῖσθαι;",
 	"code-author-unlink": "ἀσυνδεῖσθαι;",
 	"code-author-unlinksuccess": "Ὁ δημιουργὸς $1 ἀποδιασυνδεδεμένος ἐστίν",
@@ -38,7 +39,7 @@
 	"code-field-message": "Περιλαμβάνειν σύνοψιν",
 	"code-field-status": "Κατάστασις",
 	"code-field-timestamp": "Ἡμερομηνία",
-	"code-field-comments": "Σημειώματα",
+	"code-field-comments": "Σχόλια",
 	"code-field-path": "Ἀτραπός",
 	"code-field-text": "Σημείωμα",
 	"code-field-select": "Ἐπιλέγειν",
@@ -63,7 +64,7 @@
 	"code-rev-diff": "Διαφ",
 	"code-rev-diff-link": "διαφ",
 	"code-rev-purge-link": "ἐκκαθαίρειν",
-	"code-status-new": "νέα",
+	"code-status-new": "καινόν",
 	"code-status-fixme": "διορθωτέα",
 	"code-status-reverted": "ἀνεστραμμένη",
 	"code-status-resolved": "ἐπιλελυμένη",
@@ -94,5 +95,5 @@
 	"right-codereview-remove-tag": "Ἀφαιρεῖν προσαρτήματα ὑπὸ τὰς ἀναθεωρήσεις",
 	"right-codereview-post-comment": "Προστιθέναι νέα σχόλια ταῖς ἀναθεωρήσεσιν",
 	"right-codereview-set-status": "Μεταβάλλειν τὸ καθεστὼς τῶν ἀναθεωρήσεων",
-	"right-codereview-link-user": "Συνδεῖσθαι τοὺς δημιουργοὺς μετὰ βικι-χρωμένων"
+	"right-codereview-link-user": "Συνδεῖσθαι τοὺς δημιουργοὺς μετὰ οὐικι-χρωμένων"
 }

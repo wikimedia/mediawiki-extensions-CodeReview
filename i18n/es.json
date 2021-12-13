@@ -104,7 +104,7 @@
 	"code-rev-inline-preview": "Previsualización:",
 	"code-rev-diff": "Diferencias",
 	"code-rev-diff-link": "difs.",
-	"code-rev-diff-too-large": "El diff es demasiado grande para ser mostrado.",
+	"code-rev-diff-too-large": "Las diferencias son demasiado extensas para mostrarlas.",
 	"code-rev-purge-link": "purgar",
 	"code-rev-total": "Número total de resultados: $1",
 	"code-rev-not-found": "¡La revisión '''$1''' no existe!",
