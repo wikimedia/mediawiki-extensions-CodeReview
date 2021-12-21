@@ -5,8 +5,11 @@
 			"M hamlet"
 		]
 	},
+	"code-change-added": "ավելացվել է՝",
 	"code-authors": "հեղինակներ",
 	"code-field-author": "Հեղինակ",
+	"code-rev-author": "Հեղինակ՝",
+	"code-rev-modified-a": "ավելացվել է",
 	"code-rev-history-link": "պատմություն",
 	"code-status-new": "նոր",
 	"code-status-ok": "լավ",
