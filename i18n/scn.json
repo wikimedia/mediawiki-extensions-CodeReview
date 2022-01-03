@@ -83,6 +83,7 @@
 	"code-signoff-field-user": "Utenti",
 	"code-pathsearch-legend": "Cerca li rivisioni nti stu dipòsitu classificati pî pircursa",
 	"code-pathsearch-path": "Pircursu:",
+	"code-pathsearch-filter": "Ammustra sulu:",
 	"code-revfilter-cr_status": "Statu = $1",
 	"code-revfilter-cr_author": "Auturi = $1",
 	"code-revfilter-ct_tag": "Etichetta = $1",
