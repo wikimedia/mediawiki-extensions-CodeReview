@@ -11,6 +11,7 @@
 			"Revi",
 			"Ykhwong",
 			"Yknok29",
+			"Yunbj",
 			"아라"
 		]
 	},
@@ -201,6 +202,8 @@
 	"apihelp-codediff-example-1": "미디어위키 판 42080의 차이를 불러오기",
 	"apihelp-coderevisionupdate-param-repo": "저장소의 이름입니다.",
 	"apihelp-coderevisionupdate-param-rev": "판 ID 번호입니다.",
+	"apihelp-coderevisionupdate-param-addreferences": "이 리비전에 참조를 추가합니다.",
+	"apihelp-coderevisionupdate-param-removereferences": "이 리비전에 대한 참조를 제거합니다.",
 	"apihelp-codeupdate-param-repo": "업데이트할 저장소의 이름입니다.",
 	"apihelp-query+codecomments-param-repo": "저장소의 이름입니다.",
 	"apihelp-query+codepaths-param-repo": "저장소의 이름",
