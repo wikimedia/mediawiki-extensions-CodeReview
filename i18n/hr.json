@@ -7,6 +7,7 @@
 			"Ex13",
 			"Herr Mlinka",
 			"MaGa",
+			"Ponor",
 			"Roberta F.",
 			"SpeedyGonsales"
 		]
@@ -48,7 +49,7 @@
 	"code-author-link": "poveznica?",
 	"code-author-unlink": "ukloniti poveznicu?",
 	"code-author-unlinksuccess": "Uklonjena poveznica za autora $1",
-	"code-author-badtoken": "Pogrješka sesije pri pokušaju izvršavanje akcije.",
+	"code-author-badtoken": "Pogreška sesije pri pokušaju izvršavanje akcije.",
 	"code-author-total": "Ukupan broj autora: $1",
 	"code-author-lastcommit": "Datum zadnje transakcije (''commita'' na projekt)",
 	"code-browsing-path": "Pregledavanje revizija u '''$1'''",
