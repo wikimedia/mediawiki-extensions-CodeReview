@@ -50,7 +50,7 @@ class PopulateCaUserColumn extends Maintenance {
 			__METHOD__
 		);
 
-		$numRows = $dbr->numRows( $res );
+		$numRows = $res->numRows();
 
 		// No results == nothing to do, so bail out
 		if ( $numRows == 0 ) {
