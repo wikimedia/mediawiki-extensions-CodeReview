@@ -50,8 +50,8 @@ jQuery( function () {
 				trc = trc.split( ' ' );
 			}
 			for ( var j = 0; j < trc.length; j++ ) {
-				if ( trc[ j ].substring( 0, 21 ) === 'mw-codereview-status-' ) {
-					status = trc[ j ].substring( 21 );
+				if ( trc[ j ].slice( 0, 21 ) === 'mw-codereview-status-' ) {
+					status = trc[ j ].slice( 21 );
 				}
 			}
 			var $td = $( 'td', $( this ) ),
@@ -72,7 +72,7 @@ jQuery( function () {
 
 			var path = $td.filter( '.TablePager_col_cr_path' ).text();
 			if ( path && path.indexOf( vpath ) === 0 && path !== vpath && vpath !== '' ) {
-				path = '\u2026' + path.substring( vpath.length );
+				path = '\u2026' + path.slice( vpath.length );
 			}
 			overviewPopupData[ i ].path = path;
 

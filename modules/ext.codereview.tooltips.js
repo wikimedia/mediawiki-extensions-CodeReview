@@ -37,7 +37,7 @@ var CodeTooltipsInit = function () {
 						return;
 					}
 					var rev = data.query.coderevisions[ 0 ],
-						text = rev[ '*' ].length > 82 ? rev[ '*' ].substr( 0, 80 ) + '...' : rev[ '*' ];
+						text = rev[ '*' ].length > 82 ? rev[ '*' ].slice( 0, 80 ) + '...' : rev[ '*' ];
 
 					text = mw.html.escape( text );
 					text = text.replace( /\n/g, '<br/>' );

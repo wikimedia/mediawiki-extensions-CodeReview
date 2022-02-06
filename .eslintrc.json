@@ -17,6 +17,7 @@
 		"no-jquery/no-slide": "off",
 		"no-redeclare": "off",
 		"no-undef": "off",
-		"no-useless-escape": "off"
+		"no-useless-escape": "off",
+		"no-shadow": "warn"
 	}
 }
