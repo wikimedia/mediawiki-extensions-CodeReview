@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\AtEase\AtEase;
+
 /**
  * Using the SVN PECL extension...
  */
@@ -61,11 +63,11 @@ class SubversionPecl extends SubversionAdaptor {
 	}
 
 	public function getLog( $path, $startRev = null, $endRev = null ) {
-		Wikimedia\suppressWarnings();
+		AtEase::suppressWarnings();
 		$log = svn_log( $this->mRepoPath . $path,
 			$this->_rev( $startRev, SVN_REVISION_INITIAL ),
 			$this->_rev( $endRev, SVN_REVISION_HEAD ) );
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 		return $log;
 	}
 }
