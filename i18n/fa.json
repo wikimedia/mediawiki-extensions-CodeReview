@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Alirezaaa",
+			"Beginneruser",
 			"Bersam",
 			"Ebraminio",
 			"FarsiNevis",
@@ -148,7 +149,7 @@
 	"code-release-endrev": "آخرین بازبینی:",
 	"codereview-subtitle": "برای $1",
 	"codereview-reply-link": "پاسخ",
-	"codereview-overview-title": "چشم‌انداز",
+	"codereview-overview-title": "مرور کلی",
 	"codereview-overview-desc": "نمایش یک نمای‌کلی گرافیکی از این فهرست",
 	"codereview-email-subj": "[$1 $2]: نظر تازه اضافه شد",
 	"codereview-email-body": "کاربر «$1» یک نظر برای $3 ارسال کرد.\n\nنشانی کامل: $2\nخلاصهٔ ارتکاب‌شدن‌ها:\n\n$5\n\nنظر:\n\n$4",
@@ -158,7 +159,7 @@
 	"codereview-email-body3": "کاربر \"$1\" وضعیت $2 را تغییر داد.\n\nوضعیت قدیمی: $3\nوضعیت جدید: $4\n\nنشانی کامل: $5\n\nخلاصهٔ ارتکاب‌شدن‌ها:\n\n$6",
 	"codereview-email-subj4": "[$1 $2]: نظر تازه افزوده شد، و وضعیت نسخه تغییر کرد",
 	"codereview-email-body4": "کاربر \"$1\" تغییر وضعیت داد از $2.\n\nوضعیت قدیمی: $3\nوضعیت جدید: $4\n\nکاربر \"$1\" همچنین یک نظر فرستاد در $2.\n\nنشانی کامل: $5\nخلاصهٔ ارتکاب‌شدن‌ها:\n\n$7\n\nنظر:\n\n$6",
-	"code-stats": "آمار",
+	"code-stats": "آمارها",
 	"code-stats-header": "آمار برای مخزن $1",
 	"code-stats-main": "از تاریخ $1، انبار دارای $2 نسخه توسط [[Special:Code/$3/author|$4 نویسنده]] است.",
 	"code-stats-status-breakdown": "تعداد بازبینی‌ها در هر وضعیت",
