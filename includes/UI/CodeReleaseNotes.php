@@ -67,8 +67,8 @@ class CodeReleaseNotes extends CodeView {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
 		$htmlForm
-			->addHiddenField( 'title', $special->getPrefixedDBkey() )
 			->setMethod( 'get' )
+			->setTitle( $special )
 			->setAction( $wgScript )
 			->setSubmitText( wfMessage( 'allpagessubmit' )->text() )
 			->setWrapperLegend( wfMessage( 'code-release-legend' )->text() )

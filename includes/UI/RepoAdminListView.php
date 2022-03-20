@@ -43,9 +43,9 @@ class RepoAdminListView {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $output->getContext() );
 		$htmlForm
-			->addHiddenField( 'title', $this->title->getPrefixedDBKey() )
-			->setAction( $wgScript )
 			->setMethod( 'get' )
+			->setAction( $wgScript )
+			->setTitle( $this->title )
 			->setSubmitTextMsg( 'repoadmin-new-button' )
 			->setWrapperLegendMsg( 'repoadmin-new-legend' )
 			->prepareForm()

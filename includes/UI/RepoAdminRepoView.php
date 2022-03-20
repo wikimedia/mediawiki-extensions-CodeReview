@@ -115,9 +115,8 @@ class RepoAdminRepoView {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
 		$htmlForm
-			->addHiddenField( 'wpEditToken', $this->user->getEditToken( $this->repoName ) )
-			->setAction( $this->title->getLocalURL() )
-			->setMethod( 'post' )
+			->setTitle( $this->title )
+			->setTokenSalt( $this->repoName )
 			->setSubmitTextMsg( 'repoadmin-edit-button' )
 			->setWrapperLegend( wfMessage( 'repoadmin-edit-legend', $this->repoName )->text() )
 			->prepareForm()
