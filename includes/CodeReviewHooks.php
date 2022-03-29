@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Extension\Renameuser\RenameuserSQL;
+
 /**
  * Class containing hooked functions used by the CodeReview extension.
  * All functions are public and static.
