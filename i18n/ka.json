@@ -8,7 +8,8 @@
 			"Malafaya",
 			"Mehman97",
 			"Nodar Kherkheulidze",
-			"გიორგიმელა"
+			"გიორგიმელა",
+			"Გიო ოქრო"
 		]
 	},
 	"code": "კოდის შემოწმება",
@@ -27,7 +28,7 @@
 	"code-mycomments": "ჩემი კომენტარები",
 	"code-authors": "ავტორები",
 	"code-status": "სტატუსი",
-	"code-tags": "მონიშვნები",
+	"code-tags": "იარლიყები",
 	"code-author-orphan": "SVN მომხმარებელი/ავტორი $1 არ არის ვიკი-ანგარიშთან დაკავშირებული",
 	"code-author-name": "მომხმარებლის სახელის შეტანა:",
 	"code-author-link": "კავშირის დამყარება?",
@@ -57,7 +58,7 @@
 	"code-rev-imagediff": "სურათის ცვლილებები",
 	"code-rev-status": "სტატუსი:",
 	"code-rev-status-set": "სტატუსის შეცვლა",
-	"code-rev-tags": "ღილაკები:",
+	"code-rev-tags": "იარლიყები:",
 	"code-rev-tag-add": "დაამატეთ ახსნა:",
 	"code-rev-tag-remove": "წაშალეთ მინიშნებები:",
 	"code-rev-comment-by": "$1-ს კომენტარი",
@@ -92,7 +93,7 @@
 	"code-pathsearch-filter": "აჩვენე მხოლოდ:",
 	"code-revfilter-cr_status": "სტატუსი = $1",
 	"code-revfilter-cr_author": "ავტორი = $1",
-	"code-revfilter-ct_tag": "სანიშნე = $1",
+	"code-revfilter-ct_tag": "იარლიყი = $1",
 	"code-revfilter-clear": "ფილტრის მოხსნა:",
 	"code-rev-submit": "ცვლილებების შენახვა",
 	"code-rev-submit-next": "შეინახეთ და გადასვლა შემდეგ გადაუწყვეტელზე",
