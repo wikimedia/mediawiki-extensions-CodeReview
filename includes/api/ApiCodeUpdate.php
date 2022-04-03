@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ParamValidator\TypeDef\IntegerDef;
+
 /**
  *
  * This program is free software; you can redistribute it and/or modify
@@ -89,7 +91,7 @@ class ApiCodeUpdate extends ApiBase {
 			],
 			'rev' => [
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_MIN => 1,
+				IntegerDef::PARAM_MIN => 1,
 				ApiBase::PARAM_REQUIRED => true,
 			]
 		];

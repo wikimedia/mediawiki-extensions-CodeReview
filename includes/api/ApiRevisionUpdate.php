@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ParamValidator\TypeDef\IntegerDef;
+
 /**
  * Created on Nov 18, 2010
  *
@@ -110,7 +112,7 @@ class ApiRevisionUpdate extends ApiBase {
 			],
 			'rev' => [
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_MIN => 1,
+				IntegerDef::PARAM_MIN => 1,
 				ApiBase::PARAM_REQUIRED => true,
 			],
 			'comment' => null,

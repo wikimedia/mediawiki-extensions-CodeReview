@@ -1,4 +1,7 @@
 <?php
+
+use Wikimedia\ParamValidator\TypeDef\IntegerDef;
+
 /**
  * Created on July 06, 2010
  *
@@ -180,9 +183,9 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			'limit' => [
 				ApiBase::PARAM_DFLT => 10,
 				ApiBase::PARAM_TYPE => 'limit',
-				ApiBase::PARAM_MIN => 1,
-				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
-				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
+				IntegerDef::PARAM_MIN => 1,
+				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG1,
+				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2
 			],
 			'path' => null,
 			'start' => [
@@ -191,7 +194,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 			'revs' => [
 				ApiBase::PARAM_ISMULTI => true,
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_MIN => 1,
+				IntegerDef::PARAM_MIN => 1,
 			],
 			'prop' => [
 				ApiBase::PARAM_ISMULTI => true,

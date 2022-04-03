@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ParamValidator\TypeDef\IntegerDef;
+
 /**
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -65,7 +67,7 @@ class ApiCodeDiff extends ApiBase {
 			],
 			'rev' => [
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_MIN => 1,
+				IntegerDef::PARAM_MIN => 1,
 				ApiBase::PARAM_REQUIRED => true,
 			]
 		];
