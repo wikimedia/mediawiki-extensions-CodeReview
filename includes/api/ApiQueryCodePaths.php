@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 /**
  * Created on 6th June 2011
  *
@@ -63,12 +65,12 @@ class ApiQueryCodePaths extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'repo' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'path' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 		];
 	}
