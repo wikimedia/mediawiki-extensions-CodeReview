@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
+use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -16,7 +19,7 @@ class BulkStatusUpdate extends Maintenance {
 		$this->addArg( 'status', "Code States: 'new', 'fixme', 'reverted', "
 			. "'resolved', 'ok', 'deferred', 'old'" );
 		$this->addArg( 'user', 'Username for whom to accredit the state changes to.' .
-				"The User needs to have the 'codereview-set-status' right" );
+			"The User needs to have the 'codereview-set-status' right" );
 
 		$this->requireExtension( 'CodeReview' );
 	}

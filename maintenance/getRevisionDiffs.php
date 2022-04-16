@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
 use MediaWiki\MediaWikiServices;
 
 $IP = getenv( 'MW_INSTALL_PATH' );

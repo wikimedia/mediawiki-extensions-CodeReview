@@ -6,6 +6,9 @@
  * @file
  * @ingroup Maintenance
  */
+
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';

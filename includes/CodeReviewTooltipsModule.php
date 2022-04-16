@@ -18,6 +18,11 @@
  *
  */
 
+namespace MediaWiki\Extension\CodeReview;
+
+use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
+use ResourceLoaderFileModule;
+
 class CodeReviewTooltipsModule extends ResourceLoaderFileModule {
 
 	/**

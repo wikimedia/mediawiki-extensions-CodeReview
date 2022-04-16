@@ -1,12 +1,15 @@
 <?php
 
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
+use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
+
 /**
  * This should let us test the CodeReview API
  * Broken as of 2011-09-02.
  *
  * @group medium
  * @group CodeReview
- * @covers ApiCodeUpdate
+ * @covers \MediaWiki\Extension\CodeReview\Api\ApiCodeUpdate
  */
 class CodeReviewApiTest extends ApiTestCase {
 
@@ -68,7 +71,7 @@ class CodeReviewApiTest extends ApiTestCase {
 	 * $wgOut->parseAsContent() backtrace :b
 	 */
 	public function testAddInlineComment() {
-		$user = $this->getTestSysop()->getUser();
+		$user = self::getTestSysop()->getUser();
 		$this->doApiRequest( [
 			'action' => 'coderevisionupdate',
 			'rev' => 777,

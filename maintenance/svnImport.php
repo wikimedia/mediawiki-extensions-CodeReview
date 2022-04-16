@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
+use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
+use MediaWiki\Extension\CodeReview\Backend\SubversionAdaptor;
 use MediaWiki\MediaWikiServices;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
@@ -119,7 +122,8 @@ class SvnImport extends Maintenance {
 				# stops new revisions from being added. Try to avoid this
 				# by trying less at a time from the last point.
 				if ( $chunkSize <= 1 ) {
-					break; // done!
+					// done!
+					break;
 				}
 				$chunkSize = max( 1, floor( $chunkSize / 4 ) );
 				continue;
@@ -179,7 +183,8 @@ class SvnImport extends Maintenance {
 			);
 			foreach ( $res as $row ) {
 				$repo->getRevision( $row->cr_id );
-				$diff = $repo->getDiff( $row->cr_id ); // trigger caching
+				// trigger caching
+				$diff = $repo->getDiff( $row->cr_id );
 				$msg = "Diff r{$row->cr_id} ";
 				if ( is_int( $diff ) ) {
 					$msg .= 'Skipped: ' . CodeRepository::getDiffErrorMessage( $diff );

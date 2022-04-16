@@ -1,5 +1,9 @@
 <?php
 
+use MediaWiki\Extension\CodeReview\Backend\CodeCommentLinkerWiki;
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
+use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
+
 /**
  * @group CodeReview
  */
@@ -16,7 +20,7 @@ class CodeReviewTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers CodeCommentLinkerWiki
+	 * @covers \MediaWiki\Extension\CodeReview\Backend\CodeCommentLinkerWiki
 	 */
 	public function testCommentWikiFormatting() {
 		$repo = $this->createRepo();
@@ -50,7 +54,7 @@ class CodeReviewTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers CodeRevision::getCanonicalUrl
+	 * @covers \MediaWiki\Extension\CodeReview\Backend\CodeRevision::getCanonicalUrl
 	 */
 	public function testCommentCanonicalUrl() {
 		# Fixture:
