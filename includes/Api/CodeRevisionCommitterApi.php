@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CodeReview\Api;
 
 use MediaWiki\Extension\CodeReview\UI\CodeRevisionCommitter;
-use User;
+use MediaWiki\Permissions\Authority;
 
 /**
  * Variation of CodeRevisionCommiter for use in the API. Removes the post and token checking from
@@ -14,10 +14,10 @@ class CodeRevisionCommitterApi extends CodeRevisionCommitter {
 	 * Check whether the user has the correct permissions for the action
 	 *
 	 * @param string $permission
-	 * @param User $user
+	 * @param Authority $performer
 	 * @return bool
 	 */
-	public function validPost( $permission, User $user ) {
-		return $user->isAllowed( $permission );
+	public function validPost( $permission, Authority $performer ) {
+		return $performer->isAllowed( $permission );
 	}
 }

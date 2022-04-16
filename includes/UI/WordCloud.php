@@ -136,7 +136,7 @@ class WordCloud {
 
 		shuffle( $keys );
 
-		if ( count( $keys ) && is_array( $keys ) ) {
+		if ( count( $keys ) ) {
 			$tmpArray = $this->wordsArray;
 			$this->wordsArray = [];
 			foreach ( $keys as $value ) {

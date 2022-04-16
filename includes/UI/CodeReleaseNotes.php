@@ -76,9 +76,6 @@ class CodeReleaseNotes extends CodeView {
 			->displayForm( false );
 	}
 
-	/**
-	 * @suppress SecurityCheck-XSS Seems a false positive
-	 */
 	protected function showReleaseNotes() {
 		global $wgOut;
 		$dbr = wfGetDB( DB_REPLICA );

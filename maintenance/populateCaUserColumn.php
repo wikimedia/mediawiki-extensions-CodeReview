@@ -28,17 +28,17 @@ class PopulateCaUserColumn extends Maintenance {
 	public function execute() {
 		$repoName = $this->getOption( 'repo' );
 		if ( !$repoName ) {
-			$this->error( 'Need a repository name to do something!', true );
+			$this->fatalError( 'Need a repository name to do something!' );
 		}
 
 		// Oh come on!
 		if ( $repoName == 'all' ) {
-			$this->error( "Cannot use the 'all' repo", true );
+			$this->fatalError( "Cannot use the 'all' repo" );
 		}
 
 		$repo = CodeRepository::newFromName( $repoName );
 		if ( !$repo ) {
-			$this->error( "Repo '{$repoName}' is not a valid repository", true );
+			$this->fatalError( "Repo '{$repoName}' is not a valid repository" );
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
@@ -57,7 +57,7 @@ class PopulateCaUserColumn extends Maintenance {
 
 		// No results == nothing to do, so bail out
 		if ( $numRows == 0 ) {
-			$this->error( "Nothing to do here, Captain!\n", true );
+			$this->fatalError( "Nothing to do here, Captain!\n" );
 		}
 
 		// Show some information to the user so that they're aware that we're

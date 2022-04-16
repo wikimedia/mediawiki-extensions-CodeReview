@@ -22,12 +22,12 @@ class GetRevisionDiffs extends Maintenance {
 		$repoName = $this->getArg( 0 );
 
 		if ( $repoName == 'all' ) {
-			$this->error( "Cannot use the 'all' repo", true );
+			$this->fatalError( "Cannot use the 'all' repo" );
 		}
 
 		$repo = CodeRepository::newFromName( $repoName );
 		if ( !$repo ) {
-			$this->error( "Repo '{$repoName}' is not a valid Repository", true );
+			$this->fatalError( "Repo '{$repoName}' is not a valid Repository" );
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );

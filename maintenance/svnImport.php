@@ -34,8 +34,8 @@ class SvnImport extends Maintenance {
 				if ( preg_match( '/^\d+$/', $cacheSize ) ) {
 					$cacheSize = intval( $cacheSize );
 				} else {
-					$this->error( "Invalid argument for --precache (must be a positive integer," .
-						" 0 or 'all')", true );
+					$this->fatalError( "Invalid argument for --precache (must be a positive integer," .
+						" 0 or 'all')" );
 				}
 			}
 		}
@@ -133,7 +133,7 @@ class SvnImport extends Maintenance {
 			if ( !is_array( $log ) ) {
 				// @TODO: cleanup :)
 				var_dump( $log );
-				$this->error( 'Log entry is not an array! See content above.', true );
+				$this->fatalError( 'Log entry is not an array! See content above.' );
 			}
 			foreach ( $log as $data ) {
 				$revCount++;

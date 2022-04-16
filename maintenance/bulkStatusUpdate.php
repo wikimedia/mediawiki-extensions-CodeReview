@@ -28,19 +28,19 @@ class BulkStatusUpdate extends Maintenance {
 		$repoName = $this->getArg( 0 );
 
 		if ( $repoName == 'all' ) {
-			$this->error( "Cannot use the 'all' repo", true );
+			$this->fatalError( "Cannot use the 'all' repo" );
 		}
 
 		$repo = CodeRepository::newFromName( $repoName );
 		if ( !$repo ) {
-			$this->error( "Repo '{$repoName}' is not a valid Repository", true );
+			$this->fatalError( "Repo '{$repoName}' is not a valid Repository" );
 		}
 
 		$revisions = $this->getArg( 1 );
 		if ( strpos( $revisions, ':' ) !== false ) {
 			$revisionVals = explode( ':', $revisions, 2 );
 		} else {
-			$this->error( 'Invalid revision range', true );
+			$this->fatalError( 'Invalid revision range' );
 		}
 
 		$start = intval( $revisionVals[0] );
@@ -51,18 +51,18 @@ class BulkStatusUpdate extends Maintenance {
 		$status = $this->getArg( 2 );
 
 		if ( !CodeRevision::isValidStatus( $status ) ) {
-			$this->error( "'{$status}' is not a valid status", true );
+			$this->fatalError( "'{$status}' is not a valid status" );
 		}
 
 		$username = $this->getArg( 3 );
 		$user = User::newFromName( $username );
 
 		if ( !$user ) {
-			$this->error( "'{$username}' is not a valid username ", true );
+			$this->fatalError( "'{$username}' is not a valid username" );
 		}
 
 		if ( !$user->isAllowed( 'codereview-set-status' ) ) {
-			$this->error( "'{$username}' does not have the 'codereview-set-status' right", true );
+			$this->fatalError( "'{$username}' does not have the 'codereview-set-status' right" );
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );

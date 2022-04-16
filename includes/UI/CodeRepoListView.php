@@ -49,6 +49,7 @@ class CodeRepoListView {
 		$name = $repo->getName();
 
 		$code = SpecialPage::getTitleFor( 'Code', $name );
+		$links = [];
 		$links[] = "[[$code/comments|" . wfMessage( 'code-notes' )->escaped() . ']]';
 		$links[] = "[[$code/statuschanges|" . wfMessage( 'code-statuschanges' )->escaped() . ']]';
 		if ( $user->getId() ) {

@@ -76,18 +76,18 @@ class CodeRevisionView extends CodeView {
 			$this->mSelectedSignoffs : [];
 
 		$this->mAddReferences = $wgRequest->getCheck( 'wpAddReferencesSubmit' )
-				? $this->stringToRevList( $wgRequest->getText( 'wpAddReferences' ) )
-				: [];
+			? $this->stringToRevList( $wgRequest->getText( 'wpAddReferences' ) )
+			: [];
 
 		$this->mRemoveReferences = $wgRequest->getCheck( 'wpRemoveReferences' ) ?
 			$wgRequest->getIntArray( 'wpReferences', [] ) : [];
 
 		$this->mAddReferenced = $wgRequest->getCheck( 'wpAddReferencedSubmit' )
-				? $this->stringToRevList( $wgRequest->getText( 'wpAddReferenced' ) )
-				: [];
+			? $this->stringToRevList( $wgRequest->getText( 'wpAddReferenced' ) )
+			: [];
 
 		$this->mRemoveReferenced = $wgRequest->getCheck( 'wpRemoveReferenced' ) ?
-				$wgRequest->getIntArray( 'wpReferenced', [] ) : [];
+			$wgRequest->getIntArray( 'wpReferenced', [] ) : [];
 	}
 
 	/**
@@ -262,6 +262,7 @@ class CodeRevisionView extends CodeView {
 		}
 		$html .= Xml::closeElement( 'form' );
 
+		// @phan-suppress-next-line SecurityCheck-XSS
 		$wgOut->addHTML( $html );
 	}
 

@@ -748,9 +748,9 @@ class CodeRevision {
 
 		// Make list of users to send emails to
 		$users = $this->getCommentingUsers();
-		$user = $this->getWikiUser();
-		if ( $user ) {
-			$users[$user->getId()] = $user;
+		$wikiUser = $this->getWikiUser();
+		if ( $wikiUser ) {
+			$users[$wikiUser->getId()] = $wikiUser;
 		}
 		// If we've got a spam list, send emails to it too
 		if ( $wgCodeReviewCommentWatcherEmail ) {
@@ -766,8 +766,7 @@ class CodeRevision {
 		 */
 		foreach ( $users as $id => $user ) {
 			// No sense in notifying this commenter
-			// TODO: $changeUser is undefined
-			if ( $changeUser->getUser()->getId() == $user->getId() ) {
+			if ( $wikiUser->getId() == $user->getId() ) {
 				continue;
 			}
 
@@ -1196,7 +1195,6 @@ class CodeRevision {
 	 * @param array $addTags
 	 * @param array $removeTags
 	 * @param Authority|null $performer
-	 * @suppress SecurityCheck-SQLInjection See T201806 for more information
 	 */
 	public function changeTags( $addTags, $removeTags, $performer = null ) {
 		// Get the current tags and see what changes

@@ -134,7 +134,7 @@ class CodeDiffHighlighter {
 			# Rely on $left, $right initialization above
 		}
 
-		$classAttr = $class === null ? [] : [ 'class' => $class ];
+		$classAttr = [ 'class' => $class ];
 		return Html::rawElement( 'tr', $this->getLineIdAttr(),
 			Html::element( 'td', [ 'class' => 'linenumbers' ], $left )
 			. Html::element( 'td', [ 'class' => 'linenumbers' ], $right )

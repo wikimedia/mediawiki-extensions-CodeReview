@@ -20,6 +20,13 @@ class SubversionProxy extends SubversionAdaptor {
 		return true;
 	}
 
+	/**
+	 * @param string $path
+	 * @param null $rev
+	 *
+	 * @return never
+	 * @throws Exception
+	 */
 	public function getFile( $path, $rev = null ) {
 		throw new Exception( 'NYI' );
 	}

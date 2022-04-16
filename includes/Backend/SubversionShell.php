@@ -136,6 +136,7 @@ class SubversionShell extends SubversionAdaptor {
 				} else {
 					$matches = [];
 					if ( preg_match( '/^   (.) (.*)$/', $line, $matches ) ) {
+						// @phan-suppress-next-line PhanUndeclaredVariableDim
 						$data['paths'][] = [
 							'action' => $matches[1],
 							'path' => $matches[2]
@@ -145,6 +146,7 @@ class SubversionShell extends SubversionAdaptor {
 				break;
 			case 'msg':
 				$data['msg'] .= $line;
+				// @phan-suppress-next-line PhanTypeArraySuspiciousNull, PhanTypeInvalidUnaryOperandIncOrDec
 				if ( --$data['lines'] ) {
 					$data['msg'] .= "\n";
 				} else {

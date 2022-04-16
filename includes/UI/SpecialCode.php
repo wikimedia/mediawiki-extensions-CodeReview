@@ -130,6 +130,7 @@ class SpecialCode extends SpecialPage {
 				} elseif ( $request->wasPosted() && !$request->getCheck( 'wpPreview' ) ) {
 					# This is not really a view, but we return it nonetheless.
 					# Add any tags, Set status, Adds comments
+					// @phan-suppress-next-line PhanTypeMismatchArgumentReal
 					$view = new CodeRevisionCommitter( $repo, $user, $params[1] );
 				} elseif ( empty( $params[1] ) ) {
 					$view = new CodeRevisionListView( $repo );
