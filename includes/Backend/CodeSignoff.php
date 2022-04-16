@@ -10,17 +10,39 @@ use stdClass;
  * Signing off with multiple flags at once creates multiple sign-offs.
  */
 class CodeSignoff {
-	/** CodeRevision object for the revision that was signed off on */
+	/**
+	 * CodeRevision object for the revision that was signed off on
+	 * @var CodeRevision
+	 */
 	public $rev;
-	/** User ID (on the wiki, not in SVN) of the user that signed off */
+
+	/**
+	 * User ID (on the wiki, not in SVN) of the user that signed off
+	 * @var int
+	 */
 	public $user;
-	/** User name of the user that signed off */
+
+	/**
+	 * User name of the user that signed off
+	 * @var string
+	 */
 	public $userText;
-	/** Sign-off flag. See CodeRevision::getPossibleFlags() for possible values */
+
+	/**
+	 * Sign-off flag. See CodeRevision::getPossibleFlags() for possible values
+	 * @var string
+	 */
 	public $flag;
-	/** Timestamp of the sign-off, in TS_MW format */
+
+	/**
+	 * Timestamp of the sign-off, in TS_MW format
+	 * @var string
+	 */
 	public $timestamp;
 
+	/**
+	 * @var string
+	 */
 	private $timestampStruck;
 
 	/**

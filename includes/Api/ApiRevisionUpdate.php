@@ -44,9 +44,8 @@ class ApiRevisionUpdate extends ApiBase {
 			$this->checkUserRightsAny( 'codereview-post-comment' );
 		}
 
-		global $wgCodeReviewInlineComments;
 		if (
-			!$wgCodeReviewInlineComments
+			!$this->getConfig()->get( 'CodeReviewInlineComments' )
 			&& isset( $params['patchline'] )
 		) {
 			$this->dieWithError(

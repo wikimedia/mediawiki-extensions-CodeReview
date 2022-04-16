@@ -102,18 +102,20 @@ class CodeDiffHighlighter {
 		if ( $class === null ) {
 			return Html::rawElement( 'tr', $this->getLineIdAttr(),
 				Html::element( 'td', [ 'class' => 'linenumbers' ], $this->left ) .
-					Html::element( 'td', [ 'class' => 'linenumbers' ], $this->right ) .
-					Html::rawElement( 'td', [], Html::element( 'span', [], $content ) )
+				Html::element( 'td', [ 'class' => 'linenumbers' ], $this->right ) .
+				Html::rawElement( 'td', [], Html::element( 'span', [], $content ) )
 			);
 		}
 
 		# Skip line number when they do not apply
-		$left = $right = ' '; // non-breaking space
+		// non-breaking space
+		$left = $right = ' ';
 		$inlineWrapEl = 'span';
 
 		switch ( $class ) {
 		case 'chunkdelimiter':
-			$left = $right = '—'; // &mdash;
+			// &mdash;
+			$left = $right = '—';
 			break;
 		case 'unchanged':
 			$left  = $this->left;
@@ -134,9 +136,9 @@ class CodeDiffHighlighter {
 
 		$classAttr = $class === null ? [] : [ 'class' => $class ];
 		return Html::rawElement( 'tr', $this->getLineIdAttr(),
-				Html::element( 'td', [ 'class' => 'linenumbers' ], $left )
-				. Html::element( 'td', [ 'class' => 'linenumbers' ], $right )
-				. Html::rawElement( 'td', $classAttr, Html::element( $inlineWrapEl, [], $content ) )
+			Html::element( 'td', [ 'class' => 'linenumbers' ], $left )
+			. Html::element( 'td', [ 'class' => 'linenumbers' ], $right )
+			. Html::rawElement( 'td', $classAttr, Html::element( $inlineWrapEl, [], $content ) )
 		);
 	}
 
@@ -155,10 +157,12 @@ class CodeDiffHighlighter {
 
 		list(
 			$this->left,
-			$leftChanged,  # unused
+			# unused
+			$leftChanged,
 			$this->right,
-			$rightChanged  # unused
-		) = $this->parseChunkDelimiter( $line );
+			# unused
+			$rightChanged
+		) = self::parseChunkDelimiter( $line );
 
 		return $this->formatLine( $line, 'chunkdelimiter' );
 	}
@@ -189,7 +193,8 @@ class CodeDiffHighlighter {
 	 */
 	public function colorLine( $line ) {
 		if ( $line == '' ) {
-			return ''; // don't create bogus spans
+			// don't create bogus spans
+			return '';
 		}
 		list( $element, $attribs ) = $this->tagForLine( $line );
 		return '<tr>' . Xml::element( $element, $attribs, $line ) . '</tr>';

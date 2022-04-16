@@ -28,8 +28,10 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 			Linker::userToolLinks(
 				$this->mUser->getId(),
 				$this->mUser->getName(),
-				false, /* default for redContribsWhenNoEdits */
-				Linker::TOOL_LINKS_EMAIL /* Add "send email" link */
+				// default for redContribsWhenNoEdits
+				false,
+				// Add "send email" link
+				Linker::TOOL_LINKS_EMAIL
 			) )->escaped();
 	}
 

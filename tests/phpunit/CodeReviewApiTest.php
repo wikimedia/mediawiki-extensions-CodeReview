@@ -13,9 +13,15 @@ use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
  */
 class CodeReviewApiTest extends ApiTestCase {
 
-	/** The test repository created by CodeReviewApiTest::createRepo() */
+	/**
+	 * The test repository created by CodeReviewApiTest::createRepo()
+	 * @var CodeRepository
+	 */
 	private $repo;
-	/** array of common parameters used to query API */
+	/**
+	 * array of common parameters used to query API
+	 * @var array
+	 */
 	private $commonApiData;
 
 	protected function setUp(): void {

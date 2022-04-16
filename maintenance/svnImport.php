@@ -131,7 +131,8 @@ class SvnImport extends Maintenance {
 				$start += $chunkSize;
 			}
 			if ( !is_array( $log ) ) {
-				var_dump( $log ); // @TODO: cleanup :)
+				// @TODO: cleanup :)
+				var_dump( $log );
 				$this->error( 'Log entry is not an array! See content above.', true );
 			}
 			foreach ( $log as $data ) {

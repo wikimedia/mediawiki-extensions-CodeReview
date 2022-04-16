@@ -7,6 +7,9 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class CodeReviewShowEmails extends Maintenance {
+	/**
+	 * @var string[]
+	 */
 	private $EmailData = [
 		'author'  => 'Author',
 		'repo'    => 'Repository',

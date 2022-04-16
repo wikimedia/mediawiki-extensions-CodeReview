@@ -12,9 +12,11 @@ class CodeReleaseNotes extends CodeView {
 		parent::__construct( $repo );
 		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path', '' ) ) );
 		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
-			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path
+			// make sure this is a valid path
+			$this->mPath = "/{$this->mPath}";
 		}
-		$this->mPath = preg_replace( '/\/$/', '', $this->mPath ); // kill last slash
+		// remove last slash
+		$this->mPath = preg_replace( '/\/$/', '', $this->mPath );
 		$this->mStartRev = $wgRequest->getIntOrNull( 'startrev' );
 		$this->mEndRev = $wgRequest->getIntOrNull( 'endrev' );
 	}
@@ -95,13 +97,16 @@ class CodeReleaseNotes extends CodeView {
 			[ 'code_rev', 'code_tags' ],
 			[ 'cr_message', 'cr_author', 'cr_id', 'ct_tag AS rnotes' ],
 			array_merge( [
-				'cr_repo_id' => $this->mRepo->getId(), // this repo
-				"cr_status NOT IN('reverted','deferred','fixme')", // not reverted/deferred/fixme
+				// this repo
+				'cr_repo_id' => $this->mRepo->getId(),
+				// not reverted/deferred/fixme
+				"cr_status NOT IN('reverted','deferred','fixme')",
 				"cr_message != ''",
 			], $where ),
 			__METHOD__,
 			[ 'ORDER BY' => 'cr_id DESC' ],
-			[ 'code_tags' => [ 'LEFT JOIN', # Tagged for release notes?
+			# Tagged for release notes?
+			[ 'code_tags' => [ 'LEFT JOIN',
 				'ct_repo_id = cr_repo_id AND ct_rev_id = cr_id AND ct_tag = "release-notes"' ]
 			]
 		);
@@ -115,7 +120,8 @@ class CodeReleaseNotes extends CodeView {
 				$summary = $this->shortenSummary( $summary );
 				# Anything left? (this can happen with some heuristics)
 				if ( $summary ) {
-					$summary = str_replace( "\n", '<br />', $summary ); // Newlines -> <br />
+					// Newlines -> <br />
+					$summary = str_replace( "\n", '<br />', $summary );
 					$wgOut->addHTML( '<li>' );
 					$wgOut->addHTML(
 						$this->codeCommentLinkerHtml->link( $summary ) . " <i>(" .
@@ -139,8 +145,11 @@ class CodeReleaseNotes extends CodeView {
 		} else {
 			return trim( $summary );
 		}
-		$blurbs = array_map( 'trim', $blurbs ); # Clean up items
-		$blurbs = array_filter( $blurbs ); # Filter out any garbage
+		# Clean up items
+		$blurbs = array_map( 'trim', $blurbs );
+		# Filter out any garbage
+		$blurbs = array_filter( $blurbs );
+
 		# Doesn't start with '*' and has some length?
 		# If so, then assume that the top bit is important.
 		if ( count( $blurbs ) ) {
@@ -179,7 +188,7 @@ class CodeReleaseNotes extends CodeView {
 	 */
 	private function isRelevant( $summary, $whole = true ) {
 		# Mentioned a bug?
-		if ( preg_match( CodeRevision::BugReference, $summary ) ) {
+		if ( preg_match( CodeRevision::BUG_REFERENCE, $summary ) ) {
 			return true;
 		}
 		# Mentioned a config var?
@@ -204,7 +213,8 @@ class CodeReleaseNotes extends CodeView {
 		}
 		# Are we looking at the whole summary or an aspect of it?
 		if ( $whole ) {
-			return preg_match( '/(^|\n) ?\*/', $summary ); # List of items?
+			# List of items?
+			return preg_match( '/(^|\n) ?\*/', $summary );
 		} else {
 			return true;
 		}

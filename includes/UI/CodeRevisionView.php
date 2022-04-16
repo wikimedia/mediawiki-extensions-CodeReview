@@ -23,7 +23,8 @@ use Xml;
  * Special:Code/MediaWiki/40696
  */
 class CodeRevisionView extends CodeView {
-	protected $showButtonsFormatReference = false, $showButtonsFormatSignoffs = false;
+	protected $showButtonsFormatReference = false;
+	protected $showButtonsFormatSignoffs = false;
 	protected $referenceInputName = '';
 	protected $performer;
 
@@ -52,7 +53,8 @@ class CodeRevisionView extends CodeView {
 		# Search path for navigation links
 		$this->mPath = trim( $wgRequest->getVal( 'path', '' ) );
 		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
-			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path
+			// make sure this is a valid path
+			$this->mPath = "/{$this->mPath}";
 		}
 		# URL params...
 		$this->mAddTags = $wgRequest->getText( 'wpTag' );
@@ -354,11 +356,13 @@ class CodeRevisionView extends CodeView {
 			$prev = $rev - 1;
 			if ( $action === 'd' ) {
 				if ( $rev > 1 ) {
-					$link = Linker::makeExternalLink( // last rev
+					$link = Linker::makeExternalLink(
+						// last rev
 						"{$viewvc}{$safePath}?view=markup&pathrev=" . ( $rev - 1 ),
 						$path . $from );
 				} else {
-					$link = $safePath; // imported to SVN or something
+					// imported to SVN or something
+					$link = $safePath;
 				}
 			} else {
 				$link = Linker::makeExternalLink(
@@ -501,12 +505,12 @@ class CodeRevisionView extends CodeView {
 			return wfMessage( 'code-rev-diff-too-large' )->escaped();
 		} elseif ( is_int( $diff )
 			&& in_array( $diff, [
-				CodeRepository::DIFFRESULT_NothingToCompare, CodeRepository::DIFFRESULT_TooManyPaths
+				CodeRepository::DIFFRESULT_NOTHINGTOCOMPARE, CodeRepository::DIFFRESULT_TOOMANYPATHS
 			] )
 		) {
 			// Some other error condition, no diff required
 			return '';
-		} elseif ( $diff === CodeRepository::DIFFRESULT_NotInCache ) {
+		} elseif ( $diff === CodeRepository::DIFFRESULT_NOTINCACHE ) {
 			// Api Enabled || Not cached => Load via JS via API
 			return $this->stubDiffLoader();
 		}
@@ -533,7 +537,8 @@ class CodeRevisionView extends CodeView {
 			if ( preg_match( $wgCodeReviewImgRegex, $row->cp_path ) ) {
 				$imgDiffs .= 'Index: ' . htmlspecialchars( $row->cp_path ) . "\n";
 				$imgDiffs .= '<table border="1px" style="background:white;"><tr>';
-				if ( $row->cp_action !== 'A' ) { // old
+				if ( $row->cp_action !== 'A' ) {
+					// old
 					// What was done to it?
 					$action = $row->cp_action == 'D'
 						? 'code-rev-modified-d' : 'code-rev-modified-r';
@@ -541,7 +546,8 @@ class CodeRevisionView extends CodeView {
 					$imgDiffs .= $this->formatImgCell(
 						$viewvc, $row->cp_path, $this->mRev->getPrevious(), $action );
 				}
-				if ( $row->cp_action !== 'D' ) { // new
+				if ( $row->cp_action !== 'D' ) {
+					// new
 					// What was done to it?
 					$action = $row->cp_action == 'A'
 						? 'code-rev-modified-a' : 'code-rev-modified-m';
@@ -749,11 +755,11 @@ class CodeRevisionView extends CodeView {
 				// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
 				// code-status-ok, code-status-deferred, code-status-old
 				$line .= wfMessage( 'code-status-' . $change->removed )->escaped();
-				$line .= $change->added ? "&#160;" : ""; // spacing
+				$line .= $change->added ? "&#160;" : "";
 			// Tag changes
 			} elseif ( $change->attrib == 'tags' ) {
 				$line .= htmlspecialchars( $change->removed );
-				$line .= $change->added ? "&#160;" : ""; // spacing
+				$line .= $change->added ? "&#160;" : "";
 			}
 		}
 		// Items that were changed to something else...

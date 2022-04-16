@@ -137,6 +137,9 @@ class Hooks {
 		}
 	}
 
+	/**
+	 * @var string[][]
+	 */
 	private static $userTables = [
 		'code_authors' => [ 'ca_user_text', 'ca_user' ],
 		'code_comment' => [ 'cc_user_text', 'cc_user' ],

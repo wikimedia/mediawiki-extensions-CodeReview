@@ -20,7 +20,9 @@ class CodeRevisionListView extends CodeView {
 	 * @var CodeRepository
 	 */
 	public $mRepo;
-	public $mPath, $batchForm;
+	public $mPath;
+
+	public $batchForm;
 
 	/**
 	 * @var string[]
@@ -77,7 +79,8 @@ class CodeRevisionListView extends CodeView {
 		$path = rtrim( $path, '/' );
 		$escPath = htmlspecialchars( $path );
 		if ( strlen( $escPath ) && $escPath[0] !== '/' ) {
-			$escPath = "/{$escPath}"; // make sure this is a valid path
+			// make sure this is a valid path
+			$escPath = "/{$escPath}";
 		}
 		return $escPath;
 	}
@@ -230,7 +233,8 @@ class CodeRevisionListView extends CodeView {
 		}
 
 		if ( !count( $changeFields ) ) {
-			return ''; // nothing to do here
+			// nothing to do here
+			return '';
 		}
 
 		$changeInterface = Xml::fieldset( $pager->msg( 'codereview-batch-title' )->text(),

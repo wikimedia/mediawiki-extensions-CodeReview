@@ -39,13 +39,11 @@ class SpecialRepoAdmin extends SpecialPage {
 	 * @param string $subpage
 	 */
 	public function execute( $subpage ) {
-		global $wgRequest;
-
 		$this->setHeaders();
 
 		$this->checkPermissions();
 
-		$repo = $wgRequest->getVal( 'repo', $subpage );
+		$repo = $this->getRequest()->getVal( 'repo', $subpage );
 		if ( $repo == '' ) {
 			$view = new RepoAdminListView( $this->getPageTitle() );
 		} else {

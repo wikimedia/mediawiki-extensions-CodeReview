@@ -13,13 +13,19 @@ class RepoStats {
 
 	public $time;
 
-	public $revisions,
-		$authors,
-		$states,
-		$fixmes,
-		$new;
+	public $revisions;
 
-	public $fixmesPerPath, $newPerPath;
+	public $authors;
+
+	public $states;
+
+	public $fixmes;
+
+	public $new;
+
+	public $fixmesPerPath;
+
+	public $newPerPath;
 
 	/** @var string[] */
 	private static $cacheFields = [

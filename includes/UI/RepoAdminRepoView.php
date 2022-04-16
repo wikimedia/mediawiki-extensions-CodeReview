@@ -24,6 +24,7 @@ class RepoAdminRepoView {
 
 	/**
 	 * Actual repository object
+	 * @var CodeRepository
 	 */
 	private $repo;
 

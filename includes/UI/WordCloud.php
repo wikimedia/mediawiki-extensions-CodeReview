@@ -36,11 +36,13 @@ class WordCloud {
 
 	/**
 	 * An optional callback to format the text before outputting
+	 * @var callback
 	 */
 	private $callback;
 
 	/**
 	 * Mapping of percentage limits to their CSS classes
+	 * @var array
 	 */
 	private $classPercentages = [
 		1 => 99, 2 => 70, 3 => 60,

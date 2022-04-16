@@ -89,7 +89,8 @@ abstract class CodeView {
 		$html = $this->formatMessage( $first );
 		$truncated = $wgLang->truncateHtml( $html, 80 );
 
-		if ( count( $lines ) > 1 ) { // If multiline, we might want to add an ellipse
+		if ( count( $lines ) > 1 ) {
+			// If multiline, we might want to add an ellipse
 			$ellipsis = wfMessage( 'ellipsis' )->text();
 			// Hack: don't add if the end is already an ellipse
 			if ( substr( $truncated, -strlen( $ellipsis ) ) !== $ellipsis ) {

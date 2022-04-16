@@ -11,11 +11,11 @@ use User;
  * Core class for interacting with a repository of code.
  */
 class CodeRepository {
-	public const DIFFRESULT_BadRevision = 0;
-	public const DIFFRESULT_NothingToCompare = 1;
-	public const DIFFRESULT_TooManyPaths = 2;
-	public const DIFFRESULT_NoDataReturned = 3;
-	public const DIFFRESULT_NotInCache = 4;
+	public const DIFFRESULT_BADREVISION = 0;
+	public const DIFFRESULT_NOTHINGTOCOMPARE = 1;
+	public const DIFFRESULT_TOOMANYPATHS = 2;
+	public const DIFFRESULT_NODATARETURNED = 3;
+	public const DIFFRESULT_NOTINCACHE = 4;
 
 	/**
 	 * Local cache of Wiki user -> SVN user mappings
@@ -29,10 +29,15 @@ class CodeRepository {
 	 */
 	private static $authorLinks = [];
 
-	/**
-	 * Various data about the repo
-	 */
-	private $id, $name, $path, $viewVc, $bugzilla;
+	private $id;
+
+	private $name;
+
+	private $path;
+
+	private $viewVc;
+
+	private $bugzilla;
 
 	/**
 	 * Constructor, can't use it. Call one of the static newFrom* methods
@@ -352,18 +357,18 @@ class CodeRepository {
 		// Check that a valid revision was specified.
 		$revision = $this->getRevision( $rev );
 		if ( $revision == null ) {
-			$data = self::DIFFRESULT_BadRevision;
+			$data = self::DIFFRESULT_BADREVISION;
 		} else {
 			// Check that there is at least one, and at most $wgCodeReviewMaxDiffPaths
 			// paths changed in this revision.
 			$paths = $revision->getModifiedPaths();
 			if ( !$paths->numRows() ) {
-				$data = self::DIFFRESULT_NothingToCompare;
+				$data = self::DIFFRESULT_NOTHINGTOCOMPARE;
 			} elseif (
 				$wgCodeReviewMaxDiffPaths > 0 &&
 				$paths->numRows() > $wgCodeReviewMaxDiffPaths
 			) {
-				$data = self::DIFFRESULT_TooManyPaths;
+				$data = self::DIFFRESULT_TOOMANYPATHS;
 			}
 		}
 
@@ -418,7 +423,7 @@ class CodeRepository {
 					// If the calling code is forcing a cache check, report that it wasn't in cache
 					$ttl = $cache::TTL_UNCACHEABLE;
 
-					return self::DIFFRESULT_NotInCache;
+					return self::DIFFRESULT_NOTINCACHE;
 				}
 
 				// Otherwise, retrieve the diff using SubversionAdaptor
@@ -431,7 +436,7 @@ class CodeRepository {
 				if ( $data == '' ) {
 					$ttl = $cache::TTL_UNCACHEABLE;
 
-					return self::DIFFRESULT_NoDataReturned;
+					return self::DIFFRESULT_NODATARETURNED;
 				}
 
 				// Backfill permanent DB storage cache
@@ -627,16 +632,16 @@ class CodeRepository {
 
 		if ( is_int( $diff ) ) {
 			switch ( $diff ) {
-				case self::DIFFRESULT_BadRevision:
+				case self::DIFFRESULT_BADREVISION:
 					return 'Bad revision';
-				case self::DIFFRESULT_NothingToCompare:
+				case self::DIFFRESULT_NOTHINGTOCOMPARE:
 					return 'Nothing to compare';
-				case self::DIFFRESULT_TooManyPaths:
+				case self::DIFFRESULT_TOOMANYPATHS:
 					return 'Too many paths ($wgCodeReviewMaxDiffPaths = '
 							. $wgCodeReviewMaxDiffPaths . ')';
-				case self::DIFFRESULT_NoDataReturned:
+				case self::DIFFRESULT_NODATARETURNED:
 					return 'No data returned - no diff data, or connection lost';
-				case self::DIFFRESULT_NotInCache:
+				case self::DIFFRESULT_NOTINCACHE:
 					return 'Not in cache';
 				default:
 					return 'Unknown reason!';

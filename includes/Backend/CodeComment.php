@@ -8,7 +8,23 @@ use stdClass;
  * Represents a comment made to a revision.
  */
 class CodeComment {
-	public $id, $text, $user, $userText, $timestamp, $sortkey, $attrib, $removed, $added;
+	public $id;
+
+	public $text;
+
+	public $user;
+
+	public $userText;
+
+	public $timestamp;
+
+	public $sortkey;
+
+	public $attrib;
+
+	public $removed;
+
+	public $added;
 
 	/**
 	 * @var CodeRevision
@@ -70,7 +86,8 @@ class CodeComment {
 	public static function newFromData( $rev, $data ) {
 		$comment = new CodeComment( $rev );
 		$comment->id = intval( $data['cc_id'] );
-		$comment->text = $data['cc_text']; // @todo FIXME
+		// @todo FIXME
+		$comment->text = $data['cc_text'];
 		$comment->user = $data['cc_user'];
 		$comment->userText = $data['cc_user_text'];
 		$comment->timestamp = wfTimestamp( TS_MW, $data['cc_timestamp'] );

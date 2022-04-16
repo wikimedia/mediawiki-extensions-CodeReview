@@ -77,7 +77,8 @@ class SubversionShell extends SubversionAdaptor {
 		$formats = [
 			'rev' => '/^r(\d+)$/',
 			'author' => '/^(.*)$/',
-			'date' => '/^(?:(.*?) )?\(.*\)$/', // account for '(no date)'
+			// account for '(no date)'
+			'date' => '/^(?:(.*?) )?\(.*\)$/',
 			'lines' => '/^(\d+) lines?$/',
 		];
 		$state = "start";
@@ -93,6 +94,7 @@ class SubversionShell extends SubversionAdaptor {
 					return $out;
 					# throw new Exception( "Unexpected start line: $line" );
 				}
+				// Fall through
 			case 'revdata':
 				if ( $line == '' ) {
 					$state = 'done';
@@ -116,7 +118,8 @@ class SubversionShell extends SubversionAdaptor {
 				$state = 'changedpaths';
 				break;
 			case 'changedpaths':
-				if ( $line == 'Changed paths:' ) { // broken when svn messages are not in English
+				if ( $line == 'Changed paths:' ) {
+					// broken when svn messages are not in English
 					$state = 'path';
 				} elseif ( $line == '' ) {
 					// No changed paths?

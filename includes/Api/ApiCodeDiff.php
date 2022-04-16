@@ -28,8 +28,6 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 class ApiCodeDiff extends ApiBase {
 
 	public function execute() {
-		global $wgCodeReviewMaxDiffSize;
-
 		$this->checkUserRightsAny( 'codereview-use' );
 
 		$params = $this->extractRequestParams();
@@ -50,7 +48,7 @@ class ApiCodeDiff extends ApiBase {
 		if ( !is_string( $diff ) ) {
 			// FIXME: Are we sure we don't want to throw an error here?
 			$html = 'Failed to load diff. Error message: ' . CodeRepository::getDiffErrorMessage( $diff );
-		} elseif ( strlen( $diff ) > $wgCodeReviewMaxDiffSize ) {
+		} elseif ( strlen( $diff ) > $this->getConfig()->get( 'CodeReviewMaxDiffSize' ) ) {
 			$html = 'Diff too large.';
 		} else {
 			$hilite = new CodeDiffHighlighter();

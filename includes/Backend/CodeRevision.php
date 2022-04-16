@@ -10,6 +10,7 @@ use SpecialPage;
 use stdClass;
 use Title;
 use User;
+use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class CodeRevision {
@@ -19,14 +20,30 @@ class CodeRevision {
 	 * Examples:
 	 * bug 1234, bug1234, bug #1234, bug#1234
 	 */
-	public const BugReference = '/\bbug ?#?(\d+)\b/i';
+	public const BUG_REFERENCE = '/\bbug ?#?(\d+)\b/i';
 
 	/**
 	 * @var CodeRepository
 	 */
 	protected $repo;
 
-	protected $repoId, $id, $author, $timestamp, $message, $paths, $status, $oldStatus, $commonPath;
+	protected $repoId;
+
+	protected $id;
+
+	protected $author;
+
+	protected $timestamp;
+
+	protected $message;
+
+	protected $paths;
+
+	protected $status;
+
+	protected $oldStatus;
+
+	protected $commonPath;
 
 	/**
 	 * @param CodeRepository $repo
@@ -352,7 +369,8 @@ class CodeRevision {
 			__METHOD__
 		);
 		if ( $this->oldStatus === $status ) {
-			return false; // nothing to do here
+			// nothing to do here
+			return false;
 		}
 		// Update status
 		$this->status = $status;
@@ -391,7 +409,7 @@ class CodeRevision {
 	/**
 	 * Quickie protection against huuuuuuuuge batch inserts
 	 *
-	 * @param \Wikimedia\Rdbms\IDatabase $db
+	 * @param IDatabase $db
 	 * @param string $table
 	 * @param array $data
 	 * @param string $method
@@ -497,7 +515,8 @@ class CodeRevision {
 				[
 					'cr_repo_id' => $this->repoId,
 					'cr_id'      => $affectedRevs,
-					'cr_id < ' . intval( $this->id ), # just in case
+					// just in case
+					'cr_id < ' . intval( $this->id ),
 					// No sense in notifying if it's the same person
 					'cr_author != ' . $dbw->addQuotes( $this->author )
 				],
@@ -556,7 +575,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * @param \Wikimedia\Rdbms\IDatabase $dbw
+	 * @param IDatabase $dbw
 	 * @param array $paths
 	 * @param int $repoId
 	 * @param int $revId
@@ -614,7 +633,7 @@ class CodeRevision {
 		// Update bug references table...
 		$affectedBugs = [];
 		$m = [];
-		if ( preg_match_all( self::BugReference, $this->message, $m ) ) {
+		if ( preg_match_all( self::BUG_REFERENCE, $this->message, $m ) ) {
 			$data = [];
 			foreach ( $m[1] as $bug ) {
 				$data[] = [
@@ -636,7 +655,8 @@ class CodeRevision {
 				[
 					'cb_repo_id' => $this->repoId,
 					'cb_bug'     => $affectedBugs,
-					'cb_from < ' . intval( $this->id ), # just in case
+					// just in case
+					'cb_from < ' . intval( $this->id ),
 				],
 				__METHOD__,
 				[ 'USE INDEX' => 'cb_repo_id' ]
@@ -737,7 +757,8 @@ class CodeRevision {
 			$watcher = new User();
 			$watcher->setEmail( $wgCodeReviewCommentWatcherEmail );
 			$watcher->setName( $wgCodeReviewCommentWatcherName );
-			$users[0] = $watcher; // We don't have any anons, so using 0 is safe
+			// We don't have any anons, so using 0 is safe
+			$users[0] = $watcher;
 		}
 
 		/**
@@ -934,7 +955,8 @@ class CodeRevision {
 			[
 				'cc_repo_id' => $this->repoId,
 				'cc_rev_id' => $this->id,
-				'cc_user != 0' // users only
+				// users only
+				'cc_user != 0'
 			],
 			__METHOD__
 		);

@@ -35,8 +35,6 @@ class SpecialCode extends SpecialPage {
 	 * @param string $subpage
 	 */
 	public function execute( $subpage ) {
-		global $wgUseSiteCss;
-
 		$this->checkPermissions();
 
 		$this->setHeaders();
@@ -47,7 +45,7 @@ class SpecialCode extends SpecialPage {
 		$out->addModuleStyles( 'ext.codereview.styles' );
 
 		// Load [[MediaWiki:CodeReview.css]] (bug #16049) if site CSS is enabled
-		if ( $wgUseSiteCss ) {
+		if ( $this->getConfig()->get( 'UseSiteCss' ) ) {
 			$out->addModuleStyles( 'ext.codereview.local' );
 		}
 
@@ -119,7 +117,8 @@ class SpecialCode extends SpecialPage {
 			case 1:
 				$view = new CodeRevisionListView( $repo );
 				break;
-			case 2:		// drop through...
+			case 2:
+				// drop through...
 			case 3:
 				if ( isset( $paramClasses[$params[1]] ) ) {
 					$row = $paramClasses[$params[1]];

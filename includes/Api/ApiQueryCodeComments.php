@@ -31,6 +31,9 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  */
 
 class ApiQueryCodeComments extends ApiQueryBase {
+	/**
+	 * @var array
+	 */
 	private $props;
 
 	public function __construct( $query, $moduleName ) {

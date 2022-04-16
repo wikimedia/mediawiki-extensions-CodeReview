@@ -28,7 +28,8 @@ class SvnRevTagTablePager extends SvnRevTablePager {
 		array_unshift( $info['tables'], 'code_tags' );
 		$info['conds'][] = 'cr_repo_id=ct_repo_id';
 		$info['conds'][] = 'cr_id=ct_rev_id';
-		$info['conds']['ct_tag'] = $this->mTag; // fixme: normalize input?
+		// fixme: normalize input?
+		$info['conds']['ct_tag'] = $this->mTag;
 		return $info;
 	}
 

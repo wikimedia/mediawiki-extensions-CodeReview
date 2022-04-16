@@ -12,7 +12,8 @@ class SvnRevAuthorTablePager extends SvnRevTablePager {
 
 	public function getQueryInfo() {
 		$info = parent::getQueryInfo();
-		$info['conds']['cr_author'] = $this->mAuthor; // fixme: normalize input?
+		// fixme: normalize input?
+		$info['conds']['cr_author'] = $this->mAuthor;
 		return $info;
 	}
 

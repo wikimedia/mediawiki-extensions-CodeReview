@@ -32,7 +32,7 @@ abstract class CodeCommentLinker {
 			[ $this, 'generalLink' ], $text );
 		$text = preg_replace_callback( '/\br(\d+)\b/',
 			[ $this, 'messageRevLink' ], $text );
-		$text = preg_replace_callback( CodeRevision::BugReference,
+		$text = preg_replace_callback( CodeRevision::BUG_REFERENCE,
 			[ $this, 'messageBugLink' ], $text );
 		return $text;
 	}

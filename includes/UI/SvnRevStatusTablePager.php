@@ -12,7 +12,8 @@ class SvnRevStatusTablePager extends SvnRevTablePager {
 
 	public function getQueryInfo() {
 		$info = parent::getQueryInfo();
-		$info['conds']['cr_status'] = $this->mStatus; // FIXME: normalize input?
+		// FIXME: normalize input?
+		$info['conds']['cr_status'] = $this->mStatus;
 		return $info;
 	}
 
