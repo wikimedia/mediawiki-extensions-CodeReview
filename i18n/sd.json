@@ -11,8 +11,9 @@
 	"code-field-select": "چونڊيو",
 	"code-rev-author": "مصنف:",
 	"code-rev-rev": "ورجاءُ:",
-	"code-rev-modified-r": "مٽايو",
+	"code-rev-modified-r": "مٽايل",
 	"code-rev-imagediff": "عڪسي تبديليون",
+	"code-status-reverted": "موٽايل",
 	"code-rev-submit": "تبديليون سانڍيو",
 	"codereview-subtitle": "$1 لاءِ",
 	"code-stats": "انگ-اکر"
