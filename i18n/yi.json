@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Imre",
+			"Pacha Tchernof",
 			"פוילישער"
 		]
 	},
@@ -40,7 +41,7 @@
 	"code-rev-inline-preview": "פֿאראויסשטעלונג:",
 	"code-rev-diff": "אונטערשייד",
 	"code-rev-diff-link": "אונטערשייד",
-	"code-rev-history-link": "היסטאריע",
+	"code-rev-history-link": "היסטאָריע",
 	"code-status-new": "נײַ",
 	"code-status-reverted": "צוריקגעשטעלט",
 	"code-status-ok": "אויספֿירן",
