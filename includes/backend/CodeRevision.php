@@ -1458,7 +1458,7 @@ class CodeRevision {
 		global $wgCodeReviewRC;
 		foreach ( $wgCodeReviewRC as $rc ) {
 			/**
-			 * @var $engine RCFeedEngine
+			 * @var FormattedRCFeed $engine
 			 */
 			$engine = new $rc['formatter'];
 			$engine->send( $rc, $line );
