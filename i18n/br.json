@@ -4,6 +4,7 @@
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
+			"Huñvreüs",
 			"Y-M D"
 		]
 	},
@@ -180,7 +181,7 @@
 	"right-codereview-associate": "Ouzhpennañ/lemel ar c'henstroll adwelet",
 	"right-codereview-review-own": "Merkañ ar gwiriadennoù graet ganeoc'h evel \"{{int:code-status-ok}}\" pe \"{{int:code-status-resolved}}\"",
 	"action-repoadmin": "melestriñ ar fiziadoù kod",
-	"action-codereview-use": "implijout Dibar:Kod",
+	"action-codereview-use": "implijout CodeReview",
 	"action-codereview-add-tag": "ouzhpennañ tikedennoù nevez d'an adweladennoù",
 	"action-codereview-remove-tag": "tennañ tikedennoù diouzh an adweladennoù",
 	"action-codereview-post-comment": "ouzhpennañ evezhiadennoù d'an adweladennoù",
