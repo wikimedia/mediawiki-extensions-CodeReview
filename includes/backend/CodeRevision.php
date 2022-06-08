@@ -691,7 +691,6 @@ class CodeRevision {
 		$data = $this->commentData( $text, $performer, $parent );
 
 		$dbw->startAtomic( __METHOD__ );
-		$data['cc_id'] = $dbw->nextSequenceValue( 'code_comment_cc_id' );
 		$dbw->insert( 'code_comment', $data, __METHOD__ );
 		$commentId = $dbw->insertId();
 		$dbw->endAtomic( __METHOD__ );
