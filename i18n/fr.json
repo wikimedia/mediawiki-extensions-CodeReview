@@ -57,7 +57,7 @@
 	"code-author-dolink": "Lier cet auteur à un utilisateur du wiki :",
 	"code-author-alterlink": "Changer l’utilisateur du wiki lié à cet auteur :",
 	"code-author-orunlink": "Ou délier cet utilisateur du wiki :",
-	"code-author-name": "Entrez un nom d’utilisateur :",
+	"code-author-name": "Saisissez un nom d’utilisateur :",
 	"code-author-success": "L’auteur « $1 » a été lié à l’utilisateur « $2 » de ce wiki",
 	"code-author-link": "lier ?",
 	"code-author-unlink": "délier ?",
