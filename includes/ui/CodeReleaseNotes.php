@@ -4,7 +4,7 @@ class CodeReleaseNotes extends CodeView {
 	public function __construct( $repo ) {
 		global $wgRequest;
 		parent::__construct( $repo );
-		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path' ) ) );
+		$this->mPath = htmlspecialchars( trim( $wgRequest->getVal( 'path', '' ) ) );
 		if ( strlen( $this->mPath ) && $this->mPath[0] !== '/' ) {
 			$this->mPath = "/{$this->mPath}"; // make sure this is a valid path
 		}
