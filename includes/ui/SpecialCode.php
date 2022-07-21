@@ -72,7 +72,7 @@ class SpecialCode extends SpecialPage {
 
 	/**
 	 * Get a view object from a sub page path.
-	 * @param string $subpage
+	 * @param string|null $subpage
 	 * @return CodeView|CodeRepoListView|null - Null if no valid action could be found
 	 */
 	private function getViewFrom( $subpage ) {
@@ -94,7 +94,7 @@ class SpecialCode extends SpecialPage {
 
 		$request = $this->getRequest();
 		# Remove stray slashes
-		$subpage = preg_replace( '/\/$/', '', $subpage );
+		$subpage = preg_replace( '/\/$/', '', $subpage ?? '' );
 		if ( $subpage == '' ) {
 			$view = new CodeRepoListView();
 		} else {
