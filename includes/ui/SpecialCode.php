@@ -83,13 +83,13 @@ class SpecialCode extends SpecialPage {
 		// cases.
 		static $paramClasses
 			= [
-				'tag' => [ 'CodeTagListView', 'CodeRevisionTagView' ],
-				'author' => [ 'CodeAuthorListView', 'CodeRevisionAuthorView' ],
-				'status' => [ 'CodeStatusListView', 'CodeRevisionStatusView' ],
-				'comments' => [ 'CodeCommentsListView' ],
-				'statuschanges' => [ 'CodeStatusChangeListView' ],
-				'releasenotes' => [ 'CodeReleaseNotes' ],
-				'stats' => [ 'CodeRepoStatsView' ],
+				'tag' => [ CodeTagListView::class, CodeRevisionTagView::class ],
+				'author' => [ CodeAuthorListView::class, CodeRevisionAuthorView::class ],
+				'status' => [ CodeStatusListView::class, CodeRevisionStatusView::class ],
+				'comments' => [ CodeCommentsListView::class ],
+				'statuschanges' => [ CodeStatusChangeListView::class ],
+				'releasenotes' => [ CodeReleaseNotes::class ],
+				'stats' => [ CodeRepoStatsView::class ],
 			];
 
 		$request = $this->getRequest();
