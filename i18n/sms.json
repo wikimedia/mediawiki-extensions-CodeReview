@@ -11,6 +11,7 @@
 	"code-author-name": "Ǩeeʹrjet õõʹnninõõm:",
 	"code-field-timestamp": "Peiʹvvmieʹrr",
 	"code-field-comments": "Kommeeʹnt",
+	"code-field-text": "Hoʹhss",
 	"code-field-select": "Vaʹlljed",
 	"code-rev-date": "Peiʹvvmieʹrr:",
 	"code-rev-message": "Kommeʹntt:",
@@ -21,6 +22,9 @@
 	"code-rev-comment-preview": "Ouddǩiõččmõš",
 	"code-rev-inline-preview": "Ouddǩiõččmõš:",
 	"code-rev-history-link": "historia",
+	"code-status-new": "ođđ",
+	"code-status-reverted": "kååʹmtum",
+	"code-status-ok": "ok",
 	"code-signoff-field-user": "Õõʹnni",
 	"code-signoff-field-date": "Peiʹvvmieʹrr",
 	"code-pathsearch-filter": "Čuäʹjet pâi:",
@@ -30,5 +34,7 @@
 	"codereview-batch-submit": "Vuõlttâd",
 	"codereview-reply-link": "vaʹstted",
 	"code-stats": "statistiikk",
-	"repoadmin-new-button": "Raaj"
+	"repoadmin-new-button": "Raaj",
+	"right-codereview-add-tag": "Lââʹzzted ođđ ǩeâlgglid versioid",
+	"action-codereview-add-tag": "lââʹzzted ođđ ǩeâlgglid versioid"
 }
