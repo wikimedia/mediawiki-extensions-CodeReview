@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bada Kaji",
 			"Bhawani Gautam",
 			"Bhawani Gautam Rhk",
 			"RajeshPandey",
@@ -23,7 +24,7 @@
 	"code-status-new": "नयाँ",
 	"code-status-ok": "हुन्छ",
 	"code-signoff-field-user": "प्रयोगकर्ता",
-	"code-rev-submit": "परिवर्तन सङ्ग्रह गर्ने",
+	"code-rev-submit": "परिवर्तन सङ्ग्रह गर्नुहोस्",
 	"codereview-subtitle": "$1 का लागि",
 	"code-stats": "तथ्याङ्कहरू"
 }
