@@ -39,16 +39,16 @@ class RepoAdminRepoView {
 	}
 
 	public function execute() {
-		global $wgOut, $wgRequest;
+		// phpcs:disable MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
+		global $wgOut, $wgRequest, $wgUser;
 		$repoExists = (bool)$this->repo;
-		$user = $this->getUser();
 		$repoPath = $wgRequest->getVal( 'wpRepoPath', $repoExists ? $this->repo->getPath() : '' );
 		$bugPath = $wgRequest->getVal( 'wpBugPath',
 			$repoExists ? $this->repo->getBugzillaBase() : '' );
 		$viewPath = $wgRequest->getVal( 'wpViewPath',
 			$repoExists ? $this->repo->getViewVcBase() : '' );
 		if ( $wgRequest->wasPosted()
-			&& $user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName )
+			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName )
 		) {
 			// @todo log
 			$dbw = wfGetDB( DB_PRIMARY );
@@ -108,7 +108,7 @@ class RepoAdminRepoView {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
 		$htmlForm
-			->addHiddenField( 'wpEditToken', $user->getEditToken( $this->repoName ) )
+			->addHiddenField( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) )
 			->setAction( $this->title->getLocalURL() )
 			->setMethod( 'post' )
 			->setSubmitTextMsg( 'repoadmin-edit-button' )
