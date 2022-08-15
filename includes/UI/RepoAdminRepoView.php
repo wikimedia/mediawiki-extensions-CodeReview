@@ -43,6 +43,7 @@ class RepoAdminRepoView {
 		$this->title = $t;
 		$this->repoName = $repo;
 		$this->repo = CodeRepository::newFromName( $repo );
+		$this->user = $user;
 	}
 
 	public function execute() {
