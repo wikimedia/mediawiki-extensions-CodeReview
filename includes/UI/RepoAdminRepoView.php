@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CodeReview\UI;
 use HTMLForm;
 use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
 use Title;
+use User;
 
 /**
  * View for editing a single repository
@@ -29,18 +30,23 @@ class RepoAdminRepoView {
 	private $repo;
 
 	/**
+	 * @var User
+	 */
+	private $user;
+
+	/**
 	 * @param Title $t Special page title (with repo subpage)
 	 * @param string $repo
+	 * @param User $user
 	 */
-	public function __construct( Title $t, $repo ) {
+	public function __construct( Title $t, $repo, $user ) {
 		$this->title = $t;
 		$this->repoName = $repo;
 		$this->repo = CodeRepository::newFromName( $repo );
 	}
 
 	public function execute() {
-		// phpcs:disable MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
-		global $wgOut, $wgRequest, $wgUser;
+		global $wgOut, $wgRequest;
 		$repoExists = (bool)$this->repo;
 		$repoPath = $wgRequest->getVal( 'wpRepoPath', $repoExists ? $this->repo->getPath() : '' );
 		$bugPath = $wgRequest->getVal( 'wpBugPath',
@@ -48,7 +54,7 @@ class RepoAdminRepoView {
 		$viewPath = $wgRequest->getVal( 'wpViewPath',
 			$repoExists ? $this->repo->getViewVcBase() : '' );
 		if ( $wgRequest->wasPosted()
-			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName )
+			&& $this->user->matchEditToken( $wgRequest->getVal( 'wpEditToken' ), $this->repoName )
 		) {
 			// @todo log
 			$dbw = wfGetDB( DB_PRIMARY );
@@ -108,7 +114,7 @@ class RepoAdminRepoView {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $wgOut->getContext() );
 		$htmlForm
-			->addHiddenField( 'wpEditToken', $wgUser->getEditToken( $this->repoName ) )
+			->addHiddenField( 'wpEditToken', $this->user->getEditToken( $this->repoName ) )
 			->setAction( $this->title->getLocalURL() )
 			->setMethod( 'post' )
 			->setSubmitTextMsg( 'repoadmin-edit-button' )

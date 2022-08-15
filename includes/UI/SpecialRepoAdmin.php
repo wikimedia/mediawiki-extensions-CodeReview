@@ -47,7 +47,7 @@ class SpecialRepoAdmin extends SpecialPage {
 		if ( $repo == '' ) {
 			$view = new RepoAdminListView( $this->getPageTitle() );
 		} else {
-			$view = new RepoAdminRepoView( $this->getPageTitle( $repo ), $repo );
+			$view = new RepoAdminRepoView( $this->getPageTitle( $repo ), $repo, $this->getUser() );
 		}
 		$view->execute();
 	}
