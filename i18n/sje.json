@@ -4,8 +4,13 @@
 			"Olve Utne"
 		]
 	},
+	"code-comments": "Målgedime",
 	"code-load-diff": "Lässti ierádasav...",
+	"code-mycomments": "muv målgedime",
+	"code-field-comments": "Målgedime",
+	"code-rev-message": "Målgedibme:",
 	"code-rev-diff": "Ierádasa",
+	"code-rev-history-link": "histurrja",
 	"code-status-ok": "miededav",
 	"repoadmin-edit-button": "Buorre"
 }
