@@ -30,7 +30,8 @@ class SvnRevTablePager extends SvnTablePager {
 					'cp_path' => $this->getSVNPath(),
 				],
 				'options' => [
-					'GROUP BY' => $defaultSort,
+					'GROUP BY' =>
+						$defaultSort . ', cr_id, cr_repo_id, cr_status, cr_path, cr_message, cr_author, cr_timestamp',
 					'USE INDEX' => [ 'code_path' => 'cp_repo_id' ]
 				],
 				'join_conds' => [
@@ -76,7 +77,8 @@ class SvnRevTablePager extends SvnTablePager {
 
 	public function getSelectFields() {
 		return array_unique(
-			[ $this->getDefaultSort(),
+			[
+				$this->getDefaultSort(),
 				'cr_id',
 				'cr_repo_id',
 				'cr_status',
@@ -85,7 +87,8 @@ class SvnRevTablePager extends SvnTablePager {
 				'cr_message',
 				'cr_author',
 				'cr_timestamp'
-			] );
+			]
+		);
 	}
 
 	public function getFieldNames() {
