@@ -7,14 +7,15 @@
 			"पर्वत सुबेदी",
 			"राम प्रसाद जोशी",
 			"हिमाल सुबेदी",
-			"Bada Kaji"
+			"Bada Kaji",
+			"बडा काजी"
 		]
 	},
 	"code-comments": "टिप्पणीहरू",
 	"code-change-removed": "हटाइयाे:",
 	"code-authors": "लेखकहरु",
-	"code-author-link": "लिङ्क गर्ने?",
-	"code-author-unlink": "लिङ्क तोड़ने",
+	"code-author-link": "कडी गर्ने?",
+	"code-author-unlink": "कडी तोड़ने",
 	"code-field-status": "स्थिति",
 	"code-field-path": "पथ",
 	"code-field-text": "सूचना",
