@@ -85,7 +85,7 @@
 	"code-rev-diff-link": "prim",
 	"code-rev-diff-too-large": "Primerjava je preobsežna za prikaz.",
 	"code-rev-purge-link": "počisti",
-	"code-rev-total": "Skupno število rezultatov: $1",
+	"code-rev-total": "Skupno število zadetkov: $1",
 	"code-rev-not-found": "Redakcija '''$1''' ne obstaja!",
 	"code-rev-history-link": "zgodovina",
 	"code-status-new": "novo",
