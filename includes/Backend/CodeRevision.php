@@ -298,7 +298,7 @@ class CodeRevision {
 	 * @return array
 	 */
 	public static function getPossibleStateMessageKeys() {
-		return array_map( [ 'self', 'makeStateMessageKey' ], self::getPossibleStates() );
+		return array_map( [ self::class, 'makeStateMessageKey' ], self::getPossibleStates() );
 	}
 
 	/**

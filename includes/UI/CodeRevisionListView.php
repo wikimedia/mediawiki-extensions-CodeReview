@@ -67,7 +67,7 @@ class CodeRevisionListView extends CodeView {
 	 * @return array
 	 */
 	public static function pathsToArray( $path ) {
-		return array_map( [ 'self', 'preparePaths' ], explode( '|', $path ) );
+		return array_map( [ self::class, 'preparePaths' ], explode( '|', $path ) );
 	}
 
 	/**
