@@ -142,6 +142,7 @@
 	"codereview-email-subj2": "[$1 $2]: Sljedeće izmjene",
 	"codereview-email-body2": "Korisnik \"$1\" je izvršio povezane izmjene na $2.\n\nPuna URL-adresa za povezanu reviziju: $5\nSažetak izmjena:\n\n$6\n\nPuna URL: $3\n\n$4",
 	"codereview-email-subj3": "[$1 $2]: Stanje revizije se promijenilo",
+	"codereview-email-body3": "Korisnik \"$1\" je promijenio stanje od $2.\n\nStaro stanje: $3\nNovo stanje: $4\n\nPuni URL: $5\nNapravljeni sažetak:\n\n$6",
 	"codereview-email-subj4": "[$1 $2]: Dodan novi komentar i izmijenjeno je stanje revizije",
 	"code-stats": "statistike",
 	"code-stats-header": "Statistike za repozitorij $1",
