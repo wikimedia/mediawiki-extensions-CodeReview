@@ -890,7 +890,7 @@ class CodeRevisionView extends CodeView {
 		$align = $wgLang->alignStart();
 		$depth = $comment->threadDepth();
 		$margin = ( $depth - 1 ) * 48;
-		return "margin-$align: ${margin}px";
+		return "margin-$align: {$margin}px";
 	}
 
 	/**
