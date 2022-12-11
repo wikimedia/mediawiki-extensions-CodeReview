@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CodeReview\Backend;
 
 use Exception;
-use Http;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Using a remote JSON proxy
@@ -68,8 +68,9 @@ class SubversionProxy extends SubversionAdaptor {
 			}
 		}
 		$target = $this->mProxy . '?' . wfArrayToCgi( $params );
-		$blob = Http::get( $target, $this->mTimeout );
-		if ( $blob === false ) {
+		$blob = MediaWikiServices::getInstance()->getHttpRequestFactory()
+			->get( $target, [ 'timeout' => $this->mTimeout ], __METHOD__ );
+		if ( $blob === null ) {
 			throw new Exception( 'SVN proxy error' );
 		}
 		return unserialize( $blob );
