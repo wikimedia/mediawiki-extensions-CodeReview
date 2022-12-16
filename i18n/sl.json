@@ -110,7 +110,7 @@
 	"code-signoff-flag-inspected": "Pregledano",
 	"code-signoff-flag-tested": "Preizkušeno",
 	"code-signoff-field-user": "Uporabnik",
-	"code-signoff-field-flag": "Oznaka",
+	"code-signoff-field-flag": "Zastavica",
 	"code-signoff-field-date": "Datum",
 	"code-signoff-struckdate": "$1 (udarjeno $2)",
 	"code-pathsearch-legend": "Iskanje redakcij v tej shrambi po poti",
