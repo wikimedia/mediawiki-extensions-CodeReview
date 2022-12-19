@@ -42,7 +42,7 @@
 	"code-author-success": "Avtor $1 je povezan z wikiuporabnikom $2",
 	"code-author-link": "povežem?",
 	"code-author-unlink": "odstranim povezavo?",
-	"code-author-unlinksuccess": "Avtorju $1 je bila odstranjena povezava",
+	"code-author-unlinksuccess": "Povezava na avtorja $1 je odstranjena",
 	"code-author-badtoken": "Napaka seje med poskušanjem izvedbe dejanja.",
 	"code-author-total": "Skupno število avtorjev: $1",
 	"code-author-lastcommit": "Datum zadnjega prispevka",
