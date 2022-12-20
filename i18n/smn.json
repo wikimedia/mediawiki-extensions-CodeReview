@@ -5,12 +5,15 @@
 			"Yupik"
 		]
 	},
+	"code-change-removed": "sikkum:",
 	"code-change-added": "lasettum:",
 	"code-tags": "kilgoleh",
 	"code-field-timestamp": "Peivim",
 	"code-rev-date": "Peivim:",
 	"code-rev-modified-a": "lasettum",
 	"code-rev-tags": "Kilgoleh:",
+	"code-rev-tag-add": "Lasseet kilgolijd",
+	"code-rev-tag-remove": "Meddâlist kilgolijd:",
 	"code-rev-history-link": "historjá",
 	"code-status-ok": "ok",
 	"code-signoff-field-user": "Kevttee",
