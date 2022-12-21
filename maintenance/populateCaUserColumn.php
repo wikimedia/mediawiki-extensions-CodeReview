@@ -8,6 +8,7 @@
  */
 
 use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
+use MediaWiki\MediaWikiServices;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -66,12 +67,13 @@ class PopulateCaUserColumn extends Maintenance {
 
 		$dbw = wfGetDB( DB_PRIMARY );
 		$this->beginTransaction( $dbw, __METHOD__ );
+		$userIdentityLookup = MediaWikiServices::getInstance()->getUserIdentityLookup();
 
 		foreach ( $res as $row ) {
-			$userId = User::idFromName( $row->ca_user_text );
+			$userIdentity = $userIdentityLookup->getUserIdentityByName( $row->ca_user_text );
 
 			// It's not paranoia if they're out to get you!
-			if ( $userId === null ) {
+			if ( !$userIdentity || !$userIdentity->isRegistered() ) {
 				$this->output(
 					"Unable to get the user ID for the user named: {$row->ca_user_text}\n"
 				);
@@ -80,7 +82,7 @@ class PopulateCaUserColumn extends Maintenance {
 
 			$dbw->update(
 				'code_authors',
-				[ 'ca_user' => $userId ],
+				[ 'ca_user' => $userIdentity->getId() ],
 				[
 					'ca_repo_id' => $repo->getId(),
 					'ca_user_text' => $row->ca_user_text
