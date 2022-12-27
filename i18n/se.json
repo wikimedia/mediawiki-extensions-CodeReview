@@ -5,10 +5,13 @@
 			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
+	"code-change-removed": "sihkkojuvvon:",
 	"code-tags": "gilkorat",
 	"code-field-text": "Fuomáš",
 	"code-field-select": "Vállje",
 	"code-rev-modified-d": "sihkkojuvvon",
 	"code-rev-tags": "Gilkorat:",
+	"code-rev-tag-add": "Lasit gilkoriid:",
+	"code-rev-tag-remove": "Sihko gilkoriid:",
 	"code-status-new": "ođđa"
 }
