@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Kghbln",
 			"Metalhead64",
 			"Purodha",
@@ -192,6 +193,7 @@
 	"action-codereview-associate": "Revisionszuordnungen zu verwalten",
 	"action-codereview-review-own": "die eigenen Revisionen als „{{int:code-status-ok}}“ oder „{{int:code-status-resolved}}“ zu markieren",
 	"apihelp-codediff-description": "Ruft einen formatierten Unterschied von dem Versionskontrollsystem CodeReview ab.",
+	"apihelp-codediff-summary": "Formatierte Diffs aus dem CodeReview Revisionskontrollsystem abrufen.",
 	"apihelp-codediff-param-repo": "Name des zu suchenden Repositoriums.",
 	"apihelp-codediff-param-rev": "Revisionskennung, von der der Unterschied abgerufen werden soll.",
 	"apihelp-codediff-example-1": "Ruft einen Unterschied für die MediaWiki-Revision 42080 ab",
