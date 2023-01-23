@@ -73,6 +73,7 @@
 	"code-revfilter-cr_status": "Stando = $1",
 	"code-revfilter-cr_author": "Autoro = $1",
 	"code-revfilter-ct_tag": "Etiketo = $1",
+	"code-rev-submit": "Konservez chanji",
 	"codereview-batch-submit": "Sendez",
 	"code-releasenotes": "informi pri versiono",
 	"codereview-subtitle": "Por $1",
