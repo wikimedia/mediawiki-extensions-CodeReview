@@ -24,7 +24,7 @@
 	"code-no-repo": "לא הוגדר מאגר!",
 	"code-create-repo": "יש לעבור לדף [[Special:RepoAdmin|RepoAdmin]] ליצירת מאגר",
 	"code-need-repoadmin-rights": "נחוצה הרשאת \"מנהל מאגר\" כדי ליצור מאגר",
-	"code-need-group-with-rights": "אין שום קבוצה עם הרשאת מנהל מאגר. נא ליצור קבוצה כזו כדי להוסיף מאגר חדש.",
+	"code-need-group-with-rights": "אין שום קבוצה עם הרשאת מנהל מאגר. נא ליצור קבוצה כזאת כדי להוסיף מאגר חדש",
 	"code-repo-not-found": "המאגר '''$1''' לא קיים!",
 	"code-load-diff": "טעינת השוואה בין הגרסאות…",
 	"code-notes": "הערות אחרונות",
