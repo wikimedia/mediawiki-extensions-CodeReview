@@ -52,6 +52,7 @@
 	"code-rev-diff": "Diferi",
 	"code-rev-diff-link": "dif.",
 	"code-rev-purge-link": "purgar",
+	"code-rev-history-link": "kronologio",
 	"code-status-new": "nova",
 	"code-status-desc-new": "Revizo bezonas ul agado (ordinara stando).",
 	"code-status-fixme": "korektar",
