@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kareyac",
-			"M hamlet"
+			"M hamlet",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"code-change-added": "ավելացվել է՝",
@@ -10,6 +11,8 @@
 	"code-field-author": "Հեղինակ",
 	"code-rev-author": "Հեղինակ՝",
 	"code-rev-modified-a": "ավելացվել է",
+	"code-rev-comment-preview": "Նախադիտում",
+	"code-rev-inline-preview": "Նախադիտում`",
 	"code-rev-history-link": "պատմություն",
 	"code-status-new": "նոր",
 	"code-status-ok": "լավ",
