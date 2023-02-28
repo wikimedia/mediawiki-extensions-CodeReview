@@ -5,6 +5,7 @@
 			"Krinkle",
 			"Mainframe98",
 			"Mar(c)",
+			"McDutchie",
 			"Mihxil",
 			"SPQRobin",
 			"Siebrand"
@@ -244,5 +245,6 @@
 	"apihelp-query+codetags-summary": "Een lijst opvragen met labels die zijn toegevoegd aan versies in een opgegeven repository.",
 	"apihelp-query+codetags-param-repo": "Naam van de repository.",
 	"apihelp-query+codetags-example-1": "Gebruikte label in de repository MediaWiki opvragen.",
-	"apierror-invalidrepo": "Ongeldige repository \"$1\"."
+	"apierror-invalidrepo": "Ongeldige repository \"$1\".",
+	"apierror-codereview-inlinecommentingdisabled": "Kan geen commentaar toevoegen aan een diff als inline commentaar is uitgeschakeld (<var>$wgCodeReviewInlineComments</var> is false)."
 }
