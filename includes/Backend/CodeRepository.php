@@ -454,7 +454,7 @@ class CodeRepository {
 				return $data;
 			},
 			// If not set to explicitly skip the cache, get the current diff from memcached
-			[ 'minTime' => ( $useCache === 'skipcache' ) ? INF : $cache::MIN_TIMESTAMP_NONE ]
+			[ 'minAsOf' => ( $useCache === 'skipcache' ) ? INF : $cache::MIN_TIMESTAMP_NONE ]
 		);
 	}
 
