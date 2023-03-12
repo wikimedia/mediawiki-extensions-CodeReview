@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CodeReview;
 
 use DatabaseUpdater;
-use MediaWiki\Extension\Renameuser\RenameuserSQL;
+use MediaWiki\RenameUser\RenameuserSQL;
 use OutputPage;
 
 /**
@@ -127,7 +127,7 @@ class Hooks {
 	}
 
 	/**
-	 * For integration with the Renameuser extension.
+	 * For integration with user renames.
 	 *
 	 * @param RenameuserSQL $renameUserSQL
 	 */
