@@ -45,7 +45,7 @@
 	"code-rev-history-link": "היסטאָריע",
 	"code-status-new": "נײַ",
 	"code-status-reverted": "צוריקגעשטעלט",
-	"code-status-ok": "אויספֿירן",
+	"code-status-ok": "יאָ",
 	"code-status-old": "אַלט",
 	"code-signoff-field-user": "באַניצער",
 	"code-signoff-field-flag": "פֿענדל",
@@ -60,5 +60,5 @@
 	"codereview-reply-link": "אָנרופֿן",
 	"code-stats": "סטאַטיסטיק",
 	"repoadmin-new-button": "שאַפֿן",
-	"repoadmin-edit-button": "אויספֿירן"
+	"repoadmin-edit-button": "יאָ"
 }
