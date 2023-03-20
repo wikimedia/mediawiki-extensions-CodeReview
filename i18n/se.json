@@ -13,5 +13,6 @@
 	"code-rev-tags": "Gilkorat:",
 	"code-rev-tag-add": "Lasit gilkoriid:",
 	"code-rev-tag-remove": "Sihko gilkoriid:",
-	"code-status-new": "ođđa"
+	"code-status-new": "ođđa",
+	"code-signoff-field-user": "Geavaheaddji"
 }
