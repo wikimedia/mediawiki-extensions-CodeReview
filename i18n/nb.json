@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Danmichaelo",
+			"EdoAug",
 			"Event",
 			"Jon Harald Søby",
 			"Laaknor",
@@ -27,7 +28,7 @@
 	"code-need-repoadmin-rights": "repoadminrettigheter kreves for å kunne opprette et kodelager",
 	"code-need-group-with-rights": "Ingen grupper med repoadminrettigheter finnes. Legg til en for å kunne legge til et nytt kodelager",
 	"code-repo-not-found": "Kodelageret '''$1''' finnes ikke!",
-	"code-load-diff": "Laster diff...",
+	"code-load-diff": "Laster diff ...",
 	"code-notes": "Siste kommentarer",
 	"code-statuschanges": "statusendringer",
 	"code-mycommits": "mine innsendinger",
