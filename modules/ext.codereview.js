@@ -1,4 +1,4 @@
-jQuery( function () {
+$( function () {
 	'use strict';
 	// Animate the add-tags input to suggest existing tabs
 	$( '#wpTag' ).suggestions( {

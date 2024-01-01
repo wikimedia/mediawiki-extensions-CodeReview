@@ -1,4 +1,4 @@
-var CodeTooltipsInit = function () {
+$( function () {
 	$( 'a[href]' ).each( function () {
 		if ( $( this ).parent().is( '.TablePager_col_cr_id' ) ) {
 			// Tooltips are unnecessary and annoying in revision lists
@@ -111,6 +111,4 @@ var CodeTooltipsInit = function () {
 			$el.data( 'codeTooltipLeft', true );
 		} );
 	} );
-};
-
-$( CodeTooltipsInit );
+} );

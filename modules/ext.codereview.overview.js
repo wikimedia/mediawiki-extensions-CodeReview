@@ -8,7 +8,7 @@
  * Clicking a colored box takes you to that relevant line, and a backlink is created in the id column on focus.
  * Hovering over a colored box pops up a little info packet box.
  */
-jQuery( function () {
+$( function () {
 	'use strict';
 
 	// check if we're on a page with a useful list of revisions
