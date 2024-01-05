@@ -9,6 +9,7 @@ use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
  *
  * @group medium
  * @group CodeReview
+ * @group Database
  * @covers \MediaWiki\Extension\CodeReview\Api\ApiCodeUpdate
  */
 class CodeReviewApiTest extends ApiTestCase {
