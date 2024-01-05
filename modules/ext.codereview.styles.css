@@ -146,7 +146,7 @@ table.mw-codereview-meta td {
 	/* Source code is always LTR */
 	/* @noflip */
 	direction: ltr;
-	font-family: monospace, 'Courer New';
+	font-family: monospace, 'Courier New';
 	line-height: 1.3em;
 	background-color: #f9f9f9;
 	border: 1px solid #ccc;
