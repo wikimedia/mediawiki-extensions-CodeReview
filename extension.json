@@ -148,12 +148,12 @@
 				"code-tooltip-withsummary",
 				"code-tooltip-withoutsummary"
 			],
-			"dependencies": "jquery.tipsy"
+			"dependencies": "ext.codereview.jquery.tipsy"
 		},
 		"ext.codereview.overview": {
 			"scripts": "ext.codereview.overview.js",
 			"styles": "ext.codereview.overview.css",
-			"dependencies": "jquery.tipsy",
+			"dependencies": "ext.codereview.jquery.tipsy",
 			"messages": [
 				"codereview-overview-title",
 				"codereview-overview-desc"
@@ -164,6 +164,10 @@
 			"styles": [
 				"MediaWiki:CodeReview.css"
 			]
+		},
+		"ext.codereview.jquery.tipsy": {
+			"scripts": "jquery.tipsy/jquery.tipsy.js",
+			"styles": "jquery.tipsy/jquery.tipsy.css"
 		}
 	},
 	"ResourceFileModulePaths": {
