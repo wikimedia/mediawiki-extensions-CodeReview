@@ -29,6 +29,8 @@ class CodeRevisionListView extends CodeView {
 	 */
 	protected $filters = [];
 
+	private $mAppliedFilter;
+
 	/**
 	 * @param CodeRepository|string $repo
 	 */
