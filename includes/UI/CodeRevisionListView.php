@@ -148,7 +148,7 @@ class CodeRevisionListView extends CodeView {
 			Xml::openElement( 'form',
 				[ 'action' => $pager->getTitle()->getLocalURL(), 'method' => 'post' ]
 			) .
-			$pager->getBody() .
+			$pager->getBodyOutput()->getText() .
 			// $pager->getLimitDropdown() .
 			$navBar
 		);
