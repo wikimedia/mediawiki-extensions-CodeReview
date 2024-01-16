@@ -28,6 +28,23 @@ class CodeRevisionView extends CodeView {
 	protected $referenceInputName = '';
 	protected $performer;
 
+	protected $mRevId;
+	protected $mRev;
+	protected $mPreviewText;
+	protected $mAddTags;
+	protected $mRemoveTags;
+	protected $jumpToNext;
+	protected $mReplyTarget;
+	protected $text;
+	protected $mSkipCache;
+	protected $mSignoffFlags;
+	protected $mSelectedSignoffs;
+	protected $mStrikeSignoffs;
+	protected $mAddReferences;
+	protected $mRemoveReferences;
+	protected $mAddReferenced;
+	protected $mRemoveReferenced;
+
 	/**
 	 * @param string|CodeRepository $repo
 	 * @param string|CodeRevision $rev
