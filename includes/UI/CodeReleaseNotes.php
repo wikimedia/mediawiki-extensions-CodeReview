@@ -7,6 +7,9 @@ use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
 use SpecialPage;
 
 class CodeReleaseNotes extends CodeView {
+	private $mStartRev;
+	private $mEndRev;
+
 	public function __construct( $repo ) {
 		global $wgRequest;
 		parent::__construct( $repo );
