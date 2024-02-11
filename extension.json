@@ -160,7 +160,7 @@
 			]
 		},
 		"ext.codereview.local": {
-			"class": "ResourceLoaderWikiModule",
+			"class": "MediaWiki\\ResourceLoader\\WikiModule",
 			"styles": [
 				"MediaWiki:CodeReview.css"
 			]

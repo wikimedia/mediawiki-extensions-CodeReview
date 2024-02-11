@@ -21,9 +21,9 @@
 namespace MediaWiki\Extension\CodeReview;
 
 use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
-use ResourceLoaderFileModule;
+use MediaWiki\ResourceLoader\FileModule;
 
-class CodeReviewTooltipsModule extends ResourceLoaderFileModule {
+class CodeReviewTooltipsModule extends FileModule {
 
 	/**
 	 * Add message keys that depend upon configuration
