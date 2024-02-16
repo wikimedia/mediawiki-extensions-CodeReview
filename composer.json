@@ -18,8 +18,5 @@
 		],
 		"phan": "phan -d . --long-progress-bar",
 		"phpcs": "phpcs -sp --cache"
-	},
-	"extra": {
-		"phan-taint-check-plugin": "2.0.1"
 	}
 }
