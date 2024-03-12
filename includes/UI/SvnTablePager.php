@@ -27,10 +27,20 @@ abstract class SvnTablePager extends TablePager {
 		parent::__construct();
 	}
 
+	/**
+	 * @param string $field
+	 * @return bool
+	 */
 	public function isFieldSortable( $field ) {
 		return $field == $this->getDefaultSort();
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $value
+	 * @param stdClass $row
+	 * @return string
+	 */
 	public function formatRevValue( $name, $value, $row ) {
 		return $this->formatValue( $name, $value );
 	}
@@ -60,6 +70,9 @@ abstract class SvnTablePager extends TablePager {
 		return $s;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getStartBody() {
 		$this->getOutput()->addModules( 'ext.codereview.overview' );
 		return parent::getStartBody();

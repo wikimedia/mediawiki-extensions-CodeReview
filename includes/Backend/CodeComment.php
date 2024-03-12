@@ -8,28 +8,25 @@ use stdClass;
  * Represents a comment made to a revision.
  */
 class CodeComment {
-	public $id;
+	public int $id;
 
-	public $text;
+	public string $text;
 
-	public $user;
+	public string $user;
 
-	public $userText;
+	public string $userText;
 
-	public $timestamp;
+	public string $timestamp;
 
-	public $sortkey;
+	public string $sortkey;
 
-	public $attrib;
+	public array $attrib;
 
-	public $removed;
+	public array $removed;
 
-	public $added;
+	public array $added;
 
-	/**
-	 * @var CodeRevision
-	 */
-	public $rev;
+	public CodeRevision $rev;
 
 	/**
 	 * @param CodeRevision $rev

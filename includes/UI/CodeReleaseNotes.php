@@ -7,9 +7,10 @@ use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
 use SpecialPage;
 
 class CodeReleaseNotes extends CodeView {
-	private $mStartRev;
-	private $mEndRev;
+	private ?int $mStartRev;
+	private ?int $mEndRev;
 
+	/** @inheritDoc */
 	public function __construct( $repo ) {
 		global $wgRequest;
 		parent::__construct( $repo );
@@ -85,7 +86,7 @@ class CodeReleaseNotes extends CodeView {
 		$where = [];
 		if ( $this->mEndRev ) {
 			$where[] = 'cr_id BETWEEN ' . intval( $this->mStartRev ) . ' AND ' .
-				intval( $this->mEndRev );
+				$this->mEndRev;
 		} else {
 			$where[] = 'cr_id >= ' . intval( $this->mStartRev );
 		}
@@ -135,6 +136,11 @@ class CodeReleaseNotes extends CodeView {
 		$wgOut->addHTML( '</ul>' );
 	}
 
+	/**
+	 * @param string $summary
+	 * @param bool $first
+	 * @return string
+	 */
 	private function shortenSummary( $summary, $first = true ) {
 		# Astericks often used for point-by-point bullets
 		if ( preg_match( '/(^|\n) ?\*/', $summary ) ) {

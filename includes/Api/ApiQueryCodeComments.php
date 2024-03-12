@@ -6,6 +6,7 @@ use ApiBase;
 use ApiQueryBase;
 use ApiResult;
 use MediaWiki\Extension\CodeReview\UI\CodeCommentsListView;
+use stdClass;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
@@ -91,6 +92,10 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		$result->addValue( 'query', $this->getModuleName(), $data );
 	}
 
+	/**
+	 * @param stdClass $row
+	 * @return string
+	 */
 	private function formatRow( $row ) {
 		$item = [];
 		if ( isset( $this->props['revid'] ) ) {

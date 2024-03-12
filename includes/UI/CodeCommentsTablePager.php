@@ -11,14 +11,17 @@ use User;
  * Pager for CodeCommentsListView
  */
 class CodeCommentsTablePager extends SvnTablePager {
+	/** @inheritDoc */
 	public function isFieldSortable( $field ) {
 		return $field == 'cr_timestamp';
 	}
 
+	/** @inheritDoc */
 	public function getDefaultSort() {
 		return 'cc_timestamp';
 	}
 
+	/** @inheritDoc */
 	public function getQueryInfo() {
 		$query = [
 			'tables' => [ 'code_comment', 'code_rev' ],
@@ -43,6 +46,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		return $query;
 	}
 
+	/** @inheritDoc */
 	public function getCountQuery() {
 		$query = $this->getQueryInfo();
 
@@ -51,6 +55,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		return $query;
 	}
 
+	/** @inheritDoc */
 	public function getFieldNames() {
 		return [
 			'cc_timestamp' => $this->msg( 'code-field-timestamp' )->text(),
@@ -62,6 +67,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		];
 	}
 
+	/** @inheritDoc */
 	public function formatValue( $name, $value ) {
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		switch ( $name ) {
@@ -90,6 +96,7 @@ class CodeCommentsTablePager extends SvnTablePager {
 		throw new Exception( '$name is invalid input.' );
 	}
 
+	/** @inheritDoc */
 	public function getTitle() {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/comments' );
 	}

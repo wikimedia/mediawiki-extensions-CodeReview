@@ -34,14 +34,37 @@ abstract class SubversionAdaptor {
 
 	abstract public function canConnect();
 
+	/**
+	 * @param string $path
+	 * @param int|null $rev
+	 */
 	abstract public function getFile( $path, $rev = null );
 
+	/**
+	 * @param string $path
+	 * @param int|null $rev1
+	 * @param int|null $rev2
+	 */
 	abstract public function getDiff( $path, $rev1, $rev2 );
 
+	/**
+	 * @param string $path
+	 * @param int|null $rev
+	 */
 	abstract public function getDirList( $path, $rev = null );
 
+	/**
+	 * @param string $path
+	 * @param int|null $startRev
+	 * @param int|null $endRev
+	 */
 	abstract public function getLog( $path, $startRev = null, $endRev = null );
 
+	/**
+	 * @param int $rev
+	 * @param int $default
+	 * @return int
+	 */
 	protected function _rev( $rev, $default ) {
 		if ( $rev === null ) {
 			return $default;

@@ -3,17 +3,25 @@
 namespace MediaWiki\Extension\CodeReview\UI;
 
 use Linker;
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
 use SpecialPage;
 
 class CodeRevisionAuthorView extends CodeRevisionListView {
+	/**
+	 * @param CodeRepository|string $repo
+	 * @param string $author
+	 */
 	public function __construct( $repo, $author ) {
 		parent::__construct( $repo );
 		$this->mAuthor = $author;
 		$this->mUser = $this->mRepo->authorWikiUser( $author );
 	}
 
+	/**
+	 * @return SvnRevAuthorTablePager
+	 */
 	public function getPager() {
 		return new SvnRevAuthorTablePager( $this, $this->mAuthor );
 	}

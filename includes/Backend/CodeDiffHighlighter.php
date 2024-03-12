@@ -142,16 +142,28 @@ class CodeDiffHighlighter {
 		);
 	}
 
+	/**
+	 * @param string $line
+	 * @return string
+	 */
 	public function handleLineDeletion( $line ) {
 		$this->left++;
 		return $this->formatLine( $line, 'del' );
 	}
 
+	/**
+	 * @param string $line
+	 * @return string
+	 */
 	public function handleLineAddition( $line ) {
 		$this->right++;
 		return $this->formatLine( $line, 'ins' );
 	}
 
+	/**
+	 * @param string $line
+	 * @return string
+	 */
 	public function handleChunkDelimiter( $line ) {
 		$this->chunk++;
 
@@ -167,12 +179,20 @@ class CodeDiffHighlighter {
 		return $this->formatLine( $line, 'chunkdelimiter' );
 	}
 
+	/**
+	 * @param string $line
+	 * @return string
+	 */
 	public function handleUnchanged( $line ) {
 		$this->left++;
 		$this->right++;
 		return $this->formatLine( $line, 'unchanged' );
 	}
 
+	/**
+	 * @param string $line
+	 * @return string
+	 */
 	public function handleLineFile( $line ) {
 		$this->chunk = 0;
 		return Html::rawElement( 'tr',
@@ -181,6 +201,9 @@ class CodeDiffHighlighter {
 		);
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getLineIdAttr() {
 		return [ 'id' => $this->lineNumber ];
 	}

@@ -52,6 +52,7 @@ class SpecialRepoAdmin extends SpecialPage {
 		$view->execute();
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'developer';
 	}

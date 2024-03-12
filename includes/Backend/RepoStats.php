@@ -9,23 +9,23 @@ class RepoStats {
 	/**
 	 * @var CodeRepository
 	 */
-	private $repo;
+	private CodeRepository $repo;
 
-	public $time;
+	public string $time;
 
-	public $revisions;
+	public int $revisions;
 
-	public $authors;
+	public int $authors;
 
-	public $states;
+	public array $states;
 
-	public $fixmes;
+	public array $fixmes;
 
-	public $new;
+	public array $new;
 
-	public $fixmesPerPath;
+	public array $fixmesPerPath;
 
-	public $newPerPath;
+	public array $newPerPath;
 
 	/** @var string[] */
 	private static $cacheFields = [

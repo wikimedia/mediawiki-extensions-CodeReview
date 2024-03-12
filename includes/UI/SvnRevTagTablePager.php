@@ -5,15 +5,21 @@ namespace MediaWiki\Extension\CodeReview\UI;
 use SpecialPage;
 
 class SvnRevTagTablePager extends SvnRevTablePager {
+	/**
+	 * @param CodeView $view
+	 * @param string $tag
+	 */
 	public function __construct( $view, $tag ) {
 		parent::__construct( $view );
 		$this->mTag = $tag;
 	}
 
+	/** @inheritDoc */
 	public function getDefaultSort() {
 		return 'ct_rev_id';
 	}
 
+	/** @inheritDoc */
 	public function getQueryInfo() {
 		$info = parent::getQueryInfo();
 
@@ -33,6 +39,7 @@ class SvnRevTagTablePager extends SvnRevTablePager {
 		return $info;
 	}
 
+	/** @inheritDoc */
 	public function getTitle() {
 		$repo = $this->mRepo->getName();
 		return SpecialPage::getTitleFor( 'Code', "$repo/tag/$this->mTag" );

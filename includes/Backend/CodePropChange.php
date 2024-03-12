@@ -6,17 +6,17 @@ use stdClass;
 
 class CodePropChange {
 
-	public $attrib;
+	public string $attrib;
 
-	public $removed;
+	public string $removed;
 
-	public $added;
+	public string $added;
 
-	public $user;
+	public string $user;
 
-	public $userText;
+	public string $userText;
 
-	public $timestamp;
+	public string $timestamp;
 
 	/**
 	 * @var CodeRevision

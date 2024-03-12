@@ -23,27 +23,30 @@ use Xml;
  * Special:Code/MediaWiki/40696
  */
 class CodeRevisionView extends CodeView {
-	protected $showButtonsFormatReference = false;
-	protected $showButtonsFormatSignoffs = false;
-	protected $referenceInputName = '';
-	protected $performer;
+	protected bool $showButtonsFormatReference = false;
+	protected bool $showButtonsFormatSignoffs = false;
+	protected string $referenceInputName = '';
+	protected Authority $performer;
 
-	protected $mRevId;
-	protected $mRev;
+	protected int $mRevId;
+	protected CodeRevision $mRev;
+	/** @var string|bool */
 	protected $mPreviewText;
+	/** @var string|array */
 	protected $mAddTags;
+	/** @var string|array */
 	protected $mRemoveTags;
-	protected $jumpToNext;
-	protected $mReplyTarget;
-	protected $text;
-	protected $mSkipCache;
-	protected $mSignoffFlags;
-	protected $mSelectedSignoffs;
-	protected $mStrikeSignoffs;
-	protected $mAddReferences;
-	protected $mRemoveReferences;
-	protected $mAddReferenced;
-	protected $mRemoveReferenced;
+	protected bool $jumpToNext;
+	protected int $mReplyTarget;
+	protected string $text;
+	protected bool $mSkipCache;
+	protected array $mSignoffFlags;
+	protected array $mSelectedSignoffs;
+	protected array $mStrikeSignoffs;
+	protected array $mAddReferences;
+	protected array $mRemoveReferences;
+	protected array $mAddReferenced;
+	protected array $mRemoveReferenced;
 
 	/**
 	 * @param string|CodeRepository $repo
@@ -345,6 +348,11 @@ class CodeRevisionView extends CodeView {
 		return $performer->isAllowed( 'codereview-post-comment' ) && !$performer->getBlock();
 	}
 
+	/**
+	 * @param string $path
+	 * @param string $action
+	 * @return string
+	 */
 	protected function formatPathLine( $path, $action ) {
 		$action = strtolower( $action );
 
@@ -869,7 +877,7 @@ class CodeRevisionView extends CodeView {
 			$permaLink = '<strong>' .
 				wfMessage( 'code-rev-inline-preview' )->escaped() . '</strong> ';
 		} else {
-			$linkId = 'c' . intval( $comment->id );
+			$linkId = 'c' . $comment->id;
 			$linkRenderer = $services->getLinkRenderer();
 			$permaLink = $linkRenderer->makeLink( $this->commentLink( $comment->id ), '#' );
 		}
@@ -927,6 +935,10 @@ class CodeRevisionView extends CodeView {
 			$linkRenderer->makeLink( $self, wfMessage( 'codereview-reply-link' )->text() ) . ']';
 	}
 
+	/**
+	 * @param string|null $parent
+	 * @return string
+	 */
 	protected function postCommentForm( $parent = null ) {
 		$performer = $this->performer;
 		$userToken = RequestContext::getMain()->getCsrfTokenSet();

@@ -4,21 +4,23 @@ namespace MediaWiki\Extension\CodeReview\UI;
 
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
-use Title;
 use Xml;
 
 /**
  * Pager for CodeRevisionListView
  */
 class SvnRevTablePager extends SvnTablePager {
+	/** @inheritDoc */
 	public function getSVNPath() {
 		return $this->mView->mPath;
 	}
 
+	/** @inheritDoc */
 	public function getDefaultSort() {
 		return count( $this->mView->mPath ) ? 'cp_rev_id' : 'cr_id';
 	}
 
+	/** @inheritDoc */
 	public function getQueryInfo() {
 		$defaultSort = $this->getDefaultSort();
 		// Path-based query...
@@ -68,6 +70,7 @@ class SvnRevTablePager extends SvnTablePager {
 		return $query;
 	}
 
+	/** @inheritDoc */
 	public function getCountQuery() {
 		$query = $this->getQueryInfo();
 
@@ -76,6 +79,7 @@ class SvnRevTablePager extends SvnTablePager {
 		return $query;
 	}
 
+	/** @inheritDoc */
 	public function getSelectFields() {
 		return array_unique(
 			[
@@ -92,6 +96,7 @@ class SvnRevTablePager extends SvnTablePager {
 		);
 	}
 
+	/** @inheritDoc */
 	public function getFieldNames() {
 		$fields = [
 			'cr_id' => $this->msg( 'code-field-id' )->text(),
@@ -109,10 +114,12 @@ class SvnRevTablePager extends SvnTablePager {
 		return $fields;
 	}
 
+	/** @inheritDoc */
 	public function formatValue( $name, $value ) {
 		// unused
 	}
 
+	/** @inheritDoc */
 	public function formatRevValue( $name, $value, $row ) {
 		$pathQuery = count( $this->mView->mPath )
 			? [ 'path' => $this->mView->getPathsAsString() ] : [];
@@ -192,9 +199,7 @@ class SvnRevTablePager extends SvnTablePager {
 		return '';
 	}
 
-	/**
-	 * @return Title
-	 */
+	/** @inheritDoc */
 	public function getTitle() {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() );
 	}

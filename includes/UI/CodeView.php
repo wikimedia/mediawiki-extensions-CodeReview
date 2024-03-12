@@ -14,36 +14,22 @@ use SpecialPage;
  * Extended by CodeRevisionListView and CodeRevisionView
  */
 abstract class CodeView {
-	/**
-	 * @var CodeRepository
-	 */
-	public $mRepo;
+	public CodeRepository $mRepo;
 
-	/**
-	 * @var CodeCommentLinkerHtml
-	 */
-	public $codeCommentLinkerHtml;
+	public CodeCommentLinkerHtml $codeCommentLinkerHtml;
 
-	/**
-	 * @var CodeCommentLinkerWiki
-	 */
-	public $codeCommentLinkerWiki;
+	public CodeCommentLinkerWiki $codeCommentLinkerWiki;
 
-	/**
-	 * @var string
-	 */
+	/** @var string|array */
 	public $mPath;
 
-	/**
-	 * @var string
-	 */
-	public $mAuthor;
+	public string $mAuthor;
+
+	public string $mStatus;
 
 	/**
-	 * @var string
+	 * @param CodeRepository|string $repo
 	 */
-	public $mStatus;
-
 	public function __construct( $repo ) {
 		$this->mRepo = ( $repo instanceof CodeRepository )
 			? $repo
@@ -53,6 +39,11 @@ abstract class CodeView {
 		$this->codeCommentLinkerWiki = new CodeCommentLinkerWiki( $this->mRepo );
 	}
 
+	/**
+	 * @param string $permission
+	 * @param Authority $performer
+	 * @return bool
+	 */
 	public function validPost( $permission, Authority $performer ) {
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
@@ -64,6 +55,11 @@ abstract class CodeView {
 
 	abstract public function execute();
 
+	/**
+	 * @param string $author
+	 * @param array $extraParams
+	 * @return string
+	 */
 	public function authorLink( $author, $extraParams = [] ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/author/$author" );
@@ -71,15 +67,27 @@ abstract class CodeView {
 		return MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $special, $author, [], $extraParams );
 	}
 
+	/**
+	 * @param string $status
+	 * @return string
+	 */
 	public function statusDesc( $status ) {
 		return wfMessage( "code-status-$status" )->text();
 	}
 
+	/**
+	 * @param string $text
+	 * @return string
+	 */
 	public function formatMessage( $text ) {
 		$escText = nl2br( htmlspecialchars( $text ) );
 		return $this->codeCommentLinkerHtml->link( $escText );
 	}
 
+	/**
+	 * @param string $value
+	 * @return string
+	 */
 	public function messageFragment( $value ) {
 		global $wgLang;
 		$message = trim( $value );

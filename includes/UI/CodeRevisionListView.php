@@ -16,20 +16,14 @@ use Xml;
  * Special:Code/MediaWiki
  */
 class CodeRevisionListView extends CodeView {
-	/**
-	 * @var CodeRepository
-	 */
-	public $mRepo;
-	public $mPath;
-
-	public $batchForm;
+	public bool $batchForm;
 
 	/**
 	 * @var string[]
 	 */
 	protected $filters = [];
 
-	private $mAppliedFilter;
+	private ?string $mAppliedFilter;
 
 	/**
 	 * @param CodeRepository|string $repo
@@ -294,6 +288,9 @@ class CodeRevisionListView extends CodeView {
 			'</td></tr></table></fieldset>';
 	}
 
+	/**
+	 * @return SvnRevTablePager
+	 */
 	public function getPager() {
 		return new SvnRevTablePager( $this );
 	}
@@ -321,6 +318,9 @@ class CodeRevisionListView extends CodeView {
 		return 0;
 	}
 
+	/**
+	 * @return CodeRepository
+	 */
 	public function getRepo() {
 		return $this->mRepo;
 	}

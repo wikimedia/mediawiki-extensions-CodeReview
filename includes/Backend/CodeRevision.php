@@ -23,28 +23,25 @@ class CodeRevision {
 	 */
 	public const BUG_REFERENCE = '/\bbug ?#?(\d+)\b/i';
 
-	/**
-	 * @var CodeRepository
-	 */
-	protected $repo;
+	protected CodeRepository $repo;
 
-	protected $repoId;
+	protected int $repoId;
 
-	protected $id;
+	protected int $id;
 
-	protected $author;
+	protected string $author;
 
-	protected $timestamp;
+	protected string $timestamp;
 
-	protected $message;
+	protected string $message;
 
-	protected $paths;
+	protected array $paths = [];
 
-	protected $status;
+	protected string $status;
 
-	protected $oldStatus;
+	protected string $oldStatus;
 
-	protected $commonPath;
+	protected string $commonPath;
 
 	/**
 	 * @param CodeRepository $repo
@@ -180,7 +177,7 @@ class CodeRevision {
 	 * @return int
 	 */
 	public function getId() {
-		return intval( $this->id );
+		return $this->id;
 	}
 
 	/**
@@ -218,7 +215,7 @@ class CodeRevision {
 	 * @return int
 	 */
 	public function getRepoId() {
-		return intval( $this->repoId );
+		return $this->repoId;
 	}
 
 	/**
@@ -515,7 +512,7 @@ class CodeRevision {
 					'cr_repo_id' => $this->repoId,
 					'cr_id'      => $affectedRevs,
 					// just in case
-					'cr_id < ' . intval( $this->id ),
+					'cr_id < ' . $this->id,
 					// No sense in notifying if it's the same person
 					'cr_author != ' . $dbw->addQuotes( $this->author )
 				],
@@ -655,7 +652,7 @@ class CodeRevision {
 					'cb_repo_id' => $this->repoId,
 					'cb_bug'     => $affectedBugs,
 					// just in case
-					'cb_from < ' . intval( $this->id ),
+					'cb_from < ' . $this->id,
 				],
 				__METHOD__,
 				[ 'USE INDEX' => 'cb_repo_id' ]

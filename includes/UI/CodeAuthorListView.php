@@ -6,10 +6,6 @@ namespace MediaWiki\Extension\CodeReview\UI;
  * Special:Code/MediaWiki/author
  */
 class CodeAuthorListView extends CodeView {
-	public function __construct( $repo ) {
-		parent::__construct( $repo );
-	}
-
 	public function execute() {
 		global $wgOut, $wgLang;
 

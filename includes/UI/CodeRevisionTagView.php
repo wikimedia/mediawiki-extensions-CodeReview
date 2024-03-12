@@ -2,7 +2,13 @@
 
 namespace MediaWiki\Extension\CodeReview\UI;
 
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
+
 class CodeRevisionTagView extends CodeRevisionListView {
+	/**
+	 * @param CodeRepository|string $repo
+	 * @param string $tag
+	 */
 	public function __construct( $repo, $tag ) {
 		$this->mTag = $tag;
 
@@ -12,6 +18,9 @@ class CodeRevisionTagView extends CodeRevisionListView {
 		parent::__construct( $repo );
 	}
 
+	/**
+	 * @return SvnRevTagTablePager
+	 */
 	public function getPager() {
 		return new SvnRevTagTablePager( $this, $this->mTag );
 	}

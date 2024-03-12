@@ -11,6 +11,7 @@ use Exception;
 class SubversionShell extends SubversionAdaptor {
 	private const MIN_MEMORY = 204800;
 
+	/** @inheritDoc */
 	public function __construct( $repo ) {
 		parent::__construct( $repo );
 		global $wgMaxShellMemory;
@@ -37,6 +38,7 @@ class SubversionShell extends SubversionAdaptor {
 		}
 	}
 
+	/** @inheritDoc */
 	public function getFile( $path, $rev = null ) {
 		if ( $rev ) {
 			$path .= "@$rev";
@@ -50,6 +52,7 @@ class SubversionShell extends SubversionAdaptor {
 		return wfShellExec( $command );
 	}
 
+	/** @inheritDoc */
 	public function getDiff( $path, $rev1, $rev2 ) {
 		$command = sprintf(
 			'svn diff -r%d:%d %s %s',
@@ -62,6 +65,7 @@ class SubversionShell extends SubversionAdaptor {
 		return wfShellExec( $command );
 	}
 
+	/** @inheritDoc */
 	public function getLog( $path, $startRev = null, $endRev = null ) {
 		$lang = wfIsWindows() ? '' : 'LC_ALL=en_US.utf-8 ';
 		$command = sprintf(
@@ -167,6 +171,7 @@ class SubversionShell extends SubversionAdaptor {
 		return $out;
 	}
 
+	/** @inheritDoc */
 	public function getDirList( $path, $rev = null ) {
 		$command = sprintf(
 			'svn list --xml -r%s %s %s',

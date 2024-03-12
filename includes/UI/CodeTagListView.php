@@ -22,6 +22,11 @@ class CodeTagListView extends CodeView {
 		}
 	}
 
+	/**
+	 * @param string $tag
+	 * @param string $weight
+	 * @return string
+	 */
 	public function linkCallback( $tag, $weight ) {
 		return Html::element( 'a', [
 			'href' => SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/tag/' . $tag )->getFullURL(),

@@ -9,6 +9,11 @@ use MediaWiki\MediaWikiServices;
  * Using a remote JSON proxy
  */
 class SubversionProxy extends SubversionAdaptor {
+	/**
+	 * @param CodeRepository|string $repo
+	 * @param string $proxy
+	 * @param int $timeout
+	 */
 	public function __construct( $repo, $proxy, $timeout = 30 ) {
 		parent::__construct( $repo );
 		$this->mProxy = $proxy;
@@ -31,6 +36,7 @@ class SubversionProxy extends SubversionAdaptor {
 		throw new Exception( 'NYI' );
 	}
 
+	/** @inheritDoc */
 	public function getDiff( $path, $rev1, $rev2 ) {
 		return $this->_proxy( [
 			'action' => 'diff',
@@ -41,6 +47,7 @@ class SubversionProxy extends SubversionAdaptor {
 		] );
 	}
 
+	/** @inheritDoc */
 	public function getLog( $path, $startRev = null, $endRev = null ) {
 		return $this->_proxy( [
 			'action' => 'log',
@@ -51,6 +58,7 @@ class SubversionProxy extends SubversionAdaptor {
 		] );
 	}
 
+	/** @inheritDoc */
 	public function getDirList( $path, $rev = null ) {
 		return $this->_proxy( [
 			'action' => 'list',
@@ -60,6 +68,10 @@ class SubversionProxy extends SubversionAdaptor {
 		] );
 	}
 
+	/**
+	 * @param array $params
+	 * @return mixed
+	 */
 	protected function _proxy( $params ) {
 		foreach ( $params as $key => $val ) {
 			if ( $val === null ) {

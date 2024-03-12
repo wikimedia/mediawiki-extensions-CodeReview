@@ -161,6 +161,7 @@ class SpecialCode extends SpecialPage {
 		return $view;
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'developer';
 	}

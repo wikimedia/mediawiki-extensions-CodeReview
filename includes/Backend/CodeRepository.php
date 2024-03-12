@@ -29,15 +29,15 @@ class CodeRepository {
 	 */
 	private static $authorLinks = [];
 
-	private $id;
+	private int $id;
 
-	private $name;
+	private string $name;
 
-	private $path;
+	private string $path;
 
-	private $viewVc;
+	private string $viewVc;
 
-	private $bugzilla;
+	private string $bugzilla;
 
 	/**
 	 * Constructor, can't use it. Call one of the static newFrom* methods
@@ -136,7 +136,7 @@ class CodeRepository {
 	 * @return int
 	 */
 	public function getId() {
-		return intval( $this->id );
+		return $this->id;
 	}
 
 	/**

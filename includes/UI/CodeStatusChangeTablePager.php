@@ -11,15 +11,17 @@ use User;
  * Pager for CodeRevisionListView
  */
 class CodeStatusChangeTablePager extends SvnTablePager {
-
+	/** @inheritDoc */
 	public function isFieldSortable( $field ) {
 		return $field == 'cpc_timestamp';
 	}
 
+	/** @inheritDoc */
 	public function getDefaultSort() {
 		return 'cpc_timestamp';
 	}
 
+	/** @inheritDoc */
 	public function getQueryInfo() {
 		$query = [
 			'tables' => [ 'code_prop_changes', 'code_rev' ],
@@ -45,6 +47,9 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		return $query;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getFieldNames() {
 		return [
 			'cpc_timestamp' => $this->msg( 'code-field-timestamp' )->text(),
@@ -58,6 +63,11 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		];
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $value
+	 * @return string
+	 */
 	public function formatValue( $name, $value ) {
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		// Give grep a chance to find the usages:
@@ -92,6 +102,7 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		throw new Exception( '$name is invalid input.' );
 	}
 
+	/** @inheritDoc */
 	public function getTitle() {
 		return SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/statuschanges' );
 	}

@@ -10,6 +10,7 @@ use Wikimedia\AtEase\AtEase;
  */
 class SubversionPecl extends SubversionAdaptor {
 
+	/** @inheritDoc */
 	public function __construct( $repoPath ) {
 		parent::__construct( $repoPath );
 		global $wgSubversionUser, $wgSubversionPassword;
@@ -36,10 +37,12 @@ class SubversionPecl extends SubversionAdaptor {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function getFile( $path, $rev = null ) {
 		return svn_cat( $this->mRepoPath . $path, $rev );
 	}
 
+	/** @inheritDoc */
 	public function getDiff( $path, $rev1, $rev2 ) {
 		[ $fout, $ferr ] = svn_diff(
 			$this->mRepoPath . $path, $rev1,
@@ -60,11 +63,13 @@ class SubversionPecl extends SubversionAdaptor {
 		return new Exception( "Diffing error" );
 	}
 
+	/** @inheritDoc */
 	public function getDirList( $path, $rev = null ) {
 		return svn_ls( $this->mRepoPath . $path,
 			$this->_rev( $rev, SVN_REVISION_HEAD ) );
 	}
 
+	/** @inheritDoc */
 	public function getLog( $path, $startRev = null, $endRev = null ) {
 		AtEase::suppressWarnings();
 		$log = svn_log( $this->mRepoPath . $path,

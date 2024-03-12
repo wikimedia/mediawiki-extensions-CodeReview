@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CodeReview\UI;
 
 use Html;
 use Linker;
+use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
 use PermissionsError;
 use SpecialPage;
 use User;
@@ -16,6 +17,11 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	/** @var User */
 	private $user;
 
+	/**
+	 * @param CodeRepository|string $repo
+	 * @param string $author
+	 * @param User $user
+	 */
 	public function __construct( $repo, $author, User $user ) {
 		global $wgRequest;
 		parent::__construct( $repo, $author );
@@ -23,6 +29,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 		$this->user = $user;
 	}
 
+	/** @inheritDoc */
 	public function getTitle() {
 		$repo = $this->mRepo->getName();
 		$auth = $this->mAuthor;
