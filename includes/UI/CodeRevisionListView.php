@@ -241,7 +241,6 @@ class CodeRevisionListView extends CodeView {
 		}
 
 		$changeInterface = Xml::fieldset( $pager->msg( 'codereview-batch-title' )->text(),
-			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			Xml::buildForm( $changeFields, 'codereview-batch-submit' ) );
 
 		$changeInterface .= $pager->getHiddenFields();

@@ -196,7 +196,7 @@ class CodeDiffHighlighter {
 			// don't create bogus spans
 			return '';
 		}
-		list( $element, $attribs ) = $this->tagForLine( $line );
+		[ $element, $attribs ] = $this->tagForLine( $line );
 		return '<tr>' . Xml::element( $element, $attribs, $line ) . '</tr>';
 	}
 

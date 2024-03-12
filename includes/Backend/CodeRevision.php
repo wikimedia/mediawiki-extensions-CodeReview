@@ -76,7 +76,7 @@ class CodeRevision {
 
 					// make sure $common is the shortest path
 					if ( count( $compare ) < count( $common ) ) {
-						list( $compare, $common ) = [ $common, $compare ];
+						[ $compare, $common ] = [ $common, $compare ];
 					}
 
 					$tmp = [];

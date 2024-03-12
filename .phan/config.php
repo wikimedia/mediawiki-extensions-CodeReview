@@ -10,6 +10,8 @@ $cfg['suppress_issue_types'][] = 'PhanTypeMismatchArgumentInternal';
 $cfg['suppress_issue_types'][] = 'PhanTypeMismatchArgumentProbablyReal';
 $cfg['suppress_issue_types'][] = 'PhanTypeMismatchReturn';
 $cfg['suppress_issue_types'][] = 'PhanTypeMismatchReturnProbablyReal';
+$cfg['suppress_issue_types'][] = 'MediaWikiNoEmptyIfDefined';
+$cfg['suppress_issue_types'][] = 'MediaWikiNoBaseException';
 // Needs stubs for svn constants
 $cfg['suppress_issue_types'][] = 'PhanUndeclaredConstant';
 $cfg['suppress_issue_types'][] = 'PhanUndeclaredMethod';
