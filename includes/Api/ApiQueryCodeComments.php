@@ -36,6 +36,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 	 */
 	private $props;
 
+	/** @inheritDoc */
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'cc' );
 	}
@@ -110,6 +111,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		return $item;
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'repo' => [
@@ -141,9 +143,7 @@ class ApiQueryCodeComments extends ApiQueryBase {
 		];
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&list=codecomments&ccrepo=MediaWiki'

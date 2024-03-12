@@ -16,11 +16,13 @@ abstract class SubversionAdaptor {
 		global $wgSubversionProxy, $wgSubversionProxyTimeout;
 		if ( $wgSubversionProxy ) {
 			return new SubversionProxy( $repo, $wgSubversionProxy, $wgSubversionProxyTimeout );
-		} elseif ( function_exists( 'svn_log' ) ) {
-			return new SubversionPecl( $repo );
-		} else {
-			return new SubversionShell( $repo );
 		}
+
+		if ( function_exists( 'svn_log' ) ) {
+			return new SubversionPecl( $repo );
+		}
+
+		return new SubversionShell( $repo );
 	}
 
 	/**
@@ -43,8 +45,8 @@ abstract class SubversionAdaptor {
 	protected function _rev( $rev, $default ) {
 		if ( $rev === null ) {
 			return $default;
-		} else {
-			return intval( $rev );
 		}
+
+		return intval( $rev );
 	}
 }

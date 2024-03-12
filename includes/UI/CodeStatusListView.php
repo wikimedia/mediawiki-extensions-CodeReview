@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CodeReview\UI;
 
 use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
+use MediaWiki\MediaWikiServices;
 use SpecialPage;
 
 /**
@@ -16,7 +17,7 @@ class CodeStatusListView extends CodeView {
 		$states = CodeRevision::getPossibleStates();
 		$wgOut->wrapWikiMsg( "== $1 ==", 'code-field-status' );
 
-		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$tableRows = '';
 		foreach ( $states as $state ) {
 			// Give grep a chance to find the usages:

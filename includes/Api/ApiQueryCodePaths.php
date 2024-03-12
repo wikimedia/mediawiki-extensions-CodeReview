@@ -27,6 +27,8 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 
 class ApiQueryCodePaths extends ApiQueryBase {
+
+	/** @inheritDoc */
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'cp' );
 	}
@@ -67,6 +69,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 		$result->addValue( 'query', $this->getModuleName(), $data );
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'repo' => [
@@ -80,9 +83,7 @@ class ApiQueryCodePaths extends ApiQueryBase {
 		];
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&list=codepaths&cprepo=MediaWiki&cppath=/trunk/phase3'

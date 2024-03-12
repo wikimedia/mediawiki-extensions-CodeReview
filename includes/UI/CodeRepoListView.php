@@ -73,8 +73,7 @@ class CodeRepoListView {
 		if ( $user->isAllowed( 'repoadmin' ) ) {
 			$links[] = "[[Special:RepoAdmin/$name|" . wfMessage( 'repoadmin-nav' )->escaped() . ']]';
 		}
-		$text = "'''[[$code|$name]]''' " .
+		return "'''[[$code|$name]]''' " .
 			wfMessage( 'parentheses', $wgLang->pipeList( $links ) )->text();
-		return $text;
 	}
 }

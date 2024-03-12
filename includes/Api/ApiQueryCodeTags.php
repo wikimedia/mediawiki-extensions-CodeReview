@@ -27,6 +27,8 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 
 class ApiQueryCodeTags extends ApiQueryBase {
+
+	/** @inheritDoc */
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'ct' );
 	}
@@ -54,6 +56,7 @@ class ApiQueryCodeTags extends ApiQueryBase {
 		$result->addValue( 'query', $this->getModuleName(), $data );
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'repo' => [
@@ -63,9 +66,7 @@ class ApiQueryCodeTags extends ApiQueryBase {
 		];
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&list=codetags&ctrepo=MediaWiki'

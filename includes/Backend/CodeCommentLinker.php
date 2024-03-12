@@ -32,9 +32,8 @@ abstract class CodeCommentLinker {
 			[ $this, 'generalLink' ], $text );
 		$text = preg_replace_callback( '/\br(\d+)\b/',
 			[ $this, 'messageRevLink' ], $text );
-		$text = preg_replace_callback( CodeRevision::BUG_REFERENCE,
+		return preg_replace_callback( CodeRevision::BUG_REFERENCE,
 			[ $this, 'messageBugLink' ], $text );
-		return $text;
 	}
 
 	/**
@@ -57,9 +56,9 @@ abstract class CodeCommentLinker {
 		$url = $this->mRepo->getBugPath( $bugNo );
 		if ( $url ) {
 			return $this->makeExternalLink( $url, $text );
-		} else {
-			return $text;
 		}
+
+		return $text;
 	}
 
 	/**

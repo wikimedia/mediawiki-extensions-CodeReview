@@ -351,9 +351,6 @@ class CodeRepository {
 
 		$data = null;
 
-		$rev1 = $rev - 1;
-		$rev2 = $rev;
-
 		// Check that a valid revision was specified.
 		$revision = $this->getRevision( $rev );
 		if ( $revision == null ) {
@@ -376,6 +373,9 @@ class CodeRepository {
 		if ( $data !== null ) {
 			return $data;
 		}
+
+		$rev1 = $rev - 1;
+		$rev2 = $rev;
 
 		$services = MediaWikiServices::getInstance();
 		$cache = $services->getMainWANObjectCache();
@@ -439,7 +439,7 @@ class CodeRepository {
 					return self::DIFFRESULT_NODATARETURNED;
 				}
 
-				// Backfill permanent DB storage cache
+				// Back-fill the permanent DB storage cache
 				$storedData = $data;
 				$flags = $blobStore->compressData( $storedData );
 
@@ -472,9 +472,7 @@ class CodeRepository {
 			$cache->makeKey( 'svn-diff', md5( $this->path ), $rev1, $rev2 ),
 			3 * $cache::TTL_DAY,
 			function () use ( $rev1, $rev2 ) {
-				$svn = SubversionAdaptor::newFromRepo( $this->path );
-
-				return $svn->getDiff( '', $rev1, $rev2 );
+				return SubversionAdaptor::newFromRepo( $this->path )->getDiff( '', $rev1, $rev2 );
 			}
 		);
 
@@ -513,7 +511,7 @@ class CodeRepository {
 			return false;
 		}
 		$dbw = wfGetDB( DB_PRIMARY );
-		// Insert in the auther -> user link row.
+		// Insert in the author -> user link row.
 		// Skip existing rows.
 		$dbw->insert(
 			'code_authors',
@@ -638,7 +636,7 @@ class CodeRepository {
 					return 'Nothing to compare';
 				case self::DIFFRESULT_TOOMANYPATHS:
 					return 'Too many paths ($wgCodeReviewMaxDiffPaths = '
-							. $wgCodeReviewMaxDiffPaths . ')';
+						. $wgCodeReviewMaxDiffPaths . ')';
 				case self::DIFFRESULT_NODATARETURNED:
 					return 'No data returned - no diff data, or connection lost';
 				case self::DIFFRESULT_NOTINCACHE:

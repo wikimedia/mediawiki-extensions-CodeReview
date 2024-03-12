@@ -65,12 +65,14 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 			$form .= Xml::element( 'legend', [], wfMessage( 'code-author-dolink' )->text() );
 		}
 
-		$form .= Xml::inputLabel( wfMessage( 'code-author-name' )->text(),
-			'linktouser', 'username', 30, '', [ 'class' => 'mw-autocomplete-user' ] ) . ' ' .
-				Xml::submitButton( wfMessage( 'ok' )->text(), [ 'name' => 'newname' ] ) .
-				Xml::closeElement( 'fieldset' ) .
-				$additional .
-				Xml::closeElement( 'form' ) . "\n";
+		$form .= Xml::inputLabel(
+			wfMessage( 'code-author-name' )->text(),
+			'linktouser', 'username', 30, '', [ 'class' => 'mw-autocomplete-user' ]
+			) . ' ' .
+			Xml::submitButton( wfMessage( 'ok' )->text(), [ 'name' => 'newname' ] ) .
+			Xml::closeElement( 'fieldset' ) .
+			$additional .
+			Xml::closeElement( 'form' ) . "\n";
 
 		$wgOut->addModules( 'mediawiki.userSuggest' );
 		$wgOut->addHTML( $this->linkStatus() . $form );
@@ -94,9 +96,9 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 			$this->mRepo->linkUser( $this->mAuthor, $user );
 			$userlink = Linker::userLink( $user->getId(), $user->getName() );
 			$wgOut->addHTML(
-				'<div class="successbox">' .
-					wfMessage( 'code-author-success' )
-						->rawParams( $this->authorLink( $this->mAuthor ), $userlink )->escaped() .
+			'<div class="successbox">' .
+				wfMessage( 'code-author-success' )
+					->rawParams( $this->authorLink( $this->mAuthor ), $userlink )->escaped() .
 				'</div>'
 			);
 		// Unlink an author to a wiki users
@@ -109,9 +111,9 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 			}
 			$this->mRepo->unlinkUser( $this->mAuthor );
 			$wgOut->addHTML( '<div class="successbox">' .
-					wfMessage( 'code-author-unlinksuccess' )
-						->rawParams( $this->authorLink( $this->mAuthor ) )
-						->escaped() .
+				wfMessage( 'code-author-unlinksuccess' )
+					->rawParams( $this->authorLink( $this->mAuthor ) )
+					->escaped() .
 				'</div>'
 			);
 		}

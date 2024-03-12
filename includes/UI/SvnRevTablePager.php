@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CodeReview\UI;
 
+use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use Title;
 use Xml;
@@ -116,76 +117,76 @@ class SvnRevTablePager extends SvnTablePager {
 		$pathQuery = count( $this->mView->mPath )
 			? [ 'path' => $this->mView->getPathsAsString() ] : [];
 
-		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		switch ( $name ) {
-		case 'selectforchange':
-			$sort = $this->getDefaultSort();
-			return Xml::check( "wpRevisionSelected[]", false, [ 'value' => $row->$sort ] );
-		case 'cr_id':
-			return $linkRenderer->makeLink(
-				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value ),
-				$value,
-				[],
-				[]
-			);
-		case 'cr_status':
-			$options = $pathQuery;
-			if ( $this->mView->mAuthor ) {
-				$options['author'] = $this->mView->mAuthor;
-			}
-			$options['status'] = $value;
-			return $linkRenderer->makeLink(
-				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
-				$this->mView->statusDesc( $value ),
-				[],
-				$options
-			);
-		case 'cr_author':
-			$options = $pathQuery;
-			if ( $this->mView->mStatus ) {
-				$options['status'] = $this->mView->mStatus;
-			}
-			$options['author'] = $value;
-			return $linkRenderer->makeLink(
-				SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
-				$value,
-				[],
-				$options
-			);
-		case 'cr_message':
-			return $this->mView->messageFragment( $value );
-		case 'cr_timestamp':
-			return $this->getLanguage()->timeanddate( $value, true );
-		case 'comments':
-			if ( $value ) {
-				$special = SpecialPage::getTitleFor(
-					'Code',
-					$this->mRepo->getName() . '/' . $row->{$this->getDefaultSort()},
-					'code-comments'
-				);
+			case 'selectforchange':
+				$sort = $this->getDefaultSort();
+				return Xml::check( "wpRevisionSelected[]", false, [ 'value' => $row->$sort ] );
+			case 'cr_id':
 				return $linkRenderer->makeLink(
-					$special, $this->getLanguage()->formatNum( $value ) );
-			} else {
-				return '-';
-			}
-		case 'cr_path':
-			$title = $this->mRepo->getName();
-
-			$options = [ 'path' => (string)$value ];
-			if ( $this->mView->mAuthor ) {
-				$options['author'] = $this->mView->mAuthor;
-			}
-			if ( $this->mView->mStatus ) {
-				$options['status'] = $this->mView->mStatus;
-			}
-
-			return Xml::openElement( 'div', [ 'title' => (string)$value, 'dir' => 'ltr' ] ) .
-				$linkRenderer->makeLink(
-					SpecialPage::getTitleFor( 'Code', $title ),
-					$this->getLanguage()->truncateForVisual( (string)$value, 50 ),
-					[ 'title' => (string)$value ],
+					SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() . '/' . $value ),
+					$value,
+					[],
+					[]
+				);
+			case 'cr_status':
+				$options = $pathQuery;
+				if ( $this->mView->mAuthor ) {
+					$options['author'] = $this->mView->mAuthor;
+				}
+				$options['status'] = $value;
+				return $linkRenderer->makeLink(
+					SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+					$this->mView->statusDesc( $value ),
+					[],
 					$options
-				) . '</div>';
+				);
+			case 'cr_author':
+				$options = $pathQuery;
+				if ( $this->mView->mStatus ) {
+					$options['status'] = $this->mView->mStatus;
+				}
+				$options['author'] = $value;
+				return $linkRenderer->makeLink(
+					SpecialPage::getTitleFor( 'Code', $this->mRepo->getName() ),
+					$value,
+					[],
+					$options
+				);
+			case 'cr_message':
+				return $this->mView->messageFragment( $value );
+			case 'cr_timestamp':
+				return $this->getLanguage()->timeanddate( $value, true );
+			case 'comments':
+				if ( $value ) {
+					$special = SpecialPage::getTitleFor(
+						'Code',
+						$this->mRepo->getName() . '/' . $row->{$this->getDefaultSort()},
+						'code-comments'
+					);
+					return $linkRenderer->makeLink(
+						$special, $this->getLanguage()->formatNum( $value ) );
+				} else {
+					return '-';
+				}
+			case 'cr_path':
+				$title = $this->mRepo->getName();
+
+				$options = [ 'path' => (string)$value ];
+				if ( $this->mView->mAuthor ) {
+					$options['author'] = $this->mView->mAuthor;
+				}
+				if ( $this->mView->mStatus ) {
+					$options['status'] = $this->mView->mStatus;
+				}
+
+				return Xml::openElement( 'div', [ 'title' => (string)$value, 'dir' => 'ltr' ] ) .
+					$linkRenderer->makeLink(
+						SpecialPage::getTitleFor( 'Code', $title ),
+						$this->getLanguage()->truncateForVisual( (string)$value, 50 ),
+						[ 'title' => (string)$value ],
+						$options
+					) . '</div>';
 		}
 
 		return '';

@@ -41,7 +41,7 @@ class SubversionPecl extends SubversionAdaptor {
 	}
 
 	public function getDiff( $path, $rev1, $rev2 ) {
-		list( $fout, $ferr ) = svn_diff(
+		[ $fout, $ferr ] = svn_diff(
 			$this->mRepoPath . $path, $rev1,
 			$this->mRepoPath . $path, $rev2 );
 
@@ -55,9 +55,9 @@ class SubversionPecl extends SubversionAdaptor {
 			fclose( $ferr );
 
 			return $out;
-		} else {
-			return new Exception( "Diffing error" );
 		}
+
+		return new Exception( "Diffing error" );
 	}
 
 	public function getDirList( $path, $rev = null ) {

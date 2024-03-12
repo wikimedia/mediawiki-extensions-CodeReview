@@ -101,6 +101,7 @@ class ApiRevisionUpdate extends ApiBase {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return true;
 	}
@@ -109,6 +110,7 @@ class ApiRevisionUpdate extends ApiBase {
 		return 'csrf';
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		$flags = CodeRevision::getPossibleFlags();
 		return [
@@ -161,9 +163,7 @@ class ApiRevisionUpdate extends ApiBase {
 		];
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=coderevisionupdate&repo=MediaWiki&rev=1&status=fixme'

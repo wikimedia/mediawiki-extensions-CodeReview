@@ -6,7 +6,7 @@ use ApiBase;
 use MediaWiki\Extension\CodeReview\Backend\CodeDiffHighlighter;
 use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
 use Wikimedia\ParamValidator\ParamValidator;
-use Wikimedia\ParamValidator\TypeDef\IntegerDef;
+use Wikimedia\ParamValidator\TypeDef\NumericDef;
 
 /**
  * This program is free software; you can redistribute it and/or modify
@@ -37,9 +37,7 @@ class ApiCodeDiff extends ApiBase {
 			$this->dieWithError( [ 'apierror-invalidrepo', wfEscapeWikiText( $params['repo'] ) ] );
 		}
 
-		$lastStoredRev = $repo->getLastStoredRev();
-
-		if ( $params['rev'] > $lastStoredRev ) {
+		if ( $params['rev'] > $repo->getLastStoredRev() ) {
 			$this->dieWithError( [ 'apierror-nosuchrevid', $params['rev'] ] );
 		}
 
@@ -51,8 +49,7 @@ class ApiCodeDiff extends ApiBase {
 		} elseif ( strlen( $diff ) > $this->getConfig()->get( 'CodeReviewMaxDiffSize' ) ) {
 			$html = 'Diff too large.';
 		} else {
-			$hilite = new CodeDiffHighlighter();
-			$html = $hilite->render( $diff );
+			$html = ( new CodeDiffHighlighter() )->render( $diff );
 		}
 
 		$data = [
@@ -63,6 +60,7 @@ class ApiCodeDiff extends ApiBase {
 		$this->getResult()->addValue( 'code', 'rev', $data );
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'repo' => [
@@ -71,15 +69,13 @@ class ApiCodeDiff extends ApiBase {
 			],
 			'rev' => [
 				ParamValidator::PARAM_TYPE => 'integer',
-				IntegerDef::PARAM_MIN => 1,
+				NumericDef::PARAM_MIN => 1,
 				ParamValidator::PARAM_REQUIRED => true,
 			]
 		];
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=codediff&repo=MediaWiki&rev=42080'

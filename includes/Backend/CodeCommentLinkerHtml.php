@@ -23,7 +23,6 @@ class CodeCommentLinkerHtml extends CodeCommentLinker {
 	 * @return string
 	 */
 	public function makeInternalLink( $title, $text ) {
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		return $linkRenderer->makeLink( $title, $text );
+		return MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $title, $text );
 	}
 }

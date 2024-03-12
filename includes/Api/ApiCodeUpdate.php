@@ -7,7 +7,7 @@ use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
 use MediaWiki\Extension\CodeReview\Backend\CodeRevision;
 use MediaWiki\Extension\CodeReview\Backend\SubversionAdaptor;
 use Wikimedia\ParamValidator\ParamValidator;
-use Wikimedia\ParamValidator\TypeDef\IntegerDef;
+use Wikimedia\ParamValidator\TypeDef\NumericDef;
 
 /**
  *
@@ -43,7 +43,7 @@ class ApiCodeUpdate extends ApiBase {
 		$lastStoredRev = $repo->getLastStoredRev();
 
 		if ( $lastStoredRev >= $params['rev'] ) {
-			// Nothing to do, we're up to date.
+			// Nothing to do, we are up-to-date with the repo.
 			// Return an empty result
 			$this->getResult()->addValue( null, $this->getModuleName(), [] );
 			return;
@@ -70,7 +70,7 @@ class ApiCodeUpdate extends ApiBase {
 			];
 			$revs[] = $codeRev;
 		}
-		// Cache the diffs if there are a only a few.
+		// Cache the diffs if there are only a few.
 		// Mainly for WMF post-commit ping hook...
 		if ( count( $revs ) <= 2 ) {
 			foreach ( $revs as $codeRev ) {
@@ -87,10 +87,12 @@ class ApiCodeUpdate extends ApiBase {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'repo' => [
@@ -99,15 +101,13 @@ class ApiCodeUpdate extends ApiBase {
 			],
 			'rev' => [
 				ParamValidator::PARAM_TYPE => 'integer',
-				IntegerDef::PARAM_MIN => 1,
+				NumericDef::PARAM_MIN => 1,
 				ParamValidator::PARAM_REQUIRED => true,
 			]
 		];
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=codeupdate&repo=MediaWiki&rev=42080'

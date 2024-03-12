@@ -44,7 +44,8 @@ class SubversionShell extends SubversionAdaptor {
 		$command = sprintf(
 			'svn cat %s %s',
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->mRepoPath . $path ) );
+			wfEscapeShellArg( $this->mRepoPath . $path )
+		);
 
 		return wfShellExec( $command );
 	}
@@ -68,7 +69,8 @@ class SubversionShell extends SubversionAdaptor {
 			wfEscapeShellArg( $this->_rev( $startRev, 'BASE' ) ),
 			wfEscapeShellArg( $this->_rev( $endRev, 'HEAD' ) ),
 			$this->getExtraArgs(),
-			wfEscapeShellArg( $this->mRepoPath . $path ) );
+			wfEscapeShellArg( $this->mRepoPath . $path )
+		);
 
 		$lines = explode( "\n", wfShellExec( $command ) );
 		$out = [];
@@ -86,79 +88,79 @@ class SubversionShell extends SubversionAdaptor {
 			$line = rtrim( $line );
 
 			switch ( $state ) {
-			case 'start':
-				if ( $line == $divider ) {
-					$state = 'revdata';
+				case 'start':
+					if ( $line == $divider ) {
+						$state = 'revdata';
+						break;
+					} else {
+						return $out;
+						# throw new Exception( "Unexpected start line: $line" );
+					}
+					// Fall through
+				case 'revdata':
+					if ( $line == '' ) {
+						$state = 'done';
+						break;
+					}
+					$data = [];
+					$bits = explode( ' | ', $line );
+					$i = 0;
+					foreach ( $formats as $key => $regex ) {
+						$text = $bits[$i++];
+						$matches = [];
+						if ( preg_match( $regex, $text, $matches ) ) {
+							$data[$key] = $matches[1];
+						} else {
+							throw new Exception(
+								"Unexpected format for $key in '$text'" );
+						}
+					}
+					$data['msg'] = '';
+					$data['paths'] = [];
+					$state = 'changedpaths';
 					break;
-				} else {
-					return $out;
-					# throw new Exception( "Unexpected start line: $line" );
-				}
-				// Fall through
-			case 'revdata':
-				if ( $line == '' ) {
-					$state = 'done';
-					break;
-				}
-				$data = [];
-				$bits = explode( ' | ', $line );
-				$i = 0;
-				foreach ( $formats as $key => $regex ) {
-					$text = $bits[$i++];
-					$matches = [];
-					if ( preg_match( $regex, $text, $matches ) ) {
-						$data[$key] = $matches[1];
+				case 'changedpaths':
+					if ( $line == 'Changed paths:' ) {
+						// broken when svn messages are not in English
+						$state = 'path';
+					} elseif ( $line == '' ) {
+						// No changed paths?
+						$state = 'msg';
 					} else {
 						throw new Exception(
-							"Unexpected format for $key in '$text'" );
+							"Expected 'Changed paths:' or '', got '$line'" );
 					}
-				}
-				$data['msg'] = '';
-				$data['paths'] = [];
-				$state = 'changedpaths';
-				break;
-			case 'changedpaths':
-				if ( $line == 'Changed paths:' ) {
-					// broken when svn messages are not in English
-					$state = 'path';
-				} elseif ( $line == '' ) {
-					// No changed paths?
-					$state = 'msg';
-				} else {
-					throw new Exception(
-						"Expected 'Changed paths:' or '', got '$line'" );
-				}
-				break;
-			case 'path':
-				if ( $line == '' ) {
-					// Out of paths. Move on to the message...
-					$state = 'msg';
-				} else {
-					$matches = [];
-					if ( preg_match( '/^   (.) (.*)$/', $line, $matches ) ) {
-						// @phan-suppress-next-line PhanUndeclaredVariableDim
-						$data['paths'][] = [
-							'action' => $matches[1],
-							'path' => $matches[2]
-						];
+					break;
+				case 'path':
+					if ( $line == '' ) {
+						// Out of paths. Move on to the message...
+						$state = 'msg';
+					} else {
+						$matches = [];
+						if ( preg_match( '/^   (.) (.*)$/', $line, $matches ) ) {
+							// @phan-suppress-next-line PhanUndeclaredVariableDim
+							$data['paths'][] = [
+								'action' => $matches[1],
+								'path' => $matches[2]
+							];
+						}
 					}
-				}
-				break;
-			case 'msg':
-				$data['msg'] .= $line;
-				// @phan-suppress-next-line PhanTypeArraySuspiciousNull, PhanTypeInvalidUnaryOperandIncOrDec
-				if ( --$data['lines'] ) {
-					$data['msg'] .= "\n";
-				} else {
-					unset( $data['lines'] );
-					$out[] = $data;
-					$state = 'start';
-				}
-				break;
-			case 'done':
-				throw new Exception( "Unexpected input after end: $line" );
-			default:
-				throw new Exception( "Invalid state '$state'" );
+					break;
+				case 'msg':
+					$data['msg'] .= $line;
+					// @phan-suppress-next-line PhanTypeArraySuspiciousNull, PhanTypeInvalidUnaryOperandIncOrDec
+					if ( --$data['lines'] ) {
+						$data['msg'] .= "\n";
+					} else {
+						unset( $data['lines'] );
+						$out[] = $data;
+						$state = 'start';
+					}
+					break;
+				case 'done':
+					throw new Exception( "Unexpected input after end: $line" );
+				default:
+					throw new Exception( "Invalid state '$state'" );
 			}
 		}
 
@@ -188,25 +190,25 @@ class SubversionShell extends SubversionAdaptor {
 			$item['type'] = $entry->getAttribute( 'kind' );
 			foreach ( $entry->childNodes as $child ) {
 				switch ( $child->nodeName ) {
-				case 'name':
-					$item['name'] = $child->textContent;
-					break;
-				case 'size':
-					$item['size'] = intval( $child->textContent );
-					break;
-				case 'commit':
-					$item['created_rev'] = intval( $child->getAttribute( 'revision' ) );
-					foreach ( $child->childNodes as $commitEntry ) {
-						switch ( $commitEntry->nodeName ) {
-						case 'author':
-							$item['last_author'] = $commitEntry->textContent;
-							break;
-						case 'date':
-							$item['time_t'] = wfTimestamp( TS_UNIX, $commitEntry->textContent );
-							break;
+					case 'name':
+						$item['name'] = $child->textContent;
+						break;
+					case 'size':
+						$item['size'] = intval( $child->textContent );
+						break;
+					case 'commit':
+						$item['created_rev'] = intval( $child->getAttribute( 'revision' ) );
+						foreach ( $child->childNodes as $commitEntry ) {
+							switch ( $commitEntry->nodeName ) {
+								case 'author':
+									$item['last_author'] = $commitEntry->textContent;
+									break;
+								case 'date':
+									$item['time_t'] = wfTimestamp( TS_UNIX, $commitEntry->textContent );
+									break;
+							}
 						}
-					}
-					break;
+						break;
 				}
 			}
 			$result[] = $item;

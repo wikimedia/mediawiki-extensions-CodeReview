@@ -40,6 +40,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 	 */
 	private $props;
 
+	/** @inheritDoc */
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'cr' );
 	}
@@ -178,7 +179,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 				'revid' => $ref->cr_id,
 				'status' => $ref->cr_status,
 				'timestamp' => wfTimestamp( TS_ISO_8601, $ref->cr_timestamp ),
-				'author' => $ref->cr_author ,
+				'author' => $ref->cr_author,
 			];
 			ApiResult::setContentValue( $refItem, 'message', $ref->cr_message );
 
@@ -187,6 +188,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		return $items;
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'repo' => [
@@ -228,9 +230,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		];
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&list=coderevisions&crrepo=MediaWiki'

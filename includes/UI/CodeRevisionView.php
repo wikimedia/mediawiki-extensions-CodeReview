@@ -454,9 +454,9 @@ class CodeRevisionView extends CodeView {
 			return Xml::openElement( 'select', [ 'name' => 'wpStatus' ] ) .
 				self::buildStatusList( $this->mStatus, $this ) .
 				Xml::closeElement( 'select' );
-		} else {
-			return htmlspecialchars( $this->statusDesc( $this->mRev->getStatus() ) );
 		}
+
+		return htmlspecialchars( $this->statusDesc( $this->mRev->getStatus() ) );
 	}
 
 	/**
@@ -495,8 +495,8 @@ class CodeRevisionView extends CodeView {
 	protected function formatTag( $tag ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/tag/$tag" );
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		return $linkRenderer->makeLink( $special, $tag );
+
+		return MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $special, $tag );
 	}
 
 	/**
@@ -534,8 +534,7 @@ class CodeRevisionView extends CodeView {
 		}
 
 		// CodeRepository::DIFFRESULT_NoDataReturned still ends up here, and we can't differentiate
-		$hilite = new CodeDiffHighlighter();
-		return $hilite->render( $diff );
+		return ( new CodeDiffHighlighter() )->render( $diff );
 	}
 
 	/**
@@ -650,7 +649,7 @@ class CodeRevisionView extends CodeView {
 			$signoffs = '';
 		}
 		$buttonrow = $showButtons ? $this->signoffButtons( $signOffs ) : '';
-		return "<table border='1' class='wikitable'><tr>$header</tr>$signoffs$buttonrow</table>";
+		return "<table border='1' class='wikitable'><tr>{$header}</tr>{$signoffs}{$buttonrow}</table>";
 	}
 
 	/**

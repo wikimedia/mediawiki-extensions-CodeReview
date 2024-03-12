@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CodeReview\UI;
 
 use Linker;
+use MediaWiki\MediaWikiServices;
 use RequestContext;
 use SpecialPage;
 
@@ -40,7 +41,7 @@ class CodeRevisionAuthorView extends CodeRevisionListView {
 
 		$linkInfo = $this->linkStatus();
 
-		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		// Give grep a chance to find the usages:
 		// code-author-link, code-author-unlink
 		if ( RequestContext::getMain()->getUser()->isAllowed( 'codereview-link-user' ) ) {

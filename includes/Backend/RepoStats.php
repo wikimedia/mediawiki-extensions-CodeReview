@@ -64,7 +64,7 @@ class RepoStats {
 			}
 		);
 
-		$stats = new RepoStats( $repo );
+		$stats = new self( $repo );
 		foreach ( self::$cacheFields as $field ) {
 			$stats->$field = $data[$field];
 		}

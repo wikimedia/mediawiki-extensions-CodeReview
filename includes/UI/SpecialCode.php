@@ -114,48 +114,48 @@ class SpecialCode extends SpecialPage {
 			$user = $this->getUser();
 
 			switch ( count( $params ) ) {
-			case 1:
-				$view = new CodeRevisionListView( $repo );
-				break;
-			case 2:
-				// drop through...
-			case 3:
-				if ( isset( $paramClasses[$params[1]] ) ) {
-					$row = $paramClasses[$params[1]];
-					if ( isset( $params[2] ) && isset( $row[1] ) ) {
-						$view = new $row[1]( $repo, $params[2] );
-					} else {
-						$view = new $row[0]( $repo );
-					}
-				} elseif ( $request->wasPosted() && !$request->getCheck( 'wpPreview' ) ) {
-					# This is not really a view, but we return it nonetheless.
-					# Add any tags, Set status, Adds comments
-					// @phan-suppress-next-line PhanTypeMismatchArgumentReal
-					$view = new CodeRevisionCommitter( $repo, $user, $params[1] );
-				} elseif ( empty( $params[1] ) ) {
+				case 1:
 					$view = new CodeRevisionListView( $repo );
-				} else {
-					$view = new CodeRevisionView( $repo, $params[1], $user );
-				}
-				break;
-			case 4:
-				if ( $params[1] === 'author' && $params[3] === 'link' ) {
-					$view = new CodeRevisionAuthorLink( $repo, $params[2], $this->getUser() );
 					break;
-				} elseif ( $params[1] === 'comments' ) {
-					$view = new CodeCommentsAuthorListView( $repo, $params[3] );
+				case 2:
+					// drop through...
+				case 3:
+					if ( isset( $paramClasses[$params[1]] ) ) {
+						$row = $paramClasses[$params[1]];
+						if ( isset( $params[2] ) && isset( $row[1] ) ) {
+							$view = new $row[1]( $repo, $params[2] );
+						} else {
+							$view = new $row[0]( $repo );
+						}
+					} elseif ( $request->wasPosted() && !$request->getCheck( 'wpPreview' ) ) {
+						# This is not really a view, but we return it nonetheless.
+						# Add any tags, Set status, Adds comments
+						// @phan-suppress-next-line PhanTypeMismatchArgumentReal
+						$view = new CodeRevisionCommitter( $repo, $user, $params[1] );
+					} elseif ( empty( $params[1] ) ) {
+						$view = new CodeRevisionListView( $repo );
+					} else {
+						$view = new CodeRevisionView( $repo, $params[1], $user );
+					}
 					break;
-				} elseif ( $params[1] === 'statuschanges' ) {
-					$view = new CodeStatusChangeAuthorListView( $repo, $params[3] );
-					break;
-				}
-				// @todo FIXME: Fall through or not?
-			default:
-				if ( $params[2] == 'reply' ) {
-					$view = new CodeRevisionView( $repo, $params[1], $user, $params[3] );
-					break;
-				}
-				return null;
+				case 4:
+					if ( $params[1] === 'author' && $params[3] === 'link' ) {
+						$view = new CodeRevisionAuthorLink( $repo, $params[2], $this->getUser() );
+						break;
+					} elseif ( $params[1] === 'comments' ) {
+						$view = new CodeCommentsAuthorListView( $repo, $params[3] );
+						break;
+					} elseif ( $params[1] === 'statuschanges' ) {
+						$view = new CodeStatusChangeAuthorListView( $repo, $params[3] );
+						break;
+					}
+					// @todo FIXME: Fall through or not?
+				default:
+					if ( $params[2] == 'reply' ) {
+						$view = new CodeRevisionView( $repo, $params[1], $user, $params[3] );
+						break;
+					}
+					return null;
 			}
 		}
 		return $view;

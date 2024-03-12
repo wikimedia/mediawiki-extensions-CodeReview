@@ -64,29 +64,29 @@ class CodeStatusChangeTablePager extends SvnTablePager {
 		// code-status-new, code-status-fixme, code-status-reverted, code-status-resolved,
 		// code-status-ok, code-status-deferred, code-status-old
 		switch ( $name ) {
-		case 'cpc_rev_id':
-			return $linkRenderer->makeLink(
-				SpecialPage::getTitleFor( 'Code',
-					$this->mRepo->getName() . '/' . $value . '#code-changes' ),
-				$value
-			);
-		case 'cr_author':
-			return $this->mView->authorLink( $value );
-		case 'cr_message':
-			return $this->mView->messageFragment( $value );
-		case 'cr_status':
-			return $linkRenderer->makeLink(
-				SpecialPage::getTitleFor( 'Code',
-					$this->mRepo->getName() . '/status/' . $value ),
-				$this->mView->statusDesc( $value ) );
-		case 'cpc_user_text':
-			return Linker::userLink( -1, $value );
-		case 'cpc_removed':
-			return $this->msg( $value ? "code-status-$value" : 'code-status-new' )->escaped();
-		case 'cpc_added':
-			return $this->msg( "code-status-$value" )->escaped();
-		case 'cpc_timestamp':
-			return $this->getLanguage()->timeanddate( $value, true );
+			case 'cpc_rev_id':
+				return $linkRenderer->makeLink(
+					SpecialPage::getTitleFor( 'Code',
+						$this->mRepo->getName() . '/' . $value . '#code-changes' ),
+					$value
+				);
+			case 'cr_author':
+				return $this->mView->authorLink( $value );
+			case 'cr_message':
+				return $this->mView->messageFragment( $value );
+			case 'cr_status':
+				return $linkRenderer->makeLink(
+					SpecialPage::getTitleFor( 'Code',
+						$this->mRepo->getName() . '/status/' . $value ),
+					$this->mView->statusDesc( $value ) );
+			case 'cpc_user_text':
+				return Linker::userLink( -1, $value );
+			case 'cpc_removed':
+				return $this->msg( $value ? "code-status-$value" : 'code-status-new' )->escaped();
+			case 'cpc_added':
+				return $this->msg( "code-status-$value" )->escaped();
+			case 'cpc_timestamp':
+				return $this->getLanguage()->timeanddate( $value, true );
 		}
 
 		throw new Exception( '$name is invalid input.' );

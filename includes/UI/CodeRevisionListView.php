@@ -139,9 +139,9 @@ class CodeRevisionListView extends CodeView {
 		);
 		if ( $revCount !== -1 ) {
 			$output->addHTML(
-				'<td>&#160;<strong>' .
-					wfMessage( 'code-rev-total' )->numParams( $revCount )->escaped() .
-					'</strong></td>'
+			'<td>&#160;<strong>' .
+				wfMessage( 'code-rev-total' )->numParams( $revCount )->escaped() .
+				'</strong></td>'
 			);
 		}
 
@@ -184,7 +184,8 @@ class CodeRevisionListView extends CodeView {
 		}
 
 		if ( $user->isAllowed( 'codereview-add-tag' ) &&
-				$addTags || $removeTags ) {
+			$addTags || $removeTags
+		) {
 			$addTags = array_map( 'trim', explode( ",", $addTags ) );
 			$removeTags = array_map( 'trim', explode( ",", $removeTags ) );
 
@@ -275,7 +276,7 @@ class CodeRevisionListView extends CodeView {
 			);
 		}
 
-		$ret = '<fieldset><legend>' .
+		return '<fieldset><legend>' .
 			wfMessage( 'code-pathsearch-legend' )->escaped() . '</legend>' .
 			'<table width="100%"><tr><td>' .
 			Xml::openElement( 'form', [ 'action' => $wgScript, 'method' => 'get' ] ) .
@@ -292,8 +293,6 @@ class CodeRevisionListView extends CodeView {
 			$pager->getHiddenFields( [ 'path', 'title' ] ) .
 			Xml::closeElement( 'form' ) .
 			'</td></tr></table></fieldset>';
-
-		return $ret;
 	}
 
 	public function getPager() {
@@ -301,7 +300,7 @@ class CodeRevisionListView extends CodeView {
 	}
 
 	/**
-	 * Get total number of revisions for this revision view
+	 * Get the total number of revisions for this revision view
 	 *
 	 * @param IDatabase $dbr
 	 * @return int Number of revisions
@@ -318,9 +317,9 @@ class CodeRevisionListView extends CodeView {
 		);
 		if ( $result ) {
 			return intval( $result->rev_count );
-		} else {
-			return 0;
 		}
+
+		return 0;
 	}
 
 	public function getRepo() {

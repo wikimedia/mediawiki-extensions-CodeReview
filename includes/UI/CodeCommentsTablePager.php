@@ -65,26 +65,26 @@ class CodeCommentsTablePager extends SvnTablePager {
 	public function formatValue( $name, $value ) {
 		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer();
 		switch ( $name ) {
-		case 'cc_rev_id':
-			return $linkRenderer->makeLink(
-				SpecialPage::getSafeTitleFor( 'Code',
-					$this->mRepo->getName() . '/' . $value . '#code-comments' ),
-				$value
-			);
-		case 'cr_status':
-			return $linkRenderer->makeLink(
-				SpecialPage::getTitleFor( 'Code',
-					$this->mRepo->getName() . '/status/' . $value ),
-				$this->mView->statusDesc( $value )
-			);
-		case 'cc_user_text':
-			return Linker::userLink( -1, $value );
-		case 'cr_message':
-			return $this->mView->messageFragment( $value );
-		case 'cc_text':
-			return $this->mView->messageFragment( $value );
-		case 'cc_timestamp':
-			return $this->getLanguage()->timeanddate( $value, true );
+			case 'cc_rev_id':
+				return $linkRenderer->makeLink(
+					SpecialPage::getSafeTitleFor( 'Code',
+						$this->mRepo->getName() . '/' . $value . '#code-comments' ),
+					$value
+				);
+			case 'cr_status':
+				return $linkRenderer->makeLink(
+					SpecialPage::getTitleFor( 'Code',
+						$this->mRepo->getName() . '/status/' . $value ),
+					$this->mView->statusDesc( $value )
+				);
+			case 'cc_user_text':
+				return Linker::userLink( -1, $value );
+			case 'cr_message':
+				return $this->mView->messageFragment( $value );
+			case 'cc_text':
+				return $this->mView->messageFragment( $value );
+			case 'cc_timestamp':
+				return $this->getLanguage()->timeanddate( $value, true );
 		}
 
 		throw new Exception( '$name is invalid input.' );

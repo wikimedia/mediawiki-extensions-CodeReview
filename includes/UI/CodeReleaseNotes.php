@@ -195,7 +195,7 @@ class CodeReleaseNotes extends CodeView {
 		if ( preg_match( '/\b\$[we]g[0-9a-z]{3,50}\b/i', $summary ) ) {
 			return true;
 		}
-		# Sanity check: summary cannot be *too* short to be useful
+		#  summary cannot be *too* short to be useful
 		$words = str_word_count( $summary );
 		if ( mb_strlen( $summary ) < 40 || $words <= 5 ) {
 			return false;
@@ -215,8 +215,8 @@ class CodeReleaseNotes extends CodeView {
 		if ( $whole ) {
 			# List of items?
 			return preg_match( '/(^|\n) ?\*/', $summary );
-		} else {
-			return true;
 		}
+
+		return true;
 	}
 }

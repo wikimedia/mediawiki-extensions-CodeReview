@@ -22,8 +22,8 @@ class CodeAuthorListView extends CodeView {
 		$wgOut->addWikiTextAsInterface( $text );
 
 		$wgOut->addHTML( '<table class="wikitable">'
-				. '<tr><th>' . wfMessage( 'code-field-author' )->escaped()
-				. '</th><th>' . wfMessage( 'code-author-lastcommit' )->escaped() . '</th></tr>' );
+			. '<tr><th>' . wfMessage( 'code-field-author' )->escaped()
+			. '</th><th>' . wfMessage( 'code-author-lastcommit' )->escaped() . '</th></tr>' );
 
 		foreach ( $authors as $committer ) {
 			if ( $committer ) {

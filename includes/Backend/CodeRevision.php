@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CodeReview\Backend;
 
 use Exception;
+use FormattedRCFeed;
 use IRCColourfulRCFeedFormatter;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Authority;
@@ -310,7 +311,7 @@ class CodeRevision {
 	}
 
 	/**
-	 * List of all flags a user can mark themself as having done to a revision
+	 * List of all flags a user can mark themselves as having done to a revision
 	 * @return array
 	 */
 	public static function getPossibleFlags() {
@@ -349,15 +350,16 @@ class CodeRevision {
 
 		// Don't allow the user account tied to the committer account mark
 		// their own revisions as ok/resolved
-		// Obviously only works if user accounts are tied!
+		// Obviously, this only works if user accounts are tied!
 		$wikiUser = $this->getWikiUser();
-		if ( self::isProtectedStatus( $status )
-			&& $wikiUser && $performer->getUser()->getName() == $wikiUser->getName()
-		) {
+		if (
+			self::isProtectedStatus( $status ) &&
+			$wikiUser &&
+			$performer->getUser()->getName() == $wikiUser->getName() &&
 			// allow the user to review their own code if required
-			if ( !$wikiUser->isAllowed( 'codereview-review-own' ) ) {
-				return false;
-			}
+			!$wikiUser->isAllowed( 'codereview-review-own' )
+		) {
+			return false;
 		}
 
 		// Get the old status from the primary database
@@ -430,9 +432,6 @@ class CodeRevision {
 		}
 	}
 
-	/**
-	 * @return void
-	 */
 	public function save() {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
@@ -489,7 +488,7 @@ class CodeRevision {
 		if ( $wgEnableEmail && !$wgCodeReviewDisableFollowUpNotification
 			&& $newRevision && count( $affectedRevs ) > 0
 		) {
-			// Get committer wiki user name, or repo name at least
+			// Get committer wiki username, or repo name at least
 			$commitAuthor = $this->getWikiUser();
 
 			if ( $commitAuthor ) {
@@ -673,8 +672,7 @@ class CodeRevision {
 	 * @return IResultWrapper
 	 */
 	public function getModifiedPaths() {
-		$dbr = wfGetDB( DB_REPLICA );
-		return $dbr->select(
+		return wfGetDB( DB_REPLICA )->select(
 			'code_paths',
 			[ 'cp_path', 'cp_action' ],
 			[ 'cp_repo_id' => $this->repoId, 'cp_rev_id' => $this->id ],
@@ -773,7 +771,7 @@ class CodeRevision {
 			// canReceiveEmail() returns false for the fake watcher user, so exempt it
 			// This is ugly
 			if ( $id == 0 || $user->canReceiveEmail() ) {
-				// Send message in receiver's language
+				// Send a message in receiver's language
 				$lang = $userOptionsLookup->getOption( $user, 'language' );
 
 				$localSubject = wfMessage( $subject, $this->repo->getName(), $this->getIdString() )
@@ -794,7 +792,7 @@ class CodeRevision {
 	protected function commentData( $text, Authority $performer, $parent = null ) {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$ts = wfTimestamp( TS_MW );
-		$sortkey = $this->threadedSortkey( $parent, $ts );
+
 		return [
 			'cc_repo_id' => $this->repoId,
 			'cc_rev_id' => $this->id,
@@ -803,7 +801,7 @@ class CodeRevision {
 			'cc_user' => $performer->getUser()->getId(),
 			'cc_user_text' => $performer->getUser()->getName(),
 			'cc_timestamp' => $dbw->timestamp( $ts ),
-			'cc_sortkey' => $sortkey
+			'cc_sortkey' => $this->threadedSortkey( $parent, $ts )
 		];
 	}
 
@@ -878,9 +876,9 @@ class CodeRevision {
 
 		if ( $result ) {
 			return intval( $result->comments );
-		} else {
-			return 0;
 		}
+
+		return 0;
 	}
 
 	/**
@@ -1047,7 +1045,6 @@ class CodeRevision {
 
 	/**
 	 * @param array $data
-	 * @return void
 	 */
 	private function addReferences( $data ) {
 		$dbw = wfGetDB( DB_PRIMARY );
@@ -1279,8 +1276,7 @@ class CodeRevision {
 	public function normalizeTag( $tag ) {
 		$title = Title::newFromText( $tag );
 		if ( $title ) {
-			$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-			return $contLang->lc( $title->getDBkey() );
+			return MediaWikiServices::getInstance()->getContentLanguage()->lc( $title->getDBkey() );
 		}
 
 		return false;
@@ -1351,9 +1347,9 @@ class CodeRevision {
 		);
 		if ( $row ) {
 			return intval( $row->cr_id );
-		} else {
-			return false;
 		}
+
+		return false;
 	}
 
 	/**
@@ -1397,9 +1393,9 @@ class CodeRevision {
 		);
 		if ( $row ) {
 			return intval( $row->cr_id );
-		} else {
-			return false;
 		}
+
+		return false;
 	}
 
 	/**

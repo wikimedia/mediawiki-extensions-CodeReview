@@ -67,8 +67,8 @@ abstract class CodeView {
 	public function authorLink( $author, $extraParams = [] ) {
 		$repo = $this->mRepo->getName();
 		$special = SpecialPage::getTitleFor( 'Code', "$repo/author/$author" );
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		return $linkRenderer->makeLink( $special, $author, [], $extraParams );
+
+		return MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $special, $author, [], $extraParams );
 	}
 
 	public function statusDesc( $status ) {
