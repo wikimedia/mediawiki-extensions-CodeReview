@@ -7,6 +7,7 @@ use Wikimedia\AtEase\AtEase;
 
 /**
  * Using the SVN PECL extension...
+ * @phan-file-suppress PhanUndeclaredConstant
  */
 class SubversionPecl extends SubversionAdaptor {
 

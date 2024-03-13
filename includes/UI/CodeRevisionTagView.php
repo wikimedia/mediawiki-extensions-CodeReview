@@ -5,6 +5,9 @@ namespace MediaWiki\Extension\CodeReview\UI;
 use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
 
 class CodeRevisionTagView extends CodeRevisionListView {
+
+	private string $mTag;
+
 	/**
 	 * @param CodeRepository|string $repo
 	 * @param string $tag

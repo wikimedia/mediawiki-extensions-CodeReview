@@ -14,8 +14,8 @@ use Xml;
  * Special:Code/MediaWiki/author/johndoe/link
  */
 class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
-	/** @var User */
-	private $user;
+
+	private string $mTarget;
 
 	/**
 	 * @param CodeRepository|string $repo
@@ -26,7 +26,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 		global $wgRequest;
 		parent::__construct( $repo, $author );
 		$this->mTarget = $wgRequest->getVal( 'linktouser' );
-		$this->user = $user;
+		$this->mUser = $user;
 	}
 
 	/** @inheritDoc */
@@ -39,7 +39,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	public function execute() {
 		global $wgRequest;
 
-		if ( !$this->user->isAllowed( 'codereview-link-user' ) ) {
+		if ( !$this->mUser->isAllowed( 'codereview-link-user' ) ) {
 			throw new PermissionsError( 'codereview-link-user' );
 		}
 
@@ -57,7 +57,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 			'action' => $this->getTitle()->getLocalURL(),
 			'name' => 'uluser', 'id' => 'mw-codeauthor-form1' ] );
 
-		$form .= Html::hidden( 'linktoken', $this->user->getEditToken( 'link' ) );
+		$form .= Html::hidden( 'linktoken', $this->mUser->getEditToken( 'link' ) );
 		$form .= Xml::openElement( 'fieldset' );
 
 		$additional = '';
@@ -88,8 +88,7 @@ class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 	private function doSubmit() {
 		global $wgOut, $wgRequest;
 		// Link an author to a wiki user
-
-		if ( !$this->user->matchEditToken( $wgRequest->getVal( 'linktoken' ), 'link' ) ) {
+		if ( !$this->mUser->matchEditToken( $wgRequest->getVal( 'linktoken' ), 'link' ) ) {
 			$wgOut->addWikiMsg( 'code-author-badtoken' );
 			return;
 		}

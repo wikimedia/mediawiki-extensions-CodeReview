@@ -71,6 +71,7 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 		$pager = $listview->getPager();
 
 		$revsSet = count( $params['revs'] );
+		$limit = $params['limit'];
 
 		if ( $revsSet ) {
 			$db = wfGetDB( DB_REPLICA );
@@ -87,7 +88,6 @@ class ApiQueryCodeRevisions extends ApiQueryBase {
 				$pager->setOffset( $params['start'] );
 			}
 
-			$limit = $params['limit'];
 			$pager->setLimit( $limit );
 
 			$pager->doQuery();

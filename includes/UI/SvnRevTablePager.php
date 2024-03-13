@@ -108,7 +108,7 @@ class SvnRevTablePager extends SvnTablePager {
 			'cr_timestamp' => $this->msg( 'code-field-timestamp' )->text()
 		];
 		# Only show checkboxen as needed
-		if ( $this->mView->batchForm ) {
+		if ( ( $this->mView instanceof CodeRevisionListView ) && $this->mView->batchForm ) {
 			$fields = [ 'selectforchange' => $this->msg( 'code-field-select' )->text() ] + $fields;
 		}
 		return $fields;
@@ -121,8 +121,11 @@ class SvnRevTablePager extends SvnTablePager {
 
 	/** @inheritDoc */
 	public function formatRevValue( $name, $value, $row ) {
-		$pathQuery = count( $this->mView->mPath )
-			? [ 'path' => $this->mView->getPathsAsString() ] : [];
+		if ( $this->mView instanceof CodeRevisionListView && count( $this->mView->mPath ) ) {
+			$pathQuery = [ 'path' => $this->mView->getPathsAsString() ];
+		} else {
+			$pathQuery = [];
+		}
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		switch ( $name ) {

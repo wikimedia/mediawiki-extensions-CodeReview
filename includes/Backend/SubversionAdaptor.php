@@ -61,7 +61,7 @@ abstract class SubversionAdaptor {
 	abstract public function getLog( $path, $startRev = null, $endRev = null );
 
 	/**
-	 * @param int $rev
+	 * @param int|string $rev
 	 * @param int $default
 	 * @return int
 	 */

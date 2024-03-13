@@ -9,6 +9,11 @@ use MediaWiki\MediaWikiServices;
  * Using a remote JSON proxy
  */
 class SubversionProxy extends SubversionAdaptor {
+
+	private string $mProxy;
+
+	private int $mTimeout;
+
 	/**
 	 * @param CodeRepository|string $repo
 	 * @param string $proxy

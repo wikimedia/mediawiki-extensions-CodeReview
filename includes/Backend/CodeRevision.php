@@ -66,10 +66,10 @@ class CodeRevision {
 				$common = $rev->paths[0]['path'];
 			} else {
 				$first = array_shift( $rev->paths );
-				$common = explode( '/', $first['path'] );
+				$common = explode( '/', $first['path'] ?? '' );
 
 				foreach ( $rev->paths as $path ) {
-					$compare = explode( '/', $path['path'] );
+					$compare = explode( '/', $path['path'] ?? '' );
 
 					// make sure $common is the shortest path
 					if ( count( $compare ) < count( $common ) ) {
@@ -863,19 +863,15 @@ class CodeRevision {
 	 */
 	public function getCommentCount() {
 		$dbr = wfGetDB( DB_REPLICA );
-		$result = $dbr->select( 'code_comment',
+		return $dbr->selectRowCount(
+			'code_comment',
 			[ 'cc_id' ],
 			[
 				'cc_repo_id' => $this->repoId,
-				'cc_rev_id' => $this->id ],
+				'cc_rev_id' => $this->id
+			],
 			__METHOD__
 		);
-
-		if ( $result ) {
-			return intval( $result->comments );
-		}
-
-		return 0;
 	}
 
 	/**

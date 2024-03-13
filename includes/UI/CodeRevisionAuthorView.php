@@ -7,8 +7,12 @@ use MediaWiki\Extension\CodeReview\Backend\CodeRepository;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
 use SpecialPage;
+use User;
 
 class CodeRevisionAuthorView extends CodeRevisionListView {
+
+	protected User $mUser;
+
 	/**
 	 * @param CodeRepository|string $repo
 	 * @param string $author

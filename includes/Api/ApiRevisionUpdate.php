@@ -65,7 +65,7 @@ class ApiRevisionUpdate extends ApiBase {
 
 		}
 
-		$revisionCommitter = new CodeRevisionCommitterApi( $repo, $user, $rev );
+		$revisionCommitter = new CodeRevisionCommitterApi( $repo, $rev, $user );
 
 		$commentID = $revisionCommitter->revisionUpdate(
 			$params['status'],

@@ -5,6 +5,9 @@ namespace MediaWiki\Extension\CodeReview\UI;
 use SpecialPage;
 
 class SvnRevStatusTablePager extends SvnRevTablePager {
+
+	private string $mStatus;
+
 	/**
 	 * @param CodeView $view
 	 * @param string $status

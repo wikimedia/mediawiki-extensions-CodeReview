@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CodeReview\Backend;
 
 use Exception;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Storage\SqlBlobStore;
 use stdClass;
 use User;
 
@@ -379,6 +380,7 @@ class CodeRepository {
 
 		$services = MediaWikiServices::getInstance();
 		$cache = $services->getMainWANObjectCache();
+		/** @var SqlBlobStore $blobStore */
 		$blobStore = $services->getBlobStore();
 		$method = __METHOD__;
 
@@ -478,7 +480,10 @@ class CodeRepository {
 
 		// Permanent DB storage
 		$storedData = $data;
-		$flags = $services->getBlobStore()->compressData( $storedData );
+		/** @var SqlBlobStore $blobStore */
+		$blobStore = $services->getBlobStore();
+		// @phan-suppress-next-line PhanUndeclaredMethod
+		$flags = $blobStore->compressData( $storedData );
 		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->update(
 			'code_rev',

@@ -116,7 +116,8 @@ class SubversionShell extends SubversionAdaptor {
 							$data[$key] = $matches[1];
 						} else {
 							throw new Exception(
-								"Unexpected format for $key in '$text'" );
+								"Unexpected format for $key in '$text'"
+							);
 						}
 					}
 					$data['msg'] = '';
@@ -152,11 +153,13 @@ class SubversionShell extends SubversionAdaptor {
 					break;
 				case 'msg':
 					$data['msg'] .= $line;
-					// @phan-suppress-next-line PhanTypeArraySuspiciousNull, PhanTypeInvalidUnaryOperandIncOrDec
+					// phpcs:ignore Generic.Files.LineLength.TooLong
+					// @phan-suppress-next-line PhanTypeArraySuspiciousNull, PhanTypeInvalidUnaryOperandIncOrDec, PhanUndeclaredVariable
 					if ( --$data['lines'] ) {
 						$data['msg'] .= "\n";
 					} else {
 						unset( $data['lines'] );
+						// @phan-suppress-next-line PhanUndeclaredVariable
 						$out[] = $data;
 						$state = 'start';
 					}

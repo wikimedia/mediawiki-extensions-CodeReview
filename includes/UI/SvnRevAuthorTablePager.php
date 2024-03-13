@@ -5,6 +5,9 @@ namespace MediaWiki\Extension\CodeReview\UI;
 use SpecialPage;
 
 class SvnRevAuthorTablePager extends SvnRevTablePager {
+
+	private string $mAuthor;
+
 	/**
 	 * @param CodeView $view
 	 * @param string $author

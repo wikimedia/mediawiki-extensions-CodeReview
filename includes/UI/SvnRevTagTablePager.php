@@ -5,6 +5,9 @@ namespace MediaWiki\Extension\CodeReview\UI;
 use SpecialPage;
 
 class SvnRevTagTablePager extends SvnRevTablePager {
+
+	private string $mTag;
+
 	/**
 	 * @param CodeView $view
 	 * @param string $tag

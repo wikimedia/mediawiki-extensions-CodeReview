@@ -98,7 +98,7 @@ class SpecialCode extends SpecialPage {
 		# Remove stray slashes
 		$subpage = preg_replace( '/\/$/', '', $subpage ?? '' );
 		if ( $subpage == '' ) {
-			$view = new CodeRepoListView();
+			return new CodeRepoListView();
 		} else {
 			$params = explode( '/', $subpage );
 
@@ -106,12 +106,12 @@ class SpecialCode extends SpecialPage {
 			// If a repository was specified, but it does not exist, redirect to the
 			// repository list with an appropriate message.
 			if ( !$repo ) {
-				$view = new CodeRepoListView();
 				$this->getOutput()->addWikiMsg( 'code-repo-not-found', wfEscapeWikiText( $params[0] ) );
-				return $view;
+				return new CodeRepoListView();
 			}
 
 			$user = $this->getUser();
+			$view = null;
 
 			switch ( count( $params ) ) {
 				case 1:

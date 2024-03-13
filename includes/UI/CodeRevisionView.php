@@ -593,7 +593,7 @@ class CodeRevisionView extends CodeView {
 	/**
 	 * @param string $viewvc
 	 * @param string $path
-	 * @param string $rev
+	 * @param string|int $rev
 	 * @param string $message
 	 * @return string
 	 */

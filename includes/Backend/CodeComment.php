@@ -12,7 +12,7 @@ class CodeComment {
 
 	public string $text;
 
-	public string $user;
+	public int $user;
 
 	public string $userText;
 

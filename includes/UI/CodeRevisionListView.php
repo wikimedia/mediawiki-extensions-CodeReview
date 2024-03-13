@@ -161,8 +161,8 @@ class CodeRevisionListView extends CodeView {
 		global $wgRequest;
 
 		$revisions = $wgRequest->getArray( 'wpRevisionSelected' );
-		$removeTags = $wgRequest->getVal( 'wpRemoveTag' );
-		$addTags = $wgRequest->getVal( 'wpTag' );
+		$removeTags = $wgRequest->getVal( 'wpRemoveTag' ) ?? '';
+		$addTags = $wgRequest->getVal( 'wpTag' ) ?? '';
 		$status = $wgRequest->getVal( 'wpStatus' );
 
 		// Grab data from the DB
