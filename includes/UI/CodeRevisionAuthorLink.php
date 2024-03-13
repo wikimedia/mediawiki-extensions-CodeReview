@@ -15,7 +15,7 @@ use Xml;
  */
 class CodeRevisionAuthorLink extends CodeRevisionAuthorView {
 
-	private string $mTarget;
+	private ?string $mTarget;
 
 	/**
 	 * @param CodeRepository|string $repo

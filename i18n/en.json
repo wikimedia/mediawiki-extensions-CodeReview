@@ -37,7 +37,7 @@
 	"code-author-alterlink": "Change the wiki user linked to this author:",
 	"code-author-orunlink": "Or unlink this wiki user:",
 	"code-author-name": "Enter a username:",
-	"code-author-success": "The author $1 has been linked to the wiki user $2",
+	"code-author-success": "The author $1 has been linked to the wiki user $2.",
 	"code-author-link": "link?",
 	"code-author-unlink": "unlink?",
 	"code-author-unlinksuccess": "Author $1 has been unlinked",

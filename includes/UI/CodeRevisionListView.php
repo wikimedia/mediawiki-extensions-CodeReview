@@ -16,7 +16,7 @@ use Xml;
  * Special:Code/MediaWiki
  */
 class CodeRevisionListView extends CodeView {
-	public bool $batchForm;
+	public bool $batchForm = false;
 
 	/**
 	 * @var string[]

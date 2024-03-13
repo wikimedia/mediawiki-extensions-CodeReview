@@ -37,11 +37,11 @@ class CodeRevisionView extends CodeView {
 	/** @var string|array */
 	protected $mRemoveTags;
 	protected bool $jumpToNext;
-	protected int $mReplyTarget;
+	protected ?int $mReplyTarget;
 	protected string $text;
 	protected bool $mSkipCache;
 	protected array $mSignoffFlags;
-	protected array $mSelectedSignoffs;
+	protected ?array $mSelectedSignoffs;
 	protected array $mStrikeSignoffs;
 	protected array $mAddReferences;
 	protected array $mRemoveReferences;

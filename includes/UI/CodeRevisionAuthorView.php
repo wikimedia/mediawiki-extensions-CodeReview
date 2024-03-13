@@ -10,8 +10,8 @@ use SpecialPage;
 use User;
 
 class CodeRevisionAuthorView extends CodeRevisionListView {
-
-	protected User $mUser;
+	/** @var User|bool */
+	protected $mUser;
 
 	/**
 	 * @param CodeRepository|string $repo
